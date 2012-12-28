@@ -1,0 +1,10 @@
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<h2>调整部门</h2>
+<form  method="post" action="#" class="tree">
+  <h3 class="msg_box box-info">已选人员：XXXXXX,XXXXXX,</h3>
+  <div class="y-scroll"> <img src="../images/temp_02.jpg" width="126" height="401" /> </div>
+  <div class="overlay_btn">
+    <input name="提交" type="submit" class="btn btn_submit" value=" 确定 "/>
+    <input type="button" class="btn btn_reset close" value=" 取消 "/>
+  </div>
+</form>

@@ -1,0 +1,89 @@
+<div class="overbody">
+<form method="post" action="" name="findtrainplanlist" id="findtrainplanlist">
+	<table border="0" class="default_table form_table">
+	<tr>
+	<td align="left"><input type="text" name="trainPlanName" class="default_txt" onfocus="if (value==defaultValue) value=''" onblur="if(!value) value=defaultValue" value="输入培训计划名称" size="74"/></td>
+	<td width="200"><input name="Button2" id="js_trainPlanSearch" type="button" class="btn btn_default" value="查询" /></td>
+	<td>&nbsp;</td>
+	</tr>
+	</table>
+ </form>
+	<div id="overlay_plan" class="divselect borderall y-scroll">
+
+	</div>
+</div>
+<!-- 翻页 -->
+<div class="overlay_btn">
+	<input name="提交" type="button" id="js_plan_btn" class="btn btn_submit" value=" 确定 "/>
+	<input type="button" id="js_plan_btn_cancel" class="btn btn_reset overlayClose" value=" 取消 "/>
+</div>
+<script type="text/javascript">
+	var params = Ambow.urlDecode(Ambow.serializeForm('findtrainplanlist'));
+	params.trainPlanName=params.trainPlanName=='输入培训计划名称'?'':params.trainPlanName;
+	var list_pop = Ambow.create('Ambow.view.ListView',{
+			id:'list1',
+			renderTo:'overlay_plan',
+			checkboxs:false,
+			pager:new Ambow.view.ListPager({pageSize:G_PAGESIZE,totalCountMap:'rCount'}),
+			store: Ambow.create('Ambow.store.ListStore',{
+				id:'store11',
+				url:G_URL.findtrainplanlist,
+				root:'list',
+				params:{
+					'companyId'			: G_COMPANYID,
+					'trainPlanName'		: encodeURI(params.trainPlanName),
+					'resourceType'		: '',
+					'callback':''
+				}
+			}),
+			columns: [
+			{
+				header: '',
+				dataIndex: '_id',
+				width: '20',
+				render:function(dt,row){
+	            	return '<input type="radio" alt="'+row.trainPlanName+'" name="plan_radio" class="rdo" value="'+row.id+'" id="popinp_'+row.id+'" />';
+	            }
+			},{
+				header: '计划名称',
+				dataIndex: 'name',
+				render:function(dt,row){
+	            	return row.trainPlanName;
+	            }
+
+			}
+			]
+	});
+	list_pop.render();
+	store_pop = list_pop.store;
+	store_pop.load();
+	list_pop.on('afterrender',function(){
+		cbs.tablehover();
+		// 开始选择
+		$('#js_plan_btn').click(function(){
+			$('#overlay_plan').find('input:checked').each(function(){
+				var id=$(this).val(),txt=$(this).attr('alt');
+				$('#ThiselText').val(txt);
+				$('#ThiselText_id').val(id);
+				$('#js_plan_btn_cancel').click();
+				return;
+			});
+
+		});
+
+	});
+
+	$('#js_trainPlanSearch').click(function(){
+		params = Ambow.urlDecode(Ambow.serializeForm('findtrainplanlist'));
+		params.trainPlanName=params.trainPlanName=='输入培训计划名称'?'':params.trainPlanName;
+		store_pop.refresh({
+			params:{
+				'companyId'			: G_COMPANYID,
+				'trainPlanName'		: encodeURI(params.trainPlanName),
+				'resourceType'		: '',
+				'callback':''
+			}
+		});
+	});
+
+</script>

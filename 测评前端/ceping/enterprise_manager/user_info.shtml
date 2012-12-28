@@ -1,0 +1,139 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta content="企业培训、企业内训、企业学习、企业大学、渠道大学、e-Learning、学习平台、学习系统、人才管理、岗位胜任力模型、Skillsoft、职业发展、培训管理、继任规划" name="keywords" />
+<meta content="企业商学院是集在线学习、能力测评、学习计划和培训管理为一体的企业学习整体解决方案。帮助企业提升内训、渠道培训、分支机构培训的整体水平，最大程度发掘培训价值，实现培训效益提升，全面促进企业人才培养。" name="description" />
+<title>CBS - 用户管理 - 用户信息</title>
+<!--系统样式-->
+<link href="../css/default.css" rel="stylesheet" type="text/css" />
+<!--皮肤样式  Blue-->
+<link href="../css/enterprise_blue.css" rel="stylesheet" type="text/css" />
+<!-- 日历样式 -->
+<link type="text/css" rel="stylesheet" href="../css/flight_calendar.css" />
+<!--[if IE]>
+<link type="text/css" rel="stylesheet" href="../css/ie.css" />
+<![endif]-->
+<!-- jQuery with plugins -->
+<script type="text/javascript" src="../js/libs/jquery-1.4.3.min.js"></script>
+</head>
+<body>
+<!-- Start:  Html  //-->
+<div id="content">
+  <!-- Start:  header //-->
+  <!--#include virtual="../Library/header_enterprise.shtml" -->
+  <!--// End: header-->
+  <!-- Start: container //-->
+  <div id ="container">
+    <div class="box admin_box">
+      <!-- 面包屑 --><div class="bread_crumbs">
+				  <a href="user.shtml">用户管理</a> &nbsp;&#8250;&nbsp;<a href="user.shtml" >按部门</a> &nbsp;&#8250;&nbsp;<b>查看用户</b></div>
+      <!-- 面包屑 End -->
+	  <form class="bigFrom padding28" method="post" action="user_edit.shtml">
+        <h1 class="panel_title">基本信息</h1>
+        <dl class="from_panel">
+          <dt>
+            <label>用户姓名：</label>
+          </dt>
+          <dd>
+            XXX
+          </dd>
+          <dt>
+            <label>登录ID：</label>
+          </dt>
+          <dd>XXX </dd>
+          <dt>性别：</dt>
+          <dd>
+            <label>
+            男 </label>
+          </dd>
+          <dt>
+            <label>出生日期：</label>
+          </dt>
+          <dd>2010-03-04&nbsp;</dd>
+          <dt>有效期限：</dt>
+          <dd>2010-3-04 --2012-0-04 &nbsp; </dd>
+        </dl>
+
+      <!--  组织信息 -->
+        <h1 class="panel_title">组织信息</h1>
+        <dl class="from_panel">
+          <dt>
+            <label> 所属部门：</label>
+          </dt>
+          <dd>
+            xxx
+            </dd>
+          <dt>
+            <label>所属岗位：</label>
+          </dt>
+          <dd>xxx</dd>
+          <dt>
+            <label>所属分组：</label>
+          </dt>
+          <dd>xxx</dd>
+        </dl>
+
+      <!--  雇佣信息 -->
+
+        <h1 class="panel_title">雇佣信息</h1>
+        <dl class="from_panel">
+          <dt>
+            <label>工号：</label>
+          </dt>
+          <dd>
+            xxx
+          </dd>
+          <dt>
+            <label>首次参加工作时间：</label>
+          </dt>
+          <dd>2010-03-04&nbsp;</dd>
+          <dt>
+            <label>入职日期：</label>
+          </dt>
+          <dd>2010-03-04&nbsp;</dd>
+        </dl>
+
+      <!--  联系方式 -->
+        <h1 class="panel_title">联系方式</h1>
+        <dl class="from_panel">
+          <dt>
+            <label>E-mail：</label>
+          </dt>
+          <dd>xxx@xxx.com</dd>
+          <dt>
+            <label>联系电话：</label>
+          </dt>
+          <dd>
+            13000000000
+          </dd>
+          <dt>
+            <label>通信地址：</label>
+          </dt>
+          <dd>
+            广东省广州市          </dd>
+          <dt>
+            <label>邮政编码：</label>
+          </dt>
+          <dd>
+            4201125
+          </dd>
+        </dl>
+
+         <div class="but_box edit_box">
+          <input name="按钮"  type="button" class="btn btn_submit"  value="编辑" onclick="location.href='user_edit.shtml';"  />
+          <input name="重置" type="reset" class="btn btn_reset" value="返回" onclick="location.href='user.shtml';" />
+        </div>
+        <!--// box edit_box-->
+      </form>
+    </div>
+    <!--// box admin_box -->
+  </div>
+  <!--// End: container -->  <!--#include virtual="../Library/footer.shtml" --></div>
+
+
+
+<!-- 声明 引用-->
+<script src="../js/libs/cbs_userjs.js"></script>
+</body>
+</html>

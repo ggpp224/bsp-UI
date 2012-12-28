@@ -1,0 +1,161 @@
+<div class="exammanage_selectPoint">
+<div class="selectnode">
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td width="2%" nowrap="nowrap">已选阅卷人：</td>
+    <td width="98%">
+        <div class="divtd" id="hasChecked"></div></td>
+  </tr>
+</table>
+</div>
+<!--知识点树-->
+
+
+<div class="selectPoint_list" style="float:none; padding-left:5px;">
+<!--知识点搜索-->
+<div class="exammanage_box">
+<form  method="post" action="#" class="tree" name="form_search_seltestman">
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+<tr>
+<th width="80" nowrap>阅卷人姓名：</th>
+<td width="234"><input type="text" class="default_txt" name="userName" size="35"/></td>
+<td width="76" ><input id="seltestman_search" type="button" name="input2" value=" 查询 " class="btn btn_default"/></td>
+</tr>
+</table>
+</form>
+</div>
+<!--知识点列表-->
+<div id="seltestman" style="height:240px;overflow:auto"></div>
+</div>
+<div class="overlay_btn">
+<input name="提交" id="seltestman_submit" type="button" class="btn btn_submit" value=" 确定 "/>
+<input type="button"  id="seltestman_cancel" class="btn btn_reset close overlayClose" value=" 取消 "/>
+</div>
+
+</div>
+
+
+<script type="text/javascript">
+
+$(function(){
+	checkAll(name);//CheckBox全选
+
+	var params = Ambow.serializeForm('form_search_seltestman');
+	var store_man={};
+	var list_man = Ambow.create('Ambow.view.ListView',{
+			id:'list1',
+			renderTo:'seltestman',
+			checkboxs:true,
+			//pager:new Ambow.view.ListPager({pageSize:G_PAGESIZE,totalCountMap:'rCount'}),
+			store: Ambow.create('Ambow.store.ListStore',{
+				id:'store_teacher',
+				url:G_URL.findreadlist,
+				root:'list',
+				params:{
+					'companyId'			: G_COMPANYID,
+					'userName'			: params.userName,
+					'callback':''
+				}
+			}),
+			columns: [
+			{
+				header: '阅卷人姓名',
+				dataIndex: 'name',
+				render:function(dt,row){
+	            	return throwNull(row.userName)+'<input type="hidden" value="'+row.id+'" class="disInp" id="maninp_'+row.id+'" />';
+	            }
+
+			},{
+				header: '所属部门',
+				dataIndex: 'deptName',
+				render:function(dt,row){
+					return throwNull(row.deptName);
+				}
+			}
+			]
+	});
+	list_man.render();
+	store_man = list_man.store;
+	store_man.load();
+	list_man.on('afterrender',function(){
+		cbs.tablehover();
+		$('#seltestman td,#seltestman th').css('text-align','center');
+		// 开始选择
+		$('#seltestman .chkc').click(function(){
+			var id=$(this).parent().parent().find('.disInp').val();
+			var txt=$(this).parent().next().text();
+			if(this.checked==true){
+				$('#hasChecked').append('<span id="chked_'+id+'">'+txt+'<a href="javascript:" alt="'+id+'"><i></i></a></span>');
+			}else{
+				$('#hasChecked').find('#chked_'+id).remove();
+			}
+		});
+		// 载入默认值
+		var ids=$('#readerId').val();
+		if(ids.length>0){
+			ids=ids.split(',');
+			$('#seltestman .chkc').each(function(){
+				var id=$(this).parent().parent().find('.disInp').val();
+				var txt=$(this).parent().next().text();
+				if($.inArray(id,ids) > -1){
+					$(this).attr('checked',true);
+					$('#hasChecked').append('<span id="chked_'+id+'">'+txt+'<a href="javascript:" alt="'+id+'"><i></i></a></span>');
+				}
+			})
+		}
+
+	});
+	// 点红叉后的删除
+	$('#hasChecked').find('a').live('click',function(){
+		var id=$(this).attr('alt');
+		$('#hasChecked').find('#chked_'+id).remove();
+		$('#maninp_'+id).parent().parent().find('.chkc').attr('checked',false);
+	});
+	// 全选后
+	$('#seltestman').find('input[name="checkboxall"]').click(function(){
+		if(this.checked==true){
+			$('#seltestman .chkc').each(function(){
+				var id=$(this).parent().parent().find('.disInp').val();
+				var txt=$(this).parent().next().text();
+				if($('#chked_'+id).length==0){
+					$('#hasChecked').append('<span id="chked_'+id+'">'+txt+'<a href="javascript:" alt="'+id+'"><i></i></a></span>');
+				}
+			})
+		}else{
+			$('#seltestman .chkc').each(function(){
+				var id=$(this).parent().parent().find('.disInp').val();
+				var txt=$(this).parent().next().text();
+				$('#hasChecked').find('#chked_'+id).remove();
+			})
+		}
+	});
+	// 确定后
+	$('#seltestman_submit').click(function(){
+		var _ids=[],_txts=[];
+		$('#hasChecked').find('a').each(function(){
+			_ids.push($.trim($(this).attr('alt')));
+			_txts.push($.trim($(this).parent().text()));
+		})
+		_ids=_ids.join(',');
+		_txts=_txts.join(',');
+		$('#readerId_txt').val(_txts);
+		$('#readerId').val(_ids);
+		$('#seltestman_cancel').click();
+		checking.checkcategoryCode();
+	});
+
+
+	$('#seltestman_search').click(function(){
+		params = Ambow.urlDecode(Ambow.serializeForm('form_search_seltestman'));
+		store_man.refresh({
+			params:{
+				'companyId' : G_COMPANYID ,
+				'userName'	: params.userName,
+				'callback':''
+			}
+		});
+	});
+
+})
+</script>
+

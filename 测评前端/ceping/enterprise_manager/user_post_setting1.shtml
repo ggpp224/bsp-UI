@@ -1,0 +1,136 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta content="企业培训、企业内训、企业学习、企业大学、渠道大学、e-Learning、学习平台、学习系统、人才管理、岗位胜任力模型、Skillsoft、职业发展、培训管理、继任规划" name="keywords" />
+<meta content="企业商学院是集在线学习、能力测评、学习计划和培训管理为一体的企业学习整体解决方案。帮助企业提升内训、渠道培训、分支机构培训的整体水平，最大程度发掘培训价值，实现培训效益提升，全面促进企业人才培养。" name="description" />
+<title>CBS - 用户管理 - 批量设置岗位 页面操作</title>
+<!--系统样式-->
+<link href="../css/default.css" rel="stylesheet" type="text/css" />
+<!--皮肤样式  Blue-->
+<link href="../css/enterprise_blue.css" rel="stylesheet" type="text/css" />
+<link href="../css/nyroModal.css" rel="stylesheet" type="text/css" />
+<!--[if IE]>
+<link type="text/css" rel="stylesheet" href="../css/ie.css" />
+<![endif]-->
+<!-- jQuery with plugins -->
+<script type="text/javascript" src="../js/libs/jquery-1.4.3.min.js"></script>
+<!-- jQuery tree -->
+<script type="text/javascript" src="../js/libs/jquery.cookie.js"></script>
+<script type="text/javascript" src="../js/libs/jquery.jstree.js"></script>
+<script language="javascript" type="text/javascript" src="../js/libs/nyroModal1.6.2.min.js"></script>
+<script type="text/javascript">
+ $(document).ready(function() {
+       // load html data from file
+	$("#load_html_data").jstree({
+		"html_data" : {
+			"ajax" : {
+				"url" : "data/data_resources.shtml",
+				"data" : function (n) {
+					return { id : n.attr ? n.attr("id") : 0 };
+				}
+			}
+		},
+		"plugins" : [ "themes", "html_data" ,"checkbox","contextmenu","cookies","ui","crrm","dnd"]
+	});
+
+	//选择人员
+	$('.departments').click(function(e) {
+			e.preventDefault();
+			$.fn.nyroModalManual({
+			    width:600,
+				title:"选择人员",
+				url: 'overlay_user_select.shtml'
+			});
+		return false;
+	});
+
+	//选择岗位
+	$('.sel_position').click(function(e) {
+			e.preventDefault();
+			$.fn.nyroModalManual({
+			    width:600,
+				title:"选择岗位",
+				url: 'overlay_position_adjust.shtml'
+			});
+		return false;
+	});
+ });
+</script>
+</head>
+<body>
+<!-- Start:  Html  //-->
+<div id="content">
+   <!-- Start:  header //-->
+  <!--#include virtual="../Library/header_enterprise.shtml" -->
+  <!--// End: header-->
+  <!-- Start: container -->
+  <div id ="container">
+    <!-- Start:admin_box //-->
+    <div class="box admin_box">
+      <!-- Start:面包屑 //--><div class="bread_crumbs">
+				  <a href="user.shtml">用户管理</a>&nbsp;&#8250;&nbsp;<a href="user_post.shtml">按岗位</a>&nbsp;&#8250;&nbsp;<b>批量设置岗位</b> </div>
+      <!-- //End:面包屑  -->
+      <!-- =========================Start:sidebar//================================-->
+      <div class="sidebar boxborder"><!-- #BeginLibraryItem "/Library/treenav.lbi" -->
+        <!-- ================tree_menu==========-->
+        <ul class="tree_menu">
+          <li><a href="overlay_child_add.shtml" rel="#overlay" class="tree_add_child click_icon" title="增加目录">增加目录</a></li>
+          <li><a href="#" class="tree_up" title="上移">上移</a></li>
+          <li><a href="#" class="tree_down" title="下移">下移</a></li>
+          <li><a href="#" class="tree_left" title="左移">左移</a></li>
+          <li><a href="#" class="tree_right" title="右移">右移</a></li>
+          <li><a href="overlay_dep_edit.shtml" rel="#overlay" class="tree_edit click_icon" title="编辑">编辑</a></li>
+          <li><a href="overlay_delsector.shtml" rel="#overlay" class="tree_dell click_icon" title="删除">删除</a></li>
+          <li><a href="overlay_dep_import.shtml" rel="#overlay" class="tree_imp click_icon" title="导入目录树">导入目录树</a></li>
+        </ul>
+        <div id="load_html_data"></div>
+        <!-- #EndLibraryItem --></div>
+      <!--//End:sidebar -->
+      <div class="content_r">
+        <!-- tab切换 -->
+        <div class="page_switch">
+          <ul class="tabpanel">
+            <li class="curent"><a href="user_post_setting1.shtml">页面操作</a></li>
+            <li><a href="user_post_setting2.shtml">Excel导入关联</a></li>
+          </ul>
+        </div>
+        <!-- tab切换 End -->
+        <div  class="msg_box box-info"> 通过此操作，将选定人员与选定岗位建立对应关系。 </div>
+        <form method="post" action="#" class="bigFrom">
+         <table width="100%" class="default_table form_table top10">
+            <tr>
+              <td width="49%">
+                <input type="button" class="btn btn_other departments" value="选择人员">
+                </td>
+              <td rowspan="2">&nbsp;</td>
+              <td width="49%">
+                <input type="button" class="btn btn_other sel_position" value="选择岗位">
+                </td>
+            </tr>
+            <tr>
+              <td height="200" valign="top"><select name="select" size="10" id="select" class="fully">
+                  <option>张志国</option>
+                  <option>李彦宏</option>
+                  <option>罗翔</option>
+                </select></td>
+              <td height="200" valign="top"><select name="select2" size="10" id="select2" class="fully">
+                  <option>市场部 &gt; 区域经理</option>
+                </select></td>
+            </tr>
+            <tr>
+              <td colspan="3" align="center"><input type="button" class="btn btn_feature" value="建立关联" />
+                <input type="button" class="btn btn_reset" value="  返回  " /></td>
+            </tr>
+          </table>
+        </form>
+      </div>
+      <div class="clear"></div>
+      <!-- 主内容 End -->
+    </div>
+  </div><!--// End: container -->
+  <!--#include virtual="../Library/footer.shtml" --></div>
+
+<script src="../js/libs/cbs_userjs.js"></script>
+</body>
+</html>

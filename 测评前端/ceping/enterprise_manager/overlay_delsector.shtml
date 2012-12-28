@@ -1,0 +1,17 @@
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<form  method="post" action="#" class="bigFrom">
+<!-- ico_error 错误 /ico_info 消息/ico_success 正确 /ico_warning 警示-->
+	<table width="100%" border="0" class="ico_warning ">
+		<tr>
+			<td width="80"><span></span></td>
+			<td valign="middle" height="120">
+				<h4>删除后将无法恢复，确定要删除吗？</h4>
+			</td>
+		</tr>
+	</table>
+	<div class="overlay_btn">
+		<input name="提交" type="button" id="affirm" class="btn btn_submit" value=" 确定 "/>
+		<input type="button" class="btn btn_reset overlayClose" id="cancle" value=" 取消 "/>
+	</div>
+</form>
+<script></script>

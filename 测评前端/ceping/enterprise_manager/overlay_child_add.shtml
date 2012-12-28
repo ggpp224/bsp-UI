@@ -1,0 +1,27 @@
+<form  method="post" action="#" class="bigFrom">
+    <table width="100%" border="0" class="default_table form_table">
+		<tr>
+		<td colspan="2">&nbsp;</td>
+		</tr>
+	<tr>
+		<th><span>*</span>&nbsp;目录名称：</th>
+		<td>
+			<input type="text" class="default_txt" value="" name="input"/>
+		</td>
+	</tr>
+	<tr>
+		<th><span>*</span>&nbsp;目录编码：</th>
+		<td>
+			<input type="text" class="default_txt" value="" name="input2"/>
+		</td>
+	</tr>
+	<tr>
+		<td colspan="2">&nbsp;</td>
+		</tr>
+</table>
+</form>
+
+  <div class="overlay_btn">
+    <input type="button" class="btn btn_submit" value=" 确定 "/>
+    <input type="button" class="btn btn_reset overlayClose" value=" 取消 "/>
+  </div>

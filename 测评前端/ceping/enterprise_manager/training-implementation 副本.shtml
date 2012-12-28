@@ -1,0 +1,366 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta content="企业培训、企业内训、企业学习、企业大学、渠道大学、e-Learning、学习平台、学习系统、人才管理、岗位胜任力模型、Skillsoft、职业发展、培训管理、继任规划" name="keywords" />
+<meta content="企业商学院是集在线学习、能力测评、学习计划和培训管理为一体的企业学习整体解决方案。帮助企业提升内训、渠道培训、分支机构培训的整体水平，最大程度发掘培训价值，实现培训效益提升，全面促进企业人才培养。" name="description" />
+<title>CBS - 培训实施</title>
+<!--系统样式-->
+<link href="../css/default.css" rel="stylesheet" type="text/css" />
+<!--皮肤样式  Blue-->
+<link href="../css/enterprise_blue.css" rel="stylesheet" type="text/css" />
+<link href="../css/nyroModal.css" rel="stylesheet" type="text/css" />
+<!--[if IE]>
+<link type="text/css" rel="stylesheet" href="../css/ie.css" />
+<![endif]-->
+<!-- jQuery with plugins -->
+<script type="text/javascript" src="../js/libs/jquery-1.4.3.min.js"></script>
+<script language="javascript" type="text/javascript" src="../js/libs/nyroModal1.6.2.min.js"></script>
+<script language="javascript" type="text/javascript" src="../js/libs/WdatePicker.js"></script>
+<script type="text/javascript">
+    $(document).ready(function() {
+	cbs.tablehover(); //多选按钮
+
+	cbs.selbtnmenu();
+
+	$("a.tabico_stop").click(function () {
+		$(this).toggleClass("tabico_start");
+		if($(this).hasClass('tabico_start')){
+		$(this).attr('title', '开始');
+		$(this).text('开始');
+		}
+		else{
+		$(this).attr('title', '停止');
+		$(this).text('停止');
+			}
+	 });
+
+
+	     //删除
+	$('#delcustomer').click(function(e) {
+			e.preventDefault();
+			$.fn.nyroModalManual({
+			    width:380,
+				url: 'overlay_delsector.shtml',
+				title:'系统提示'
+			});
+			return false;
+	});
+
+	//上传试卷 & 导入成绩 & 导入考勤
+	$('.updatepaper').nyroModal({
+		width: 400
+	});
+
+
+ });
+</script>
+</head>
+<body>
+<!-- Start:  Html  //-->
+<div id="content">
+  <!-- Start:  header //-->
+  <!--#include virtual="../Library/header_enterprise.shtml" -->
+  <!--// End: header-->
+  <!-- Start: container //-->
+  <div id="container">
+    <div class="box admin_box">
+      <!-- 面包屑 --><div class="bread_crumbs">
+				  <b>培训实施</b> </div>
+      <!-- 面包屑 End -->
+      <!-- 主内容 -->
+      <div class="content_body">
+        <!-- 功能索索 -->
+        <div class="features_search">
+          <form method="post" action="#" class="search_From">
+		  <table  border="0" class="default_table" >
+	<tr>
+		<th >实施名称：</th>
+		<td><input type="text" class="default_txt" value="" size="12"/></td>
+		<th align="right">状态：</th>
+		<td>
+			<select name="select" class="mini_sel">
+				<option>全部</option>
+				<option>未开始</option>
+				<option>进行中</option>
+				<option>已暂停</option>
+				<option>已结束</option>
+			</select>
+		</td>
+		<th align="right">实施类别：</th>
+		<th ><select name="select2" class="mini_sel">
+		  <option>全部</option>
+		  <option>在线课件</option>
+		  <option>在线测试</option>
+		  <option>线下测试</option>
+		  <option>同步课程</option>
+		  <option>面授课程</option>
+		  </select></th>
+		<th align="right">实施时间：</th>
+		<td><input type="text" class="dateinput" id="d122" onFocus="WdatePicker({isShowWeek:true,onpicked:function(){}})" size="12"/>
+               -
+                <input type="text" class="dateinput" id="d122" onFocus="WdatePicker({isShowWeek:true,onpicked:function(){}})" size="12"/></td>
+		<td align="right"><input type="button" name="input" value=" 查询 " class="btn btn_default"/></td>
+	</tr>
+</table>
+          </form>
+        </div>
+        <!-- 功能搜索 End -->
+        <!-- 表格操作 Start// -->
+        <div  class="from_panel">
+          <form method="post" action="#" class="listtab_btn">
+            <div class="exportbtn">
+              <ul>
+                <li><a href="#" class="expbtn">导出数据</a></li>
+              </ul>
+            </div>
+            <div class="selbtn">
+              <button class="btn btn_feature" ><span class="menudown"></span>新增培训实施</button>
+              <ul class="newspecial_menu" style="width:130px;">
+                <li><a href="training-implementation_add.shtml">分配在线课件</a></li>
+                <li><a href="training-implementation_testpaperadd.shtml">发起在线测试</a></li>
+                <li><a href="training-implementation_testpaperLine.shtml">发起线下测试</a></li>
+                <li><a href="training-implementation_syncourses1.shtml">发起在线同步课程</a></li>
+                <li><a href="training-implementation_faceto1.shtml">发起面授课程</a></li>
+              </ul>
+            </div>
+            <input type="button" name="" class="btn btn_del" value="删除" id="delcustomer"  title="系统提示"/>
+            <div class="selbtn">
+              <button class="btn btn_other" ><span class="menudown"></span>选择查看方式</button>
+              <ul class="newspecial_menu" style="width:130px;">
+                <li><a href="training-implementation.shtml">默认全部</a></li>
+                <li><a href="training-implementation_dep.shtml">按部门查看</a></li>
+                <li><a href="training-implementation_position.shtml">按岗位查看</a></li>
+                <li><a href="training-implementation_groups.shtml">按分组查看</a></li>
+              </ul>
+            </div>
+          </form>
+          <!-- //表格操作 End -->
+          <table width="100%" border="0"  class="default_table listtab">
+            <thead class="gradual_bg noborder">
+              <tr>
+                <th width="28" class="th_center"> <input type="checkbox" />
+                </th>
+                <th>实施名称</th>
+                <th width="100">实施类别</th>
+                <th width="60">状态</th>
+                <th width="100">开始时间</th>
+                <th width="100">截止时间</th>
+                <th width="80" class="th_center">操作</th>
+              </tr>
+            </thead>
+            <tbody>
+
+              <tr>
+                <td align="center" class="l_tab"><input type="checkbox" class="checkbox"/></td>
+                <td><a href="training_implementation_preview2.shtml">研发部年度学习计划</a> [页面操作方式分配在线课件详情页]<b>（30）</b></td>
+                <td>在线课件</td>
+                <td>进行中</td>
+                <td><small>2011-11-16</small></td>
+                <td><small>2011-11-16</small></td>
+                <td class="r_tab">
+                  <a href="training_implementation_edit.shtml" class="tabico_edit"  title="编辑">编辑</a>
+                  <a href="#" class="tabico_del"  title="删除">删除</a>
+                  <span title="更多操作" class="more_action">
+                     <i>更多操作</i>
+                     <ul class="more_action_list">
+                        <li class="arrowli"></li>
+                        <li><a href="#">暂停/启用</a></li>
+                        <Li><a href="#">查看反馈结果</a></Li>
+                     </ul>
+                  </span>
+
+                  </td>
+              </tr>
+
+              <tr>
+                <td align="center" class="l_tab"><input type="checkbox" class="checkbox"/></td>
+                <td><a href="training_implementation_preview3.shtml">研发部年度学习计划</a> [excel批量配课方式分配在线课件详情页]<b>（30）</b></td>
+                <td>在线课件</td>
+                <td>进行中</td>
+                <td><small>2011-11-16</small></td>
+                <td><small>2011-11-16</small></td>
+                <td class="r_tab">
+                  <a href="training-implementation_editexcel.shtml" class="tabico_edit"  title="编辑">编辑</a>
+                  <a href="#" class="tabico_del"  title="删除">删除</a>
+                  <span title="更多操作" class="more_action">
+                     <i>更多操作</i>
+                     <ul class="more_action_list">
+                        <li class="arrowli"></li>
+                        <li><a href="#">暂停/启用</a></li>
+                        <Li><a href="#">查看反馈结果</a></Li>
+                     </ul>
+                  </span>
+
+                  </td>
+              </tr>
+
+              <tr>
+                <td align="center" class="l_tab"><input type="checkbox" class="checkbox"/></td>
+                <td><a href="training-implementation_testpaperview.shtml">研发部年度学习计划</a><b>（30）</b></td>
+                <td>在线测试</td>
+                <td>已结束</td>
+                <td><small>2011-11-16 12:00</small></td>
+                <td><small>2011-11-16 12:00</small></td>
+                <td class="r_tab"><a href="training-implementation_testpaperedit.shtml" class="tabico_edit"  title="编辑">编辑</a> <a href="#" class="tabico_del"  title="删除">删除</a>
+                <span title="更多操作" class="more_action">
+                     <i>更多操作</i>
+                     <ul class="more_action_list">
+                        <li class="arrowli"></li>
+                        <li><a href="#">暂停/启用</a></li>
+                        <li><a href="#">导出测试成绩</a></li>
+                        <Li><a href="#">查看反馈结果</a></Li>
+                     </ul>
+                  </span>
+                </td>
+              </tr>
+
+              <tr>
+                <td align="center" class="l_tab"><input type="checkbox" class="checkbox"/></td>
+                <td><a href="training-implementation_testpaperLine_view.shtml">研发部年度学习计划</a><b>（30）</b></td>
+                <td>线下测试</td>
+                <td>未开始</td>
+                <td><small>2011-11-16 12:00</small></td>
+                <td><small>2011-11-16 12:00</small></td>
+                <td class="r_tab"><a href="training-implementation_testpaperLine_edit.shtml" class="tabico_edit"  title="编辑">编辑</a> <a href="#" class="tabico_del"  title="删除">删除</a>
+                <span title="更多操作" class="more_action">
+                     <i>更多操作</i>
+                     <ul class="more_action_list">
+                        <li class="arrowli"></li>
+                        <li><a href="overlay_updatepaper1.shtml" class="updatepaper" title="上传试卷">上传试卷</a></li>
+                        <li><a href="overlay_updatepaper2.shtml" class="updatepaper" title="导入成绩">导入成绩</a></li>
+                        <Li><a href="#">查看反馈结果</a></Li>
+                     </ul>
+                  </span></td>
+              </tr>
+
+              <tr>
+                <td align="center" class="l_tab"><input type="checkbox" class="checkbox"/></td>
+                <td>[已审核]<a href="training-implementation_syncourses_view.shtml"> 研发部年度学习计划</a><b>（30）</b></td>
+                <td>在线同步课程</td>
+                <td>进行中</td>
+                <td><small>2011-11-16 12:00</small></td>
+                <td><small>2011-11-16 12:00</small></td>
+                <td class="r_tab">
+                  <a href="training-implementation_syncourses_edit.shtml" class="tabico_edit"  title="编辑">编辑</a>
+                  <a href="#" class="tabico_del"  title="删除">删除</a>               <span title="更多操作" class="more_action">
+                     <i>更多操作</i>
+                     <ul class="more_action_list">
+                        <li class="arrowli"></li>
+                        <li><a href="#">进入课程</a></li>
+                        <li><a href="#">导出学习记录</a></li>
+                        <Li><a href="#">查看反馈结果</a></Li>
+                     </ul>
+                  </span>
+                </td>
+              </tr>
+
+
+              <tr>
+                <td align="center" class="l_tab"><input type="checkbox" class="checkbox"/></td>
+                <td>[未审核]<a href="training-implementation_syncourses_view.shtml"> 研发部年度学习计划</a><b>（30）</b></td>
+                <td>在线同步课程</td>
+                <td>进行中</td>
+                <td><small>2011-11-16 12:00</small></td>
+                <td><small>2011-11-16 12:00</small></td>
+                <td class="r_tab"><a href="training-implementation_syncourses_edit.shtml" class="tabico_edit"  title="编辑">编辑</a><a href="#" class="tabico_del"  title="删除">删除</a></td>
+              </tr>
+
+              <tr>
+                <td align="center" class="l_tab"><input type="checkbox" class="checkbox"/></td>
+                <td>[未通过]<a href="training-implementation_syncourses_view.shtml"> 研发部年度学习计划</a><b>（30）</b></td>
+                <td>在线同步课程</td>
+                <td>进行中</td>
+                <td><small>2011-11-16 12:00</small></td>
+                <td><small>2011-11-16 12:00</small></td>
+                <td class="r_tab"><a href="training-implementation_syncourses_edit.shtml" class="tabico_edit"  title="编辑">编辑</a><a href="#" class="tabico_del"  title="删除">删除</a></td>
+              </tr>
+
+              <tr>
+                <td align="center" class="l_tab"><input type="checkbox" class="checkbox"/></td>
+                <td><a href="training-implementation_faceto_view.shtml">面授课程</a><b>（30）</b></td>
+                <td>面授课程</td>
+                <td>进行中</td>
+                <td><small>2011-11-16 12:00</small></td>
+                <td><small>2011-11-16 12:00</small></td>
+                <td class="r_tab"><a href="training-implementation_faceto_edit.shtml" class="tabico_edit"  title="编辑">编辑</a><a href="#" class="tabico_del"  title="删除">删除</a>
+                <span title="更多操作" class="more_action">
+                     <i>更多操作</i>
+                     <ul class="more_action_list">
+                        <li class="arrowli"></li>
+                        <li><a href="overlay_updatepaper3.shtml" class="updatepaper" title="导入考勤">导入考勤</a></li>
+                        <li><a href="overlay_updatepaper3.shtml" class="updatepaper" title="导入成绩">导入成绩</a></li>
+                        <Li><a href="#">查看调查结果</a></Li>
+                     </ul>
+                  </span>
+                </td>
+              </tr>
+			   <tr>
+                <td align="center" class="l_tab"><input type="checkbox" class="checkbox"/></td>
+                <td>[未通过]<a href="#"> 研发部年度学习计划</a><b>（30）</b></td>
+                <td>在线同步课程</td>
+                <td>进行中</td>
+                <td><small>2011-11-16 12:00</small></td>
+                <td><small>2011-11-16 12:00</small></td>
+                <td class="r_tab"><a href="#" class="tabico_edit"  title="编辑">编辑</a><a href="#" class="tabico_del"  title="删除">删除</a></td>
+              </tr>
+			  <tr>
+                <td align="center" class="l_tab"><input type="checkbox" class="checkbox"/></td>
+                <td>[未通过]<a href="#"> 研发部年度学习计划</a><b>（30）</b></td>
+                <td>在线同步课程</td>
+                <td>进行中</td>
+                <td><small>2011-11-16 12:00</small></td>
+                <td><small>2011-11-16 12:00</small></td>
+                <td class="r_tab"><a href="#" class="tabico_edit"  title="编辑">编辑</a><a href="#" class="tabico_del"  title="删除">删除</a></td>
+              </tr>
+			  <tr>
+                <td align="center" class="l_tab"><input type="checkbox" class="checkbox"/></td>
+                <td>[未通过]<a href="#"> 研发部年度学习计划</a><b>（30）</b></td>
+                <td>在线同步课程</td>
+                <td>进行中</td>
+                <td><small>2011-11-16 12:00</small></td>
+                <td><small>2011-11-16 12:00</small></td>
+                <td class="r_tab"><a href="#" class="tabico_edit"  title="编辑">编辑</a><a href="#" class="tabico_del"  title="删除">删除</a></td>
+              </tr>
+                       </tbody>
+          </table>
+        </div>
+        <!-- 翻页 -->
+        <div class="pagination">
+          <ul>
+            <li>每页显示<select>
+                                <option>10</option>
+
+                                <option>20</option>
+                                <option>30</option>
+                                <option>50</option>
+                            </select>
+              条&nbsp;&nbsp;1/25页 </li>
+            <li class="disablepage">上一页</li>
+            <li class="currentpage">1</li>
+            <li><a href="#">2</a></li>
+            <li><a href="#">3</a></li>
+            <li><a href="#">4</a></li>
+            <li><a href="#">5</a></li>
+            <li><a href="#">6</a></li>
+            <li><a href="#">7</a></li>
+            <li><a href="#">8</a></li>
+            <li><a href="#">9</a>...</li>
+            <li><a href="#">15</a></li>
+            <li><a href="#">16</a></li>
+            <li class="nextpage"><a href="#">下一页</a></li>
+          </ul>
+        </div>
+        <!-- 翻页 -->
+      </div>
+      <div class="clear"></div>
+      <!-- 主内容 End -->
+    </div>
+  </div>
+  <!--// End: container -->  <!--#include virtual="../Library/footer.shtml" --></div>
+
+
+<!-- 声明 引用-->
+<script src="../js/libs/cbs_userjs.js"></script>
+</body>
+</html>

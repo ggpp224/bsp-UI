@@ -1,0 +1,244 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta content="企业培训、企业内训、企业学习、企业大学、渠道大学、e-Learning、学习平台、学习系统、人才管理、岗位胜任力模型、Skillsoft、职业发展、培训管理、继任规划" name="keywords" />
+<meta content="企业商学院是集在线学习、能力测评、学习计划和培训管理为一体的企业学习整体解决方案。帮助企业提升内训、渠道培训、分支机构培训的整体水平，最大程度发掘培训价值，实现培训效益提升，全面促进企业人才培养。" name="description" />
+<title>CBS - 用户管理 - 查询结果</title>
+<!--系统样式-->
+<link href="../css/default.css" rel="stylesheet" type="text/css" />
+<!--皮肤样式  Blue-->
+<link href="../css/enterprise_blue.css" rel="stylesheet" type="text/css" />
+<!--[if IE]>
+<link type="text/css" rel="stylesheet" href="../css/ie.css" />
+<![endif]-->
+<!-- jQuery with plugins -->
+<link type="text/css" rel="stylesheet" href="../css/flight_calendar.css" />
+<script type="text/javascript" src="../js/libs/jquery-1.4.3.min.js"></script>
+<script type="text/javascript" src="../js/libs/dateinput.js"></script>
+<script type="text/javascript">
+         //表格换色
+		 $(document).ready(function(){
+         $(".listtab tr").mouseover(function(){ //如果鼠标移到class为表格的tr上时，执行函数
+         $(this).addClass("over");}).mouseout(function(){ //给这行添加class值为over，并且当鼠标一出该行时执行函数
+         $(this).removeClass("over");}) //移除该行的class
+		 //给class表格的偶数行添加class值为alt
+         $(".listtab tr:even").addClass("alt");
+		 });
+</script>
+</head>
+<body>
+<!-- Start:  Html  //-->
+<div id="content">
+   <!-- Start:  header //-->
+  <!--#include virtual="../Library/header_enterprise.shtml" -->
+  </div>
+  <!--// End: header-->
+  <!-- Start: container //-->
+  <div id ="container">
+    <div class="box admin_box">
+      <!-- 面包屑 --><div class="bread_crumbs">
+				  <a href="user.shtml">用户管理</a>&nbsp;&#8250;&nbsp;<a href="user_search.shtml" class="current">查询结果</a> </div>
+      <!-- 面包屑 End -->
+      <!-- 主内容 -->
+      <div class="content_body">
+        <!-- 功能索索 -->
+        <div class="features_search">
+          <form id="flight" method="post" action="#" class="search_From">
+            <dl>
+              <dt>
+                <label>用户姓名：</label>
+              </dt>
+              <dd>
+                <input type="text" class="default_txt" value="" name=""/>
+              </dd>
+              <dt>
+                <label>登录ID：</label>
+              </dt>
+              <dd>
+                <input type="text" class="default_txt" value="" name=""/>
+              </dd>
+            </dl>
+            <dl>
+              <dt>
+                <label>所属部门：</label>
+              </dt>
+              <dd>
+                <input type="text" class="default_txt overlay_in" rel="#select_departments" value="" name=""/>
+              </dd>
+              <dt>
+                <label>所属岗位：</label>
+              </dt>
+              <dd>
+                <input type="text" class="default_txt overlay_in" rel="#post" value="" name=""/>
+              </dd>
+              <dt>
+                <label>所属分组：</label>
+              </dt>
+              <dd>
+                <input type="text" class="default_txt overlay_in" rel="#group" value="" name=""/>
+              </dd>
+            </dl>
+            <dl>
+              <dt>
+                <label>入职日期：</label>
+              </dt>
+              <dd>
+                <label class="dateinput">
+                  <input type="date" name="arrival" value="起始时间" />
+                </label>
+                <label class="dateinput">
+                  <input type="date" name="departure" data-value="7" value="结束时间" />
+                </label>
+              </dd>
+              <dt>
+                <label>用户状态：</label>
+              </dt>
+              <dd>
+                <select name="" class="mini_sel">
+                  <option>全部</option>
+                  <option>有效</option>
+                  <option>无效</option>
+                </select>
+              </dd>
+              <dt >
+                <input type="button" name="" value=" 查询 " class="btn btn_default" onClick="location.href='user_search.shtml';" />
+              </dt>
+            </dl>
+          </form>
+        </div>
+        <!-- 功能搜索 End -->
+        <div  class="from_panel">
+          <form method="post" action="#" class="listtab_btn">
+            <input type="button" name="" class="btn btn_other" value="导出查询结果" />
+          </form>
+        </div>
+        <!-- 条件筛选 End -->
+        <table width="100%" border="0" cellspacing="0" cellpadding="0" class="default_table listtab">
+          <thead class="gradual_bg">
+            <tr >
+              <th>序号</th>
+              <th>用户状态</th>
+              <th width="50">姓名</th>
+              <th>登录ID</th>
+              <th>所属部门</th>
+              <th>所属岗位</th>
+              <th>所属分组</th>
+              <th><span class="data">入职日期</span> <a href="#" class="arrow_sort_drop" title="降序">降序</a> </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td><span class="finish_ico">有效</span></td>
+              <td>李冬冬</td>
+              <td>lidongdong</td>
+              <td>研发中心</td>
+              <td>项目经理</td>
+              <td>新员工</td>
+              <td><span class="timedate">2010-11-16</span></td>
+            </tr>
+          </tbody>
+        </table>
+        <!-- 翻页 -->
+        <div class="pagination">
+          <ul>
+            <li>每页显示<select>
+                                <option>10</option>
+
+                                <option>20</option>
+                                <option>30</option>
+                                <option>50</option>
+                            </select>
+              条&nbsp;&nbsp;1/25页 </li>
+            <li class="disablepage">上一页</li>
+            <li class="currentpage">1</li>
+            <li><a href="#">2</a></li>
+            <li><a href="#">3</a></li>
+            <li><a href="#">4</a></li>
+            <li><a href="#">5</a></li>
+            <li><a href="#">6</a></li>
+            <li><a href="#">7</a></li>
+            <li><a href="#">8</a></li>
+            <li><a href="#">9</a>...</li>
+            <li><a href="#">15</a></li>
+            <li><a href="#">16</a></li>
+            <li class="nextpage"><a href="#">下一页</a></li>
+          </ul>
+        </div>
+        <!-- 翻页 -->
+      </div>
+      <div class="clear"></div>
+      <!-- 主内容 End -->
+    </div>
+  </div>
+  <!--// End: container -->  <!--#include virtual="../Library/footer.shtml" --></div>
+<!--// End: Html -->
+<!-- 日期控件 -->
+<script type="text/javascript" src="../js/libs/userdate.js"></script>
+<!-- 日期控件 End -->
+<!-- 弹窗Jquery -->
+<script src="../js/libs/overlay.js"></script>
+<script src="../js/libs/toolbox_expose.js"></script>
+<script type="text/javascript">
+$(document).ready(function() {
+ 	var triggers = $(".overlay, .overlay_in, .click_icon").overlay({
+		 	  top: '12%',
+		  	  mask: {
+			  //zIndex: '9999',
+			  color: '#ebecff',
+			  //color: '#000000',
+			  loadSpeed: 200,
+			  opacity: 0.9
+		 		},
+		  	  closeOnClick: false
+		      //load: true //自动加载
+	  	       })
+
+ });
+</script>
+<!-- 弹窗Jquery End -->
+<!-- 选择所属部门 -->
+<div class="modal" id="select_departments">
+  <div class="default-overlay">
+    <h2>选择所属部门</h2>
+    <form  method="post" action="#" class="bigFrom">
+      <div class="y-scroll"> <img src="../images/temp_02.jpg" /> </div>
+      <div class="overlay_btn">
+        <input type="button" class="btn btn_submit close" value=" 保存 "/>
+        <input type="button" class="btn btn_reset nyroModalClose" value=" 取消 "/>
+      </div>
+    </form>
+  </div>
+</div>
+<!-- 选择所属部门 End -->
+<!-- 选择所属岗位 -->
+<div class="modal" id="post">
+  <div class="default-overlay">
+    <h2>选择所属岗位</h2>
+    <form  method="post" action="#" class="bigFrom">
+      <div class="y-scroll"> <img src="../images/temp_02.jpg" /> </div>
+      <div class="overlay_btn">
+        <input type="button" class="btn btn_submit close" value=" 保存 "/>
+        <input type="button" class="btn btn_reset nyroModalClose" value=" 取消 "/>
+      </div>
+    </form>
+  </div>
+</div>
+<!-- 选择所属岗位 End -->
+<!-- 选择所属分组 -->
+<div class="modal" id="group">
+  <div class="default-overlay">
+    <h2>选择所属分组</h2>
+    <form  method="post" action="#" class="bigFrom">
+      <div class="y-scroll"> <img src="../images/temp_02.jpg" /> </div>
+      <div class="overlay_btn">
+        <input type="button" class="btn btn_submit close" value=" 保存 "/>
+        <input type="button" class="btn btn_reset nyroModalClose" value=" 取消 "/>
+      </div>
+    </form>
+  </div>
+</div>
+<!-- 选择所属分组 End -->
+</body>
+</html>

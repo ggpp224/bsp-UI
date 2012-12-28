@@ -1,0 +1,78 @@
+.operation_nav                { color:#333; margin-top:-3px;}
+.operation_nav li             { float:left; zoom:1; display:inline;  margin:0 3px 0 0;  }
+.operation_nav li a           { display:inline-block; padding:2px 12px 2px 2px; border:1px solid #ccc; background:url(../images/btn_bg.png) repeat-x 0 -80px; color:#666; font-weight:bold; text-decoration:none; }
+.operation_nav li a:hover     { background-position:0 -113px; color:#333;}
+.operation_nav li span        { background:url(../images/icos.gif) no-repeat; width:16px; height:16px; display:block; float:left; margin:0 5px 0 2px; overflow:hidden; }
+
+li.importbtn                { float:right; }
+li.importbtn span           { background-position:0 -449px;}
+li.radiobtn  span           { background-position:-25px -449px; }
+li.checkboxbtn  span        { background-position:0 -469px; }
+li.textbtn  span            { background-position:-25px -469px; }
+li.judgebtn span            { background-position:-15px -578px; }
+li.separatebtn span         { background-position:-32px -754px; }
+ 
+#questionlist              { }
+ol.list                    { margin:0; padding:0; }
+ol.list li                 { list-style:none; }
+ol.list li h3              { line-height:2.2em; }
+ol.list li h3 i            { margin-right:.5em; }
+.question_panel            { padding:3px 0 3px 10px; position:relative; height:100%; border-bottom:1px dotted #dedede; }
+.separated                 { font-size:14px; border-bottom:1px solid #dedede; padding:8px 0 5px 5px; list-style:none;}
+
+/*点选题列表横向样式*/
+ul.subjectlist            { width:100%; }
+ul.subjectlist li         { list-style:upper-alpha inside; vertical-align:top; margin-bottom:3px; line-height:1.8em;}
+ul.subjectlist li.judgeli { width:20%; float:left; list-style:upper-alpha inside;}
+.h20                      { height:20px; }
+.subjectlist li input     { margin-top:-2px; margin-right:3px; }
+ul.subjectlist li .moreoptions{ display:inline-block; _display:inline; width:730px; vertical-align:top;}
+
+/*操作栏*/
+.single_side             { display:inline;  margin-right:10px;}
+.question_side           { position:absolute; top:5px; right:10px;}
+.question_side2          { position:relative; top:5px; right:10px;}
+
+.list .question_side li{ float:left; margin-left:2px; display:block; background:url(../images/btn_bg.png) repeat-x 0 -80px; vertical-align:middle; line-height:1em; }
+.single_side  li a,
+.question_side li a,
+.question_side2 li a      { width:18px; height:18px; display:block; background:url(../images/icos.gif) no-repeat; cursor:pointer; text-indent:-3000px; border:1px solid #ccc; }
+
+li.addli a               { background-position:-15px -796px;}
+li.upli a                { background-position:5px -773px; }
+li.downli a              { background-position:-14px -773px;}
+li.delrecord a           { background-position:4px  -796px;}
+
+li.editrecord a          { background-position:-33px  -796px; }
+li.okrecord              {  /* display:none; */ }
+li.okrecord   a          { background-position:-33px -773px; text-indent:19px; width:50px; line-height:18px;position:absolute; right:0px; top:0px; }
+/*li.okrecord   a 		 { float:left;}*/
+
+.question_side li a:hover{ background-color:#dedede; }
+.question_edit           { padding:5px; display:none;}
+.question_textarea       { width:500px; height:160px;}
+.selplane                { background:#e1efff; border:1px solid #b7c8ff; height:100%;  }
+ul.list li.selplane      { width:100%; padding-left:0;}
+/*--逐条编辑--*/
+.inlistup,
+.inlistdown,
+.inlistadd,
+.inlistdel               { display:inline-block; background:url(../images/btn_bg.png) repeat-x 0 -80px; width:16px; height:16px; border:1px solid #ccc; text-indent:-3000px; margin:0 2px;}
+.inlistup span,
+.inlistdown span,
+.inlistadd span,
+.inlistdel span         { width:16px; height:16px; display:block; background:url(../images/icos.gif) no-repeat; }
+.inlistup span          { background-position:-16px -797px; }
+.inlistdown span        { background-position:4px -774px; }
+.inlistadd span         { background-position:-15px -774px; }
+.inlistdel span         { background-position:4px  -797px; }
+
+.edit_list              { margin:0; padding:0; width:100%;}
+.edit_list dt           { float:left; width:50px; text-align:right; line-height:23px; }
+.edit_list dd.h30       { height:29px; }
+.edit_list dd.h30 input { margin-top:2px;}
+.edit_list dt.leftdd    { display:inline;  }
+.edit_list dd.linedd    { padding-left:50px; }
+.onebyone_list          { padding:0; margin:0; }
+ol.onebyone_list        { clear:both; width:90%; padding-bottom:10px;}
+ol.onebyone_list li { list-style:upper-alpha inside none; display:list-item;  text-indent:0; padding:0;  margin-bottom:5px; width:90%; }

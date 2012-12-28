@@ -1,0 +1,134 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta content="企业培训、企业内训、企业学习、企业大学、渠道大学、e-Learning、学习平台、学习系统、人才管理、岗位胜任力模型、Skillsoft、职业发展、培训管理、继任规划" name="keywords" />
+<meta content="企业商学院是集在线学习、能力测评、学习计划和培训管理为一体的企业学习整体解决方案。帮助企业提升内训、渠道培训、分支机构培训的整体水平，最大程度发掘培训价值，实现培训效益提升，全面促进企业人才培养。" name="description" />
+<title>CBS 首页</title>
+<!--系统样式-->
+<link href="../css/default.css" rel="stylesheet" type="text/css" />
+<!--皮肤样式  Blue-->
+<link href="../css/enterprise_blue.css" rel="stylesheet" type="text/css" />
+<link href="../css/nyroModal.css" rel="stylesheet" type="text/css" />
+<!--[if IE]>
+<link type="text/css" rel="stylesheet" href="../css/ie.css" />
+<![endif]-->
+<!-- jQuery with plugins -->
+<script type="text/javascript" src="../js/libs/jquery-1.4.3.min.js"></script>
+<script type="text/javascript" language="javascript" src="../js/libs/nyroModal1.6.2.min.js"></script>
+<script type="text/javascript">
+    $(document).ready(function() {
+	cbs.tablehover();//表单换行颜色 hover
+	//群删
+	$('#overlay_delall_bulletinboard').click(function(e) {
+			e.preventDefault();
+			$.fn.nyroModalManual({
+			    width:400,
+				url: 'overlay_delall_bulletinboard.shtml',
+				title:'批量删除'
+			});
+			return false;
+		});
+
+	//单删
+	$('.overlay_del_bulletinboard').nyroModal({
+		width: 400
+	});
+
+	});
+
+</script>
+</head>
+<body>
+<!-- Start:  Html  //-->
+<div id="content">
+<!-- Start:  header //-->
+<!--#include virtual="../Library/header_enterprise.shtml" -->
+  <!--// End: header-->
+  <!-- Start: container //-->
+  <div id="container">
+     <div class="box admin_box">
+      <!-- 面包屑 -->
+      <div class="bread_crumbs no_bg"></div>
+      <!-- // End 面包屑 -->
+
+      <!-- content_body -->
+      <div class="content_body">
+
+
+
+            <div class="details">
+
+                        <div class="titlename">
+                        <h3>问卷名称</h3>
+                        </div>
+
+                        <table width="100%" border="0"  class="default_table surveytab">
+                        <tr>
+                        <td align="right" width="10%">调查时效：</td>
+                        <td>2010/12/12 12:00 - 2011/01/12 12:00</td>
+                        <td align="right" width="10%">作答方式：</td>
+                        <td>实名/匿名</td>
+                        <td align="right" width="10%">调查结果：</td>
+                        <td>即时公开/调查结束后公开/不公开</td>
+                        </tr>
+
+                        <tr>
+                        <td align="right" valign="top">问卷描述：</td>
+                        <td colspan="5"><p>XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX</p></td>
+                        </tr>
+
+                        <tr>
+                        <td>&nbsp;</td>
+                        <td colspan="5">
+                        <p><span>1. 如何看待CBS的实施效果？</span></p>
+                        <p><label>A. <input type="radio" class="radio" name="one" checked="checked" />效果一般</label></p>
+                        <p><label>B. <input type="radio" class="radio" name="one" />效果不赖</label></p>
+                        <p><label>C. <input type="radio" class="radio" name="one" />效果还行</label></p>
+                        <p><label>D. <input type="radio" class="radio" name="one" />效果较差</label><input type="text" class="default_txt" value="" /></p>
+                        </td>
+                        </tr>
+
+                        <tr>
+                        <td>&nbsp;</td>
+                        <td colspan="5">
+                        <p><span>2. 对于CBS还有哪些建议？</span></p>
+                        <p><label>A. <input type="checkbox" class="checkbox" name="two" />增加课程数量</label></p>
+                        <p><label>B. <input type="checkbox" class="checkbox" name="two" />减少操作环节</label></p>
+                        <p><label>C. <input type="checkbox" class="checkbox" name="two" />做好售后服务</label></p>
+                        <p><label>D. <input type="checkbox" class="checkbox" name="two" />完善测评题库</label><input type="text" class="default_txt" value="" /></p>
+                        </td>
+                        </tr>
+
+                        <tr>
+                        <td>&nbsp;</td>
+                        <td colspan="5">
+                        <p><span>3. 使用CBS平台，有什么收获？</span></p>
+                        <p><textarea name="textarea" cols="100" rows="7" class="default_textarea"></textarea></p>
+                        </td>
+                        </tr>
+
+                        <tr>
+                        <td colspan="6" align="center">
+                        <input type="submit" class="btn btn_submit" onClick="location.href='bulletin_board_w2.shtml';" value=" 提交调查 "/>
+                        <input name="重置" type="reset" class="btn btn_reset" onClick="location.href='bulletin_board_w2.shtml';" value=" 返回 "/>
+                        </td>
+                        </tr>
+
+                        </table>
+
+
+                    </div>
+
+
+      </div>
+      <!-- 主内容 End -->
+    </div>
+  </div>
+  <!--// End: container -->
+  <!--#include virtual="../Library/footer.shtml" -->
+  </div>
+<!--// End: Html -->
+<script src="../js/libs/cbs_userjs.js"></script>
+</body>
+</html>

@@ -1,0 +1,180 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta content="企业培训、企业内训、企业学习、企业大学、渠道大学、e-Learning、学习平台、学习系统、人才管理、岗位胜任力模型、Skillsoft、职业发展、培训管理、继任规划" name="keywords" />
+<meta content="企业商学院是集在线学习、能力测评、学习计划和培训管理为一体的企业学习整体解决方案。帮助企业提升内训、渠道培训、分支机构培训的整体水平，最大程度发掘培训价值，实现培训效益提升，全面促进企业人才培养。" name="description" />
+<title>CBS - 用户管理 - 资源管理 - 新增</title>
+<!--系统样式-->
+<link href="../css/default.css" rel="stylesheet" type="text/css" />
+<link href="../css/enterprise_blue.css" rel="stylesheet" type="text/css" />
+<link href="../css/nyroModal.css" rel="stylesheet" type="text/css" />
+<!--[if IE]>
+<link type="text/css" rel="stylesheet" href="../css/ie.css" />
+<![endif]-->
+<!-- jQuery with plugins -->
+<script type="text/javascript" src="../js/libs/jquery-1.4.3.min.js"></script>
+
+<!-- jQuery tree -->
+<script type="text/javascript" src="../js/libs/jquery.cookie.js"></script>
+
+<script type="text/javascript" src="../js/libs/jquery.jstree.js"></script>
+<script language="javascript" type="text/javascript" src="../js/libs/nyroModal1.6.2.min.js"></script>
+
+<script type="text/javascript">
+    $(document).ready(function() {
+	cbs.accountnum();
+
+		$('.set_node').click(function(e){
+			e.preventDefault();
+			$.fn.nyroModalManual({
+			    width:600,
+				title:'设置归属节点',
+				url: 'overlay_ownership.shtml'
+
+			});
+		});
+
+	//默认隐藏其他语言输入框
+	$("#otherlanguage").hide();
+	$("#selanguages").change(function(){
+		if(this.value=="3"){
+			$("#otherlanguage").show();
+		}
+		else{
+			$("#otherlanguage").hide();
+		}
+	});
+
+ });
+</script>
+</head>
+<body>
+<!-- Start:  Html  //-->
+<div id="content">
+  <!-- Start:  header //-->
+  <!--#include virtual="../Library/header_enterprise.shtml" -->
+  <!--// End: header-->
+  <!-- Start: container //-->
+  <div id ="container">
+    <div class="box admin_box">
+      <!-- 面包屑 --><div class="bread_crumbs">
+
+                <a href="resources.shtml">资源管理</a>&nbsp;&#8250;&nbsp;
+                <a href="resources.shtml" >内容管理</a>&nbsp;&#8250;&nbsp;
+                <b>新增在线课件</b> </div>
+      <!-- 面包屑 End -->
+      <!-- STEP -->
+            <div class="stepbox">
+                <ul>
+                    <li class="step_frist step_finsh trisection ">
+                        <dl class="finish">
+                            <dt ></dt>
+                            <dd class="numberbox">1</dd>
+                            <dd class="title_text">输入基本信息</dd>
+                            <dd>已完成</dd>
+                        </dl>
+                    </li>
+                    <li class="step_second step_finsh trisection">
+                        <dl class="finish">
+                            <dt></dt>
+                            <dd class="numberbox">2</dd>
+                            <dd class="title_text">上传标准课件包</dd>
+                            <dd>已完成</dd>
+                        </dl>
+                    </li>
+                    <li class="step_waiting step_third trisection">
+                        <dl class="current">
+                            <dt></dt>
+                            <dd class="numberbox">3</dd>
+                            <dd class="title_text">补充课件信息</dd>
+                            <dd>请填写...</dd>
+                        </dl>
+                    </li>
+                </ul>
+            </div>
+      <!-- STEP End -->
+      <!-- 常规信息 -->
+      <form id="flight" method="post" action="resources.shtml" class="bigFrom padding28">
+        <h1 class="panel_title">补充课件信息</h1>
+        <table width="100%" class="default_table form_table top10 stup_table">
+        	<tbody>
+        		<tr>
+        			<th> <span>*</span> 所属分类：</th>
+        			<td colspan="2">
+        				<input type="text" class="default_txt input_wait" value="" name="input2" size="30" readonly="readonly" />
+        				<input name="Button" type="button" class="btn btn_default set_node" value="设置归属节点" />
+        				</td>
+        			</tr>
+        		<tr>
+        			<th> 语言属性：</th>
+        			<td colspan="2">
+        				<select name="select" class="mini_sel" id="selanguages">
+        					<option value="0">-请选择-</option>
+        					<option value="1">中文</option>
+        					<option value="2">英文</option>
+        					<option value="3">其他</option>
+                      </select>
+        				<input type="text" class="default_txt" value="" name="input3" id="otherlanguage"/>
+        				</td>
+        			</tr>
+        		<tr>
+        			<th rowspan="2" valign="top"> 课件图片：</th>
+        			<td width="356">
+        				<p class="sel_label">
+        					<label><input name="name1" type="radio" value="" checked="checked" />使用默认图片</label>
+        					<label><input name="name1" type="radio" value="" />使自主上传图片</label>
+        					</p>
+        				</td>
+        			<td width="308" rowspan="2" valign="bottom"><img src="../images/system/type_icon.gif" alt="" width="48" height="48" class="imgbox" /></td>
+        			</tr>
+        		<tr>
+        		  <td><input type="text" class="default_txt" value="" size="30"/>
+        					<input type="submit" class="btn btn_default" value="浏览"/>
+        					<input type="submit" class="btn btn_default" value="上传"/></td>
+      		  </tr>
+        		<tr>
+        			<th> 关键字：</th>
+        			<td colspan="2">
+        				<input type="text" class="default_txt" value="" name="input4" size="30" />
+						<font class="intoText">关键字请用","隔开</font>
+        				</td>
+        			</tr>
+        		<tr>
+        			<th valign="top"> 学习目标：</th>
+        			<td colspan="2">
+        				<p>
+        					<textarea name="textarea" cols="80"  class="default_textarea"></textarea>
+        					</p>
+        				</td>
+        			</tr>
+        		<tr>
+        			<th valign="top"> 适用对象：</th>
+        			<td colspan="2">
+        				<p>
+        					<textarea name="textarea2" cols="80"  class="default_textarea"></textarea>
+        					</p>
+        				</td>
+        			</tr>
+        		<tr>
+        			<th valign="top"> 课件描述：</th>
+        			<td colspan="2">
+        				<p>
+        					<textarea name="textarea3" cols="80"  class="default_textarea"></textarea>
+        					</p>
+        				</td>
+        			</tr>
+        		</tbody>
+        </table>
+        <div class="but_box edit_box">
+       	  <input type="submit" class="btn btn_feature" value="   保存   "/>
+        	<input name="重置" type="reset" class="btn btn_reset" value="  取消  " />
+        	</div>
+      </form>
+    </div>
+  </div>
+  <!--// End: container -->  <!--#include virtual="../Library/footer.shtml" --></div>
+
+<script src="../js/libs/cbs_userjs.js"></script>
+</body>
+</html>

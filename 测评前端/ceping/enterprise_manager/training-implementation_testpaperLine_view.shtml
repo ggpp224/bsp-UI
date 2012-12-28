@@ -1,0 +1,184 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta content="企业培训、企业内训、企业学习、企业大学、渠道大学、e-Learning、学习平台、学习系统、人才管理、岗位胜任力模型、Skillsoft、职业发展、培训管理、继任规划" name="keywords" />
+<meta content="企业商学院是集在线学习、能力测评、学习计划和培训管理为一体的企业学习整体解决方案。帮助企业提升内训、渠道培训、分支机构培训的整体水平，最大程度发掘培训价值，实现培训效益提升，全面促进企业人才培养。" name="description" />
+<title>cbs5 - 培训实施 － 发起线下测试</title>
+<!--系统样式-->
+<link href="../css/default.css" rel="stylesheet" type="text/css" />
+<!--皮肤样式  Blue-->
+<link href="../css/enterprise_blue.css" rel="stylesheet" type="text/css" />
+<link href="../css/nyroModal.css" rel="stylesheet" type="text/css" />
+<!--[if IE]>
+<link type="text/css" rel="stylesheet" href="../css/ie.css" />
+<![endif]-->
+<!-- jQuery with plugins -->
+<script type="text/javascript" src="../js/libs/jquery-1.4.3.min.js"></script>
+<script language="javascript" type="text/javascript" src="../js/libs/WdatePicker.js"></script>
+<script language="javascript" type="text/javascript" src="../js/libs/nyroModal1.6.2.min.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() {
+	  cbs.textScroll();
+
+
+	 $('.viewUser').click(function(e){
+			e.preventDefault();
+			$.fn.nyroModalManual({
+				width:600,
+				title:'预览测试对象',
+				url: 'overlay_user_view.shtml'
+			});
+		});
+
+	 });
+
+</script>
+</head>
+
+<body>
+<div id="content">
+  <!--#include virtual="../Library/header_enterprise.shtml" -->
+   <div id="container">
+      <div class="box admin_box">
+	    <!-- Start:面包屑 bread_crumbs //-->
+         <div class="bread_crumbs">
+			   <a href="index.shtml" class="home">首页</a>&nbsp;&#8250;&nbsp;
+               <a href="training-implementation.shtml">培训实施</a>&nbsp;&#8250;&nbsp;
+               <b>预览培训实施</b>
+      </div>
+          <div class="content_body padding28" >
+		  <h1 class="panel_title">基本信息</h1>
+          <form id="flight" method="post" action="training-implementation_testpaperLine_edit.shtml" class="bigFrom">
+            <table width="100%"  class="default_table form_table">
+              <tr>
+                <th colspan="2" valign="top">&nbsp;</th>
+              </tr>
+               <tr>
+                <th >实施类别：</th>
+                <td >线下测试</td>
+              </tr>
+              <tr>
+                <th> 实施名称：</th>
+                <td>XXXXXXXXXXXXXXX</td>
+              </tr>
+              <tr>
+                <th>关联计划：</th>
+                <td>XXXXXXXXXXXXXXXX</td>
+              </tr>
+              <tr>
+                <th valign="top"> <label>目标：</label>
+                </th>
+                <td><div class="p_cont"><p >XXXXXXXXXXXXXXXXX</p></div></td>
+              </tr>
+              <tr>
+                <th valign="top">描述：</th>
+                <td><div class="p_cont"><p >XXXXXXXXXXXXXXXXX</p></div></td>
+              </tr>
+              <tr>
+                <th>测试时间：</th>
+                <td>2011-12-11&nbsp;~&nbsp;
+                  2011-12-13</td>
+              </tr>
+              <tr>
+                <th ><span>* </span>测试地点：</th>
+                <td >北京</td>
+              </tr>
+              <tr>
+                <th ><span>*</span> 测试对象：</th>
+                <td><div class="divselect_btn">
+			<input name="按钮" type="button" class="btn btn_default viewUser" value="预览测试对象"/>
+			  </div>
+			已选人数：<b class="wrongfont">12</b></td>
+              </tr>
+              <tr>
+                <th >&nbsp;</th>
+                <td class="no_padding"><div class="h160 divselect borderall">
+            	<table width="100%" border="0" height="100%" class="sel_tabbox">
+            		<tr>
+            			<th >所属部门：</th>
+            			<td valign="top">
+            				<ul class="dept_list">
+            					<li >
+            						<span >[在线课件]时间管理技巧11111111111112222222222</span></li>
+            					<li><span>目录节点字数不一样多</span></li>
+            					</ul>
+            				</td>
+            			</tr>
+            		<tr>
+            			<th>所属岗位：</th>
+            			<td valign="top">
+            				<ul class="dept_list">
+            					<li>
+            						<span>目录字数比较多</span></li>
+            					<li>
+            						<span>目录字数比较多</span></li>
+            					</ul>
+            				</td>
+            			</tr>
+            		<tr>
+            			<th >所属岗位：</th>
+            			<td valign="top">
+            				<ul class="dept_list">
+            					<li>
+            						<span>岗位名称</span></li>
+            					<li>
+            						<span>岗位名称</span></li>
+            					<li>
+            						<span>岗位名称</span></li>
+            					</ul>
+            				</td>
+            			</tr>
+            		<tr>
+            			<th >个人用户：</th>
+            			<td valign="top">
+            				<ul>
+            					<li>学员姓名
+            						</li>
+            					<li>学员姓名
+            						</li>
+            					<li>学员姓名
+            						</li>
+            					<li>学员姓名
+            						</li>
+            					</ul>
+            				</td>
+            			</tr>
+            		</table>
+            </div></td>
+              </tr>
+              <tr>
+                <th><span>* </span>通过条件：</th>
+                <td><label>达标分数：<b class="lightfont">60</b></label>
+                  <label>优秀分数：<b class="rightfont">90</b></label></td>
+              </tr>
+              <tr>
+                <th colspan="2">&nbsp;</th>
+              </tr>
+            </table>
+           <h1 class="panel_title">试卷及培训反馈</h1>
+        <table width="100%" border="0"  class="default_table form_table top10">
+          <tr>
+            <th >选择问卷：</th>
+            <td> XXXXXXXXX</td>
+          </tr>
+          <tr>
+            <th >&nbsp;</th>
+            <td>培训完成后 <b class="rightfont right30">10</b> 天内完成
+                强制反馈：<b class="rightfont">是</b></td>
+          </tr>
+        </table>
+            <div class="btn_box edit_box ">
+      <input name="保存" type="submit" class="btn btn_submit"  value="编 辑" /> <input name="返 回" type="reset" class="btn btn_reset"  onclick="location.href='training-implementation.shtml';" value="返 回" />
+			</div>
+            </form>
+		 </div>
+	  </div>
+   </div>
+   <!--#include virtual="../Library/footer.shtml" -->
+</div>
+<script type="text/javascript" src="../js/libs/jquery.cookie.js"></script>
+<script type="text/javascript" src="../js/libs/jquery.hotkeys.js"></script>
+<script type="text/javascript" src="../js/libs/jquery.jstree.js"></script>
+<script src="../js/libs/cbs_userjs.js"></script>
+</body>
+</html>

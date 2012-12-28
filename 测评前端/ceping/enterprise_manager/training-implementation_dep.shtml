@@ -1,0 +1,65 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta content="企业培训、企业内训、企业学习、企业大学、渠道大学、e-Learning、学习平台、学习系统、人才管理、岗位胜任力模型、Skillsoft、职业发展、培训管理、继任规划" name="keywords" />
+<meta content="企业商学院是集在线学习、能力测评、学习计划和培训管理为一体的企业学习整体解决方案。帮助企业提升内训、渠道培训、分支机构培训的整体水平，最大程度发掘培训价值，实现培训效益提升，全面促进企业人才培养。" name="description" />
+<title>企业商学院 - 培训计划 - 按部门查看</title>
+<!--系统样式-->
+<link href="../css/default.css" rel="stylesheet" type="text/css" />
+<!--皮肤样式  Blue-->
+<link href="../css/enterprise_blue.css" rel="stylesheet" type="text/css" />
+<link href="../css/nyroModal.css" rel="stylesheet" type="text/css" />
+<style type="text/css">
+ .selbtn{z-index:9999;}
+</style>
+<!--[if IE]>
+<link type="text/css" rel="stylesheet" href="../css/ie.css" />
+<![endif]-->
+<!-- jQuery with plugins -->
+
+</head>
+<body>
+<div id="content">
+  <!--#include virtual="../Library/header_enterprise.shtml" -->
+  <!-- Start: container //-->
+  <div id="container">
+    <div class="box admin_box">
+	<!-- 面包屑 --><div class="bread_crumbs">
+	<a href="training-implementation_online_ks.shtml" >培训实施</a>&nbsp;&#8250;&nbsp;
+	<b id="mTitle">按部门查看</b></div>
+
+		<div class="sidebar boxborder">
+		<div class="selbox_bg" >
+		<div class="selbtn">
+		<button class="btn btn_default" ><span class="menudown"></span>选择查看方式</button><ul class="newspecial_menu" style="width:130px;z-index:100000">
+		<li><a href="training-implementation_online_ks.shtml">默认全部</a></li>
+		<li><a href="training-implementation_dep.shtml?termType=1">按部门查看</a></li>
+		<li><a href="training-implementation_dep.shtml?termType=2">按岗位查看</a></li>
+		<li><a href="training-implementation_dep.shtml?termType=3">按分组查看</a></li>
+		</ul>
+		</div>
+		</div>
+		<div id="tree"></div>
+		</div>
+       <!--//End:sidebar -->
+      <div class="content_r">
+        <!--Sart: 功能索索 //-->
+        <div  class="from_panel">
+		<div id="load_resoucesList"></div>
+		<!-- 功能搜索 End -->
+        </div>
+        <!-- 翻页 -->
+        <div class="pagination"></div>
+        <!-- 翻页 -->
+      </div>
+      <div class="clear"></div>
+      <!-- 主内容 End -->
+    </div>
+  </div>
+  <!--// End: container -->
+  <!--#include virtual="../Library/footer.shtml" --></div>
+<!-- 声明 引用-->
+<script data-main="../js/main-enterprise_manager" src="../js/libs/require.js"></script>
+</body>
+</html>

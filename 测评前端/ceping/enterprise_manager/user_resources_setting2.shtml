@@ -1,0 +1,150 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta content="企业培训、企业内训、企业学习、企业大学、渠道大学、e-Learning、学习平台、学习系统、人才管理、岗位胜任力模型、Skillsoft、职业发展、培训管理、继任规划" name="keywords" />
+<meta content="企业商学院是集在线学习、能力测评、学习计划和培训管理为一体的企业学习整体解决方案。帮助企业提升内训、渠道培训、分支机构培训的整体水平，最大程度发掘培训价值，实现培训效益提升，全面促进企业人才培养。" name="description" />
+<title>CBS -资源管理- 批量设置资源</title>
+<!--系统样式-->
+<link href="../css/default.css" rel="stylesheet" type="text/css" />
+<!--皮肤样式  Blue-->
+<link href="../css/enterprise_blue.css" rel="stylesheet" type="text/css" />
+<link href="../css/nyroModal.css" rel="stylesheet" type="text/css" />
+<!--[if IE]>
+<link type="text/css" rel="stylesheet" href="../css/ie.css" />
+<![endif]-->
+<!-- jQuery with plugins -->
+<script type="text/javascript" src="../js/libs/jquery-1.4.3.min.js"></script>
+<!-- jQuery tree -->
+<script type="text/javascript" src="../js/libs/jquery.cookie.js"></script>
+
+<script type="text/javascript" src="../js/libs/jquery.jstree.js"></script>
+
+<script language="javascript" type="text/javascript" src="../js/libs/nyroModal1.6.2.min.js"></script>
+<script type="text/javascript">
+    $(document).ready(function() {
+	cbs.tablehover();//表单换行颜色 hovercbs.selbtnmenu(); //多选按钮
+// load html data from file
+	$("#load_html_data").jstree({
+		"html_data" : {
+			"ajax" : {
+				"url" : "data/data_resources.shtml",
+				"data" : function (n) {
+					return { id : n.attr ? n.attr("id") : 0 };
+				}
+			}
+		},
+		"plugins" : [ "themes", "html_data" ,"checkbox","contextmenu","cookies","ui","crrm","dnd"]
+
+	});
+
+    //重设资源
+	$('.resetClass').click(function(e) {
+			e.preventDefault();
+			$.fn.nyroModalManual({
+			    width:420,
+				title:"选择归属目录节点",
+				url: 'overlay_class_reset.shtml'
+			});
+		return false;
+	});
+
+    //选择资源
+	$('.SelResources').click(function(e) {
+			e.preventDefault();
+			$.fn.nyroModalManual({
+			    width:600,
+				title:"选择资源",
+				url: 'overlay_resources_sel.shtml'
+			});
+		return false;
+	});
+
+
+ });
+</script>
+</head>
+<body>
+<!-- Start:  Html  //-->
+<div id="content">
+  <!-- Start:  header //-->
+  <!--#include virtual="../Library/header_enterprise.shtml" -->
+  <!--// End: header-->
+  <!-- Start: container -->
+  <div id ="container">
+    <!-- Start:admin_box //-->
+    <div class="box admin_box">
+      <!-- Start:面包屑 //--><div class="bread_crumbs">
+				  <a href="resources.shtml">资源管理</a>&nbsp;&#8250;&nbsp;<b>批量调整分类</b> </div>
+      <!-- //End:面包屑  -->
+      <!-- =========================Start:sidebar//================================-->
+      <div class="sidebar boxborder"> <!-- #BeginLibraryItem "/Library/treenav.lbi" -->
+        <!-- ================tree_menu==========-->
+        <ul class="tree_menu">
+          <li><a href="overlay_child_add.shtml" rel="#overlay" class="tree_add_child click_icon" title="增加目录">增加目录</a></li>
+          <li><a href="#" class="tree_up" title="上移">上移</a></li>
+          <li><a href="#" class="tree_down" title="下移">下移</a></li>
+          <li><a href="#" class="tree_left" title="左移">左移</a></li>
+          <li><a href="#" class="tree_right" title="右移">右移</a></li>
+          <li><a href="overlay_dep_edit.shtml" rel="#overlay" class="tree_edit click_icon" title="编辑">编辑</a></li>
+          <li><a href="overlay_delsector.shtml" rel="#overlay" class="tree_dell click_icon" title="删除">删除</a></li>
+          <li><a href="overlay_dep_import.shtml" rel="#overlay" class="tree_imp click_icon" title="导入目录树">导入目录树</a></li>
+        </ul>
+        <div id="load_html_data"></div>
+        <!-- #EndLibraryItem --> </div>
+      <!--//End:sidebar-->
+      <div class="content_r">
+        <!-- tab切换 //-->
+        <div class="page_switch">
+          <ul class="tabpanel">
+            <li class="curent"><a href="user_resources_setting2.shtml">页面操作</a></li>
+            <li><a href="user_resources_setting.shtml">Excel导入关联</a></li>
+          </ul>
+        </div>
+        <!--  // End：tab切换 -->
+        <div class="tab_container">
+          <div class="tab_content">
+            <form method="post" action="#" class="bigFrom">
+              <table width="100%" class="default_table form_table top10">
+                <tr>
+                  <th align="right">选定目录：</th>
+                  <td><input name="input" type="text" class="default_txt" value="一级目录&#8250;二级目录" size="33"/>
+
+                    <input name="Button2" type="button" class="btn btn_default resetClass" value="重设" />
+                   </td>
+                </tr>
+                <tr>
+                  <th align="right" valign="top">选定资源：</th>
+                  <td><div class="selminibox">
+                      <select name="select2" size="10" class="fully" >
+                        <option>选定资源</option>
+                      </select>
+                    </div>
+
+                    <input name="Button" type="button" class="btn btn_default SelResources" value="选择资源" /></td>
+                </tr>
+                <tr>
+                  <td colspan="2" align="right" valign="top">&nbsp;</td>
+                </tr>
+                <tr>
+                  <th >&nbsp;</th>
+                  <td >
+                  <input type="button" class="btn btn_feature" value="将选定资源调整到选定目录"/>
+                    <input name="按钮" type="button" class="btn btn_default" value="取消"/></td>
+                </tr>
+              </table>
+            </form>
+          </div>
+          <!--// End:tab1-->
+
+        </div>
+        <!--//End:tab_container-->
+      </div>
+      <div class="clear"></div>
+      <!-- 主内容 End -->
+    </div>
+  </div>
+  <!--// End: container -->  <!--#include virtual="../Library/footer.shtml" --></div>
+<script src="../js/libs/cbs_userjs.js"></script>
+</body>
+</html>

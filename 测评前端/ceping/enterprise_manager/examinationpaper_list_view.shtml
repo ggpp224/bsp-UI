@@ -1,0 +1,81 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta
+	content="企业培训、企业内训、企业学习、企业大学、渠道大学、e-Learning、学习平台、学习系统、人才管理、岗位胜任力模型、Skillsoft、职业发展、培训管理、继任规划"
+	name="keywords" />
+<meta
+	content="企业商学院是集在线学习、能力测评、学习计划和培训管理为一体的企业学习整体解决方案。帮助企业提升内训、渠道培训、分支机构培训的整体水平，最大程度发掘培训价值，实现培训效益提升，全面促进企业人才培养。"
+	name="description" />
+<title>新增问卷 — CBS -需求管理-问卷调查</title>
+<link href="../css/default.css" rel="stylesheet" type="text/css" />
+<!--皮肤样式  Blue-->
+<link href="../css/enterprise_blue.css" rel="stylesheet" type="text/css" />
+<link href="../css/suiji.css" rel="stylesheet" type="text/css" />
+<link href="../css/nyroModal.css" rel="stylesheet" type="text/css" />
+<!--[if IE]>
+<link type="text/css" rel="stylesheet" href="../css/ie.css" />
+<![endif]-->
+<style>
+.tab_selct ul {zoom:1;overflow:Hidden}
+.tab_selct ul li{width:24px;height:27px;float:left;}
+.textedit {
+    background: url("../images/help/help_img_111.gif") no-repeat scroll center center transparent;
+    display: inline;
+    padding: 12px;
+}
+div#nyroModalFull div#nyroModalWrapper {
+    background: none repeat scroll 0 0 #FFFFFF;
+    border: 8px solid rgba(0, 0, 0, 0.6);
+}
+div#nyroModalFull div#nyroModalWrapper h2#nyroModalTitle {
+    background-color: #2099C4;
+    border: 1px solid #3B5998;
+    color: #FFFFFF;
+    font-family: "Microsoft YaHei","宋体";
+    font-size: 16px;
+    margin-bottom: 0;
+    padding: 8px 10px;
+}
+div#nyroModalFull div#nyroModalWrapper a#closeBut {
+    background: url("../images/icos.gif") no-repeat scroll 2px -576px #2099C4;
+    border: 1px solid #2099C4;
+    cursor: pointer;
+    height: 17px;
+    position: absolute;
+    right: 10px;
+    text-indent: -3000px;
+    top: 11px;
+    width: 17px;
+}
+.online_test {font-size:12px; clear:both; padding:0 0 10px; line-height:25px; margin-bottom:10px;}
+/*.online_test li { display:block;padding-left: 3.3em;text-indent: -2.8em;}*/
+
+.online_test_one { display:block; clear:both; width:920px;}
+
+
+</style>
+</head>
+<body>
+	<!-- Start:  Html  //-->
+	<div id="content">
+		<!--Start:header //-->
+		<!--#include virtual="../Library/header_enterprise.shtml" -->
+
+		<div id="container">
+			<div class="box admin_box exammanage_Preview">
+				<div class="view_titlewords">预览试卷</div>
+				<div id="view_article" class="view_article">
+					
+				</div>
+			</div>
+			<!--//end:box-->
+		</div>
+		<!--//end:container-->
+		<!--#include virtual="../Library/footer.shtml" -->
+	</div>
+	<!--//end:content-->
+	<script data-main="../js/main-enterprise_manager" src="../js/libs/require.js"></script>
+</body>
+</html>

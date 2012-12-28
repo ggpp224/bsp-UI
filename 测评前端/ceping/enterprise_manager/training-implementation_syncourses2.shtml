@@ -1,0 +1,173 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta content="企业培训、企业内训、企业学习、企业大学、渠道大学、e-Learning、学习平台、学习系统、人才管理、岗位胜任力模型、Skillsoft、职业发展、培训管理、继任规划" name="keywords" />
+<meta content="企业商学院是集在线学习、能力测评、学习计划和培训管理为一体的企业学习整体解决方案。帮助企业提升内训、渠道培训、分支机构培训的整体水平，最大程度发掘培训价值，实现培训效益提升，全面促进企业人才培养。" name="description" />
+<title>CBS - 用户管理 - 资源管理 - 新增</title>
+<!--系统样式-->
+<link href="../css/default.css" rel="stylesheet" type="text/css" />
+<!--皮肤样式  Blue-->
+<link href="../css/enterprise_blue.css" rel="stylesheet" type="text/css" />
+<link href="../css/nyroModal.css" rel="stylesheet" type="text/css" />
+<!--[if IE]>
+<link type="text/css" rel="stylesheet" href="../css/ie.css" />
+<![endif]-->
+<!-- jQuery with plugins -->
+<script type="text/javascript" src="../js/libs/jquery-1.4.3.min.js"></script>
+<script type="text/javascript" src="../js/libs/jquery.cookie.js"></script>
+<script type="text/javascript" src="../js/libs/jquery.jstree.js"></script>
+<script language="javascript" type="text/javascript" src="../js/libs/WdatePicker.js"></script>
+<script language="javascript" type="text/javascript" src="../js/libs/nyroModal1.6.2.min.js"></script>
+<script type="text/javascript">
+    $(document).ready(function() {
+	cbs.textScroll();
+	$('.setUser').click(function(e){
+			 e.preventDefault();
+			$.fn.nyroModalManual({
+				width:715,
+				title:'设置培训对象',
+				url: 'overlay_training_setting.shtml'
+	      });
+			return false;
+	});
+
+			//导入
+	 $('.imput_user').click(function(e){
+		 e.preventDefault();
+			$.fn.nyroModalManual({
+				width:380,
+				title:'Excel导入人员',
+				url: 'overlay_dep_import.shtml'
+			});
+
+		return false;
+	});
+
+	$('.viewUser').click(function(e){
+			e.preventDefault();
+			$.fn.nyroModalManual({
+				width:600,
+				title:'预览培训对象',
+				url: 'overlay_user_view.shtml'
+			});
+		});
+
+ });
+</script>
+</head>
+<body>
+<!-- Start:  Html  //-->
+<div id="content">
+  <!-- Start:  header //-->
+  <!--#include virtual="../Library/header_enterprise.shtml" -->
+  <!--// End: header-->
+  <!-- Start: container //-->
+  <div id ="container">
+    <div class="box admin_box miniheight">
+      <!-- 面包屑 --><div class="bread_crumbs">
+
+               <a href="training-implementation.shtml">培训实施</a>&nbsp;&#8250;&nbsp;
+               <b>发起在线同步课程</b>
+               </div>
+      <!-- 面包屑 End -->
+      <!-- STEP -->
+            <div class="stepbox">
+                <ul>
+                    <li class="step_frist trisection step_finsh">
+                        <dl class="finish">
+                            <dt></dt>
+                            <dd class="numberbox">1</dd>
+                            <dd class="title_text">输入基本信息</dd>
+                            <dd>已完成！</dd>
+                        </dl>
+                    </li>
+                    <li class="step_second step_waiting trisection">
+                        <dl class="current">
+                            <dt></dt>
+                            <dd class="numberbox">2</dd>
+                            <dd class="title_text">设置培训对象</dd>
+                            <dd>请填写...</dd>
+                        </dl>
+                    </li>
+                    <li class="step_third trisection">
+                        <dl>
+                            <dt></dt>
+                            <dd class="numberbox">3</dd>
+                            <dd class="title_text">培训资料和培训反馈设置</dd>
+                            <dd>等待中</dd>
+                        </dl>
+                    </li>
+                </ul>
+            </div>
+      <!-- STEP End -->
+     <div class="content_body padding28" >
+        <h1 class="panel_title">设置培训对象</h1>
+         <form id="flight" method="post" action="#" class="bigFrom">
+         <table width="100%"  class="default_table form_table top10">
+           <tr>
+                <th rowspan="2" valign="top"><span>*</span>培训对象：</th>
+                <td><div class="divselect_btn">
+                  <input name="按钮" type="button" class="btn btn_default viewUser" value="预览培训对象"/>
+                  <input type="submit" class="btn btn_default" rel="#select_departments" value="清空"/>
+                  <input type="submit" class="btn btn_default imput_user" value="Excel导入人员"/>
+                </div>
+                  <input type="submit" class="btn btn_default setUser" value="设置"/>
+                  <label class="seltextbox">&nbsp;已选人数：<b class="wrongfont">100</b></label></td>
+              </tr>
+              <tr>
+                <td><div class="divselect borderall">
+                  <table width="100%" border="0" class="sel_tabbox">
+                    <tr>
+                      <th >所属部门：</th>
+                      <td valign="top">
+                      <ul class="dept_list">
+                        <li><a href="#" class="delico"  title="从列表删除">从列表删除</a><span>目录节点字数比较多目录节点字数比较多</span></li>
+                        <li><a href="#" class="delico"  title="从列表删除">从列表删除</a><span>目录节点字数比较多目录节点字数比较多</span></li>
+                      </ul>
+                      </td>
+                    </tr>
+                    <tr>
+                      <th>所属岗位：</th>
+                      <td valign="top">
+                      <ul class="dept_list">
+                        <li><a href="#" class="delico"  title="从列表删除">从列表删除</a><span>目录节点字数比较多目录节点字数比较多</span></li>
+                        <li><a href="#" class="delico"  title="从列表删除">从列表删除</a><span>目录节点字数比较多目录节点字数比较多</span></li>
+                      </ul>
+                      </td>
+                    </tr>
+                    <tr>
+                      <th >所属岗位：</th>
+                      <td valign="top">
+                      <ul class="dept_list">
+                        <li><a href="#" class="delico"  title="从列表删除">从列表删除</a><span>目录节点字数比较多目录节点字数比较多</span></li>
+                        <li><a href="#" class="delico"  title="从列表删除">从列表删除</a><span>目录节点字数比较多目录节点字数比较多</span></li>
+                      </ul>
+                      </td>
+                    </tr>
+                    <tr>
+                      <th >个人用户：</th>
+                      <td valign="top">
+                      <ul class="dept_list">
+                        <li><a href="#" class="delico"  title="从列表删除">从列表删除</a><span>学员姓名</span></li>
+                        <li><a href="#" class="delico"  title="从列表删除">从列表删除</a><span>学员姓名</span></li>
+                      </ul>
+                      </td>
+                    </tr>
+                  </table>
+                </div></td>
+              </tr>
+
+              </table>
+           <div class="btn_box edit_box">
+          <input name="按钮" type="button" class="btn btn_feature " onclick="location.href='training-implementation_syncourses3.shtml'" value=" 保存并进入下一步 "/>
+          <input name="重置" type="reset" class="btn btn_reset " value="返回上一步" onclick="location.href='training-implementation_syncourses1.shtml'" />
+        </div>
+      </form>
+      </div>
+    </div>
+  </div>
+  <!--// End: container -->  <!--#include virtual="../Library/footer.shtml" --></div>
+<script src="../js/libs/cbs_userjs.js"></script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<script type="text/javascript">
+    $(document).ready(function() {	
+	//恢复权限
+	$('#overlay_nuke_resume_succ').click(function(e) {
+			e.preventDefault();
+			$.fn.nyroModalManual({
+			    width:400,
+				url: 'overlay_nuke_resume_succ.shtml',
+				title:'恢复权限'
+			});
+			return false;
+		});
+ });
+</script>
+ 	<form id="sampleform" method="post" action="#" class="bigFrom">
+	<div class="overlay_interaction">
+        <span class="icon_bigmessage"></span>
+        <div class="overlay_box">
+        <p>确定恢复&nbsp;<b>黄云科</b>&nbsp;的发言权限吗？</p>
+        <p><input type="checkbox" name="message" id="message" />&nbsp;<label for="message">通知作者</label></p>
+        </div>
+        <div class="clearer"></div>
+   </div>
+   <div class="overlay_btn">
+    <input type="button" class="btn btn_submit" name="overlay_nuke_resume_succ" id="overlay_nuke_resume_succ" value=" 确定 "/> 
+    <input type="button" class="btn btn_reset overlayClose" value=" 取消 "/>
+	</div> 
+    </form>
+
+
+
+    

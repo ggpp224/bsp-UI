@@ -1,0 +1,110 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta content="企业培训、企业内训、企业学习、企业大学、渠道大学、e-Learning、学习平台、学习系统、人才管理、岗位胜任力模型、Skillsoft、职业发展、培训管理、继任规划" name="keywords" />
+<meta content="企业商学院是集在线学习、能力测评、学习计划和培训管理为一体的企业学习整体解决方案。帮助企业提升内训、渠道培训、分支机构培训的整体水平，最大程度发掘培训价值，实现培训效益提升，全面促进企业人才培养。" name="description" />
+<title>CBS - 需求管理-查看调查结果</title>
+</head>
+<!--系统样式-->
+<link href="../css/default.css" rel="stylesheet" type="text/css" />
+<!--皮肤样式  Blue-->
+<link href="../css/enterprise_blue.css" rel="stylesheet" type="text/css" />
+<!--[if IE]>
+<link type="text/css" rel="stylesheet" href="../css/ie.css" />
+<![endif]-->
+<!-- jQuery with plugins -->
+<script type="text/javascript" src="../js/libs/jquery-1.4.3.min.js"></script>
+</head>
+<body>
+<!-- Start:  Html  //-->
+<div id="content">
+	<!--#include virtual="../Library/header_enterprise.shtml" -->
+     <div id ="container">
+	  <div class="box admin_box">
+	   <!-- 面包屑 -->
+	     <div class="bread_crumbs">
+
+			 <a href="requirement.shtml">需求管理</a>&nbsp;&#8250;&nbsp;
+			 <a href="requirement.shtml">问卷管理</a>&nbsp;&#8250;&nbsp;
+             <a href="survey_results_personal.shtml">按个人查看</a>&nbsp;&#8250;&nbsp;
+			<b>查看调查结果</b>
+	     </div><!-- //End:面包屑 -->
+		  <div class="content_body padding28">
+           <h1 class="panel_title top10" >个人信息</h1>
+		  	<table width="100%" border="0" class="default_table form_table borderall">
+		  		<tr>
+		  		  <td colspan="4">&nbsp;</td>
+	  		  </tr>
+		  		<tr>
+		  			<th>姓名：</th>
+		  			<td>XXXXX </td>
+		  			<th>登录ID：</th>
+		  			<td>1000012</td>
+	  			</tr>
+		  		<tr>
+		  		  <th>提交时间：</th>
+		  		  <td colspan="3">2010-12-12 12:34 </td>
+	  		  </tr>
+		  		<tr>
+		  			<th>所属部门：</th>
+		  			<td>部门名称</td>
+		  			<th>所属岗位：</th>
+		  			<td>岗位名称</td>
+	  			</tr>
+                <tr>
+		  		  <th>所属分组：</th>
+		  		  <td>&nbsp;</td>
+		  		  <th>&nbsp;</th>
+		  		  <td>&nbsp;</td>
+	  		  </tr>
+              <tr>
+		  		  <td colspan="4">&nbsp;</td>
+	  		  </tr>
+		  		</table>
+                <h1 class="panel_title top10" >详细</h1>
+                     <table width="100%" border="0" class="default_table borderall mini_listtab">
+<thead class="gradual_bg">
+							 <tr>
+							  <th width="30" class="fristtd">序号</th>
+							  <th>题目</th>
+							  <th>结果</th>
+						     </tr>
+						</thead>
+						<tbody>
+						<tr>
+							 <td align="center" >1</td>
+							 <td >单选-您对本次培训的总体评价是</td>
+							 <td>满意</td>
+						    </tr>
+						<tr>
+							 <td align="center">2</td>
+							 <td >多选-最喜欢的运动是</td>
+							 <td>足球、篮球、排球<br />
+							 </td>
+						    </tr>
+						<tr>
+							 <td align="center">3</td>
+							 <td >填空-您认为应该在哪些方面提升培训质量</td>
+							 <td>学习平台、培训管理<span class="progressBar"></span></td>
+						    </tr>
+						<tr>
+							 <td align="center">4</td>
+							 <td >问答-您认为培训管理部门应该在哪些方面改进</td>
+							 <td>参与调查者反馈文本<span class="progressBar"></span></td>
+						    </tr>
+						</tbody>
+				</table>
+
+
+			<div class="but_box edit_box top10">
+			   <input name="重置" type="reset" class="btn btn_reset" value=" 返回 "  onclick="location.href='survey_results_personal.shtml'"/>
+			</div>
+		  </div><!--//end:调查问券创建区-->
+       </div><!--//end:box-->
+	  </div><!--//end:container-->
+	  <!--#include virtual="../Library/footer.shtml" -->
+   </div><!--//end:content-->
+   <script type="text/javascript" src="../js/libs/jquery.progressbar.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,67 @@
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+ <div class="exportbtn">
+        <ul>        
+          <li><a href="#" class="expbtn">导出</a></li>
+        </ul>
+      </div>
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class="default_table listtab">
+  <thead class="gradual_bg">
+    <tr>
+      <th class="th_center">月份</th>
+      <th>培训实施名称</th>
+      <th>类别</th>
+      <th>开始时间</th>
+      <th>截止时间</th>
+      <th>参与人数</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td rowspan="3" align="center">2011年01月<br />
+      培训活动数：<a href="#">3</a></td>
+      <td>时间管理技能在线测试</td>
+      <td>在线测试</td>
+      <td>2011-01-01 12:30</td>
+      <td>2011-01-01 13:30</td>
+      <td>1.5</td>
+    </tr>
+    <tr>
+      <td>初级技工基础知识测试</td>
+      <td>在线测试</td>
+      <td>2011-01-01 12:30</td>
+      <td>2011-01-01 13:30</td>
+      <td>1.5</td>
+    </tr>
+    <tr>
+      <td>时间管理技巧培训</td>
+      <td>在线测试</td>
+      <td>2011-01-01 12:30</td>
+      <td>2011-01-01 13:30</td>
+      <td>1.5</td>
+    </tr>
+    <tr>
+      <td rowspan="3" align="center">2011年02月<br />
+        培训活动数：<a href="#">3</a></td>
+      <td>时间管理技能在线测试</td>
+      <td>在线测试</td>
+      <td>2011-01-01 12:30</td>
+      <td>2011-01-01 13:30</td>
+      <td>1.5</td>
+    </tr>
+    <tr>
+      <td>初级技工基础知识测试</td>
+      <td>在线测试</td>
+      <td>2011-01-01 12:30</td>
+      <td>2011-01-01 13:30</td>
+      <td>1.5</td>
+    </tr>
+    <tr>
+      <td>时间管理技巧培训</td>
+      <td>在线测试</td>
+      <td>2011-01-01 12:30</td>
+      <td>2011-01-01 13:30</td>
+      <td>1.5</td>
+    </tr>
+  </tbody>
+</table>
+

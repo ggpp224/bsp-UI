@@ -1,0 +1,9 @@
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<h2>选择所属分组</h2>
+<form  method="post" action="#" class="bigFrom">
+  <div class="y-scroll"> <img src="../images/temp_02.jpg" /> </div>
+  <div class="overlay_btn">
+    <input type="button" class="btn btn_submit close" value=" 确定 "/>
+    <input type="button" class="btn btn_reset nyroModalClose" value=" 取消 "/>
+  </div>
+</form>

@@ -1,0 +1,36 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<div class="overbody">
+  <div class="features_search">
+	   <input type="text" class="default_txt" size="32"  onfocus="if (value==defaultValue)value=''" onblur="if(!value)value=defaultValue" value="请输入部门，关键字"/>
+	   <input type="submit" class="btn btn_reset" value="查询"/>
+  </div>
+  <div class="y-scroll borderall" >
+    <div id="load_html_data1"></div>
+  </div>
+</div>
+  <div class="overlay_btn">
+    <input type="button" class="btn btn_submit close" value=" 确定 "/>
+    <input type="button" class="btn btn_reset overlayClose" value=" 取消 "/>
+  </div>
+
+<script type = "text/javascript">
+  $(document).ready(function() {	
+   	// load html data from file
+  $("#load_html_data1").jstree({ 
+		"html_data" : {
+			"ajax" : {
+				"url" : "data/data_resources.shtml",
+				"data" : function (n) { 
+					return { id : n.attr ? n.attr("id") : 0 }; 
+				}
+			}
+		},
+		"plugins" : [ "themes", "html_data" ,"checkbox","contextmenu","cookies","ui","crrm","dnd"] 
+		
+	});
+	cbs.textScroll();
+	
+ });
+
+</script>
+

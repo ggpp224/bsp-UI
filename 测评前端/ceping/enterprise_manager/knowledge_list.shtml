@@ -1,0 +1,255 @@
+<div class="from_panel">
+    <form method="post" action="#" class="listtab_btn">
+    	<div class="exportbtn">
+        <ul>
+          <li><a href="#" class="expbtn">导出数据<span>&nbsp;</span></a>
+            <ul>
+              <li><a href="#">全部</a></li>
+              <li><a href="#">在线课件</a></li>
+              <li><a href="#">同步课程</a></li>
+              <li><a href="">试卷</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+      
+      <div class="selbtn">
+        <button class="btn btn_add" onclick='javascript:window.open("knowledge_add.shtml")'>新增试题</button>
+      </div>
+      <input type="button" name="" class="btn btn_other departments"  value="调整所属分类" />
+      <input type="button" name="" class="btn btn_del" value=" 删除 " id="delcustomer"  title="批量删除"/>
+    </form>
+  </div>
+  
+  
+  <table width="100%" border="0" cellspacing="0" cellpadding="0" class="default_table listtab">
+    <thead class="gradual_bg">
+      <tr>
+        <th width="27" class="th_center"><input type="checkbox" name="num" value="" onclick="if(this.checked==true) { checkAll('num'); } else { clearAll('num'); }" /></th>
+        <th width="100" class="th_center">知识点名称</th>
+        <th class="th_center">试题数</th>
+        <th width="100" align="center" nowrap="nowrap">创建人</th>
+        <th width="100">创建时间</th>
+        <th width="60" class="th_center">操作</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td align="center"><input  type="checkbox" name="num" value="" /></td>
+        <td align="center">单项选择题</td>
+        <td align="center">SHJGL001</td>
+        <td width="100">李东东</td>
+        <td width="100">2011-12-12</td>
+          <td>
+		   <a href="resources_edit.shtml" class="tabico_edit" title="编辑">编辑</a>
+            <span title="更多操作" class="more_action">
+                     <i>更多操作</i>
+                     <ul class="more_action_list">
+                        <li class="arrowli"></li>
+                        <li><a href="#" title="预览" class="stopthis">预览</a></li>
+                        <Li><a href="#" title="编辑" class="stopthis">编辑</a></Li>
+                        <Li><a href="#" title="删除" class="stopthis">删除</a></Li>
+                       </ul>
+            </span>
+		</td>
+      </tr>
+      <tr>
+        <td align="center"><input input type="checkbox" name="num" value="" /></td>
+        <td align="center">单项选择题</td>
+        <td align="center">SHJGL001</td>
+        <td>李东东</td>
+        <td>2011-12-12</td>
+          <td>
+		   <a href="resources_edit.shtml" class="tabico_edit" title="编辑">编辑</a>
+            <span title="更多操作" class="more_action">
+                     <i>更多操作</i>
+                     <ul class="more_action_list">
+                        <li class="arrowli"></li>
+                        <li><a href="#" title="预览" class="stopthis">预览</a></li>
+                        <Li><a href="#" title="编辑" class="stopthis">编辑</a></Li>
+                        <Li><a href="#" title="删除" class="stopthis">删除</a></Li>
+                       </ul>
+            </span>
+		</td>
+      </tr>
+      <tr>
+        <td align="center"><input input type="checkbox" name="num" value="" /></td>
+        <td align="center">单项选择题</td>
+        <td align="center">SHJGL001</td>
+        <td>李东东</td>
+        <td>2011-12-12</td>
+          <td>
+		   <a href="resources_edit.shtml" class="tabico_edit" title="编辑">编辑</a>
+            <span title="更多操作" class="more_action">
+                     <i>更多操作</i>
+                     <ul class="more_action_list">
+                        <li class="arrowli"></li>
+                        <li><a href="#" title="预览" class="stopthis">预览</a></li>
+                        <Li><a href="#" title="编辑" class="stopthis">编辑</a></Li>
+                        <Li><a href="#" title="删除" class="stopthis">删除</a></Li>
+                       </ul>
+            </span>
+		</td>
+      </tr>
+      <tr>
+        <td align="center"><input input type="checkbox" name="num" value="" /></td>
+        <td align="center">单项选择题</td>
+        <td align="center">SHJGL001</td>
+        <td>李东东</td>
+        <td>2011-12-12</td>
+          <td>
+		   <a href="resources_edit.shtml" class="tabico_edit" title="编辑">编辑</a>
+            <span title="更多操作" class="more_action">
+                     <i>更多操作</i>
+                     <ul class="more_action_list">
+                        <li class="arrowli"></li>
+                        <li><a href="#" title="预览" class="stopthis">预览</a></li>
+                        <Li><a href="#" title="编辑" class="stopthis">编辑</a></Li>
+                        <Li><a href="#" title="删除" class="stopthis">删除</a></Li>
+                       </ul>
+            </span>
+		</td>
+      </tr>
+      <tr>
+        <td align="center"><input input type="checkbox" name="num" value="" /></td>
+        <td align="center">单项选择题</td>
+        <td align="center">SHJGL001</td>
+        <td>李东东</td>
+        <td>2011-12-12</td>
+          <td>
+		   <a href="resources_edit.shtml" class="tabico_edit" title="编辑">编辑</a>
+            <span title="更多操作" class="more_action">
+                     <i>更多操作</i>
+                     <ul class="more_action_list">
+                        <li class="arrowli"></li>
+                        <li><a href="#" title="预览" class="stopthis">预览</a></li>
+                        <Li><a href="#" title="编辑" class="stopthis">编辑</a></Li>
+                        <Li><a href="#" title="删除" class="stopthis">删除</a></Li>
+                       </ul>
+            </span>
+		</td>
+      </tr>
+      <tr>
+        <td align="center"><input input type="checkbox" name="num" value="" /></td>
+        <td align="center">单项选择题</td>
+        <td align="center">SHJGL001</td>
+        <td>李东东</td>
+        <td>2011-12-12</td>
+          <td>
+		   <a href="resources_edit.shtml" class="tabico_edit" title="编辑">编辑</a>
+            <span title="更多操作" class="more_action">
+                     <i>更多操作</i>
+                     <ul class="more_action_list">
+                        <li class="arrowli"></li>
+                        <li><a href="#" title="预览" class="stopthis">预览</a></li>
+                        <Li><a href="#" title="编辑" class="stopthis">编辑</a></Li>
+                        <Li><a href="#" title="删除" class="stopthis">删除</a></Li>
+                       </ul>
+            </span>
+		</td>
+      </tr>
+      <tr>
+        <td align="center"><input input type="checkbox" name="num" value="" /></td>
+        <td align="center">单项选择题</td>
+        <td align="center">SHJGL001</td>
+        <td>李东东</td>
+        <td>2011-12-12</td>
+          <td>
+		   <a href="resources_edit.shtml" class="tabico_edit" title="编辑">编辑</a>
+            <span title="更多操作" class="more_action">
+                     <i>更多操作</i>
+                     <ul class="more_action_list">
+                        <li class="arrowli"></li>
+                        <li><a href="#" title="预览" class="stopthis">预览</a></li>
+                        <Li><a href="#" title="编辑" class="stopthis">编辑</a></Li>
+                        <Li><a href="#" title="删除" class="stopthis">删除</a></Li>
+                       </ul>
+            </span>
+		</td>
+      </tr>
+      <tr>
+        <td align="center"><input input type="checkbox" name="num" value="" /></td>
+        <td align="center">单项选择题</td>
+        <td align="center">SHJGL001</td>
+        <td>李东东</td>
+        <td>2011-12-12</td>
+          <td>
+		   <a href="resources_edit.shtml" class="tabico_edit" title="编辑">编辑</a>
+            <span title="更多操作" class="more_action">
+                     <i>更多操作</i>
+                     <ul class="more_action_list">
+                        <li class="arrowli"></li>
+                        <li><a href="#" title="预览" class="stopthis">预览</a></li>
+                        <Li><a href="#" title="编辑" class="stopthis">编辑</a></Li>
+                        <Li><a href="#" title="删除" class="stopthis">删除</a></Li>
+                       </ul>
+            </span>
+		</td>
+      </tr>
+      <tr>
+        <td align="center"><input input type="checkbox" name="num" value="" /></td>
+        <td align="center">单项选择题</td>
+        <td align="center">SHJGL001</td>
+        <td>李东东</td>
+        <td>2011-12-12</td>
+          <td>
+		   <a href="resources_edit.shtml" class="tabico_edit" title="编辑">编辑</a>
+            <span title="更多操作" class="more_action">
+                     <i>更多操作</i>
+                     <ul class="more_action_list">
+                        <li class="arrowli"></li>
+                        <li><a href="#" title="预览" class="stopthis">预览</a></li>
+                        <Li><a href="#" title="编辑" class="stopthis">编辑</a></Li>
+                        <Li><a href="#" title="删除" class="stopthis">删除</a></Li>
+                       </ul>
+            </span>
+		</td>
+      </tr>
+      <tr>
+        <td align="center"><input input type="checkbox" name="num" value="" /></td>
+        <td align="center">单项选择题</td>
+        <td align="center">SHJGL001</td>
+        <td>李东东</td>
+        <td>2011-12-12</td>
+          <td>
+		   <a href="resources_edit.shtml" class="tabico_edit" title="编辑">编辑</a>
+            <span title="更多操作" class="more_action">
+                     <i>更多操作</i>
+                     <ul class="more_action_list">
+                        <li class="arrowli"></li>
+                        <li><a href="#" title="预览" class="stopthis">预览</a></li>
+                        <Li><a href="#" title="编辑" class="stopthis">编辑</a></Li>
+                        <Li><a href="#" title="删除" class="stopthis">删除</a></Li>
+                       </ul>
+            </span>
+		</td>
+      </tr>
+    </tbody>
+    
+  </table>
+  <!-- 翻页 -->
+  <div class="pagination">
+    <ul>
+      <li>每页显示
+        <select>
+          <option>10</option>
+          <option>20</option>
+          <option>30</option>
+          <option>50</option>
+        </select>
+        条&nbsp;&nbsp;1/25页 </li>
+      <li class="disablepage">上一页</li>
+      <li class="currentpage">1</li>
+      <li><a href="#">2</a></li>
+      <li><a href="#">3</a></li>
+      <li><a href="#">4</a></li>
+      <li><a href="#">5</a></li>
+      <li><a href="#">6</a></li>
+      <li><a href="#">7</a></li>
+      <li><a href="#">8</a></li>
+      <li><a href="#">9</a>...</li>
+      <li><a href="#">15</a></li>
+      <li><a href="#">16</a></li>
+      <li class="nextpage"><a href="#">下一页</a></li>
+    </ul>
+ </div>

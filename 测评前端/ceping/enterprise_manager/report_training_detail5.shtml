@@ -1,0 +1,178 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta content="企业培训、企业内训、企业学习、企业大学、渠道大学、e-Learning、学习平台、学习系统、人才管理、岗位胜任力模型、Skillsoft、职业发展、培训管理、继任规划" name="keywords" />
+<meta content="企业商学院是集在线学习、能力测评、学习计划和培训管理为一体的企业学习整体解决方案。帮助企业提升内训、渠道培训、分支机构培训的整体水平，最大程度发掘培训价值，实现培训效益提升，全面促进企业人才培养。" name="description" />
+<title>CBS - 统计报表</title>
+<!--系统样式-->
+<link href="../css/default.css" rel="stylesheet" type="text/css" />
+<!--皮肤样式  Blue-->
+<link href="../css/enterprise_blue.css" rel="stylesheet" type="text/css" />
+<link href="../css/enterprise_report.css" rel="stylesheet" type="text/css" />
+<!--[if IE]>
+<link type="text/css" rel="stylesheet" href="../css/ie.css" />
+<![endif]-->
+<!-- jQuery with plugins -->
+<script type="text/javascript" src="../js/libs/jquery-1.4.3.min.js"></script>
+<script type="text/javascript" src="../js/libs/jsapi"></script>
+<script type="text/javascript" src="../js/libs/jquery.gvchart.js"></script>
+<script type="text/javascript">
+		gvChartInit();
+		jQuery(document).ready(function(){
+			jQuery('.chart').gvChart({
+				chartType: 'ColumnChart',
+				gvSettings: {
+					vAxis: {title: '统计单位：次数'},
+					hAxis: {title: '月份'},
+					width: 890,
+					height: 300
+					}
+			});
+		});
+		</script>
+</head>
+<body>
+<!-- Start:  Html  //-->
+<div id="content">
+  <!--Start:header //-->
+  <!--#include virtual="../Library/header_enterprise.shtml" -->
+  <!-- Start: container //-->
+  <div id="container">
+    <div class="box admin_box">
+      <!-- 面包屑 -->
+      <div class="bread_crumbs">  <a href="user.shtml">统计报表</a>&nbsp;&#8250;&nbsp;<b>培训分析报告</b></div>
+      <!-- 面包屑 End -->
+      <!-- 主内容 -->
+      <div class="content_body">
+        <!-- 搜索 -->
+        <div class="features_search">
+          <form method="post" action="report_training_detail.shtml" class="search_From">
+            设定查询期间：
+            <select name="year" id="select">
+              <option>选择起始年份</option>
+            </select>
+            <select name="year2" id="year">
+              <option>选择起始月份</option>
+              <option>1月</option>
+              <option>2月</option>
+              <option>3月</option>
+              <option>4月</option>
+              <option>5月</option>
+              <option>6月</option>
+              <option>7月</option>
+              <option>8月</option>
+              <option>9月</option>
+              <option>10月</option>
+              <option>11月</option>
+              <option>12月</option>
+            </select>
+            ~
+            <select name="year3" id="year2">
+              <option>选择截止年份</option>
+            </select>
+            <select name="year3" id="year3">
+              <option>选择截止月份</option>
+              <option>1月</option>
+              <option>2月</option>
+              <option>3月</option>
+              <option>4月</option>
+              <option>5月</option>
+              <option>6月</option>
+              <option>7月</option>
+              <option>8月</option>
+              <option>9月</option>
+              <option>10月</option>
+              <option>11月</option>
+              <option>12月</option>
+            </select>
+            <input type="submit" name="input" value=" 查询 " class="btn btn_default"/>
+            <strong>　　　　　</strong>
+          </form>
+          <p>&nbsp;</p>
+          <h1 class="report_title">XXXXXXXX（公司名称）培训分析报告</h1>
+          <div>
+            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+              <tr>
+                <td height="40"><strong>查询期间：</strong><span class="lightfont">2011年01月01日 - 2011年06月30日</span></td>
+                <td align="right"><span class="search_From"><strong>最新数据更新时间：</strong><span class="lightfont">2011-02-02 00:00</span> </span></td>
+              </tr>
+            </table>
+          </div>
+        </div>
+
+        <div class="boxborder">
+  <ul class="reporttabs">
+                <li ><a href="report_training_detail.shtml">在线课件参与人数</a></li>
+                <li><a href="report_training_detail2.shtml">在线课件学习时长</a></li>
+                <li><a  href="report_training_detail3.shtml">人均在线课件学习时长</a></li>
+                <li><a href="report_training_detail4.shtml">人均在线课件学习次数</a></li>
+                <li class="current"><a href="report_training_detail5.shtml">人均在线课件学习门数</a></li>
+                <li><a href="report_training_detail6.shtml">培训实施活动统计</a></li>
+                <li><a href="report_training_detail7.shtml">各类培训实施参与人数统计</a></li>
+      </ul>
+              <div class="reportpanel">
+                <table class="chart">
+                <caption>
+                2011年1月 - 2011年6月
+                </caption>
+                  <thead>
+                    <tr>
+                      <th>月份</th>
+                      <th>2月</th>
+                      <th>3月</th>
+                      <th>4月</th>
+                      <th>5月</th>
+                      <th>6月</th>
+                      <th>7月</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <th><span class="select">人均月学习门数</span></th>
+                      <td>120</td>
+                      <td>256</td>
+                      <td>159</td>
+                      <td>78</td>
+                      <td>128</td>
+                      <td>356</td>
+                    </tr>
+                  </tbody>
+                </table>
+                <table class="default_table listtab">
+                  <thead class="gradual_bg">
+                    <tr>
+                      <th width="120" class="th_center">月份</th>
+                      <th><span class="select">2001-01</span></th>
+                      <th>2011-02</th>
+                      <th>2011-03</th>
+                      <th>2011-04</th>
+                      <th>2011-05</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <th class="th_center"><span class="select">人均月学习门数</span></th>
+                      <td>120</td>
+                      <td>256</td>
+                      <td>158</td>
+                      <td>78</td>
+                      <td>258</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+
+        </div>
+      </div>
+      <div class="clear"></div>
+      <!-- 主内容 End -->
+    </div>
+  </div>
+  <!--// End: container -->
+  <!--#include virtual="../Library/footer.shtml" -->
+</div>
+<!--// End: Html -->
+</body>
+</html>

@@ -1,0 +1,72 @@
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<div class="features_search">
+<table width="100%" class="default_table">
+  <tr>
+    <td width="65"> <label>资源类型：</label></td>
+    <td width="126"><select name="select" class="mini_sel">
+            <option>全部资源类型</option>
+            <option>在线课件</option>
+            <option>同步课程</option>
+            <option>在线测试</option>
+            <option>文档资料</option>
+            <option>学习项目</option>
+    </select></td>
+        <td width="65">资源名称：</td>
+    <td width="126"><input type="text" class="default_txt" value="" size="18"/></td>
+    <td><input name="Button2" type="button" class="btn btn_default" value="查询" />
+    </td>
+</tr>
+</table>
+</div>
+<form  method="post" action="#" class="bigFrom">
+  <table width="100%" class="default_table">
+    <td width="50%"><strong>备选资源：</strong>
+        <div class="minibox">
+          <div id="load_html_data1"></div>
+        </div></td>
+      <td align="center"><button class="addbtn">添加</button>
+        <button class="delallbtn">全移除</button></td>
+      <td width="50%"><strong>已选资源：</strong>
+        <div class="minibox noscroll">
+          <div class="divselect">
+            <ul>
+              <li><a href="#" class="delico"  title="从列表删除">从列表删除</a><span>[在线课件]时间管理技巧</span></li>
+              <li><a href="#" class="delico"  title="从列表删除">从列表删除</a><span>[在线课件]时间管理技巧</span></li>
+              <li><a href="#" class="delico"  title="从列表删除">从列表删除</a><span>[在线课件]时间管理技巧</span></li>
+              <li><a href="#" class="delico"  title="从列表删除">从列表删除</a><span>[在线课件]时间管理技巧</span></li>
+              <li><a href="#" class="delico"  title="从列表删除">从列表删除</a><span>[在线课件]时间管理技巧</span></li>
+              <li><a href="#" class="delico"  title="从列表删除">从列表删除</a><span>[在线课件]时间管理技巧</span></li>
+              <li><a href="#" class="delico"  title="从列表删除">从列表删除</a><span>[在线课件]时间管理技巧</span></li>
+              <li><a href="#" class="delico"  title="从列表删除">从列表删除</a><span>[在线课件]时间管理技巧</span></li>
+              <li><a href="#" class="delico"  title="从列表删除">从列表删除</a><span>[在线课件]时间管理技巧</span></li>
+              <li><a href="#" class="delico"  title="从列表删除">从列表删除</a><span>[在线课件]时间管理技巧</span></li>
+              <li><a href="#" class="delico"  title="从列表删除">从列表删除</a><span>[在线课件]时间管理技巧</span></li>
+              <li><a href="#" class="delico"  title="从列表删除">从列表删除</a><span>[在线课件]时间管理技巧</span></li>
+            </ul>
+          </div>
+        </div></td>
+    </tr>
+  </table>
+  <div class="overlay_btn">
+    <input type="button" class="btn btn_submit" value=" 保存 "/>
+    <input type="button" class="btn btn_reset close" value=" 取消 "/>
+  </div>
+</form>
+<script type = "text/javascript">
+ $(document).ready(function() {	
+   // load html data from file
+$("#load_html_data1").jstree({ 
+		"html_data" : {
+			"ajax" : {
+				"url" : "data/data_resources.shtml",
+				"data" : function (n) { 
+					return { id : n.attr ? n.attr("id") : 0 }; 
+				}
+			}
+		},
+		"plugins" : [ "themes", "html_data" ,"checkbox","contextmenu","cookies","ui","crrm","dnd"] 
+		
+	});
+ });
+
+</script>

@@ -1,0 +1,145 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta content="企业培训、企业内训、企业学习、企业大学、渠道大学、e-Learning、学习平台、学习系统、人才管理、岗位胜任力模型、Skillsoft、职业发展、培训管理、继任规划" name="keywords" />
+<meta content="企业商学院是集在线学习、能力测评、学习计划和培训管理为一体的企业学习整体解决方案。帮助企业提升内训、渠道培训、分支机构培训的整体水平，最大程度发掘培训价值，实现培训效益提升，全面促进企业人才培养。" name="description" />
+<title>CBS - 用户管理 - 资源管理</title>
+<!--系统样式-->
+<link href="../css/default.css" rel="stylesheet" type="text/css" />
+<!--皮肤样式  Blue-->
+<link href="../css/enterprise_blue.css" rel="stylesheet" type="text/css" />
+<link href="../css/nyroModal.css" rel="stylesheet" type="text/css" />
+<!--[if IE]>
+<link type="text/css" rel="stylesheet" href="../css/ie.css" />
+<![endif]-->
+<!-- jQuery with plugins -->
+<script type="text/javascript" src="../js/libs/jquery-1.4.3.min.js"></script>
+<!-- jQuery tree -->
+<script type="text/javascript" src="../js/libs/jquery.cookie.js"></script>
+
+<script type="text/javascript" src="../js/libs/jquery.jstree.js"></script>
+<script language="javascript" type="text/javascript" src="../js/libs/nyroModal1.6.2.min.js"></script>
+<script type="text/javascript">
+    $(document).ready(function() {
+	cbs.tablehover();//表单换行颜色
+    cbs.showSearchPanel(); //搜索区
+
+   $("#load_html_data").jstree({
+		"html_data" : {
+			"ajax" : {
+				"url" : "data/data_resources.shtml",
+				"data" : function (n) {
+					return { id : n.attr ? n.attr("id") : 0 };
+				}
+			}
+		},
+		"plugins" : [ "themes", "html_data" ,"checkbox","contextmenu","cookies","ui","crrm","dnd"]
+
+	});
+
+   	/*-------------提示操作 可根据需要删除一下内容----------------*/
+	$(".apply_resources").click(function(){
+	       alert("已提交资源申请请求，请等待系统管理员反馈。");
+	}); //提示不可编辑
+
+
+	 var loadTable = $("#load_resoucesList", parent.document);
+     var loading_List =$('<div class="Loading_List"></div>');
+
+
+    //默认加载
+    $(loadTable).load("resources_system_list.html", function(){
+         getTableList();
+
+    });
+
+    function getTableList(e){
+		$('.apply_resources').click(function(e) {
+			e.preventDefault();
+			$.fn.nyroModalManual({
+			    width:380,
+				url: 'overlay_apply.shtml',
+				title:'系统提示'
+			});
+			return false;
+	});
+    }
+
+	//局部刷新
+    function reLoadTbaleList(e){
+		$(loadTable).load( location.href="resources_system_list.html", function() {
+           getTableList();
+        });
+	}
+
+
+ });
+</script>
+</head>
+<body>
+<!-- Start:  Html  //-->
+<div id="content">
+  <!-- Start:  header //-->
+  <!--#include virtual="../Library/header_enterprise.shtml" -->
+  <!--// End: header-->
+  <!-- Start: container //-->
+  <div id ="container">
+    <div class="box admin_box">
+      <!-- 面包屑 --><div class="bread_crumbs">
+				  <a href="resources.shtml">资源管理</a>&nbsp;&#8250;&nbsp;<a href="resources_own.shtml" class="current">课程管理</a> </div>
+      <!-- 面包屑 End -->
+      <div class="sidebar boxborder">
+	     <ul class="flowtabs">
+			<li><a href="resources.shtml">自有课程</a></li>
+            <li class="current"><a href="resources_system.shtml">系统课程</a></li>
+         </ul>
+        <!-- ================tree_menu==========-->
+        <div id="load_html_data"></div>
+        <!--//End:树状菜单 -->
+      </div>
+      <!--//End:sidebar -->
+      <div class="content_r">
+       <a href="#" class="showsearch">展开搜索区</a>
+        <!--====================== 功能索索==================================// -->
+        <div class="searchbox">
+          <table width="100%" border="0" cellpadding="0" cellspacing="0">
+            <tr>
+              <th class=" longText">课程名称：</th>
+              <td width="167"><input type="text" class="default_txt" value="" size="12"/></td>
+              <th width="65">课程编码：</th>
+              <td width="167"><input type="text" class="default_txt" value="" size="12"/></td>
+              <th width="65">&nbsp;</th>
+              <td>&nbsp;</td>
+              <td rowspan="2" class="closebtn"><a href="#">收起</a></td>
+            </tr>
+            <tr>
+              <th class=" longText">课程类型：</th>
+              <td><select name="select2" class="mini_sel">
+                <option>全部</option>
+                <option>在线课件</option>
+                <option>同步课程</option>
+              </select></td>
+              <th>授权状态：</th>
+              <td><select name="select3" class="mini_sel">
+                <option>选择</option>
+                <option>已授权</option>
+                <option>未授权</option>
+              </select></td>
+              <td colspan="2">
+                <input type="button" name="input2" value=" 查询 " class="btn btn_default"/>
+              </td>
+            </tr>
+          </table>
+        </div><!--//END:功能搜索-->
+           <div id="load_resoucesList"> </div>
+      </div>
+      <div class="clear"></div>
+    </div>
+  </div>
+  <!--// End: container -->  <!--#include virtual="../Library/footer.shtml" --></div>
+
+<!-- 声明 引用-->
+<script src="../js/libs/cbs_userjs.js"></script>
+</body>
+</html>

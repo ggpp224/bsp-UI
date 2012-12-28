@@ -1,0 +1,29 @@
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<h2 id="nyroModalTitle">选择讲师</h2>
+<form  method="post" action="#" >
+  <h3 class="msg_box box-info">已选讲师：<font class="">XXXXXX</font></h3>
+<div class="overbody">
+   <div class="features_search">
+	   <input type="text" class="default_txt" size="28"/>
+	   <input type="submit" class="btn btn_reset" value="查询"/>
+  </div>
+	<div class="divselect borderall y-scroll">
+		<ul>
+		  <li>01讲师名称</li>
+		  <li>02讲师名称</li>
+		  <li>03讲师名称</li>
+		  <li>04讲师名称</li>
+		  <li>05讲师名称</li>
+		  <li>06讲师名称</li>
+		  <li>07讲师名称</li>
+		  <li>08讲师名称</li>
+		  <li>09讲师名称</li>
+		  <li>10讲师名称</li>
+		</ul>
+	</div>
+  </div>
+  <div class="overlay_btn">
+    <input name="提交" type="submit" class="btn btn_submit" value=" 确定 "/>
+    <input type="button" class="btn btn_reset close" value=" 取消 "/>
+  </div>
+</form>

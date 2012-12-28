@@ -1,0 +1,94 @@
+<div class="overbody">
+<table width="100%" class="default_table form_table">
+        <tr>
+          <td>
+            <div class="exportbtn">
+              <ul>
+                <!-- <li><a href="#" class="expbtn">导出列表</a></li> -->
+              </ul>
+            </div>
+            <label class="seltextbox">已选人数：<b class="wrongfont" id="user_view_num"></b></label></td>
+        </tr>
+</table>
+<table width="100%" border="0" class="default_table mini_listtab">
+	<thead class="gradual_bg">
+	<tr>
+	<th>姓名</th>
+	<th>登录ID</th>
+	<th>所属部门</th>
+	<th>所属岗位</th>
+	<th>所属分组</th>
+	</tr>
+	</thead>
+	<tbody id="tbody_user_view"></tbody>
+</table>
+
+  <div class="pagination" id="pagination_user_view"></div>
+</div>
+
+<script type="text/javascript">
+function user_view_getList(page){
+	var perpage=8;
+	page = (page && page > 0) ? page = page : page = Math.abs(page);
+
+	var params={},deptIdList=[],groupIdList=[],postIdList=[],userAccountIdList=[];
+	for(var i=1;i<5;i++){
+		$('#setting_to_'+i+' li').each(function(){
+			var _id=($(this).find('.delico').attr('title')).split('_');
+				_id=_id[_id.length-1];
+			if(i==1)		 deptIdList.push(_id);
+			else if(i==2)	 groupIdList.push(_id);
+			else if(i==3)	 postIdList.push(_id);
+			else			 userAccountIdList.push(_id);
+
+		});
+	};
+
+	if(deptIdList.length == 0 && groupIdList.length==0 && postIdList.length==0 && userAccountIdList.length==0){
+		alert('请选择测试对象');
+		return ;
+	}
+	params.deptIdList	=	deptIdList;
+	params.groupIdList	=	groupIdList;
+	params.postIdList	=	postIdList;
+	params.userAccountIdList=	userAccountIdList;
+	params.pageno		=	page;
+	params.pagesize		=	perpage;
+
+	var queryUrl= G_URL['finduserlistbycondition'];
+	var str = Ambow.encode(params);
+	$.ajax({
+		type: 'POST',
+		data:str,
+		dataType: 'json',
+		url:queryUrl,
+		contentType:'application/json;charset=UTF-8',
+		success:function(data){
+			if(data.returnCode=='000000'){
+				$('#user_view_num').text(data.rCount);
+				var list=data.list,html='';
+				for(var i in list){
+					var v=list[i];
+					html+='<tr>';
+					html+='<td>'+throwNull(v.userName)+'</td>';
+					html+=' <td>'+throwNull(v.loginId)+'</td>';
+					html+='<td>'+throwNull(v.deptName)+'</td>';
+					html+='<td>'+throwNull(v.postName)+'</td>';
+					html+='<td>'+throwNull(v.groupName)+'</td>';
+					html+='</tr>';
+				}
+
+				$('#tbody_user_view').html(html);
+				$('#pagination_user_view').html(gPage(data.rCount,page,'user_view_getList',perpage));
+			}
+		}
+	});
+
+}
+
+user_view_getList(1);
+
+</script>
+
+
+

@@ -1,0 +1,31 @@
+@charset "utf-8";
+/* 报表选项卡 */
+.progress{display:block;float:left;width:100px;border:1px solid #ddd;height:10px;line-height:10px;margin-right:4px;margin-top:2px;}
+.progress div{display:block;float:left;background-color:#91D314;height:10px;}
+.fl{display:block;float:left;}
+.fr{display:block;float:right;}
+.reporttabs {background:url(../images/enterprise/blue/blue_bg.gif) repeat-x;height:30px;border-bottom:1px solid #ddd;border-top:1px solid #ddd;*_border-bottom:0px ;}
+.reporttabs li { float:left; text-align:center; zoom:1; display:inline;padding-left:6px;padding-right:6px;border-left:1px solid #ccc;border-right:1px solid #fff;}
+.reporttabs li a {color:#0082c8; line-height:30px; text-decoration:none;display:block; }
+.reporttabs li.current{ background-color:#fff; border-right:1px solid #ddd; border-left:1px solid #ddd;border-bottom:1px solid #fff;}
+.reporttabs li.current a{ color:#333;font-weight:bold;}
+.reportpanel{border-left:1px solid #ddd;padding:10px;}
+.report_title{font-size:24px;text-align:center;font-weight:bold;height:40px;line-height:40px;}
+.viewmore{display:block;padding:4px 10px 4px 10px;float:right;background-color:#DFEEFF;border:1px solid #B6E3FE;text-decoration:none;color:#2697FD}
+.viewmore:hover{background-color:#F0FEFF;border:1px solid #B6E3FE}
+.padding5{padding:5px;}
+.exportbtn{ /* width:160px; */}
+.exportbtn_report{ float:right;}
+.updatetime{text-align:right;margin-left:680px;position:absolute;margin-top:-25px;color:#999;}
+.w200{width:200px;}
+.w300{width:300px;}
+.m600{margin-left:722px;margin-top:-29px;}
+.m700{margin-left:680px;margin-top:-25px;}
+.txt_black{color:#000;margin-left:0px;}
+.report_subtitle{background:url(../images/enterprise/blue/blue_bg.gif) repeat-x;height:30px; line-height:30px;border:1px solid #ddd;padding-left:10px;font-size:14px;font-weight:bold;font-family:微软雅黑}
+.mt30{margin-top:30px;}
+.mr20{margin-right:20px;}
+.info-box {	background-color:#E8F6FF;border:1px solid #b7c8ff;padding:5px;}
+.learing_sel{margin:5px 5px 0px 5px;}
+.ml_form{margin-left:-150px;}
+.gray_box{border:1px solid #E3E3E3;background-color:#f5f5f5;padding:8px;}

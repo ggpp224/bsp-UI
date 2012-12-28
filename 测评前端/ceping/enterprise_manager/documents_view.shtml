@@ -1,0 +1,93 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta content="企业培训、企业内训、企业学习、企业大学、渠道大学、e-Learning、学习平台、学习系统、人才管理、岗位胜任力模型、Skillsoft、职业发展、培训管理、继任规划" name="keywords" />
+<meta content="企业商学院是集在线学习、能力测评、学习计划和培训管理为一体的企业学习整体解决方案。帮助企业提升内训、渠道培训、分支机构培训的整体水平，最大程度发掘培训价值，实现培训效益提升，全面促进企业人才培养。" name="description" />
+<title>cbs5- 资源管理-文档管理-查看文档资料</title>
+<!--系统样式-->
+<link href="../css/default.css" rel="stylesheet" type="text/css" />
+<!--皮肤样式  Blue-->
+<link href="../css/enterprise_blue.css" rel="stylesheet" type="text/css" />
+<link href="../css/nyroModal.css" rel="stylesheet" type="text/css" />
+<!--[if IE]>
+<link type="text/css" rel="stylesheet" href="../css/ie.css" />
+<![endif]-->
+<!-- jQuery with plugins -->
+<script type="text/javascript" src="../js/libs/jquery-1.4.3.min.js"></script>
+<script language="javascript" type="text/javascript" src="../js/libs/nyroModal1.6.2.min.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() {
+	$('.set_node').click(function(e) {
+						e.preventDefault();
+						$.fn.nyroModalManual({
+							width:600,
+							title:'设置归属节点',
+							url: 'overlay_ownership.shtml'
+					});
+			return false;
+		 });
+	 });
+</script>
+</head>
+
+<body>
+<div id="content">
+  <!--#include virtual="../Library/header_enterprise.shtml" -->
+   <div id="container">
+      <div class="box admin_box">
+	    <!-- Start:面包屑 bread_crumbs //-->
+         <div class="bread_crumbs">
+			   <a href="../system_manager/index.shtml" class="home">首页</a>&nbsp;&#8250;&nbsp;
+			   <a href="../system_manager/resources.shtml" >内容管理</a>&nbsp;&#8250;&nbsp;
+			   <b>查看文档资料</b>
+      </div>
+          <div class="content_body padding28" >
+		  <h1 class="panel_title">查看文档资料</h1>
+          <form id="flight" method="post" action="documents_edit.shtml" class="bigFrom">
+			  <table width="100%" border="0" class="default_table form_table top10" >
+				<tr>
+				  <th colspan="3" >&nbsp;</th>
+			    </tr>
+				<tr>
+					<th >文档名称：</th>
+					<td colspan="2">文档名称XXXX</td>
+				</tr>
+				<tr>
+				  <th valign="top" >上传文档：</th>
+				  <td colspan="2">文档名称.后缀名称<p><a href="＃">下载已上传文档</a></p></td>
+			    </tr>
+				<tr>
+					<th >语言属性：</th>
+					<td colspan="2">中文</td>
+				</tr>
+				<tr>
+                    <th valign="top"> 关键字：</th>
+                    <td colspan="2">关键词1、关键词2</td>
+                </tr>
+				<tr>
+                     <th valign="top">适用对象：</th>
+                     <td colspan="2"><div class="p_cont"><p>说明文字</p></div></td>
+                 </tr>
+
+                <tr>
+					<th valign="top" >文档描述：</th>
+					<td colspan="2"><div class="p_cont"><p>说明文字</p></div></td>
+				</tr>
+                <tr>
+                  <th colspan="3" valign="top" >&nbsp;</th>
+                </tr>
+				</table>
+           	<div class="btn_box edit_box">
+       <input name="编辑" type="submit" class="btn btn_submit"  onclick="location.href='documents_edit.shtml';"  value="编辑" />
+       <input name="取消" type="reset" class="btn btn_reset"  onclick="location.href='documents.shtml';" value="取消" />
+				</div>
+            </form>
+		 <!--//End:面包屑-->
+	  </div>
+   </div>
+   </div>
+   <!--#include virtual="../Library/footer.shtml" -->
+</div>
+</body>
+</html>

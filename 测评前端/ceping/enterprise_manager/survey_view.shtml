@@ -1,0 +1,193 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta content="企业培训、企业内训、企业学习、企业大学、渠道大学、e-Learning、学习平台、学习系统、人才管理、岗位胜任力模型、Skillsoft、职业发展、培训管理、继任规划" name="keywords" />
+<meta content="企业商学院是集在线学习、能力测评、学习计划和培训管理为一体的企业学习整体解决方案。帮助企业提升内训、渠道培训、分支机构培训的整体水平，最大程度发掘培训价值，实现培训效益提升，全面促进企业人才培养。" name="description" />
+<title>CBS -需求管理 - 问卷调查</title>
+<!--系统样式-->
+<link href="../css/default.css" rel="stylesheet" type="text/css" />
+<!--皮肤样式  Blue-->
+<link href="../css/enterprise_blue.css" rel="stylesheet" type="text/css" />
+<link href="../css/nyroModal.css" rel="stylesheet" type="text/css" />
+<!--[if IE]>
+<link type="text/css" rel="stylesheet" href="../css/ie.css" />
+<![endif]-->
+<!-- jQuery with plugins -->
+<script type="text/javascript" src="../js/libs/jquery-1.4.3.min.js"></script>
+<script language="javascript" type="text/javascript" src="../js/libs/nyroModal1.6.2.min.js"></script>
+<script type = "text/javascript">
+ $(document).ready(function() {
+	cbs.tablehover();//表单换行颜色 hover
+
+	$(".btn_add").click(function(e) {
+			e.preventDefault();
+			$.fn.nyroModalManual({
+			    width:600,
+				url: 'admin_add.shtml'
+			});
+		return false;
+	});
+
+	});
+</script>
+</head>
+<body>
+<!-- Start:  Html  //-->
+<div id="content">
+  <!-- Start:  header //-->
+  <!--#include virtual="../Library/header_enterprise.shtml" -->
+  <!--// End: header-->
+  <!-- Start: container //-->
+  <div id="container">
+    <div class="box admin_box">
+      <!-- 面包屑 --><div class="bread_crumbs">
+
+                <a href="requirement.shtml">需求管理</a>&nbsp;&#8250;&nbsp;
+			    <a href="survey_results.shtml">查看问卷调查</a>&nbsp;&#8250;&nbsp;
+               <b>查看调查对象</b> </div>
+
+      <!-- 功能索索 -->
+      <div class="content_body padding28">
+      <h1 class="panel_title" >调查对象属性</h1>
+      <table width="100%" border="0" cellpadding="0" cellspacing="0" class="default_table form_table borderall">
+      <tr>
+        <td colspan="2">&nbsp;</td>
+      </tr>
+      <tr>
+          <th>所属部门：</th>
+          <td>部门目录节点，部门目录节点，部门目录节点</td>
+      </tr>
+      <tr>
+          <th>所属部门：</th>
+          <td>岗位目录节点，岗位目录节点，岗位目录节点</td>
+      </tr>
+      <tr>
+          <th>所属分组：</th>
+          <td>分组名称，分组名称，分组名称</td>
+      </tr>
+      <tr>
+        <td colspan="2">&nbsp;</td>
+      </tr>
+      </table>
+        <h1 class="panel_title top10" >人员列表</h1>
+        <table border="0" cellspacing="0" cellpadding="0" class="default_table  borderall mini_listtab">
+          <thead class="gradual_bg">
+            <tr >
+              <th class="fristtd">姓名</th>
+              <th>登录ID</th>
+              <th align="left">所属部门</th>
+              <th width="180" >所属岗位</th>
+              <th width="180" >所属分组</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="fristtd">张海</td>
+              <td>1000012</td>
+              <td>部门名称</td>
+              <td >岗位名称</td>
+              <td >分组名称</td>
+            </tr>
+            <tr>
+              <td class="fristtd">张海</td>
+              <td>1000012</td>
+              <td>部门名称</td>
+              <td >岗位名称</td>
+              <td >&nbsp;</td>
+            </tr>
+            <tr>
+              <td class="fristtd">张海</td>
+              <td>1000012</td>
+              <td>部门名称</td>
+              <td >岗位名称</td>
+              <td >&nbsp;</td>
+            </tr>
+            <tr>
+              <td class="fristtd">张海</td>
+              <td>1000012</td>
+              <td>部门名称</td>
+              <td >岗位名称</td>
+              <td >&nbsp;</td>
+            </tr>
+            <tr>
+              <td class="fristtd">张海</td>
+              <td>1000012</td>
+              <td>部门名称</td>
+              <td >岗位名称</td>
+              <td >&nbsp;</td>
+            </tr>
+			<tr>
+              <td class="fristtd">张海</td>
+              <td>1000012</td>
+              <td>部门名称</td>
+              <td >岗位名称</td>
+              <td >&nbsp;</td>
+            </tr>
+			<tr>
+              <td class="fristtd">张海</td>
+              <td>1000012</td>
+              <td>部门名称</td>
+              <td >岗位名称</td>
+              <td >&nbsp;</td>
+            </tr>
+			<tr>
+              <td class="fristtd">张海</td>
+              <td>1000012</td>
+              <td>部门名称</td>
+              <td >岗位名称</td>
+              <td >&nbsp;</td>
+            </tr>
+			<tr>
+              <td class="fristtd">张海</td>
+              <td>1000012</td>
+              <td>部门名称</td>
+              <td >岗位名称</td>
+              <td >&nbsp;</td>
+            </tr>
+			<tr>
+              <td class="fristtd">张海</td>
+              <td>1000012</td>
+              <td>部门名称</td>
+              <td >岗位名称</td>
+              <td >&nbsp;</td>
+            </tr>
+          </tbody>
+        </table>
+
+      <!-- 翻页 -->
+      <div class="pagination">
+        <ul>
+          <li>每页显示<select>
+                         <option>10</option>
+                         <option>20</option>
+                         <option>30</option>
+                         <option>50</option>
+                      </select>
+            条&nbsp;&nbsp;1/25页 </li>
+          <li class="disablepage">上一页</li>
+          <li class="currentpage">1</li>
+          <li><a href="#">2</a></li>
+          <li><a href="#">3</a></li>
+          <li><a href="#">4</a></li>
+          <li><a href="#">5</a></li>
+          <li><a href="#">6</a></li>
+          <li><a href="#">7</a></li>
+          <li><a href="#">8</a></li>
+          <li><a href="#">9</a>...</li>
+          <li><a href="#">15</a></li>
+          <li><a href="#">16</a></li>
+          <li class="nextpage"><a href="#">下一页</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="clear"></div>
+    <!-- 主内容 End -->
+  </div>
+  <!--// End: container -->  <!--#include virtual="../Library/footer.shtml" -->
+  </div>
+</div>
+
+<script src="../js/libs/cbs_userjs.js"></script>
+</body>
+</html>

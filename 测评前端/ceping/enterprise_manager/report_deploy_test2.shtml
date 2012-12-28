@@ -1,0 +1,278 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta content="企业培训、企业内训、企业学习、企业大学、渠道大学、e-Learning、学习平台、学习系统、人才管理、岗位胜任力模型、Skillsoft、职业发展、培训管理、继任规划" name="keywords" />
+<meta content="企业商学院是集在线学习、能力测评、学习计划和培训管理为一体的企业学习整体解决方案。帮助企业提升内训、渠道培训、分支机构培训的整体水平，最大程度发掘培训价值，实现培训效益提升，全面促进企业人才培养。" name="description" />
+<title>CBS - 统计报表 - 培训实施报表</title>
+<!--系统样式-->
+<link href="../css/default.css" rel="stylesheet" type="text/css" />
+<!--皮肤样式  Blue-->
+<link href="../css/enterprise_blue.css" rel="stylesheet" type="text/css" />
+<link href="../css/enterprise_report.css" rel="stylesheet" type="text/css" />
+<link href="../css/nyroModal.css" rel="stylesheet" type="text/css" />
+<!--[if IE]>
+<link type="text/css" rel="stylesheet" href="../css/ie.css" />
+<![endif]-->
+<!-- jQuery with plugins -->
+<script type="text/javascript" src="../js/libs/jquery-1.4.3.min.js"></script>
+<script src="../js/libs/cbs_userjs.js"></script>
+<script type="text/javascript" src="../js/libs/jsapi"></script>
+<script type="text/javascript" src="../js/libs/jquery.gvchart.js"></script>
+<script type="text/javascript">
+    $(document).ready(function() {
+	cbs.tablehover();//表单换行颜色 hover
+});
+</script>
+<script type="text/javascript">
+		gvChartInit();
+		jQuery(document).ready(function(){
+			jQuery('.chart2').gvChart({
+				chartType: 'ColumnChart',
+				gvSettings: {
+					vAxis: {title: '人数'},
+					hAxis: {title: '成绩范围'},
+					width: 650,
+					height: 300
+					}
+			});
+		});
+		</script>
+</head>
+<body>
+<!-- Start:  Html  //-->
+<div id="content">
+  <!--Start:header //-->
+  <!--#include virtual="../Library/header_enterprise.shtml" -->
+  <!-- Start: container //-->
+  <div id="container">
+    <div class="box admin_box">
+      <!-- 面包屑 -->
+      <div class="bread_crumbs">  <a href="user.shtml">统计报表</a>&nbsp;&#8250;&nbsp;<a href="report_deploy.shtml">培训实施报表</a> &#8250;&nbsp;<b>培训实施详情统计</b></div>
+      <!-- 面包屑 End -->
+      <!-- 主内容 -->
+      <div class="content_body">
+        <!-- 搜索 -->
+        <div class="features_search">
+          <p>&nbsp;</p>
+          <h1 class="report_title">“在线测试类培训实施名称XXX”统计报表</h1>
+          <p align="center">最新数据更新时间：<span class="lightfont">2011-02-02 00:00</span></p>
+          <div>
+           <p align="right">&nbsp;</p>
+            <table width="100%" border="0">
+              <tr>
+                <th width="80" height="26" align="left"><strong>试卷名称：</strong></th>
+                <td colspan="3" class="msg_box">XXX</td>
+              </tr>
+              <tr>
+                <th height="26" align="left"><p><strong>测试模式：</strong></p></th>
+                <td>整卷/单题</td>
+                <td width="80"><strong>测试时效：</strong></td>
+                <td>2011/01/01 00:00 - 2011/03/01 00:00</td>
+              </tr>
+              <tr>
+                <th height="26" align="left"><strong>测试次数：</strong></th>
+                <td>XX/不限次数</td>
+                <td><strong>测试时长：</strong></td>
+                <td>60分钟/不限时间</td>
+              </tr>
+              <tr>
+                <th height="26" align="left"><strong>满 分 值：</strong></th>
+                <td>XXX</td>
+                <td><strong>关联计划：</strong></td>
+                <td>培训计划名称</td>
+              </tr>
+            </table>
+             <ul class="reporttabs">
+   <li ><a href="report_deploy_test.shtml">参与度统计</a></li>
+                <li  class="current"><a href="report_deploy_test2.shtml">测试成绩统计</a></li>
+      </ul>
+          </div>
+        </div>
+        <div class="fl">
+        <table class="chart2">
+          <caption>
+            测试成绩分布统计
+          </caption>
+          <thead>
+            <tr>
+              <th>成绩</th>
+              <th>0&lt;X&lt;20</th>
+              <th>20&lt;X&lt;40</th>
+              <th>40&lt;X&lt;60</th>
+              <th>60&lt;X&lt;80</th>
+              <th>80&lt;X&lt;100</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th>人数</th>
+              <td>0</td>
+              <td>4</td>
+              <td>10</td>
+              <td>16</td>
+              <td>1</td>
+            </tr>
+          </tbody>
+        </table>
+          </div>
+        <div class="fl mt30">
+        <table border="0" cellspacing="0" cellpadding="3" >
+          <tr>
+            <td width="70"><strong>平均分数：</strong></td>
+            <td>XX</td>
+          </tr>
+          <tr>
+            <td><strong>平均用时：</strong></td>
+            <td>XX分钟</td>
+          </tr>
+          <tr>
+            <td><strong>最高分数：</strong></td>
+            <td>XX</td>
+          </tr>
+          <tr>
+            <td><strong>最低分数：</strong></td>
+            <td>XX</td>
+          </tr>
+          <tr>
+            <td valign="top"><strong>成绩分布：</strong></td>
+            <td>0≤得分&lt;20人数： 0<br />
+              0≤得分&lt;20人数： 4<br />
+              0≤得分&lt;20人数：10<br />
+              0≤得分&lt;20人数：16<br />
+            0≤得分&lt;20人数： 1</td>
+          </tr>
+          <tr>
+            <td><strong>达标人数：</strong></td>
+            <td>XX</td>
+          </tr>
+          <tr>
+            <td><strong>优秀人数：</strong></td>
+            <td>XX</td>
+          </tr>
+        </table>
+        </div>
+        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td>
+              姓名：
+              <input name="textfield" type="text" class="default_txt" id="textfield" />
+              <input type="button" name="input2" value=" 查询 " class="btn btn_default"/>
+              <input type="button" name="input" class="btn btn_add"  value="返回" onclick="window.location='report_deploy.shtml'"/>
+           </td>
+            <td><div class="exportbtn">
+            <ul>
+              <li><a href="#" class="expbtn">导出</a></li>
+            </ul>
+          </div></td>
+          </tr>
+        </table>
+
+        <div class="boxborder">
+                <table width="100%" border="0" cellspacing="0" cellpadding="0" class="default_table listtab">
+                  <thead class="gradual_bg">
+                    <tr>
+                      <th>姓名</th>
+                      <th>登录ID</th>
+                      <th>所属部门</th>
+                      <th>测试用时</th>
+                      <th>最高得分</th>
+                      <th>测试完成时间</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>李某某</td>
+                      <td>liumoumou@ambow.com</td>
+                      <td>XXXXX部门</td>
+                      <td>00:09:06</td>
+                      <td>65</td>
+                      <td>2011-01-01 12:36</td>
+                    </tr>
+                    <tr>
+                      <td>&nbsp;</td>
+                      <td>&nbsp;</td>
+                      <td>&nbsp;</td>
+                      <td>&nbsp;</td>
+                      <td>&nbsp;</td>
+                      <td>&nbsp;</td>
+                    </tr>
+                    <tr>
+                      <td>&nbsp;</td>
+                      <td>&nbsp;</td>
+                      <td>&nbsp;</td>
+                      <td>&nbsp;</td>
+                      <td>&nbsp;</td>
+                      <td>&nbsp;</td>
+                    </tr>
+                    <tr>
+                      <td>&nbsp;</td>
+                      <td>&nbsp;</td>
+                      <td>&nbsp;</td>
+                      <td>&nbsp;</td>
+                      <td>&nbsp;</td>
+                      <td>&nbsp;</td>
+                    </tr>
+                    <tr>
+                      <td>&nbsp;</td>
+                      <td>&nbsp;</td>
+                      <td>&nbsp;</td>
+                      <td>&nbsp;</td>
+                      <td>&nbsp;</td>
+                      <td>&nbsp;</td>
+                    </tr>
+                    <tr>
+                      <td>&nbsp;</td>
+                      <td>&nbsp;</td>
+                      <td>&nbsp;</td>
+                      <td>&nbsp;</td>
+                      <td>&nbsp;</td>
+                      <td>&nbsp;</td>
+                    </tr>
+                    <tr>
+                      <td>&nbsp;</td>
+                      <td>&nbsp;</td>
+                      <td>&nbsp;</td>
+                      <td>&nbsp;</td>
+                      <td>&nbsp;</td>
+                      <td>&nbsp;</td>
+                    </tr>
+                    <tr>
+                      <td>&nbsp;</td>
+                      <td>&nbsp;</td>
+                      <td>&nbsp;</td>
+                      <td>&nbsp;</td>
+                      <td>&nbsp;</td>
+                      <td>&nbsp;</td>
+                    </tr>
+                    <tr>
+                      <td>&nbsp;</td>
+                      <td>&nbsp;</td>
+                      <td>&nbsp;</td>
+                      <td>&nbsp;</td>
+                      <td>&nbsp;</td>
+                      <td>&nbsp;</td>
+                    </tr>
+                    <tr>
+                      <td>&nbsp;</td>
+                      <td>&nbsp;</td>
+                      <td>&nbsp;</td>
+                      <td>&nbsp;</td>
+                      <td>&nbsp;</td>
+                      <td>&nbsp;</td>
+                    </tr>
+                  </tbody>
+                </table>
+
+        </div>
+      </div>
+      <div class="clear"></div>
+      <!-- 主内容 End -->
+    </div>
+  </div>
+  <!--// End: container -->
+  <!--#include virtual="../Library/footer.shtml" -->
+</div>
+<!--// End: Html -->
+</body>
+</html>

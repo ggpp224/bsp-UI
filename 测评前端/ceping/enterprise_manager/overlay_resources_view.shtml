@@ -1,0 +1,23 @@
+<div class="overbody">
+<table width="100%" class="default_table form_table">
+        <tr>
+          <td>
+            <div class="exportbtn">
+              <ul>
+                <li><a href="#" class="expbtn">导出列表</a></li>
+              </ul>
+            </div>
+            <label class="seltextbox">必修资源数：<b class="wrongfont">3</b></label></td>
+        </tr>
+</table>
+  <iframe src="table_list_resources.html" frameborder="0" width="100%" scrolling="no" style="height:273px;"></iframe>
+  
+  <div class="pagination">
+	<form id="test"> 
+		1/25页 <a href="resources_add.shtml?=user">首页</a>
+		<a href="#">上一页</a>
+		<a href="#">下一页</a>
+		<a href="#">末页</a>
+   </form>
+</div>
+</div>

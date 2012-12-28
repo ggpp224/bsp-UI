@@ -1,0 +1,137 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta content="企业培训、企业内训、企业学习、企业大学、渠道大学、e-Learning、学习平台、学习系统、人才管理、岗位胜任力模型、Skillsoft、职业发展、培训管理、继任规划" name="keywords" />
+<meta content="企业商学院是集在线学习、能力测评、学习计划和培训管理为一体的企业学习整体解决方案。帮助企业提升内训、渠道培训、分支机构培训的整体水平，最大程度发掘培训价值，实现培训效益提升，全面促进企业人才培养。" name="description" />
+<title>CBS - 积分规则管理</title>
+<!--系统样式-->
+<link href="../css/default.css" rel="stylesheet" type="text/css" />
+<!--皮肤样式  Blue-->
+<link href="../css/enterprise_blue.css" rel="stylesheet" type="text/css" />
+<link href="../css/nyroModal.css" rel="stylesheet" type="text/css" />
+<!--[if IE]>
+<link type="text/css" rel="stylesheet" href="../css/ie.css" />
+<![endif]-->
+<!-- jQuery with plugins -->
+<script type="text/javascript" src="../js/libs/jquery-1.4.3.min.js"></script>
+<script language="javascript" type="text/javascript" src="../js/libs/nyroModal1.6.2.min.js"></script>
+<script type = "text/javascript">
+ $(document).ready(function() {
+	cbs.tablehover();//表单换行颜色 hover
+
+	//修改分值授权
+	 $('.changepoint').nyroModal({
+			width: 380
+	   });
+	});
+
+</script>
+</head>
+<body>
+<!-- Start:  Html  //-->
+<div id="content">
+  <!-- Start:  header //-->
+  <!--#include virtual="../Library/header_enterprise.shtml" -->
+  <!--// End: header-->
+  <!-- Start: container //-->
+  <div id="container">
+    <div class="box admin_box">
+      <!-- 面包屑 --><div class="bread_crumbs">
+				  <a href="system.shtml">系统管理</a>&nbsp;&#8250;&nbsp;<b>积分规则管理</b> </div>
+      <!-- 面包屑 End -->
+        <div class="content_body padding28">
+        <table width="100%" border="0" cellspacing="0" cellpadding="0" class="default_table listtab">
+          <thead class="gradual_bg">
+            <tr >
+              <th class="th_center">积分项目</th>
+              <th>积分事件</th>
+              <th align="left">分值</th>
+              <th align="left">状态</th>
+              <th align="left">作用对象</th>
+              <th width="50" class="th_center">操作</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td rowspan="5" align="center"><strong>学习行为</strong></td>
+              <td>1小时在线课件学习时长</td>
+              <td>10</td>
+              <td>启用</td>
+              <td>普通学员</td>
+              <td><a href="overlay_integral_edit.shtml"  class="changepoint" title="修改分值授权">分值</a><a href="#" class="tabico_start"  title="启用">启用</a></td>
+            </tr>
+            <tr>
+              <td>完成1门在线课件学习</td>
+              <td>15</td>
+              <td>停用</td>
+              <td>普通学员</td>
+              <td><a href="overlay_integral_edit.shtml" class="changepoint" title="修改分值授权">分值</a><a href="#" class="tabico_stop"  title="停用">停用</a></td>
+            </tr>
+            <tr>
+              <td>完成1门在线测试</td>
+              <td>15</td>
+              <td>停用</td>
+              <td>普通学员</td>
+              <td><a href="overlay_integral_edit.shtml" class="changepoint" title="修改分值授权">分值</a><a href="#" class="tabico_stop"  title="停用">停用</a></td>
+            </tr>
+            <tr>
+              <td>参加1次webex在线课件</td>
+              <td>15</td>
+              <td>启用</td>
+              <td>普通学员</td>
+              <td><a href="overlay_integral_edit.shtml" class="changepoint" title="修改分值授权">分值</a><a href="#" class="tabico_start"  title="启用">启用</a></td>
+            </tr>
+            <tr>
+              <td>参加1次面授课程</td>
+              <td>10</td>
+              <td>停用</td>
+              <td>普通学员</td>
+              <td><a href="overlay_integral_edit.shtml" class="changepoint" title="修改分值授权">分值</a><a href="#" class="tabico_stop"  title="停用">停用</a></td>
+            </tr>
+            <tr>
+              <td rowspan="5" align="center"><strong>互动行为</strong></td>
+              <td>参加1次调查</td>
+              <td>10</td>
+              <td>停用</td>
+              <td>普通学员</td>
+              <td><a href="overlay_integral_edit.shtml" class="changepoint" title="修改分值授权">分值</a><a href="#" class="tabico_stop"  title="停用">停用</a></td>
+            </tr>
+            <tr>
+              <td>在社区上发表1次帖子</td>
+              <td>15</td>
+              <td>停用</td>
+              <td>普通学员</td>
+              <td><a href="overlay_integral_edit.shtml" class="changepoint" title="修改分值授权">分值</a><a href="#" class="tabico_stop"  title="停用">停用</a></td>
+            </tr>
+            <tr>
+              <td>在社区上回复1次帖子</td>
+              <td>15</td>
+              <td>停用</td>
+              <td>普通学员</td>
+              <td><a href="overlay_integral_edit.shtml" class="changepoint" title="修改分值授权">分值</a><a href="#" class="tabico_stop"  title="停用">停用</a></td>
+            </tr>
+            <tr>
+              <td>评价1次资源</td>
+              <td>15</td>
+              <td>停用</td>
+              <td>普通学员</td>
+              <td><a href="overlay_integral_edit.shtml" class="changepoint" title="修改分值授权">分值</a><a href="#" class="tabico_stop"  title="停用">停用</a></td>
+            </tr>
+            <tr>
+              <td>提交1次问题反馈</td>
+              <td>10</td>
+              <td>停用</td>
+              <td>普通学员</td>
+              <td><a href="overlay_integral_edit.shtml" class="changepoint" title="修改分值授权">分值</a><a href="#" class="tabico_stop"  title="停用">停用</a></td>
+            </tr>
+          </tbody>
+        </table>
+
+    </div><!--//end:content_body-->
+  </div><!--//end:box-->
+  </div><!--// End: container --> <!--#include virtual="../Library/footer.shtml" --></div>
+
+<script src="../js/libs/cbs_userjs.js"></script>
+</body>
+</html>

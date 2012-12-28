@@ -1,0 +1,38 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta content="企业培训、企业内训、企业学习、企业大学、渠道大学、e-Learning、学习平台、学习系统、人才管理、岗位胜任力模型、Skillsoft、职业发展、培训管理、继任规划" name="keywords" />
+<meta content="企业商学院是集在线学习、能力测评、学习计划和培训管理为一体的企业学习整体解决方案。帮助企业提升内训、渠道培训、分支机构培训的整体水平，最大程度发掘培训价值，实现培训效益提升，全面促进企业人才培养。" name="description" />
+<title>培训实施 - 发起在线测试</title>
+<!--系统样式-->
+<link href="../css/default.css" rel="stylesheet" type="text/css" />
+<!--皮肤样式  Blue-->
+<link href="../css/enterprise_blue.css" rel="stylesheet" type="text/css" />
+<link href="../css/nyroModal.css" rel="stylesheet" type="text/css" />
+<!--[if IE]>
+<link type="text/css" rel="stylesheet" href="../css/ie.css" />
+<![endif]-->
+</head>
+
+<body>
+<div id="content">
+  <!--#include virtual="../Library/header_enterprise.shtml" -->
+   <div id="container">
+      <div class="box admin_box">
+	    <!-- Start:面包屑 bread_crumbs //-->
+		<div class="bread_crumbs">
+			<a href="training-implementation_online_ks.shtml">培训实施</a>&nbsp;&#8250;&nbsp;<b>发布在线考试</b>
+		</div>
+		<div class="content_body padding28" >
+			<h1 class="panel_title">发布在线考试</h1>
+			<form id="flight" method="post" name="add_form" action="#" class="bigFrom"></form>
+
+		</div>
+	  </div>
+   </div>
+   <!--#include virtual="../Library/footer.shtml" -->
+</div>
+<script data-main="../js/main-enterprise_manager" src="../js/libs/require.js"></script>
+</body>
+</html>

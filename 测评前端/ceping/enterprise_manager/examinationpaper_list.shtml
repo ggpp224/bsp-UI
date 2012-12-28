@@ -1,0 +1,165 @@
+<div class="from_panel">
+<form method="post" action="#" class="listtab_btn">
+    	<div class="exportbtn">
+        <ul>
+          <li><a href="#" class="expbtn">导出<span>&nbsp;</span></a>
+            <ul>
+              <li><a href="#">导出概要数据</a></li>
+              <li><a href="#">导出详细数据</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+      
+      
+      <input type="button" name="" class="btn btn_feature"  onclick="location.href='examinationpaper_list_add.shtml'" value="新增试卷" />
+	  <input type="button" name="" class="btn btn_edit"  onclick="location.href='examinationpaper_list_add.shtml'" value="复制试卷" />
+      <input type="button" name="" class="btn btn_other departments"  value="批量调整所属分类">
+      <input type="button" name="" class="btn btn_del" value="批量删除" id="delcustomer"  title="批量删除"/>
+      <span class="selbtn_showtxt">未分类试卷：<a href="#"><span class="redhot">40</span></a></span>
+</form>
+</div>
+  
+  
+  <table width="100%" border="0" cellspacing="0" cellpadding="0" class="default_table listtab">
+    <thead class="gradual_bg">
+      <tr>
+        <th width="28" class="th_center"><input type="checkbox" name="num" value="" onclick="if(this.checked==true) { checkAll('num'); } else { clearAll('num'); }" /></th>
+        <th>试卷名称</th>
+        <th width="80">试题数</th>
+        <th width="100">试卷满分</th>
+        <th width="100">来源</th>
+        <th width="100">操作</th>
+      </tr>
+    </thead>
+    <tbody>
+    
+      <tr>
+        <td align="center"><input input type="checkbox" name="num" value="" /></td>
+        <td><a href="examinationpaper_list_view.shtml" title="领导模式">试卷名称1</a></td>
+        <td>40</td>
+        <td>100</td>
+        <td>自建试卷</td>
+        <td>
+			<a href="#" class="tabico_edit" title="编辑">编辑</a>
+            <a href="#" class="tabico_view" title="预览">预览</a>
+            <a href="#" class="recognizing"  title="发起考试">发起考试</a>
+            </span>
+		</td>
+      </tr>
+      
+      <tr>
+        <td align="center"><input input type="checkbox" name="num" value="" /></td>
+        <td><a href="examinationpaper_list_view.shtml" title="领导模式">试卷名称2</a></td>
+        <td>100</td>
+        <td>100</td>
+        <td>第三方试卷</td>
+        <td>
+			<a href="#" class="notedit" title="不可编辑">不可编辑</a>
+            <a href="#" class="tabico_view" title="预览">预览</a>
+            <a href="#" class="recognizing"  title="发起考试">发起考试</a>
+            </span>
+		</td>
+      </tr>
+      
+      <tr>
+      <td align="center"><input input type="checkbox" name="num" value="" /></td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      </tr>
+      
+      <tr>
+      <td align="center"><input input type="checkbox" name="num" value="" /></td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      </tr>
+      
+      <tr>
+      <td align="center"><input input type="checkbox" name="num" value="" /></td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      </tr>
+      
+      <tr>
+      <td align="center"><input input type="checkbox" name="num" value="" /></td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      </tr>
+      
+      <tr>
+      <td align="center"><input input type="checkbox" name="num" value="" /></td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      </tr>
+      
+      <tr>
+      <td align="center"><input input type="checkbox" name="num" value="" /></td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      </tr>
+      
+      <tr>
+      <td align="center"><input input type="checkbox" name="num" value="" /></td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      </tr>
+      
+      <tr>
+      <td align="center"><input input type="checkbox" name="num" value="" /></td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      </tr>
+      
+	  
+    </tbody>
+  </table>
+  <!-- 翻页 -->
+  <div class="pagination">
+    <ul>
+      <li>每页显示
+        <select>
+          <option>10</option>
+          <option>20</option>
+          <option>30</option>
+          <option>50</option>
+        </select>
+        条&nbsp;&nbsp;1/25页 </li>
+      <li class="disablepage">上一页</li>
+      <li class="currentpage">1</li>
+      <li><a href="#">2</a></li>
+      <li><a href="#">3</a></li>
+      <li><a href="#">4</a></li>
+      <li><a href="#">5</a></li>
+      <li><a href="#">6</a></li>
+      <li><a href="#">7</a></li>
+      <li><a href="#">8</a></li>
+      <li><a href="#">9</a>...</li>
+      <li><a href="#">15</a></li>
+      <li><a href="#">16</a></li>
+      <li class="nextpage"><a href="#">下一页</a></li>
+    </ul>
+ </div>

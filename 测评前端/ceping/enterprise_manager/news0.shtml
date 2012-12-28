@@ -1,0 +1,170 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta content="企业培训、企业内训、企业学习、企业大学、渠道大学、e-Learning、学习平台、学习系统、人才管理、岗位胜任力模型、Skillsoft、职业发展、培训管理、继任规划" name="keywords" />
+<meta content="企业商学院是集在线学习、能力测评、学习计划和培训管理为一体的企业学习整体解决方案。帮助企业提升内训、渠道培训、分支机构培训的整体水平，最大程度发掘培训价值，实现培训效益提升，全面促进企业人才培养。" name="description" />
+<title>企业商学院 - 系统管理 - 新闻公告</title>
+<!--系统样式-->
+<link href="../css/default.css" rel="stylesheet" type="text/css" />
+<!--皮肤样式  Blue-->
+<link href="../css/system.css" rel="stylesheet" type="text/css" />
+<!-- 日历样式 -->
+<link type="text/css" rel="stylesheet" href="../css/flight_calendar.css" />
+<!--[if IE]>
+<link type="text/css" rel="stylesheet" href="../css/ie.css" />
+<![endif]-->
+<!-- jQuery with plugins -->
+<script type="text/javascript" src="../js/libs/jquery-1.4.3.min.js"></script>
+<script type="text/javascript">
+    $(document).ready(function() {cbs.overlay(); });
+</script>
+</head>
+<body>
+<!-- Start:  Html  //-->
+<div id="content">
+  <!-- Start:  header //-->
+  <!--#include virtual="../Library/header_enterprise.shtml" -->
+  <!--// End: header-->
+  <!-- Start: container //-->
+  <div id="container">
+    <div class="box admin_box">
+      <!-- 面包屑 --><div class="bread_crumbs">
+				  <a href="system.shtml">系统管理</a>&nbsp;&#8250;&nbsp;<a href="news.shtml" class="current">新闻公告</a></div>
+      <!-- 面包屑 End -->
+      <!-- 主内容 -->
+      <div class="content_body">
+        <!-- 功能索索 -->
+        <div class="features_search padding28">
+          <form  method="post" action="#" class="search_From">
+            <dl>
+              <dt>
+                <label>标题：</label>
+              </dt>
+              <dd>
+                <input type="text" class="default_txt" value="" name=""/>
+              </dd>
+              <dt>
+                <label>内容：</label>
+              </dt>
+              <dd>
+                <input type="text" class="default_txt" value="" name="input"/>
+              </dd>
+              <dt class="btn_dt">
+                <input type="button" name="" value=" 查询 " class="btn btn_default"/>
+              </dt>
+            </dl>
+          </form>
+        </div>
+        <!-- 功能搜索 End -->
+        <div  class="from_panel padding28">
+          <form method="post" action="#" class="listtab_btn">
+            <a href="news_add.shtml" rel="#overlaybig" title="新增新闻/公告"  >
+            <input type="button" name="" class="btn btn_add" value="新增" />
+            </a> <a href="overlay_delsector.shtml" rel="#overlay" title="删除">
+            <input type="button" name="" class="btn btn_del overlay" rel="#click_icon_del" value="删除" />
+            </a>
+          </form>
+          <table width="100%" border="0" cellspacing="0" cellpadding="0" class="default_table listtab">
+            <thead class="gradual_bg">
+              <tr >
+                <th width="20"><input type="checkbox" /></th>
+                <th width="30">状态</th>
+                <th align="left">标题</th>
+                <th align="left">内容</th>
+                <th width="80" align="left">发布日期</th>
+                <th width="50" align="left">操作</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><input type="checkbox" /></td>
+                <td><span class="finish_ico" title="当前状态：有效，点击图标进行状态切换！">活动</span></td>
+                <td>[新闻] <a href="#" title="定于2010年12月14日（星期五）上午9点对系统进行升级，届时将会造成用户短时间不能登录的情况，特此通知!">系统升级公告</a></td>
+                <td title="定于2010年12月14日（星期五）上午9点对系统进行升级，届时将会造成用户短时间不能登录的情况，特此通知!">定于2010年12月14日（星期五）上午9点对系统进行升级，...</td>
+                <td title="定于2010年12月14日（星期五）上午9点对系统进行升级，届时将会造成用户短时间不能登录的情况，特此通知!"><span class="small_date" style="font-size:10px;">2010-12-12</span></td>
+                <td><a href="news_add.shtml" rel="#overlaybig" class="tabico_edit" title="编辑">编辑</a> <a href="#" class="tabico_del"  title="删除"></a></td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" /></td>
+                <td><span class="notbeen_ico" title="当前状态：有效，点击图标进行状态切换！">活动</span></td>
+                <td>[公告] <a href="#" title="这里显示标题文字...">系统升级公告</a></td>
+                <td>20</td>
+                <td><span class="small_date" style="font-size:10px;">2010-12-12</span></td>
+                <td><a href="news_add.shtml" class="tabico_edit" title="编辑">编辑</a> <a href="#" class="tabico_del"  title="删除"></a></td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" /></td>
+                <td><span class="finish_ico" title="当前状态：有效，点击图标进行状态切换！">活动</span></td>
+                <td>[新闻] <a href="#" title="这里显示标题文字...">系统升级公告</a></td>
+                <td>23</td>
+                <td><span class="small_date" style="font-size:10px;">2010-12-12</span></td>
+                <td><a href="news_add.shtml" class="tabico_edit" title="编辑">编辑</a> <a href="#" class="tabico_del"  title="删除"></a></td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" /></td>
+                <td><span class="finish_ico" title="当前状态：有效，点击图标进行状态切换！">活动</span></td>
+                <td>[公告] <a href="#" title="这里显示标题文字...">系统升级公告</a></td>
+                <td>455</td>
+                <td><span class="small_date" style="font-size:10px;">2010-12-12</span></td>
+                <td><a href="news_add.shtml" class="tabico_edit" title="编辑">编辑</a> <a href="#" class="tabico_del"  title="删除"></a></td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" /></td>
+                <td><span class="finish_ico" title="当前状态：有效，点击图标进行状态切换！">活动</span></td>
+                <td><a href="#" title="这里显示标题文字...">[公告] 系统升级公告</a></td>
+                <td>12</td>
+                <td><span class="small_date" style="font-size:10px;">2010-12-12</span></td>
+                <td><a href="news_add.shtml" class="tabico_edit" title="编辑">编辑</a> <a href="#" class="tabico_del"  title="删除"></a></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <!-- 翻页 -->
+        <div class="pagination">
+          <ul>
+            <li>每页显示<select>
+                                <option>10</option>
+
+                                <option>20</option>
+                                <option>30</option>
+                                <option>50</option>
+                            </select>
+              条&nbsp;&nbsp;1/25页 </li>
+            <li class="disablepage">上一页</li>
+            <li class="currentpage">1</li>
+            <li><a href="#">2</a></li>
+            <li><a href="#">3</a></li>
+            <li><a href="#">4</a></li>
+            <li><a href="#">5</a></li>
+            <li><a href="#">6</a></li>
+            <li><a href="#">7</a></li>
+            <li><a href="#">8</a></li>
+            <li><a href="#">9</a>...</li>
+            <li><a href="#">15</a></li>
+            <li><a href="#">16</a></li>
+            <li class="nextpage"><a href="#">下一页</a></li>
+          </ul>
+        </div>
+        <!-- 翻页 -->
+      </div>
+      <div class="clear"></div>
+      <!-- 主内容 End -->
+    </div>
+  </div>
+  <!--// End: container -->  <!--#include virtual="../Library/footer.shtml" --></div>
+<!--// End: Html -->
+<!-- 弹窗Jquery -->
+<script src="../js/libs/overlay.js"></script>
+
+<!-- 声明 引用-->
+<script src="../js/libs/cbs_userjs.js"></script>
+<div class="modal" id="overlay">
+  <div class="default-overlay overlaybox"> </div>
+</div>
+<!--大窗口-->
+<div class="modal"  id="overlaybig">
+  <div class="default-overlay"> </div>
+</div>
+</body>
+</html>

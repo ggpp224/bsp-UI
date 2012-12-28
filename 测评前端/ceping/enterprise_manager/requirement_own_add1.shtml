@@ -1,0 +1,123 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta content="企业培训、企业内训、企业学习、企业大学、渠道大学、e-Learning、学习平台、学习系统、人才管理、岗位胜任力模型、Skillsoft、职业发展、培训管理、继任规划" name="keywords" />
+<meta content="企业商学院是集在线学习、能力测评、学习计划和培训管理为一体的企业学习整体解决方案。帮助企业提升内训、渠道培训、分支机构培训的整体水平，最大程度发掘培训价值，实现培训效益提升，全面促进企业人才培养。" name="description" />
+<title>CBS - 用户管理 - 资源管理 - 新增</title>
+<!--系统样式-->
+<link href="../css/default.css" rel="stylesheet" type="text/css" />
+<!--皮肤样式  Blue-->
+<link href="../css/enterprise_blue.css" rel="stylesheet" type="text/css" />
+
+<!--[if IE]>
+<link type="text/css" rel="stylesheet" href="../css/ie.css" />
+<![endif]-->
+<!-- jQuery with plugins -->
+<script type="text/javascript" src="../js/libs/jquery-1.4.3.min.js"></script>
+<!-- 左侧Tab -->
+<script type="text/javascript" src="../js/libs/tabs.js"></script>
+
+<script type="text/javascript">
+    $(document).ready(function() {
+	cbs.accountnum();
+ });
+</script>
+</head>
+<body>
+<!-- Start:  Html  //-->
+<div id="content">
+  <!-- Start:  header //-->
+  <!--#include virtual="../Library/header_enterprise.shtml" -->
+  <!--// End: header-->
+  <!-- Start: container //-->
+  <div id ="container">
+    <div class="box admin_box miniheight">
+      <!-- 面包屑 --><div class="bread_crumbs">
+				  <a href="resources.shtml">资源管理</a>&nbsp;&#8250;&nbsp;<b>新增在线课件</b> </div>
+      <!-- 面包屑 End -->
+      <!-- STEP -->
+            <div class="stepbox">
+                <ul>
+                    <li class="step_frist trisection step_waiting">
+                        <dl class="current">
+                            <dt ></dt>
+                            <dd class="numberbox">1</dd>
+                            <dd class="title_text">输入基本信息</dd>
+                            <dd>请填写...</dd>
+                        </dl>
+                    </li>
+                    <li class="step_second trisection">
+                        <dl>
+                            <dt></dt>
+                            <dd class="numberbox">2</dd>
+                            <dd class="title_text">上传标准课件包</dd>
+                            <dd>等待中</dd>
+                        </dl>
+                    </li>
+                    <li class="step_third trisection">
+                        <dl>
+                            <dt></dt>
+                            <dd class="numberbox">1</dd>
+                            <dd class="title_text">补充课件信息</dd>
+                            <dd>等待中</dd>
+                        </dl>
+                    </li>
+                </ul>
+            </div>
+      <!-- STEP End -->
+      <!-- 常规信息 -->
+      <form id="flight" method="post" action="#" class="bigFrom padding28">
+        <h1 class="panel_title">输入课件基本信息</h1>
+        <dl class="from_panel">
+          <dt>
+            <label><span>*</span> 课件名称：</label>
+          </dt>
+          <dd>
+            <input type="text" class="default_txt" name="" size="30" />
+          </dd>
+          <dt>
+            <label><span>*</span> 课件编码：</label>
+          </dt>
+          <dd>
+            <input type="text" class="default_txt" value="" name="" size="30" />
+          </dd>
+          <dt>
+            <label><span>*</span> 时长：</label>
+          </dt>
+          <dd>
+            <input type="text" class="default_txt" value="" name="" size="10" />
+            分钟</dd>
+          <dt>
+            <label><span>*</span> 制作工具：</label>
+          </dt>
+          <dd>
+            <select name="" class="mini_sel" id="account_num2">
+              <option value="0">-请选择-</option>
+              <option value="1">PowerCreator</option>
+              <option value="2">lectora</option>
+              <option value="3">其他</option>
+            </select>
+            <label id="account_num_txt">&nbsp;&nbsp;请输入：
+              <input name="" type="text" class="default_txt" value="" readonly="readonly" />
+            </label>
+          </dd>
+        </dl>
+        <div class="but_box save_box">
+          <input name="按钮" type="button" class="btn btn_feature " onclick="location.href='requirement_own_add2.shtml'" value=" 保存并进入下一步 "/>
+          <input name="重置" type="reset" class="btn btn_reset " value="      取消      "/>
+        </div>
+      </form>
+    </div>
+  </div>
+  <!--// End: container -->  <!--#include virtual="../Library/footer.shtml" --></div>
+<!--// End: Html -->
+<!-- 弹窗Jquery -->
+
+
+<!-- 声明 引用-->
+<script src="../js/libs/cbs_userjs.js"></script>
+<!-- 部门调整 -->
+
+</body>
+</html>

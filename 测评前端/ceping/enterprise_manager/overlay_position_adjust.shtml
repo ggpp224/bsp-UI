@@ -1,0 +1,92 @@
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<form  method="post" action="#" class="bigFrom">
+<div class="overbody">
+  <table width="100%" class="default_table">
+  
+  	<tr>
+    <td>&nbsp;</td>
+    <td colspan="3"><input type="text" class="default_txt" size="36"/>
+	   <input type="submit" class="btn btn_reset" value="查询"/>
+    </td>
+    </tr>
+    
+  	<tr>
+    <td class="no_padding">
+    	<strong>已选人员名单：</strong>
+    	<div class="minibox_name noscroll">
+          <div class="studentname">
+				<p><span></span>马博士</p>
+                <p><span></span>董汉生</p>
+                <p><span></span>尧舜祥</p>
+                <p><span></span>梁俊豪</p>
+                <p><span></span>毛旭峰</p>
+                <p><span></span>马博士</p>
+                <p><span></span>董汉生</p>
+                <p><span></span>尧舜祥</p>
+                <p><span></span>梁俊豪</p>
+                <p><span></span>毛旭峰</p>
+                
+          </div>
+        </div>
+    </td>
+    
+    <td class="no_padding">
+	<strong>岗位分类树：</strong>
+        <div class="minibox">
+          <div id="load_html_data1"></div>
+        </div>
+     </td>
+     
+      <td align="center">
+	    <button class="addbtn">添加</button>
+        <button class="delallbtn">全移除</button>
+	  </td>
+      
+      <td class="no_padding"><strong>已选岗位：</strong>
+        <div class="minibox noscroll" >
+          <div class="divselect">
+            <ul>
+              <li><a href="#" class="delico"  title="从列表删除">从列表删除</a><span>岗位名称01</span></li>
+              <li><a href="#" class="delico"  title="从列表删除">从列表删除</a><span>岗位名称02</span></li>
+              <li><a href="#" class="delico"  title="从列表删除">从列表删除</a><span>岗位名称03</span></li>
+              <li><a href="#" class="delico"  title="从列表删除">从列表删除</a><span>岗位名称</span></li>
+              <li><a href="#" class="delico"  title="从列表删除">从列表删除</a><span>岗位名称</span></li>
+              <li><a href="#" class="delico"  title="从列表删除">从列表删除</a><span>岗位名称</span></li>
+              <li><a href="#" class="delico"  title="从列表删除">从列表删除</a><span>岗位名称</span></li>
+              <li><a href="#" class="delico"  title="从列表删除">从列表删除</a><span>岗位名称</span></li>
+              <li><a href="#" class="delico"  title="从列表删除">从列表删除</a><span>岗位名称</span></li>
+              <li><a href="#" class="delico"  title="从列表删除">从列表删除</a><span>岗位名称</span></li>
+              <li><a href="#" class="delico"  title="从列表删除">从列表删除</a><span>岗位名称</span></li>
+              <li><a href="#" class="delico"  title="从列表删除">从列表删除</a><span>岗位名称</span></li>
+              <li><a href="#" class="delico"  title="从列表删除">从列表删除</a><span>岗位名称</span></li>
+              <li><a href="#" class="delico"  title="从列表删除">从列表删除</a><span>岗位名称</span></li>
+            </ul>
+          </div>
+        </div></td>
+    </tr>
+  </table>
+  </div>
+  <div class="overlay_btn">
+    <input type="button" class="btn btn_submit" value=" 保存 "/>
+    <input type="button" class="btn btn_reset overlayClose" value=" 取消 "/>
+  </div>
+</form>
+<script type = "text/javascript">
+
+ $(document).ready(function() {	
+   // load html data from file
+$("#load_html_data1").jstree({ 
+		"html_data" : {
+			"ajax" : {
+				"url" : "data/data_resources.shtml",
+				"data" : function (n) { 
+					return { id : n.attr ? n.attr("id") : 0 }; 
+				}
+			}
+		},
+		"plugins" : [ "themes", "html_data" ,"checkbox","contextmenu","cookies","ui","crrm","dnd"] 
+		
+	});
+ });
+
+</script>

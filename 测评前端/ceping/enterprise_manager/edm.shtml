@@ -1,0 +1,102 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta content="企业培训、企业内训、企业学习、企业大学、渠道大学、e-Learning、学习平台、学习系统、人才管理、岗位胜任力模型、Skillsoft、职业发展、培训管理、继任规划" name="keywords" />
+<meta content="企业商学院是集在线学习、能力测评、学习计划和培训管理为一体的企业学习整体解决方案。帮助企业提升内训、渠道培训、分支机构培训的整体水平，最大程度发掘培训价值，实现培训效益提升，全面促进企业人才培养。" name="description" />
+<title>CBS - 邮件模板设置</title>
+<!--系统样式-->
+<link href="../css/default.css" rel="stylesheet" type="text/css" />
+<!--皮肤样式  Blue-->
+<link href="../css/enterprise_blue.css" rel="stylesheet" type="text/css" />
+<link href="../css/nyroModal.css" rel="stylesheet" type="text/css" />
+<!--[if IE]>
+<link type="text/css" rel="stylesheet" href="../css/ie.css" />
+<![endif]-->
+<!-- jQuery with plugins -->
+<script type="text/javascript" src="../js/libs/jquery-1.4.3.min.js"></script>
+<script language="javascript" type="text/javascript" src="../js/libs/nyroModal1.6.2.min.js"></script>
+<script type="text/javascript">
+    $(document).ready(function() {
+	//删除话题
+	$('.overlay_edit').nyroModal({
+		width: 800
+	});
+
+	//导入
+	 $('.overlay_save').click(function(e){
+		 e.preventDefault();
+			$.fn.nyroModalManual({
+				width:380,
+				url: 'overlay_edm_save.shtml',
+				title:'保存设置'
+			});
+
+		return false;
+	});
+
+	});
+</script>
+</head>
+<body>
+<!-- Start:  Html  //-->
+<div id="content">
+  <!-- Start:  header //-->
+  <!--#include virtual="../Library/header_enterprise.shtml" -->
+  <!--// End: header-->
+  <!-- Start: container //-->
+  <div id="container">
+    <div class="box admin_box">
+      <!-- 面包屑 --><div class="bread_crumbs">
+				  <a href="resources.shtml">系统管理</a>&nbsp;&#8250;&nbsp;<b>邮件模板设置</b> </div>
+      <!-- 面包屑 End -->
+      <!-- 主内容 -->
+      <form  method="post" action="#" class="bigFrom padding28">
+
+
+        <div class="edm_box">
+
+        	<div class="edm_cont">
+            	<div class="edm_title">新增学习活动提醒</div>
+                <ul class="edm_list">
+                <li><span><a href="overlay_edm.shtml" class="overlay_edit" title="编辑在线课件提醒">编辑</a></span><label><input type="checkbox" checked="checked" name="" />在线课件提醒</label></li>
+                <li><span><a href="overlay_edm.shtml" class="overlay_edit" title="编辑在线测试提醒">编辑</a></span><label><input type="checkbox" checked="checked" name="" />在线测试提醒</label></li>
+                <li><span><a href="overlay_edm.shtml" class="overlay_edit" title="编辑线下测试提醒">编辑</a></span><label><input type="checkbox" checked="checked" name="" />线下测试提醒</label></li>
+                <li><span><a href="overlay_edm.shtml" class="overlay_edit" title="编辑在线同步课程提醒">编辑</a></span><label><input type="checkbox" checked="checked" name="" />在线同步课程提醒</label></li>
+                <li><span><a href="overlay_edm.shtml" class="overlay_edit" title="编辑面授课程提醒">编辑</a></span><label><input type="checkbox" checked="checked" name="" />面授课程提醒</label></li>
+                <li><span><a href="overlay_edm.shtml" class="overlay_edit" title="编辑问卷调查提醒">编辑</a></span><label><input type="checkbox" checked="checked" name="" />问卷调查提醒</label></li>
+                </ul>
+            </div>
+            <div class="edm_cont">
+            	<div class="edm_title">学习活动到期提醒</div>
+                <ul class="edm_list">
+                <li><span><a href="overlay_edm.shtml" class="overlay_edit" title="编辑在线课件到期提醒">编辑</a></span><label><input type="checkbox" checked="checked" name="" />在线课件到期提醒</label></li>
+                <li><span><a href="overlay_edm.shtml" class="overlay_edit" title="编辑在线测试到期提醒">编辑</a></span><label><input type="checkbox" checked="checked" name="" />在线测试到期提醒</label></li>
+                <li><span><a href="overlay_edm.shtml" class="overlay_edit" title="编辑问卷调查到期提醒">编辑</a></span><label><input type="checkbox" checked="checked" name="" />问卷调查到期提醒</label></li>
+                </ul>
+            </div>
+            <div class="edm_cont">
+            	<div class="edm_title">问题反馈提醒</div>
+                <ul class="edm_list">
+                <li><span><a href="overlay_edm.shtml" class="overlay_edit" title="编辑问卷反馈回复提醒">编辑</a></span><label><input type="checkbox" checked="checked" name="" />问卷反馈回复提醒</label></li>
+                </ul>
+            </div>
+            <div class="clearer"></div>
+
+        </div>
+
+
+        <div class="btn_box edit_box">
+          <input type="submit" class="btn btn_submit overlay_save" value="保存设置" />
+          <input type="submit" class="btn" disabled="disabled" value="√已保存" />
+        </div>
+      </form>
+      <!-- 主内容 End -->
+    </div>
+    <!--//End admin_box-->
+  </div>
+  <!--// End: container -->  <!--#include virtual="../Library/footer.shtml" --></div>
+<!--// End: Html -->
+<script src="../js/libs/cbs_userjs.js"></script>
+</body>
+</html>

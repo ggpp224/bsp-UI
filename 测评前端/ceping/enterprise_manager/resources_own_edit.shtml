@@ -1,0 +1,228 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta content="企业培训、企业内训、企业学习、企业大学、渠道大学、e-Learning、学习平台、学习系统、人才管理、岗位胜任力模型、Skillsoft、职业发展、培训管理、继任规划" name="keywords" />
+<meta content="企业商学院是集在线学习、能力测评、学习计划和培训管理为一体的企业学习整体解决方案。帮助企业提升内训、渠道培训、分支机构培训的整体水平，最大程度发掘培训价值，实现培训效益提升，全面促进企业人才培养。" name="description" />
+<title>CBS - 用户管理 - 资源管理 - 新增</title>
+<!--系统样式-->
+<link href="../css/default.css" rel="stylesheet" type="text/css" />
+<!--皮肤样式  Blue-->
+<link href="../css/enterprise_blue.css" rel="stylesheet" type="text/css" />
+<!--[if IE]>
+<link type="text/css" rel="stylesheet" href="../css/ie.css" />
+<![endif]-->
+<!-- jQuery with plugins -->
+<script type="text/javascript" src="../js/libs/jquery-1.4.3.min.js"></script>
+</head>
+<body>
+
+<!-- Start:  Html  //-->
+<div id="content">
+  <!-- Start:  header //-->
+  <!--#include virtual="../Library/header_enterprise.shtml" -->
+  <!--// End: header-->
+
+        <!-- Start: container //-->
+      	<div id ="container">
+             <div class="box admin_box">
+             	   <!-- 面包屑 --><div class="bread_crumbs">
+
+                    <a href="resources.shtml">资源管理</a>&nbsp;&#8250;&nbsp;<a href="resources_own.shtml">自有资源</a>&nbsp;&#8250;&nbsp;<a href="resources_own_add.shtml" class="current">编辑</a>
+                   </div>
+                   <!-- 面包屑 End -->
+
+
+                   <!-- 常规信息 -->
+                   <form  method="post" action="#" class="bigFrom">
+              	   <h1 class="panel_title">常规信息</h1>
+                    <dl class="from_panel">
+                        <dt><label><span>*</span> 资源类型：</label></dt>
+                        <dd>在线课件</dd>
+
+                        <dt><label><span>*</span> 资源名称：</label></dt>
+                        <dd>
+                             <input type="text" class="default_txt" value="资源名称" name=""/>
+                      </dd>
+
+                        <dt>
+                    <label><span>*</span> 资源编码：</label></dt>
+                        <dd><input type="text" class="default_txt" value="" name=""/></dd>
+
+                        <dt><label><span>*</span> 所属分类：</label></dt>
+                        <dd>
+                            <input type="text" class="default_txt" value="" name=""/>
+                            <a href="overlay_ownership.shtml" rel="#overlaybig">
+        					<input name="Button" type="button" class="btn btn_default overlay" rel="#departments" value="设置归属节点" />
+        					</a>
+                      </dd>
+
+                      <dt class="upload_img_title"><label>上传图片</label></dt>
+                      <dd class="upload_panel">
+                            <p class="sel_label"><label><input name="name1" type="radio" value="" checked="checked" /> 使用默认图片</label></p>
+                        	<p class="sel_label"><label><input name="name1" type="radio" value="" /> 使自主上传图片</label></p>
+                          	<p class="sel_label"><input type="text" class="default_txt" value="" name=""/>
+                            <input name="Button" type="button" class="btn btn_default" value="浏览" />
+                            <input name="Button" type="button" class="btn btn_default" value="上传" />
+                            <img src="../images/images_system/default_head_img.png" width="68" height="68" class="imgbox"/></p>
+
+                      </dd>
+
+                         <dt><label>活动状态：</label></dt>
+                         <dd>
+                         	<label><input name="name2" type="radio" value="" /> 活动</label>
+                            <label><input name="name2" type="radio" value="" checked="checked" /> 非活动</label>
+                         </dd>
+
+                      <dt><label>语言版本：</label></dt>
+                      <dd><select name="" class="mini_sel">
+                                   <option>-请选择-</option>
+                                   <option>英语</option>
+                                   <option>中文</option>
+                                   <option>其他</option>
+                </select>
+                              <input type="text" class="default_txt" value="" name=""/>
+                      </dd>
+
+                       <dt><label>媒体类型：</label></dt>
+                       <dd>
+                               <select name="" class="mini_sel">
+                                   <option>-请选择-</option>
+                                   <option>Scorm</option>
+                                   <option>Aicc</option>
+                                   <option>其他</option>
+                          </select>
+                              <input type="text" class="default_txt" value="" name=""/>
+                       </dd>
+
+                       <dt><label>制作工具：</label></dt>
+                       <dd>
+                           <select name="" class="mini_sel">
+                                   <option>-请选择-</option>
+                                   <option>Power Creator</option>
+                                   <option>Lectora</option>
+                                   <option>其他</option>
+                     </select>
+                             <input type="text" class="default_txt" value="" name=""/>
+                       </dd>
+                        <dt><label>时长：</label></dt>
+                       <dd>
+                         <input type="text" class="default_txt" value="" name=""/>
+                       分钟</dd>
+                        <dt><label>关键字：</label></dt>
+                       <dd>
+                         <input type="text" class="default_txt" value="" name=""/>
+                       <span class="tips">不同的关键字之间请用;隔开</span></dd>
+                        <dt><label>学习目标：</label>
+                        </dt>
+                       <dd>
+                         <textarea name="textarea" cols="" rows="4" class="default_textarea"></textarea>
+                       </dd>
+                        <dt><label>适用对象：</label></dt>
+                       <dd>
+                         <textarea name="textarea" cols="" rows="2" class="default_textarea"></textarea>
+                       </dd>
+                       <dt><label> 课程描述：</label></dt>
+                       <dd><textarea name="" cols="" rows="" class="default_textarea"></textarea></dd>
+                  </dl>
+                  <div class="btn_box save_box"><input type="submit" class="btn btn_feature" value="保存" /></div>
+               	</form>
+
+                    <!-- 商品信息 -->
+                   <form  method="post" action="#" class="bigFrom">
+              	   <h1 class="panel_title">商品和讲师信息</h1>
+                    <dl class="from_panel">
+
+                    <dt><label>价格：</label></dt>
+                        <dd><input type="text" class="default_txt mini_txt" value="15" name=""/>&nbsp;元</dd>
+
+                        <dt><label>提供商：</label></dt>
+                        <dd>
+                          <select name="provider" class="mini_sel" id="provider">
+                            <option>-请选择-</option>
+                            <option>-请选择-</option>
+                          </select>
+                        </dd>
+
+                        <dt><label>主讲教师：</label>
+                        </dt>
+                        <dd>
+                          <select name="provider2" class="mini_sel" id="provider2">
+                            <option>-请选择-</option>
+                            <option>-请选择-</option>
+                          </select>
+                        </dd>
+
+                        <dt><label>联合主讲教师：</label>
+                        </dt>
+                        <dd>
+                          <select name="provider3" class="mini_sel" id="provider3">
+                            <option>-请选择-</option>
+                            <option>-请选择-</option>
+                          </select>
+                        </dd>
+
+                    </dl>
+                    <div class="btn_box save_box"><input type="submit" class="btn btn_feature" value="保存" /></div>
+                    </form>
+
+
+
+
+               		<form  method="post" action="#" class="bigFrom">
+                   <h1 class="panel_title">管理日志</h1>
+                      <dl class="from_panel">
+                        <dd><a href="#">李某某（登录ID）</a>于 2010/12/12 12:34 创建资源</dd>
+                        <dd>李某某（登录ID）于 2010/12/12 12:34 创建资源</dd>
+                        <dd>李某某（登录ID）于 2010/12/12 12:34 创建资源</dd>
+                        <dd>李某某（登录ID）于 2010/12/12 12:34 创建资源</dd>
+                        <dd>李某某（登录ID）于 2010/12/12 12:34 创建资源</dd>
+                 </dl>
+
+                 <div class="but_box edit_box">
+                    <input type="submit" class="btn btn_submit" onClick="location.href='#';" value=" 保存全部 "/>
+                    <input type="submit" class="btn btn_reset" onClick="location.href='#';" value="取消／返回"/>
+                  </div>
+				</form>
+
+
+              </div>
+       </div>
+       <!--// End: container -->  <!--#include virtual="../Library/footer.shtml" --></div>
+<!--// End: Html -->
+
+
+
+
+<!-- 毛旭峰 2011.01.23 -->
+<!-- Table TD样式 -->
+<script type="text/javascript">
+		  $(document).ready(function(){
+		  var trSize = $(".listtab tr").size();//listtab中tr的数量
+
+		  function clickTr(currTrIndex){
+		  if (currTrIndex > -1){
+		  $("#tr_" + currTrIndex).addClass("over");
+		  }
+		  $("#tr_" + prevTrIndex).removeClass("over");
+		  }
+
+		  $(".listtab tr").mouseover(function(){//鼠标滑过
+		  $(this).addClass("over");
+		  })
+		  .mouseout(function(){ //鼠标滑出
+		  $(this).removeClass("over");
+		  })
+		  .each(function(i){ //初始化 id 和 index 属性
+		  $(this).attr("id", "tr_" + i).attr("index", i);
+		  })
+
+		  $(".listtab tr:even").addClass("alt"); //偶行变色
+
+
+		  })
+</script>
+<!-- Table TD 样式 End -->
+
+</body>
+</html>

@@ -1,0 +1,231 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta content="企业培训、企业内训、企业学习、企业大学、渠道大学、e-Learning、学习平台、学习系统、人才管理、岗位胜任力模型、Skillsoft、职业发展、培训管理、继任规划" name="keywords" />
+<meta content="企业商学院是集在线学习、能力测评、学习计划和培训管理为一体的企业学习整体解决方案。帮助企业提升内训、渠道培训、分支机构培训的整体水平，最大程度发掘培训价值，实现培训效益提升，全面促进企业人才培养。" name="description" />
+<title>CBS - 需求管理-文档资料</title>
+<!--系统样式-->
+<link href="../css/default.css" rel="stylesheet" type="text/css" />
+<!--皮肤样式  Blue-->
+<link href="../css/enterprise_blue.css" rel="stylesheet" type="text/css" />
+<link href="../css/nyroModal.css" rel="stylesheet" type="text/css" />
+<!--[if IE]>
+<link type="text/css" rel="stylesheet" href="../css/ie.css" />
+<![endif]-->
+<!-- jQuery with plugins -->
+<script type="text/javascript" src="../js/libs/jquery-1.4.3.min.js"></script>
+<script language="javascript" type="text/javascript" src="../js/libs/nyroModal1.6.2.min.js"></script>
+<script type="text/javascript">
+    $(document).ready(function() {
+
+	cbs.tablehover();//表单换行颜色 hover
+	    //删除
+	$('#delcustomer').click(function(e) {
+			e.preventDefault();
+			$.fn.nyroModalManual({
+			    width:380,
+				url: 'overlay_delsector.shtml',
+				title:'系统提示'
+			});
+			return false;
+	});
+	//上传
+	$(".reupload_ico").nyroModal({
+		width:560
+	  });
+
+	$(".viewdown").nyroModal({width:600 });
+
+	});
+</script>
+</head>
+<body>
+<!-- Start:  Html  //-->
+<div id="content">
+     <!--Start:头部//-->
+	 <!--#include virtual="../Library/header_enterprise.shtml" -->
+	 <!--//End:头部-->
+	<!--Start: container //-->
+	<div id ="container">
+		<div class="box admin_box">
+
+			<!-- 面包屑// -->
+          <div class="bread_crumbs">
+
+                <a class="to5_0" href="resources/toMyResourceBase.action">资源管理</a>&nbsp;&#8250;&nbsp;
+                <b>文档资料</b>
+         </div><!-- //End:面包屑 -->
+ <div class="content_body">
+        <!-- 功能索索 -->
+        <div class="features_search">
+          <form method="post" action="#" class="search_From">
+         <table width="100%"  border="0" class="default_table table_from">
+           <tr>
+             <th width="75">文档名称：</th>
+             <td width="120"><input type="text" class="default_txt" value="" size="17"/></td>
+             <th width="75">语言属性：</th>
+             <td width="120">
+             <select name="select" class="mini_sel">
+						<option>全部</option>
+						<option>中文</option>
+						<option>英文</option>
+                        <option>其他</option>
+				</select>
+             </td>
+             <td align="left"><input type="button" name="input" value=" 查询 " class="btn btn_default"/></td>
+             <td width="200" align="right">&nbsp;</td>
+           </tr>
+         </table>
+         </form>
+         </div>
+		 <div class="from_panel">
+		   <form method="post" action="#" class="listtab_btn">
+            <input type="button" name="" class="btn btn_feature"  onclick="location.href='documents_add.shtml'" value=" 新增 " />
+            <input type="button" name="" class="btn btn_del" value=" 删除 " id="delcustomer"  title="系统提示"/>
+			</form>
+		 </div><!--//End:from_panel-->
+
+		 <table width="100%" border="0"  class="default_table listtab"  >
+            <thead class="gradual_bg">
+              <tr>
+                <th width="28" class="th_center"> <input type="checkbox" />
+                </th>
+                <th>文档名称</th>
+                <th width="160">语言属性</th>
+                <th width="160">上传日期</th>
+                <th width="60" >下载次数</th>
+                <th width="110" class="th_center">操作</th>
+              </tr>
+            </thead>
+            <tbody class="tr_parent">
+              <tr>
+                <td align="center" class="l_tab"><input type="checkbox" class="checkbox"/></td>
+                <td><a href="documents_view.shtml">文档资料</a>
+                	<b></b></td>
+                <td>中文</td>
+                <td><small>2011-11-12 12:34</small></td>
+                <td ><a href="overlay_user_histrog.shtml" class="viewdown" title="查看下载详情">12</a></td>
+                <td class="r_tab"><a href="#" class="notedit" title="不可编辑">不可编辑</a><a href="#" class="tabico_down" title="下载">下载</a> <a href="#" class="noreupload_ico " title="不可重新上载文档">不可重新上载文档</a><a href="#" class="tabico_stop"  title="停用">停用</a></td>
+              </tr>
+              <tr>
+                <td align="center" class="l_tab"><input type="checkbox" class="checkbox"/></td>
+                <td><a href="documents_view.shtml">文档资料</a>
+                	<b></b></td>
+                <td>英文</td>
+                <td><small>2011-11-12 12:34</small></td>
+                <td class="r_tab"><a href="overlay_user_histrog.shtml" class="viewdown" title="查看下载详情">13</a></td>
+                <td class="r_tab"><a href="documents_edit.shtml" class="tabico_edit"  title="编辑">编辑</a><a href="#" class="tabico_down" title="下载">下载</a> <a href="overlay_re_upload2.shtml" class="reupload_ico " title="重新上载文档">重新上载文档</a><a href="#" class="tabico_stop"  title="停用">停用</a></td>
+              </tr>
+              <tr>
+                <td align="center" class="l_tab"><input type="checkbox" class="checkbox"/></td>
+                <td><a href="documents_view.shtml">文档资料</a>
+                	<b></b></td>
+                <td>中文</td>
+                <td><small>2011-11-12 12:34</small></td>
+                <td class="r_tab"><a href="overlay_user_histrog.shtml" class="viewdown" title="查看下载详情">10</a>    </td>
+                <td class="r_tab"><a href="#" class="notedit" title="不可编辑">不可编辑</a><a href="#" class="tabico_down" title="下载">下载</a> <a href="#" class="noreupload_ico " title="不可重新上载文档">不可重新上载文档</a><a href="#" class="tabico_stop"  title="停用">停用</a></td>
+              </tr>
+              <tr>
+                <td align="center" class="l_tab"><input type="checkbox" class="checkbox"/></td>
+                <td><a href="documents_view.shtml">文档资料</a>
+                	<b></b></td>
+                <td>中文</td>
+                <td><small>2011-11-12 12:34</small></td>
+                <td class="r_tab">&nbsp;</td>
+                <td class="r_tab"><a href="#" class="notedit" title="不可编辑">不可编辑</a><a href="#" class="tabico_down" title="下载">下载</a> <a href="#" class="noreupload_ico " title="不可重新上载文档">不可重新上载文档</a><a href="#" class="tabico_stop"  title="停用">停用</a></td>
+              </tr>
+              <tr>
+                <td align="center" class="l_tab"><input type="checkbox" class="checkbox"/></td>
+                <td><a href="documents_view.shtml">文档资料</a>
+                	<b></b></td>
+                <td>中文</td>
+                <td><small>2011-11-12 12:34</small></td>
+                <td class="r_tab">&nbsp;</td>
+                <td class="r_tab"><a href="#" class="notedit" title="不可编辑">不可编辑</a><a href="#" class="tabico_down" title="下载">下载</a> <a href="#" class="noreupload_ico " title="不可重新上载文档">不可重新上载文档</a><a href="#" class="tabico_stop"  title="停用">停用</a></td>
+              </tr>
+
+              <tr>
+                <td align="center" class="l_tab"><input type="checkbox" class="checkbox"/></td>
+                <td><a href="documents_view.shtml">文档资料</a>
+                	<b></b></td>
+                <td>中文</td>
+                <td><small>2011-11-12 12:34</small></td>
+                <td class="r_tab">&nbsp;</td>
+                <td class="r_tab"><a href="#" class="notedit" title="不可编辑">不可编辑</a><a href="#" class="tabico_down" title="下载">下载</a> <a href="#" class="noreupload_ico " title="不可重新上载文档">不可重新上载文档</a><a href="#" class="tabico_stop"  title="停用">停用</a></td>
+              </tr>
+              <tr>
+                <td align="center" class="l_tab"><input type="checkbox" class="checkbox"/></td>
+                <td><a href="documents_view.shtml">文档资料</a>
+                	</td>
+                <td>英文</td>
+                <td><small>2011-11-12 12:34</small></td>
+                <td class="r_tab">&nbsp;</td>
+                <td class="r_tab"><a href="#" class="notedit" title="不可编辑">不可编辑</a><a href="#" class="tabico_down" title="下载">下载</a> <a href="#" class="noreupload_ico " title="不可重新上载文档">不可重新上载文档</a><a href="#" class="tabico_stop"  title="停用">停用</a></td>
+              </tr>
+			  <tr>
+                <td align="center" class="l_tab"><input type="checkbox" class="checkbox"/></td>
+                <td><a href="documents_view.shtml">文档资料</a>
+                	</td>
+                <td>英文</td>
+                <td><small>2011-11-12 12:34</small></td>
+                <td class="r_tab">&nbsp;</td>
+                <td class="r_tab"><a href="#" class="notedit" title="不可编辑">不可编辑</a><a href="#" class="tabico_down" title="下载">下载</a> <a href="#" class="noreupload_ico " title="不可重新上载文档">不可重新上载文档</a><a href="#" class="tabico_stop"  title="停用">停用</a></td>
+              </tr>
+			  <tr>
+                <td align="center" class="l_tab"><input type="checkbox" class="checkbox"/></td>
+                <td><a href="documents_view.shtml">文档资料</a>
+                	</td>
+                <td>英文</td>
+                <td><small>2011-11-12 12:34</small></td>
+                <td class="r_tab">&nbsp;</td>
+                <td class="r_tab"><a href="#" class="notedit" title="不可编辑">不可编辑</a><a href="#" class="tabico_down" title="下载">下载</a> <a href="#" class="noreupload_ico " title="不可重新上载文档">不可重新上载文档</a><a href="#" class="tabico_stop"  title="停用">停用</a></td>
+              </tr>
+			  <tr>
+                <td align="center" class="l_tab"><input type="checkbox" class="checkbox"/></td>
+                <td><a href="documents_view.shtml">文档资料</a>
+                	</td>
+                <td>英文</td>
+                <td><small>2011-11-12 12:34</small></td>
+                <td class="r_tab">&nbsp;</td>
+                <td class="r_tab"><a href="#" class="notedit" title="不可编辑">不可编辑</a><a href="#" class="tabico_down" title="下载">下载</a> <a href="#" class="noreupload_ico " title="不可重新上载文档">不可重新上载文档</a><a href="#" class="tabico_stop"  title="停用">停用</a></td>
+              </tr>
+              </tbody>
+          </table>
+		   <!-- 翻页// -->
+        <div class="pagination">
+          <ul>
+            <li>每页显示<select>
+                          <option>10</option>
+                          <option>20</option>
+                          <option>30</option>
+                          <option>50</option>
+                   </select>
+              条&nbsp;&nbsp;1/25页 </li>
+            <li class="disablepage">上一页</li>
+            <li class="currentpage">1</li>
+            <li><a href="#">2</a></li>
+            <li><a href="#">3</a></li>
+            <li><a href="#">4</a></li>
+            <li><a href="#">5</a></li>
+            <li><a href="#">6</a></li>
+            <li><a href="#">7</a></li>
+            <li><a href="#">8</a></li>
+            <li><a href="#">9</a>...</li>
+            <li><a href="#">15</a></li>
+            <li><a href="#">16</a></li>
+            <li class="nextpage"><a href="#">下一页</a></li>
+          </ul>
+        </div>
+        <!-- //翻页 -->
+</div>
+	  <div class="clear"></div>
+	   </div>
+	</div><!-- //End:container-->
+	<!--Start:footer//-->
+	 <!--#include virtual="../Library/footer.shtml" -->
+	 <!--//End:footer//-->
+	</div><!--//End:#content//-->
+<script src="../js/libs/cbs_userjs.js"></script>
+</body>
+</html>

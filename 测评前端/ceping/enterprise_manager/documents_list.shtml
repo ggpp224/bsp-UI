@@ -1,0 +1,206 @@
+  <div  class="from_panel">
+    <form method="post" action="#" class="listtab_btn">
+      <div class="exportbtn">
+        <ul>
+          <li><a href="#" class="expbtn">导出列表<span>&nbsp;</span></a>
+          </li>
+        </ul>
+      </div>
+         <input type="button" name="" class="btn btn_add" value="新增" id="delcustomer"  title="新增"/>
+      <input type="button" name="" class="btn btn_del" value="删除" id="delcustomer"  title="系统提示"/>
+  </form>
+  </div>
+  <table width="100%" border="0" cellspacing="0" cellpadding="0" class="default_table listtab">
+    <thead class="gradual_bg">
+      <tr>
+        <th width="28" class="th_center"><input type="checkbox" /></th>
+        <th width="30" class="th_center">状态</th>
+        <th>资源名称</th>
+        <th width="80">编码</th>
+        <th width="60">类型</th>
+        <th width="55" align="center">来源</th>
+        <th width="70">时长(分钟)</th>
+        <th width="125" class="th_center">操作</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td align="center"><input type="checkbox" /></td>
+        <td align="center"><span class="finish_ico" title="当前状态：活动">活动</span></td>
+        <td><a href="resources_view.shtml" title="领导模式">普通课件</a></td>
+        <td>lingdao</td>
+        <td>在线课件</td>
+        <td>自有资源</td>
+        <td>1.5</td>
+        <td>
+			<a href="resources_view_class.shtml" class="tabico_view" title="预览">预览</a>
+			<a href="#" class="notedit" title="不可编辑">不可编辑</a>
+			<a href="#" class="noreupload_ico" title="重新上传课件包">重新上传课件包</a>
+			<a href="#" class="tabico_recommend" title="已推荐，点击图标取消推荐">推荐</a>
+			<a href="#" class="tabico_stop " title="停用">停用</a>
+		</td>
+      </tr>
+	  <tr>
+        <td align="center"><input type="checkbox" /></td>
+        <td align="center"><span class="finish_ico" title="当前状态：活动">活动</span></td>
+        <td>[已通过] <a href="resources_view.shtml" title="领导模式">普通课件</a></td>
+        <td>lingdao</td>
+        <td>在线课件</td>
+        <td>自有资源</td>
+        <td>1.5</td>
+        <td>
+		   <a href="resources_view_class.shtml" class="tabico_view" title="预览">预览</a>
+		   <a href="resources_edit.shtml" class="tabico_edit" title="编辑">编辑</a>
+		   <a href="overlay_re_upload.shtml" class="reupload_ico" title="重新上载课件包">重新上载课件包</a>
+		   <a href="#" class="tabico_recommend" title="已推荐，点击图标取消推荐">推荐</a>
+		   <a href="#" class="tabico_stop " title="停用">停用</a>
+		</td>
+      </tr>
+      <tr>
+        <td align="center"><input type="checkbox" /></td>
+        <td align="center"><span class="notbeen_ico" title="当前状态：非活动">非活动</span></td>
+        <td>[未通过] <a href="resources_view.shtml" title="普通课件">普通课件</a></td>
+        <td>lingdao</td>
+        <td>在线课件</td>
+        <td>自有资源</td>
+        <td>1.5</td>
+        <td>
+		   <a href="#" class="why_notpass" title="未通过原因">未通过原因</a>
+		   <a href="resources_edit.shtml" class="tabico_edit" title="编辑">编辑</a>
+		   <a href="#" class="noreupload_ico" title="重新上传课件包">重新上传课件包</a>
+		   <a href="#" class="tabico_cancel" title="未推荐">未推荐</a>
+		   <a href="#" class="tabico_stop " title="停用">停用</a>
+		</td>
+      </tr>
+      <tr>
+        <td align="center"><input type="checkbox" /></td>
+        <td align="center"><span class="notbeen_ico" title="当前状态：非活动">非活动</span></td>
+        <td>[审核中] <a href="resources_view.shtml" title="普通课件">普通课件</a></td>
+        <td>lingdao</td>
+        <td>在线课件</td>
+        <td>自有资源</td>
+        <td>1.5</td>
+        <td>
+		   <a href="resources_view_class.shtml" class="unviewed" title="预览">预览</a>
+		   <a href="#" class="notedit" title="不可编辑">不可编辑</a>
+		   <a href="#" class="noreupload_ico " title="重新上传课件包">重新上传课件包</a>
+		   <a href="#" class="tabico_cancel" title="未推荐">未推荐</a>
+		   <a href="#" class="not_allowed" title="启用">启用</a>
+		</td>
+      </tr>
+      <tr>
+        <td align="center"><input type="checkbox" /></td>
+        <td align="center"><span class="notbeen_ico" title="当前状态：非活动">非活动</span></td>
+        <td>[未审核] <a href="resources_view.shtml" title="普通课件">普通课件</a></td>
+        <td>lingdao</td>
+        <td>在线课件</td>
+        <td>自有资源</td>
+        <td>1.5</td>
+        <td>
+		   <a href="resources_view_class.shtml" class="unviewed" title="预览">预览</a>
+		   <a href="resources_edit.shtml" class="tabico_edit" title="编辑">编辑</a>
+		   <a href="#" class="reupload_ico " title="重新上传课件包">重新上传课件包</a>
+		   <a href="#" class="tabico_cancel" title="未推荐">未推荐</a>
+		   <a href="#" class="not_allowed" title="启用">启用</a>
+		</td>
+      </tr>
+      <tr>
+        <td align="center"><input type="checkbox" /></td>
+        <td align="center"><span class="finish_ico" title="当前状态：活动">活动</span></td>
+        <td>[系统资源] <a href="resources_skillsoft_view.shtml" title="领导模式">skillsoft课件</a></td>
+        <td>lingdao</td>
+        <td>在线课件</td>
+        <td>系统资源</td>
+        <td>1.5</td>
+        <td>
+		   <a href="resources_view_class.shtml" class="tabico_view" title="预览">预览</a>
+		   <a href="#" class="notedit" title="不可编辑">不可编辑</a>
+		   <a href="#" class="noreupload_ico " title="重新上传课件包">重新上传课件包</a>
+		   <a href="#" class="tabico_recommend" title="已推荐，点击图标取消推荐">推荐</a>
+		   <a href="#" class="tabico_stop " title="停用">停用</a>
+		</td>
+      </tr>
+      <tr>
+        <td align="center"><input type="checkbox" /></td>
+        <td align="center"><span class="finish_ico" title="当前状态：活动">活动</span></td>
+        <td>[系统资源]<a href="question_view.shtml" title="试卷"> 试卷</a></td>
+        <td>lingdao</td>
+        <td>在线课件</td>
+        <td>系统资源</td>
+        <td>1.5</td>
+        <td>
+		  <a href="resources_view_class.shtml" class="publish_test" title="发布测试">发布测试</a>
+		  <a href="#" class="notedit" title="不可编辑">不可编辑</a>
+		  <a href="#" class="tabico_stop " title="停用">停用</a>
+		</td>
+      </tr>
+      <tr>
+        <td align="center"><input type="checkbox" /></td>
+        <td align="center"><span class="finish_ico" title="当前状态：活动">活动</span></td>
+        <td>[我的资源] <a href="question_view.shtml" title="试卷">试卷</a></td>
+        <td>lingdao</td>
+        <td>在线课件</td>
+        <td>系统资源</td>
+        <td>1.5</td>
+        <td>
+		  <a href="resources_view_class.shtml" class="publish_test" title="发布测试">发布测试</a>
+		  <a href="" class="tabico_edit" title="编辑">编辑</a>
+		  <a href="#" class="tabico_stop " title="停用">停用</a>
+		</td>
+      </tr>
+      <tr>
+        <td align="center"><input type="checkbox" /></td>
+        <td align="center"><span class="finish_ico" title="当前状态：活动">活动</span></td>
+        <td>[系统资源]<a href="sync_courses_view.shtml" title="同步课程">同步课程</a></td>
+        <td>lingdao</td>
+        <td>在线课件</td>
+        <td>系统资源</td>
+        <td>1.5</td>
+        <td>
+		  <a href="#" class="recognizing"  title="确认实施">确认实施</a>
+		  <a href="sync_courses_edit.shtml" class="tabico_edit" title="编辑">编辑</a>
+		  <a href="#" class="tabico_stop " title="停用">停用</a>
+		</td>
+      </tr>
+      <tr>
+        <td align="center"><input type="checkbox" /></td>
+        <td align="center"><span class="finish_ico" title="当前状态：活动">活动</span></td>
+        <td>[我的资源]<a href="sync_courses_view.shtml" title="同步课程">同步课程</a></td>
+        <td>lingdao</td>
+        <td>在线课件</td>
+        <td>系统资源</td>
+        <td>1.5</td>
+        <td>
+		  <a href="#" class="recognizing"  title="确认实施">确认实施</a>
+		  <a href="sync_courses_edit.shtml" class="tabico_edit" title="编辑">编辑</a>
+		  <a href="#" class="tabico_stop " title="停用">停用</a>
+		</td>
+      </tr>
+    </tbody>
+  </table>
+  <!-- 翻页 -->
+  <div class="pagination">
+    <ul>
+      <li>每页显示
+        <select>
+          <option>10</option>
+          <option>20</option>
+          <option>30</option>
+          <option>50</option>
+        </select>
+        条&nbsp;&nbsp;1/25页 </li>
+      <li class="disablepage">上一页</li>
+      <li class="currentpage">1</li>
+      <li><a href="#">2</a></li>
+      <li><a href="#">3</a></li>
+      <li><a href="#">4</a></li>
+      <li><a href="#">5</a></li>
+      <li><a href="#">6</a></li>
+      <li><a href="#">7</a></li>
+      <li><a href="#">8</a></li>
+      <li><a href="#">9</a>...</li>
+      <li><a href="#">15</a></li>
+      <li><a href="#">16</a></li>
+      <li class="nextpage"><a href="#">下一页</a></li>
+    </ul>
+ </div>

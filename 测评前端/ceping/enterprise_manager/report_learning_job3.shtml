@@ -1,0 +1,249 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta content="企业培训、企业内训、企业学习、企业大学、渠道大学、e-Learning、学习平台、学习系统、人才管理、岗位胜任力模型、Skillsoft、职业发展、培训管理、继任规划" name="keywords" />
+<meta content="企业商学院是集在线学习、能力测评、学习计划和培训管理为一体的企业学习整体解决方案。帮助企业提升内训、渠道培训、分支机构培训的整体水平，最大程度发掘培训价值，实现培训效益提升，全面促进企业人才培养。" name="description" />
+<title>CBS - 资源报表 - 学习数据报表</title>
+<!--系统样式-->
+<link href="../css/default.css" rel="stylesheet" type="text/css" />
+<!--皮肤样式  Blue-->
+<link href="../css/enterprise_blue.css" rel="stylesheet" type="text/css" />
+<link href="../css/enterprise_report.css" rel="stylesheet" type="text/css" />
+<link href="../css/nyroModal.css" rel="stylesheet" type="text/css" />
+<!--[if IE]>
+<link type="text/css" rel="stylesheet" href="../css/ie.css" />
+<![endif]-->
+<!-- jQuery with plugins -->
+<script type="text/javascript" src="../js/libs/jquery-1.4.3.min.js"></script>
+<!-- jQuery tree -->
+<script type="text/javascript" src="../js/libs/jquery.cookie.js"></script>
+<script type="text/javascript" src="../js/libs/jquery.jstree.js"></script>
+<script language="javascript" type="text/javascript" src="../js/libs/nyroModal1.6.2.min.js"></script>
+<script language="javascript" type="text/javascript" src="../js/libs/WdatePicker.js"></script>
+<script src="../js/libs/cbs_userjs.js"></script>
+<script type="text/javascript">
+    $(document).ready(function() {
+	$("#load_html_data").jstree({
+		"html_data" : {
+			"ajax" : {
+				"url" : "data/data_resources.shtml",
+				"data" : function (n) {
+					return { id : n.attr ? n.attr("id") : 0 };
+				}
+			}
+		},
+		"core" : { "initially_open" : [ "phtml_1" ] },
+		"plugins" : [ "themes", "html_data" ,"checkbox","contextmenu","cookies","ui","crrm","dnd"]
+
+	});
+	cbs.tablehover();//表单换行颜色 hover
+
+		//查看详细
+	$(".tabico_view").nyroModal({
+		width:800
+	});
+});
+</script>
+</head>
+<body>
+<!-- Start:  Html  //-->
+<div id="content">
+  <!--Start:header //-->
+  <!--#include virtual="../Library/header_enterprise.shtml" -->
+  <!-- Start: container //-->
+  <div id="container">
+    <div class="box admin_box">
+      <!-- 面包屑 -->
+      <div class="bread_crumbs">  <a href="user.shtml">统计报表</a>&nbsp;&#8250;&nbsp;<b>学习数据报表</b></div>
+      <!-- 面包屑 End -->
+
+      <!-- content_body -->
+      <div class="content_body padding28">
+
+      <ul class="reporttabs">
+          <li><a href="report_learning_job.shtml">概览</a></li>
+                <li><a href="report_learning_job2.shtml">在线课件</a></li>
+                <li class="current"><a href="report_learning_job3.shtml">在线测试</a></li>
+                <li><a href="report_learning_job4.shtml">线下测试</a></li>
+                <li><a href="report_learning_job5.shtml">在线同步课程</a></li>
+                <li><a href="report_learning_job6.shtml">面授课程</a></li>
+      </ul>
+<div class="updatetime">最新数据更新时间：<span class="lightfont">2011-02-02 00:00</span></div>
+<div class="clearer"></div>
+
+      <div class="sidebar boxborder top10">
+        <ul class="reporttabs">
+                    <select name="" onchange="javascript:location.href=this.value;" class="learing_sel">
+                      <option value="report_learning3.shtml">按部门查看</option>
+                      <option value="report_learning_job3.shtml" selected="selected">按岗位查看</option>
+                      <option value="report_learning_group3.shtml">按分组查看</option>
+                      <option value="report_learning_personal3.shtml">按个人查看</option>
+                    </select>
+        </ul>
+        <div id="load_html_data"></div>
+      </div>
+      <!-- 右侧 -->
+      <div class="content_report">
+
+       <div class="exportbtn">
+              <ul>
+                <li><a href="#" class="expbtn">导出</a></li>
+          </ul>
+        </div>
+      <form method="post" action="#" class="padding5">
+
+岗位名称：
+<input name="textfield" type="text" class="default_txt" id="textfield" size="10" />
+查询期间：
+<input type="text" class="dateinput" id="d122" onfocus="WdatePicker({isShowWeek:true,onpicked:function(){}})"/>
+-
+<input type="text" class="dateinput" id="d122" onfocus="WdatePicker({isShowWeek:true,onpicked:function(){}})"/>
+<input type="button" name="input2" value=" 查询 " class="btn btn_default"/>
+      </form>
+      <table width="100%" border="0" cellspacing="0" cellpadding="0" class="default_table listtab">
+        <thead class="gradual_bg">
+          <tr>
+            <th>岗位名称</th>
+            <th>直属用户数</th>
+            <th>参加测试用户数</th>
+            <th>平均完成测试数</th>
+            <th>平均测试用时</th>
+            <th>平均得分</th>
+            <th>详细数据</th>
+            </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>XXXXXX部门</td>
+            <td>30</td>
+            <td>15</td>
+            <td>15</td>
+            <td>1:00:03</td>
+            <td>63</td>
+            <td><a href="report_learning_job3_detail.shtml" class="tabico_view" title="在线测试结果数据">详细</a></td>
+            </tr>
+          <tr>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            </tr>
+          <tr>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            </tr>
+          <tr>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            </tr>
+          <tr>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            </tr>
+          <tr>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            </tr>
+          <tr>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            </tr>
+          <tr>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            </tr>
+          <tr>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            </tr>
+          <tr>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            </tr>
+        </tbody>
+      </table>
+      <div class="pagination">
+        <ul>
+          <li>每页显示
+            <select name="select">
+              <option>10</option>
+              <option>20</option>
+              <option>30</option>
+              <option>50</option>
+            </select>
+            条&nbsp;&nbsp;1/25页 </li>
+          <li class="disablepage">上一页</li>
+          <li class="currentpage">1</li>
+          <li><a href="#">2</a></li>
+          <li><a href="#">3</a></li>
+          <li><a href="#">4</a></li>
+          <li><a href="#">5</a></li>
+          <li><a href="#">6</a></li>
+          <li><a href="#">7</a></li>
+          <li><a href="#">8</a></li>
+          <li><a href="#">9</a>...</li>
+          <li><a href="#">15</a></li>
+          <li><a href="#">16</a></li>
+          <li class="nextpage"><a href="#">下一页</a></li>
+        </ul>
+      </div>
+      </div>
+      <!-- 右侧 end -->
+      <div class="clear"></div>
+      <!-- 主内容 End -->
+
+      </div>
+     <!-- content_body End -->
+
+    </div>
+  </div>
+  <!--// End: container -->
+  <!--#include virtual="../Library/footer.shtml" -->
+</div>
+<!--// End: Html -->
+</body>
+</html>

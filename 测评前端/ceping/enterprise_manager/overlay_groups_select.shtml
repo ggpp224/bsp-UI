@@ -1,0 +1,30 @@
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<form  method="post" action="#" >
+<div class="overbody">
+	<div class="features_search">
+	   <input type="text" class="default_txt" size="32"  onfocus="if (value==defaultValue)value=''" onblur="if(!value)value=defaultValue" value="请输入分组，关键字"/>
+	   <input type="submit" class="btn btn_reset" value="查询"/>
+	</div>
+
+    
+
+	<div class="divselect borderall y-scroll">
+		<ul>
+		  <li><span><a href="#" class="recognizing overlayClose" title="选择">选择</a></span>01分组名称分组名称分组名称分组名称分组名称分组名称分组名称分组名称分组名称分组名称分组名称分组名称</li>
+		  <li><span><a href="#" class="recognizing overlayClose" title="选择">选择</a></span>02分组名称</li>
+		  <li><span><a href="#" class="recognizing overlayClose" title="选择">选择</a></span>03分组名称</li>
+		  <li><span><a href="#" class="recognizing overlayClose" title="选择">选择</a></span>04分组名称</li>
+		  <li><span><a href="#" class="recognizing overlayClose" title="选择">选择</a></span>05分组名称</li>
+		  <li><span><a href="#" class="recognizing overlayClose" title="选择">选择</a></span>06分组名称</li>
+		  <li><span><a href="#" class="recognizing overlayClose" title="选择">选择</a></span>07分组名称</li>
+		  <li><span><a href="#" class="recognizing overlayClose" title="选择">选择</a></span>08分组名称</li>
+		  <li><span><a href="#" class="recognizing overlayClose" title="选择">选择</a></span>09分组名称</li>
+		  <li><span><a href="#" class="recognizing overlayClose" title="选择">选择</a></span>10分组名称</li>
+		</ul>
+	</div>
+
+	</div>
+</form>
+  <div class="overlay_btn">
+    <input type="button" class="btn btn_reset overlayClose" value=" 关闭 "/>
+  </div>

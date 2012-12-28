@@ -1,0 +1,123 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta content="企业培训、企业内训、企业学习、企业大学、渠道大学、e-Learning、学习平台、学习系统、人才管理、岗位胜任力模型、Skillsoft、职业发展、培训管理、继任规划" name="keywords" />
+<meta content="企业商学院是集在线学习、能力测评、学习计划和培训管理为一体的企业学习整体解决方案。帮助企业提升内训、渠道培训、分支机构培训的整体水平，最大程度发掘培训价值，实现培训效益提升，全面促进企业人才培养。" name="description" />
+<title>企业商学院 - 资源管理 - 新增</title>
+</head>
+<!--系统样式-->
+<link href="../css/default.css" rel="stylesheet" type="text/css" />
+<!--皮肤样式  Blue-->
+<link href="../css/enterprise_blue.css" rel="stylesheet" type="text/css" />
+<!--[if IE]>
+<link type="text/css" rel="stylesheet" href="../css/ie.css" />
+<![endif]-->
+<!-- jQuery with plugins -->
+<script type="text/javascript" src="../js/libs/jquery-1.4.3.min.js"></script>
+
+<body>
+<!-- Start:  Html  //-->
+<div id="content">
+  <!-- Start:  header //-->
+  <!--#include virtual="../Library/header_enterprise.shtml" -->
+  <!--// End: header-->
+    <!-- Start: container //-->
+    <div id ="container">
+        <div class="box admin_box">
+            <!-- 面包屑 -->
+            <div class="bread_crumbs">
+				  <a href="resources.shtml">资源管理</a>&nbsp;&#8250;&nbsp;<b>在线课件</b>
+                </div>
+            <!-- 面包屑 End -->
+            <h1 class="panel_title margin28">在线课件</h1>
+            <!-- 常规信息 -->
+            <form class="bigFrom padding28" method="post" action="resources_edit.shtml">
+                <table width="100%" class="default_table form_table top10 stup_table">
+                    <tbody class="infoTab">
+                        <tr>
+                            <th width="224">课件名称：</th>
+                            <td colspan="2">普通课程</td>
+                        </tr>
+                        <tr>
+                            <th>课件编码：</th>
+                            <td colspan="2">00000001</td>
+                        </tr>
+                        <tr>
+                            <th> 时长：</th>
+                            <td colspan="2">20分钟</td>
+                        </tr>
+                        <tr>
+                            <th> 制作工具：</th>
+                            <td colspan="2">Power Creator</td>
+                        </tr>
+                        <tr>
+                            <th> 已上传的课件：</th>
+                            <td colspan="2"><a href="#">下载已上传课件包</a></td>
+                        </tr>
+                        <tr>
+                            <th> 所属分类：</th>
+                            <td colspan="2">。。。。。。。。。。</td>
+                        </tr>
+                        <tr>
+                            <th> 语言版本：</th>
+                            <td colspan="2">中文</td>
+                        </tr>
+                        <tr>
+                            <th valign="top"> 课件图片：</th>
+                            <td colspan="2"> <img src="../images/system/type_icon.gif" width="48" height="48" class="imgbox" /></td>
+                        </tr>
+                        <tr>
+                            <th> 关键字：</th>
+                            <td colspan="2">普通课程</td>
+                        </tr>
+                        <tr>
+                            <th valign="top"> 学习目标：</th>
+                            <td colspan="2">
+                              <div class="p_cont">
+                                <p>XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXxxx</p>
+                                <p>XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXxxx</p>
+                               </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th valign="top"> 适用对象：</th>
+                            <td colspan="2">
+                            <div class="p_cont">
+                                <p>XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXxxx</p>
+                                <p>XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXxxx</p>
+                               </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th valign="top"> 课程描述：</th>
+                            <td colspan="2">
+                              <div class="p_cont">
+                                <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;企业生产经营活动的复杂性，决定了企业管理必须包括多方面的内容，如生产管理、技术管理、劳动人事管理、设备管理、销售管理、财务管理等。各项工作是互相联系、紧密配合的，同时又有科学的分工，具有各自的特点。财务管理的特点有如下几个方面。</p><p>&nbsp;&nbsp;&nbsp;（一）财务管理是一项综合性管理工作 　　企业管理在实行分工、分权的过程中形成了一系列专业管理，有的侧重于使用价值的管理，有的侧重于价值的管理，有的侧重于劳动要素的管理，有的侧重于信息的管理。社会经济的发展，要求财务管理主要是运用价值形式对经营活动实施管理。通过价值形式，把企业的一切物质条件、经营过程和经营结果都合理地加以规划和控制，达到企业效益不断提高、财富不断增加的目的。因此，财务管理既是企业管理的一个独立方面，又是一项综合性的管理工作。</p><p>&nbsp;&nbsp;&nbsp;（二）财务管理与企业各方面具有广泛联系 　　在企业中，一切涉及资金的收支活动，都与财务管理有关。事实上，企业内部各部门与资金不发生联系的现象是很少见的。因此，财务管理的触角，常常伸向企业经营的各个角落。每一个部门都会通过资金的使用与财务部门发生联系。每一个部门也都要在合理使用资金、节约资金支出等方面接受财务部门的指导，受到财务制度的约束，以此来保证企业经济效益的提高。</p>
+                               </div>
+                            </td>
+                        </tr>
+                    <tr>
+                        <th colspan="3" valign="top">&nbsp;</th>
+                    </tr>
+                    </tbody>
+                </table>
+                <div class="btn_box edit_box top10 viewclassbox">
+                  <span class="t_title"><a href="#" class="start_learning_icon">进入学习</a></span>
+                  <input name="" type="button" class="btn btn_reset"  onclick="location.href='resources.shtml';" value="返回" />
+				</div>
+            </form>
+        </div>
+    </div>
+    <!--// End: container -->
+	<!-- #BeginLibraryItem "/Library/footer.lbi" --><!--Start: footer //-->
+      <div id="footer"  class="top10">
+          <div class="box">
+             2000-2010 &copy; 安博教育版权所有 <a href="#">ICP 10021784</a>
+         </div>
+      </div><!--// End: footer--><!-- #EndLibraryItem --></div>
+<!--// End: Html -->
+
+
+</body>
+</html>

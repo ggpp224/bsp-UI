@@ -1,0 +1,182 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta content="企业培训、企业内训、企业学习、企业大学、渠道大学、e-Learning、学习平台、学习系统、人才管理、岗位胜任力模型、Skillsoft、职业发展、培训管理、继任规划" name="keywords" />
+<meta content="企业商学院是集在线学习、能力测评、学习计划和培训管理为一体的企业学习整体解决方案。帮助企业提升内训、渠道培训、分支机构培训的整体水平，最大程度发掘培训价值，实现培训效益提升，全面促进企业人才培养。" name="description" />
+<title>Content页面</title>
+<style type="text/css">
+body, th, td, input, select, textarea, button {
+	font: 12px/1.5em Helvetica,"宋体","Lucida Grande",Arial,sans-serif;
+}
+body, h1, h2, h3, h4, h5, h6, p, ul, dl, dt, dd, form, fieldset, input, select, textarea, button,li, from, label {
+	margin: 0;
+	padding: 0;
+}
+h1, h2, h3, h4, h5, h6 { font-size: 1em;}
+
+ul li { list-style: none;}
+a { color:#0082c8; text-decoration: none; outline:none;}
+a:hover { text-decoration:underline; color:#e71a1f;}
+a img { border: none;}
+a.outline, all:focus { outline:none;}
+
+.clearer { clear: both; display: block; margin: 0; padding: 0; height: 0; line-height:1px; font-size:1px; }
+
+/*表单输入
+-------------------------------------------------*/
+input, select {
+	vertical-align:middle;
+}
+input:focus, textarea:focus {
+	-moz-box-shadow:0 2px 3px rgba(196,196,196,0.7);
+	-webkit-box-shadow:0 2px 3px rgba(196,196,196,0.7);
+	box-shadow:0 2px 3px rgba(196,196,196,0.7);
+	-webkit-focus-ring-color:none;
+}
+.default_txt {
+	Background:#ffffff;
+	border:#d2d2d2 solid 1px;
+	Color:#000;
+	padding:1px 3px;
+	line-height:18px;
+	height:19px;
+	margin-top:-2px;
+}
+.default_textarea {
+	border:1px solid #ccc;
+}
+.input_success {
+	color:#333;
+	border-color:#cbe5bc;
+	background:#f6ffeb;
+}
+.input_error {
+	color:#cc0000;
+	border-color:#f3e69d;
+	background:#ffffd7;
+}
+
+.from_panel{ clear:both;}
+
+/*-- 滑过／点击 状态  --*/
+.default_txt:hover,
+.default_txt:focus,
+.input_activation {
+	background-color:#ddf3ff;
+	border-color:#80CAF1;
+	color:#000;
+}
+/*--等待状态 禁用--*/
+.input_wait:hover,
+.input_wait:focus,
+.input_wait {
+	color:#666;
+	border-color:#d2d2d2;
+	background:#f3f3f3;
+}
+
+/*按钮
+-------------------------------------------------*/
+.btn {
+	cursor:pointer;
+	padding:2px 10px;
+	/*-webkit-border-radius: .3em;
+	-moz-border-radius: .3em;
+	border-radius: .3em;*/
+}
+.btn:hover, .btn:focus, .btn:active {
+	-webkit-box-shadow:0 1px 2px rgba(0,0,0,.3);
+	-moz-box-shadow:0 1px 2px rgba(0,0,0,.3);
+	box-shadow:0 1px 2px rgba(0,0,0,.3);
+}
+
+.btn_default,
+.btn_add,
+.btn_del,
+.btn_edit,
+.btn_other,
+.btn_feature,
+.btn_reset,
+.btn_submit,
+
+.btn_default:hover,
+.btn_add:hover,
+.btn_del:hover,
+.btn_edit:hover,
+.btn_other:hover,
+.btn_feature:hover,
+.btn_reset:hover,
+.btn_submit:hover{ background:url(../images/btn_bg.png) repeat-x; color:#fff; }
+
+.btn_default			{ background-position:0 -80px;  border:#aaa solid 1px; background-color:#fff; color:#666; }/* 默认 */
+.btn_feature,
+.btn_add				{ background-position:0 -256px; border:#4b4b4b solid 1px; background-color:#828282; color:#fff;}/* 新增 保存 */
+.btn_del				{ background-position:0 -406px; border:#bd796e solid 1px; background-color:#d8a49a;}/* 删除 */
+.btn_edit, .btn_other	{ background-position:0 -332px; border:#79aab1 solid 1px; background-color:#95cee9;}/* 编辑、其他 */
+.btn_reset				{ background-position:0 -80px; 	border:#aaa solid 1px; 	  background-color:#fff; color:#666; }/* 重置 */
+.btn_submit				{ background-position:0 -1px; 		border:#2b6fae solid 1px; background-color:#95cee9;}/* 提交 */
+
+/* hover */
+.btn_default:hover,
+.btn_reset:hover 		{ background-position:0 -113px; color:#333; background-color:#fff;}
+.btn_feature:hover,
+.btn_add:hover			{ background-position:0 -283px; background-color:#828282;}
+.btn_del:hover			{ background-position:0 -433px; background-color:#d8a49a;}
+.btn_edit:hover,
+.btn_other:hover		{ background-position:0 -359px;	background-color:#95cee9;}
+.btn_submit:hover 		{ background-position:0 -29px;  background-color:#95cee9;}
+
+/*表格
+-------------------------------------------------*/
+ table 			{ border-collapse:collapse; border-spacing:0; }
+.default_table  { width:100%; text-align:left; }
+.default_table th,
+.default_table td 			{ padding:3px; }
+.default_table td.no_padding{ padding:0; }
+.default_table input{ vertical-align:middle;}
+
+.wrongfont{ font-size:12px;}
+</style>
+</head>
+<body>
+<form id="sampleform" method="post" action="#" class="bigFrom">
+    <table width="100%" border="0" class="default_table">
+    <tr>
+                            <th>&nbsp;</th>
+                            <td colspan="2">&nbsp;
+                                
+                            </td>
+                        </tr>
+        <tr>
+           <td align="right"> <strong><span class="wrongfont">*</span> 上传文件：</strong></td>
+                            <td colspan="2">
+                                <input type="text" class="default_txt" name="input" size="30" />
+                                <input name="按钮" type="button" class="btn btn_reset" value="浏览" />
+                                <input name="按钮" type="button" class="btn btn_reset" value="上传" />
+            </td>
+        </tr>
+                        <tr>
+                            <td width="120" align="right"><strong>已上传的课件：</strong></td>
+                            <td colspan="2"><a href="#">下载已上传课件包</a></td>
+        </tr>
+                        <tr>
+                            <th>&nbsp;</th>
+                            <td colspan="2">
+                                <h4>文件必须满足以下格式要求：</h4>
+                                <p>1. 请上传Scorm1.2标准的课件压缩包，文件大小控制在200M以内；</p>
+                                <p>2. PIF文件中必须至少包含SCORM标准所规定的课程描述文件:imsmanifest.xml,并且该文件必须在根目录下；</p>
+                                <p>3. 若imsmanifest.xml含有中文字符, 请保证该xml文件的encoding属性值为UTF8；</p>
+                                <p>4. ZIP文件中不要包含文件名为中文的文件。</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>&nbsp;</th>
+                            <td colspan="2">&nbsp;
+                                
+                            </td>
+                        </tr>
+    </table>
+</form>
+</body>
+</html>

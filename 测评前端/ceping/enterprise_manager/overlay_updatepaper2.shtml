@@ -1,0 +1,21 @@
+<h2 id="nyroModalTitle">导入成绩</h2>
+<h3>导入格式参见模板，请<a href="#">点击下载 &raquo;</a></h3>
+<form  method="post" action="#" class="bigFrom">
+ <table width="100%" border="0" class="default_table">
+    <tr>
+      <td colspan="2">&nbsp;</td>
+    </tr>
+    <tr>
+      <td align="right"><b>上载文档</b>：</td>
+      <td><input type="text" class="default_txt" value="" size="30"/>
+        <input type="submit" class="btn btn_default" value="浏览"/>
+        </td>
+    </tr>
+    <tr>
+      <td colspan="2">&nbsp;</td>
+    </tr>
+  </table>
+  <div class="overlay_btn">
+    <input type="button" class="btn btn_submit overlayClose" value=" 导入 "/>
+  </div>
+</form>

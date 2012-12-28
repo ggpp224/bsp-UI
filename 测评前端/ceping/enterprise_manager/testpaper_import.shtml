@@ -1,0 +1,188 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta content="企业培训、企业内训、企业学习、企业大学、渠道大学、e-Learning、学习平台、学习系统、人才管理、岗位胜任力模型、Skillsoft、职业发展、培训管理、继任规划" name="keywords" />
+<meta content="企业商学院是集在线学习、能力测评、学习计划和培训管理为一体的企业学习整体解决方案。帮助企业提升内训、渠道培训、分支机构培训的整体水平，最大程度发掘培训价值，实现培训效益提升，全面促进企业人才培养。" name="description" />
+<title>CBS - 资源管理 - 内容管理 －新增试卷 </title>
+<!--系统样式-->
+<link href="../css/default.css" rel="stylesheet" type="text/css" />
+<!--皮肤样式  Blue-->
+<link href="../css/enterprise_blue.css" rel="stylesheet" type="text/css" />
+<link href="../css/nyroModal.css" rel="stylesheet" type="text/css" />
+<link href="../css/examination.css" rel="stylesheet" type="text/css" />
+<!--[if IE]>
+<link type="text/css" rel="stylesheet" href="../css/ie.css" />
+<![endif]-->
+<!-- jQuery with plugins -->
+<script type="text/javascript" src="../js/libs/jquery-1.4.3.min.js"></script>
+<script language="javascript" type="text/javascript" src="../js/libs/nyroModal1.6.2.min.js"></script>
+<script type="text/javascript" src="../js/libs/testpaper.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() {
+	$('.set_node').click(function(e) {
+						e.preventDefault();
+						$.fn.nyroModalManual({
+							width:600,
+							title:'设置归属节点',
+							url: 'overlay_ownership.shtml'
+					});
+			return false;
+		 });
+	 $('.add_More').live('click', function(e) {
+		     e.preventDefault();
+			 $.fn.nyroModalManual({
+				 width:520,
+				 url:'overlay_question_addmore.shtml'
+			 });
+			return false;
+		   });
+
+
+		$(".msgtext2").hide();
+		$(".caozuo").click(function(){
+		   if($(this).attr("id") == "radio1" && ($(this).attr("checked") == true || $(this).attr("checked") == "checked")) {
+            $(".msgtext1").show();
+			$(".msgtext2").hide();
+        }else{
+            $(".msgtext1").hide();
+			$(".msgtext2").show();
+        }
+		});
+
+
+	 });
+</script>
+
+</head>
+
+<body>
+<div id="content">
+ <!--#include virtual="../Library/header_enterprise.shtml" -->
+   <div id="container">
+      <div class="box admin_box">
+	    <!-- Start:面包屑 bread_crumbs //-->
+         <div class="bread_crumbs">
+
+			   <a class="to5_0" href="resources/toMyResourceBase.action">资源管理</a>&nbsp;&#8250;&nbsp;
+			   <a href="resources.shtml" >内容管理</a>&nbsp;&#8250;&nbsp;
+			   <b>编辑试卷</b>
+		  </div>
+		  <!-- STEP
+            <div class="stepbox">
+                <ul>
+                    <li class="step_frist Sharing step_finsh">
+                        <dl class="finish">
+                            <dt ></dt>
+                            <dd class="numberbox">1</dd>
+                            <dd class="title_text">输入试卷基本信息</dd>
+                            <dd>已完成！</dd>
+                        </dl>
+                    </li>
+                    <li class="step_waiting step_third Sharing ">
+                        <dl class="current">
+                            <dt></dt>
+                            <dd class="numberbox">2</dd>
+                            <dd class="title_text">录入试题</dd>
+                            <dd>请填写...</dd>
+                        </dl>
+                    </li>
+                </ul>
+            </div>
+      STEP End -->
+          <div class="content_body padding28">
+		  <h1 class="panel_title">编辑试卷</h1>
+
+          <form id="flight" method="post" action="#" class="bigFrom">
+			  <table width="100%" border="0" class="default_table form_table  stup_table top10" >
+				<tr>
+					<th scope="row"><span>*</span> 试卷名称：</th>
+					<td><input type="text" class="default_txt " value="" size="30" /></td>
+				</tr>
+				<tr>
+					<th scope="row"><span>*</span> 试卷编码：</th>
+					<td><input type="text" class="default_txt " value="" size="30" disabled="disabled" style="background:#eee;" /></td>
+				</tr>
+				<tr>
+					<th scope="row"><span>*</span>建议时长：</th>
+					<td><input type="text" class="default_txt " value="" size="10" /> 分钟</td>
+				</tr>
+				<tr>
+					<th scope="row">试卷描述：</th>
+					<td><textarea cols="70" rows="" class=" default_textarea"></textarea></td>
+				</tr>
+				</table>
+
+                <table width="100%" border="0" class="default_table form_table top10 narrowth" >
+				<tr>
+					<th scope="row">选项显示方式：</th>
+					<td colspan="5"><label><input type="checkbox" /> 一行显示多个选项</label></td>
+					</tr>
+				<tr>
+					<th scope="row">试题总数：</th>
+					<td><font class="bignumber rightfont">30</font> 道</td>
+					<th>试题总分：</th>
+					<td colspan="3"><font class="bignumber wrongfont">100</font> 分</td>
+				</tr>
+				<tr>
+					<th >单选题：</th>
+					<td>10道，30分；</td>
+					<th> 多选题：</th>
+					<td>10道，50分</td>
+					<th>判断题：</th>
+					<td>10道，20分</td>
+				</tr>
+				<tr>
+					<td colspan="6" ><hr /></td>
+					</tr>
+               <tr>
+                  <td colspan="4">
+                  <label onmouseup="window.location='test_paper_edit.shtml'"><input type="radio" name="caozuoradio" /><b>页面操作</b></label>
+                  <label onmouseup="window.location='testpaper_import.shtml'"><input type="radio" name="caozuoradio" checked="checked" />excel批量导入题目</label>
+                  </td>
+              </tr>
+
+                    </table>
+
+
+				<table width="100%" border="0" class="default_table form_table stup_table">
+		 			<tr>
+		 				<tr>
+		 					<td colspan="2" >&nbsp;</td>
+	 					</tr>
+	 				<tr>
+		 				<th ><b>上载文档</b>：</th>
+		 				<td>
+		 					<input name="input" type="text" class="default_txt" value="" size="45"/>
+		 					<span class="sel_label">
+		 						<input type="submit" class="btn btn_default" value="浏览"/>
+		 						<input type="submit" class="btn btn_submit" value="导入"/>
+					  </span></td>
+	 				</tr>
+
+					<tr>
+					  <td>&nbsp;</td>
+                      <td><div class="p_cont">
+								<p >通过导入题目操作您可以同时将多个试题导入试卷，请您先下在导入模板，录入完成后导入平台。<br />
+如果您要对试题进行分组，则将题目分配到不同的工作簿中，平台将自动判断，将一个工作簿中的试题归入到一个分组。</p>
+								<p><a href="#">下载导入模板</a></p>
+					  </div></td>
+				  </tr>
+		 			</table>
+
+           	<div class="btn_box edit_box ">
+				<input name="" type="button" class="btn btn_reset w108"  onclick="location.href='test_paper_view.shtml';" value="  预 览  " />
+				  <input name="按钮" type="button" class="btn btn_feature w108 " onclick="location.href='test_paper_add2.shtml'" value="  保 存  "/>
+                  <input name="取消" type="reset" class="btn btn_reset w108"  onclick="location.href='resources.shtml';" value=" 取 消 " />
+				</div>
+            </form>
+	  </div>
+   </div>
+   </div>
+   <!--#include virtual="../Library/footer.shtml" -->
+</div>
+<script type="text/javascript" src="../js/libs/jquery.cookie.js"></script>
+<script type="text/javascript" src="../js/libs/jquery.hotkeys.js"></script>
+<script type="text/javascript" src="../js/libs/jquery.jstree.js"></script>
+</body>
+</html>

@@ -1,0 +1,218 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta content="企业培训、企业内训、企业学习、企业大学、渠道大学、e-Learning、学习平台、学习系统、人才管理、岗位胜任力模型、Skillsoft、职业发展、培训管理、继任规划" name="keywords" />
+<meta content="企业商学院是集在线学习、能力测评、学习计划和培训管理为一体的企业学习整体解决方案。帮助企业提升内训、渠道培训、分支机构培训的整体水平，最大程度发掘培训价值，实现培训效益提升，全面促进企业人才培养。" name="description" />
+<title>CBS - 系统管理</title>
+<!--系统样式-->
+<link href="../css/default.css" rel="stylesheet" type="text/css" />
+<!--皮肤样式  Blue-->
+<link href="../css/enterprise_blue.css" rel="stylesheet" type="text/css" />
+<!--[if IE]>
+<link type="text/css" rel="stylesheet" href="../css/ie.css" />
+<![endif]-->
+<!-- jQuery with plugins -->
+<script type="text/javascript" src="../js/libs/jquery-1.4.3.min.js"></script>
+<script type = "text/javascript">
+ $(document).ready(function() {
+	cbs.tablehover();//表单换行颜色 hover
+	});
+</script>
+</head>
+<body>
+<!-- Start:  Html  //-->
+<div id="content">
+	  <!-- Start:  header //-->
+  <!--#include virtual="../Library/header_enterprise.shtml" -->
+  <!--// End: header-->
+	<!-- Start: container //-->
+	<div id="container">
+		<div class="box admin_box">
+			<!-- 面包屑 --><div class="bread_crumbs">
+
+				<a href="system.shtml">系统管理</a>
+				&nbsp;&#8250;&nbsp;<a href="rank_rules.shtml">学习排名</a>
+				&nbsp;&#8250;&nbsp;<b>部门排行榜</b>
+			</div>
+			<!-- 面包屑 End -->
+			<!--Start: right_box //-->
+			<div class="right_box">
+
+				<div  class="from_panel toolbox">
+
+				  <div class="exportbtn"><ul><li><a href="#" class="expbtn">导出列表</a></li></ul></div>
+
+				</div>
+				<table width="100%" border="0" cellspacing="0" cellpadding="0" class="default_table listtab top10">
+					<thead class="gradual_bg">
+						<tr >
+							<th width="30" align="center">排名</th>
+							<th>部门姓名</th>
+							<th width="70" align="center" >人均总学时</th>
+							<th width="35" >人数</th>
+							<th width="40" align="center">操作</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td align="center">1</td>
+							<td>lidongdong</td>
+							<td align="center">7</td>
+							<td>100</td>
+							<td align="center">
+								<a href="#" class="view_report"  title="查看报告">查看报告</a>
+							</td>
+						</tr>
+						<tr>
+							<td align="center">2</td>
+							<td>lidongdong</td>
+							<td align="center">7</td>
+							<td>100</td>
+							<td align="center">
+								<a href="#" class="view_report"  title="查看报告">查看报告</a>
+							</td>
+						</tr>
+						<tr>
+							<td align="center">3</td>
+							<td>lidongdong</td>
+							<td align="center">7</td>
+							<td>100</td>
+							<td align="center">
+								<a href="#" class="view_report"  title="查看报告">查看报告</a>
+							</td>
+						</tr>
+						<tr>
+							<td align="center">4</td>
+							<td>lidongdong</td>
+							<td align="center">7</td>
+							<td>100</td>
+							<td align="center">
+								<a href="#" class="view_report"  title="查看报告">查看报告</a>
+							</td>
+						</tr>
+						<tr>
+							<td align="center">5</td>
+							<td>lidongdong</td>
+							<td align="center">7</td>
+							<td>100</td>
+							<td align="center">
+								<a href="#" class="view_report"  title="查看报告">查看报告</a>
+							</td>
+						</tr>
+						<tr>
+							<td align="center">6</td>
+							<td>lidongdong</td>
+							<td align="center">7</td>
+							<td>100</td>
+							<td align="center">
+								<a href="#" class="view_report"  title="查看报告">查看报告</a>
+							</td>
+							<tr>
+							<td align="center">7</td>
+							<td>lidongdong</td>
+							<td align="center">7</td>
+							<td>100</td>
+							<td align="center">
+								<a href="#" class="view_report"  title="查看报告">查看报告</a>
+							</td>
+							<tr>
+							<td align="center">8</td>
+							<td>lidongdong</td>
+							<td align="center">7</td>
+							<td>100</td>
+							<td align="center">
+								<a href="#" class="view_report"  title="查看报告">查看报告</a>
+							</td>
+							<tr>
+							<td align="center">9</td>
+							<td>lidongdong</td>
+							<td align="center">7</td>
+							<td>100</td>
+							<td align="center">
+								<a href="#" class="view_report"  title="查看报告">查看报告</a>
+							</td>
+							<tr>
+							<td align="center">10</td>
+							<td>lidongdong</td>
+							<td align="center">7</td>
+							<td>100</td>
+							<td align="center">
+								<a href="#" class="view_report"  title="查看报告">查看报告</a>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+				<!-- 翻页 -->
+				<div class="pagination">
+					<ul>
+						<li>每页显示
+							<select>
+								<option>10</option>
+								<option>20</option>
+								<option>30</option>
+								<option>50</option>
+							</select>
+							条&nbsp;&nbsp;1/25页 </li>
+						<li class="disablepage">上一页</li>
+						<li class="currentpage">1</li>
+						<li>
+							<a href="#">2</a>
+						</li>
+						<li>
+							<a href="#">3</a>
+						</li>
+						<li>
+							<a href="#">4</a>
+						</li>
+						<li>
+							<a href="#">5</a>
+						</li>
+						<li>
+							<a href="#">6</a>
+						</li>
+						<li>
+							<a href="#">7</a>
+						</li>
+						<li>
+							<a href="#">8</a>
+						</li>
+						<li>
+							<a href="#">9</a>
+							...</li>
+						<li>
+							<a href="#">15</a>
+						</li>
+						<li>
+							<a href="#">16</a>
+						</li>
+						<li class="nextpage">
+							<a href="#">下一页</a>
+						</li>
+					</ul>
+				</div><!-- // END:翻页 -->
+			</div>
+			<!--Start: left_menu //-->
+				<div class="left_menu">
+					<div class="menu_box">
+						<h2 ><a href="rank_rules.shtml">个人排名</a><span></span></h2>
+					</div>
+                    <div class="menu_box">
+                         <h2 class="current"><a href="rank_rules_org.shtml">组织排名</a><span></span></h2>
+					    <ul class="menu_list">
+						   <li class="current"><a href="rank_rules_org.shtml">部门排行榜</a></li>
+						   <li><a href="rank_rules_post.shtml">岗位排行榜</a></li>
+						   <li><a href="rank_rules_group.shtml">分组排行榜</a></li>
+					    </ul>
+                   </div>
+				</div>
+			<div class="clear"></div>
+		</div>
+		<!-- 主内容 End -->
+	</div>
+	<!--// End: container -->  <!--#include virtual="../Library/footer.shtml" --></div>
+
+
+<script src="../js/libs/cbs_userjs.js"></script>
+</body>
+</html>

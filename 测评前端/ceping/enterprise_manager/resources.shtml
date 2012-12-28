@@ -1,0 +1,93 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta content="企业培训、企业内训、企业学习、企业大学、渠道大学、e-Learning、学习平台、学习系统、人才管理、岗位胜任力模型、Skillsoft、职业发展、培训管理、继任规划" name="keywords" />
+<meta content="企业商学院是集在线学习、能力测评、学习计划和培训管理为一体的企业学习整体解决方案。帮助企业提升内训、渠道培训、分支机构培训的整体水平，最大程度发掘培训价值，实现培训效益提升，全面促进企业人才培养。" name="description" />
+<title>CBS - 用户管理 - 资源管理</title>
+<!--系统样式-->
+<link href="../css/default.css" rel="stylesheet" type="text/css" />
+<!--皮肤样式  Blue-->
+<link href="../css/enterprise_blue.css" rel="stylesheet" type="text/css" />
+<link href="../css/nyroModal.css" rel="stylesheet" type="text/css" />
+<!--[if IE]>
+<link type="text/css" rel="stylesheet" href="../css/ie.css" />
+<![endif]-->
+
+</head>
+<body>
+<!-- Start:  Html  //-->
+<div id="content">
+	  <!-- Start:  header //-->
+  <!--#include virtual="../Library/header_enterprise.shtml" -->
+  <!--// End: header-->
+	<!-- ==============================Start: container //=========================-->
+	<div id ="container">
+		<div class="box admin_box">
+			<!-- 面包屑// -->
+            <div class="bread_crumbs">
+               <a class="to5_0" href="resources/toMyResourceBase.action">资源管理</a>&nbsp;&#8250;&nbsp;<b>课程管理</b>
+			</div><!-- //End:面包屑 -->
+			<!--Start:sidebar//-->
+			<div class="sidebar boxborder">
+				<ul class="flowtabs">
+					<li class="current"><a href="resources.shtml">自有课程</a></li>
+                    <li><a href="resources_system.shtml">系统课程</a></li>
+                </ul>
+				<!--#include virtual="../Library/treenav.shtml" -->
+			</div>
+			<!-- 树 End -->
+			<div class="content_r">
+			    <!--====================== 功能索索==================================// -->
+				<a href="#" class="showsearch">展开搜索区</a>
+				<div class="searchbox">
+					<table width="100%" border="0" cellpadding="0" cellspacing="0">
+						<tr>
+							<th class="longText" >课程名称：</th>
+							<td><input type="text" class="default_txt" value="" size="12"/></td>
+							<th>课程编码：</th>
+							<td><input type="text" class="default_txt" value="" size="12"/></td>
+							<th>状态：</th>
+							<td>
+								<select name="select" class="mini_sel">
+									<option>全部</option>
+									<option>有效</option>
+									<option>无效</option>
+								</select>
+							</td>
+							<td rowspan="2" class="closebtn"><a href="#">收起</a></td>
+						</tr>
+						<tr>
+							<th class="longText">课程类型：</th>
+							<td>
+								<select name="select2" class="mini_sel">
+									<option>全部</option>
+									<option>在线课堂</option>
+                                    <option>同步课程</option>
+								</select>
+							</td>
+							<th>来源：</th>
+							<td>
+								<select name="select3" class="mini_sel">
+									<option>全部</option>
+									<option>系统课程</option>
+									<option>自有课程</option>
+								</select>
+							</td>
+                            <th>&nbsp;</th>
+							<td><input type="button" name="input2" value=" 查询 " class="btn btn_default"/> </td>
+						</tr>
+					</table>
+				</div>
+				<!--//END:功能搜索-->
+				  <div id="load_resoucesList">
+
+				  </div>
+			  </div><!-- //End:content_r-->
+			 <div class="clear"></div>
+		 </div><!-- //End:admin_box-->
+	</div><!-- //End:container-->  <!--#include virtual="../Library/footer.shtml" --></div>
+<!-- 声明 引用-->
+<script data-main="../js/main-enterprise_manager" src="../js/libs/require.js"></script>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<style type="text/css">
+.question_textarea{height:170px; width:470px;}
+</style>
+<h2 id="nyroModalTitle">批量添加</h2>
+<div class="overbody">
+	<table width="100%" border="0" class="default_table">
+		<tr>
+			<td>输入选项，每项一行</td>
+		</tr>
+        <tr>
+           <td><textarea id="js_pop_batch_add" class="question_textarea"></textarea></td>
+        </tr>
+	</table>
+</div>
+<div class="overlay_btn">
+	<input name="保存" id="js_pop_save_btn" type="button" class="btn btn_submit" value=" 保存 "/>
+	<input type="button" id="js_pop_cancel_btn" class="btn btn_reset overlayClose" value=" 取消 "/>
+</div>
+<script type="text/javascript">
+
+
+
+$('#js_pop_save_btn').unbind().click(function(){
+	var _type = typeof(BatchAdd_topicType)=='string' ? BatchAdd_topicType : 'danxuan';
+
+	var str=$('#js_pop_batch_add').val();
+	if(str.length>0){
+		var _tr=$("#tablelist tr");
+		var _arr=str.split("\n");
+		for(var i in _arr){
+			var v=$.trim(_arr[i]);
+			if(v){
+				if(_type=='danxuan'){
+					// 改這的時候，记得同步改动 addQuestions
+					$("#tablelist").append('<tr><td></td><td class="first tc "><input type="radio" value="1" /><b> A ：</b><input class="default_txt" type="text" size="80" value="'+v+'" /><a href="" class="textedit addQuestions" title="高级内容编辑器" alt=""></a><a class="deledit delcustomer" href="javascript:" title="删除"></a></td></tr>');
+					$("#tablelist").find('b').each(function(k,v){
+						$(this).text(' '+String.fromCharCode(65+k)+' ：');
+					});
+				}else{
+					// 改這的時候，上面還有一行
+					$("#tablelist").append('<tr><td></td><td class="first tc "><input type="checkbox" value="1" /><b></b><input class="default_txt" type="text" size="80" value="'+v+'" /><a href="javascript:" class="textedit addQuestions" title="高级内容编辑器"></a><a class="deledit" href="javascript:"></a></td></tr>');
+					$("#tablelist").find('b').each(function(k,v){
+						$(this).text(' '+String.fromCharCode(65+k)+' ：');
+					});
+				}
+			}
+		}
+	}
+	$('#js_pop_cancel_btn').click();
+});
+
+
+
+
+</script>

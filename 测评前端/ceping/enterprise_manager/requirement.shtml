@@ -1,0 +1,349 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta content="企业培训、企业内训、企业学习、企业大学、渠道大学、e-Learning、学习平台、学习系统、人才管理、岗位胜任力模型、Skillsoft、职业发展、培训管理、继任规划" name="keywords" />
+<meta content="企业商学院是集在线学习、能力测评、学习计划和培训管理为一体的企业学习整体解决方案。帮助企业提升内训、渠道培训、分支机构培训的整体水平，最大程度发掘培训价值，实现培训效益提升，全面促进企业人才培养。" name="description" />
+<title>CBS - 需求管理-问卷调查</title>
+<!--系统样式-->
+<link href="../css/default.css" rel="stylesheet" type="text/css" />
+<!--皮肤样式  Blue-->
+<link href="../css/enterprise_blue.css" rel="stylesheet" type="text/css" />
+<link href="../css/nyroModal.css" rel="stylesheet" type="text/css" />
+<!--[if IE]>
+<link type="text/css" rel="stylesheet" href="../css/ie.css" />
+<![endif]-->
+<!-- jQuery with plugins -->
+<script type="text/javascript" src="../js/libs/jquery-1.4.3.min.js"></script>
+<script language="javascript" type="text/javascript" src="../js/libs/nyroModal1.6.2.min.js"></script>
+<script type="text/javascript">
+    $(document).ready(function() {
+	checkAll(name);//CheckBox全选
+	cbs.tablehover();//表单换行颜色 hover
+	    //删除
+	$('.delcustomer').click(function(e) {
+			e.preventDefault();
+			$.fn.nyroModalManual({
+			    width:380,
+				url: 'overlay_delquestion.shtml',
+				title:'删除问卷'
+			});
+			return false;
+	});
+	//删除
+	$(".tabico_del").click(function(e) {
+		 e.preventDefault();
+		 var hangNum =$(this).parent().parent().find('input').attr("id");
+		 alert(hangNum);
+		 var myTitle =$(this).attr("title");
+		 $.fn.nyroModalManual({
+		     width:380 ,
+			 url: 'overlay_delquestion.shtml',
+			 title:myTitle
+		 });
+			return false;
+	 });
+
+
+	});
+</script>
+</head>
+<body>
+<!-- Start:  Html  //-->
+<div id="content">
+     <!--Start:头部//-->
+	 <!--#include virtual="../Library/header_enterprise.shtml" -->
+	 <!--//End:头部-->
+	<!--Start: container //-->
+	<div id ="container">
+		<div class="box admin_box">
+
+			<!-- 面包屑// -->
+          <div class="bread_crumbs">
+			 <a href="requirement.shtml">需求管理</a>&nbsp;&#8250;&nbsp;
+			 <b>问卷调查</b>
+         </div><!-- //End:面包屑 -->
+ <div class="content_body">
+        <!-- 功能索索 -->
+        <div class="features_search">
+          <form method="post" action="#" class="search_From">
+         <table width="100%"  border="0" class="default_table table_from">
+           <tr>
+             <th width="70">问卷名称：</th>
+             <td width="127"><input type="text" class="default_txt" value="" size="17"/></td>
+             <th>问卷编码：</th>
+             <td width="127"><input type="text" class="default_txt" value="" size="17"/></td>
+             <th>状态：</th>
+             <td>
+               <select name="select" id="select">
+                 <option>全部</option>
+                 <option>未开始</option>
+                 <option>未发布</option>
+                 <option>发布中</option>
+                 <option>已关闭</option>
+                 <option>已结束</option>
+              </select></td>
+             <td align="left"><input type="button" name="input" value=" 查询 " class="btn btn_default"/></td>
+             <td width="260" align="right">&nbsp;</td>
+           </tr>
+         </table>
+         </form>
+         </div>
+		 <div class="from_panel">
+		   <form method="post" action="#" class="listtab_btn">
+            <input type="button" name="" class="btn btn_feature"  onclick="location.href='question_add.shtml'" value="新增问卷" />
+			<input type="button" name="" class="btn btn_edit"  value="复制问卷" onclick="location.href='question_copy.shtml'" />
+			</form>
+		 </div><!--//End:from_panel-->
+
+		 <table width="100%" border="0"  class="default_table listtab" >
+            <thead class="gradual_bg noborder">
+              <tr>
+                <th width="28" class="th_center"><input type="checkbox" name="num" value="" onclick="if(this.checked==true) { checkAll('num'); } else { clearAll('num'); }" /></th>
+                <th>问卷名称</th>
+                <th width="80">问卷编码</th>
+                <th width="60">状态</th>
+                <th width="70">开始时间</th>
+                <th width="70">截止时间</th>
+                <th width="75" >操作</th>
+              </tr>
+            </thead>
+            <tbody class="tr_parent">
+              <tr>
+                <td align="center" class="l_tab"><input input type="checkbox" name="num" value="" /></td>
+                <td><a href="question_view.shtml">问卷调查</a>
+                	<b></b></td>
+                <td>A001</td>
+                <td>未发布</td>
+                <td><small>--</small></td>
+                <td><small>--</small></td>
+                <td ><a href="question_edit.shtml" class="tabico_edit"  title="编辑">编辑</a>
+                     <a href="question_view.shtml" class="tabico_view" title="预览">预览</a>
+                     <span title="更多操作" class="more_action">
+                     <i>更多操作</i>
+                     <ul class="more_action_list">
+                        <li class="arrowli"></li>
+                        <li> <a href="overlay_delquestion.shtml" class="delcustomer" title="删除">删除</a></li>
+                        <Li><a href="question_published.shtml" title="发布调查 ">发布调查</a></Li>
+                     </ul>
+                     </span>
+                </td>
+              </tr>
+              <tr>
+                <td align="center" class="l_tab"><input input type="checkbox" name="num" value="" /></td>
+                <td><a href="question_view.shtml">问卷调查</a>
+                	<b></b></td>
+                <td>A001</td>
+                <td>未开始</td>
+                <td><small>2010-11-16</small></td>
+                <td><small>2010-12-10</small></td>
+                <td ><a href="question_edit.shtml" class="tabico_edit"  title="编辑">编辑</a>
+                    <a href="question_view.shtml" class="tabico_view" title="预览">预览</a>
+                    <span title="更多操作" class="more_action">
+                     <i>更多操作</i>
+                     <ul class="more_action_list">
+                        <li class="arrowli"></li>
+                        <li> <a href="overlay_delquestion.shtml" class="delcustomer" title="删除">删除</a></li>
+                        <Li><a href="#" title="关闭">关闭</a></Li>
+                     </ul>
+                     </span>
+               </td>
+              </tr>
+              <tr>
+                <td align="center" class="l_tab"><input input type="checkbox" name="num" value="" /></td>
+                <td><a href="question_view.shtml">问卷调查</a>
+                	<b></b></td>
+                <td>A001</td>
+                <td>发布中</td>
+                <td><small>2010-11-16</small></td>
+                <td><small>2010-12-10</small></td>
+               <td ><a href="#" class="notedit" title="编辑禁用">编辑禁用</a>
+                   <a href="question_view.shtml" class="tabico_view" title="预览">预览</a>
+                   <span title="更多操作" class="more_action">
+                     <i>更多操作</i>
+                     <ul class="more_action_list">
+                        <li class="arrowli"></li>
+                        <li> <a href="overlay_delquestion.shtml" class="delcustomer" title="删除">删除</a></li>
+                        <Li><a href="#" title="关闭">关闭</a></Li>
+                        <li><a href="survey_results.shtml" title="查看调查结果">查看调查结果</a></li>
+                     </ul>
+                     </span>
+                   </td>
+              </tr>
+              <tr>
+                <td align="center" class="l_tab"><input input type="checkbox" name="num" value="" /></td>
+                <td><a href="question_view.shtml">问卷调查</a>
+                	<b></b></td>
+                <td>A001</td>
+                <td>已结束</td>
+                <td><small>2010-11-16</small></td>
+                <td><small>2010-12-10</small></td>
+                <td ><a href="#" class="notedit" title="编辑禁用">编辑禁用</a>
+                     <a href="question_view.shtml" class="tabico_view" title="预览">预览</a>
+                     <span title="更多操作" class="more_action">
+                     <i>更多操作</i>
+                     <ul class="more_action_list">
+                        <li class="arrowli"></li>
+                        <li><a href="survey_results.shtml" title="查看调查结果">查看调查结果</a></li>
+                     </ul>
+                     </span>
+                  </td>
+              </tr>
+              <tr>
+                <td align="center" class="l_tab"><input input type="checkbox" name="num" value="" /></td>
+                <td><a href="question_view.shtml">问卷调查</a>
+                	<b></b></td>
+                <td>A001</td>
+                <td>未发布</td>
+                <td><small>--</small></td>
+                <td><small>--</small></td>
+                <td ><a href="question_edit.shtml" class="tabico_edit"  title="编辑">编辑</a>
+                     <a href="question_view.shtml" class="tabico_view" title="预览">预览</a>
+                    <span title="更多操作" class="more_action">
+                     <i>更多操作</i>
+                     <ul class="more_action_list">
+                        <li class="arrowli"></li>
+                        <li><a href="overlay_delquestion.shtml" class="delcustomer" title="删除">删除</a></li>
+                        <li><a href="question_published.shtml" title="发布调查 ">发布调查</a></li>
+                     </ul>
+                     </span>
+                  </td>
+              </tr>
+              <tr>
+                <td align="center" class="l_tab"><input input type="checkbox" name="num" value="" /></td>
+                <td><a href="question_view.shtml">问卷调查</a>
+                	<b></b></td>
+                <td>A001</td>
+                <td>未开始</td>
+                <td><small>2010-11-16</small></td>
+                <td><small>2010-12-10</small></td>
+                <td ><a href="question_edit.shtml" class="tabico_edit"  title="编辑">编辑</a>
+                     <a href="question_view.shtml" class="tabico_view" title="预览">预览</a>
+                     <span title="更多操作" class="more_action">
+                     <i>更多操作</i>
+                     <ul class="more_action_list">
+                        <li class="arrowli"></li>
+                        <li><a href="overlay_delquestion.shtml" class="delcustomer" title="删除">删除</a></li>
+                        <li><a href="#"  title="关闭">关闭</a></li>
+                     </ul>
+                     </span>
+                  </td>
+              </tr>
+              <tr>
+                <td align="center" class="l_tab"><input input type="checkbox" name="num" value="" /></td>
+                <td><a href="question_view.shtml">问卷调查</a>
+                	<b></b></td>
+                <td>A001</td>
+                <td>发布中</td>
+                <td><small>2010-11-16</small></td>
+                <td><small>2010-12-10</small></td>
+               <td ><a href="#" class="notedit" title="编辑禁用">编辑禁用</a>
+                    <a href="question_view.shtml" class="tabico_view" title="预览">预览</a>
+                    <span title="更多操作" class="more_action">
+                     <i>更多操作</i>
+                     <ul class="more_action_list">
+                        <li class="arrowli"></li>
+                        <li><a href="#"  title="关闭">关闭</a></li>
+                        <li><a href="survey_results.shtml" title="查看调查结果">查看调查结果</a></li>
+                     </ul>
+                     </span>
+                  </td>
+              </tr>
+              <tr>
+                <td align="center" class="l_tab"><input input type="checkbox" name="num" value="" /></td>
+                <td><a href="question_view.shtml">问卷调查</a>
+                	<b></b></td>
+                <td>A001</td>
+                <td>已结束</td>
+                <td><small>2010-11-16</small></td>
+                <td><small>2010-12-10</small></td>
+                <td ><a href="#" class="notedit" title="编辑禁用">编辑禁用</a>
+                     <a href="question_view.shtml" class="tabico_view" title="预览">预览</a>
+                     <span title="更多操作" class="more_action">
+                     <i>更多操作</i>
+                     <ul class="more_action_list">
+                        <li class="arrowli"></li>
+                        <li><a href="survey_results.shtml"  title="查看调查结果">查看调查结果</a></li>
+                     </ul>
+                     </span>
+                  </td>
+              </tr>
+              <tr>
+                <td align="center" class="l_tab"><input input type="checkbox" name="num" value="" /></td>
+                <td><a href="question_view.shtml">问卷调查</a>
+                	<b></b></td>
+                <td>A001</td>
+                <td>未发布</td>
+                <td><small>--</small></td>
+                <td><small>--</small></td>
+                <td ><a href="question_edit.shtml" class="tabico_edit"  title="编辑">编辑</a>
+                     <a href="question_view.shtml" class="tabico_view" title="预览">预览</a>
+                     <span title="更多操作" class="more_action">
+                     <i>更多操作</i>
+                     <ul class="more_action_list">
+                        <li class="arrowli"></li>
+                        <li><a href="overlay_delquestion.shtml" class="delcustomer" title="删除">删除</a></li>
+                        <li><a href="question_published.shtml" title="发布调查 ">发布调查</a></li>
+                     </ul>
+                     </span>
+                   </td>
+              </tr>
+              <tr>
+                <td align="center" class="l_tab"><input input type="checkbox" name="num" value="" /></td>
+                <td><a href="question_view.shtml">问卷调查</a>
+                	<b></b></td>
+                <td>A001</td>
+                <td>未开始</td>
+                <td><small>2010-11-16</small></td>
+                <td><small>2010-12-10</small></td>
+                <td ><a href="question_edit.shtml" class="tabico_edit"  title="编辑">编辑</a>
+                     <a href="question_view.shtml" class="tabico_view" title="预览">预览</a>
+                     <span title="更多操作" class="more_action">
+                     <i>更多操作</i>
+                     <ul class="more_action_list">
+                        <li class="arrowli"></li>
+                        <li><a href="overlay_delquestion.shtml" class="delcustomer" title="删除">删除</a></li>
+                        <li><a href="#" title="关闭">关闭</a></li>
+                     </ul>
+                     </span>
+                    </td>
+              </tr>
+              </tbody>
+          </table>
+		   <!-- 翻页// -->
+        <div class="pagination">
+          <ul>
+            <li>每页显示<select>
+                                <option>10</option>
+                                <option>20</option>
+                                <option>30</option>
+                                <option>50</option>
+                            </select>
+              条&nbsp;&nbsp;1/25页 </li>
+            <li class="disablepage">上一页</li>
+            <li class="currentpage">1</li>
+            <li><a href="#">2</a></li>
+            <li><a href="#">3</a></li>
+            <li><a href="#">4</a></li>
+            <li><a href="#">5</a></li>
+            <li><a href="#">6</a></li>
+            <li><a href="#">7</a></li>
+            <li><a href="#">8</a></li>
+            <li><a href="#">9</a>...</li>
+            <li><a href="#">15</a></li>
+            <li><a href="#">16</a></li>
+            <li class="nextpage"><a href="#">下一页</a></li>
+          </ul>
+        </div>
+        <!-- //翻页 -->
+</div>
+	  <div class="clear"></div>
+	   </div>
+	</div><!-- //End:container-->
+	<!--Start:footer//-->
+	 <!--#include virtual="../Library/footer.shtml" -->
+	 <!--//End:footer//-->
+	</div><!--//End:#content//-->
+<script src="../js/libs/cbs_userjs.js"></script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<h2 id="nyroModalTitle">选择课程实施方式</h2>
+<form  method="post" action="user.shtml" class="bigFrom">
+<!-- ico_error 错误 /ico_info 消息/ico_success 正确 /ico_warning 警示-->
+	<table width="100%" border="0" class="default_table">
+       <tr>
+         <td height="30" colspan="3" >&nbsp;</td>
+      </tr>
+	   <tr>
+		  <td width="30%" rowspan="2">&nbsp;</td>
+			<td height="30"><label onmouseup="window.location='training-implementation_syncourses1.shtml'"><input name="" type="radio" value="" class="defaut_radio"/> 在线同步课程</label></td>
+			<td width="30%" rowspan="2">&nbsp;</td>
+	  </tr>
+        <tr>
+          <td height="30"><label onmouseup="window.location='training-implementation_faceto1.shtml'"><input name="" type="radio" value="" class="defaut_radio"/> 面授课程</label></td>
+        </tr>
+        <tr>
+        <td height="30" colspan="3" >&nbsp;</td>
+    </tr>
+	</table>
+	<div class="overlay_btn">
+	  <input name="提交" type="submit" class="btn btn_submit" value=" 确定 "/>
+		<input type="button" class="btn btn_reset overlayClose" value=" 取消 "/>
+  </div>
+</form>

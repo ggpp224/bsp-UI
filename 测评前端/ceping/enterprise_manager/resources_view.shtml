@@ -1,0 +1,122 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta content="企业培训、企业内训、企业学习、企业大学、渠道大学、e-Learning、学习平台、学习系统、人才管理、岗位胜任力模型、Skillsoft、职业发展、培训管理、继任规划" name="keywords" />
+<meta content="企业商学院是集在线学习、能力测评、学习计划和培训管理为一体的企业学习整体解决方案。帮助企业提升内训、渠道培训、分支机构培训的整体水平，最大程度发掘培训价值，实现培训效益提升，全面促进企业人才培养。" name="description" />
+<title>企业商学院 - 资源管理 - 新增</title>
+</head>
+<!--系统样式-->
+<link href="../css/default.css" rel="stylesheet" type="text/css" />
+<!--皮肤样式  Blue-->
+<link href="../css/enterprise_blue.css" rel="stylesheet" type="text/css" />
+<!--[if IE]>
+<link type="text/css" rel="stylesheet" href="../css/ie.css" />
+<![endif]-->
+<!-- jQuery with plugins -->
+<script type="text/javascript" src="../js/libs/jquery-1.4.3.min.js"></script>
+
+
+<body>
+<!-- Start:  Html  //-->
+<div id="content">
+  <!-- Start:  header //-->
+  <!--#include virtual="../Library/header_enterprise.shtml" -->
+  <!--// End: header-->
+    <!-- Start: container //-->
+    <div id ="container">
+        <div class="box admin_box">
+            <!-- 面包屑 -->
+            <div class="bread_crumbs">
+
+                <a href="resources.shtml">资源管理</a>&nbsp;&#8250;&nbsp;
+                <a href="resources.shtml" >内容管理</a>&nbsp;&#8250;&nbsp;
+                <b>在线课件</b>
+                </div>
+            <!-- 面包屑 End -->
+            <h1 class="panel_title margin28">在线课件</h1>
+            <!-- 常规信息 -->
+            <form class="bigFrom padding28" method="post" action="resources_edit.shtml">
+                <table width="100%" class="default_table form_table top10 stup_table">
+                    <tbody class="infoTab">
+                        <tr>
+                            <th width="224">课件名称：</th>
+                            <td colspan="2">普通课程</td>
+                        </tr>
+                        <tr>
+                            <th>课件编码：</th>
+                            <td colspan="2">00000001</td>
+                        </tr>
+                        <tr>
+                            <th> 时长：</th>
+                            <td colspan="2">20分钟</td>
+                        </tr>
+                        <tr>
+                            <th> 制作工具：</th>
+                            <td colspan="2">Power Creator</td>
+                        </tr>
+                        <tr>
+                            <th> 已上传的课件：</th>
+                            <td colspan="2"><a href="#">下载已上传课件包</a></td>
+                        </tr>
+                        <tr>
+                            <th> 所属分类：</th>
+                            <td colspan="2">。。。。。。。。。。</td>
+                        </tr>
+                        <tr>
+                            <th> 语言属性：</th>
+                            <td colspan="2">中文</td>
+                        </tr>
+                        <tr>
+                            <th valign="top"> 课件图片：</th>
+                            <td colspan="2"> <img src="../images/system/type_icon.gif" width="48" height="48" class="imgbox" /></td>
+                        </tr>
+                        <tr>
+                            <th> 关键字：</th>
+                            <td colspan="2">普通课程</td>
+                        </tr>
+                        <tr>
+                            <th valign="top"> 学习目标：</th>
+                            <td colspan="2">
+                                <p>XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXxxx</p>
+                                <p>XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXxxx</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th valign="top"> 适用对象：</th>
+                            <td colspan="2">
+                                <p>XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXxxx</p>
+                                <p>XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXxxx</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th valign="top"> 课件描述：</th>
+                            <td colspan="2">
+                                <p>XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXxxx</p>
+                                <p>XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXxxx</p>
+                            </td>
+                        </tr>
+                    <tr>
+                        <th colspan="3" valign="top">&nbsp;</th>
+                    </tr>
+                    </tbody>
+                </table>
+                <div class="btn_box edit_box top10">
+					<input name="" type="button" class="btn btn_submit"  onclick="location.href='resources_edit.shtml';" value="编辑" />
+					<input name="" type="button" class="btn btn_reset"  onclick="location.href='resources.shtml';" value="返回" />
+				</div>
+            </form>
+        </div>
+    </div>
+    <!--// End: container -->
+	<!-- #BeginLibraryItem "/Library/footer.lbi" --><!--Start: footer //-->
+      <div id="footer"  class="top10">
+          <div class="box">
+             2000-2010 &copy; 安博教育版权所有 <a href="#">ICP 10021784</a>
+         </div>
+      </div><!--// End: footer--><!-- #EndLibraryItem --></div>
+<!--// End: Html -->
+
+
+</body>
+</html>

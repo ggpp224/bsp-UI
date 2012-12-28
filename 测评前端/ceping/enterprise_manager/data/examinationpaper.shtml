@@ -1,0 +1,55 @@
+﻿<ul>
+	<li id='root' class="jstree-open"><a href='#'>知识体系分类树</a>
+		<ul>
+			<li class="jstree-open"><a href='#'>一级目录</a>
+				<ul>
+					<li><a href='#'>二级目录</a></li>
+					<li><a href='#'>二级目录</a></li>
+					<li><a href='#'>二级目录</a></li>
+				</ul>
+			</li>
+            
+            <li class="jstree-open"><a href='#'>一级目录</a>
+                <ul>
+                    <li><a href='#'>二级目录</a></li>
+                    <li><a href='#'>二级目录</a></li>
+                    <li><a href='#'>二级目录</a></li>
+                </ul>
+            </li>
+            
+            <li class="jstree-open"><a href='#'>一级目录</a>
+                <ul>
+                    <li><a href='#'>二级目录</a></li>
+                    <li><a href='#'>二级目录</a></li>
+                    <li><a href='#'>二级目录</a></li>
+                </ul>
+            </li>
+            
+            <li class="jstree-open"><a href='#'>一级目录</a>
+                <ul>
+                    <li><a href='#'>二级目录</a></li>
+                    <li><a href='#'>二级目录</a></li>
+                    <li><a href='#'>二级目录</a></li>
+                </ul>
+            </li>
+            
+            <li class="jstree-open"><a href='#'>一级目录</a>
+                <ul>
+                    <li><a href='#'>二级目录</a></li>
+                    <li><a href='#'>二级目录</a></li>
+                    <li><a href='#'>二级目录</a></li>
+                </ul>
+            </li>
+            
+		</ul>
+	</li>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</ul>

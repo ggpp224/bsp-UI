@@ -1,0 +1,7 @@
+@charset "utf-8";
+.examinationpaper_guding_th td{ border:#CCC solid 1px; padding:4px 2px 5px 2px; background:url(../images/system/blue_bg.gif) repeat-x 0 0; font:bold 12px "Microsoft YaHei","宋体";  text-align:center;}
+.examinationpaper_guding_td td{border:#ccc solid 1px; text-align:center;}
+.examinationpaper_guding_huibg{ background:#f9f9f9;}
+.examinationpaper_guding_baibg{ background:#fff;}
+.acenter{ display:block; margin-left:30%;}
+.default_textarea_da{ width:510px; height:200px;}

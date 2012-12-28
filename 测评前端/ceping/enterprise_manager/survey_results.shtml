@@ -1,0 +1,230 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta content="企业培训、企业内训、企业学习、企业大学、渠道大学、e-Learning、学习平台、学习系统、人才管理、岗位胜任力模型、Skillsoft、职业发展、培训管理、继任规划" name="keywords" />
+<meta content="企业商学院是集在线学习、能力测评、学习计划和培训管理为一体的企业学习整体解决方案。帮助企业提升内训、渠道培训、分支机构培训的整体水平，最大程度发掘培训价值，实现培训效益提升，全面促进企业人才培养。" name="description" />
+<title>CBS -需求管理 - 问卷调查 － 查看调查结果</title>
+</head>
+<!--系统样式-->
+<link href="../css/default.css" rel="stylesheet" type="text/css" />
+<!--皮肤样式  Blue-->
+<link href="../css/enterprise_blue.css" rel="stylesheet" type="text/css" />
+<link href="../css/examination.css" rel="stylesheet" type="text/css" />
+<!--[if IE]>
+<link type="text/css" rel="stylesheet" href="../css/ie.css" />
+<![endif]-->
+<!-- jQuery with plugins -->
+<script type="text/javascript" src="../js/libs/jquery-1.4.3.min.js"></script>
+<script type="text/javascript">
+    $(document).ready(function() {
+	$(".progressBar").each(function(i,n){ $(n).progressBar(); });
+
+ });
+</script>
+</head>
+
+<body>
+<!-- Start:  Html  //-->
+<div id="content">
+     <!--Start:头部//-->
+	<!--#include virtual="../Library/header_enterprise.shtml" -->
+    <div id ="container">
+	  <div class="box admin_box">
+	   <!-- 面包屑 -->
+	     <div class="bread_crumbs">
+
+			 <a href="requirement.shtml">需求管理</a>&nbsp;&#8250;&nbsp;
+			 <a href="requirement.shtml">问卷管理</a>&nbsp;&#8250;&nbsp;
+			 <b>查看调查结果</b>
+	     </div><!-- //End:面包屑 -->
+		 <div class="right_box">
+		   <h1 class="panel_title">基本信息</h1>
+		  <form id="form1" name="form1" method="post" action="" >
+         <table width="100%" border="0" class="default_table form_table top10">
+	<tr>
+		<th ><span>*</span>问卷名称：</th>
+		<td >XXXXXXXXXXXXXXXXXXXXXXXXXXX</td>
+		</tr>
+	<tr>
+	  <th ><span>*</span> 问卷编码：</th>
+	  <td><font class="bignumber">Z1000012</font></td>
+	  </tr>
+	<tr>
+		<th valign="top">问卷描述：</th>
+		<td>
+		     <div class="p_cont">
+			      <p>XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX。</p>
+			 </div>
+		</td>
+	</tr>
+	<tr>
+		<th><span>*</span>调查时效：</th>
+		<td >2010-12-12 12:00-2011-01-12 12:00</td>
+		</tr>
+	<tr>
+	  <th><span>*</span> 作答方式:</th>
+	  <td>实名/匿名</td>
+	  </tr>
+	<tr>
+		<th><span>*</span>调查结果：</th>
+		<td>即时公开/调查结束后公开/不公开</td>
+	</tr>
+	<tr>
+		<th><span>*</span>参与度统计：</th>
+		<td ><b class="right30"><font class="wrongfont">36</font>/100</b><span class="progressBar">36%</span></td>
+		</tr>
+	<tr>
+		<th>&nbsp;</th>
+		<td ><a href="survey_view.shtml" target="_blank" class="right30">查看调查对象 &raquo;</a><a href="survey_off_view.shtml" target="_blank" class="survey_off_view">查看未参与人员  &raquo;</a></td>
+	</tr>
+	<tr>
+		<td colspan="2" >&nbsp;</td>
+	</tr>
+    </table>
+
+		<h1 class="panel_title">统计结果及分析：</h1>
+
+		<table width="100%" border="0" class="default_table form_table top10">
+			<tr>
+				<td colspan="4" ><h4>1. <span class="fontweaken">[单项选择题]</span> 如何看待CBS的实施效果?</h4></td>
+			</tr>
+			<tr>
+				<td colspan="4" class="fristtd">
+					<table width="100%" border="0" class="default_table  borderall mini_listtab">
+					 <thead class="gradual_bg">
+						 <tr>
+						  <th class="fristtd">选项</th>
+						  <th >小计</th>
+						  <th>比例</th>
+						</tr>
+					</thead>
+					<tbody>
+					<tr>
+					 <td class="fristtd">效果一般</td>
+					 <td>45</td>
+					 <td><span class="progressBar">45%</span></td>
+					</tr>
+					<tr>
+					 <td class="fristtd">效果不赖</td>
+					 <td>23</td>
+					 <td><span class="progressBar">23%</span></td>
+					</tr>
+					<tr>
+					 <td class="fristtd">效果还行</td>
+					 <td>22</td>
+					 <td><span class="progressBar">32%</span></td>
+					</tr>
+					<tr class="othertd_bg">
+					 <td class="fristtd">其他</td>
+					 <td>10</td>
+					 <td><span class="progressBar">10%</span></td>
+					</tr>
+					<tr class="othertd_bg">
+					 <td colspan="3" class="no_padding">
+					   <ol class="panel_list ">
+					     <li>XXXXXX(客户名称)：XXXXXXXXXXXXXXXXXXXXXXXXXXXXX</li>
+						 <li>XXXXXX(客户名称)：XXXXXXXXXXXXXXXXXXXXXXXXXXXXX</li>
+						 <li>XXXXXX(客户名称)：XXXXXXXXXXXXXXXXXXXXXXXXXXXXX</li>
+						 <li>XXXXXX(客户名称)：XXXXXXXXXXXXXXXXXXXXXXXXXXXXX</li>
+						 <li>XXXXXX(客户名称)：XXXXXXXXXXXXXXXXXXXXXXXXXXXXX</li>
+					   </ol>
+					 </td>
+					 </tr>
+					</tbody>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="4" ><h4>2. <span class="fontweaken">[多项选择题]</span> 对于CBS还有哪些建议?</h4></td>
+			</tr>
+			<tr>
+				<td colspan="4" class="fristtd">
+					<table width="100%" border="0" class="default_table  borderall mini_listtab">
+					 <thead class="gradual_bg">
+						 <tr>
+						  <th class="fristtd">选项</th>
+						  <th >小计</th>
+						  <th>比例</th>
+						</tr>
+					</thead>
+					<tbody>
+					<tr>
+					 <td class="fristtd">增加课程数量</td>
+					 <td>45</td>
+					 <td><span class="progressBar">45%</span></td>
+					</tr>
+					<tr>
+					 <td class="fristtd">减少操作环节</td>
+					 <td>23</td>
+					 <td><span class="progressBar">23%</span></td>
+					</tr>
+					<tr>
+					 <td class="fristtd">做好售后服务</td>
+					 <td>22</td>
+					 <td><span class="progressBar">32%</span></td>
+					</tr>
+					<tr class="othertd_bg">
+					 <td class="fristtd">其他</td>
+					 <td>10</td>
+					 <td><span class="progressBar">10%</span></td>
+					</tr>
+					<tr class="othertd_bg">
+					 <td colspan="3" class="no_padding">
+					   <ol class="panel_list ">
+					     <li>XXXXXX(客户名称)：XXXXXXXXXXXXXXXXXXXXXXXXXXXXX</li>
+						 <li>XXXXXX(客户名称)：XXXXXXXXXXXXXXXXXXXXXXXXXXXXX</li>
+						 <li>XXXXXX(客户名称)：XXXXXXXXXXXXXXXXXXXXXXXXXXXXX</li>
+						 <li>XXXXXX(客户名称)：XXXXXXXXXXXXXXXXXXXXXXXXXXXXX</li>
+						 <li>XXXXXX(客户名称)：XXXXXXXXXXXXXXXXXXXXXXXXXXXXX</li>
+					   </ol>
+					 </td>
+					 </tr>
+					</tbody>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="4" >
+					<h4>3. <span class="fontweaken">[简答题]</span> 使用CBS平台，有什么收获?</h4></td>
+			</tr>
+			<tr>
+			  <td class="fristtd">
+                <div class="borderall mini_listtab othertd_bg">
+					   <ol class="panel_list ">
+					     <li>XXXXXX(客户名称)：XXXXXXXXXXXXXXXXXXXXXXXXXXXXX</li>
+						 <li>XXXXXX(客户名称)：XXXXXXXXXXXXXXXXXXXXXXXXXXXXX</li>
+						 <li>XXXXXX(客户名称)：XXXXXXXXXXXXXXXXXXXXXXXXXXXXX</li>
+						 <li>XXXXXX(客户名称)：XXXXXXXXXXXXXXXXXXXXXXXXXXXXX</li>
+						 <li>XXXXXX(客户名称)：XXXXXXXXXXXXXXXXXXXXXXXXXXXXX</li>
+					   </ol>
+                  </div>
+			  </td>
+			</tr>
+			</table>
+            <!--
+            <div class="btn_box edit_box top10">
+					<input name="提交" type="submit" class="btn btn_submit"  value="导出调查结果" />
+			</div>
+            -->
+		  </form>
+		</div><!--//end:调查问券创建区-->
+		<!--Start: left_menu //-->
+			<div class="left_menu">
+				<div class="menu_box">
+					<h2 class="current"><a href="survey_results.shtml">整体统计</a>
+						<span></span></h2>
+				</div>
+				<div class="menu_box">
+					<h2><a href="survey_results_personal.shtml">按人查看</a>
+						<span></span></h2>
+				</div>
+			</div>
+			<div class="clearer"></div>
+       </div><!--//end:box-->
+	  </div><!--//end:container-->
+	  <!--#include virtual="../Library/footer.shtml" -->
+   </div><!--//end:content-->
+   <script type="text/javascript" src="../js/libs/jquery.progressbar.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,123 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta content="企业培训、企业内训、企业学习、企业大学、渠道大学、e-Learning、学习平台、学习系统、人才管理、岗位胜任力模型、Skillsoft、职业发展、培训管理、继任规划" name="keywords" />
+<meta content="企业商学院是集在线学习、能力测评、学习计划和培训管理为一体的企业学习整体解决方案。帮助企业提升内训、渠道培训、分支机构培训的整体水平，最大程度发掘培训价值，实现培训效益提升，全面促进企业人才培养。" name="description" />
+<title>CBS - 资源报表 - 培训计划报表</title>
+<!--系统样式-->
+<link href="../css/default.css" rel="stylesheet" type="text/css" />
+<!--皮肤样式  Blue-->
+<link href="../css/enterprise_blue.css" rel="stylesheet" type="text/css" />
+<link href="../css/enterprise_report.css" rel="stylesheet" type="text/css" />
+<link href="../css/nyroModal.css" rel="stylesheet" type="text/css" />
+<!--[if IE]>
+<link type="text/css" rel="stylesheet" href="../css/ie.css" />
+<![endif]-->
+<!-- jQuery with plugins -->
+<script type="text/javascript" src="../js/libs/jquery-1.4.3.min.js"></script>
+<script language="javascript" type="text/javascript" src="../js/libs/nyroModal1.6.2.min.js"></script>
+<script src="../js/libs/cbs_userjs.js"></script>
+<script type="text/javascript" src="../js/libs/jsapi"></script>
+<script type="text/javascript" src="../js/libs/jquery.gvchart.js"></script>
+<script type="text/javascript">
+		gvChartInit();
+		jQuery(document).ready(function(){
+			jQuery('.chart').gvChart({
+				chartType: 'PieChart',
+				gvSettings: {
+					width: 400,
+					height: 300
+					}
+			});
+			jQuery('.chart2').gvChart({
+				chartType: 'ColumnChart',
+				gvSettings: {
+					vAxis: {title: '培训计划数'},
+					hAxis: {title: '执行度'},
+					width: 400,
+					height: 300
+					}
+			});
+		});
+		</script>
+</head>
+<body>
+<!-- Start:  Html  //-->
+<div id="content">
+  <!--Start:header //-->
+  <!--#include virtual="../Library/header_enterprise.shtml" -->
+  <!-- Start: container //-->
+  <div id="container">
+    <div class="box admin_box">
+      <!-- 面包屑 -->
+      <div class="bread_crumbs">  <a href="user.shtml">统计报表</a>&nbsp;&#8250;&nbsp;<b>培训计划报表</b></div>  <!-- 面包屑 End -->
+      <div class="padding28">
+       <ul class="reporttabs">
+          <li class="current"><a href="report_plan.shtml">概况统计图</a></li>
+                <li><a href="report_plan2.shtml">统计数据</a></li>
+      </ul>
+      <div class="fl">
+        <table class="chart">
+          <caption>
+            培训计划实施状态统计
+            </caption>
+          <thead>
+            <tr>
+              <th>实施类别</th>
+              <th>全部实施</th>
+              <th>部分实施</th>
+              <th>未实施</th>
+              </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th>&nbsp;</th>
+              <td>12</td>
+              <td>8</td>
+              <td>4</td>
+              </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="fr">
+      <table class="chart2">
+        <caption>
+          培训计划执行度分布状态统计
+        </caption>
+        <thead>
+          <tr>
+            <th>执行度</th>
+            <th>0%&lt;X&lt;20%</th>
+            <th>20%&lt;X&lt;40%</th>
+            <th>40%&lt;X&lt;60%</th>
+            <th>60%&lt;X&lt;80%</th>
+            <th>80%&lt;X&lt;100%</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th>培训计划数</th>
+            <td>12</td>
+            <td>16</td>
+            <td>32</td>
+            <td>15</td>
+            <td>9</td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="fr box-info mr20" >说明：
+“执行度”是指进入实际培训实施环节的资源占该培训计划所有资源的百分比。</div>
+      </div>
+
+      <div class="clear"></div>
+      </div>
+      <!-- 主内容 End -->
+    </div>
+  </div>
+  <!--// End: container -->
+  <!--#include virtual="../Library/footer.shtml" -->
+</div>
+<!--// End: Html -->
+</body>
+</html>

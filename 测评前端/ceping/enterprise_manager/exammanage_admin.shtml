@@ -1,0 +1,237 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta content="企业培训、企业内训、企业学习、企业大学、渠道大学、e-Learning、学习平台、学习系统、人才管理、岗位胜任力模型、Skillsoft、职业发展、培训管理、继任规划" name="keywords" />
+<meta content="企业商学院是集在线学习、能力测评、学习计划和培训管理为一体的企业学习整体解决方案。帮助企业提升内训、渠道培训、分支机构培训的整体水平，最大程度发掘培训价值，实现培训效益提升，全面促进企业人才培养。" name="description" />
+<title>CBS - 用户管理 - 资源管理</title>
+<!--系统样式-->
+<link href="../css/default.css" rel="stylesheet" type="text/css" />
+<!--皮肤样式  Blue-->
+<link href="../css/enterprise_blue.css" rel="stylesheet" type="text/css" />
+<link href="../css/nyroModal.css" rel="stylesheet" type="text/css" />
+<!--[if IE]>
+<link type="text/css" rel="stylesheet" href="../css/ie.css" />
+<![endif]-->
+<!-- jQuery with plugins -->
+<script type="text/javascript" src="../js/libs/jquery-1.4.3.min.js"></script>
+<!-- jQuery tree -->
+<script type="text/javascript" src="../js/libs/jquery.cookie.js"></script>
+<script type="text/javascript" src="../js/libs/jquery.jstree.js"></script>
+<script language="javascript" type="text/javascript" src="../js/libs/nyroModal1.6.2.min.js"></script>
+<script type="text/javascript">
+    $(document).ready(function() {
+	checkAll(name);//CheckBox全选
+	cbs.showSearchPanel(); //搜索区
+
+	$("#load_html_data").jstree({
+		"html_data" : {
+
+			"ajax" : {
+				"core" : { "initially_open" : [ "root" ] },
+				"url" : "data/data_resources.shtml",
+				"data" : function (n) {
+					return { id : n.attr ? n.attr("id") : 0 };
+				}
+			}
+		},
+		"plugins" : [  "themes", "html_data" ,"checkbox","contextmenu","cookies","ui", "crrm","dnd" ]
+	});
+
+
+	/*-------------提示操作 可根据需要删除一下内容----------------*/
+	$(".notedit").click(function(){ alert("skillsoft课件不可编辑！"); } ) //提示不可编辑
+	$(".noreupload_ico").click(function(){ alert("不可重新上传课件包！"); } ) //提示不可编辑
+	$(".tabico_recommend").click(function () {
+		$(this).toggleClass("tabico_cancel");
+		if($(this).hasClass('tabico_cancel')){
+		$(this).attr('title', '未推荐，点击图标推荐该资源');
+		$(this).text('未推荐，点击图标推荐该资源');
+        alert("已完成取消推荐操作！该资源将从学员端：课程中心-推荐资源列表中删除！");
+		}
+		else{
+		$(this).attr('title', '已推荐，点击图标取消推荐');
+		$(this).text('已推荐，点击图标取消推荐');
+		alert("推荐操作成功！该资源将出现在学员端：课程中心-推荐资源列表！");
+			}
+	 });
+
+	 cbs.treeOverlay();//树操作
+
+	 var loadTable = $("#load_exammanageList", parent.document);
+	 var defaultPage ='exammanage_list.shtml';
+	//默认加载
+	$.ajax({
+	    url:defaultPage,
+	    context: document.body,
+		beforeSend:ThisLoading ,//执行ajax前执行loading函数.直到success
+		success: Response //成功时执行Response函数
+	});
+
+   	//执行loading函数
+	function ThisLoading() {
+	  $(loadTable).html('<div class="Loading_List"></div>');
+	}
+
+	//loading完成后执行
+    function Response(data){
+	  	$(loadTable).html(data);
+		getTableList();
+	}
+
+   //添加子页面JS事件
+   function getTableList(e){
+
+	  cbs.tablehover();//表单换行颜色 hover
+
+	  cbs.exportbtn();//导出
+
+	  cbs.selbtnmenu();//下拉菜单
+
+	  //导入
+	    $('.resources_import').click(function(e) {
+			e.preventDefault();
+			$.fn.nyroModalManual({
+				width:650,
+				height:300,
+				url: 'overlay_resources_import.shtml'
+			});
+	  	return false;
+	 });
+
+	  //调整分类
+	  $('.departments').click(function(e) {
+			G_zsdianChkObj=$(this);
+			e.preventDefault();
+			$.fn.nyroModalManual({
+			    width:600,
+				title:"选择知识点",
+				url: 'overlay_exammanage_adjust.shtml'
+			});
+		return false;
+	 });
+
+    //删除
+	$('#delcustomer').click(function(e) {
+			e.preventDefault();
+			$.fn.nyroModalManual({
+			    width:380,
+				url: 'overlay_delsector.shtml',
+				title:'系统提示'
+			});
+			return false;
+	 });
+
+	$('.carry_out').nyroModal({width:380});
+
+
+
+	//上传
+	$(".reupdata").nyroModal({
+		width:560
+	  });
+
+
+    }
+
+	 //测试
+	 $('.delthis').live('click',function(e) {
+		    $(this).text('推荐');
+		    reLoadTbaleList();
+			alert('我被点击,我是第'+$(this).parent().parent().parent().parent().parent().index()+"行");
+			return false;
+	 });
+
+	$('.stopthis').live('click',function(e) {
+		reLoadTbaleList();
+		alert('我被点击');
+	 });
+
+
+	//局部刷新
+    function reLoadTbaleList(e){
+
+		$.ajax({
+		  url:defaultPage,
+		  context: document.body,
+		  beforeSend:ThisLoading ,
+		  success: Response //成功时执行Response函数
+	 });
+   }
+
+	$(".tree_imp").click(function(e) {
+		e.preventDefault();
+		$.fn.nyroModalManual({
+			width:380,
+			title:'导入目录树',
+			url: 'overlay_dep_import.shtml'
+		});
+		return false;
+	});
+
+});
+</script>
+</head>
+<body>
+<!-- Start:  Html  //-->
+<div id="content">
+	  <!-- Start:  header //-->
+  <!--#include virtual="../Library/header_enterprise.shtml" -->
+  <!--// End: header-->
+	<!-- ==============================Start: container //=========================-->
+	<div id ="container">
+		<div class="box admin_box">
+			<!-- 面包屑// -->
+            <div class="bread_crumbs">
+               <a class="to5_0" href="resources/toMyResourceBase.action">资源管理</a>&nbsp;&#8250;&nbsp;
+			   <b>内容管理</b>
+			</div><!-- //End:面包屑 -->
+			<!--Start:sidebar//-->
+
+            <div class="exammanage_contnet">
+
+
+
+
+            <div class="exammanage_contnet_r" style="width:100%">
+           <div class="exammanage_box">
+           <table width="100%" border="0" cellpadding="0" cellspacing="0">
+						<tr>
+							<th>题型：</th>
+							<td ><select name="select" class="mini_sel">
+									<option selected="selected">单项选择题</option>
+									<option>单项选择题1</option>
+									<option>单项选择题2</option>
+								</select></td>
+							<th>难度：</th>
+							<td><input type="text" class="default_txt" value="" size="3"/> - <input type="text" class="default_txt" value="" size="3"/></td>
+						    <th>状态：</th>
+							<td >
+								<select name="select" class="mini_sel">
+									<option selected="selected"> - 全部 -</option>
+									<option>知识点名称1</option>
+									<option>知识点名称2</option>
+								</select>
+							</td>
+							<th >题干：</td>
+						  <td><input type="text" class="default_txt" value="" size="20"/></td>
+							<td ><input type="button" name="input2" value=" 查询 " class="btn btn_default"/></td>
+						</tr>
+					</table></div>
+           <div id="load_exammanageList"></div>
+            </div>
+
+
+            <div class="clear"></div>
+            </div>
+
+
+			<!-- 树 End -->
+			<!-- //End:content_r-->
+
+		 </div><!-- //End:admin_box-->
+	</div><!-- //End:container-->  <!--#include virtual="../Library/footer.shtml" --></div>
+<!-- 声明 引用-->
+<script src="../js/libs/cbs_userjs.js"></script>
+</body>
+</html>

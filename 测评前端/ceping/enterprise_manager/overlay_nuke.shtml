@@ -1,0 +1,39 @@
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<script type="text/javascript">
+    $(document).ready(function() {
+	checkAll(name);//CheckBox全选	
+	//禁言用户
+	$('#overlay_nuke_success').click(function(e) {
+			e.preventDefault();
+			$.fn.nyroModalManual({
+			    width:400,
+				url: 'overlay_nuke_success.shtml',
+				title:'禁言用户'
+			});
+			return false;
+		});
+ });
+</script>
+ 	<form id="sampleform" method="post" action="#" class="bigFrom">
+	<div class="overlay_interaction">
+        <span class="icon_bigimportant"></span>
+        <div class="overlay_box">
+        <p><strong>用户姓名：Ma.dongming</strong></p>
+        <p><input type="checkbox" name="num" value="" onclick="if(this.checked==true) { checkAll('num'); } else { clearAll('num'); }" />&nbsp;<label for="message">禁止发新话题</label></p>
+        <p class="subsidiary"><input input type="checkbox" name="num" value="1" />&nbsp;<label for="message">保留之前话题</label></p>
+        <p><input type="checkbox" name="num2" value="" onclick="if(this.checked==true) { checkAll('num2'); } else { clearAll('num2'); }" />禁止回复话题</label></p>
+        <p class="subsidiary"><input input type="checkbox" name="num2" value="1" />&nbsp;<label for="message">保留之前回复</label></p>
+        <hr />
+        <p><input type="checkbox" name="message" id="message" checked="checked" />&nbsp;<label for="message">通知作者</label></p>
+        </div>
+        <div class="clearer"></div>
+   </div>
+   <div class="overlay_btn">
+    <input type="button" class="btn btn_submit btn_submit" name="overlay_nuke_success" id="overlay_nuke_success" value=" 确定 "/> 
+    <input type="button" class="btn btn_reset overlayClose" value=" 取消 "/>
+	</div> 
+    </form>
+
+
+
+    

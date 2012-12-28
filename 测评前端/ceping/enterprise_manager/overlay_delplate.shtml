@@ -1,0 +1,33 @@
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<script type="text/javascript">
+    $(document).ready(function() {	
+	//删除
+	$('#overlay_delplate_success').click(function(e) {
+			e.preventDefault();
+			$.fn.nyroModalManual({
+			    width:400,
+				url: 'overlay_delplate_success.shtml',
+				title:'删除自定义版块'
+			});
+			return false;
+		});
+ });
+</script>
+ 	<form id="sampleform" method="post" action="#" class="bigFrom">
+	<div class="overlay_interaction">
+        <span class="icon_bigimportant"></span>
+        <div class="overlay_box">
+        <p>您确认要删除&nbsp;<strong>自定义版块名称</strong>&nbsp;版块吗？</p>
+        <p><input type="checkbox" name="message" id="message" class="" />&nbsp;<label for="message">通知该版块下的所有作者</label></p>
+        </div>
+        <div class="clearer"></div>
+   </div>
+   <div class="overlay_btn">
+    <input type="button" class="btn btn_submit" name="overlay_delplate_success" id="overlay_delplate_success" value=" 确定 "/> 
+    <input type="button" class="btn btn_reset overlayClose" value=" 取消 "/>
+	</div> 
+    </form>
+
+
+
+    

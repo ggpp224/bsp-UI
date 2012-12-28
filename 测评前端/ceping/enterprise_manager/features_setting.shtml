@@ -1,0 +1,82 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta content="企业培训、企业内训、企业学习、企业大学、渠道大学、e-Learning、学习平台、学习系统、人才管理、岗位胜任力模型、Skillsoft、职业发展、培训管理、继任规划" name="keywords" />
+<meta content="企业商学院是集在线学习、能力测评、学习计划和培训管理为一体的企业学习整体解决方案。帮助企业提升内训、渠道培训、分支机构培训的整体水平，最大程度发掘培训价值，实现培训效益提升，全面促进企业人才培养。" name="description" />
+<title>CBS - 用户管理 - 资源管理 - 用户端呈现设置</title>
+<!--系统样式-->
+<link href="../css/default.css" rel="stylesheet" type="text/css" />
+<!--皮肤样式  Blue-->
+<link href="../css/enterprise_blue.css" rel="stylesheet" type="text/css" />
+<!--[if IE]>
+<link type="text/css" rel="stylesheet" href="../css/ie.css" />
+<![endif]-->
+<!-- jQuery with plugins -->
+<script type="text/javascript" src="../js/libs/jquery-1.4.3.min.js"></script>
+</head>
+<body>
+<!-- Start:  Html  //-->
+<div id="content">
+  <!-- Start:  header //-->
+  <!--#include virtual="../Library/header_enterprise.shtml" -->
+  <!--// End: header-->
+  <!--// End: header-->
+  <!-- Start: container //-->
+  <div id ="container">
+    <div class="box admin_box miniheight">
+      <!-- 面包屑 --><div class="bread_crumbs">
+				  <a href="resources.shtml">资源管理</a>&nbsp;&#8250;&nbsp;<b>功能设置</b> </div>
+      <!-- 面包屑 End -->
+      <!-- 主内容 -->
+      <form  method="post" action="#" class="bigFrom padding28">
+        <h1 class="panel_title">功能设置</h1>
+        <table width="100%" class="default_table form_table stup_table">
+          <tr>
+            <th>&nbsp;</th>
+    <td colspan="2">&nbsp;</td>
+  </tr>
+
+  <tr>
+    <th><strong>用户端 积分启用状态控制：</strong></th>
+    <td><input type="checkbox" name="checkbox" id="checkbox" />
+      启用积分功能</td>
+    <td rowspan="2" valign="top"><div class="msg_box legendtxt">
+      <p>启用该功能后，学员可到&quot;个人中心——我的积分&quot;中查看积分值及积分明细。</p>
+    </div></td>
+  </tr>
+  <tr>
+    <th>&nbsp;</th>
+    <td></td>
+    </tr>
+  <tr>
+    <th height="0"><strong>用户端 排名启用状态控制：</strong></th>
+    <td><input type="checkbox" name="checkbox3" id="checkbox3" />
+      启用排名功能</td>
+    <td rowspan="2" valign="top"><div class="msg_box legendtxt">
+      <p>启用该功能后，学员可到&quot;个人中心——我的排名&quot;中查看个人排名和组织排名情况，开放此功能后，个人学习和组织排名信息将对学员完全公开。</p>
+    </div></td>
+  </tr>
+  <tr>
+    <th height="0">&nbsp;</th>
+    <td></td>
+  </tr>
+  <tr>
+    <th height="0" colspan="3">&nbsp;</th>
+    </tr>
+
+</table>
+
+
+        <div class="btn_box edit_box">
+          <input type="submit" class="btn btn_submit" value="保存" />
+          <input type="submit" class="btn btn_reset" value="取消" />
+        </div>
+      </form>
+      <!-- 主内容 End -->
+    </div>
+  </div>
+  <!--// End: container -->  <!--#include virtual="../Library/footer.shtml" --></div>
+<!--// End: Html -->
+</body>
+</html>

@@ -1,0 +1,79 @@
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<script type="text/javascript">
+    $(document).ready(function() {					   
+	cbs.textScroll();
+	});
+</script>
+<h2 id="nyroModalTitle">新增管理员</h2>
+<div class="overbody">
+    <div class="features_search">
+    <table width="100%" class="default_table">
+      <tr>
+        <td width="62">用户姓名：</td>
+        <td width="126"><input type="text" class="default_txt" value="" size="28"/></td>
+        <td><input name="Button2" type="button" class="btn btn_default" value="查询" /></td>
+      </tr>
+    </table>
+    </div>
+	<form  method="post" action="#" class="bigFrom">
+	<table width="100%" class="default_table">
+		<td width="49%"><strong>备选用户：</strong><br />
+                <select name="select" size="10" id="select" class="fullynoxy">
+                    <option>用户1</option>
+                    <option>用户2</option>
+                    <option>用户1</option>
+                    <option>用户2</option>
+                    <option>用户1</option>
+                    <option>用户2</option>
+                    <option>用户1</option>
+                    <option>用户2</option>
+                    <option>用户1</option>
+                    <option>用户2</option>
+                    <option>用户1</option>
+                    <option>用户2</option>
+                    <option>用户1</option>
+                    <option>用户2</option>
+                    <option>用户1</option>
+                    <option>用户2</option>
+                    <option>用户1</option>
+                    <option>用户2</option>
+                    <option>用户1</option>
+                    <option>用户2</option>
+                    <option>用户1</option>
+                    <option>用户2</option>
+                    <option>用户1</option>
+                    <option>用户2</option>
+                </select>
+			</td>
+			<td align="center"><input type="submit" class="btn btn_feature" value="添加 &raquo;" />
+				<br />
+				<br />
+				<input type="button" name="input" class="btn btn_del" value="&laquo; 移除" /></td>
+			<td width="49%"><strong>已选用户：</strong>
+			<div class="divselect minibox noscroll" >
+            <ul>
+              <li><a href="#" class="delico"  title="从列表删除">从列表删除</a><span>名称01名称01名称01名称01名称01名称01名称01名称01名称01名称01名称01名称01</span></li>
+              <li><a href="#" class="delico"  title="从列表删除">从列表删除</a><span>名称02</span></li>
+              <li><a href="#" class="delico"  title="从列表删除">从列表删除</a><span>名称03</span></li>
+              <li><a href="#" class="delico"  title="从列表删除">从列表删除</a><span>名称04</span></li>
+              <li><a href="#" class="delico"  title="从列表删除">从列表删除</a><span>名称05</span></li>
+              <li><a href="#" class="delico"  title="从列表删除">从列表删除</a><span>名称06</span></li>
+              <li><a href="#" class="delico"  title="从列表删除">从列表删除</a><span>名称07</span></li>
+              <li><a href="#" class="delico"  title="从列表删除">从列表删除</a><span>名称08</span></li>
+              <li><a href="#" class="delico"  title="从列表删除">从列表删除</a><span>名称09</span></li>
+              <li><a href="#" class="delico"  title="从列表删除">从列表删除</a><span>名称10</span></li>
+              <li><a href="#" class="delico"  title="从列表删除">从列表删除</a><span>名称11</span></li>
+              <li><a href="#" class="delico"  title="从列表删除">从列表删除</a><span>名称12</span></li>
+              <li><a href="#" class="delico"  title="从列表删除">从列表删除</a><span>名称13</span></li>
+            
+            </ul>
+				</div>
+			</td>
+		</tr>
+	</table>
+	<div class="overlay_btn">
+		<input type="button" class="btn btn_submit close" value="将已选用户设为管理员"/>
+		<input type="button" class="btn btn_reset nyroModalClose" value=" 取消 "/>
+	</div>
+</form>
+</div>

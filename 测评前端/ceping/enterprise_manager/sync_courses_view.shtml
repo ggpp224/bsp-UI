@@ -1,0 +1,102 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta content="企业培训、企业内训、企业学习、企业大学、渠道大学、e-Learning、学习平台、学习系统、人才管理、岗位胜任力模型、Skillsoft、职业发展、培训管理、继任规划" name="keywords" />
+<meta content="企业商学院是集在线学习、能力测评、学习计划和培训管理为一体的企业学习整体解决方案。帮助企业提升内训、渠道培训、分支机构培训的整体水平，最大程度发掘培训价值，实现培训效益提升，全面促进企业人才培养。" name="description" />
+<title>CBS - 用户管理 - 资源管理 - 查看同步课程</title>
+<!--系统样式-->
+<link href="../css/default.css" rel="stylesheet" type="text/css" />
+<!--皮肤样式  Blue-->
+<link href="../css/enterprise_blue.css" rel="stylesheet" type="text/css" />
+<link href="../css/nyroModal.css" rel="stylesheet" type="text/css" />
+<!--[if IE]>
+<link type="text/css" rel="stylesheet" href="../css/ie.css" />
+<![endif]-->
+<!-- jQuery with plugins -->
+<script type="text/javascript" src="../js/libs/jquery-1.4.3.min.js"></script>
+
+</head>
+
+<body>
+<div id="content">
+    <!--#include virtual="../Library/header_enterprise.shtml" -->
+   <div id="container">
+      <div class="box admin_box">
+	    <!-- Start:面包屑 bread_crumbs //-->
+         <div class="bread_crumbs">
+
+			   <a class="to5_0" href="resources/toMyResourceBase.action">资源管理</a>&nbsp;&#8250;&nbsp;
+               <a href="resources.shtml" >内容管理</a>&nbsp;&#8250;&nbsp;
+			   <b>查看同步课程</b>
+		  </div>
+          <div class="content_body padding28" >
+		  <h1 class="panel_title">查看同步课程</h1>
+          <form id="flight" method="post" action="sync_courses_edit.shtml" class="bigFrom">
+			  <table width="100%" border="0" class="default_table form_table stup_table top10" >
+				<tr>
+					<th scope="row">资源类型：</th>
+					<td>同步课程</td>
+				</tr>
+				<tr>
+					<th scope="row"> 课程名称：</th>
+					<td>课程名称XX</td>
+				</tr>
+				<tr>
+					<th scope="row"> 课程编号：</th>
+					<td>100012</td>
+				</tr>
+				<tr>
+					<th scope="row">时长：</th>
+					<td>20 分钟</td>
+				</tr>
+				<tr>
+					<th scope="row"> 所属分类：</th>
+					<td><XXXXXXX>XXXXXXX>XXXXXXX</td>
+				</tr>
+				<tr>
+					<th scope="row">语言属性：</th>
+					<td>中文</td>
+				</tr>
+				<tr>
+					<th scope="row">上传图片：</th>
+					<td rowspan="2"><img src="../images/system/type_icon.gif" width="48" height="48" class="imgbox" /></td>
+					</tr>
+				<tr>
+					<th scope="row">&nbsp;</th>
+					</tr>
+				<tr>
+                    <th > 关键字：</th>
+                    <td>
+                        关键字1;关键字2;关键字3
+                    </td>
+                </tr>
+				<tr>
+                     <th valign="top"> 学习目标：</th>
+                     <td>
+                         <div class="p_cont"><p>XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX</p></div>
+                      </td>
+                 </tr>
+                 <tr>
+                     <th valign="top"> 适用对象：</th>
+                     <td><div class="p_cont"><p>XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX</p></div>
+                     </td>
+                </tr>
+				<tr>
+					<th valign="top" scope="row">课程描述：</th>
+					<td> <div class="p_cont"><p>XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX</p></div></td>
+				</tr>
+				</table>
+           	<div class="btn_box edit_box">
+				  <input name="编辑" type="submit" class="btn btn_submit"  onclick="location.href='sync_courses_edit.shtml';"  value="编辑" /> <input name="取消" type="reset" class="btn btn_reset"  onclick="location.href='resources.shtml';" value="返回" />
+				</div>
+            </form>
+		 <!--//End:面包屑-->
+	  </div>
+   </div>
+   </div>
+   <!--#include virtual="../Library/footer.shtml" -->
+</div>
+
+</body>
+</html>

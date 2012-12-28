@@ -1,0 +1,193 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta content="企业培训、企业内训、企业学习、企业大学、渠道大学、e-Learning、学习平台、学习系统、人才管理、岗位胜任力模型、Skillsoft、职业发展、培训管理、继任规划" name="keywords" />
+<meta content="企业商学院是集在线学习、能力测评、学习计划和培训管理为一体的企业学习整体解决方案。帮助企业提升内训、渠道培训、分支机构培训的整体水平，最大程度发掘培训价值，实现培训效益提升，全面促进企业人才培养。" name="description" />
+<title>CBS - 用户管理 - 资源管理 - 新增</title>
+<!--系统样式-->
+<link href="../css/default.css" rel="stylesheet" type="text/css" />
+<!--皮肤样式  Blue-->
+<link href="../css/enterprise_blue.css" rel="stylesheet" type="text/css" />
+<link href="../css/nyroModal.css" rel="stylesheet" type="text/css" />
+<!--[if IE]>
+<link type="text/css" rel="stylesheet" href="../css/ie.css" />
+<![endif]-->
+<!-- jQuery with plugins -->
+<script type="text/javascript" src="../js/libs/jquery-1.4.3.min.js"></script>
+<script type="text/javascript" src="../js/libs/jquery.cookie.js"></script>
+<script type="text/javascript" src="../js/libs/jquery.jstree.js"></script>
+<script language="javascript" type="text/javascript" src="../js/libs/WdatePicker.js"></script>
+<script language="javascript" type="text/javascript" src="../js/libs/nyroModal1.6.2.min.js"></script>
+<script type="text/javascript">
+    $(document).ready(function() {
+		cbs.textScroll();
+	   $('.viewUser').click(function(e){
+			e.preventDefault();
+			$.fn.nyroModalManual({
+				width:600,
+				title:'预览培训对象',
+				url: 'overlay_user_view.shtml'
+			});
+		});
+
+ });
+</script>
+</head>
+<body>
+<!-- Start:  Html  //-->
+<div id="content">
+  <!-- Start:  header //-->
+  <!--#include virtual="../Library/header_enterprise.shtml" -->
+  <!--// End: header-->
+  <!-- Start: container //-->
+  <div id ="container">
+    <div class="box admin_box miniheight">
+      <!-- 面包屑 -->
+      <div class="bread_crumbs">
+				<a href="training-implementation.shtml">培训实施</a>&nbsp;&#8250;&nbsp;<b>预览培训实施</b>
+               </div>
+      <!-- 面包屑 End -->
+
+     <div class="content_body padding28" >
+        <h4 class="panel_title mini_title">1.基本信息</h4>
+         <form id="flight" method="post" action="training-implementation_syncourses_edit.shtml" class="bigFrom">
+           <table class="default_table form_table top10">
+            <tr>
+                <th >实施类别：</th>
+                <td >同步课程</td>
+              </tr>
+              <tr>
+                <th > 课程：</th>
+                <td >XXXXXXXXX</td>
+              </tr>
+              <tr>
+                <th > 实施名称：</th>
+                <td >XXXXXXX</td>
+              </tr>
+              <tr>
+                <th >关联计划：</th>
+                <td >XXXXXXXXXXXX</td>
+              </tr>
+              <tr>
+                <th valign="top"> <label>目标：</label>
+                </th>
+                <td><div class="p_cont"><p>XXXXXXXXXXXXX</p></div></td>
+              </tr>
+              <tr>
+                <th valign="top">描述：</th>
+                <td><div class="p_cont"><p>XXXXXXXXXXXXX</p></div></td>
+              </tr>
+              <tr>
+                <th>起止时间：</th>
+                <td>2000-12-12 ~ 2000-12-12</td>
+              </tr>
+              <tr>
+                <th valign="top" >授课教师：</th>
+                <td >XXXXXXXX[内部讲师]</td>
+              </tr>
+           </table>
+
+         <h4 class="panel_title mini_title">2.培训对象</h4>
+
+            <table width="100%"  class="default_table form_table top10">
+           <tr>
+                <th>培训对象：</th>
+                <td><div class="divselect_btn">
+                  <input name="按钮" type="button" class="btn btn_default viewUser" value="预览培训对象"/>
+                </div>
+              已选人数：<b class="wrongfont">100</b></td>
+              </tr>
+              <tr>
+                <th valign="top">&nbsp;</th>
+                <td><div class="h160 divselect borderall">
+            	<table width="100%" border="0" height="100%" class="sel_tabbox">
+            		<tr>
+            			<th >所属部门：</th>
+            			<td valign="top">
+            				<ul class="dept_list">
+            					<li >
+            						<span >[在线课件]时间管理技巧11111111111112222222222</span></li>
+            					<li><span>目录节点字数不一样多</span></li>
+            					</ul>
+            				</td>
+            			</tr>
+            		<tr>
+            			<th>所属岗位：</th>
+            			<td valign="top">
+            				<ul class="dept_list">
+            					<li>
+            						<span>目录字数比较多</span></li>
+            					<li>
+            						<span>目录字数比较多</span></li>
+            					</ul>
+            				</td>
+            			</tr>
+            		<tr>
+            			<th >所属岗位：</th>
+            			<td valign="top">
+            				<ul class="dept_list">
+            					<li>
+            						<span>岗位名称</span></li>
+            					<li>
+            						<span>岗位名称</span></li>
+            					<li>
+            						<span>岗位名称</span></li>
+            					</ul>
+            				</td>
+            			</tr>
+            		<tr>
+            			<th >个人用户：</th>
+            			<td valign="top">
+            				<ul>
+            					<li>学员姓名
+            						</li>
+            					<li>学员姓名
+            						</li>
+            					<li>学员姓名
+            						</li>
+            					<li>学员姓名
+            						</li>
+            					</ul>
+            				</td>
+            			</tr>
+            		</table>
+            </div></td>
+              </tr>
+
+              </table>
+           <h4 class="panel_title mini_title">3.培训资料和培训反馈</h4>
+            <table width="100%" border="0"  class="default_table form_table">
+             <tr>
+            <th colspan="2" valign="top">&nbsp;</th>
+            </tr>
+          <tr>
+            <th>上传培训资料：</th>
+            <td><a href="">下载已上传培训资料</a></td>
+          </tr>
+          <tr>
+            <th valign="top">选择问卷：</th>
+            <td>XXXXXX</td>
+          </tr>
+
+          <tr>
+            <th valign="top">&nbsp;</th>
+            <td>培训完成后 <b class="rightfont">10</b> 天内完成&nbsp;&nbsp;
+              强制反馈：<b class="rightfont">是</b></td>
+          </tr>
+           <tr>
+            <th colspan="2" valign="top">&nbsp;</th>
+            </tr>
+        </table>
+          <div class="btn_box edit_box">
+          <input name="保存" type="submit" class="btn btn_submit"  value="编 辑" />
+          <input name="重置" type="reset" class="btn btn_reset " value="返 回"/>
+        </div>
+      </form>
+      </div>
+    </div>
+  </div>
+  <!--// End: container -->  <!--#include virtual="../Library/footer.shtml" --></div>
+<script src="../js/libs/cbs_userjs.js"></script>
+</body>
+</html>

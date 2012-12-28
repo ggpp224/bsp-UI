@@ -1,0 +1,111 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta content="企业培训、企业内训、企业学习、企业大学、渠道大学、e-Learning、学习平台、学习系统、人才管理、岗位胜任力模型、Skillsoft、职业发展、培训管理、继任规划" name="keywords" />
+<meta content="企业商学院是集在线学习、能力测评、学习计划和培训管理为一体的企业学习整体解决方案。帮助企业提升内训、渠道培训、分支机构培训的整体水平，最大程度发掘培训价值，实现培训效益提升，全面促进企业人才培养。" name="description" />
+<title>账户设置</title>
+<!--系统样式-->
+<link href="../css/default.css" rel="stylesheet" type="text/css" />
+<!--皮肤样式  Blue-->
+<link href="../css/enterprise_blue.css" rel="stylesheet" type="text/css" />
+<!--[if IE]>
+<link type="text/css" rel="stylesheet" href="../css/ie.css" />
+<![endif]-->
+<!-- jQuery with plugins -->
+<script type="text/javascript" src="../js/libs/jquery-1.4.3.min.js"></script>
+</head>
+<body>
+<!-- Start:  Html  //-->
+<div id="content">
+<!--#include virtual="../Library/header_enterprise.shtml" -->
+  <!--// End: header-->
+	<!-- Start: container //-->
+	<div id="container">
+		<div class="box admin_box">
+			<!-- 面包屑 // -->
+			<div class="bread_crumbs">
+				<a href="index.shtml" class="home">首页</a>
+				&nbsp;&#8250;&nbsp;<a href="account.shtml" class="current">账户设置</a>
+			</div>
+			<!-- 面包屑 End -->
+			<!--Start: right_box //-->
+			<div class="right_box">
+				<form  method="post" action="#" class="bigFrom">
+					<h1 class="panel_title">账户设置</h1>
+					<table width="100%" border="0"  class="default_table form_table top10">
+					<tr>
+							<th width="224">管理员ID：</th>
+							<td>000012</td>
+						</tr>
+						<tr>
+							<th><span>*</span>姓名：</th>
+							<td>
+								<input type="text" class="default_txt" value="kangtamxf" name="input"/>
+							</td>
+						</tr>
+						<tr>
+							<th>性别：</th>
+							<td>
+								<label><input name="" type="radio" value="" />男</label> <label><input name="" type="radio" value="" />女</label>
+							</td>
+						</tr>
+						<tr>
+							<th>
+								<span>*</span>密码：
+							</th>
+							<td>
+								<input type="password" class="default_txt" value="研发部" name="input2"/>
+							</td>
+						</tr>
+
+						<tr>
+							<th>
+								<span>*</span>E-mail：
+							</th>
+							<td>
+								<input type="text" class="default_txt" value="kangtamxf@sina.com" name="input5"/>
+							</td>
+						</tr>
+						<tr>
+							<th>
+								联系电话：
+							</th>
+							<td><input type="text" class="default_txt" value="" name="input"/></td>
+						</tr>
+						<tr>
+							<th>
+								职务：
+							</th>
+							<td><input type="text" class="default_txt" value="" name="input"/></td>
+						</tr>
+
+					</table>
+
+					<!--//End from_panel-->
+					<div class="btn_box edit_box top10">
+						<input type="submit" class="btn btn_submit" onclick="location.href='account.shtml';" value="保存" />
+					</div>
+				</form>
+			</div>
+			<!--//End right_box-->
+			<!--Start: left_menu //-->
+			<div class="left_menu">
+				<div class="menu_box">
+					<h2 class="current"><a href="account.shtml">账户设置</a>
+						<span></span></h2>
+				</div>
+				<div class="menu_box">
+					<h2><a href="password.shtml">修改密码</a>
+						<span></span></h2>
+				</div>
+			</div>
+			<!--//End left_menu-->
+			<div class="clear"></div>
+		</div>
+		<!--//End admin_box-->
+	</div><!--// End: container -->
+	<!--#include virtual="../Library/footer.shtml" --></div>
+<!--// End: Html -->
+</body>
+</html>

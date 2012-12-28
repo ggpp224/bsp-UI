@@ -1,0 +1,206 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta content="企业培训、企业内训、企业学习、企业大学、渠道大学、e-Learning、学习平台、学习系统、人才管理、岗位胜任力模型、Skillsoft、职业发展、培训管理、继任规划" name="keywords" />
+<meta content="企业商学院是集在线学习、能力测评、学习计划和培训管理为一体的企业学习整体解决方案。帮助企业提升内训、渠道培训、分支机构培训的整体水平，最大程度发掘培训价值，实现培训效益提升，全面促进企业人才培养。" name="description" />
+<title>CBS - 资源申请</title>
+<!--系统样式-->
+<link href="../css/default.css" rel="stylesheet" type="text/css" />
+<!--皮肤样式  Blue-->
+<link href="../css/enterprise_blue.css" rel="stylesheet" type="text/css" />
+<link href="../css/nyroModal.css" rel="stylesheet" type="text/css" />
+<!--[if IE]>
+<link type="text/css" rel="stylesheet" href="../css/ie.css" />
+<![endif]-->
+<!-- jQuery with plugins -->
+<script type="text/javascript" src="../js/libs/jquery-1.4.3.min.js"></script>
+<script language="javascript" type="text/javascript" src="../js/libs/nyroModal1.6.2.min.js"></script>
+<script type = "text/javascript">
+ $(document).ready(function() {
+	cbs.tablehover();//表单换行颜色 hover
+
+	$("a.tabico_stop").click(function () {
+		$(this).toggleClass("tabico_start");
+		if($(this).hasClass('tabico_start')){
+		$(this).attr('title', '开始');
+		$(this).text('开始');
+		}
+		else{
+		$(this).attr('title', '停止');
+		$(this).text('停止');
+			}
+	 });
+
+	//删除
+	$('#delcustomer').click(function(e) {
+			e.preventDefault();
+			$.fn.nyroModalManual({
+			    width:380,
+				url: 'overlay_delsector.shtml',
+				title:'系统提示'
+			});
+			return false;
+	});
+ });
+</script>
+</head>
+<body>
+<!-- Start:  Html  //-->
+<div id="content">
+  <!-- Start:  header //-->
+  <!--#include virtual="../Library/header_enterprise.shtml" -->
+  <!--// End: header-->
+  <!-- Start: container //-->
+  <div id="container">
+    <div class="box admin_box">
+      <!-- 面包屑 --><div class="bread_crumbs">
+				  <a href="system.shtml">系统管理</a>&nbsp;&#8250;&nbsp;<b>新闻公告</b></div>
+      <!-- 面包屑 End -->
+   <!-- 主内容 -->
+            <div class="content_body padding28">
+              <!-- 功能索索 -->
+                  <table width="100%" border="0" cellpadding="0" cellspacing="0" class="default_table table_from">
+                    <tr>
+                      <th class="minitwo">标题：</th>
+                      <td width="127"><input type="text" class="default_txt" value="" size="15"/></td>
+                      <th>状态：</th>
+                      <td width="107"><select class="mini_sel">
+					     <option>全部</option>
+						 <option>已发布</option>
+						 <option>未发布</option>
+					  </select></td>
+                      <td><input type="button" name="input3" value=" 查询 " class="btn btn_default"/></td>
+                      <td>&nbsp;</td>
+                    </tr>
+                  </table>
+                <!-- 功能搜索 End -->
+                <div class="from_panel">
+                    <form method="post" class="listtab_btn">
+                        <input type="button" name="" class="btn btn_add" value="新增" onclick="location.href='news_add.shtml'"/>
+                         <input type="button" name="" class="btn btn_del" value="删除" id="delcustomer" />
+                    </form>
+                    </div>
+                   <table  class="default_table listtab">
+                        <thead class="gradual_bg">
+                            <tr >
+                                <th width="28" class="th_center">
+                                    <input type="checkbox" />
+                                </th>
+                                <th align="left">标题</th>
+                                <th width="150" align="left">发布日期</th>
+                                <th width="90" align="left">状态</th>
+                                <th width="80" align="left">操作</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+              <tr>
+                <td align="center"><input type="checkbox" /></td>
+                <td><a href="news_view.shtml" title="定于2010年12月14日（星期五）上午9点对系统进行升级，届时将会造成用户短时间不能登录的情况，特此通知!">系统升级公告</a></td>
+                <td title="定于2010年12月14日（星期五）上午9点对系统进行升级，届时将会造成用户短时间不能登录的情况，特此通知!"><small>2010-12-12 12:30</small></td>
+                <td>未发布</td>
+                <td>
+                <a href="#" class="tabico_start"  title="发布">发布</a>
+                <a href="system_add.shtml" class="tabico_edit" title="编辑">编辑</a>
+                <a href="#" class="tabico_del"  title="删除"></a></td>
+              </tr>
+              <tr>
+                <td align="center"><input type="checkbox" /></td>
+                <td><a href="news_view_no.shtml" title="这里显示标题文字...">系统升级公告</a></td>
+                <td><small>2010-12-12 12:30</small></td>
+                <td>已发布</td>
+                <td><a href="#" class="tabico_stop"  title="取消发布">取消发布</a><a href="system_add.shtml" class="tabico_edit" title="编辑">编辑</a> <a href="#" class="tabico_del"  title="删除"></a></td>
+              </tr>
+              <tr>
+                <td align="center"><input type="checkbox" /></td>
+                <td><a href="news_view_no.shtml" title="这里显示标题文字...">系统升级公告</a></td>
+                <td><small>2010-12-12 12:30</small></td>
+                <td>已发布</td>
+                <td><a href="#" class="tabico_stop"  title="取消发布">取消发布</a><a href="system_add.shtml" class="tabico_edit" title="编辑">编辑</a> <a href="#" class="tabico_del"  title="删除"></a></td>
+              </tr>
+              <tr>
+                <td align="center"><input type="checkbox" /></td>
+                <td><a href="news_view_no.shtml" title="这里显示标题文字...">系统升级公告</a></td>
+                <td><small>2010-12-12 12:30</small></td>
+                <td>已发布</td>
+                <td><a href="#" class="tabico_stop"  title="取消发布">取消发布</a><a href="system_add.shtml" class="tabico_edit" title="编辑">编辑</a> <a href="#" class="tabico_del"  title="删除"></a></td>
+              </tr>
+              <tr>
+                <td align="center"><input type="checkbox" /></td>
+                <td><a href="news_view_no.shtml" title="这里显示标题文字..."> 系统升级公告</a></td>
+                <td><small>2010-12-12 12:30</small></td>
+                <td>已发布</td>
+                <td><a href="#" class="tabico_stop"  title="取消发布">取消发布</a><a href="system_add.shtml" class="tabico_edit" title="编辑">编辑</a> <a href="#" class="tabico_del"  title="删除"></a></td>
+              </tr>
+			  <tr>
+                <td align="center"><input type="checkbox" /></td>
+                <td><a href="news_view_no.shtml" title="这里显示标题文字..."> 系统升级公告</a></td>
+                <td><small>2010-12-12 12:30</small></td>
+                <td>已发布</td>
+                <td><a href="#" class="tabico_stop"  title="取消发布">取消发布</a><a href="system_add.shtml" class="tabico_edit" title="编辑">编辑</a> <a href="#" class="tabico_del"  title="删除"></a></td>
+              </tr>
+			  <tr>
+                <td align="center"><input type="checkbox" /></td>
+                <td><a href="news_view_no.shtml" title="这里显示标题文字..."> 系统升级公告</a></td>
+                <td><small>2010-12-12 12:30</small></td>
+                <td>已发布</td>
+                <td><a href="#" class="tabico_stop"  title="取消发布">取消发布</a><a href="system_add.shtml" class="tabico_edit" title="编辑">编辑</a> <a href="#" class="tabico_del"  title="删除"></a></td>
+              </tr>
+			  <tr>
+                <td align="center"><input type="checkbox" /></td>
+                <td><a href="news_view_no.shtml" title="这里显示标题文字..."> 系统升级公告</a></td>
+                <td><small>2010-12-12 12:30</small></td>
+                <td>已发布</td>
+                <td><a href="#" class="tabico_stop"  title="取消发布">取消发布</a><a href="system_add.shtml" class="tabico_edit" title="编辑">编辑</a> <a href="#" class="tabico_del"  title="删除"></a></td>
+              </tr>
+			  <tr>
+                <td align="center"><input type="checkbox" /></td>
+                <td><a href="news_view_no.shtml" title="这里显示标题文字..."> 系统升级公告</a></td>
+                <td><small>2010-12-12 12:30</small></td>
+                <td>已发布</td>
+                <td><a href="#" class="tabico_stop"  title="取消发布">取消发布</a><a href="system_add.shtml" class="tabico_edit" title="编辑">编辑</a> <a href="#" class="tabico_del"  title="删除"></a></td>
+              </tr>
+			  <tr>
+                <td align="center"><input type="checkbox" /></td>
+                <td><a href="news_view_no.shtml" title="这里显示标题文字..."> 系统升级公告</a></td>
+                <td><small>2010-12-12 12:30</small></td>
+                <td>已发布</td>
+                <td><a href="#" class="tabico_stop"  title="取消发布">取消发布</a><a href="system_add.shtml" class="tabico_edit" title="编辑">编辑</a> <a href="#" class="tabico_del"  title="删除"></a></td>
+              </tr>
+            </tbody>
+                    </table>
+                <!-- 翻页 -->
+          <div class="pagination">
+                    <ul>
+                        <li>每页显示
+                            <select>
+                                <option>10</option>
+
+                                <option>20</option>
+                                <option>30</option>
+                                <option>50</option>
+                            </select>
+                            条&nbsp;&nbsp;1/25页 </li>
+                        <li class="disablepage">上一页</li>
+                        <li class="currentpage">1</li>
+                        <li><a href="#">2</a></li>
+                        <li><a href="#">3</a></li>
+                        <li><a href="#">4</a></li>
+                        <li><a href="#">5</a></li>
+                        <li><a href="#">6</a></li>
+                        <li><a href="#">7</a></li>
+                        <li><a href="#">8</a></li>
+                        <li><a href="#">9</a>...</li>
+                        <li><a href="#">15</a></li>
+                        <li><a href="#">16</a></li>
+                        <li class="nextpage"><a href="#">下一页</a></li>
+                    </ul>
+                  </div><!-- //翻页 -->
+            </div><!-- //End:content_body-->
+	   </div><!-- //End:box-->
+	</div><!-- //End:container-->
+	 <!--#include virtual="../Library/footer.shtml" --></div>
+
+<script src="../js/libs/cbs_userjs.js"></script>
+</body>
+</html>

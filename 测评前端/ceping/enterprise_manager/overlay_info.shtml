@@ -1,0 +1,103 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script type="text/javascript" src="../js/libs/jquery-1.4.3.min.js"></script>
+<!--//日期控件-->
+<script language="javascript" type="text/javascript" src="../js/libs/WdatePicker.js"></script>
+<script type="text/javascript">
+    $(document).ready(function() {
+	cbs.exportbtn();//导出
+ });
+
+</script>
+<h2>XX公司基本信息</h2>
+<form id="flight" method="post" action="#" class="bigFrom">
+  <dl class="from_panel">
+    <dt>
+      <label><span>*</span> 客户名称：</label>
+    </dt>
+    <dd>
+      <input type="text" class="default_txt" value="" name=""/>
+    </dd>
+    <dt>
+      <label><span>*</span> 客户编码：</label>
+    </dt>
+    <dd>
+      <input type="text" class="default_txt" value="" name=""/>
+    </dd>
+    <dt>
+      <label><span>*</span> 应用属性：</label>
+    </dt>
+    <dd>
+      <select name="" class="mini_sel">
+        <option>正式实施</option>
+        <option>客户演示</option>
+        <option>客户试用</option>
+      </select>
+    </dd>
+    <dt>
+      <label><span>*</span> 业务模式：</label>
+    </dt>
+    <dd>
+      <select name="" class="mini_sel">
+        <option>渠道用户</option>
+        <option>普通企业</option>
+      </select>
+    </dd>
+    <dt>
+      <label>所在地区：</label>
+    </dt>
+    <dd>
+      <select name="" class="mini_sel">
+        <option>省</option>
+      </select>
+      <select name="" class="mini_sel">
+        <option>市</option>
+      </select>
+      <select name="" class="mini_sel">
+        <option>区</option>
+      </select>
+    </dd>
+    <dt>
+      <label>详细地址：</label>
+    </dt>
+    <dd>
+      <input type="text" class="default_txt" value="" name=""/>
+    </dd>
+    <dt>
+      <label><span>*</span> 活动状态：</label>
+    </dt>
+    <dd>
+      <label>
+        <input name="name2" type="radio" value="" checked="checked" />
+        活动</label>
+      &nbsp;&nbsp;
+      <label>
+        <input name="name2" type="radio" value="" />
+        非活动</label>
+    </dd>
+    <dt>
+      <label><span>*</span> 账号数量限额：</label>
+    </dt>
+    <dd>
+      <select name="" class="mini_sel" id="account_num">
+        <option value="1" selected="selected">无限</option>
+        <option value="2">有限</option>
+      </select>
+      <input type="text" class="default_txt mini_txt" value="" name=""/>
+      (选择"有限"的时候要求输入数量) </dd>
+    <dt>
+      <label><span>*</span> 服务期限：</label>
+    </dt>
+    <dd>
+      <input type="text" class="dateinput" id="d122" onFocus="WdatePicker({isShowWeek:true,onpicked:function(){}})"/>
+      &nbsp;&nbsp;-&nbsp;
+      <input type="text" class="dateinput" id="d122" onFocus="WdatePicker({isShowWeek:true,onpicked:function(){}})"/>
+    </dd>
+    <dd class="clear"></dd>
+  </dl>
+  <div class="overlay_btn">
+    <input name="提交" type="submit" class="btn btn_submit" value=" 确定 "/>
+    <input type="button" class="btn btn_reset nyroModalClose" value=" 取消 "/>
+    <br />
+  </div>
+</form>
+<script src="../js/libs/cbs_userjs.js"></script>

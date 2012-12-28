@@ -1,0 +1,426 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta content="企业培训、企业内训、企业学习、企业大学、渠道大学、e-Learning、学习平台、学习系统、人才管理、岗位胜任力模型、Skillsoft、职业发展、培训管理、继任规划" name="keywords" />
+<meta content="企业商学院是集在线学习、能力测评、学习计划和培训管理为一体的企业学习整体解决方案。帮助企业提升内训、渠道培训、分支机构培训的整体水平，最大程度发掘培训价值，实现培训效益提升，全面促进企业人才培养。" name="description" />
+<title>CBS - 培训实施 - 新增部门计划</title>
+<!--系统样式-->
+<link href="../css/default.css" rel="stylesheet" type="text/css" />
+<!--皮肤样式  Blue-->
+<link href="../css/enterprise_blue.css" rel="stylesheet" type="text/css" />
+<link href="../css/nyroModal.css" rel="stylesheet" type="text/css" />
+<!--[if IE]>
+<link type="text/css" rel="stylesheet" href="../css/ie.css" />
+<![endif]-->
+<!-- jQuery with plugins -->
+<script type="text/javascript" src="../js/libs/jquery-1.4.3.min.js"></script>
+<!--//日期控件-->
+<script language="javascript" type="text/javascript" src="../js/libs/WdatePicker.js"></script>
+<!-- jQuery tree -->
+<script type="text/javascript" src="../js/libs/jquery.cookie.js"></script>
+<script type="text/javascript" src="../js/libs/jquery.jstree.js"></script>
+<script language="javascript" type="text/javascript" src="../js/libs/nyroModal1.6.2.min.js"></script>
+
+<script type="text/javascript">
+    $(document).ready(function() {
+		cbs.textScroll();
+		cbs.showSearchPanel(); //搜索区
+		cbs.fpPanel(); //分配课件
+
+
+
+		$('.planChoose').click(function(e){
+			e.preventDefault();
+			$.fn.nyroModalManual({
+				width:600,
+				title:'选择关联计划',
+				url: 'overlay_plan_choose.shtml'
+			});
+		});
+		$('.setUser').click(function(e){
+			 e.preventDefault();
+			$.fn.nyroModalManual({
+				width:726,
+				url: 'overlay_training_setting.shtml'
+			});
+		});	$('.veiwUser').click(function(e){
+			e.preventDefault();
+			$.fn.nyroModalManual({
+				width:600,
+				title:'预览培训对象',
+				url: 'overlay_user_view.shtml'
+			});
+		});
+
+		 $('.SelResources').click(function(e){
+			e.preventDefault();
+			$.fn.nyroModalManual({
+				width:700,
+				title:'选择必修课件',
+				url: 'overlay_training_resources_sel3.shtml'
+			});
+		});
+
+		$('.SelResources2').click(function(e){
+			e.preventDefault();
+			$.fn.nyroModalManual({
+				width:700,
+				title:'选择选修课件',
+				url: 'overlay_training_resources_sel2.shtml'
+			});
+		});
+
+	//导入
+	 $('.imput_user').click(function(e){
+		 e.preventDefault();
+			$.fn.nyroModalManual({
+				width:380,
+				title:'Excel导入',
+				url: 'overlay_dep_import.shtml'
+			});
+
+		return false;
+	});
+
+	});
+</script>
+</head>
+<body>
+<!-- Start:  Html  //-->
+<div id="content">
+  <!-- Start:  header //-->
+  <!--#include virtual="../Library/header_enterprise.shtml" -->
+  <!--// End: header-->
+  <!-- Start: container //-->
+  <div id ="container">
+    <div class="box admin_box">
+      <!-- 面包屑 --><div class="bread_crumbs">
+				  <a href="training-implementation.shtml">培训实施</a>&nbsp;&#8250;&nbsp;<a href="training-plan_add.shtml" class="current">分配在线课件</a> </div>
+      <!--  基本信息 -->
+      <h1 class="panel_title margin28">分配在线课件</h1>
+      <form id="flight" method="post" action="#" class="bigFrom padding28">
+        <table width="100%"  class="default_table form_table top10">
+          <tr>
+            <th><span>*</span> 实施名称：</th>
+            <td><input type="text" class="default_txt" value="" size="30"/>&nbsp;<a href="#a" class="showsearch2">展开</a><a href="#a" class="closebtn2">收起</a></td>
+          </tr>
+          </table>
+          <div class="searchbox2">
+          <table width="100%"  class="default_table form_table top10">
+          <tr>
+            <th>关联计划：</th>
+            <td><input type="text" class="default_txt" value="计划名字测试" size="30" id="ThiselText"/>
+				<input type="submit" class="btn btn_default planChoose" value="选择"/>
+           </td>
+          </tr>
+          <tr>
+            <th valign="top"> <label>目标：</label>
+            </th>
+            <td><textarea name="textarea" rows="2" class="default_textarea w510"></textarea></td>
+          </tr>
+          <tr>
+            <th valign="top">描述：</th>
+            <td><textarea name="textarea" rows="2" class="default_textarea w510"></textarea></td>
+          </tr>
+          </table>
+          </div>
+
+
+
+        <table width="100%"  class="default_table form_table top10">
+          <tr>
+            <th><span>*</span> 选择操作方式：</th>
+            <td>
+            <label onmouseup="window.location='training-implementation_add.shtml'"><input name="operation" type="radio" checked="checked" /><b>页面操作</b></label>
+            <label onmouseup="window.location='training-implementation_addexcel.shtml'"><input name="operation" type="radio" value="" />excel批量配课</label>
+            </td>
+          </tr>
+
+
+          <tr>
+            <th>&nbsp;</th>
+            <td>
+            			<div class="divselect2">
+            			<table width="100%" border="0"  class="default_table listtab fptable">
+                          <tr>
+                            <th style="width:30px;">序号</th>
+                            <th>培训对象</th>
+                            <th>必修课</th>
+                            <th>选修课</th>
+                            <th style="width:40px;">操作</th>
+                          </tr>
+                          <tr>
+                            <td valign="top" align="center"><i>1</i></td>
+                            <td valign="top">
+                            	  <ul>
+                                <li><a href="#" class="delico"  title="从列表删除">3从列表删除</a><span>3【部门】部门名称部门名称部门名称部门名称</span></li>
+                                <li><a href="#" class="delico"  title="从列表删除">从列表删除</a><span>【部门】部门名称部门名称部门名称部门名称</span></li>
+                                <li><a href="#" class="delico"  title="从列表删除">从列表删除</a><span>【部门】部门名称部门名称部门名称部门名称</span></li>
+                                <li><a href="#" class="delico"  title="从列表删除">从列表删除</a><span>【部门】部门名称部门名称部门名称部门名称</span></li>
+                                </ul>
+                            </td>
+                            <td valign="top">
+                            	  <ul>
+                                <li><a href="#" class="delico"  title="从列表删除">3从列表删除</a><span>3【部门】部门名称部门名称部门名称部门名称</span></li>
+                                <li><a href="#" class="delico"  title="从列表删除">从列表删除</a><span>【部门】部门名称部门名称部门名称部门名称</span></li>
+                                <li><a href="#" class="delico"  title="从列表删除">从列表删除</a><span>【部门】部门名称部门名称部门名称部门名称</span></li>
+                                <li><a href="#" class="delico"  title="从列表删除">从列表删除</a><span>【部门】部门名称部门名称部门名称部门名称</span></li>
+                                </ul>
+                            </td>
+                            <td valign="top">
+                            	  <ul>
+                                <li><a href="#" class="delico"  title="从列表删除">3从列表删除</a><span>3【部门】部门名称部门名称部门名称部门名称</span></li>
+                                <li><a href="#" class="delico"  title="从列表删除">从列表删除</a><span>【部门】部门名称部门名称部门名称部门名称</span></li>
+                                <li><a href="#" class="delico"  title="从列表删除">从列表删除</a><span>【部门】部门名称部门名称部门名称部门名称</span></li>
+                                <li><a href="#" class="delico"  title="从列表删除">从列表删除</a><span>【部门】部门名称部门名称部门名称部门名称</span></li>
+                                </ul>
+                            </td>
+                            <td width="60" valign="top" align="center">
+                            	<input name="按钮" type="button" class="btn btn_del margin_b_8" value="删除"/><br />
+                                <input name="按钮" type="button" class="btn btn_default showsearch3" value="编辑"/>
+                            </td>
+                          </tr>
+
+                          <tr>
+                            <td valign="top" align="center"><i>2</i></td>
+                            <td valign="top">
+                            	<ul>
+                                <li><a href="#" class="delico"  title="从列表删除">从列表删除</a><span>【部门】部门名称部门名称部门名称部门名称</span></li>
+                                <li><a href="#" class="delico"  title="从列表删除">从列表删除</a><span>【部门】部门名称部门名称部门名称部门名称</span></li>
+                                <li><a href="#" class="delico"  title="从列表删除">从列表删除</a><span>【部门】部门名称部门名称部门名称部门名称</span></li>
+                                <li><a href="#" class="delico"  title="从列表删除">从列表删除</a><span>【部门】部门名称部门名称部门名称部门名称</span></li>
+                                </ul>
+                             </td>
+                            <td valign="top">
+                                  <ul>
+                                <li><a href="#" class="delico"  title="从列表删除">从列表删除</a><span>【部门】部门名称部门名称部门名称部门名称</span></li>
+                                <li><a href="#" class="delico"  title="从列表删除">从列表删除</a><span>【部门】部门名称部门名称部门名称部门名称</span></li>
+                                <li><a href="#" class="delico"  title="从列表删除">从列表删除</a><span>【部门】部门名称部门名称部门名称部门名称</span></li>
+                                <li><a href="#" class="delico"  title="从列表删除">从列表删除</a><span>【部门】部门名称部门名称部门名称部门名称</span></li>
+                                </ul>
+                            </td>
+                            <td valign="top">
+                            	<ul>
+                                <li><a href="#" class="delico"  title="从列表删除">从列表删除</a><span>【部门】部门名称部门名称部门名称部门名称</span></li>
+                                <li><a href="#" class="delico"  title="从列表删除">从列表删除</a><span>【部门】部门名称部门名称部门名称部门名称</span></li>
+                                <li><a href="#" class="delico"  title="从列表删除">从列表删除</a><span>【部门】部门名称部门名称部门名称部门名称</span></li>
+                                <li><a href="#" class="delico"  title="从列表删除">从列表删除</a><span>【部门】部门名称部门名称部门名称部门名称</span></li>
+                                </ul>
+                            </td>
+                            <td width="60" valign="top" align="center">
+                            	<input name="按钮" type="button" class="btn btn_del margin_b_8" value="删除"/><br />
+                                <input name="按钮" type="button" class="btn btn_default showsearch3" value="编辑"/>
+                            </td>
+                          </tr>
+
+                          </table>
+                          </div>
+
+            </td>
+          </tr>
+
+
+
+
+          <tr>
+            <th>&nbsp;</th>
+            <td><input name="按钮" type="button" class="btn btn_default showsearch3" value="分配课件"/></td>
+          </tr>
+
+          <tr>
+          <td></td>
+          <td>
+          <div class="searchbox3">
+                    <table width="100%"  class="default_table form_table">
+                    <tr class="fpsave">
+                      <td colspan="2" style="color:#fff;">分配课件：<input type="button" class="btn btn_submit closebtn3" value=" 确定 "/>
+                    <input name="重置" type="reset" class="btn btn_reset closebtn3" value="取消"/></td>
+                    </tr>
+                    <tr>
+                      <th rowspan="2" valign="top"><span>*</span> 培训对象：</th>
+                      <td width="84%">
+
+                      <div class="divselect_btn">
+
+                          <input name="按钮" type="button" class="btn btn_default veiwUser" value="预览培训对象"/>
+
+                          <input type="submit" class="btn btn_default" rel="#select_departments" value="清空"/>
+                          <input type="submit" class="btn btn_default imput_user" value="Excel导入"/>
+                        </div>
+                          <input type="submit" class="btn btn_default setUser" value="设置"/>
+                       <label class="seltextbox">&nbsp;已选人数：<b class="wrongfont">100</b></label></td>
+                    </tr>
+                    <tr>
+                      <td><div class="h160 divselect moreselect borderall" style="background:#fff;">
+                              <table width="100%" border="0" class="sel_tabbox sel_tabbox_s3">
+                                  <tr>
+                                      <th>所属部门：</th>
+                                      <td valign="top">
+                                          <ul class="dept_list">
+                               			<li><a href="#" class="delico"  title="从列表删除">从列表删除</a><span>【部门】部门名称部门名称部门名称部门名称</span></li>
+                                		<li><a href="#" class="delico"  title="从列表删除">从列表删除</a><span>【部门】部门名称部门名称部门名称部门名称</span></li>
+                                		<li><a href="#" class="delico"  title="从列表删除">从列表删除</a><span>【部门】部门名称部门名称部门名称部门名称</span></li>
+                                		<li><a href="#" class="delico"  title="从列表删除">从列表删除</a><span>【部门】部门名称部门名称部门名称部门名称</span></li>
+                                		</ul>
+                                          </td>
+                                      </tr>
+                                  <tr>
+                                      <th>所属岗位：</th>
+                                      <td valign="top">
+                                        <ul class="dept_list">
+                               			<li><a href="#" class="delico"  title="从列表删除">从列表删除</a><span>【部门】部门名称部门名称部门名称部门名称</span></li>
+                                		<li><a href="#" class="delico"  title="从列表删除">从列表删除</a><span>【部门】部门名称部门名称部门名称部门名称</span></li>
+                                		<li><a href="#" class="delico"  title="从列表删除">从列表删除</a><span>【部门】部门名称部门名称部门名称部门名称</span></li>
+                                		<li><a href="#" class="delico"  title="从列表删除">从列表删除</a><span>【部门】部门名称部门名称部门名称部门名称</span></li>
+                                		</ul>
+                                          </td>
+                                      </tr>
+                                  <tr>
+                                      <th >所属岗位：</th>
+                                      <td valign="top">
+                                        <ul class="dept_list">
+                               			<li><a href="#" class="delico"  title="从列表删除">从列表删除</a><span>【部门】部门名称部门名称部门名称部门名称</span></li>
+                                		<li><a href="#" class="delico"  title="从列表删除">从列表删除</a><span>【部门】部门名称部门名称部门名称部门名称</span></li>
+                                		<li><a href="#" class="delico"  title="从列表删除">从列表删除</a><span>【部门】部门名称部门名称部门名称部门名称</span></li>
+                                		<li><a href="#" class="delico"  title="从列表删除">从列表删除</a><span>【部门】部门名称部门名称部门名称部门名称</span></li>
+                                		</ul>
+                                          </td>
+                                      </tr>
+                                  <tr>
+                                      <th >个人用户：</th>
+                                      <td valign="top">
+                                        <ul class="dept_list">
+                               			<li><a href="#" class="delico"  title="从列表删除">从列表删除</a><span>学员名称</span></li>
+                                		<li><a href="#" class="delico"  title="从列表删除">从列表删除</a><span>学员名称</span></li>
+                                		<li><a href="#" class="delico"  title="从列表删除">从列表删除</a><span>学员名称</span></li>
+                                		<li><a href="#" class="delico"  title="从列表删除">从列表删除</a><span>学员名称</span></li>
+                                		</ul>
+                                          </td>
+                                      </tr>
+                                  </table>
+                              </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <th rowspan="2" valign="top"><span>*</span> 必修课件：</th>
+                      <td><div class="divselect_btn">
+                          <input type="submit" class="btn btn_default" rel="#select_departments" value="清空"/>
+                          <input type="submit" class="btn btn_default imput_user" value="Excel导入资源"/>
+                        </div>
+
+                        <input type="submit" class="btn btn_default SelResources" value="选择必修课件"/>
+
+                        <label class="seltextbox">已选：<b class="wrongfont">XX</b></label></td>
+                    </tr>
+                    <tr>
+                      <td><div class="divselect moreselect borderall" style="background:#fff;">
+                          <ul>
+                            <li><a href="#" class="delico"  title="从列表删除">从列表删除</a><span>[在线课件]时间管理技巧时间管理技巧时间管理技巧</span></li>
+                            <li><a href="#" class="delico"  title="从列表删除">从列表删除</a><span>[在线课件]时间管理技巧时间管理技巧时间管理技巧</span></li>
+                            <li><a href="#" class="delico"  title="从列表删除">从列表删除</a><span>[在线课件]时间管理技巧时间管理技巧时间管理技巧</span></li>
+                            <li><a href="#" class="delico"  title="从列表删除">从列表删除</a><span>[在线课件]时间管理技巧时间管理技巧时间管理技巧</span></li>
+                            <li><a href="#" class="delico"  title="从列表删除">从列表删除</a><span>[在线课件]时间管理技巧时间管理技巧时间管理技巧</span></li>
+                            <li><a href="#" class="delico"  title="从列表删除">从列表删除</a><span>[在线课件]时间管理技巧时间管理技巧时间管理技巧</span></li>
+                            <li><a href="#" class="delico"  title="从列表删除">从列表删除</a><span>[在线课件]时间管理技巧时间管理技巧时间管理技巧</span></li>
+                            <li><a href="#" class="delico"  title="从列表删除">从列表删除</a><span>[在线课件]时间管理技巧时间管理技巧时间管理技巧</span></li>
+                            <li><a href="#" class="delico"  title="从列表删除">从列表删除</a><span>[在线课件]时间管理技巧时间管理技巧时间管理技巧</span></li>
+                            <li><a href="#" class="delico"  title="从列表删除">从列表删除</a><span>[在线课件]时间管理技巧时间管理技巧时间管理技巧</span></li>
+                          </ul>
+                        </div></td>
+                    </tr>
+                    <tr>
+                      <th rowspan="2" valign="top">选修课件：</th>
+                      <td><div class="divselect_btn">
+                          <input type="submit" class="btn btn_default" rel="#select_departments" value="清空"/>
+                          <input type="submit" class="btn btn_default imput_user" value="Excel导入资源"/>
+                        </div>
+
+                          <input type="submit" class="btn btn_default SelResources2" value="选择选修课件"/>
+                              <label class="seltextbox">已选：<b class="wrongfont">XX</b></label></td>
+                    </tr>
+                    <tr>
+                      <td><div class="divselect moreselect borderall" style="background:#fff;">
+                          <ul>
+                            <li><a href="#" class="delico"  title="从列表删除">从列表删除</a><span>[在线课件]时间管理技巧时间管理技巧时间管理技巧</span></li>
+                            <li><a href="#" class="delico"  title="从列表删除">从列表删除</a><span>[在线课件]时间管理技巧时间管理技巧时间管理技巧</span></li>
+                            <li><a href="#" class="delico"  title="从列表删除">从列表删除</a><span>[在线课件]时间管理技巧时间管理技巧时间管理技巧</span></li>
+                            <li><a href="#" class="delico"  title="从列表删除">从列表删除</a><span>[在线课件]时间管理技巧时间管理技巧时间管理技巧</span></li>
+                            <li><a href="#" class="delico"  title="从列表删除">从列表删除</a><span>[在线课件]时间管理技巧时间管理技巧时间管理技巧</span></li>
+                            <li><a href="#" class="delico"  title="从列表删除">从列表删除</a><span>[在线课件]时间管理技巧时间管理技巧时间管理技巧</span></li>
+                            <li><a href="#" class="delico"  title="从列表删除">从列表删除</a><span>[在线课件]时间管理技巧时间管理技巧时间管理技巧</span></li>
+                            <li><a href="#" class="delico"  title="从列表删除">从列表删除</a><span>[在线课件]时间管理技巧时间管理技巧时间管理技巧</span></li>
+                            <li><a href="#" class="delico"  title="从列表删除">从列表删除</a><span>[在线课件]时间管理技巧时间管理技巧时间管理技巧</span></li>
+                            <li><a href="#" class="delico"  title="从列表删除">从列表删除</a><span>[在线课件]时间管理技巧时间管理技巧时间管理技巧</span></li>
+                          </ul>
+                        </div></td>
+                    </tr>
+                    <tr class="fpsave">
+                      <td colspan="2" style="color:#fff;">分配课件：<input type="button" class="btn btn_submit closebtn3" value=" 确定 "/>
+                    <input name="重置" type="reset" class="btn btn_reset closebtn3" value="取消"/></td>
+                    </tr>
+                    </table>
+          </div>
+          </td>
+          </td>
+
+
+          </table>
+
+
+
+
+
+
+          <table width="100%"  class="default_table form_table top10">
+          <tr>
+            <th><span>* </span>起止日期：</th>
+            <td><input type="text" class="dateinput" id="d122" onFocus="WdatePicker({isShowWeek:true,onpicked:function(){}})"/>
+			&nbsp;-&nbsp;
+			<input type="text" class="dateinput" id="d122" onFocus="WdatePicker({isShowWeek:true,onpicked:function(){}})"/></td>
+          </tr>
+          <tr>
+            <th>&nbsp;</th>
+            <td>&nbsp;</td>
+          </tr>
+        </table>
+
+        <!--
+        <h1 class="panel_title">通过条件</h1>
+        <table width="100%" border="0"  class="default_table form_table">
+          <tr>
+            <th rowspan="2" valign="top"><label>通过条件：</label></th>
+            <td><label class="clickbox">
+                <input type="checkbox" name="checkbox" id="checkbox" />
+                平均分数</label>
+              <label>达标分数：
+                <input type="text"  class="default_txt" size="8"/>
+              </label>
+              <label>优秀分数：
+                <input type="text"  class="default_txt" size="8"/>
+              </label></td>
+          </tr>
+          <tr>
+            <td><label class="clickbox">
+                <input type="checkbox" name="checkbox" id="checkbox" />
+                整体进度</label>
+              <label>达标进度：
+                <input type="text"  class="default_txt" size="8"/>
+                %</label></td>
+          </tr>
+        </table>
+        -->
+
+        <div class="but_box edit_box top10">
+          <input type="submit" class="btn btn_submit w108" value=" 确认实施 "/>
+          <input name="重置" type="reset" class="btn btn_reset w108" value="重置"/>
+        </div>
+      </form>
+    </div>
+  </div>
+  <!--// End: container -->  <!--#include virtual="../Library/footer.shtml" --></div>
+
+<!-- 声明 引用-->
+<script src="../js/libs/cbs_userjs.js"></script>
+</body>
+</html>

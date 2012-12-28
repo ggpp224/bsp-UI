@@ -1,0 +1,260 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta content="企业培训、企业内训、企业学习、企业大学、渠道大学、e-Learning、学习平台、学习系统、人才管理、岗位胜任力模型、Skillsoft、职业发展、培训管理、继任规划" name="keywords" />
+<meta content="企业商学院是集在线学习、能力测评、学习计划和培训管理为一体的企业学习整体解决方案。帮助企业提升内训、渠道培训、分支机构培训的整体水平，最大程度发掘培训价值，实现培训效益提升，全面促进企业人才培养。" name="description" />
+<title>CBS - 用户管理 - 分组管理</title>
+<!--系统样式-->
+<link href="../css/default.css" rel="stylesheet" type="text/css" />
+<!--皮肤样式  Blue-->
+<link href="../css/enterprise_blue.css" rel="stylesheet" type="text/css" />
+<link href="../css/nyroModal.css" rel="stylesheet" type="text/css" />
+<!--[if IE]>
+<link type="text/css" rel="stylesheet" href="../css/ie.css" />
+<![endif]-->
+<!-- jQuery with plugins -->
+<script type="text/javascript" src="../js/libs/jquery-1.4.3.min.js"></script>
+<!-- jQuery tree -->
+<script type="text/javascript" src="../js/libs/jquery.cookie.js"></script>
+<script type="text/javascript" src="../js/libs/jquery.jstree.js"></script>
+<script language="javascript" type="text/javascript" src="../js/libs/nyroModal1.6.2.min.js"></script>
+<script type = "text/javascript">
+ $(document).ready(function() {
+	checkAll(name);//CheckBox全选
+	cbs.showSearchPanel(); //搜索区
+
+	$.nyroModalSettings({
+		 endShowContent:function(elts, settings){
+		  $('.btn_submit', elts.contentWrapper).click(function(e){
+
+			 if($('.default_txt').val()!="")
+			     parent.$.nyroModalRemove();
+
+		   });
+		   return false;
+		}
+	});
+
+	$("#load_html_data").jstree({
+		"html_data" : {
+			"ajax" : {
+				"url" : "data/data_resources.shtml",
+				"data" : function (n) {
+				return { id : n.attr ? n.attr("id") : 0 };
+				}
+			}
+		},
+		"plugins" : [ "themes", "html_data" ,"checkbox","contextmenu","cookies","ui","crrm","dnd"]
+
+	});
+
+     cbs.treeOverlay();//树操作
+
+
+
+	 //导入
+	 $('.tree_imp').click(function(e){
+		 e.preventDefault();
+			$.fn.nyroModalManual({
+				width:380,
+				url: 'overlay_dep_import.shtml'
+			});
+
+		return false;
+	});
+
+	//选择分组
+	$(".dept_sel").click(function(e) {
+			e.preventDefault();
+			$.fn.nyroModalManual({
+				width:460,
+				title:'选择部门',
+				url: 'overlay_dept_select.shtml'
+			});
+		return false;
+	});
+
+	//岗位
+	$(".position_sel").focus(function(e) {
+			e.preventDefault();
+			$.fn.nyroModalManual({
+			    width:460,
+				title:'选择岗位',
+				url: 'overlay_position_select.shtml'
+			});
+		return false;
+	});
+
+
+	//分组
+	$(".groups_sel").focus(function(e) {
+			e.preventDefault();
+			$.fn.nyroModalManual({
+			    width:460,
+				title:'选择分组',
+				url: 'overlay_groups_select.shtml'
+			});
+
+		return false;
+	});
+
+/* 载入页面  该处方法更新
+------------------------------------------------------------------------------*/
+    var loadTable = $("#load_resoucesList", parent.document);
+	var defaultPage ='user_list.html';
+
+    //默认加载
+	$.ajax({
+	    url:defaultPage,
+	    context: document.body,
+		beforeSend:ThisLoading ,//执行ajax前执行loading函数.直到success
+		success: Response //成功时执行Response函数
+	});
+
+   	//执行loading函数
+	function ThisLoading() {
+	  $(loadTable).html('<div class="Loading_List"></div>');
+	}
+
+	//loading完成后执行
+    function Response(data){
+	  	$(loadTable).html(data);
+		getTableList();
+	}
+
+	function getTableList(e){
+
+		cbs.tablehover();//表单换行颜色
+		cbs.selbtnmenu();//下拉菜单
+
+		$('.departments').click(function(e) {
+				e.preventDefault();
+				$.fn.nyroModalManual({
+					width:480,
+					title:"调整部门",
+					url: 'overlay_department_adjust.shtml'
+				});
+			return false;
+		});
+
+		//重设密码
+		$('.reSetpassword').click(function(e) {
+				e.preventDefault();
+				$.fn.nyroModalManual({
+					width:380,
+					title:"重置密码",
+					url: 'overlay_password.shtml'
+				});
+			return false;
+		});
+
+		 //删除
+		$('#delcustomer').click(function(e) {
+				e.preventDefault();
+				$.fn.nyroModalManual({
+					width:380,
+					url: 'overlay_delsector.shtml',
+					title:'系统提示'
+				});
+			return false;
+		});
+	 }
+
+	//局部刷新
+    function reLoadTbaleList(e){
+		$.ajax({
+		  url:defaultPage,
+		  context: document.body,
+		  beforeSend:ThisLoading ,
+		  success: Response //成功时执行Response函数
+	    });
+      }
+
+	  //调整部门
+		$('.user_import').live('click',function(e) {
+			e.preventDefault();
+			$.fn.nyroModalManual({
+				width:600,
+				height:300,
+				url: 'overlay_user_import.shtml'
+			});
+	  	return false;
+	 });
+
+	 //批量导入用户
+	$('.import_all').nyroModal({
+		width: 600
+	});
+
+	 //批量导入用户
+	//$('.import_all').live('click',function(e) {
+		//	e.preventDefault();
+			//$.fn.nyroModalManual({
+				//width:600,
+				//height:240,
+				//url: 'overlay_importuser.shtml'
+			//});
+	  	//return false;
+	 //});
+
+
+
+
+ });
+</script>
+</head>
+<body>
+<!-- Start:  Html  //-->
+<div id="content">
+  <!--Start:header //-->
+  <!--#include virtual="../Library/header_enterprise.shtml" -->
+  <!-- Start: container //-->
+  <div id ="container">
+    <div class="box admin_box">
+      <!-- 面包屑 --><div class="bread_crumbs">
+				<a href="user.shtml">用户管理</a>&nbsp;&#8250;&nbsp;<b>按部门</b> </div>
+      <!-- 面包屑 End -->
+	  <!--#include virtual="../Library/treenav_2.shtml" -->
+      <div class="content_r">
+	    <!--====================== 功能索索==================================// -->
+        <a href="#" class="showsearch">展开搜索区</a>
+		<div class="searchbox">
+		<form id="search_user">
+				<table width="100%" border="0" cellpadding="0" cellspacing="0">
+				 <tr>
+				   <th class="longText">姓名：</th>
+				   <td><input type="text" class="default_txt" value="" size="11"/></td>
+				   <th>登录ID：</th>
+				   <td><input type="text" class="default_txt" value="" size="11"/></td>
+				   <th>状态：</th>
+				   <td><select name="select" class="mini_sel">
+						 <option>全部</option>
+						 <option>有效</option>
+						 <option>无效</option>
+					   </select></td>
+				   <th>&nbsp;</th>
+				   <td class="closebtn"><a href="#">收起</a></td>
+			   </tr>
+			   <tr>
+				  <th>所属岗位：</th>
+				  <td><input type="text" class="default_txt overlay_in position_sel" size="11" readonly="readonly"/></td>
+				  <th>所属分组：</th>
+				  <td><input type="text" class="default_txt overlay_in groups_sel" value="" size="11"/></td>
+                  <th>&nbsp;</th>
+				  <td colspan="2"><input type="button" name="input2" value=" 查询 " class="btn btn_default"/></td>
+			   </tr>
+		</table>
+		</form>
+        </div><!--//END:功能搜索-->
+        	<div id="load_resoucesList"></div>
+      </div>
+      <div class="clear"></div>
+    </div>
+  </div>
+   <!--#include virtual="../Library/footer.shtml" -->
+   </div>
+<script src="../js/libs/cbs_userjs.js"></script>
+<script data-main="main" src="../js/libs/require.js"></script>
+</body>
+</html>

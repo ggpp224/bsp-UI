@@ -1,0 +1,49 @@
+<h2 id="nyroModalTitle">批量调整分类</h2>
+ <table border="0" class="default_table form_table">
+                <tr>
+                  <td colspan="3" align="right">&nbsp;</td>
+                </tr>
+                
+                <tr class="msgtext1">
+                  <td height="80" width="100">&nbsp;</td>
+                  <td valign="top"><p>批量调整分类用于批量调整资源与目录节点的对应关系，请您下载模板，按模板要求填写完整后导入平台，同一资源只可隶属于一个目录节点。</p>
+                  <p>&nbsp;</p>
+                  <p>您可以点击灰色文字下载平台已有相关数据：“平台现有资源分类数据”为当前资源所属分类数据，“全部资源”为当前全部学习资源数据，“资源目录树”为当前资源分类数据。</p>
+                  <p>&nbsp;</p>
+                     <span class="righturl"><a href="#">导出平台现有资源分类数据 &raquo;</a><a href="#">导出全部资源 &raquo;</a> <a href="#">导出资源目录树 &raquo;</a></span> 
+                     
+                    <p><a href="#">下载模板 &raquo;</a></p>
+                    <p>&nbsp;</p>
+                    </td>
+                  <td width="50" valign="top">&nbsp;</td>
+                </tr>
+                
+                
+                <tr >
+                  <td align="right"><b>上载文档</b>：</td>
+                  <td colspan="2"><input type="text" class="default_txt" size="40" value="" name=""/>
+                    <span class="sel_label">
+                    <input type="submit" class="btn btn_default" value="浏览"/>
+                    <input type="submit" class="btn btn_default" value="导入"/>
+                    </span></td>
+                </tr>
+                <tr>
+                  <td colspan="3" align="right">&nbsp;</td>
+                </tr>
+              </table>
+
+<!--<script type="text/javascript">
+    $(document).ready(function() {	 
+	$(".msgtext2").hide();
+	$('#radio1').attr("checked") == true ;
+	$(":radio").click(function(){  
+	if($(this).attr("id") == "radio1" && ($(this).attr("checked") == true || $(this).attr("checked") == "checked")) {
+            $(".msgtext1").show();
+			$(".msgtext2").hide();
+        }else{
+            $(".msgtext1").hide();
+			$(".msgtext2").show();
+        } 
+	 }); 
+ });
+</script>-->

@@ -1,0 +1,74 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta content="企业培训、企业内训、企业学习、企业大学、渠道大学、e-Learning、学习平台、学习系统、人才管理、岗位胜任力模型、Skillsoft、职业发展、培训管理、继任规划" name="keywords" />
+<meta content="企业商学院是集在线学习、能力测评、学习计划和培训管理为一体的企业学习整体解决方案。帮助企业提升内训、渠道培训、分支机构培训的整体水平，最大程度发掘培训价值，实现培训效益提升，全面促进企业人才培养。" name="description" />
+<title>CBS 首页</title>
+<!--系统样式-->
+<link href="../css/default.css" rel="stylesheet" type="text/css" />
+<!--皮肤样式  Blue-->
+<link href="../css/enterprise_blue.css" rel="stylesheet" type="text/css" />
+<!--[if IE]>
+<link type="text/css" rel="stylesheet" href="../css/ie.css" />
+<![endif]-->
+<script type="text/javascript" src="../js/libs/jquery-1.4.3.min.js"></script>
+</head>
+<body>
+<!-- Start:  Html  //-->
+<div id="content">
+<!-- Start:  header //-->
+<!--#include virtual="../Library/header_enterprise.shtml" -->
+  <!--// End: header-->
+  <!-- Start: container //-->
+  <div id="container">
+     <div class="box admin_box">
+      <!-- 面包屑 --><div class="bread_crumbs">
+				  <b>首页</b> </div>
+      <!-- // End 面包屑 -->
+      <!-- content_body -->
+      <div class="content_body">
+        			<div class="contact">
+                    	<div class="contact_box_l">&nbsp;</div>
+                        <div class="contact_box_r">
+                        	<p class="compyname">安博教育集团</p>
+                            <p class="compyinfo">安博教育集团是以学习者为中心面向个人及组织提供学习和教育服务的领航企业。通过领先的技术方案、高品位的教育服务和变革性的创新资源，完善个体的终生学习和学习型组织的发展进程。</p>
+                            <table width="100%" border="0" cellspacing="0" cellpadding="0" class="contacttab">
+
+                            <tr>
+                            <td class="align_r" width="18%">联系电话：</td>
+                            <td>(8610) 62068507 / 62068516</td>
+
+                            </tr>
+
+                            <tr>
+                            <td class="align_r">传真：</td>
+                            <td>(8610) 62068100</td>
+                            </tr>
+
+                            <tr>
+                            <td class="align_r">邮箱：</td>
+        					<td><a href="mailto:Learning Engine@ambow.net">LEngine@ambow.net</a></td>
+                            </tr>
+
+                            <tr>
+                            <td class="align_r">网址：</td>
+        					<td><a href="www.ambow.com" target="_blank">www.ambow.com</a></td>
+                            </tr>
+
+
+                            </table>
+                        </div>
+                        <div class="clearer"></div>
+                    </div>
+      </div>
+      <!-- 主内容 End -->
+    </div>
+  </div>
+  <!--// End: container -->
+  <!--#include virtual="../Library/footer.shtml" -->
+  </div>
+<!--// End: Html -->
+
+</body>
+</html>

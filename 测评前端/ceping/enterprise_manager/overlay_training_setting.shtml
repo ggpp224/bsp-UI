@@ -1,0 +1,231 @@
+<script type = "text/javascript">
+var currID='1';
+function tab_zhao(){
+	$(".tabpanel li:first").addClass("curent");
+	$(".tabpanelbox div.tab_content:gt(0)").hide();
+	$(".tabpanelright div.tab_content:gt(0)").hide();
+
+	$(".tabpanel li").click(function(){
+	  currID=$(this).index()+1;
+      $(this).addClass("curent").siblings("li").removeClass();
+      $(".tabpanelbox div.tab_content:eq("+$(this).index()+")").fadeIn('slow').siblings("div.tab_content").hide();
+	  $(".tabpanelright div.tab_content:eq("+$(this).index()+")").fadeIn('slow').siblings("div.tab_content").hide();
+   });
+}
+function get_userAccount(name){
+	name=name?encodeURI(name):'';
+	$.getJSON(G_URL['finduseraccountlist']+'?companyId='+G_COMPANYID+'&callback=&userName='+name,function(data){
+		if(data.returnCode=='000000'){
+			var list=data.list,html='';
+			for(var i in list){
+				var v =list[i];
+				html +='<li id="user_left'+v.id+'"><input type="checkbox" name="num" value="'+v.id+'" title="'+ v.userName+'" />&nbsp;'+v.userName+'</li>'
+			}
+			$('#useraccount_list').html(html);
+		}
+	})
+}
+
+$(document).ready(function() {
+	tab_zhao();
+	cbs.textScroll();
+	checkAll(name);//CheckBox全选
+
+   //资源树
+		dhtmlXTreeObject.prototype._loadDynXML = function(e, d) {
+			var d = d || this.XMLsource,
+			f = (new Date).valueOf();
+			this._ld_id = e;
+			this.loadXML(d + getUrlSymbol(d) + "parentId=" + this._escape(e))
+		};
+		var tree_rootId=[];
+		//--选择部门
+		var tree1 = new dhtmlXTreeObject({
+			skin: G_ROOT+"js/libs/dxtree/dhx_skyblue",
+			parent: "tree1",
+			image_path: G_ROOT+"js/libs/dxtree/imgs/csh_books/",
+			checkbox: true
+		});
+		tree1.setXMLAutoLoading(G_URL['findcompanydeptlist']+'?companyId='+G_COMPANYID+'&callback=');
+		tree1.enableThreeStateCheckboxes(true);
+		tree1.setDataMode("json");
+		tree1.loadJSON(G_URL['findcompanydeptlist']+'?parentId=0&companyId='+G_COMPANYID+'&callback=',function(){
+			tree_rootId[1] = tree1.getItemIdByIndex(0,0);
+			tree1.openItem(tree_rootId[1]);
+
+		});
+
+		//--选择岗位
+		var tree2 = new dhtmlXTreeObject({
+			skin: G_ROOT+"js/libs/dxtree/dhx_skyblue",
+			parent: "tree2",
+			image_path: G_ROOT+"js/libs/dxtree/imgs/csh_books/",
+			checkbox: true
+		});
+		tree2.setXMLAutoLoading(G_URL['findcompanypostlist']+'?companyId='+G_COMPANYID+'&callback=');
+		tree2.enableThreeStateCheckboxes(true);
+		tree2.setDataMode("json");
+		tree2.loadJSON(G_URL['findcompanypostlist']+'?parentId=0&companyId='+G_COMPANYID+'&callback=',function(){
+			tree_rootId[2] = tree2.getItemIdByIndex(0,0);
+			tree2.openItem(tree_rootId[2]);
+		});
+
+		//--选择分组--
+		var tree3 = new dhtmlXTreeObject({
+			skin: G_ROOT+"js/libs/dxtree/dhx_skyblue",
+			parent: "tree3",
+			image_path: G_ROOT+"js/libs/dxtree/imgs/csh_books/",
+			checkbox: true
+		});
+		tree3.setXMLAutoLoading(G_URL['findcompanygrouplist']+'?companyId='+G_COMPANYID+'&callback=');
+		tree3.enableThreeStateCheckboxes(true);
+		tree3.setDataMode("json");
+		tree3.loadJSON(G_URL['findcompanygrouplist']+'?parentId=0&companyId='+G_COMPANYID+'&callback=',function(){
+			tree_rootId[3] = tree3.getItemIdByIndex(0,0);
+			tree3.openItem(tree_rootId[3]);
+
+		});
+		//--选择学员--
+		get_userAccount();
+
+		// 向右添加
+		$('#js_setting_add').click(function(){
+			if(currID<4){
+				var tree=eval('tree'+currID),ids=tree.getAllChecked();
+				if(ids.length>0){
+					ids=ids.split(',');
+					var html='';
+					for (var i in ids){
+						var txt=tree.getItemText(ids[i]);
+						if(tree_rootId[currID] != ids[i]){
+							if($('#tree_right_'+currID+'_'+ids[i]).length==0){
+								html+='<li id="tree_right_'+currID+'_'+ids[i]+'" alt="'+ids[i]+'"><a href="javascript:" class="delico"  title="'+ids[i]+'">'+txt+'</a><span>'+txt+'</span></li>';
+							}
+						}
+					}
+					$('#tree'+currID+'_right ul').append(html);
+				}
+			}else{
+				var html='';
+				$('#useraccount_list').find('input:checked').each(function(){
+					var txt=$(this).attr('title'),id=$(this).val();
+					if($('#tree_right_'+currID+'_'+id).length==0){
+						html+='<li id="tree_right_'+currID+'_'+id+'" alt="'+id+'"><a href="javascript:" class="delico"  title="'+id+'">'+txt+'</a><span>'+txt+'</span></li>';
+					}
+				});
+					$('#tree'+currID+'_right ul').append(html);
+			}
+		});
+		// 右侧点击移除单项
+		$('.delico').live('click',function(){
+			$(this).parent().remove();
+			var id=$(this).attr('title');
+			if(currID<4){
+				eval('tree'+currID).setCheck(id,0);
+			}else{
+				$('#user_left'+id).find('input').attr('checked',false)
+			}
+			getUseraccount();
+		});
+		// 右侧全移除
+		$('#js_setting_del').click(function(){
+			$('#tree'+currID+'_right .delico').click();
+		});
+		$('#useraccount_search').click(function(){
+			var k=$('#useraccount_key').val();
+			get_userAccount(k);
+		})
+		// 确定保存
+		$('#pop_setting_save').click(function(){
+			/* for(var i=1;i<5;i++){
+				$('#tree'+i+'_right li').each(function(){
+					var id=$(this).find('a').attr('title');
+					if($('#setting_to_'+i).find('.to'+i+'_'+id).length==0){
+						var to=$('#setting_to_'+i).append(this);
+						to.find('a').addClass('to'+i+'_'+id).attr('id','');
+					}
+				});
+			}
+			getUseraccount();
+			$('#pop_setting_cancel').click(); */
+			var i=1,adding;
+			var len=$('#tree'+i+'_right li').length,last=0;
+			adding=window.setInterval(function(){
+				if(last<len){
+					$('#tree'+i+'_right li').slice(last,last+50).each(function(){
+						var id=$(this).attr('alt');
+						if($('#TO'+i+'_'+id).length==0) $(this).clone().appendTo($('#setting_to_'+i)).attr('id','TO'+i+'_'+id);
+					});
+					last+=50;
+				}else{
+					i++;
+					len=$('#tree'+i+'_right li').length,last=0;
+					if(i>4){
+						window.clearInterval(adding);
+						getUseraccount();
+						$('#pop_setting_cancel').click();
+					}
+				}
+			},50);
+
+		});
+ });
+
+</script>
+	<table width="100%" cellpadding="0" cellspacing="0" >
+		<td  valign="top" class="sharingpanel sharinguser">
+			<ul class="tabpanel">
+				<li><a href="javascript:">选择部门</a></li>
+				<li><a href="javascript:">选择岗位</a></li>
+				<li><a href="javascript:">选择分组</a></li>
+				<li><a href="javascript:">选择个人</a></li>
+			</ul>
+			<!--Start：选项卡内容 tabpanelbox//-->
+		   <div class="tabpanelbox">
+				<div id="tree1" class="tab_content"></div><!--//ENd:tree1-->
+				<div id="tree2" class="tab_content" style="display:none;"></div><!--//ENd:tree2-->
+				<div id="tree3" class="tab_content" style="display:none;"></div><!--//ENd:tree3-->
+				<div id="tree4" class="tab_content" style="display:none;">
+				    <div class="features_search">
+							<input type="text" id="useraccount_key" class="default_txt" size="12"/>
+							<input type="button" id="useraccount_search" class="btn btn_reset" value="查询"/>
+                    </div>
+					<div class="user_list_head"><label><input type="checkbox" name="num" value="" onclick="if(this.checked==true) { checkAll('num'); } else { clearAll('num'); }" />&nbsp;全选</label></div>
+                    <ul class="user_search_list" id="useraccount_list"></ul>
+				</div><!--//ENd:tree4-->
+			</div><!--//ENd:tabpanelbox-->
+         	</td>
+			<td width="84" >
+			    <button id="js_setting_add" class="addbtn">添加</button>
+				<button id="js_setting_del" class="delallbtn">全移除</button>
+			</td>
+			<td  valign="top" class="sharingpanel" >
+		  <div class="tabpanelright">
+			    <!--01-->
+				<div class="tab_content noscroll">
+				  <h4>已选部门</h4>
+				  <div class="divselect over_listbox" id="tree1_right"><ul></ul></div>
+				</div>
+				<!--02-->
+				<div class="tab_content noscroll" style="display:none;">
+				  <h4>已选岗位</h4>
+				  <div class="divselect over_listbox" id="tree2_right"><ul></ul></div>
+				</div>
+				<!--03-->
+				<div class="tab_content noscroll" style="display:none;">
+				  <h4>已选分组</h4>
+				  <div class="divselect over_listbox" id="tree3_right"><ul></ul></div>
+				</div>
+				<!--04-->
+				<div class="tab_content noscroll" style="display:none;">
+				  <h4>已选个人</h4>
+				  <div class="divselect" id="tree4_right"><ul></ul></div>
+				</div>
+			</div>
+			</td>
+		</tr>
+	</table>
+	<div class="overlay_btn">
+		<input type="button" id="pop_setting_save" class="btn btn_submit" value=" 保存 "/>
+		<input type="button" id="pop_setting_cancel" class="btn btn_reset close overlayClose" value=" 取消 "/>
+	</div>

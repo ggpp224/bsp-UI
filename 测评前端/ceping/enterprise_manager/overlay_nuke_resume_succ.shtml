@@ -1,0 +1,17 @@
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+ 	<form id="sampleform" method="post" action="#" class="bigFrom">
+	<div class="overlay_interaction">
+        <span class="icon_bigsuccess"></span>
+        <div class="overlay_box">
+        <p class="font_green">操作已成功！</p>
+        </div>
+        <div class="clearer"></div>
+    </div>
+    <div class="overlay_btn">
+    <input type="button" class="btn btn_reset overlayClose" value=" 关闭 "/>
+	</div> 
+    </form>
+
+
+
+    

@@ -1,0 +1,35 @@
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<h2 id="nyroModalTitle">选择课程</h2>
+<form  method="post" action="#" >
+  <h3 class="msg_box box-info">已选课程：<font class="">XXXXXX</font></h3>
+<div class="overbody">
+   <div class="features_search">
+	   <input type="text" class="default_txt" size="28"/>
+	   <input type="submit" class="btn btn_reset" value="查询"/>
+  </div>
+  <div class="y-scroll borderall">
+    <div id="load_html_data1"></div>
+  </div>
+  </div>
+  <div class="overlay_btn">
+    <input name="提交" type="submit" class="btn btn_submit" value=" 确定 "/>
+    <input type="button" class="btn btn_reset close" value=" 取消 "/>
+  </div>
+</form>
+<script type="text/javascript">
+    $(document).ready(function() {	
+ // load html data from file
+$("#load_html_data1").jstree({ 
+		"html_data" : {
+			"ajax" : {
+				"url" : "data/data_resources.shtml",
+				"data" : function (n) { 
+					return { id : n.attr ? n.attr("id") : 0 }; 
+				}
+			}
+		},
+		"plugins" : [ "themes", "html_data","cookies","ui","crrm"] 
+		
+	});
+ });
+</script>

@@ -1,0 +1,268 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta content="企业培训、企业内训、企业学习、企业大学、渠道大学、e-Learning、学习平台、学习系统、人才管理、岗位胜任力模型、Skillsoft、职业发展、培训管理、继任规划" name="keywords" />
+<meta content="企业商学院是集在线学习、能力测评、学习计划和培训管理为一体的企业学习整体解决方案。帮助企业提升内训、渠道培训、分支机构培训的整体水平，最大程度发掘培训价值，实现培训效益提升，全面促进企业人才培养。" name="description" />
+<title>CBS - 交流社区</title>
+<!--系统样式-->
+<link href="../css/default.css" rel="stylesheet" type="text/css" />
+<!--皮肤样式  Blue-->
+<link href="../css/enterprise_blue.css" rel="stylesheet" type="text/css" />
+<link href="../css/nyroModal.css" rel="stylesheet" type="text/css" />
+<!--[if IE]>
+<link type="text/css" rel="stylesheet" href="../css/ie.css" />
+<![endif]-->
+<!-- jQuery with plugins -->
+<script type="text/javascript" src="../js/libs/jquery-1.4.3.min.js"></script>
+<script language="javascript" type="text/javascript" src="../js/libs/nyroModal1.6.2.min.js"></script>
+<script type="text/javascript">
+    $(document).ready(function() {
+	//删除话题
+	$('.overlay_deltopic').nyroModal({
+		width: 400
+	});
+	//移动话题
+	$('.overlay_cuttopic').nyroModal({
+		width: 500
+	});
+	//置顶话题
+	$('.overlay_top').nyroModal({
+		width: 400
+	});
+	//取消置顶
+	$('.overlay_top_down').nyroModal({
+		width: 400
+	});
+	//新版块
+	$('.overlay_plate').nyroModal({
+		width: 400
+	});
+	//删除版块
+	$('.overlay_delplate').nyroModal({
+		width: 400
+	});
+	//编辑版块
+	$('.overlay_editplate').nyroModal({
+		width: 500
+	});
+	//收藏
+	$('.overlay_favorites').nyroModal({
+		width: 400
+	});
+
+	});
+</script>
+</head>
+<body>
+<!-- Start:  Html  //-->
+<div id="content">
+     <!--Start:头部//-->
+	 <!--#include virtual="../Library/header_enterprise.shtml" -->
+	 <!--//End:头部-->
+	<!--Start: container //-->
+	<div id ="container">
+		<div class="box admin_box">
+
+			<!-- 面包屑// -->
+            <div class="bread_crumbs">
+                <a href="community.shtml" >交流社区</a>&nbsp;&#8250;&nbsp;
+                <b>自定义版块名</b>
+            </div>
+            <!-- //End:面包屑 -->
+
+ 			<div class="content_body">
+
+                        <!-- 左框架 -->
+            			<div class="content_body_left">
+
+        					<!-- 选项卡 -->
+                            <div class="feature_tabs">
+
+                            	<ul class="ulfeature_tabs">
+                               	<li><a href="community.shtml">全部</a></li>
+                                <li><a href="community_consulting.shtml">学习咨询</a></li>
+                                <li><a href="community_share.shtml">交流分享</a></li>
+                                <li class="current"><a href="community_layout.shtml" class="current">自定义名一</a></li>
+                                <li class="plate"><a href="overlay_plate.shtml" class="overlay_plate" title="新增版块"></a></li>
+                                </ul>
+
+                            </div>
+                            <!-- 选项卡 End -->
+
+                            <!-- 发新话题 -->
+                            <div class="feature_tabs padding_12">
+                            		<span class="float_r">
+                                    <a href="overlay_editplate.shtml" class="overlay_editplate font_red" title="编辑自定义版块名称">编辑版块名称</a>&nbsp;|
+                                    <a href="overlay_delplate.shtml" class="overlay_delplate font_red" title="删除自定义版块">删除本版块</a>
+                                    </span>
+                              		<input type="button" onClick="location.href='posts_new.shtml';" class="btn btn_feature" value=" 发新话题 " />
+                            </div>
+                            <div class="clearer"></div>
+                            <!-- 发新话题 -->
+
+                            <!-- 表格 -->
+                            <table width="100%" border="0"  class="default_table listtab">
+                            	<col width="1%" />
+                                <col />
+                                <col width="18%" />
+                                <col width="12%" />
+                                <col width="13%" />
+                            <thead class="gradual_bg">
+                                <tr>
+                                <th>&nbsp;</th>
+                                <th>标题</th>
+                                <th>作者</th>
+                                <th>回复/查看</th>
+                                <th>最后回复时间</th>
+                                </tr>
+                            </thead>
+
+                            <tbody>
+
+                                <tr>
+                                <td rowspan="2">&nbsp;</td>
+                                <td rowspan="2">
+                                <span class="topic_name"><span class="font_yellow">[顶]</span>
+                                <a href="posts_details.shtml" title="四个职场错误年底不能犯">四个职场错误年底不能犯</a>
+                                <span class="icon_accessories" title="有附件">有附件</span>
+                                <span class="font_green">New</span>
+                                </span>
+                                </td>
+                                <td rowspan="2">Rikey Zhang</td>
+                                <td style="border-bottom:0;"><span class="font_green">40</span>&nbsp;/&nbsp;265</td>
+                                <td style="border-bottom:0;"><span class="timedate">2011-5-7 10:32</span></td>
+                                </tr>
+                                <tr>
+                                <td colspan="2">
+                                <span class="comm_padd">
+                                <a href="posts_new.shtml" class="tabico_edit" title="编辑">编辑</a>
+                                <a href="overlay_cuttopic.shtml" class="icon_cut overlay_cuttopic" title="移动话题">移动</a>
+                                <a href="overlay_deltopic.shtml" class="tabico_del overlay_deltopic" title="删除话题">删除</a>
+                                <a href="overlay_top_down.shtml" class="icon_top_down overlay_top_down" title="取消置顶">取消置顶</a>
+                                </span>
+                                </td>
+                                </tr>
+
+                                <tr>
+                                <td rowspan="2">&nbsp;</td>
+                                <td rowspan="2">
+                                <span class="topic_name"><span class="font_yellow">[顶]</span>
+                                <a href="posts_details.shtml" title="四个职场错误年底不能犯">四个职场错误年底不能犯</a>
+                                <span class="icon_accessories" title="有附件">有附件</span>
+                                <span class="font_green">New</span>
+                                </span>
+                                </td>
+                                <td rowspan="2">Rikey Zhang</td>
+                                <td style="border-bottom:0;"><span class="font_green">40</span>&nbsp;/&nbsp;265</td>
+                                <td style="border-bottom:0;"><span class="timedate">2011-5-7 10:32</span></td>
+                                </tr>
+                                <tr>
+                                <td colspan="2">
+                                <span class="comm_padd">
+                                <a href="posts_new.shtml" class="tabico_edit" title="编辑">编辑</a>
+                                <a href="overlay_cuttopic.shtml" class="icon_cut overlay_cuttopic" title="移动话题">移动</a>
+                                <a href="overlay_deltopic.shtml" class="tabico_del overlay_deltopic" title="删除话题">删除</a>
+                                <a href="overlay_top_down.shtml" class="icon_top_down overlay_top_down" title="取消置顶">取消置顶</a>
+                                </span>
+                                </td>
+                                </tr>
+
+                                <tr>
+                                <td rowspan="2">&nbsp;</td>
+                                <td rowspan="2">
+                                <span class="topic_name"><span class="font_yellow">[顶]</span>
+                                <a href="posts_details.shtml" title="四个职场错误年底不能犯">四个职场错误年底不能犯</a>
+                                <span class="icon_accessories" title="有附件">有附件</span>
+                                <span class="font_green">New</span>
+                                </span>
+                                </td>
+                                <td rowspan="2">Rikey Zhang</td>
+                                <td style="border-bottom:0;"><span class="font_green">40</span>&nbsp;/&nbsp;265</td>
+                                <td style="border-bottom:0;"><span class="timedate">2011-5-7 10:32</span></td>
+                                </tr>
+                                <tr>
+                                <td colspan="2">
+                                <span class="comm_padd">
+                                <a href="posts_new.shtml" class="tabico_edit" title="编辑">编辑</a>
+                                <a href="overlay_cuttopic.shtml" class="icon_cut overlay_cuttopic" title="移动话题">移动</a>
+                                <a href="overlay_deltopic.shtml" class="tabico_del overlay_deltopic" title="删除话题">删除</a>
+                                <a href="overlay_top_down.shtml" class="icon_top_down overlay_top_down" title="取消置顶">取消置顶</a>
+                                </span>
+                                </td>
+                                </tr>
+
+
+                            </tbody>
+                            </table>
+                            <!-- 表格 -->
+
+                            <!-- 翻页 -->
+                            <div class="pagination">
+                                <ul>
+                                    <li class="disablepage">上一页</li>
+                                    <li class="currentpage">1</li>
+                                    <li><a href="#">2</a></li>
+                                    <li><a href="#">3</a></li>
+                                    <li><a href="#">4</a></li>
+                                    <li><a href="#">5</a></li>
+                                    <li><a href="#">6</a></li>
+                                    <li><a href="#">7</a></li>
+                                    <li><a href="#">8</a></li>
+                                    <li><a href="#">9</a>...</li>
+                                    <li><a href="#">15</a></li>
+                                    <li><a href="#">16</a></li>
+                                    <li class="nextpage"><a href="#">下一页</a></li>
+                                </ul>
+                            </div>
+                            <!-- 翻页 -->
+
+
+                        </div>
+                        <!-- 左框架 End -->
+
+                        <!-- 右框架 -->
+            			<div class="content_body_right">
+                        		<div class="right_box_community">
+                                    <span class="icon_nuke"></span><a href="community_nuke.shtml">禁言人员列表</a>
+                                    <div class="clearer"></div>
+                                </div>
+
+                                <!-- 热门话题 -->
+                                <div class="right_box_community">
+                                        <div class="rb_title">热门话题</div>
+                                        <div class="rb_cont">
+                                                <ul class="topic">
+                                                <li><a href="posts_details.html" title="四个职场错误年底不能犯">四个职场错误年底不能犯四个职场错误年底不能犯</a></li>
+                                                <li><a href="posts_details.html" title="四个职场错误年底不能犯">四个职场错误年底不能犯四个职场错误年底不能犯</a></li>
+                                                <li><a href="posts_details.html" title="四个职场错误年底不能犯">四个职场错误年底不能犯</a></li>
+                                                <li><a href="posts_details.html" title="四个职场错误年底不能犯">四个职场错误年底不能犯</a></li>
+                                                <li><a href="posts_details.html" title="四个职场错误年底不能犯">四个职场错误年底不能犯</a></li>
+                                                <li><a href="posts_details.html" title="四个职场错误年底不能犯">四个职场错误年底不能犯四个职场错误年底不能犯</a></li>
+                                                <li><a href="posts_details.html" title="四个职场错误年底不能犯">四个职场错误年底不能犯四个职场错误年底不能犯</a></li>
+                                                <li><a href="posts_details.html" title="四个职场错误年底不能犯">四个职场错误年底不能犯</a></li>
+                                                <li><a href="posts_details.html" title="四个职场错误年底不能犯">四个职场错误年底不能犯</a></li>
+                                                <li><a href="posts_details.html" title="四个职场错误年底不能犯">四个职场错误年底不能犯</a></li>
+                                                </ul>
+                                        </div>
+                                </div>
+                                <!-- 热门话题 End -->
+
+                        </div>
+                        <div class="clearer"></div>
+                        <!-- 右框架 End -->
+
+
+
+	   		</div>
+            <!-- content_body End -->
+
+        </div>
+	</div><!-- //End:container-->
+	<!--Start:footer//-->
+	 <!--#include virtual="../Library/footer.shtml" -->
+	 <!--//End:footer//-->
+	</div><!--//End:#content//-->
+<script src="../js/libs/cbs_userjs.js"></script>
+</body>
+</html>

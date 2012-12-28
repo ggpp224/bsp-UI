@@ -1,0 +1,204 @@
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<h2 id="nyroModalTitle">设置调查对象</h2>
+<script type="text/javascript" src="../js/libs/jquery-1.4.3.min.js"></script>
+<script language="javascript" type="text/javascript" src="../js/libs/nyroModal1.6.2.min.js"></script>
+<script type = "text/javascript">
+ $(document).ready(function() {
+   cbs.hovertabs();
+   cbs.textScroll();
+   /*--选择部门--*/
+   $("#tree1").jstree({
+		"html_data" : {
+			"ajax" : {
+				"url" : "data/data_resources.shtml",
+				"data" : function (n) {
+					return { id : n.attr ? n.attr("id") : 0 };
+				}
+			}
+		},
+		"plugins" : [ "themes", "html_data" ,"checkbox","contextmenu","cookies","ui","crrm","dnd"]
+
+	});
+
+   /*--选择部门--*/
+      $("#tree2").jstree({
+		"html_data" : {
+			"ajax" : {
+				"url" : "data/data_resources.shtml",
+				"data" : function (n) {
+					return { id : n.attr ? n.attr("id") : 0 };
+				}
+			}
+		},
+		"plugins" : [ "themes", "html_data" ,"checkbox","contextmenu","cookies","ui","crrm","dnd"]
+
+	});
+
+	  /*--选择分组--*/
+	  $("#tree3").jstree({
+		"html_data" : {
+			"ajax" : {
+				"url" : "data/data_resources.shtml",
+				"data" : function (n) {
+					return { id : n.attr ? n.attr("id") : 0 };
+				}
+			}
+		},
+		"plugins" : [ "themes", "html_data" ,"checkbox","contextmenu","cookies","ui","crrm","dnd"]
+
+	});
+
+
+ });
+
+</script>
+
+	<table width="100%" cellpadding="0" cellspacing="0" >
+		<td  valign="top" class="sharingpanel sharinguser">
+			<ul class="tabpanel">
+				<li><a href="#" >选择部门</a></li>
+				<li><a href="#" >选择岗位</a></li>
+				<li><a href="#" >选择分组</a></li>
+				<li><a href="#" >选择个人</a></li>
+			</ul>
+			<!--Start：选项卡内容 tabpanelbox//-->
+		   <div class="tabpanelbox">
+				<div id="tree1" class="tab_content"></div><!--//ENd:tree1-->
+				<div id="tree2" class="tab_content" style="display:none;"></div><!--//ENd:tree2-->
+				<div id="tree3" class="tab_content" style="display:none;"></div><!--//ENd:tree3-->
+				<div id="tree4" class="tab_content" style="display:none;">
+                  <div class="features_search">
+                      <select name="">
+                          <option>按部门</option>
+                          <option>按岗位</option>
+                          <option>按分组</option>
+                          <option>按个人</option>
+                      </select>
+                      <input type="text" class="default_txt" size="12"/>
+                      <input type="submit" class="btn btn_reset" value="查询"/>
+                   </div>
+					<div class="user_list_head"><label><input name="" type="checkbox" value="" />全选 </label></div>
+                    <ul class="user_search_list">
+					  <li><label><input name="" type="checkbox" value="" /></label>张三</li>
+					  <li><label><input name="" type="checkbox" value="" /></label>张三</li>
+					  <li><label><input name="" type="checkbox" value="" /></label>张三</li>
+					  <li><label><input name="" type="checkbox" value="" /></label>张三</li>
+					  <li><label><input name="" type="checkbox" value="" /></label>张三</li>
+					  <li><label><input name="" type="checkbox" value="" /></label>张三</li>
+					  <li><label><input name="" type="checkbox" value="" /></label>张三</li>
+					  <li><label><input name="" type="checkbox" value="" /></label>张三</li>
+					  <li><label><input name="" type="checkbox" value="" /></label>张三</li>
+					  <li><label><input name="" type="checkbox" value="" /></label>张三</li>
+					  <li><label><input name="" type="checkbox" value="" /></label>张三</li>
+					  <li><label><input name="" type="checkbox" value="" /></label>张三</li>
+					</ul>
+				</div><!--//ENd:tree4-->
+			</div><!--//ENd:tabpanelbox-->
+         	</td>
+			<td >
+			    <button class="addbtn">添加</button>
+                <button class="delallbtn">全移除</button>
+			</td>
+			<td  valign="top" class="sharingpanel" >
+			<div class="tabpanelright">
+			    <!--01-->
+				<div class="tab_content noscroll">
+				  <h4>已选部门</h4>
+				  <div class="divselect">
+					<ul>
+					  <li><a href="#" class="delico"  title="从列表删除">从列表删除</a><span>部门名称01</span></li>
+					  <li><a href="#" class="delico"  title="从列表删除">从列表删除</a><span>部门名称02</span></li>
+					  <li><a href="#" class="delico"  title="从列表删除">从列表删除</a><span>部门名称03</span></li>
+					  <li><a href="#" class="delico"  title="从列表删除">从列表删除</a><span>部门名称</span></li>
+					  <li><a href="#" class="delico"  title="从列表删除">从列表删除</a><span>部门名称</span></li>
+					  <li><a href="#" class="delico"  title="从列表删除">从列表删除</a><span>部门名称</span></li>
+					  <li><a href="#" class="delico"  title="从列表删除">从列表删除</a><span>部门名称</span></li>
+					  <li><a href="#" class="delico"  title="从列表删除">从列表删除</a><span>部门名称</span></li>
+					  <li><a href="#" class="delico"  title="从列表删除">从列表删除</a><span>部门名称</span></li>
+					  <li><a href="#" class="delico"  title="从列表删除">从列表删除</a><span>部门名称</span></li>
+					  <li><a href="#" class="delico"  title="从列表删除">从列表删除</a><span>部门名称</span></li>
+					  <li><a href="#" class="delico"  title="从列表删除">从列表删除</a><span>部门名称</span></li>
+					  <li><a href="#" class="delico"  title="从列表删除">从列表删除</a><span>部门名称</span></li>
+					  <li><a href="#" class="delico"  title="从列表删除">从列表删除</a><span>部门名称</span></li>
+
+					</ul>
+				  </div>
+				</div>
+				<!--02-->
+				<div class="tab_content noscroll" style="display:none;">
+				  <h4>已选岗位</h4>
+				  <div class="divselect">
+					<ul>
+					  <li><a href="#" class="delico"  title="从列表删除">从列表删除</a><span>岗位名称01</span></li>
+					  <li><a href="#" class="delico"  title="从列表删除">从列表删除</a><span>岗位名称02</span></li>
+					  <li><a href="#" class="delico"  title="从列表删除">从列表删除</a><span>岗位名称03</span></li>
+					  <li><a href="#" class="delico"  title="从列表删除">从列表删除</a><span>岗位名称</span></li>
+					  <li><a href="#" class="delico"  title="从列表删除">从列表删除</a><span>岗位名称</span></li>
+					  <li><a href="#" class="delico"  title="从列表删除">从列表删除</a><span>岗位名称</span></li>
+					  <li><a href="#" class="delico"  title="从列表删除">从列表删除</a><span>岗位名称</span></li>
+					  <li><a href="#" class="delico"  title="从列表删除">从列表删除</a><span>岗位名称</span></li>
+					  <li><a href="#" class="delico"  title="从列表删除">从列表删除</a><span>岗位名称</span></li>
+					  <li><a href="#" class="delico"  title="从列表删除">从列表删除</a><span>岗位名称</span></li>
+					  <li><a href="#" class="delico"  title="从列表删除">从列表删除</a><span>岗位名称</span></li>
+					  <li><a href="#" class="delico"  title="从列表删除">从列表删除</a><span>岗位名称</span></li>
+					  <li><a href="#" class="delico"  title="从列表删除">从列表删除</a><span>岗位名称</span></li>
+					  <li><a href="#" class="delico"  title="从列表删除">从列表删除</a><span>岗位名称</span></li>
+					</ul>
+				  </div>
+				</div>
+
+				<!--03-->
+				<div class="tab_content noscroll" style="display:none;">
+				  <h4>已选分组</h4>
+				  <div class="divselect">
+					<ul>
+					  <li><a href="#" class="delico"  title="从列表删除">从列表删除</a><span>分组名称01</span></li>
+					  <li><a href="#" class="delico"  title="从列表删除">从列表删除</a><span>分组名称02</span></li>
+					  <li><a href="#" class="delico"  title="从列表删除">从列表删除</a><span>分组名称03</span></li>
+					  <li><a href="#" class="delico"  title="从列表删除">从列表删除</a><span>分组名称</span></li>
+					  <li><a href="#" class="delico"  title="从列表删除">从列表删除</a><span>分组名称</span></li>
+					  <li><a href="#" class="delico"  title="从列表删除">从列表删除</a><span>分组名称</span></li>
+					  <li><a href="#" class="delico"  title="从列表删除">从列表删除</a><span>分组名称</span></li>
+					  <li><a href="#" class="delico"  title="从列表删除">从列表删除</a><span>分组名称</span></li>
+					  <li><a href="#" class="delico"  title="从列表删除">从列表删除</a><span>分组名称</span></li>
+					  <li><a href="#" class="delico"  title="从列表删除">从列表删除</a><span>分组名称</span></li>
+					  <li><a href="#" class="delico"  title="从列表删除">从列表删除</a><span>分组名称</span></li>
+					  <li><a href="#" class="delico"  title="从列表删除">从列表删除</a><span>分组名称</span></li>
+					  <li><a href="#" class="delico"  title="从列表删除">从列表删除</a><span>分组名称</span></li>
+					  <li><a href="#" class="delico"  title="从列表删除">从列表删除</a><span>分组名称</span></li>
+					</ul>
+				  </div>
+				</div>
+
+
+				<!--04-->
+				<div class="tab_content noscroll" style="display:none;">
+				  <h4>已选个人</h4>
+				  <div class="divselect">
+					<ul>
+					  <li><a href="#" class="delico"  title="从列表删除">从列表删除</a><span>岗位名称01</span></li>
+					  <li><a href="#" class="delico"  title="从列表删除">从列表删除</a><span>岗位名称02</span></li>
+					  <li><a href="#" class="delico"  title="从列表删除">从列表删除</a><span>岗位名称03</span></li>
+					  <li><a href="#" class="delico"  title="从列表删除">从列表删除</a><span>岗位名称</span></li>
+					  <li><a href="#" class="delico"  title="从列表删除">从列表删除</a><span>岗位名称</span></li>
+					  <li><a href="#" class="delico"  title="从列表删除">从列表删除</a><span>岗位名称</span></li>
+					  <li><a href="#" class="delico"  title="从列表删除">从列表删除</a><span>岗位名称</span></li>
+					  <li><a href="#" class="delico"  title="从列表删除">从列表删除</a><span>岗位名称</span></li>
+					  <li><a href="#" class="delico"  title="从列表删除">从列表删除</a><span>岗位名称</span></li>
+					  <li><a href="#" class="delico"  title="从列表删除">从列表删除</a><span>岗位名称</span></li>
+					  <li><a href="#" class="delico"  title="从列表删除">从列表删除</a><span>岗位名称</span></li>
+					  <li><a href="#" class="delico"  title="从列表删除">从列表删除</a><span>岗位名称</span></li>
+					  <li><a href="#" class="delico"  title="从列表删除">从列表删除</a><span>岗位名称</span></li>
+					  <li><a href="#" class="delico"  title="从列表删除">从列表删除</a><span>岗位名称</span></li>
+					</ul>
+				  </div>
+				</div>
+			</div>
+			</td>
+		</tr>
+	</table>
+	<div class="overlay_btn">
+		<input type="button" class="btn btn_submit" value=" 保存 "/>
+		<input type="button" class="btn btn_reset close" value=" 取消 "/>
+	</div>
+<script src="../js/libs/cbs_userjs.js"></script>

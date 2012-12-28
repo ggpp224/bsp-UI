@@ -1,0 +1,268 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta content="企业培训、企业内训、企业学习、企业大学、渠道大学、e-Learning、学习平台、学习系统、人才管理、岗位胜任力模型、Skillsoft、职业发展、培训管理、继任规划" name="keywords" />
+<meta content="企业商学院是集在线学习、能力测评、学习计划和培训管理为一体的企业学习整体解决方案。帮助企业提升内训、渠道培训、分支机构培训的整体水平，最大程度发掘培训价值，实现培训效益提升，全面促进企业人才培养。" name="description" />
+<title>企业商学院 - 培训计划 - 按岗位查看</title>
+<link rel="icon" href="favicon.ico" mce_href="favicon.ico" type="image/x-icon">
+<link rel="shortcut icon" href="favicon.ico" mce_href="favicon.ico" type="image/x-icon">
+<!--系统样式-->
+<link href="../css/default.css" rel="stylesheet" type="text/css" />
+<!--皮肤样式  Blue-->
+<link href="../css/enterprise_blue.css" rel="stylesheet" type="text/css" />
+<link href="../css/nyroModal.css" rel="stylesheet" type="text/css" />
+<!--[if IE]>
+<link type="text/css" rel="stylesheet" href="../css/ie.css" />
+<![endif]-->
+<!-- jQuery with plugins -->
+<script type="text/javascript" src="../js/libs/jquery-1.4.3.min.js"></script>
+<!-- jQuery tree -->
+<script type="text/javascript" src="../js/libs/jquery.cookie.js"></script>
+<script type="text/javascript" src="../js/libs/jquery.hotkeys.js"></script>
+<script type="text/javascript" src="../js/libs/jquery.jstree.js"></script>
+<script language="javascript" type="text/javascript" src="../js/libs/nyroModal1.6.2.min.js"></script>
+<script type="text/javascript">
+	 $(document).ready(function() {
+		 $("#load_html_data").jstree({
+		"html_data" : {
+			"ajax" : {
+				"url" : "data/data_resources.shtml",
+				"data" : function (n) {
+					return { id : n.attr ? n.attr("id") : 0 };
+				}
+			}
+		},
+		"plugins" : [ "themes", "html_data" ,"checkbox","contextmenu","cookies","ui","crrm","dnd"]
+
+	});
+
+	cbs.tablehover();//表单换行颜色 hover
+	cbs.selbtnmenu(); //多选按钮
+
+	//删除
+	$('#delcustomer').click(function(e) {
+			e.preventDefault();
+			$.fn.nyroModalManual({
+			    width:380,
+				url: 'overlay_delsector.shtml',
+				title:'系统提示'
+			});
+			return false;
+		});
+
+	//添加目录
+	$(".tree_add_child").nyroModal({
+		width:380
+	});
+
+	//编辑目录
+	$(".tree_edit").nyroModal({
+		width:380
+	});
+
+	//删除目录
+	$(".tree_dell").nyroModal({
+		width:380
+	});
+
+	//批量导入
+	$(".tree_imp").nyroModal({
+		width:380
+	});
+
+
+
+ });
+</script>
+</head>
+<body>
+<div id="content">
+  <!--#include virtual="../Library/header_enterprise.shtml" -->
+  <!-- Start: container //-->
+  <div id ="container">
+    <div class="box admin_box">
+      <!-- 面包屑 -->
+      <div class="bread_crumbs">
+
+                <a href="training-implementation.shtml" >培训实施</a>&nbsp;&#8250;&nbsp;
+                <b>按岗位查看</b>
+      </div>
+       <div class="sidebar boxborder">
+       <div class="selbox_bg" >
+          <div class="selbtn">
+              <button class="btn btn_default" ><span class="menudown"></span>选择查看方式</button><ul class="newspecial_menu" style="width:130px;">
+                <li><a href="training-implementation.shtml">默认全部</a></li>
+                <li><a href="training-implementation_dep.shtml">按部门查看</a></li>
+                <li><a href="training-implementation_position.shtml">按岗位查看</a></li>
+                <li><a href="training-implementation_groups.shtml">按分组查看</a></li>
+              </ul>
+       </div>
+       </div>
+       <div id="load_html_data"></div></div>
+       <!--//End:sidebar -->
+      <div class="content_r">
+        <!--Sart: 功能索索 //-->
+
+        <div  class="from_panel">
+          <form method="post" action="#" class="listtab_btn">
+            <table width="100%"  border="0" class="default_table table_from">
+              <tr>
+                <td width="62">实施类别：</td>
+                <td ><select name="select" class="mini_sel">
+                  <option>全部</option>
+                  <option>在线课件</option>
+                  <option>在线测试</option>
+                  <option>线下测试</option>
+                  <option>在线同步课程</option>
+                  <option>面授课程</option>
+                </select></td>
+                <th>实施状态：</th>
+                <td ><select name="select" class="mini_sel">
+                  <option>全部</option>
+                  <option>未回复</option>
+                  <option>已回复</option>
+                </select></td>
+                <td><input type="button" name="input" value=" 查询 " class="btn btn_default"/></td>
+                <td><div class="exportbtn">
+                  <ul>
+                    <li><a href="#" class="expbtn">导出数据</a></li>
+                  </ul>
+                </div></td>
+              </tr>
+            </table>
+          </form>
+          <!-- 功能搜索 End -->
+          <table width="100%" border="0"  class="default_table listtab top10">
+            <thead class="gradual_bg">
+              <tr>
+                <th width="35%" >培训实施名称</th>
+                <th width="120">实施类别</th>
+                <th width="70">实施状态</th>
+                <th width="70">开始日期</th>
+                <th width="78" >截止日期</th>
+                <th width="78" >培训对象</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><a href="resources_view.shtml" title="培训计划名称">培训实施名称</a></td>
+                <td>在线课件</td>
+                <td>全部实施</td>
+                <td><small>2012-11-12</small></td>
+                <td ><small>2012-11-12</small></td>
+                <td align="center" ><a href="overlay_user_view.shtml" class="user_view" title="查看培训对象">12</a></td>
+              </tr>
+              <tr>
+                <td><a href="resources_view.shtml" title="培训计划名称">培训实施名称</a></td>
+                <td>在线测试</td>
+                <td>全部实施</td>
+                <td><small>2012-11-12</small></td>
+                <td ><small>2012-11-12</small></td>
+                <td align="center" ><a href="overlay_user_view.shtml" class="user_view" title="查看培训对象">12</a></td>
+              </tr>
+              <tr>
+                <td><a href="resources_view.shtml" title="培训计划名称">培训实施名称</a></td>
+                <td>线下测试</td>
+                <td>全部实施</td>
+                <td><small>2012-11-12</small></td>
+                <td ><small>2012-11-12</small></td>
+                <td align="center" ><a href="overlay_user_view.shtml" class="user_view" title="查看培训对象">12</a></td>
+              </tr>
+              <tr>
+                <td><a href="resources_view.shtml" title="培训计划名称">培训实施名称</a></td>
+                <td>在线同步课程</td>
+                <td>全部实施</td>
+                <td><small>2012-11-12</small></td>
+                <td ><small>2012-11-12</small></td>
+                <td align="center" ><a href="overlay_user_view.shtml" class="user_view" title="查看培训对象">12</a></td>
+              </tr>
+              <tr>
+                <td><a href="resources_view.shtml" title="培训计划名称">培训实施名称</a></td>
+                <td>面授课程</td>
+                <td>全部实施</td>
+                <td><small>2012-11-12</small></td>
+                <td ><small>2012-11-12</small></td>
+                <td align="center" ><a href="overlay_user_view.shtml" class="user_view" title="查看培训对象">12</a></td>
+              </tr>
+              <tr>
+                <td><a href="resources_view.shtml" title="培训计划名称">培训实施名称</a></td>
+                <td>&nbsp;</td>
+                <td>全部实施</td>
+                <td><small>2012-11-12</small></td>
+                <td ><small>2012-11-12</small></td>
+                <td align="center" ><a href="overlay_user_view.shtml" class="user_view" title="查看培训对象">12</a></td>
+              </tr>
+              <tr>
+                <td><a href="resources_view.shtml" title="培训计划名称">培训实施名称</a></td>
+                <td>&nbsp;</td>
+                <td>全部实施</td>
+                <td><small>2012-11-12</small></td>
+                <td ><small>2012-11-12</small></td>
+                <td align="center" ><a href="overlay_user_view.shtml" class="user_view" title="查看培训对象">12</a></td>
+              </tr>
+              <tr>
+                <td><a href="resources_view.shtml" title="培训计划名称">培训实施名称</a></td>
+                <td>&nbsp;</td>
+                <td>全部实施</td>
+                <td><small>2012-11-12</small></td>
+                <td ><small>2012-11-12</small></td>
+                <td align="center" ><a href="overlay_user_view.shtml" class="user_view" title="查看培训对象">12</a></td>
+              </tr>
+              <tr>
+                <td><a href="resources_view.shtml" title="培训计划名称">培训实施名称</a></td>
+                <td>&nbsp;</td>
+                <td>全部实施</td>
+                <td><small>2012-11-12</small></td>
+                <td ><small>2012-11-12</small></td>
+                <td align="center" ><a href="overlay_user_view.shtml" class="user_view" title="查看培训对象">12</a></td>
+              </tr>
+              <tr>
+                <td><a href="resources_view.shtml" title="培训计划名称">培训实施名称</a></td>
+                <td>&nbsp;</td>
+                <td>全部实施</td>
+                <td><small>2012-11-12</small></td>
+                <td ><small>2012-11-12</small></td>
+                <td align="center" ><a href="overlay_user_view.shtml" class="user_view" title="查看培训对象">12</a></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <!-- 翻页 -->
+        <div class="pagination">
+          <ul>
+                <li>每页显示
+                  <select>
+                    <option>10</option>
+                    <option>20</option>
+                    <option>30</option>
+                    <option>50</option>
+                  </select>
+                  条&nbsp;&nbsp;1/25页 </li>
+                <li class="disablepage">上一页</li>
+                <li class="currentpage">1</li>
+                <li><a href="#">2</a></li>
+                <li><a href="#">3</a></li>
+                <li><a href="#">4</a></li>
+                <li><a href="#">5</a></li>
+                <li><a href="#">6</a></li>
+                <li><a href="#">7</a></li>
+                <li><a href="#">8</a></li>
+                <li><a href="#">9</a>...</li>
+                <li><a href="#">15</a></li>
+                <li><a href="#">16</a></li>
+                <li class="nextpage"><a href="#">下一页</a></li>
+          </ul>
+        </div>
+        <!-- 翻页 -->
+      </div>
+      <div class="clear"></div>
+      <!-- 主内容 End -->
+    </div>
+  </div>
+  <!--// End: container -->
+  <!--#include virtual="../Library/footer.shtml" --></div>
+<script language="javascript" type="text/javascript" src="../js/libs/WdatePicker.js"></script>
+<script src="../js/libs/cbs_userjs.js"></script>
+</body>
+</html>

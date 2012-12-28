@@ -1,0 +1,17 @@
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<h2 id="nyroModalTitle">批量添加</h2>
+<form  method="post" action="user.shtml" >
+<div class="overbody">
+	<table width="100%" border="0" class="default_table">
+		<tr>
+			<td>输入选项，每项一行</td>
+		</tr>
+        <tr>
+           <td><textarea name="" cols="" rows="" class="question_textarea"></textarea></td>
+        </tr>
+	</table></div>
+	<div class="overlay_btn">
+		<input name="保存" type="submit" class="btn btn_submit" value=" 保存 "/>
+		<input type="button" class="btn btn_reset overlayClose" value=" 取消 "/>
+	</div>
+</form>

@@ -1,0 +1,212 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta content="企业培训、企业内训、企业学习、企业大学、渠道大学、e-Learning、学习平台、学习系统、人才管理、岗位胜任力模型、Skillsoft、职业发展、培训管理、继任规划" name="keywords" />
+<meta content="企业商学院是集在线学习、能力测评、学习计划和培训管理为一体的企业学习整体解决方案。帮助企业提升内训、渠道培训、分支机构培训的整体水平，最大程度发掘培训价值，实现培训效益提升，全面促进企业人才培养。" name="description" />
+<title>CBS - 交流社区</title>
+<!--系统样式-->
+<link href="../css/default.css" rel="stylesheet" type="text/css" />
+<!--皮肤样式  Blue-->
+<link href="../css/enterprise_blue.css" rel="stylesheet" type="text/css" />
+<link href="../css/nyroModal.css" rel="stylesheet" type="text/css" />
+<!--[if IE]>
+<link type="text/css" rel="stylesheet" href="../css/ie.css" />
+<![endif]-->
+<!-- jQuery with plugins -->
+<script type="text/javascript" src="../js/libs/jquery-1.4.3.min.js"></script>
+<script language="javascript" type="text/javascript" src="../js/libs/nyroModal1.6.2.min.js"></script>
+<script type="text/javascript">
+    $(document).ready(function() {
+	cbs.tablehover();
+	//查看禁言
+	$('.overlay_nuke_view').nyroModal({
+		width: 400
+	});
+	//恢复
+	$('.overlay_nuke_resume').nyroModal({
+		width: 400
+	});
+	});
+</script>
+</head>
+<body>
+<!-- Start:  Html  //-->
+<div id="content">
+     <!--Start:头部//-->
+	 <!--#include virtual="../Library/header_enterprise.shtml" -->
+	 <!--//End:头部-->
+	<!--Start: container //-->
+	<div id ="container">
+		<div class="box admin_box">
+
+			<!-- 面包屑// -->
+            <div class="bread_crumbs">
+                <a href="community.shtml" >交流社区</a>&nbsp;&#8250;&nbsp;
+                <b>禁言人员</b>
+            </div>
+            <!-- //End:面包屑 -->
+
+ 			<div class="content_body">
+
+                <div class="community_flr"><a href="community.shtml">&laquo;返回</a></div>
+                <div class="clearer"></div>
+
+                <table width="100%" border="0"  class="default_table listtab" >
+                <thead class="gradual_bg">
+                  <tr>
+                    <th width="12%">姓名</th>
+                    <th width="24%">登录ID</th>
+                    <th>所在部门</th>
+                    <th width="20%">操作时间</th>
+                    <th width="14%">操作</th>
+                  </tr>
+                </thead>
+                <tbody>
+                	<tr>
+                    <td>黄云科</td>
+                    <td><a href="mailto:huangyunke@ambow.com">huangyunke@ambow.com</a></td>
+                    <td>安博研究院&#8250;职教及企业培训产品部</td>
+                    <td>2011-01-01 12:34</td>
+                    <td>
+                    <a href="overlay_nuke_view.shtml" class="overlay_nuke_view" title="查看禁言操作">查看</a>&nbsp;|
+                    <a href="overlay_nuke_resume.shtml" class="overlay_nuke_resume" title="恢复权限">恢复权限</a>
+                    </td>
+                    </tr>
+
+                    <tr>
+                    <td>黄云科</td>
+                    <td><a href="mailto:huangyunke@ambow.com">huangyunke@ambow.com</a></td>
+                    <td>安博研究院&#8250;职教及企业培训产品部</td>
+                    <td>2011-01-01 12:34</td>
+                    <td>
+                    <a href="overlay_nuke_view.shtml" class="overlay_nuke_view" title="查看禁言操作">查看</a>&nbsp;|
+                    <a href="overlay_nuke_resume.shtml" class="overlay_nuke_resume" title="恢复权限">恢复权限</a>
+                    </td>
+                    </tr>
+
+                    <tr>
+                    <td>黄云科</td>
+                    <td><a href="mailto:huangyunke@ambow.com">huangyunke@ambow.com</a></td>
+                    <td>安博研究院&#8250;职教及企业培训产品部</td>
+                    <td>2011-01-01 12:34</td>
+                    <td>
+                    <a href="overlay_nuke_view.shtml" class="overlay_nuke_view" title="查看禁言操作">查看</a>&nbsp;|
+                    <a href="overlay_nuke_resume.shtml" class="overlay_nuke_resume" title="恢复权限">恢复权限</a>
+                    </td>
+                    </tr>
+
+                    <tr>
+                    <td>黄云科</td>
+                    <td><a href="mailto:huangyunke@ambow.com">huangyunke@ambow.com</a></td>
+                    <td>安博研究院&#8250;职教及企业培训产品部</td>
+                    <td>2011-01-01 12:34</td>
+                    <td>
+                    <a href="overlay_nuke_view.shtml" class="overlay_nuke_view" title="查看禁言操作">查看</a>&nbsp;|
+                    <a href="overlay_nuke_resume.shtml" class="overlay_nuke_resume" title="恢复权限">恢复权限</a>
+                    </td>
+                    </tr>
+
+                    <tr>
+                    <td>黄云科</td>
+                    <td><a href="mailto:huangyunke@ambow.com">huangyunke@ambow.com</a></td>
+                    <td>安博研究院&#8250;职教及企业培训产品部</td>
+                    <td>2011-01-01 12:34</td>
+                    <td>
+                    <a href="overlay_nuke_view.shtml" class="overlay_nuke_view" title="查看禁言操作">查看</a>&nbsp;|
+                    <a href="overlay_nuke_resume.shtml" class="overlay_nuke_resume" title="恢复权限">恢复权限</a>
+                    </td>
+                    </tr>
+
+                    <tr>
+                    <td>黄云科</td>
+                    <td><a href="mailto:huangyunke@ambow.com">huangyunke@ambow.com</a></td>
+                    <td>安博研究院&#8250;职教及企业培训产品部</td>
+                    <td>2011-01-01 12:34</td>
+                    <td>
+                    <a href="overlay_nuke_view.shtml" class="overlay_nuke_view" title="查看禁言操作">查看</a>&nbsp;|
+                    <a href="overlay_nuke_resume.shtml" class="overlay_nuke_resume" title="恢复权限">恢复权限</a>
+                    </td>
+                    </tr>
+
+                    <tr>
+                    <td>黄云科</td>
+                    <td><a href="mailto:huangyunke@ambow.com">huangyunke@ambow.com</a></td>
+                    <td>安博研究院&#8250;职教及企业培训产品部</td>
+                    <td>2011-01-01 12:34</td>
+                    <td>
+                    <a href="overlay_nuke_view.shtml" class="overlay_nuke_view" title="查看禁言操作">查看</a>&nbsp;|
+                    <a href="overlay_nuke_resume.shtml" class="overlay_nuke_resume" title="恢复权限">恢复权限</a>
+                    </td>
+                    </tr>
+
+                    <tr>
+                    <td>黄云科</td>
+                    <td><a href="mailto:huangyunke@ambow.com">huangyunke@ambow.com</a></td>
+                    <td>安博研究院&#8250;职教及企业培训产品部</td>
+                    <td>2011-01-01 12:34</td>
+                    <td>
+                    <a href="overlay_nuke_view.shtml" class="overlay_nuke_view" title="查看禁言操作">查看</a>&nbsp;|
+                    <a href="overlay_nuke_resume.shtml" class="overlay_nuke_resume" title="恢复权限">恢复权限</a>
+                    </td>
+                    </tr>
+
+                    <tr>
+                    <td>黄云科</td>
+                    <td><a href="mailto:huangyunke@ambow.com">huangyunke@ambow.com</a></td>
+                    <td>安博研究院&#8250;职教及企业培训产品部</td>
+                    <td>2011-01-01 12:34</td>
+                    <td>
+                    <a href="overlay_nuke_view.shtml" class="overlay_nuke_view" title="查看禁言操作">查看</a>&nbsp;|
+                    <a href="overlay_nuke_resume.shtml" class="overlay_nuke_resume" title="恢复权限">恢复权限</a>
+                    </td>
+                    </tr>
+
+                    <tr>
+                    <td>黄云科</td>
+                    <td><a href="mailto:huangyunke@ambow.com">huangyunke@ambow.com</a></td>
+                    <td>安博研究院&#8250;职教及企业培训产品部</td>
+                    <td>2011-01-01 12:34</td>
+                    <td>
+                    <a href="overlay_nuke_view.shtml" class="overlay_nuke_view" title="查看禁言操作">查看</a>&nbsp;|
+                    <a href="overlay_nuke_resume.shtml" class="overlay_nuke_resume" title="恢复权限">恢复权限</a>
+                    </td>
+                    </tr>
+                </tbody>
+                </table>
+
+                <!-- 翻页 -->
+                            <div class="pagination">
+                                <ul>
+                                    <li class="disablepage">上一页</li>
+                                    <li class="currentpage">1</li>
+                                    <li><a href="#">2</a></li>
+                                    <li><a href="#">3</a></li>
+                                    <li><a href="#">4</a></li>
+                                    <li><a href="#">5</a></li>
+                                    <li><a href="#">6</a></li>
+                                    <li><a href="#">7</a></li>
+                                    <li><a href="#">8</a></li>
+                                    <li><a href="#">9</a>...</li>
+                                    <li><a href="#">15</a></li>
+                                    <li><a href="#">16</a></li>
+                                    <li class="nextpage"><a href="#">下一页</a></li>
+                                </ul>
+                            </div>
+                            <!-- 翻页 -->
+
+
+
+
+	   		</div>
+            <!-- content_body End -->
+
+        </div>
+	</div><!-- //End:container-->
+	<!--Start:footer//-->
+	 <!--#include virtual="../Library/footer.shtml" -->
+	 <!--//End:footer//-->
+	</div><!--//End:#content//-->
+<script src="../js/libs/cbs_userjs.js"></script>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<script type="text/javascript">
+    $(document).ready(function() {	
+	//删除
+	$('#overlay_deltopic_success').click(function(e) {
+			e.preventDefault();
+			$.fn.nyroModalManual({
+			    width:400,
+				url: 'overlay_deltopic_success.shtml',
+				title:'删除话题'
+			});
+			return false;
+		});
+ });
+</script>
+ 	<form id="sampleform" method="post" action="#" class="bigFrom">
+	<div class="overlay_interaction">
+        <span class="icon_bigimportant"></span>
+        <div class="overlay_box">
+        <p><strong>选择了2个话题</strong></p>
+        <p>您确认要 <strong>删除</strong> 选择的话题吗？</p>
+        <p><input type="checkbox" name="message" id="message" class="" />&nbsp;<label for="message">通知作者</label></p>
+        </div>
+        <div class="clearer"></div>
+   </div>
+   <div class="overlay_btn">
+    <input type="button" class="btn btn_submit" name="overlay_deltopic_success" id="overlay_deltopic_success" value=" 确定 "/> 
+    <input type="button" class="btn btn_reset overlayClose" value=" 取消 "/>
+	</div> 
+    </form>
+
+
+
+    

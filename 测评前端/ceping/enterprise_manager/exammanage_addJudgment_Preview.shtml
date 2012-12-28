@@ -1,0 +1,191 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta content="企业培训、企业内训、企业学习、企业大学、渠道大学、e-Learning、学习平台、学习系统、人才管理、岗位胜任力模型、Skillsoft、职业发展、培训管理、继任规划" name="keywords" />
+<meta content="企业商学院是集在线学习、能力测评、学习计划和培训管理为一体的企业学习整体解决方案。帮助企业提升内训、渠道培训、分支机构培训的整体水平，最大程度发掘培训价值，实现培训效益提升，全面促进企业人才培养。" name="description" />
+<title>CBS - 用户管理 - 资源管理</title>
+<!--系统样式-->
+<link href="../css/default.css" rel="stylesheet" type="text/css" />
+<!--皮肤样式  Blue-->
+<link href="../css/enterprise_blue.css" rel="stylesheet" type="text/css" />
+<link href="../css/nyroModal.css" rel="stylesheet" type="text/css" />
+<!--[if IE]>
+<link type="text/css" rel="stylesheet" href="../css/ie.css" />
+<![endif]-->
+<!-- jQuery with plugins -->
+<script type="text/javascript" src="../js/libs/jquery-1.4.3.min.js"></script>
+<!-- jQuery tree -->
+<script type="text/javascript" src="../js/libs/jquery.cookie.js"></script>
+<script type="text/javascript" src="../js/libs/jquery.jstree.js"></script>
+<script language="javascript" type="text/javascript" src="../js/libs/nyroModal1.6.2.min.js"></script>
+<script type="text/javascript">
+    $(document).ready(function() {
+	checkAll(name);//CheckBox全选
+	cbs.showSearchPanel(); //搜索区
+
+	/*-------------提示操作 可根据需要删除一下内容----------------*/
+
+
+	 cbs.treeOverlay();//树操作
+
+	 var loadTable = $("#load_exammanageList", parent.document);
+	 var defaultPage ='exammanage_list.shtml';
+	//默认加载
+	$.ajax({
+	    url:defaultPage,
+	    context: document.body,
+		beforeSend:ThisLoading ,//执行ajax前执行loading函数.直到success
+		success: Response //成功时执行Response函数
+	});
+
+   	//执行loading函数
+	function ThisLoading() {
+	  $(loadTable).html('<div class="Loading_List"></div>');
+	}
+
+	//loading完成后执行
+    function Response(data){
+	  	$(loadTable).html(data);
+		getTableList();
+	}
+
+   //添加子页面JS事件
+   function getTableList(e){
+
+	  cbs.tablehover();//表单换行颜色 hover
+
+	  cbs.exportbtn();//导出
+
+	  cbs.selbtnmenu();//下拉菜单
+
+	  //高级编辑器
+	    $('.addQuestions').click(function(e) {
+			e.preventDefault();
+			$.fn.nyroModalManual({
+				width:700,
+				height:400,
+				url: 'overlay_addQuestions.shtml'
+			});
+	  	return false;
+	 });
+
+	  //调整分类
+	  $('.departments').click(function(e) {
+			e.preventDefault();
+			$.fn.nyroModalManual({
+			    width:600,
+				title:"批量增加选项",
+				url: 'overlay_delsector.shtml'
+			});
+		return false;
+	 });
+
+    //删除
+	$('#delcustomer').click(function(e) {
+			e.preventDefault();
+			$.fn.nyroModalManual({
+			    width:380,
+				url: 'overlay_delsector.shtml',
+				title:'系统提示'
+			});
+			return false;
+	 });
+
+	$('.carry_out').nyroModal({width:380});
+
+
+
+	//上传
+	$(".reupdata").nyroModal({
+		width:560
+	  });
+
+
+    }
+
+	 //测试
+	 $('.delthis').live('click',function(e) {
+		    $(this).text('推荐');
+		    reLoadTbaleList();
+			alert('我被点击,我是第'+$(this).parent().parent().parent().parent().parent().index()+"行");
+			return false;
+	 });
+
+
+
+	//局部刷新
+    function reLoadTbaleList(e){
+
+		$.ajax({
+		  url:defaultPage,
+		  context: document.body,
+		  beforeSend:ThisLoading ,
+		  success: Response //成功时执行Response函数
+	 });
+   }
+
+
+});
+</script>
+
+
+
+
+
+
+</head>
+<body>
+<!-- Start:  Html  //-->
+<div id="content">
+	  <!-- Start:  header //-->
+  <!--#include virtual="../Library/header_enterprise.shtml" -->
+  <!--// End: header-->
+	<!-- ==============================Start: container //=========================-->
+	<div id ="container">
+		<div class="box admin_box">
+			<!-- 面包屑// -->
+            <div class="bread_crumbs">
+               <a class="to5_0" href="resources/toMyResourceBase.action">资源管理</a>&nbsp;&#8250;&nbsp;
+               <a href="exammanage.shtml" >题库管理</a>&nbsp;&#8250;&nbsp;
+			   <a href="exammanage_addQuestions.shtml" >新增试题</a>&nbsp;&#8250;&nbsp;<b>预览试题</b>
+			</div><!-- //End:面包屑 -->
+			<!--Start:sidebar//-->
+
+            <div class="exammanage_contnet">
+           <h1 class="title">预览试题</h1>
+           <div class="exammanage_Preview">
+            <table width="800" border="0" align="center" cellpadding="2" cellspacing="2" >
+  <tr>
+<td width="100" height="13" align="right" valign="top">【单项选择题】：</td>
+<td width="660"> 中国的首都是北京。</td>
+  </tr>
+  <tr>
+    <td align="right">【正确答案】：</td>
+    <td class="exammanage_text_red"><b>正确</b></td>
+  </tr>
+  <tr>
+    <td align="right">&nbsp;</td>
+    <td class="exammanage_NodeSelect">
+    <ul>
+    <li><input name="RadioGroup1" type="radio" id="RadioGroup1_0" value="单选" /> A ：正确</li>
+    <li><input name="RadioGroup1" type="radio" id="RadioGroup1_1" value="单选" checked="checked" /> B ：错误</li>
+    </ul></td>
+  </tr>
+  <tr>
+    <td colspan="2" align="center"><input name="" type="button" class="btn btn_reset"  onclick="location.href='exammanage_addJudgment.shtml';" value="返回" /></td>
+    </tr>
+            </table>
+           </div>
+            <div class="clear"></div>
+            </div>
+
+			<!-- 树 End -->
+			<!-- //End:content_r-->
+
+		 </div><!-- //End:admin_box-->
+	</div><!-- //End:container-->  <!--#include virtual="../Library/footer.shtml" --></div>
+<!-- 声明 引用-->
+<script src="../js/libs/cbs_userjs.js"></script>
+</body>
+</html>

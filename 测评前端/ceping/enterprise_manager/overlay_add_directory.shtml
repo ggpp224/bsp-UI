@@ -1,0 +1,21 @@
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<h2>新增目录</h2>
+<form  method="post" action="#" class="bigFrom">
+  <dl class="list">
+    <dt>目录名称：</dt>
+    <dd>
+      <input type="text" class="default_txt" value="" name=""/>
+    </dd>
+  </dl>
+  <dl class="list">
+    <dt>目录编码：</dt>
+    <dd>
+      <input type="text" class="default_txt" value="" name=""/>
+    </dd>
+  </dl>
+  <div class="clear"></div>
+  <div class="overlay_btn">
+    <input type="button" class="btn btn_submit close" value=" 确定 "/>
+    <input type="button" class="btn btn_reset nyroModalClose" value=" 取消 "/>
+  </div>
+</form>

@@ -1,0 +1,53 @@
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<table width="100%" border="0" class="default_table form_table top10 narrowth">
+	<tr>
+		<th><span>*</span> 问卷名称：</th>
+		<td width="300">
+			<input type="text" class="default_txt" value="" size="30"/>
+		</td>
+		<th><span>*</span> 问卷编码：</th>
+		<td>
+			<input type="text" class="default_txt" value="" size="30"/>
+		</td>
+	</tr>
+	<tr>
+		<th valign="top">问卷描述：</th>
+		<td colspan="3">
+		    <textarea name="textarea2" rows="4" class="default_textarea w630">
+输入问卷的使用范围、适用对象、调查目的，帮助您有效的运用、管理调查问卷。</textarea>
+		</td>
+	</tr>
+    <tr>
+		<td colspan="4" ><hr /></td>
+	</tr>
+    <tr>
+		<td colspan="4">
+        <label onmouseup="window.location='question_add.shtml'"><input type="radio" name="caozuoradio" checked="checked" /><b>页面操作</b></label>
+        <label onmouseup="window.location='question_import.shtml'"><input type="radio" name="caozuoradio" />excel批量导入题目</label>
+        </td>
+	</tr>
+
+    <tr><td colspan="4" style="line-height:0; ">&nbsp;</td></tr>
+
+	<tr>
+		<td colspan="4" valign="top">
+        <ul class="operation_nav">
+		    <!-- <li class="importbtn"><a href="question_import.shtml" ><span>&nbsp;</span>批量导入题目</a></li> -->
+		    <li class="radiobtn" onClick="addradiohtml()"><a href="javascript:;"><span>&nbsp;</span>单选题</a></li>
+		    <li class="checkboxbtn" onClick="addcheckboxhtml()"><a href="javascript:;" ><span>&nbsp;</span>多选题</a></li>
+		    <li class="textbtn" onClick="addtexthtml()"><a href="javascript:;" ><span>&nbsp;</span>简答题</a></li>
+		    </ul>
+        </td>
+	</tr>
+	<tr>
+		<td colspan="4" valign="top">
+			<!--Start:调查问券创建区//-->
+			<ol class="list"  id="questionlist" type="1" start="1"></ol>
+		</td>
+		</tr>
+		<tr>
+			<th colspan="4" >&nbsp;</th>
+		</tr>
+   </table>
+
+

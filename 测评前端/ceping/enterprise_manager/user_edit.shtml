@@ -1,0 +1,202 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta content="企业培训、企业内训、企业学习、企业大学、渠道大学、e-Learning、学习平台、学习系统、人才管理、岗位胜任力模型、Skillsoft、职业发展、培训管理、继任规划" name="keywords" />
+<meta content="企业商学院是集在线学习、能力测评、学习计划和培训管理为一体的企业学习整体解决方案。帮助企业提升内训、渠道培训、分支机构培训的整体水平，最大程度发掘培训价值，实现培训效益提升，全面促进企业人才培养。" name="description" />
+<title>CBS - 用户管理 - 新增</title>
+<!--系统样式-->
+<link href="../css/default.css" rel="stylesheet" type="text/css" />
+<!--皮肤样式  Blue-->
+<link href="../css/enterprise_blue.css" rel="stylesheet" type="text/css" />
+<link href="../css/nyroModal.css" rel="stylesheet" type="text/css" />
+<!--[if IE]>
+<link type="text/css" rel="stylesheet" href="../css/ie.css" />
+<![endif]-->
+<!-- jQuery with plugins -->
+<script type="text/javascript" src="../js/libs/jquery-1.4.3.min.js"></script>
+<script language="javascript" type="text/javascript" src="../js/libs/WdatePicker.js"></script>
+<!-- jQuery tree -->
+<script type="text/javascript" src="../js/libs/jquery.cookie.js"></script>
+<script type="text/javascript" src="../js/libs/jquery.jstree.js"></script>
+<script language="javascript" type="text/javascript" src="../js/libs/nyroModal1.6.2.min.js"></script>
+<script type="text/javascript">
+    $(document).ready(function() {
+	//选择部门
+	$(".dept_sel").click(function(e) {
+			e.preventDefault();
+			$.fn.nyroModalManual({
+			    width:600,
+				title:'选择所属部门',
+				url: 'overlay_dept_select.shtml'
+			});
+		return false;
+	});
+
+	//岗位
+	$(".position_sel").focus(function(e) {
+			e.preventDefault();
+			$.fn.nyroModalManual({
+			    width:680,
+				title:'选择所属岗位',
+				url: 'overlay_position_more.shtml'
+			});
+		return false;
+	});
+
+	//分组
+	$(".groups_sel").focus(function(e) {
+			e.preventDefault();
+			$.fn.nyroModalManual({
+			    width:600,
+				title:'选择所属岗位',
+				url: 'overlay_groups_select.shtml'
+			});
+		return false;
+	});
+		});
+</script>
+</head>
+<body>
+<!-- Start:  Html  //-->
+<div id="content">
+  <!-- Start:  header //-->
+  <!--#include virtual="../Library/header_enterprise.shtml" -->
+  <!--// End: header-->
+  <!-- Start: container //-->
+  <div id ="container">
+    <div class="box admin_box">
+      <!-- 面包屑 --><div class="bread_crumbs">
+				   <a href="user.shtml">用户管理</a> &nbsp;&#8250;&nbsp;<a href="user.shtml" >按部门</a> &nbsp;&#8250;&nbsp;<b>新增用户</b></div>
+      <!-- 面包屑 End -->
+      <form method="post" action="user_info.shtml" class="bigFrom padding28">
+        <h1 class="panel_title">基本信息</h1>
+        <dl class="from_panel">
+          <dt>
+            <label><span>*</span> 用户姓名：</label>
+          </dt>
+          <dd class="info_success">
+            <input type="text" class="default_txt" value="" size="30"/><span></span>正确
+          </dd>
+          <dt>
+            <label><span>*</span> 登录ID：</label>
+          </dt>
+          <dd >
+            <input type="text" class="default_txt input_wait " value="1000012" size="30" readonly="readonly"/>
+          </dd>
+          <dt>性别：</dt>
+          <dd>
+            <label>
+              <input type="radio" name="radio" id="radio" value="radio" />
+              男 </label>
+            <label>
+              <input type="radio" name="radio" id="radio2" value="radio" />
+              女</label>
+          </dd>
+          <dt>
+            <label>出生日期：</label>
+          </dt>
+          <dd>
+            <input type="text" class="dateinput" id="d122" onFocus="WdatePicker({isShowWeek:true,onpicked:function(){}})" size="30"/>
+            &nbsp;</dd>
+         <dt><span>*</span> 有效期限：</dt>
+          <dd>
+            <input type="text" class="dateinput" id="d122" onFocus="WdatePicker({isShowWeek:true,onpicked:function(){}})" size="30"/>
+							-
+							<input type="text" class="dateinput" id="d122" onFocus="WdatePicker({isShowWeek:true,onpicked:function(){}})" size="30"/>
+            &nbsp; </dd>
+        </dl>
+      </form>
+      <!--  组织信息 -->
+      <form id="flight" method="post" action="#" class="bigFrom padding28">
+        <h1 class="panel_title">组织信息</h1>
+        <dl class="from_panel">
+          <dt>
+            <label><span>*</span> 所属部门：</label>
+          </dt>
+           <dd class="info_error"><input type="text" class="default_txt overlay_in dept_sel" size="50"/><span></span>不能为空</dd>
+          <dt>
+            <label>所属岗位：</label>
+          </dt>
+          <dd><input type="text" class="default_txt overlay_in position_sel" value="" size="50"/></dd>
+          <dt>
+            <label>所属分组：</label>
+          </dt>
+          <dd><input type="text" class="default_txt overlay_in groups_sel" value="" size="50"/></dd>
+        </dl>
+
+      </form>
+      <!--  雇佣信息 -->
+      <form id="flight" method="post" action="#" class="bigFrom padding28">
+        <h1 class="panel_title">雇佣信息</h1>
+        <dl class="from_panel">
+          <dt>
+            <label>工号：</label>
+          </dt>
+          <dd>
+            <input type="text" class="default_txt" value="" name="" size="30" />
+          </dd>
+          <dt>
+            <label>首次参加工作时间：</label>
+          </dt>
+          <dd>
+          	<input type="text" class="dateinput" id="d" onfocus="WdatePicker({isShowWeek:true,onpicked:function(){}})" size="30"/>
+          	&nbsp;</dd>
+          <dt>
+            <label>入职日期：</label>
+          </dt>
+          <dd>
+            <input type="text" class="dateinput" id="d122" onFocus="WdatePicker({isShowWeek:true,onpicked:function(){}})" size="30"/>
+            &nbsp;</dd>
+        </dl>
+
+      </form>
+      <!--  联系方式 -->
+      <form id="flight" method="post" action="#" class="bigFrom padding28">
+        <h1 class="panel_title">联系方式</h1>
+        <dl class="from_panel">
+          <dt>
+            <label><span>*</span> E-mail：</label>
+          </dt>
+          <dd class="info_success">
+            <input type="text" class="default_txt" value="" name="" size="30" /><span></span>正确
+          </dd>
+          <dt>
+            <label>联系电话：</label>
+          </dt>
+          <dd>
+            <input type="text" class="default_txt" value="" name="" size="30" />
+          </dd>
+          <dt>
+            <label>通信地址：</label>
+          </dt>
+          <dd>
+            <select name="" class="mini_sel">
+              <option>-选择省-</option>
+            </select>
+            <select name="" class="mini_sel">
+              <option>-选择市-</option>
+            </select>
+            <input type="text" class="default_txt" value="" name="" size="30" />
+          </dd>
+          <dt>
+            <label>邮政编码：</label>
+          </dt>
+          <dd>
+            <input type="text" class="default_txt" value="" name="" size="30" />
+          </dd>
+        </dl>
+
+      </form>
+
+        <div class="but_box margin28 edit_box t_b115 " >
+          <input type="submit" class="btn btn_submit" value="保存"/>
+          <input name="重置" type="reset" class="btn btn_reset" value="取消"/>
+        </div><!--// box edit_box-->
+    </div><!--// box admin_box -->
+  </div>
+  <!--// End: container -->  <!--#include virtual="../Library/footer.shtml" --></div>
+
+<script src="../js/libs/cbs_userjs.js"></script>
+</body>
+</html>

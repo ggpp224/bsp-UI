@@ -1,0 +1,52 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta content="企业培训、企业内训、企业学习、企业大学、渠道大学、e-Learning、学习平台、学习系统、人才管理、岗位胜任力模型、Skillsoft、职业发展、培训管理、继任规划" name="keywords" />
+<meta content="企业商学院是集在线学习、能力测评、学习计划和培训管理为一体的企业学习整体解决方案。帮助企业提升内训、渠道培训、分支机构培训的整体水平，最大程度发掘培训价值，实现培训效益提升，全面促进企业人才培养。" name="description" />
+<title>资源管理 - 试卷管理</title>
+<link href="../css/default.css" rel="stylesheet" type="text/css" />
+<!--皮肤样式  Blue-->
+<link href="../css/enterprise_blue.css" rel="stylesheet" type="text/css" />
+<link href="../css/nyroModal.css" rel="stylesheet" type="text/css" />
+<link href="../css/enterprise_blue.css" rel="stylesheet" type="text/css" />
+<link href="../css/gkcss.css" rel="stylesheet" type="text/css" />
+<link href="../js/libs/dxtree/dhtmlxtree.css" rel="stylesheet" type="text/css" />
+<link href="../js/libs/dxwindow/dhtmlxwindows.css" rel="stylesheet" type="text/css" />
+<link href="../js/libs/dxwindow/skins/dhtmlxwindows_dhx_skyblue.css" rel="stylesheet" type="text/css" />
+<style type="text/css">
+#topic_setting li{list-style:none;list-style-position:outside;}
+.default_table th, .default_table td{
+word-break:break-all;word-wrap:break-word;
+}
+.topic_view_del{float:right;}
+.online_test_list_right{width:530px;}
+#topic_setting ul{*zoom:1;*dispaly:inline;}
+.operate{float:right; width:100px;}
+.operate li{ float:right;}
+.operate li a{width: 16px;}
+.clear{clear:both;}
+.operate .tree_dell{ background-position: -5px -1111px;height: 18px;*zoom:1;display:inline-block;
+    margin: 3px 3px 0 0;
+    overflow: hidden; float:left;}
+</style>
+<!--[if IE]>
+<link type="text/css" rel="stylesheet" href="../css/ie.css" />
+<![endif]-->
+</head>
+<body>
+<!-- Start:  Html  //-->
+<div id="content">
+  <!--Start:header //-->
+  <!--#include virtual="../Library/header_enterprise.shtml" -->
+
+    	<div id ="container">
+    		<div id="firstPage"></div>
+    		<div id="otherPage"></div>
+
+	  </div><!--//end:container-->
+	  <!--#include virtual="../Library/footer.shtml" -->
+   </div><!--//end:content-->
+    <script data-main="../js/main-enterprise_manager" src="../js/libs/require.js"></script>
+</body>
+</html>

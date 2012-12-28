@@ -1,0 +1,31 @@
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<form  method="post" action="#" class="tree">
+  <h3 class="msg_box box-info">已选试卷：
+    试卷1，试卷1，试卷1，试卷1，试卷1，试卷11，试卷1，试卷1，试卷1，试卷1，试卷1，试卷11，试卷1，试卷1，试卷1，试卷1，试卷1，试卷11，试卷1，试卷1，试卷1，试卷1，试卷1，试卷11，试卷1，试卷1，试卷1，试卷1，试卷1，试卷11，试卷1，试卷1，试卷1，试卷1，试卷1，试卷11，试卷1，试卷1，试卷1，试卷1，试卷1，试卷11，试卷1，试卷1，试卷1，试卷1，试卷1，试卷11，试卷1，试卷1，试卷1，试卷1，试卷1，试卷11，试卷1，试卷1，试卷1，试卷1，试卷1，试卷11，试卷1，试卷1，试卷1，试卷1，试卷1，试卷11，试卷1，试卷1，试卷1，试卷1，试卷1，试卷11
+    </h3>
+  <div class="y-scroll">
+    <p class="box-info">请选择目标分类节点</p> 
+    <div id="load_html_data1"></div>
+  </div>
+  <div class="overlay_btn">
+    <input name="提交" type="submit" class="btn btn_submit" value=" 保存 "/>
+    <input type="button" class="btn btn_reset close" value=" 取消 "/>
+  </div>
+</form>
+<script type="text/javascript">
+    $(document).ready(function() {	
+ // load html data from file
+$("#load_html_data1").jstree({ 
+		"html_data" : {
+			"ajax" : {
+				"url" : "data/examinationpaper.shtml",
+				"data" : function (n) { 
+					return { id : n.attr ? n.attr("id") : 0 }; 
+				}
+			}
+		},
+		"plugins" : [ "themes", "html_data" ,"contextmenu","cookies","ui","crrm","dnd"] 
+		
+	});
+ });
+</script>

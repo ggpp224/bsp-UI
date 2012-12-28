@@ -1,0 +1,105 @@
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<form  method="post" action="#" >
+<div class="overbody">
+  <table width="100%" class="default_table">
+  
+  <tr>
+    <td>&nbsp;</td>
+    <td colspan="3"><input type="text" class="default_txt" size="24"/>
+	   <input type="submit" class="btn btn_reset" value="查询"/>
+    </td>
+    </tr>
+    
+    <tr>
+    <td>
+    <strong>已选人员名单：</strong>
+    	<div class="minibox_name noscroll">
+          <div class="studentname">
+				<p><span></span>马博士</p>
+                <p><span></span>董汉生</p>
+                <p><span></span>尧舜祥</p>
+                <p><span></span>梁俊豪</p>
+                <p><span></span>毛旭峰</p>
+                <p><span></span>马博士</p>
+                <p><span></span>董汉生</p>
+                <p><span></span>尧舜祥</p>
+                <p><span></span>梁俊豪</p>
+                <p><span></span>毛旭峰</p>
+                
+          </div>
+        </div>
+    </td>
+    
+    <td class="no_padding"><strong>分组列表：</strong>
+    <div class="sellistbox ">
+		<ol class="user_search_list" >
+		  <li><input name="" type="checkbox" value="" />01分组名称</li>
+		  <li><input name="" type="checkbox" value="" />分组名称</li>
+		  <li><input name="" type="checkbox" value="" />分组名称</li>
+		  <li><input name="" type="checkbox" value="" />分组名称</li>
+		  <li><input name="" type="checkbox" value="" />分组名称</li>
+		  <li><input name="" type="checkbox" value="" />分组名称</li>
+		  <li><input name="" type="checkbox" value="" />分组名称</li>
+		  <li><input name="" type="checkbox" value="" />分组名称</li>
+		  <li><input name="" type="checkbox" value="" />分组名称</li>
+		  <li><input name="" type="checkbox" value="" />分组名称</li>
+		  <li><input name="" type="checkbox" value="" />分组名称</li>
+		  <li><input name="" type="checkbox" value="" />分组名称</li>
+		  <li><input name="" type="checkbox" value="" />分组名称</li>
+		  <li><input name="" type="checkbox" value="" />分组名称</li>
+		  <li><input name="" type="checkbox" value="" />分组名称</li>
+		</ol>
+	</div>
+	</td>
+    
+      <td align="center"><button class="addbtn">添加</button>
+        <button class="delallbtn">全移除</button>
+		</td>
+        
+      <td class="no_padding"><strong>已选分组：</strong>
+         <div class="minibox noscroll" >
+          <div class="divselect">
+            <ul>
+              <li><a href="#" class="delico"  title="从列表删除">从列表删除</a><span>分组名称01</span></li>
+              <li><a href="#" class="delico"  title="从列表删除">从列表删除</a><span>分组名称02</span></li>
+              <li><a href="#" class="delico"  title="从列表删除">从列表删除</a><span>分组名称03</span></li>
+              <li><a href="#" class="delico"  title="从列表删除">从列表删除</a><span>分组名称</span></li>
+              <li><a href="#" class="delico"  title="从列表删除">从列表删除</a><span>分组名称</span></li>
+              <li><a href="#" class="delico"  title="从列表删除">从列表删除</a><span>分组名称</span></li>
+              <li><a href="#" class="delico"  title="从列表删除">从列表删除</a><span>分组名称</span></li>
+              <li><a href="#" class="delico"  title="从列表删除">从列表删除</a><span>分组名称</span></li>
+              <li><a href="#" class="delico"  title="从列表删除">从列表删除</a><span>分组名称</span></li>
+              <li><a href="#" class="delico"  title="从列表删除">从列表删除</a><span>分组名称</span></li>
+              <li><a href="#" class="delico"  title="从列表删除">从列表删除</a><span>分组名称</span></li>
+              <li><a href="#" class="delico"  title="从列表删除">从列表删除</a><span>分组名称</span></li>
+              <li><a href="#" class="delico"  title="从列表删除">从列表删除</a><span>分组名称</span></li>
+              <li><a href="#" class="delico"  title="从列表删除">从列表删除</a><span>分组名称</span></li>
+            </ul>
+          </div>
+        </div>
+        </td>
+    </tr>
+    
+  </table>
+  </div>
+  <div class="overlay_btn">
+    <input type="button" class="btn btn_submit" value=" 保存 "/>
+    <input type="button" class="btn btn_reset overlayClose" value=" 取消 "/>
+  </div>
+</form>
+<script type="text/javascript">
+    $(document).ready(function() {
+// load html data from file
+$("#load_html_data1").jstree({ 
+		"html_data" : {
+			"ajax" : {
+				"url" : "data/data_resources.shtml",
+				"data" : function (n) { 
+					return { id : n.attr ? n.attr("id") : 0 }; 
+				}
+			}
+		},
+		"plugins" : [ "themes", "html_data" ,"checkbox","contextmenu","cookies","ui","crrm","dnd"] 		
+	});
+	});
+</script>

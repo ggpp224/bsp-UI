@@ -1,0 +1,150 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta content="企业培训、企业内训、企业学习、企业大学、渠道大学、e-Learning、学习平台、学习系统、人才管理、岗位胜任力模型、Skillsoft、职业发展、培训管理、继任规划" name="keywords" />
+<meta content="企业商学院是集在线学习、能力测评、学习计划和培训管理为一体的企业学习整体解决方案。帮助企业提升内训、渠道培训、分支机构培训的整体水平，最大程度发掘培训价值，实现培训效益提升，全面促进企业人才培养。" name="description" />
+<title>CBS - 资源报表 - 培训实施报表</title>
+<!--系统样式-->
+<link href="../css/default.css" rel="stylesheet" type="text/css" />
+<!--皮肤样式  Blue-->
+<link href="../css/enterprise_blue.css" rel="stylesheet" type="text/css" />
+<link href="../css/enterprise_report.css" rel="stylesheet" type="text/css" />
+<!--[if IE]>
+<link type="text/css" rel="stylesheet" href="../css/ie.css" />
+<![endif]-->
+<!-- jQuery with plugins -->
+<script type="text/javascript" src="../js/libs/jquery-1.4.3.min.js"></script>
+<script src="../js/libs/cbs_userjs.js"></script>
+<script type="text/javascript" src="../js/libs/jsapi"></script>
+<script type="text/javascript" src="../js/libs/jquery.gvchart.js"></script>
+<script type="text/javascript">
+		gvChartInit();
+		jQuery(document).ready(function(){
+			jQuery('.chart').gvChart({
+				chartType: 'PieChart',
+				gvSettings: {
+					width: 450,
+					height: 300
+					}
+			});
+			cbs.tablehover();//表单换行颜色 hover
+			jQuery('.chart2').gvChart({
+				chartType: 'ColumnChart',
+				gvSettings: {
+					vAxis: {title: '参与人数'},
+					hAxis: {title: '月份'},
+					width: 450,
+					height: 300
+					}
+			});
+		});
+		</script>
+</head>
+<body>
+<!-- Start:  Html  //-->
+<div id="content">
+  <!--Start:header //-->
+  <!--#include virtual="../Library/header_enterprise.shtml" -->
+  <!-- Start: container //-->
+  <div id="container">
+    <div class="box admin_box">
+      <!-- 面包屑 -->
+      <div class="bread_crumbs">  <a href="user.shtml">统计报表</a>&nbsp;&#8250;&nbsp;<b>培训实施报表</b></div>  <!-- 面包屑 End -->
+      <div class="padding28">
+
+      	<ul class="reporttabs">
+          <li class="current"><a href="report_deploy.shtml">概况统计图 </a></li>
+                <li><a href="report_deploy_date.shtml">统计数据 </a></li>
+      </ul>
+
+      <div class="fl">
+        <table class="chart">
+          <caption>
+            培训实施类别分布统计
+            </caption>
+          <thead>
+            <tr>
+              <th>实施类别</th>
+              <th>在线课件</th>
+              <th>在线测试</th>
+              <th>线下测试</th>
+              <th>在线同步课程</th>
+              <th>面授课程</th>
+              </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th>参与人数</th>
+              <td>12</td>
+              <td>8</td>
+              <td>4</td>
+              <td>8</td>
+              <td>4</td>
+              </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="fr">
+      <table class="chart2">
+        <caption>
+          近3月各类培训实施参与人数统计
+        </caption>
+        <thead>
+          <tr>
+            <th>实施类别</th>
+            <th >2011年1月</th>
+            <th>2011年2月</th>
+            <th>2011年3月</th>
+            </tr>
+            </thead>
+             <tbody>
+          <tr>
+            <th>在线课件</th>
+            <td>12</td>
+            <td>16</td>
+            <td>32</td>
+            </tr>
+          <tr>
+            <th>在线测试</th>
+            <td>8</td>
+            <td>10</td>
+            <td>22</td>
+            </tr>
+          <tr>
+            <th>线下测试</th>
+            <td>6</td>
+            <td>12</td>
+            <td>15</td>
+            </tr>
+          <tr>
+            <th>在线同步课程</th>
+            <td>4</td>
+            <td>10</td>
+            <td>14</td>
+            </tr>
+          <tr>
+            <th>面授课程</th>
+            <td>8</td>
+            <td>5</td>
+            <td>8</td>
+            </tr>
+        </tbody>
+      </table>
+      </div>
+
+      <div class="clear"></div>
+
+
+
+
+      </div>
+      <!-- 主内容 End -->
+    </div>
+  </div>
+  <!--// End: container -->
+  <!--#include virtual="../Library/footer.shtml" -->
+</div>
+<!--// End: Html -->
+</body>
+</html>

@@ -1,0 +1,209 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta content="企业培训、企业内训、企业学习、企业大学、渠道大学、e-Learning、学习平台、学习系统、人才管理、岗位胜任力模型、Skillsoft、职业发展、培训管理、继任规划" name="keywords" />
+<meta content="企业商学院是集在线学习、能力测评、学习计划和培训管理为一体的企业学习整体解决方案。帮助企业提升内训、渠道培训、分支机构培训的整体水平，最大程度发掘培训价值，实现培训效益提升，全面促进企业人才培养。" name="description" />
+<title>CBS - 统计报表 - 培训实施报表</title>
+<!--系统样式-->
+<link href="../css/default.css" rel="stylesheet" type="text/css" />
+<!--皮肤样式  Blue-->
+<link href="../css/enterprise_blue.css" rel="stylesheet" type="text/css" />
+<link href="../css/enterprise_report.css" rel="stylesheet" type="text/css" />
+<link href="../css/nyroModal.css" rel="stylesheet" type="text/css" />
+<!--[if IE]>
+<link type="text/css" rel="stylesheet" href="../css/ie.css" />
+<![endif]-->
+<!-- jQuery with plugins -->
+<script type="text/javascript" src="../js/libs/jquery-1.4.3.min.js"></script>
+<script language="javascript" type="text/javascript" src="../js/libs/nyroModal1.6.2.min.js"></script>
+<script src="../js/libs/overlib.js"></script>
+<script src="../js/libs/cbs_userjs.js"></script>
+<script type="text/javascript">
+    $(document).ready(function() {
+	cbs.tablehover();//表单换行颜色 hover
+	//弹窗
+	$(".tabico_view").nyroModal({
+		width:800
+	});
+});
+</script>
+</head>
+<body>
+<!-- Start:  Html  //-->
+<div id="content">
+  <!--Start:header //-->
+  <!--#include virtual="../Library/header_enterprise.shtml" -->
+  <!-- Start: container //-->
+  <div id="container">
+    <div class="box admin_box">
+      <!-- 面包屑 -->
+      <div class="bread_crumbs">  <a href="user.shtml">统计报表</a>&nbsp;&#8250;&nbsp;<a href="report_deploy.shtml">培训实施报表</a> &#8250;&nbsp;<b>培训实施详情统计</b></div>
+      <!-- 面包屑 End -->
+      <!-- 主内容 -->
+      <div class="content_body">
+        <!-- 搜索 -->
+        <div class="features_search">
+          <p>&nbsp;</p>
+          <h1 class="report_title">“线下测试类培训实施名称XXX”统计报表</h1>
+          <p align="center">最新数据更新时间：<span class="lightfont">2011-02-02 00:00</span></p>
+          <div>
+           <p align="right">&nbsp;</p>
+            <table width="100%" border="0">
+              <tr>
+                <td width="80" class="msg_box"><strong>测试时间：</strong></td>
+                <td width="280" class="msg_box">2011/01/01 00:00 - 2011/03/01 00:00(XX分钟）</td>
+                <th width="80" height="26" align="left"><p><strong>测试地点：</strong></p></th>
+                <td>XXXXXXXXXXXXXXXXXXXXXXXXX</td>
+              </tr>
+              <tr>
+                <td><strong>满 分 值：</strong></td>
+                <td>100</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+              </tr>
+              <tr>
+                <td><strong>通过条件：</strong></td>
+                <td>达标分数：<b class="font_green">XX</b>；优秀分数：<b class="font_blue">XX</b></td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+              </tr>
+
+            </table>
+             <ul class="reporttabs">
+ <li  class="current"><a href="report_deploy_offline.shtml">参与度统计</a></li>
+                <li><a href="report_deploy_offline2.shtml">测试成绩统计</a></li>
+      </ul>
+             <table width="100%" border="0" cellspacing="0" cellpadding="0">
+               <tr>
+                 <td height="40" colspan="3"><div class="fl"><strong>整体人员参与率：</strong></div>
+                   <div class="progress">
+                     <div style="width:34px;"></div>
+                   </div>
+                   34%</td>
+               </tr>
+               <tr>
+                 <td height="40" colspan="3" class="info-box"><strong>说明：</strong><br />“整体人员参与率”是指通过该项培训实施完成该项测试的用户占该次培训实施所有培训对象的百分比。</td>
+               </tr>
+             </table>
+          </div>
+        </div>
+        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td>
+              姓名：
+              <input name="textfield" type="text" class="default_txt" id="textfield" />
+              参与情况：
+              <select name="select2" id="select2">
+                <option>全部</option>
+                <option>是</option>
+                <option>否</option>
+              </select>
+              <input type="button" name="input2" value=" 查询 " class="btn btn_default"/>
+              <input type="button" name="input" class="btn btn_add"  value="返回" onclick="window.location='report_deploy.shtml'"/>
+           </td>
+            <td><div class="exportbtn">
+            <ul>
+              <li><a href="#" class="expbtn">导出</a></li>
+            </ul>
+          </div></td>
+          </tr>
+        </table>
+
+        <div class="boxborder">
+                <table width="100%" border="0" cellspacing="0" cellpadding="0" class="default_table listtab">
+                  <thead class="gradual_bg">
+                    <tr>
+                      <th>姓名</th>
+                      <th>登录ID</th>
+                      <th>所属部门</th>
+                      <th>参与情况</th>
+                      <th style="width:75px;">备注</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>李某某</td>
+                      <td>liumoumou@ambow.com</td>
+                      <td>XXXXX部门</td>
+                      <td>是</td>
+                      <td><span class="onmousetab_layout" onmouseover="return overlib('<p class=mlrminfo>主要针对SP方向合作伙伴,讲解思科运营商安全解决方案,尤其是DDOS防护解决方案的售前销售思路以及产品测试步骤,售后部署内容. 3G 防护板卡升级及部署注意事项.</p>', CAPTION, '', HAUTO,VAUTO )" onmouseout=nd();>我是无聊的备注，我是无聊的备注，我是无聊的备注，我是无聊的备注，我是无聊的备注，我是无聊的备注，我是无聊的备注，我是无聊的备注，我是无聊的备注，我是无聊的备注，我是无聊的备注，我是无聊的备注，我是无聊的备注，我是无聊的备注。</span></td>
+                    </tr>
+                    <tr>
+                      <td>&nbsp;</td>
+                      <td>&nbsp;</td>
+                      <td>&nbsp;</td>
+                      <td>&nbsp;</td>
+                      <td><span class="onmousetab_layout" onmouseover="return overlib('<p class=mlrminfo>主要针对SP方向合作伙伴,讲解思科运营商安全解决方案,尤其是DDOS防护解决方案的售前销售思路以及产品测试步骤,售后部署内容. 3G 防护板卡升级及部署注意事项.</p><p class=mlrminfo>主要针对SP方向合作伙伴,讲解思科运营商安全解决方案,尤其是DDOS防护解决方案的售前销售思路以及产品测试步骤,售后部署内容. 3G 防护板卡升级及部署注意事项.</p><p class=mlrminfo>主要针对SP方向合作伙伴,讲解思科运营商安全解决方案,尤其是DDOS防护解决方案的售前销售思路以及产品测试步骤,售后部署内容. 3G 防护板卡升级及部署注意事项.</p>', CAPTION, '', HAUTO,VAUTO )" onmouseout=nd();>我是无聊的备注，我是无聊的备注，我是无聊的备注，我是无聊的备注，我是无聊的备注，我是无聊的备注，我是无聊的备注，我是无聊的备注，我是无聊的备注，我是无聊的备注，我是无聊的备注，我是无聊的备注，我是无聊的备注，我是无聊的备注。</span></td>
+                    </tr>
+                    <tr>
+                      <td>&nbsp;</td>
+                      <td>&nbsp;</td>
+                      <td>&nbsp;</td>
+                      <td>&nbsp;</td>
+                      <td><span class="onmousetab_layout" onmouseover="return overlib('<p class=mlrminfo>主要针对SP方向合作伙伴,讲解思科运营商安全解决方案,尤其是DDOS防护解决方案的售前销售思路以及产品测试步骤,售后部署内容. 3G 防护板卡升级及部署注意事项.</p><p class=mlrminfo>主要针对SP方向合作伙伴,讲解思科运营商安全解决方案,尤其是DDOS防护解决方案的售前销售思路以及产品测试步骤,售后部署内容. 3G 防护板卡升级及部署注意事项.</p>', CAPTION, '', HAUTO,VAUTO )" onmouseout=nd();>我是无聊的备注，我是无聊的备注，我是无聊的备注，我是无聊的备注，我是无聊的备注，我是无聊的备注，我是无聊的备注，我是无聊的备注，我是无聊的备注，我是无聊的备注，我是无聊的备注，我是无聊的备注，我是无聊的备注，我是无聊的备注。</span></td>
+                    </tr>
+                    <tr>
+                      <td>&nbsp;</td>
+                      <td>&nbsp;</td>
+                      <td>&nbsp;</td>
+                      <td>&nbsp;</td>
+                      <td><span class="onmousetab_layout" onmouseover="return overlib('<p class=mlrminfo>主要针对SP方向合作伙伴,讲解思科运营商安全解决方案,尤其是DDOS防护解决方案的售前销售思路以及产品测试步骤,售后部署内容. 3G 防护板卡升级及部署注意事项.</p><p class=mlrminfo>主要针对SP方向合作伙伴,讲解思科运营商安全解决方案,尤其是DDOS防护解决方案的售前销售思路以及产品测试步骤,售后部署内容. 3G 防护板卡升级及部署注意事项.</p><p class=mlrminfo>主要针对SP方向合作伙伴,讲解思科运营商安全解决方案,尤其是DDOS防护解决方案的售前销售思路以及产品测试步骤,售后部署内容. 3G 防护板卡升级及部署注意事项.</p><p class=mlrminfo>主要针对SP方向合作伙伴,讲解思科运营商安全解决方案,尤其是DDOS防护解决方案的售前销售思路以及产品测试步骤,售后部署内容. 3G 防护板卡升级及部署注意事项.</p>', CAPTION, '', HAUTO,VAUTO )" onmouseout=nd();>我是无聊的备注，我是无聊的备注，我是无聊的备注，我是无聊的备注，我是无聊的备注，我是无聊的备注，我是无聊的备注，我是无聊的备注，我是无聊的备注，我是无聊的备注，我是无聊的备注，我是无聊的备注，我是无聊的备注，我是无聊的备注。</span></td>
+                    </tr>
+                    <tr>
+                      <td>&nbsp;</td>
+                      <td>&nbsp;</td>
+                      <td>&nbsp;</td>
+                      <td>&nbsp;</td>
+                      <td><span class="onmousetab_layout" onmouseover="return overlib('<p class=mlrminfo>主要针对SP方向合作伙伴,讲解思科运营商安全解决方案,尤其是DDOS防护解决方案的售前销售思路以及产品测试步骤,售后部署内容. 3G 防护板卡升级及部署注意事项.</p><p class=mlrminfo>主要针对SP方向合作伙伴,讲解思科运营商安全解决方案,尤其是DDOS防护解决方案的售前销售思路以及产品测试步骤,售后部署内容. 3G 防护板卡升级及部署注意事项.</p>', CAPTION, '', HAUTO,VAUTO )" onmouseout=nd();>我是无聊的备注，我是无聊的备注，我是无聊的备注，我是无聊的备注，我是无聊的备注，我是无聊的备注，我是无聊的备注，我是无聊的备注，我是无聊的备注，我是无聊的备注，我是无聊的备注，我是无聊的备注，我是无聊的备注，我是无聊的备注。</span></td>
+                    </tr>
+                    <tr>
+                      <td>&nbsp;</td>
+                      <td>&nbsp;</td>
+                      <td>&nbsp;</td>
+                      <td>&nbsp;</td>
+                      <td><span class="onmousetab_layout" onmouseover="return overlib('<p class=mlrminfo>主要针对SP方向合作伙伴,讲解思科运营商安全解决方案,尤其是DDOS防护解决方案的售前销售思路以及产品测试步骤,售后部署内容. 3G 防护板卡升级及部署注意事项.</p>', CAPTION, '', HAUTO,VAUTO )" onmouseout=nd();>我是无聊的备注，我是无聊的备注，我是无聊的备注，我是无聊的备注，我是无聊的备注，我是无聊的备注，我是无聊的备注，我是无聊的备注，我是无聊的备注，我是无聊的备注，我是无聊的备注，我是无聊的备注，我是无聊的备注，我是无聊的备注。</span></td>
+                    </tr>
+                    <tr>
+                      <td>&nbsp;</td>
+                      <td>&nbsp;</td>
+                      <td>&nbsp;</td>
+                      <td>&nbsp;</td>
+                      <td><span class="onmousetab_layout" onmouseover="return overlib('<p class=mlrminfo>主要针对SP方向合作伙伴,讲解思科运营商安全解决方案,尤其是DDOS防护解决方案的售前销售思路以及产品测试步骤,售后部署内容. 3G 防护板卡升级及部署注意事项.</p><p class=mlrminfo>主要针对SP方向合作伙伴,讲解思科运营商安全解决方案,尤其是DDOS防护解决方案的售前销售思路以及产品测试步骤,售后部署内容. 3G 防护板卡升级及部署注意事项.</p><p class=mlrminfo>主要针对SP方向合作伙伴,讲解思科运营商安全解决方案,尤其是DDOS防护解决方案的售前销售思路以及产品测试步骤,售后部署内容. 3G 防护板卡升级及部署注意事项.</p>', CAPTION, '', HAUTO,VAUTO )" onmouseout=nd();>我是无聊的备注，我是无聊的备注，我是无聊的备注，我是无聊的备注，我是无聊的备注，我是无聊的备注，我是无聊的备注，我是无聊的备注，我是无聊的备注，我是无聊的备注，我是无聊的备注，我是无聊的备注，我是无聊的备注，我是无聊的备注。</span></td>
+                    </tr>
+                    <tr>
+                      <td>&nbsp;</td>
+                      <td>&nbsp;</td>
+                      <td>&nbsp;</td>
+                      <td>&nbsp;</td>
+                      <td><span class="onmousetab_layout" onmouseover="return overlib('<p class=mlrminfo>主要针对SP方向合作伙伴,讲解思科运营商安全解决方案,尤其是DDOS防护解决方案的售前销售思路以及产品测试步骤,售后部署内容. 3G 防护板卡升级及部署注意事项.</p>', CAPTION, '', HAUTO,VAUTO )" onmouseout=nd();>我是无聊的备注，我是无聊的备注，我是无聊的备注，我是无聊的备注，我是无聊的备注，我是无聊的备注，我是无聊的备注，我是无聊的备注，我是无聊的备注，我是无聊的备注，我是无聊的备注，我是无聊的备注，我是无聊的备注，我是无聊的备注。</span></td>
+                    </tr>
+                    <tr>
+                      <td>&nbsp;</td>
+                      <td>&nbsp;</td>
+                      <td>&nbsp;</td>
+                      <td>&nbsp;</td>
+                      <td><span class="onmousetab_layout" onmouseover="return overlib('<p class=mlrminfo>主要针对SP方向合作伙伴,讲解思科运营商安全解决方案,尤其是DDOS防护解决方案的售前销售思路以及产品测试步骤,售后部署内容. 3G 防护板卡升级及部署注意事项.</p><p class=mlrminfo>主要针对SP方向合作伙伴,讲解思科运营商安全解决方案,尤其是DDOS防护解决方案的售前销售思路以及产品测试步骤,售后部署内容. 3G 防护板卡升级及部署注意事项.</p><p class=mlrminfo>主要针对SP方向合作伙伴,讲解思科运营商安全解决方案,尤其是DDOS防护解决方案的售前销售思路以及产品测试步骤,售后部署内容. 3G 防护板卡升级及部署注意事项.</p>', CAPTION, '', HAUTO,VAUTO )" onmouseout=nd();>我是无聊的备注，我是无聊的备注，我是无聊的备注，我是无聊的备注，我是无聊的备注，我是无聊的备注，我是无聊的备注，我是无聊的备注，我是无聊的备注，我是无聊的备注，我是无聊的备注，我是无聊的备注，我是无聊的备注，我是无聊的备注。</span></td>
+                    </tr>
+                    <tr>
+                      <td>&nbsp;</td>
+                      <td>&nbsp;</td>
+                      <td>&nbsp;</td>
+                      <td>&nbsp;</td>
+                      <td><span class="onmousetab_layout" onmouseover="return overlib('<p class=mlrminfo>主要针对SP方向合作伙伴,讲解思科运营商安全解决方案,尤其是DDOS防护解决方案的售前销售思路以及产品测试步骤,售后部署内容. 3G 防护板卡升级及部署注意事项.</p>', CAPTION, '', HAUTO,VAUTO )" onmouseout=nd();>我是无聊的备注，我是无聊的备注，我是无聊的备注，我是无聊的备注，我是无聊的备注，我是无聊的备注，我是无聊的备注，我是无聊的备注，我是无聊的备注，我是无聊的备注，我是无聊的备注，我是无聊的备注，我是无聊的备注，我是无聊的备注。</span></td>
+                    </tr>
+                  </tbody>
+                </table>
+
+        </div>
+      </div>
+      <div class="clear"></div>
+      <!-- 主内容 End -->
+    </div>
+  </div>
+  <!--// End: container -->
+  <!--#include virtual="../Library/footer.shtml" -->
+</div>
+<!--// End: Html -->
+</body>
+</html>

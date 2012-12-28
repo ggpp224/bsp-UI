@@ -1,0 +1,78 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta content="企业培训、企业内训、企业学习、企业大学、渠道大学、e-Learning、学习平台、学习系统、人才管理、岗位胜任力模型、Skillsoft、职业发展、培训管理、继任规划" name="keywords" />
+<meta content="企业商学院是集在线学习、能力测评、学习计划和培训管理为一体的企业学习整体解决方案。帮助企业提升内训、渠道培训、分支机构培训的整体水平，最大程度发掘培训价值，实现培训效益提升，全面促进企业人才培养。" name="description" />
+<title>CBS - 用户管理 - 部门管理</title>
+<!--系统样式-->
+<link href="../css/default.css" rel="stylesheet" type="text/css" />
+<!--皮肤样式  Blue-->
+<link href="../css/enterprise_blue.css" rel="stylesheet" type="text/css" />
+<!-- 日历样式 -->
+<link type="text/css" rel="stylesheet" href="../css/flight_calendar.css" />
+
+<!-- jQuery with plugins -->
+<script type="text/javascript" src="../js/libs/jquery-1.4.3.min.js"></script>
+<!-- jQuery tree -->
+<script type="text/javascript" src="../js/libs/jquery.cookie.js"></script>
+
+<script type="text/javascript" src="../js/libs/jquery.jstree.js"></script>
+<script type = "text/javascript">
+ $(document).ready(function() {
+// load html data from file
+   	$("#load_html_data").jstree({
+		"plugins" : [ "themes", "html_data","dnd","checkbox","crrm","contextmenu","cookies"],
+		"themes" : {
+			"url" : "../images/themes/classic/style.css",
+			"theme":"classic"
+		},
+		"html_data" : {
+			"ajax" : {
+				"url" : "data/_html_data.shtml",
+				"data" : function (n) {
+					return { id : n.attr ? n.attr("id") : 0 };
+				}
+			}
+		}
+	});
+ });
+</script>
+</head>
+<body>
+
+
+      	<div id ="container">
+             <div class="box admin_box">
+
+
+
+
+
+
+
+               <div class="sidebar">
+
+
+
+                        	<div >
+
+                             <h2>菜单内容由外部Html文件载入</h2>
+<div id="load_html_data"></div>
+
+
+                        	</div>
+
+
+                   </div>
+
+
+
+          </div>
+</div>
+
+
+
+
+</body>
+</html>

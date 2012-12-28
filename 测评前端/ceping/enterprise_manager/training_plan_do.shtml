@@ -1,0 +1,373 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta content="企业培训、企业内训、企业学习、企业大学、渠道大学、e-Learning、学习平台、学习系统、人才管理、岗位胜任力模型、Skillsoft、职业发展、培训管理、继任规划" name="keywords" />
+<meta content="企业商学院是集在线学习、能力测评、学习计划和培训管理为一体的企业学习整体解决方案。帮助企业提升内训、渠道培训、分支机构培训的整体水平，最大程度发掘培训价值，实现培训效益提升，全面促进企业人才培养。" name="description" />
+<title>CBS - 培训计划 - 新增个人培训训计划</title>
+<!--系统样式-->
+<link href="../css/default.css" rel="stylesheet" type="text/css" />
+<!--皮肤样式  Blue-->
+<link href="../css/enterprise_blue.css" rel="stylesheet" type="text/css" />
+<link href="../css/nyroModal.css" rel="stylesheet" type="text/css" />
+<!--[if IE]>
+<link type="text/css" rel="stylesheet" href="../css/ie.css" />
+<![endif]-->
+<!-- jQuery with plugins -->
+<script type="text/javascript" src="../js/libs/jquery-1.4.3.min.js"></script>
+<!-- jQuery tree -->
+<script type="text/javascript" src="../js/libs/jquery.cookie.js"></script>
+<script type="text/javascript" src="../js/libs/jquery.jstree.js"></script>
+<!--//日期控件-->
+<script language="javascript" type="text/javascript" src="../js/libs/WdatePicker.js"></script>
+<script language="javascript" type="text/javascript" src="../js/libs/nyroModal1.6.2.min.js"></script>
+<script type="text/javascript">
+
+    $(document).ready(function() {
+		cbs.textScroll();
+		$.nyroModalSettings({
+		 endShowContent:function(elts, settings){
+			 $('.divselect li', elts.contentWrapper).click(function(e){
+				 $(this).addClass("current").siblings("li").removeClass();
+			 });
+			 //双击
+			 $('.divselect li', elts.contentWrapper).dblclick(function(e){
+				  parent.$.nyroModalRemove();
+				  $('#ThiselText').val($(this).text());
+
+			 });
+			 return false;
+		   }
+		 });
+
+		$('.planChoose').click(function(e){
+			e.preventDefault();
+			$.fn.nyroModalManual({
+				width:600,
+				title:'选择关联计划',
+				url: 'overlay_plan_choose.shtml'
+			});
+		});
+
+		$('.setUser').click(function(e){
+			 e.preventDefault();
+			$.fn.nyroModalManual({
+				width:726,
+				url: 'overlay_training_setting.shtml'
+			});
+		});	$('.veiwUser').click(function(e){
+			e.preventDefault();
+			$.fn.nyroModalManual({
+				width:680,
+				title:'预览培训对象',
+				url: 'overlay_user_view.shtml'
+			});
+		});
+
+		 $('.SelResources').click(function(e){
+			e.preventDefault();
+			$.fn.nyroModalManual({
+				width:700,
+				title:'选择资源',
+				url: 'overlay_training_resources_sel.shtml'
+			});
+		});
+
+		$('.SelResources2').click(function(e){
+			e.preventDefault();
+			$.fn.nyroModalManual({
+				width:700,
+				title:'选择选修资源',
+				url: 'overlay_training_resources_sel2.shtml'
+			});
+		});
+ });
+</script>
+</head>
+<body>
+<!-- Start:  Html  //-->
+<div id="content">
+   <!-- Start:  header //-->
+  <!--#include virtual="../Library/header_enterprise.shtml" -->
+  <!--// End: header-->
+  <!-- Start: container //-->
+  <div id ="container">
+    <div class="box admin_box">
+      <!-- 面包屑 --><div class="bread_crumbs">
+				  <a href="training_plan.shtml">培训计划</a>&nbsp;&#8250;&nbsp;<b>培训计划实施</b>
+      </div>
+      <!-- 面包屑 End -->
+      <!--  基本信息 -->
+      <h1 class="panel_title margin28">培训计划实施</h1>
+      <form id="flight" method="post" action="#" class="bigFrom padding28">
+      	<table width="100%"  class="default_table form_table">
+      		<tr>
+      			<th ><span>*</span> 实施名称：</th>
+      			<td >
+      				<input type="text" class="default_txt" value="" size="30"/>
+      				</td>
+      			</tr>
+      		<tr>
+      			<th><span>*</span> 实施编码：</th>
+      			<td>
+      				<input type="text" class="default_txt input_wait" value="00001" size="30" readonly="readonly"/>
+      				</td>
+      			</tr>
+      		<tr>
+      			<th>关联计划：</th>
+      			<td>
+      				<input type="text" class="default_txt" value="" size="30" id="ThiselText"/>
+      				<input type="submit" class="btn btn_default planChoose" value="选择"/>
+      				</td>
+      			</tr>
+      		<tr>
+      			<th valign="top">
+      				<label>目标：</label>
+      				</th>
+      			<td>
+      				<textarea name="textarea" rows="2" class="default_textarea w510"></textarea>
+      				</td>
+      			</tr>
+      		<tr>
+      			<th valign="top">描述：</th>
+      			<td>
+      				<textarea name="textarea" rows="2" class="default_textarea w510"></textarea>
+      				</td>
+      			</tr>
+      		<tr>
+			<tr>
+      			<td colspan="2" valign="top">&nbsp;</td>
+      			</tr>
+      			<th rowspan="2" valign="top"><span>*</span> 培训对象：</th>
+      			<td>
+      				<div class="divselect_btn">
+      					<input name="按钮" type="button" class="btn btn_default veiwUser" value="预览培训对象"/>
+      					<input type="submit" class="btn btn_default" rel="#select_departments" value="清空"/>
+      					<input type="submit" class="btn btn_default" value="Excel导入"/>
+      					</div>
+      				<input type="submit" class="btn btn_default setUser" value="设置"/>
+      				<label class="seltextbox">&nbsp;已选人数：<b class="wrongfont">100</b></label>
+      				</td>
+      			</tr>
+      		<tr>
+      			<td>
+      				<div class="divselect borderall">
+      					<table width="100%" border="0" class="sel_tabbox">
+      						<tr>
+      							<th >所属部门：</th>
+      							<td valign="top" class="moreselect">
+      								<ul >
+      									<li><a href="#" class="delico"  title="删除">删除</a>
+      										目录节点字数比较多</li>
+      									<li><a href="#" class="delico"  title="删除">删除</a>
+      										目录节点字数比较多</li>
+      									<li><a href="#" class="delico"  title="删除">删除</a>
+      										目录节点字数比较多</li>
+      									<li><a href="#" class="delico"  title="删除">删除</a>
+      										目录节点字数比较多</li>
+      									</ul>
+      								</td>
+      							</tr>
+      						<tr>
+      							<th>所属岗位：</th>
+      							<td valign="top" class="moreselect">
+      								<ul >
+      									<li><a href="#" class="delico"  title="删除">删除</a>
+      										目录节点字数比较多</li>
+      									<li><a href="#" class="delico"  title="删除">删除</a>
+      										目录节点字数比较多</li>
+      									</ul>
+      								</td>
+      							</tr>
+      						<tr>
+      							<th >所属分组：</th>
+      							<td valign="top" class="moreselect">
+      								<ul >
+      									<li><a href="#" class="delico"  title="删除">删除</a>
+      										目录节点字数比较多</li>
+      									<li><a href="#" class="delico"  title="删除">删除</a>
+      										目录节点字数比较多</li>
+      									</ul>
+      								</td>
+      							</tr>
+      						<tr>
+      							<th >个人用户：</th>
+      							<td valign="top" >
+      								<ul>
+      									<li>学员姓名<a href="#" class="delico"  title="删除">删除</a>
+      										</li>
+      									<li>学员姓名<a href="#" class="delico"  title="从列表删除">从列表删除</a>
+      										</li>
+      									<li>学员姓名<a href="#" class="delico"  title="从列表删除">从列表删除</a>
+      										</li>
+      									<li>学员姓名 <a href="#" class="delico"  title="从列表删除">从列表删除</a>
+      										</li>
+      									</ul>
+      								</td>
+      							</tr>
+      						</table>
+      				</div>
+      				</td>
+      			</tr>
+				<tr>
+      			<td colspan="2" valign="top">&nbsp;</td>
+      			</tr>
+      		<tr>
+      			<th rowspan="2" valign="top"><span>*</span> 必修资源：</th>
+      			<td>
+      				<div class="divselect_btn">
+      					<input type="submit" class="btn btn_default" rel="#select_departments" value="清空"/>
+      					<input type="submit" class="btn btn_default" value="Excel导入资源"/>
+      					</div>
+      				<input type="submit" class="btn btn_default SelResources" value="选择资源"/>
+      				<label class="seltextbox">已选：<b class="wrongfont">XX</b></label>
+      				</td>
+      			</tr>
+      		<tr>
+      			<td>
+      				<div class="divselect moreselect borderall">
+      					<ul>
+      						<li><a href="#" class="delico"  title="从列表删除">从列表删除</a>
+      							<span>[在线课件]时间管理技巧</span></li>
+      						<li><a href="#" class="delico"  title="从列表删除">从列表删除</a>
+      							<span>[在线课件]时间管理技巧</span></li>
+      						<li><a href="#" class="delico"  title="从列表删除">从列表删除</a>
+      							<span>[在线课件]时间管理技巧</span></li>
+      						<li><a href="#" class="delico"  title="从列表删除">从列表删除</a>
+      							<span>[在线课件]时间管理技巧</span></li>
+      						<li><a href="#" class="delico"  title="从列表删除">从列表删除</a>
+      							<span>[在线课件]时间管理技巧</span></li>
+      						<li><a href="#" class="delico"  title="从列表删除">从列表删除</a>
+      							<span>[在线课件]时间管理技巧</span></li>
+      						<li><a href="#" class="delico"  title="从列表删除">从列表删除</a>
+      							<span>[在线课件]时间管理技巧</span></li>
+      						<li><a href="#" class="delico"  title="从列表删除">从列表删除</a>
+      							<span>[在线课件]时间管理技巧</span></li>
+      						<li><a href="#" class="delico"  title="从列表删除">从列表删除</a>
+      							<span>[在线课件]时间管理技巧</span></li>
+      						<li><a href="#" class="delico"  title="从列表删除">从列表删除</a>
+      							<span>[在线课件]时间管理技巧</span></li>
+      						<li><a href="#" class="delico"  title="从列表删除">从列表删除</a>
+      							<span>[在线课件]时间管理技巧</span></li>
+      						<li><a href="#" class="delico"  title="从列表删除">从列表删除</a>
+      							<span>[在线课件]时间管理技巧</span></li>
+      						<li><a href="#" class="delico"  title="从列表删除">从列表删除</a>
+      							<span>[在线课件]时间管理技巧</span></li>
+      						<li><a href="#" class="delico"  title="从列表删除">从列表删除</a>
+      							<span>[在线课件]时间管理技巧</span></li>
+      						<li><a href="#" class="delico"  title="从列表删除">从列表删除</a>
+      							<span>[在线课件]时间管理技巧</span></li>
+      						<li><a href="#" class="delico"  title="从列表删除">从列表删除</a>
+      							<span>[在线课件]时间管理技巧</span></li>
+      						</ul>
+      					</div>
+      				</td>
+      			</tr>
+				<tr>
+      			<td colspan="2" valign="top">&nbsp;</td>
+      			</tr>
+      		<tr>
+      			<th rowspan="2" valign="top">选修资源：</th>
+      			<td>
+      				<div class="divselect_btn">
+      					<input type="submit" class="btn btn_default" rel="#select_departments" value="清空"/>
+      					<input type="submit" class="btn btn_default" value="Excel导入资源"/>
+      					</div>
+      				<input type="submit" class="btn btn_default SelResources2" value="选择资源"/>
+      				<label class="seltextbox">已选：<b class="wrongfont">XX</b></label>
+      				</td>
+      			</tr>
+      		<tr>
+      			<td>
+      				<div class="divselect moreselect borderall">
+      					<ul>
+      						<li><a href="#" class="delico"  title="从列表删除">从列表删除</a>
+      							<span>[在线课件]时间管理技巧</span></li>
+      						<li><a href="#" class="delico"  title="从列表删除">从列表删除</a>
+      							<span>[在线课件]时间管理技巧</span></li>
+      						<li><a href="#" class="delico"  title="从列表删除">从列表删除</a>
+      							<span>[在线课件]时间管理技巧</span></li>
+      						<li><a href="#" class="delico"  title="从列表删除">从列表删除</a>
+      							<span>[在线课件]时间管理技巧</span></li>
+      						<li><a href="#" class="delico"  title="从列表删除">从列表删除</a>
+      							<span>[在线课件]时间管理技巧</span></li>
+      						<li><a href="#" class="delico"  title="从列表删除">从列表删除</a>
+      							<span>[在线课件]时间管理技巧</span></li>
+      						<li><a href="#" class="delico"  title="从列表删除">从列表删除</a>
+      							<span>[在线课件]时间管理技巧</span></li>
+      						<li><a href="#" class="delico"  title="从列表删除">从列表删除</a>
+      							<span>[在线课件]时间管理技巧</span></li>
+      						<li><a href="#" class="delico"  title="从列表删除">从列表删除</a>
+      							<span>[在线课件]时间管理技巧</span></li>
+      						<li><a href="#" class="delico"  title="从列表删除">从列表删除</a>
+      							<span>[在线课件]时间管理技巧</span></li>
+      						</ul>
+      					</div>
+      				</td>
+      			</tr>
+
+      		     <tr>
+      			<td colspan="2" valign="top">&nbsp;</td>
+      			</tr>
+      			<th><span>* </span>起止日期：</th>
+      			<td>
+      				<input type="text" class="dateinput" id="d122" onfocus="WdatePicker({isShowWeek:true,onpicked:function(){}})"/>
+      				&nbsp;-&nbsp;
+      				<input type="text" class="dateinput" id="d122" onfocus="WdatePicker({isShowWeek:true,onpicked:function(){}})"/>
+      				</td>
+      			</tr>
+      		<tr>
+      			<td colspan="2" valign="top">&nbsp;</td>
+      			</tr>
+      		<tr>
+            <th valign="top">当前不可实施项：</th>
+            <td class="no_padding">
+			  <div class="borderall w510">
+			    <table width="100%" border="0" class="default_table  mini_listtab">
+				  <thead class="gradual_bg">
+					<tr>
+					  <th class="fristtd ">资源名称</th>
+					  <th> 资源类型</th>
+					  <th>必修/选修</th>
+				   </tr>
+				   </thead>
+				    <tbody>
+				      <tr>
+				        <td class="fristtd">时间管理技巧 </td>
+						<td>试卷</td>
+						<td>选修</td>
+					  </tr>
+					  <tr>
+				        <td class="fristtd">时间管理技巧 </td>
+						<td>试卷</td>
+						<td>选修</td>
+					  </tr>
+					  <tr>
+				        <td class="fristtd">时间管理技巧 </td>
+						<td>试卷</td>
+						<td>选修</td>
+					  </tr>
+				   </tbody>
+				</table>
+			  </div>
+			</td>
+          </tr>
+      			<th colspan="2">&nbsp;</th>
+      			</tr>
+      		</table>
+
+        <div class="but_box edit_box top10">
+          <input type="submit" class="btn btn_submit" value=" 确认实施 "/>
+          <input name="重置" type="reset" class="btn btn_reset" value="  取消  "/>
+        </div>
+      </form>
+    </div>
+  </div>
+  <!--// End: container -->  <!--#include virtual="../Library/footer.shtml" --></div>
+
+
+
+<!-- 声明 引用-->
+<script src="../js/libs/cbs_userjs.js"></script>
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+</head>
+
+<body>
+	<form method="post" action="#">
+	<textarea name="comment"  id="comment" rows="5" cols="100"></textarea>
+<div class="overlay_btn">
+    <input name="提交" type="button" id="ck" class="btn btn_submit" value=" 确定 "/>
+    <input type="button" class="btn btn_reset overlayClose close" value=" 取消 "/>
+  </div>
+	</form>
+
+	<script data-main="../js/main-enterprise_manager" src="../js/libs/require.js"></script>
+</body>
+<script type="text/javascript">
+require(['jquery','ambow','jcookie','jstree','userjs','nyroModal','ckeditor'],function(){
+	$(function(){
+		var editor;
+		if(!CKEDITOR.instances.comment){  //判定comment是否存在
+			editor= CKEDITOR.replace("comment");
+		}else{
+			addCkeditor("comment");
+		}
+		function addCkeditor(id){
+			var editor2 = CKEDITOR.instances[id];
+			if(editor2) editor2.destroy(true);//销毁编辑器 comment,然后新增一个
+			editor = CKEDITOR.replace(id);
+		}
+		var isInput = G_textedit.find('input');
+		if(isInput.length>0){
+			var content_input = G_textedit.find('input[type="text"]').val();
+			if(content_input ==''){
+				editor.setData('');
+			}else{
+				editor.setData(content_input);
+			}	
+		}else{
+			var content_area =G_textedit.find('textarea').val();
+			if(content_area ==''){
+				editor.setData('');	
+			}else{
+				editor.setData(content_area);
+			}
+		}
+		
+		
+		
+		
+		$('#ck').click(function(){
+			//var ckContent = editor.document.getBody().getText();
+			var ckContent = editor.document.getBody().getHtml();
+			G_textedit.find('textarea').val(ckContent);
+			G_textedit.find('input[type="text"]').val(ckContent);
+			$('#ck').addClass('overlayClose');
+			$('.overlayClose').click();
+		});
+	});
+});
+
+</script>
+</html>

@@ -1,0 +1,281 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>用户管理</title>
+</head>
+<body>  
+<script type = "text/javascript">
+ $(document).ready(function() {		
+	cbs.overlay(); //弹出层	
+	cbs.selbtnmenu(); //多选按钮
+	cbs.showSearchPanel(); //搜索区
+	$("#load_html_data").jstree({ 
+		"html_data" : {
+			"ajax" : {
+				"url" : "data/data_resources.shtml",
+				"data" : function (n) { 
+					return { id : n.attr ? n.attr("id") : 0 }; 
+				}
+			}
+		},
+		"plugins" : [ "themes", "html_data" ,"checkbox","contextmenu","cookies","ui","crrm","dnd"] 
+		
+	});
+ });
+</script>
+   <div class="box admin_box">
+      <!-- 面包屑 --><div class="bread_crumbs">
+				  <a href="user.shtml">用户管理</a>&nbsp;&#8250;&nbsp;<b>按部门</b> </div>
+      <!-- 面包屑 End -->
+      <div class="sidebar boxborder"><!-- #BeginLibraryItem "/Library/treenav.lbi" -->
+        <!-- ================tree_menu==========-->
+        <ul class="tree_menu">
+          <li><a href="overlay_child_add.shtml" rel="#overlay" class="tree_add_child click_icon" title="增加目录">增加目录</a></li>
+          <li><a href="#" class="tree_up" title="上移">上移</a></li>
+          <li><a href="#" class="tree_down" title="下移">下移</a></li>
+          <li><a href="#" class="tree_left" title="左移">左移</a></li>
+          <li><a href="#" class="tree_right" title="右移">右移</a></li>
+          <li><a href="overlay_dep_edit.shtml" rel="#overlay" class="tree_edit click_icon" title="编辑">编辑</a></li>
+          <li><a href="overlay_delsector.shtml" rel="#overlay" class="tree_dell click_icon" title="删除">删除</a></li>
+          <li><a href="overlay_dep_import.shtml" rel="#overlay" class="tree_imp click_icon" title="导入目录树">导入目录树</a></li>
+        </ul>
+        <div id="load_html_data"></div>
+        <!-- #EndLibraryItem --></div>
+      <!--//End:sidebar -->
+      <div class="content_r">
+	    <!--====================== 功能索索==================================// -->
+        <a href="#" class="showsearch">展开搜索区</a>
+        <div class="searchbox">
+        <table width="100%" border="0" cellpadding="0" cellspacing="0">
+         <tr>
+           <th class="longText">用户姓名：</th>
+           <td><input type="text" class="default_txt" value="" size="11"/></td>
+           <th >登录ID：</th>
+           <td><input type="text" class="default_txt" value="" size="11"/></td>
+           <th >活动状态：</th>
+           <td><select name="select" class="mini_sel">
+             <option>全部</option>
+             <option>有效</option>
+             <option>无效</option>
+           </select></td>
+           <th >&nbsp;</th>
+           <td  class="closebtn"><a href="#">收起</a></td>
+       </tr>
+       <tr>
+          <th class="longText">所属部门：</th>
+          <td><a href="overlay_dept_select.shtml" rel="#overlaybig" >
+             <input type="text" class="default_txt overlay_in"  value="" size="11"/>
+           </a></td>
+    <th>所属分组：</th>
+    <td><a href="overlay_groups_select.shtml" rel="#overlaybig">
+      <input type="text" class="default_txt overlay_in" value="" size="11"/>
+    </a></td>
+    <th>所属岗位：</th>
+    <td ><a href="overlay_position_select.shtml" rel="#overlaybig">
+            <input type="text" class="default_txt overlay_in" value="" size="11"/>
+          </a>
+      </td>
+    <td>
+      <input type="button" name="input2" value=" 查询 " class="btn btn_default"/>
+   </td>
+       </tr>
+</table>
+        </div> <!--//END:功能搜索-->
+        <div  class="from_panel">
+          <form method="post" action="#" class="listtab_btn">
+            <div class="exportbtn">
+              <ul>
+                <li><a href="#" class="expbtn">导出详细数据</a></li>
+                <li><a href="#" class="expbtn">导出概要数据</a></li>
+              </ul>
+            </div>
+            <input type="button" name="" class="btn btn_feature" onclick="location.href='user_add.shtml';" value="新增用户" />
+            <a href="overlay_delsector.shtml" rel="#overlay" title="系统提示" >
+            <input type="button" name="" class="btn btn_del overlay" value="删除" />
+            </a> <a href="overlay_department_adjust.shtml" rel="#overlaybig">
+            <input type="button" name="" class="btn btn_other overlay" rel="#departments" value="调整部门" />
+            </a> <a href="overlay_password.shtml" rel="#overlay" >
+            <input type="button" name="" class="btn btn_other overlay" rel="#password" value="重置密码" />
+            <input type="button" name="input" class="btn btn_other" onclick="location.href='user_setting2.shtml'" value="批量调整部门" />
+            </a>
+            <div class="selbtn">
+              <button class="btn btn_other" ><span class="menudown"></span>批量导入</button>
+              <ul class="newspecial_menu">
+                <li><a href="user_import_update.shtml">批量导入/修改</a></li>
+                <li><a href="user_import_account.shtml">批量生成账号</a></li>
+              </ul>
+            </div>
+          </form>
+        </div>
+        <!-- 条件筛选 End -->
+        <!-- 表格笔记 -->
+        <div class="table_notes"><a href="#"><strong>研发中心</strong></a> （子部门数：<strong>4</strong>&nbsp;&nbsp;用户数：<strong>56</strong> ） </div>
+        <!-- 表格笔记 End -->
+        <table width="100%" border="0" cellspacing="0" cellpadding="0" class="default_table listtab">
+          <thead class="gradual_bg">
+            <tr>
+              <th width="28" class="th_center"><input type="checkbox" /></th>
+              <th width="30">状态</th>
+              <th width="50" >姓名</th>
+              <th >登录ID</th>
+              <th >所属部门</th>
+              <th >所属岗位</th>
+              <th >所属分组</th>
+              <th width="90"><span class="data">入职日期</span> <a href="#" class="arrow_sort_drop" title="降序">降序</a> </th>
+              <th width="50">操作</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td align="center"><input type="checkbox" /></td>
+              <td align="center"><a href="#"><span class="finish_ico" title="当前状态：活动，点击图标进行状态切换！">活动</span></a></td>
+              <td><a href="user_info.shtml" >毛旭峰</a></td>
+              <td>Maoxufeng</td>
+              <td>研发中心</td>
+              <td>项目经理</td>
+              <td>新员工</td>
+              <td><small>2010-11-16</small></td>
+              <td><a href="#" class="view_report"  title="查看学习报告">查看学习报告</a></td>
+            </tr>
+            <tr>
+              <td align="center"><input type="checkbox" /></td>
+              <td align="center"><a href="#"><span class="finish_ico" title="当前状态：活动，点击图标进行状态切换！">活动</span></a></td>
+              <td><a href="user_info.shtml" >毛旭峰</a></td>
+              <td>Maoxufeng</td>
+              <td>研发中心</td>
+              <td>项目经理</td>
+              <td>新员工</td>
+              <td><small>2010-11-16</small></td>
+              <td><a href="#" class="view_report"  title="查看学习报告">查看学习报告</a></td>
+            </tr>
+            <tr>
+              <td align="center"><input type="checkbox" /></td>
+              <td align="center"><a href="#"><span class="finish_ico" title="当前状态：活动，点击图标进行状态切换！">活动</span></a></td>
+              <td><a href="user_info.shtml" >毛旭峰</a></td>
+              <td>Maoxufeng</td>
+              <td>研发中心</td>
+              <td>项目经理</td>
+              <td>新员工</td>
+              <td><small>2010-11-16</small></td>
+              <td><a href="#" class="view_report"  title="查看学习报告">查看学习报告</a></td>
+            </tr>
+            <tr>
+              <td align="center"><input type="checkbox" /></td>
+              <td align="center"><a href="#"><span class="finish_ico" title="当前状态：活动，点击图标进行状态切换！">活动</span></a></td>
+              <td><a href="user_info.shtml" >毛旭峰</a></td>
+              <td>Maoxufeng</td>
+              <td>研发中心</td>
+              <td>项目经理</td>
+              <td>新员工</td>
+              <td><small>2010-11-16</small></td>
+              <td><a href="#" class="view_report"  title="查看学习报告">查看学习报告</a></td>
+            </tr>
+            <tr>
+              <td align="center"><input type="checkbox" /></td>
+              <td align="center"><a href="#"><span class="finish_ico" title="当前状态：活动，点击图标进行状态切换！">活动</span></a></td>
+              <td><a href="user_info.shtml" >毛旭峰</a></td>
+              <td>Maoxufeng</td>
+              <td>研发中心</td>
+              <td>项目经理</td>
+              <td>新员工</td>
+              <td><small>2010-11-16</small></td>
+              <td><a href="#" class="view_report"  title="查看学习报告">查看学习报告</a></td>
+            </tr>
+            <tr>
+              <td align="center"><input type="checkbox" /></td>
+              <td align="center"><a href="#"><span class="finish_ico" title="当前状态：活动，点击图标进行状态切换！">活动</span></a></td>
+              <td><a href="user_info.shtml" >毛旭峰</a></td>
+              <td>Maoxufeng</td>
+              <td>研发中心</td>
+              <td>项目经理</td>
+              <td>新员工</td>
+              <td><small>2010-11-16</small></td>
+              <td><a href="#" class="view_report"  title="查看学习报告">查看学习报告</a></td>
+            </tr>
+            <tr>
+              <td align="center"><input type="checkbox" /></td>
+              <td align="center"><span class="finish_ico" title="当前状态：活动，点击图标进行状态切换！">活动</span></td>
+              <td><a href="user_info.shtml" >毛旭峰</a></td>
+              <td>Maoxufeng</td>
+              <td>研发中心</td>
+              <td>项目经理</td>
+              <td>新员工</td>
+              <td><small>2010-11-16</small></td>
+              <td><a href="#" class="view_report"  title="查看学习报告">查看学习报告</a></td>
+            </tr>
+            <tr>
+              <td align="center"><input type="checkbox" /></td>
+              <td align="center"><span class="notbeen_ico" title="当前状态：非活动，点击图标进行状态切换！">非活动</span></td>
+              <td><a href="user_info.shtml" >毛旭峰</a></td>
+              <td>Maoxufeng</td>
+              <td>研发中心</td>
+              <td>项目经理</td>
+              <td>新员工</td>
+              <td><small>2010-11-16</small></td>
+              <td><a href="#" class="view_report"  title="查看学习报告">查看学习报告</a></td>
+            </tr>
+            <tr>
+              <td align="center"><input type="checkbox" /></td>
+              <td align="center"><span class="finish_ico" title="当前状态：活动，点击图标进行状态切换！">活动</span></td>
+              <td><a href="user_info.shtml" >毛旭峰</a></td>
+              <td>Maoxufeng</td>
+              <td>研发中心</td>
+              <td>项目经理</td>
+              <td>新员工</td>
+              <td><small>2010-11-16</small></td>
+              <td><a href="#" class="view_report"  title="查看学习报告">查看学习报告</a></td>
+            </tr>
+            <tr>
+              <td align="center"><input type="checkbox" /></td>
+              <td align="center"><span class="finish_ico" title="当前状态：活动，点击图标进行状态切换！">活动</span></td>
+              <td><a href="user_info.shtml" >毛旭峰</a></td>
+              <td>Maoxufeng</td>
+              <td>研发中心</td>
+              <td>项目经理</td>
+              <td>新员工</td>
+              <td><small>2010-11-16</small></td>
+              <td><a href="#" class="view_report"  title="查看学习报告">查看学习报告</a></td>
+            </tr>
+          </tbody>
+        </table>
+        <!-- 翻页 -->
+        <div class="pagination">
+          <ul>
+            <li>每页显示<select>
+                                <option>10</option>
+                                <option>20</option>
+                                <option>30</option>
+                                <option>50</option>
+                            </select>
+              条&nbsp;&nbsp;1/25页 </li>
+            <li class="disablepage">上一页</li>
+            <li class="currentpage">1</li>
+            <li><a href="#">2</a></li>
+            <li><a href="#">3</a></li>
+            <li><a href="#">4</a></li>
+            <li><a href="#">5</a></li>
+            <li><a href="#">6</a></li>
+            <li><a href="#">7</a></li>
+            <li><a href="#">8</a></li>
+            <li><a href="#">9</a>...</li>
+            <li><a href="#">15</a></li>
+            <li><a href="#">16</a></li>
+            <li class="nextpage"><a href="#">下一页</a></li>
+          </ul>
+        </div>
+        <!-- 翻页 -->
+      </div>
+      <div class="clear"></div>
+      <!-- 主内容 End -->
+    </div>   
+    <!--小窗口-->
+<div class="modal"  id="overlay">
+  <div class="default-overlay overlaybox"> </div>
+</div>
+<!--大窗口-->
+<div class="modal"  id="overlaybig">
+  <div class="default-overlay overlaydefault"> </div>
+</div>
+<!-- 弹窗Jquery -->
+</body>
+</html>

@@ -1,0 +1,103 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta content="企业培训、企业内训、企业学习、企业大学、渠道大学、e-Learning、学习平台、学习系统、人才管理、岗位胜任力模型、Skillsoft、职业发展、培训管理、继任规划" name="keywords" />
+<meta content="企业商学院是集在线学习、能力测评、学习计划和培训管理为一体的企业学习整体解决方案。帮助企业提升内训、渠道培训、分支机构培训的整体水平，最大程度发掘培训价值，实现培训效益提升，全面促进企业人才培养。" name="description" />
+<title>CBS - 交流社区</title>
+<!--系统样式-->
+<link href="../css/default.css" rel="stylesheet" type="text/css" />
+<!--皮肤样式  Blue-->
+<link href="../css/enterprise_blue.css" rel="stylesheet" type="text/css" />
+<link href="../css/nyroModal.css" rel="stylesheet" type="text/css" />
+<!--[if IE]>
+<link type="text/css" rel="stylesheet" href="../css/ie.css" />
+<![endif]-->
+<!-- jQuery with plugins -->
+<script type="text/javascript" src="../js/libs/jquery-1.4.3.min.js"></script>
+<script language="javascript" type="text/javascript" src="../js/libs/nyroModal1.6.2.min.js"></script>
+<script type="text/javascript">
+    $(document).ready(function() {
+	//发表回复
+	$('#overlay_re_succ').click(function(e) {
+			e.preventDefault();
+			$.fn.nyroModalManual({
+			    width:400,
+				url: 'overlay_re_succ.shtml',
+				title:'发表回复'
+			});
+			return false;
+		});
+
+	});
+</script>
+</head>
+<body>
+<!-- Start:  Html  //-->
+<div id="content">
+     <!--Start:头部//-->
+	 <!--#include virtual="../Library/header_enterprise.shtml" -->
+	 <!--//End:头部-->
+	<!--Start: container //-->
+	<div id ="container">
+		<div class="box admin_box">
+
+			<!-- 面包屑// -->
+            <div class="bread_crumbs">
+                <a href="community.shtml" >交流社区</a>&nbsp;&#8250;&nbsp;
+                <a href="community.shtml" >版块分类名</a>&nbsp;&#8250;&nbsp;
+                <b>发表回复</b>
+            </div>
+            <!-- //End:面包屑 -->
+
+ 			<div class="content_body">
+
+
+                        <h1 class="details_h1">发表回复</h1>
+
+                        <!-- 新话题 -->
+
+                   <div class="postnew">
+
+
+                   			<textarea class="default_textarea" rows="10" style="width:870px;">文本域</textarea>
+
+                            <!-- 附件 -->
+                            <div class="accessories">
+                            	<p class="acctitlename">上传附件</p>
+                                <p><input class="default_txt" size="50" disabled="disabled" value="" />
+                                <input type="button" name="" value="浏览..." class="btn btn_default" />
+                                <input type="button" name="" value=" 上传 " class="btn btn_default" />
+                                (文件大小在<span class="font_red"><b>500</b></span><strong>kb</strong>以内)
+                                </p>
+                                <!--<div class="upload_acc">
+                                	<p><strong>xxxxxxxxxxxxxxxxxxx.zip</strong>&nbsp;<a href="#">[删除]</a></p>
+                                	<p><strong>xxxxxxxxxxxxxxxxxxx.zip</strong>&nbsp;<a href="#">[删除]</a></p>
+                                	<p><strong>xxxxxxxxxxxxxxxxxxx.zip</strong>&nbsp;<a href="#">[删除]</a></p>
+                                	<p><strong>xxxxxxxxxxxxxxxxxxx.zip</strong>&nbsp;<a href="#">[删除]</a></p>
+                                </div>-->
+                            </div>
+                            <!-- 附件 End -->
+
+                            <hr />
+                   			<input type="button" class="btn btn_submit" id="overlay_re_succ" name="overlay_re_succ" value=" 发表回复 "/>
+                   			<span class="tipsend">[完成后可按 Ctrl+Enter 发布]</span>
+                   </div>
+                   <!-- 新话题 -->
+
+
+
+
+	   		</div>
+            <!-- content_body End -->
+
+        </div>
+	</div><!-- //End:container-->
+	<!--Start:footer//-->
+	 <!--#include virtual="../Library/footer.shtml" -->
+	 <!--//End:footer//-->
+	</div><!--//End:#content//-->
+<script src="../js/libs/cbs_userjs.js"></script>
+<script type="text/javascript" src="../js/libs/jquery.progressbar.min.js"></script>
+</body>
+</html>

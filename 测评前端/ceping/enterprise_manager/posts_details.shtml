@@ -1,0 +1,211 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta content="企业培训、企业内训、企业学习、企业大学、渠道大学、e-Learning、学习平台、学习系统、人才管理、岗位胜任力模型、Skillsoft、职业发展、培训管理、继任规划" name="keywords" />
+<meta content="企业商学院是集在线学习、能力测评、学习计划和培训管理为一体的企业学习整体解决方案。帮助企业提升内训、渠道培训、分支机构培训的整体水平，最大程度发掘培训价值，实现培训效益提升，全面促进企业人才培养。" name="description" />
+<title>CBS - 交流社区</title>
+<!--系统样式-->
+<link href="../css/default.css" rel="stylesheet" type="text/css" />
+<!--皮肤样式  Blue-->
+<link href="../css/enterprise_blue.css" rel="stylesheet" type="text/css" />
+<link href="../css/nyroModal.css" rel="stylesheet" type="text/css" />
+<!--[if IE]>
+<link type="text/css" rel="stylesheet" href="../css/ie.css" />
+<![endif]-->
+<!-- jQuery with plugins -->
+<script type="text/javascript" src="../js/libs/jquery-1.4.3.min.js"></script>
+<script language="javascript" type="text/javascript" src="../js/libs/nyroModal1.6.2.min.js"></script>
+<script type="text/javascript">
+    $(document).ready(function() {
+	//删除
+	$('.overlay_del').nyroModal({
+		width: 400
+	});
+	//移动话题
+	$('.overlay_cuttopic').nyroModal({
+		width: 500
+	});
+	//置顶话题
+	$('.overlay_top').nyroModal({
+		width: 400
+	});
+	//取消置顶
+	$('.overlay_top_down').nyroModal({
+		width: 400
+	});
+	//发表回复中
+	$('#overlay_reply').click(function(e) {
+			e.preventDefault();
+			$.fn.nyroModalManual({
+			    width:400,
+				url: 'overlay_reply.shtml',
+				title:'快速回复'
+			});
+			return false;
+		});
+	//禁言
+	$('.overlay_nuke').nyroModal({
+		width: 400
+	});
+
+	});
+</script>
+</head>
+<body>
+<!-- Start:  Html  //-->
+<div id="content">
+     <!--Start:头部//-->
+	 <!--#include virtual="../Library/header_enterprise.shtml" -->
+	 <!--//End:头部-->
+	<!--Start: container //-->
+	<div id ="container">
+		<div class="box admin_box">
+
+			<!-- 面包屑// -->
+            <div class="bread_crumbs">
+                <a href="community.shtml" >交流社区</a>&nbsp;&#8250;&nbsp;
+                <a href="community.shtml" >版块分类名</a>&nbsp;&#8250;&nbsp;
+                <b>帖子名</b>
+            </div>
+            <!-- //End:面包屑 -->
+
+ 			<div class="content_body">
+
+
+                        <h1 class="details_h1">如何让你的销售数据活起来（话题名称）</h1>
+
+                        <!-- 话题操作 -->
+                        <div class="feature_tabs padding_0">
+                        		<span class="float_l">
+                                <input name="" type="button" onClick="location.href='posts_re.shtml';" class="btn btn_submit" value=" 回复 " />
+                                <input name="" type="button" onClick="location.href='posts_new.shtml';" class="btn btn_feature" value=" 发新话题 " />
+                                </span>
+
+                                <span class="float_r">
+                                  <span class="postic_opera"><a href="overlay_top.shtml" class="overlay_top" title="置顶"><span class="icon_top"></span>置顶</a></span>
+                                  <span class="postic_opera"><a href="overlay_deltopic.shtml" class="overlay_del" title="删除话题"><span class="tabico_del"></span>删除</a></span>
+                                  <span class="postic_opera"><a href="overlay_cuttopic.shtml" class="overlay_cuttopic" title="移动话题"><span class="icon_cut"></span>移动</a></span>
+                                  <span class="postic_opera"><a href="posts_new.shtml" title="编辑"><span class="tabico_edit"></span>编辑</a></span>
+
+                                </span>
+
+                                <div class="clearer"></div>
+
+                        </div>
+                        <!-- 话题操作 End -->
+
+
+                        <!-- 每个话题单元 -->
+                        <div class="topic_unit">
+                                <div class="sideleft_info">
+                                    <h4>Ma.dongming</h4>
+                                    <div class="photo"><img src="../images/personal/default_head_img.jpg" /></div>
+                                    <p>华东销售中心</p>
+                                    <p>销售经理</p>
+                                    <p class="nuke"><a href="overlay_nuke.shtml" class="overlay_nuke" title="禁言">[禁言]</a></p>
+
+                                </div>
+                                <div class="sideright_info">
+                                    <div class="title_top"><span class="floor_num">1#</span>发表于<span class="datetime">2011-3-2 00:38</span><a href="#">只看该作者</a></div>
+                                    <p>企业在发展、技术在更新，人们的消费习惯在更新、网站之间的竞争越来越激烈、网络营销模式也在凸显重要性。虽然大多数企业都建立了自己的企业网站，却没有让网站价值很好的发挥体现。网站无论从系统架构、还是内容信息方面，都远远达不到网站营销的目的，正因为如此，网站自然不能给企业带来实际可见的效益。所以，网站改版或定期升级改造是必需的。</p>
+                                    <span class="p_download">
+                                    	<b>附件：</b>
+                                        <b><a href="#">mod_Beach_01.rar (3.11 MB)</a></b>
+                                    </span>
+                                    <span class="operation">
+                                        <a href="posts_re.shtml" class="icon_quote icon_reply" title="引用回复">引用回复</a>
+                                        <a href="posts_new.shtml" class="tabico_edit" title="编辑">编辑</a>
+                                        <a href="overlay_deltopic.shtml" class="tabico_del overlay_del" title="删除话题">删除</a>
+                                    </span>
+                                </div>
+                                <div class="clearer"></div>
+                        </div>
+                        <!-- 每个话题单元 End -->
+
+
+
+                        <!-- 每个话题单元 -->
+                        <div class="topic_unit">
+                                <div class="sideleft_info">
+                                    <h4>Yao.shunxiang</h4>
+                                    <div class="photo"><img src="../images/personal/default_head_img.jpg" /></div>
+                                    <p>华东销售中心</p>
+                                    <p>销售经理</p>
+                                    <p class="nuke"><a href="overlay_nuke.shtml" class="overlay_nuke" title="禁言">[禁言]</a></p>
+
+                                </div>
+                                <div class="sideright_info">
+                                    <div class="title_top"><span class="floor_num">2#</span>发表于<span class="datetime">2011-3-2 00:38</span><a href="#">只看该作者</a></div>
+                                    <em>
+                                        <strong>引用：Ma.dongming&nbsp;&nbsp;发表于：2011.05.16&nbsp;18:45:30</strong>
+                                        <br />这是一段被引用回复的话
+                                    </em>
+                                    <p>
+                                    企业在发展、技术在更新，人们的消费习惯在更新、网站之间的竞争越来越激烈、网络营销模式也在凸显重要性。虽然大多数企业都建立了自己的企业网站，却没有让网站价值很好的发挥体现。网站无论从系统架构、还是内容信息方面，都远远达不到网站营销的目的，正因为如此，网站自然不能给企业带来实际可见的效益。所以，网站改版或定期升级改造是必需的。
+                                    </p>
+                                    <span class="operation">
+                                        <a href="posts_re.shtml" class="icon_quote icon_reply" title="引用回复">引用回复</a>
+                                        <a href="posts_new.shtml" class="tabico_edit" title="编辑">编辑</a>
+                                        <a href="overlay_deltopic.shtml" class="tabico_del overlay_del" title="删除话题">删除</a>
+                                    </span>
+                                </div>
+                                <div class="clearer"></div>
+                        </div>
+                        <!-- 每个话题单元 End -->
+
+
+
+                        <!-- 翻页 -->
+                        <div class="feature_tabs padding_0">
+                                <input name="" type="button" onClick="location.href='posts_re.shtml';" class="btn btn_submit" value=" 回复 " />
+                                <input name="" type="button" onClick="location.href='posts_new.shtml';" class="btn btn_feature" value=" 发新话题 " />
+                                <span class="float_r">
+                                <div class="pagination">
+                                      <ul>
+                                          <li class="disablepage">上一页</li>
+                                          <li class="currentpage">1</li>
+                                          <li><a href="#">2</a></li>
+                                          <li><a href="#">3</a></li>
+                                          <li><a href="#">4</a></li>
+                                          <li><a href="#">5</a></li>
+                                          <li><a href="#">6</a></li>
+                                          <li><a href="#">7</a></li>
+                                          <li><a href="#">8</a></li>
+                                          <li><a href="#">9</a>...</li>
+                                          <li><a href="#">15</a></li>
+                                          <li><a href="#">16</a></li>
+                                          <li class="nextpage"><a href="#">下一页</a></li>
+                                      </ul>
+                                </div>
+                                </span>
+                                <div class="clearer"></div>
+                         </div>
+                        <!-- 翻页 -->
+
+
+
+                        <!-- 快速回复 -->
+                       <h1 class="details_h1">快速回复主题</h1>
+                       <div class="reply_area">
+                       <textarea class="default_textarea" rows="10" cols="120">富文本编辑框</textarea><br /><br />
+                       <input type="button" class="btn btn_submit" id="overlay_reply" name="overlay_reply" value=" 发表回复 "/>
+                       <span>[完成后可按 Ctrl+Enter 发布]</span><a href="#">清空内容</a>
+                       </div>
+                       <!-- 快速回复 -->
+
+
+
+
+	   		</div>
+            <!-- content_body End -->
+
+        </div>
+	</div><!-- //End:container-->
+	<!--Start:footer//-->
+	 <!--#include virtual="../Library/footer.shtml" -->
+	 <!--//End:footer//-->
+	</div><!--//End:#content//-->
+<script src="../js/libs/cbs_userjs.js"></script>
+</body>
+</html>

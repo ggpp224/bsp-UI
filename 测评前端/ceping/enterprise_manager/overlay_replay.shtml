@@ -1,0 +1,11 @@
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<form  method="post" action="#" class="bigFrom">
+<table width="100%" border="0" class="default_table" height="170">
+    <tr>
+        <td height="166" align="center"> <textarea name="reply" cols="60" rows="10" id="reply">输入回复内容...</textarea></td>
+    </tr>
+</table>
+<div class="overlay_btn">
+    <input type="button" class="btn btn_submit close" value=" 确定 "/>
+  </div>
+</form>

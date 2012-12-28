@@ -1,0 +1,41 @@
+<form id="sampleform" method="post" action="#" class="bigFrom">
+    <table width="100%" border="0" class="default_table">
+    <tr>
+                            <th>&nbsp;</th>
+                            <td colspan="2">&nbsp;
+                                
+                            </td>
+                        </tr>
+        <tr>
+           <td align="right"> <strong>上传文档：</strong></td>
+                            <td colspan="2">
+                                <input type="text" class="default_txt" name="input" size="30" />
+                                <input name="按钮" type="button" class="btn btn_reset" value="浏览" />
+                                <input name="按钮" type="button" class="btn btn_reset" value="上传" />
+            </td>
+        </tr>
+                        <tr>
+                            <td width="120" align="right"><strong>已上载文档：</strong></td>
+                            <td colspan="2"><a href="#">下载已上载文档</a></td>
+        </tr>
+                        <tr>
+                            <th>&nbsp;</th>
+                            <td colspan="2">
+                                <h4>请上传下列格式文档，单个文档大小控制在5M之内：</h4>
+                                <p class="tips">
+                                    1. pdf<br/>
+                                    2. Word：doc/docx<br/>
+                                    3. Powerpoint：ppt/pps/pptx/ppsx/pot/potx<br/>
+                                    4. Excel：xls/xlsx<br/>
+                                    5. 压缩包：zip/rar
+                                </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>&nbsp;</th>
+                            <td colspan="2">&nbsp;
+                                
+                            </td>
+                        </tr>
+    </table>
+</form>

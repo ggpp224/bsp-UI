@@ -1,0 +1,24 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<form id="flight" method="post" action="#" class="bigFrom">
+  						<!-- postnew -->
+                        <div class="edm_postnew">
+                   
+                                <div class="feature_tabs">邮件标题：<input class="default_txt" style="width:690px" onfocus="if (value==defaultValue)value=''" onblur="if(!value)value=defaultValue" value="输入邮件标题..."  /></div>
+                                
+                                <div class="edm_postinfo">
+                                   <p><strong><a href="#">[姓名]</a>、<a href="#">[时间]</a>、<a href="#">[课程名称]</a></strong></p>
+                                </div>
+                                
+                                <div class="edm_tipinfo"><b>提示：</b>点击灰色区域的文字链接，可直接到文本输入区中编辑对应内容，这些文本通过程序自动调用，请您慎重编辑，以免学员接收到的邮件信息不完整。</div>
+                                
+                                <textarea class="default_textarea" rows="10" style="width:758px">文本域</textarea>
+                        
+                        </div>
+                       <!-- postnew End -->
+                       
+  <div class="overlay_btn">
+    <input name="提交" type="submit" class="btn btn_submit" value=" 保存 "/>
+    <input type="button" class="btn btn_reset overlayClose" value=" 取消 "/>
+    <br />
+  </div>
+</form>

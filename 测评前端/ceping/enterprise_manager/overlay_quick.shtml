@@ -1,0 +1,16 @@
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<form  method="post" action="user.shtml" class="bigFrom">
+<!-- ico_error 错误 /ico_info 消息/ico_success 正确 /ico_warning 警示-->
+	<table width="100%" border="0" class="ico_info">
+		<tr>
+			<td width="80"><span></span></td>
+			<td valign="middle" height="120">
+				<h4>数据是否已保存,确定离开？</h4>
+			</td>
+		</tr>
+	</table>
+	<div class="overlay_btn">
+		<input name="提交" type="submit" class="btn btn_submit" value=" 退出 "/>
+		<input type="button" class="btn btn_reset overlayClose" value=" 取消 "/>
+	</div>
+</form>

@@ -1,0 +1,228 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta content="企业培训、企业内训、企业学习、企业大学、渠道大学、e-Learning、学习平台、学习系统、人才管理、岗位胜任力模型、Skillsoft、职业发展、培训管理、继任规划" name="keywords" />
+<meta content="企业商学院是集在线学习、能力测评、学习计划和培训管理为一体的企业学习整体解决方案。帮助企业提升内训、渠道培训、分支机构培训的整体水平，最大程度发掘培训价值，实现培训效益提升，全面促进企业人才培养。" name="description" />
+<title>CBS - 资源报表 - 培训实施报表</title>
+<!--系统样式-->
+<link href="../css/default.css" rel="stylesheet" type="text/css" />
+<!--皮肤样式  Blue-->
+<link href="../css/enterprise_blue.css" rel="stylesheet" type="text/css" />
+<link href="../css/enterprise_report.css" rel="stylesheet" type="text/css" />
+<!--[if IE]>
+<link type="text/css" rel="stylesheet" href="../css/ie.css" />
+<![endif]-->
+<!-- jQuery with plugins -->
+<script type="text/javascript" src="../js/libs/jquery-1.4.3.min.js"></script>
+<script src="../js/libs/cbs_userjs.js"></script>
+<script type="text/javascript" src="../js/libs/jsapi"></script>
+<script type="text/javascript" src="../js/libs/jquery.gvchart.js"></script>
+<script type="text/javascript">
+		gvChartInit();
+		jQuery(document).ready(function(){
+			jQuery('.chart').gvChart({
+				chartType: 'PieChart',
+				gvSettings: {
+					width: 450,
+					height: 300
+					}
+			});
+			cbs.tablehover();//表单换行颜色 hover
+			jQuery('.chart2').gvChart({
+				chartType: 'ColumnChart',
+				gvSettings: {
+					vAxis: {title: '参与人数'},
+					hAxis: {title: '月份'},
+					width: 450,
+					height: 300
+					}
+			});
+		});
+		</script>
+</head>
+<body>
+<!-- Start:  Html  //-->
+<div id="content">
+  <!--Start:header //-->
+  <!--#include virtual="../Library/header_enterprise.shtml" -->
+  <!-- Start: container //-->
+  <div id="container">
+    <div class="box admin_box">
+      <!-- 面包屑 -->
+      <div class="bread_crumbs">  <a href="user.shtml">统计报表</a>&nbsp;&#8250;&nbsp;<b>培训实施报表</b></div>  <!-- 面包屑 End -->
+      <div class="padding28">
+
+      	<ul class="reporttabs">
+          <li><a href="report_deploy.shtml">概况统计图 </a></li>
+                <li class="current"><a href="report_deploy_date.shtml">统计数据 </a></li>
+      </ul>
+
+
+        <div class="updatetime m700">最新数据更新时间：<span class="lightfont">2011-02-02 00:00</span></div>
+          <div class="exportbtn">
+            <ul>
+              <li><a href="#" class="expbtn">导出</a></li>
+            </ul>
+          </div>
+      <form method="post" action="#" class="padding5">
+            实施名称：
+            <input name="textfield" type="text" class="default_txt" id="textfield" />
+            实施类别：
+            <select name="select2" id="select">
+              <option selected="selected">全部</option>
+              <option>在线课件</option>
+              <option>在线测试</option>
+              <option>线下测试</option>
+              <option>在线同步辅导</option>
+              <option>面授课程</option>
+            </select>
+状态：
+<select name="select" id="select2">
+            <option>全部</option>
+              <option>进行中</option>
+              <option>已暂停</option>
+              <option>已结束</option>
+          </select>
+            <input type="button" name="input2" value=" 查询 " class="btn btn_default"/>
+        </form>
+        <table width="100%" border="0" cellspacing="0" cellpadding="0" class="default_table listtab">
+          <thead class="gradual_bg">
+            <tr>
+              <th>实施名称</th>
+              <th>实施类别</th>
+              <th>状态</th>
+              <th>开始时间</th>
+              <th>截止时间</th>
+              <th>整体参与率</th>
+              <th>详细数据</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><a href="training_implementation_preview2.shtml">在线课件</a></td>
+              <td>在线课件</td>
+              <td>进行中</td>
+              <td>2011/01/01 12:34</td>
+              <td>2011/01/01 12:34</td>
+              <td>12/35</td>
+              <td><a href="report_deploy_coursewave.shtml" class="tabico_view" title="查看详细">详细</a></td>
+            </tr>
+            <tr>
+              <td><a href="training-implementation_testpaperview.shtml">在线测试</a></td>
+              <td>在线测试</td>
+              <td>进行中</td>
+              <td>2011/01/01 12:34</td>
+              <td>2011/01/01 12:34</td>
+              <td>12/35</td>
+              <td><a href="report_deploy_test.shtml" class="tabico_view" title="查看详细">详细</a></td>
+            </tr>
+            <tr>
+              <td><a href="training-implementation_testpaperLine_view.shtml">线下测试</a></td>
+              <td>线下测试</td>
+              <td>进行中</td>
+              <td>2011/01/01 12:34</td>
+              <td>2011/01/01 12:34</td>
+              <td>12/35</td>
+              <td><a href="report_deploy_offline.shtml" class="tabico_view" title="查看详细">详细</a></td>
+            </tr>
+            <tr>
+              <td><a href="training-implementation_syncourses_view.shtml">在线同步课程</a></td>
+              <td>在线同步课程</td>
+              <td>进行中</td>
+              <td>2011/01/01 12:34</td>
+              <td>2011/01/01 12:34</td>
+              <td>12/35</td>
+              <td><a href="report_deploy_sync.shtml" class="tabico_view" title="查看详细">详细</a></td>
+            </tr>
+            <tr>
+              <td><a href="training-implementation_faceto_view.shtml">面授课程</a></td>
+              <td>面授课程</td>
+              <td>进行中</td>
+              <td>2011/01/01 12:34</td>
+              <td>2011/01/01 12:34</td>
+              <td>12/35</td>
+              <td><a href="report_deploy_face2face.shtml" class="tabico_view" title="查看详细">详细</a></td>
+            </tr>
+            <tr>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+            </tr>
+            <tr>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+            </tr>
+            <tr>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+            </tr>
+            <tr>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+            </tr>
+            <tr>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="pagination">
+          <ul>
+            <li>每页显示
+              <select name="select3">
+                <option>10</option>
+                <option>20</option>
+                <option>30</option>
+                <option>50</option>
+              </select>
+              条&nbsp;&nbsp;1/25页 </li>
+            <li class="disablepage">上一页</li>
+            <li class="currentpage">1</li>
+            <li><a href="#">2</a></li>
+            <li><a href="#">3</a></li>
+            <li><a href="#">4</a></li>
+            <li><a href="#">5</a></li>
+            <li><a href="#">6</a></li>
+            <li><a href="#">7</a></li>
+            <li><a href="#">8</a></li>
+            <li><a href="#">9</a>...</li>
+            <li><a href="#">15</a></li>
+            <li><a href="#">16</a></li>
+            <li class="nextpage"><a href="#">下一页</a></li>
+          </ul>
+        </div>
+      </div>
+      <!-- 主内容 End -->
+    </div>
+  </div>
+  <!--// End: container -->
+  <!--#include virtual="../Library/footer.shtml" -->
+</div>
+<!--// End: Html -->
+</body>
+</html>

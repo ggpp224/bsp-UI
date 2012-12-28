@@ -1,0 +1,659 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta content="企业培训、企业内训、企业学习、企业大学、渠道大学、e-Learning、学习平台、学习系统、人才管理、岗位胜任力模型、Skillsoft、职业发展、培训管理、继任规划" name="keywords" />
+<meta content="企业商学院是集在线学习、能力测评、学习计划和培训管理为一体的企业学习整体解决方案。帮助企业提升内训、渠道培训、分支机构培训的整体水平，最大程度发掘培训价值，实现培训效益提升，全面促进企业人才培养。" name="description" />
+<title>CBS - 培训计划管理</title>
+<!--系统样式-->
+<link href="../css/default.css" rel="stylesheet" type="text/css" />
+<!--皮肤样式  Blue-->
+<link href="../css/enterprise_blue.css" rel="stylesheet" type="text/css" />
+<link href="../css/nyroModal.css" rel="stylesheet" type="text/css" />
+<!--[if IE]>
+<link type="text/css" rel="stylesheet" href="../css/ie.css" />
+<![endif]-->
+<!-- jQuery with plugins -->
+<script type="text/javascript" src="../js/libs/jquery-1.4.3.min.js"></script>
+<!--//日期控件-->
+<script language="javascript" type="text/javascript" src="../js/libs/WdatePicker.js"></script>
+<script language="javascript" type="text/javascript" src="../js/libs/nyroModal1.6.2.min.js"></script>
+<script type="text/javascript">
+    $(document).ready(function() {cbs.selbtnmenu(); //多选按钮
+	cbs.tablefold(); //折叠表格
+	checkAll(name);//CheckBox全选
+	$(".listtab a").click(function () {
+		if( $(this).hasClass("not_implemented")){
+		$(this).addClass('notimplemented').addClass('alreadyalert').removeClass("not_implemented");
+		$(this).text('已实施');
+		}
+		else if( $(this).hasClass('have_do') ){
+		alert("该计划已实施，不可再次实施！");
+			}
+		else if( $(this).hasClass('part_imp') ){
+		alert('该计划已经部分实施，请点击计划名称前面的"+"，对尚未实施的学习活动进行实施操作！');
+		}
+
+		else if( $(this).hasClass('alreadyalert') ){
+		alert('该资源已对本计划关联培训对象生效！');
+		}
+	 });
+
+	     //删除
+	$('#delcustomer').click(function(e) {
+			e.preventDefault();
+			$.fn.nyroModalManual({
+			    width:380,
+				url: 'overlay_delsector.shtml',
+				title:'系统提示'
+			});
+			return false;
+	});
+
+	$('.Secondary').nyroModal({
+			width: 380
+	});
+
+
+ });
+</script>
+</head>
+<body>
+<!-- Start:  Html  //-->
+<div id="content">
+    <!-- Start:  header //-->
+  <!--#include virtual="../Library/header_enterprise.shtml" -->
+  <!--// End: header-->
+
+  <!-- Start: container //-->
+  <div id="container">
+    <div class="box admin_box">
+      <!-- 面包屑 --><div class="bread_crumbs">
+
+                <b>培训计划</b>
+                </div>
+      <!-- 面包屑 End -->
+      <div class="content_body">
+        <!-- 功能索索 -->
+        <div class="features_search">
+          <form method="post" action="#" class="search_From">
+		   <table width="100%"  border="0" class="default_table table_from">
+	<tr>
+		<th width="70">计划名称：</th>
+		<td width="127"><input type="text" class="default_txt" value="" size="15"/></td>
+		<th>状态：</th>
+		<td width="117">
+			<select name="select" class="mini_sel">
+				<option>全部</option>
+				<option>全部实施</option>
+				<option>部分实施</option>
+				<option>未实施</option>
+			</select>
+		</td>
+		<th>起止时间：</th>
+		<td width="270">
+		  <input type="text" class="dateinput" id="d122" onFocus="WdatePicker({isShowWeek:true,onpicked:function(){}})"/>
+							-
+							<input type="text" class="dateinput" id="d122" onFocus="WdatePicker({isShowWeek:true,onpicked:function(){}})"/>
+		</td>
+		<td><input type="button" name="input" value=" 查询 " class="btn btn_default"/></td>
+	</tr>
+</table>
+
+          </form>
+        </div>
+        <!-- 功能搜索 End -->
+        <!--表格操作-->
+        <div  class="from_panel">
+          <form method="post" action="#" class="listtab_btn">
+            <div class="exportbtn">
+              <ul>
+                <li><a href="#" class="expbtn">导出数据</a></li>
+              </ul>
+            </div>
+            <input type="button" name="" class="btn btn_feature"  onclick="location.href='training_add.shtml'" value="制订培训计划" />
+            <input type="button" name="" class="btn btn_del" value="删除" id="delcustomer"  title="系统提示"/>
+            <div class="selbtn">
+              <button class="btn btn_other" ><span class="menudown"></span>选择查看方式</button>
+              <ul class="newspecial_menu" style="width:130px;">
+                <li><a href="training_plan.shtml">默认全部</a></li>
+                <li><a href="training_plan_dep.shtml">按部门查看</a></li>
+                <li><a href="training_plan_position.shtml">按岗位查看</a></li>
+                <li><a href="training_plan_groups.shtml">按分组查看</a></li>
+              </ul>
+            </div>
+          </form>
+        </div>
+        <table width="100%" border="0"  class="default_table listtab">
+          <thead class="gradual_bg noborder">
+            <tr>
+              <th width="28" class="th_center"><input type="checkbox" name="num" value="" onclick="if(this.checked==true) { checkAll('num'); } else { clearAll('num'); }" /></th>
+              <th colspan="2" align="left">计划名称</th>
+              <th width="75"><a href="#"><span class="data">开始时间</span><span class="arrow_sort_drop"></span></a></th>
+              <th width="75"><a href="#"><span class="data">截止时间</span><span class="arrow_sort_drop"></span></a></th>
+              <th width="50">状态</th>
+              <th width="50">创建人</th>
+              <th width="75"><a href="#"><span class="data">创建时间</span><span class="arrow_sort_liters"></span></a></th>
+              <th width="80" class="th_center">操作</th>
+            </tr>
+          </thead>
+          <tbody class="tr_parent">
+            <tr>
+              <td align="center" class="l_tab"><input input type="checkbox" name="num" value="" /></td>
+              <td width="18" align="center"><span class="open_ico">展开</span></td>
+              <td><a href="training_preview.shtml">研发部年度学习计划</a><b>（30）</b><span class="tabico_unfinish" title="未完成计划"></span></td>
+              <td><small>2010-12-1 </small></td>
+              <td><small>2010-12-1</small></td>
+              <td>部分实施</td>
+              <td>admin</td>
+              <td><small>2010-11-16 </small></td>
+              <td class="r_tab"><a href="training_edit.shtml" class="tabico_edit"  title="编辑计划">编辑计划</a><span class="dd_editbox"><a href="#" class="recognizing part_imp"  title="确认实施">确认实施</a></span><a href="#" class="view_report"  title="查看学习报告">查看学习报告</a></td>
+            </tr>
+            <!--隐藏列表-->
+            <tr class="tab_panel">
+              <td colspan="9"><ul class="panel_list">
+                  <li>
+                    <dl>
+                      <dt>[在线课件]</dt>
+                      <dd class="lessoname"><a href="#">时间管理技巧</a></dd>
+                      <dd class="startime"><small>2010-11-12</small></dd>
+                      <dd class="endtime"><small>2011-2-23</small></dd>
+                      <dd>已实施</dd>
+                      <dd class="dd_editbox">
+                      <a href="#" class="notimplemented alreadyalert"  title="确认实施">确认实施</a>
+                      <a href="#" class="tabico_view" title="预览">预览</a>
+                      <a href="#" class="tabico_del"  title="从计划中删除">删除</a>
+                      </dd>
+                    </dl>
+                  </li>
+                  <li>
+                    <dl>
+                      <dt>[在线测试]</dt>
+                      <dd class="lessoname"><a href="#">时间管理技巧</a></dd>
+                      <dd class="startime"><small>2010-11-12</small></dd>
+                      <dd class="endtime"><small>2011-2-23</small></dd>
+                      <dd>已实施</dd>
+                      <dd class="dd_editbox"> <a href="#" class="notimplemented alreadyalert"  title="已实施">已实施</a> <a href="#" class="tabico_view" title="预览">预览</a> <a href="#" class="tabico_del"  title="从计划中删除">删除</a> </dd>
+                    </dl>
+                  </li>
+                  <li>
+                    <dl>
+                      <dt>[在线测试]</dt>
+                      <dd class="lessoname"><a href="#">时间管理技巧</a></dd>
+                      <dd class="startime"><small>2010-11-12</small></dd>
+                      <dd class="endtime"><small>2011-2-23</small></dd>
+                      <dd>未实施</dd>
+                      <dd class="dd_editbox"> <a href="training-implementation_testpaperadd.shtml" class="recognizing not_implemented"  title="确认实施">确认实施</a> <a href="#" class="tabico_view" title="预览">预览</a> <a href="#" class="tabico_del"  title="从计划中删除">删除</a> </dd>
+                    </dl>
+                  </li>
+                  <li>
+                    <dl>
+                      <dt>[同步课程]</dt>
+                      <dd class="lessoname"><a href="#">时间管理技巧</a></dd>
+                      <dd class="startime"><small>2010-11-12</small></dd>
+                      <dd class="endtime"><small>2011-2-23</small></dd>
+                      <dd>未实施</dd>
+                      <dd class="dd_editbox">
+                        <a href="overlay_sync_Implemented.shtml" class="recognizing Secondary"  title="选择课程实施方式">确认实施</a>
+                        <a href="#" class="tabico_view" title="预览">预览</a>
+                        <a href="#" class="tabico_del"  title="从计划中删除">删除</a> </dd>
+                    </dl>
+                  </li>
+                </ul></td>
+            </tr>
+            <!-- 隐藏列表 End -->
+          </tbody>
+          <tbody class="tr_parent">
+            <tr>
+              <td align="center" class="l_tab"><input input type="checkbox" name="num" value="" /></td>
+              <td align="center"><span class="open_ico">展开</span></td>
+              <td><a href="training_preview.shtml">产品经理年度学习计划</a><b>（30）</b></td>
+              <td><small>2010-12-1</small></td>
+              <td><small>2010-12-1</small></td>
+              <td>已实施</td>
+              <td>admin</td>
+              <td><small>2010-11-16</small></td>
+              <td class="r_tab">
+              	<a href="training_edit.shtml" class="tabico_edit"  title="编辑计划">编辑计划</a><span class="dd_editbox"><a href="#" class="notimplemented have_do"  title="确认实施">确认实施</a></span><a href="#" class="view_report"  title="查看学习报告">查看学习报告</a></td>
+            </tr>
+            <!--隐藏列表-->
+            <tr class="tab_panel">
+              <td colspan="9"><ul class="panel_list">
+                  <li>
+                    <dl>
+                      <dt>[在线课件]</dt>
+                      <dd class="lessoname"><a href="#">时间管理技巧</a></dd>
+                      <dd class="startime"><small>2010-11-12</small></dd>
+                      <dd class="endtime"><small>2011-2-23</small></dd>
+                      <dd>已实施</dd>
+                      <dd class="dd_editbox"><a href="#" class="notimplemented alreadyalert"  title="已实施">已实施</a><a href="#" class="tabico_view" title="预览">预览</a> <a href="#" class="tabico_del"  title="从计划中删除">删除</a> </dd>
+                    </dl>
+                  </li>
+                  <li>
+                    <dl>
+                      <dt>[在线课件]</dt>                      <dd class="lessoname"><a href="#">时间管理技巧</a></dd>
+                      <dd class="startime"><small>2010-11-12</small></dd>
+                      <dd class="endtime"><small>2011-2-23</small></dd>
+                      <dd>已实施</dd>
+                      <dd class="dd_editbox"><a href="#" class="notimplemented alreadyalert"  title="确认实施">确认实施</a><a href="#" class="tabico_view" title="预览">预览</a> <a href="#" class="tabico_del"  title="从计划中删除">删除</a> </dd>
+                    </dl>
+                  </li>
+                  <li>
+                    <dl>
+                      <dt>[在线课件]</dt>                      <dd class="lessoname"><a href="#">时间管理技巧</a></dd>
+                      <dd class="startime"><small>2010-11-12</small></dd>
+                      <dd class="endtime"><small>2011-2-23</small></dd>
+                      <dd>已实施</dd>
+                      <dd class="dd_editbox"><a href="training-implementation_testpaperadd.shtml" class="notimplemented alreadyalert"  title="确认实施">确认实施</a><a href="#" class="tabico_view" title="预览">预览</a> <a href="#" class="tabico_del"  title="从计划中删除">删除</a> </dd>
+                    </dl>
+                  </li>
+                </ul></td>
+            </tr>
+            <!-- 隐藏列表 End -->
+          </tbody>
+          <tbody class="tr_parent">
+            <tr>
+              <td align="center" class="l_tab"><input input type="checkbox" name="num" value="" /></td>
+              <td align="center"><span class="open_ico">展开</span></td>
+              <td><a href="training_preview.shtml">新员工年度学习计划</a><b>（30）</b></td>
+              <td><small>2010-12-1</small></td>
+              <td><small>2010-12-1</small></td>
+              <td>未实施</td>
+              <td>admin</td>
+              <td><small>2010-11-16</small></td>
+              <td class="r_tab">
+              	<a href="training_edit.shtml" class="tabico_edit"  title="编辑计划">编辑计划</a><span class="dd_editbox"><a href="training_plan_do.shtml" class="recognizing"  title="确认实施">确认实施</a></span><a href="#" class="view_report"  title="查看学习报告">查看学习报告</a></td>
+            </tr>
+            <!--隐藏列表-->
+            <tr class="tab_panel">
+              <td colspan="9"><ul class="panel_list">
+                  <li>
+                    <dl>
+                      <dt>[在线课件]</dt>
+                      <dd class="lessoname"><a href="#">时间管理技巧</a></dd>
+                      <dd>未实施</dd>
+                      <dd class="dd_editbox"><a href="#" class="tabico_view" title="预览">预览</a> <a href="#" class="tabico_del"  title="从计划中删除">删除</a> </dd>
+                    </dl>
+                  </li>
+                  <li>
+                    <dl>
+                      <dt>[在线课件]</dt>
+                      <dd class="lessoname"><a href="#">时间管理技巧</a></dd>
+                      <dd>未实施</dd>
+                      <dd class="dd_editbox"><a href="#" class="tabico_view" title="预览">预览</a> <a href="#" class="tabico_del"  title="从计划中删除">删除</a> </dd>
+                    </dl>
+                  </li>
+                  <li>
+                    <dl>
+                      <dt>[在线课件]</dt>
+                      <dd class="lessoname"><a href="#">时间管理技巧</a></dd>
+                      <dd>未实施</dd>
+                      <dd class="dd_editbox"><a href="#" class="tabico_view" title="预览">预览</a> <a href="#" class="tabico_del"  title="从计划中删除">删除</a> </dd>
+                    </dl>
+                  </li>
+                </ul></td>
+            </tr>
+            <!-- 隐藏列表 End -->
+          </tbody>
+          <tbody class="tr_parent">
+            <tr>
+              <td align="center" class="l_tab"><input input type="checkbox" name="num" value="" /></td>
+              <td align="center"><span class="open_ico">展开</span></td>
+              <td><a href="training_preview.shtml">研发部年度学习计划</a><b>（30）</b></td>
+              <td><small>2010-12-1</small></td>
+              <td><small>2010-12-1</small></td>
+              <td>已实施</td>
+              <td>admin</td>
+              <td><small>2010-11-16</small></td>
+              <td class="r_tab">
+              	<a href="training_edit.shtml" class="tabico_edit"  title="编辑计划">编辑计划</a><span class="dd_editbox"><a href="#" class="recognizing"  title="确认实施">确认实施</a></span><a href="#" class="view_report"  title="查看学习报告">查看学习报告</a></td>
+            </tr>
+            <!--隐藏列表-->
+            <tr class="tab_panel">
+              <td colspan="9"><ul class="panel_list">
+                  <li>
+                    <dl>
+                      <dt>[在线课件]</dt>                      <dd class="lessoname"><a href="#">时间管理技巧</a></dd>
+                      <dd class="startime"><small>2010-11-12</small></dd>
+                      <dd class="endtime"><small>2011-2-23</small></dd>
+                      <dd>已实施</dd>
+                      <dd class="dd_editbox"><a href="#" class="recognizing"  title="确认实施">确认实施</a><a href="#" class="tabico_view" title="预览">预览</a> <a href="#" class="tabico_del"  title="从计划中删除">删除</a> </dd>
+                    </dl>
+                  </li>
+                  <li>
+                    <dl>
+                      <dt>[在线课件]</dt>                      <dd class="lessoname"><a href="#">时间管理技巧</a></dd>
+                      <dd class="startime"><small>2010-11-12</small></dd>
+                      <dd class="endtime"><small>2011-2-23</small></dd>
+                      <dd>已实施</dd>
+                      <dd class="dd_editbox"><a href="#" class="recognizing"  title="确认实施">确认实施</a><a href="#" class="tabico_view" title="预览">预览</a> <a href="#" class="tabico_del"  title="从计划中删除">删除</a> </dd>
+                    </dl>
+                  </li>
+                  <li>
+                    <dl>
+                      <dt>[在线课件]</dt>                      <dd class="lessoname"><a href="#">时间管理技巧</a></dd>
+                      <dd class="startime"><small>2010-11-12</small></dd>
+                      <dd class="endtime"><small>2011-2-23</small></dd>
+                      <dd>已实施</dd>
+                      <dd class="dd_editbox"><a href="#" class="recognizing"  title="确认实施">确认实施</a><a href="#" class="tabico_view" title="预览">预览</a> <a href="#" class="tabico_del"  title="从计划中删除">删除</a> </dd>
+                    </dl>
+                  </li>
+                </ul></td>
+            </tr>
+            <!-- 隐藏列表 End -->
+          </tbody>
+          <tbody class="tr_parent">
+            <tr>
+              <td align="center" class="l_tab"><input input type="checkbox" name="num" value="" /></td>
+              <td align="center"><span class="open_ico">展开</span></td>
+              <td><a href="#">研发部年度学习计划</a><b>（30）</b></td>
+              <td><small>2010-12-1</small></td>
+              <td><small>2010-12-1</small></td>
+              <td>已实施</td>
+              <td>admin</td>
+              <td><small>2010-11-16</small></td>
+              <td class="r_tab"><a href="#" class="tabico_edit"  title="编辑计划">编辑计划</a> <a href="#" class="recognizing"  title="确认实施">确认实施</a> <a href="#" class="view_report"  title="查看学习报告">查看学习报告</a></td>
+            </tr>
+            <!--隐藏列表-->
+            <tr class="tab_panel">
+              <td colspan="9"><ul class="panel_list">
+                  <li>
+                    <dl>
+                      <dt>[在线课件]</dt>                      <dd class="lessoname"><a href="#">时间管理技巧</a></dd>
+                      <dd class="startime"><small>2010-11-12</small></dd>
+                      <dd class="endtime"><small>2011-2-23</small></dd>
+                      <dd>已实施</dd>
+                      <dd class="dd_editbox"> <a href="#" class="recognizing"  title="确认实施">确认实施</a> <a href="#" class="tabico_view" title="预览">预览</a> <a href="#" class="tabico_del"  title="从计划中删除">删除</a> </dd>
+                    </dl>
+                  </li>
+                  <li>
+                    <dl>
+                      <dt>[在线课件]</dt>                      <dd class="lessoname"><a href="#">时间管理技巧</a></dd>
+                      <dd class="startime"><small>2010-11-12</small></dd>
+                      <dd class="endtime"><small>2011-2-23</small></dd>
+                      <dd>已实施</dd>
+                      <dd class="dd_editbox"> <a href="#" class="recognizing"  title="确认实施">确认实施</a> <a href="#" class="tabico_view" title="预览">预览</a> <a href="#" class="tabico_del"  title="从计划中删除">删除</a> </dd>
+                    </dl>
+                  </li>
+                  <li>
+                    <dl>
+                      <dt>[在线课件]</dt>                      <dd class="lessoname"><a href="#">时间管理技巧</a></dd>
+                      <dd class="startime"><small>2010-11-12</small></dd>
+                      <dd class="endtime"><small>2011-2-23</small></dd>
+                      <dd>已实施</dd>
+                      <dd class="dd_editbox"> <a href="#" class="recognizing"  title="确认实施">确认实施</a> <a href="#" class="tabico_view" title="预览">预览</a> <a href="#" class="tabico_del"  title="从计划中删除">删除</a> </dd>
+                    </dl>
+                  </li>
+                </ul></td>
+            </tr>
+            <!-- 隐藏列表 End -->
+          </tbody>
+          <tbody class="tr_parent">
+            <tr>
+              <td align="center" class="l_tab"><input input type="checkbox" name="num" value="" /></td>
+              <td align="center"><span class="open_ico">展开</span></td>
+              <td><a href="#">研发部年度学习计划</a><b>（30）</b></td>
+              <td><small>2010-12-1</small></td>
+              <td><small>2010-12-1</small></td>
+              <td>已实施</td>
+              <td>admin</td>
+              <td><small>2010-11-16</small></td>
+              <td class="r_tab"><a href="#" class="tabico_edit"  title="编辑计划">编辑计划</a> <a href="#" class="recognizing"  title="确认实施">确认实施</a> <a href="#" class="view_report"  title="查看学习报告">查看学习报告</a></td>
+            </tr>
+            <!--隐藏列表-->
+            <tr class="tab_panel">
+              <td colspan="9"><ul class="panel_list">
+                  <li>
+                    <dl>
+                      <dt>[在线课件]</dt>                      <dd class="lessoname"><a href="#">时间管理技巧</a></dd>
+                      <dd class="startime"><small>2010-11-12</small></dd>
+                      <dd class="endtime"><small>2011-2-23</small></dd>
+                      <dd>已实施</dd>
+                      <dd class="dd_editbox"> <a href="#" class="recognizing"  title="确认实施">确认实施</a> <a href="#" class="tabico_view" title="预览">预览</a> <a href="#" class="tabico_del"  title="从计划中删除">删除</a> </dd>
+                    </dl>
+                  </li>
+                  <li>
+                    <dl>
+                      <dt>[在线课件]</dt>                      <dd class="lessoname"><a href="#">时间管理技巧</a></dd>
+                      <dd class="startime"><small>2010-11-12</small></dd>
+                      <dd class="endtime"><small>2011-2-23</small></dd>
+                      <dd>已实施</dd>
+                      <dd class="dd_editbox"> <a href="#" class="recognizing"  title="确认实施">确认实施</a> <a href="#" class="tabico_view" title="预览">预览</a> <a href="#" class="tabico_del"  title="从计划中删除">删除</a> </dd>
+                    </dl>
+                  </li>
+                  <li>
+                    <dl>
+                      <dt>[在线课件]</dt>                      <dd class="lessoname"><a href="#">时间管理技巧</a></dd>
+                      <dd class="startime"><small>2010-11-12</small></dd>
+                      <dd class="endtime"><small>2011-2-23</small></dd>
+                      <dd>已实施</dd>
+                      <dd class="dd_editbox"> <a href="#" class="recognizing"  title="确认实施">确认实施</a> <a href="#" class="tabico_view" title="预览">预览</a> <a href="#" class="tabico_del"  title="从计划中删除">删除</a> </dd>
+                    </dl>
+                  </li>
+                </ul></td>
+            </tr>
+            <!-- 隐藏列表 End -->
+          </tbody>
+          <tbody class="tr_parent">
+            <tr>
+              <td align="center" class="l_tab"><input input type="checkbox" name="num" value="" /></td>
+              <td align="center"><span class="open_ico">展开</span></td>
+              <td><a href="#">研发部年度学习计划</a><b>（30）</b></td>
+              <td><small>2010-12-1</small></td>
+              <td><small>2010-12-1</small></td>
+              <td>已实施</td>
+              <td>admin</td>
+              <td><small>2010-11-16</small></td>
+              <td class="r_tab"><a href="#" class="tabico_edit"  title="编辑计划">编辑计划</a> <a href="#" class="recognizing"  title="确认实施">确认实施</a> <a href="#" class="view_report"  title="查看学习报告">查看学习报告</a></td>
+            </tr>
+            <!--隐藏列表-->
+            <tr class="tab_panel">
+              <td colspan="9"><ul class="panel_list">
+                  <li>
+                    <dl>
+                      <dt>[在线课件]</dt>                      <dd class="lessoname"><a href="#">时间管理技巧</a></dd>
+                      <dd class="startime"><small>2010-11-12</small></dd>
+                      <dd class="endtime"><small>2011-2-23</small></dd>
+                      <dd>已实施</dd>
+                      <dd class="dd_editbox"> <a href="#" class="recognizing"  title="确认实施">确认实施</a> <a href="#" class="tabico_view" title="预览">预览</a> <a href="#" class="tabico_del"  title="从计划中删除">删除</a> </dd>
+                    </dl>
+                  </li>
+                  <li>
+                    <dl>
+                      <dt>[在线课件]</dt>                      <dd class="lessoname"><a href="#">时间管理技巧</a></dd>
+                      <dd class="startime"><small>2010-11-12</small></dd>
+                      <dd class="endtime"><small>2011-2-23</small></dd>
+                      <dd>已实施</dd>
+                      <dd class="dd_editbox"> <a href="#" class="recognizing"  title="确认实施">确认实施</a> <a href="#" class="tabico_view" title="预览">预览</a> <a href="#" class="tabico_del"  title="从计划中删除">删除</a> </dd>
+                    </dl>
+                  </li>
+                  <li>
+                    <dl>
+                      <dt>[在线课件]</dt>                      <dd class="lessoname"><a href="#">时间管理技巧</a></dd>
+                      <dd class="startime"><small>2010-11-12</small></dd>
+                      <dd class="endtime"><small>2011-2-23</small></dd>
+                      <dd>已实施</dd>
+                      <dd class="dd_editbox"> <a href="#" class="recognizing"  title="确认实施">确认实施</a> <a href="#" class="tabico_view" title="预览">预览</a> <a href="#" class="tabico_del"  title="从计划中删除">删除</a> </dd>
+                    </dl>
+                  </li>
+                </ul></td>
+            </tr>
+            <!-- 隐藏列表 End -->
+          </tbody>
+          <tbody class="tr_parent">
+            <tr>
+              <td align="center" class="l_tab"><input input type="checkbox" name="num" value="" /></td>
+              <td align="center"><span class="open_ico">展开</span></td>
+              <td><a href="#">研发部年度学习计划</a><b>（30）</b></td>
+              <td><small>2010-12-1</small></td>
+              <td><small>2010-12-1</small></td>
+              <td>已实施</td>
+              <td>admin</td>
+              <td><small>2010-11-16</small></td>
+              <td class="r_tab"><a href="#" class="tabico_edit"  title="编辑计划">编辑计划</a> <a href="#" class="recognizing"  title="确认实施">确认实施</a> <a href="#" class="view_report"  title="查看学习报告">查看学习报告</a></td>
+            </tr>
+            <!--隐藏列表-->
+            <tr class="tab_panel">
+              <td colspan="9"><ul class="panel_list">
+                  <li>
+                    <dl>
+                      <dt>[在线课件]</dt>                      <dd class="lessoname"><a href="#">时间管理技巧</a></dd>
+                      <dd class="startime"><small>2010-11-12</small></dd>
+                      <dd class="endtime"><small>2011-2-23</small></dd>
+                      <dd>已实施</dd>
+                      <dd class="dd_editbox"> <a href="#" class="recognizing"  title="确认实施">确认实施</a> <a href="#" class="tabico_view" title="预览">预览</a> <a href="#" class="tabico_del"  title="从计划中删除">删除</a> </dd>
+                    </dl>
+                  </li>
+                  <li>
+                    <dl>
+                      <dt>[在线课件]</dt>                      <dd class="lessoname"><a href="#">时间管理技巧</a></dd>
+                      <dd class="startime"><small>2010-11-12</small></dd>
+                      <dd class="endtime"><small>2011-2-23</small></dd>
+                      <dd>已实施</dd>
+                      <dd class="dd_editbox"> <a href="#" class="recognizing"  title="确认实施">确认实施</a> <a href="#" class="tabico_view" title="预览">预览</a> <a href="#" class="tabico_del"  title="从计划中删除">删除</a> </dd>
+                    </dl>
+                  </li>
+                  <li>
+                    <dl>
+                      <dt>[在线课件]</dt>                      <dd class="lessoname"><a href="#">时间管理技巧</a></dd>
+                      <dd class="startime"><small>2010-11-12</small></dd>
+                      <dd class="endtime"><small>2011-2-23</small></dd>
+                      <dd>已实施</dd>
+                      <dd class="dd_editbox"> <a href="#" class="recognizing"  title="确认实施">确认实施</a> <a href="#" class="tabico_view" title="预览">预览</a> <a href="#" class="tabico_del"  title="从计划中删除">删除</a> </dd>
+                    </dl>
+                  </li>
+                </ul></td>
+            </tr>
+            <!-- 隐藏列表 End -->
+          </tbody>
+          <tbody class="tr_parent">
+            <tr>
+              <td align="center" class="l_tab"><input input type="checkbox" name="num" value="" /></td>
+              <td align="center"><span class="open_ico">展开</span></td>
+              <td><a href="#">研发部年度学习计划</a><b>（30）</b></td>
+              <td><small>2010-12-1</small></td>
+              <td><small>2010-12-1</small></td>
+              <td>已实施</td>
+              <td>admin</td>
+              <td><small>2010-11-16</small></td>
+              <td class="r_tab"><a href="#" class="tabico_edit"  title="编辑计划">编辑计划</a> <a href="#" class="recognizing"  title="确认实施">确认实施</a> <a href="#" class="view_report"  title="查看学习报告">查看学习报告</a></td>
+            </tr>
+            <!--隐藏列表-->
+            <tr class="tab_panel">
+              <td colspan="9"><ul class="panel_list">
+                  <li>
+                    <dl>
+                      <dt>[在线课件]</dt>                      <dd class="lessoname"><a href="#">时间管理技巧</a></dd>
+                      <dd class="startime"><small>2010-11-12</small></dd>
+                      <dd class="endtime"><small>2011-2-23</small></dd>
+                      <dd>已实施</dd>
+                      <dd class="dd_editbox"> <a href="#" class="recognizing"  title="确认实施">确认实施</a> <a href="#" class="tabico_view" title="预览">预览</a> <a href="#" class="tabico_del"  title="从计划中删除">删除</a> </dd>
+                    </dl>
+                  </li>
+                  <li>
+                    <dl>
+                      <dt>[在线课件]</dt>                      <dd class="lessoname"><a href="#">时间管理技巧</a></dd>
+                      <dd class="startime"><small>2010-11-12</small></dd>
+                      <dd class="endtime"><small>2011-2-23</small></dd>
+                      <dd>已实施</dd>
+                      <dd class="dd_editbox"> <a href="#" class="recognizing"  title="确认实施">确认实施</a> <a href="#" class="tabico_view" title="预览">预览</a> <a href="#" class="tabico_del"  title="从计划中删除">删除</a> </dd>
+                    </dl>
+                  </li>
+                  <li>
+                    <dl>
+                      <dt>[在线课件]</dt>                      <dd class="lessoname"><a href="#">时间管理技巧</a></dd>
+                      <dd class="startime"><small>2010-11-12</small></dd>
+                      <dd class="endtime"><small>2011-2-23</small></dd>
+                      <dd>已实施</dd>
+                      <dd class="dd_editbox"> <a href="#" class="recognizing"  title="确认实施">确认实施</a> <a href="#" class="tabico_view" title="预览">预览</a> <a href="#" class="tabico_del"  title="从计划中删除">删除</a> </dd>
+                    </dl>
+                  </li>
+                </ul></td>
+            </tr>
+            <!-- 隐藏列表 End -->
+          </tbody>
+          <tbody class="tr_parent">
+            <tr>
+              <td align="center" class="l_tab"><input input type="checkbox" name="num" value="" /></td>
+              <td align="center"><span class="open_ico">展开</span></td>
+              <td><a href="#">研发部年度学习计划</a><b>（30）</b></td>
+              <td><small>2010-12-1</small></td>
+              <td><small>2010-12-1</small></td>
+              <td>已实施</td>
+              <td>admin</td>
+              <td><small>2010-11-16</small></td>
+              <td class="r_tab"><a href="#" class="tabico_edit"  title="编辑计划">编辑计划</a> <a href="#" class="recognizing"  title="确认实施">确认实施</a> <a href="#" class="view_report"  title="查看学习报告">查看学习报告</a></td>
+            </tr>
+            <!--隐藏列表-->
+            <tr class="tab_panel">
+              <td colspan="9"><ul class="panel_list">
+                  <li>
+                    <dl>
+                      <dt>[在线课件]</dt>                      <dd class="lessoname"><a href="#">时间管理技巧</a></dd>
+                      <dd class="startime"><small>2010-11-12</small></dd>
+                      <dd class="endtime"><small>2011-2-23</small></dd>
+                      <dd>已实施</dd>
+                      <dd class="dd_editbox"> <a href="#" class="recognizing"  title="确认实施">确认实施</a> <a href="#" class="tabico_view" title="预览">预览</a> <a href="#" class="tabico_del"  title="从计划中删除">删除</a> </dd>
+                    </dl>
+                  </li>
+                  <li>
+                    <dl>
+                      <dt>[在线课件]</dt>                      <dd class="lessoname"><a href="#">时间管理技巧</a></dd>
+                      <dd class="startime"><small>2010-11-12</small></dd>
+                      <dd class="endtime"><small>2011-2-23</small></dd>
+                      <dd>已实施</dd>
+                      <dd class="dd_editbox"> <a href="#" class="recognizing"  title="确认实施">确认实施</a> <a href="#" class="tabico_view" title="预览">预览</a> <a href="#" class="tabico_del"  title="从计划中删除">删除</a> </dd>
+                    </dl>
+                  </li>
+                  <li>
+                    <dl>
+                      <dt>[在线课件]</dt>                      <dd class="lessoname"><a href="#">时间管理技巧</a></dd>
+                      <dd class="startime"><small>2010-11-12</small></dd>
+                      <dd class="endtime"><small>2011-2-23</small></dd>
+                      <dd>已实施</dd>
+                      <dd class="dd_editbox"> <a href="#" class="recognizing"  title="确认实施">确认实施</a> <a href="#" class="tabico_view" title="预览">预览</a> <a href="#" class="tabico_del"  title="从计划中删除">删除</a> </dd>
+                    </dl>
+                  </li>
+                </ul></td>
+            </tr>
+            <!-- 隐藏列表 End -->
+          </tbody>
+        </table>
+        <!-- 翻页 -->
+        <div class="pagination">
+          <ul>
+            <li>每页显示<select>
+                                <option>10</option>
+
+                                <option>20</option>
+                                <option>30</option>
+                                <option>50</option>
+                            </select>
+              条&nbsp;&nbsp;1/25页 </li>
+            <li class="disablepage">上一页</li>
+            <li class="currentpage">1</li>
+            <li><a href="#">2</a></li>
+            <li><a href="#">3</a></li>
+            <li><a href="#">4</a></li>
+            <li><a href="#">5</a></li>
+            <li><a href="#">6</a></li>
+            <li><a href="#">7</a></li>
+            <li><a href="#">8</a></li>
+            <li><a href="#">9</a>...</li>
+            <li><a href="#">15</a></li>
+            <li><a href="#">16</a></li>
+            <li class="nextpage"><a href="#">下一页</a></li>
+          </ul>
+        </div>
+        <!-- 翻页 -->
+      </div>
+      <div class="clear"></div>
+      <!-- 主内容 End -->
+    </div>
+  </div>
+  <!--// End: container -->  <!--#include virtual="../Library/footer.shtml" --></div>
+
+<!-- 声明 引用-->
+<script src="../js/libs/cbs_userjs.js"></script>
+</body>
+</html>

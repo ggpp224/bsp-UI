@@ -1,0 +1,41 @@
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<script type="text/javascript">
+    $(document).ready(function() {	
+	//移动话题
+	$('#overlay_cuttopic_success').click(function(e) {
+			e.preventDefault();
+			$.fn.nyroModalManual({
+			    width:400,
+				url: 'overlay_cuttopic_success.shtml',
+				title:'移动话题'
+			});
+			return false;
+		});
+ });
+</script>
+ 	<form id="sampleform" method="post" action="#" class="bigFrom">
+	<div class="overlay_interaction">
+        <span class="icon_bigmessage"></span>
+        <div class="overlay_box">
+        <p>将"<strong> 四个职场错误年底不能犯 </strong>"移动到：</p>
+        <p>目标板块：
+        <select>
+        <option>全部</option>
+        <option>学习咨询</option>
+        <option>分享交流</option>
+        <option>自定义版块</option>
+        </select>
+        </p>
+        <p><input type="checkbox" name="message" id="message" class="" />&nbsp;<label for="message">通知作者</label></p>
+        </div>
+        <div class="clearer"></div>
+   </div>
+   <div class="overlay_btn">
+    <input type="button" class="btn btn_submit" name="overlay_cuttopic_success" id="overlay_cuttopic_success" value=" 确定 "/> 
+    <input type="button" class="btn btn_reset overlayClose" value=" 取消 "/>
+	</div> 
+    </form>
+
+
+
+    

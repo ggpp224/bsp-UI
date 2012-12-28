@@ -1,0 +1,86 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta content="企业培训、企业内训、企业学习、企业大学、渠道大学、e-Learning、学习平台、学习系统、人才管理、岗位胜任力模型、Skillsoft、职业发展、培训管理、继任规划" name="keywords" />
+<meta content="企业商学院是集在线学习、能力测评、学习计划和培训管理为一体的企业学习整体解决方案。帮助企业提升内训、渠道培训、分支机构培训的整体水平，最大程度发掘培训价值，实现培训效益提升，全面促进企业人才培养。" name="description" />
+<title>企业商学院 - 资源管理 － 新增试卷</title>
+<!--系统样式-->
+<link href="../css/default.css" rel="stylesheet" type="text/css" />
+<!--皮肤样式  Blue-->
+<link href="../css/enterprise_blue.css" rel="stylesheet" type="text/css" />
+<!--[if IE]>
+<link type="text/css" rel="stylesheet" href="../css/ie.css" />
+<![endif]-->
+<!-- jQuery with plugins -->
+<script type="text/javascript" src="../js/libs/jquery-1.4.3.min.js"></script>
+</head>
+
+<body>
+<!-- Start:  Html  //-->
+<div id="content">
+	  <!-- Start:  header //-->
+  <!--#include virtual="../Library/header_enterprise.shtml" -->
+  <!--// End: header-->
+	<!-- Start: container //-->
+	<div id ="container">
+		<div class="box admin_box">
+
+           <!-- Start:面包屑 bread_crumbs //-->
+         <div class="bread_crumbs">
+
+			   <a href="resources.shtml" >内容管理</a>&nbsp;&#8250;&nbsp;
+			   <b>查看试卷</b>
+		  </div>
+
+           <h1 class="panel_title">查看试卷</h1>
+            <form id="flight" method="post" action="#" class="bigFrom padding28">
+            <table width="100%" border="0" class="default_table form_table  stup_table" >
+                         <tr>
+                               <th >资源类型：</th>
+                               <td>试卷</td>
+                           </tr>
+                           <tr>
+                               <th>试卷名称：</th>
+                               <td>XXX</td>
+                           </tr>
+                           <tr>
+                               <th>试卷编码：</th>
+                               <td>100000011</td>
+                           </tr>
+                           <tr>
+                               <th>所属分类：</th>
+                               <td>XXX>XXX>XXXX</td>
+                           </tr>
+                           <tr>
+                               <th>语言属性：</th>
+                               <td>中文</td>
+                           </tr>
+                            <tr>
+                               <th>建议时长：</th>
+                               <td>30分钟</td>
+                           </tr>
+                            <tr>
+                               <th valign="top">试卷描述：</th>
+                               <td><div class="p_cont">
+                                       <p>试卷描述内容～～～～</p>
+                                    </div>
+                               </td>
+                           </tr>
+                           <tr>
+                                    <th valign="top">提供商：</th>
+                                    <td colspan="2">XXXXXX</td>
+                            </tr>
+                     </table>
+
+           <div class="btn_box edit_box top10">
+                    <input name="编辑" type="submit" class="btn btn_submit"  onclick="location.href='test_paper_add.shtml';"  value="编辑" />
+					<input name="" type="button" class="btn btn_reset"  onclick="location.href='resources.shtml';" value="返回" />
+			</div><!--//end:edit_box-->
+            </form>
+        </div>
+     </div><!--//end:container-->
+      <!--#include virtual="../Library/footer.shtml" -->
+</div>
+</body>
+</html>

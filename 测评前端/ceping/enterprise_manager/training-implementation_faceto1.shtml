@@ -1,0 +1,173 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta content="企业培训、企业内训、企业学习、企业大学、渠道大学、e-Learning、学习平台、学习系统、人才管理、岗位胜任力模型、Skillsoft、职业发展、培训管理、继任规划" name="keywords" />
+<meta content="企业商学院是集在线学习、能力测评、学习计划和培训管理为一体的企业学习整体解决方案。帮助企业提升内训、渠道培训、分支机构培训的整体水平，最大程度发掘培训价值，实现培训效益提升，全面促进企业人才培养。" name="description" />
+<title>CBS - 用户管理 - 资源管理 - 新增</title>
+<!--系统样式-->
+<link href="../css/default.css" rel="stylesheet" type="text/css" />
+<!--皮肤样式  Blue-->
+<link href="../css/enterprise_blue.css" rel="stylesheet" type="text/css" />
+<link href="../css/nyroModal.css" rel="stylesheet" type="text/css" />
+<!--[if IE]>
+<link type="text/css" rel="stylesheet" href="../css/ie.css" />
+<![endif]-->
+<!-- jQuery with plugins -->
+<script type="text/javascript" src="../js/libs/jquery-1.4.3.min.js"></script>
+<script type="text/javascript" src="../js/libs/jquery.cookie.js"></script>
+<script type="text/javascript" src="../js/libs/jquery.jstree.js"></script>
+<script language="javascript" type="text/javascript" src="../js/libs/WdatePicker.js"></script>
+<script language="javascript" type="text/javascript" src="../js/libs/nyroModal1.6.2.min.js"></script>
+<script type="text/javascript">
+    $(document).ready(function() {
+
+	 $('.planChoose').click(function(e){
+			e.preventDefault();
+			$.fn.nyroModalManual({
+				width:600,
+				title:'选择关联计划',
+				url: 'overlay_plan_choose.shtml'
+			});
+		});
+
+		 $('#Selesson').click(function(e){
+			e.preventDefault();
+			$.fn.nyroModalManual({
+				width:600,
+				url: 'overlay_selesson.shtml'
+			});
+		});
+
+
+		 $('.sel_lecturer').click(function(e){
+			e.preventDefault();
+			$.fn.nyroModalManual({
+				width:430,
+				url: 'overlay_sel_lecturer.shtml'
+			});
+		});
+
+		$(".msgtext2").hide();
+		$(".jiangshi").click(function(){
+		   if($(this).attr("id") == "radio1" && ($(this).attr("checked") == true || $(this).attr("checked") == "checked")) {
+            $(".msgtext1").show();
+			$(".msgtext2").hide();
+        }else{
+            $(".msgtext1").hide();
+			$(".msgtext2").show();
+        }
+		});
+ });
+</script>
+</head>
+<body>
+<!-- Start:  Html  //-->
+<div id="content">
+  <!-- Start:  header //-->
+  <!--#include virtual="../Library/header_enterprise.shtml" -->
+  <!--// End: header-->
+  <!-- Start: container //-->
+  <div id ="container">
+    <div class="box admin_box miniheight">
+      <!-- 面包屑 --><div class="bread_crumbs">
+
+               <a href="training-implementation.shtml">培训实施</a>&nbsp;&#8250;&nbsp;<b>发起面授课程</b>
+               </div>
+      <!-- 面包屑 End -->
+      <!-- STEP -->
+            <div class="stepbox">
+                <ul>
+                    <li class="step_frist trisection step_waiting">
+                        <dl class="current">
+                            <dt ></dt>
+                            <dd class="numberbox">1</dd>
+                            <dd class="title_text">输入基本信息</dd>
+                            <dd>请填写...</dd>
+                        </dl>
+                    </li>
+                    <li class="step_second trisection">
+                        <dl>
+                            <dt></dt>
+                            <dd class="numberbox">2</dd>
+                            <dd class="title_text">设置培训对象</dd>
+                            <dd>等待中</dd>
+                        </dl>
+                    </li>
+                    <li class="step_third trisection">
+                        <dl>
+                            <dt></dt>
+                            <dd class="numberbox">3</dd>
+                            <dd class="title_text">培训资料和培训反馈设置</dd>
+                            <dd>等待中</dd>
+                        </dl>
+                    </li>
+                </ul>
+            </div>
+      <!-- STEP End -->
+     <div class="content_body padding28" >
+        <h1 class="panel_title">输入基本信息</h1>
+         <form id="flight" method="post" action="#" class="bigFrom">
+           <table class="default_table form_table top10">
+              <tr>
+                <th ><span>*</span> 选择课程：</th>
+                <td ><input type="text" class="default_txt_no" disabled="disabled" value="" size="50"/>
+                <input type="submit" class="btn btn_default right30" id="Selesson" value="选择"/> <a href="sync_courses_add.shtml" target="_blank">新增课程 &raquo;</a></td>
+              </tr>
+              <tr>
+                <th ><span>*</span> 实施名称：</th>
+                <td ><input type="text" class="default_txt" value="" size="50"/></td>
+              </tr>
+              <tr>
+                <th >关联计划：</th>
+                <td ><input type="text" class="default_txt" value="" size="50" id="ThiselText"/>
+                <input type="submit" class="btn btn_default planChoose" value="选择"/></td>
+              </tr>
+              <tr>
+                <th valign="top"> <label>目标：</label>
+                </th>
+                <td><textarea name="textarea" rows="2" class="default_textarea w510"></textarea></td>
+              </tr>
+              <tr>
+                <th valign="top">描述：</th>
+                <td><textarea name="textarea" rows="2" class="default_textarea w510"></textarea></td>
+              </tr>
+
+              <tr>
+                <th><span>* </span>起止日期：</th>
+                <td><input type="text" class="dateinput" id="d122" onfocus="WdatePicker({isShowWeek:true,onpicked:function(){}})"/>
+                  &nbsp;-&nbsp;
+                  <input type="text" class="dateinput" id="d122" onfocus="WdatePicker({isShowWeek:true,onpicked:function(){}})"/></td>
+              </tr>
+              <tr>
+                <th><span>* </span>授课地点：</th>
+                <td><input type="text" class="default_txt" value="" size="30"/></td>
+              </tr>
+              <tr>
+                <th rowspan="3" valign="top" ><span>* </span>授课教师：</th>
+                <td >
+                  <label ><input type="radio" name="radiojs" class="default_radio jiangshi" id="radio1" checked="checked" />内部讲师</label>
+                  <label ><input type="radio" name="radiojs" class="default_radio jiangshi" id="radio2" />外部讲师</label>
+                </td>
+              </tr>
+              <tr>
+                <td class="msgtext1"> <p class="tips">内部讲师是指内部员工担任本次课程讲师。</p><input type="text" class="default_txt" value="" size="30"/>
+                <input type="submit" class="btn btn_default sel_lecturer" value="选择"/></td>
+              </tr>
+              <tr>
+               <td class="msgtext2"><p class="tips">外部讲师是指从您在"资源管理-讲师管理"列表中选择本次课程讲师。</p><input type="text" class="default_txt" value="" size="30"/>
+                <input type="submit" class="btn btn_default sel_lecturer" value="选择"/></td>
+              </tr>
+           </table>
+          <div class="btn_box edit_box">
+          <input name="按钮" type="button" class="btn btn_feature " onclick="location.href='training-implementation_faceto2.shtml'" value=" 保存并进入下一步 "/>
+          <input name="重置" type="reset" class="btn btn_reset " value="      取消      "/>
+        </div>
+      </form>
+      </div>
+    </div>
+  </div>
+  <!--// End: container -->  <!--#include virtual="../Library/footer.shtml" --></div>
+
+</body>
+</html>

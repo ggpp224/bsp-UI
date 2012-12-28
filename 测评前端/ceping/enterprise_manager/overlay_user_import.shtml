@@ -1,0 +1,49 @@
+<h2 id="nyroModalTitle">批量调整部门</h2>
+ <table border="0" class="default_table form_table">
+                <tr>
+                  <td colspan="3" align="right">&nbsp;</td>
+                </tr>
+
+                <tr class="msgtext1">
+                  <td width="100">&nbsp;</td>
+                  <td valign="top">
+						<p>批量调整部门用于批量建立人员与部门之间的对应关系，请您下载模板，按模板要求填写完整后导入平台，同一用户只能隶属于一个部门。</p>
+                        <p>&nbsp;</p>
+                        <p>您可以点击灰色文字下载平台已有相关数据：“用户部门数据”为各用户当前所属部门数据，“用户数据”为全部用户数据，“部门数据”为全部部门数据。</p>
+                        <p>&nbsp;</p>
+						<span class="righturl"><a href="#">导出用户部门数据 &raquo;</a><a href="#">导出用户数据 &raquo;</a> <a href="#">导出部门数据 &raquo;</a></span>
+						<p><a href="#">下载模板 &raquo;</a></p>
+                        <p>&nbsp;</p>
+				   </td>
+                  <td width="50" valign="top">&nbsp;</td>
+                </tr>
+                
+                
+                <tr >
+                  <td align="right"><b>上载文档</b>：</td>
+                  <td colspan="2"><input type="text" size="40" class="default_txt input_wait" readonly="readonly"/>
+                    <span class="sel_label">
+                    <input type="submit" class="btn btn_default" value="浏览"/>
+                    <input type="submit" class="btn btn_default" value="导入"/>
+                    </span></td>
+                </tr>
+                <tr>
+                  <td colspan="3" align="right">&nbsp;</td>
+                </tr>
+              </table>
+
+<!--<script type="text/javascript">
+    $(document).ready(function() {	 
+	$(".msgtext2").hide();
+	$('#radio1').attr("checked") == true ;
+	$(":radio").click(function(){  
+	if($(this).attr("id") == "radio1" && ($(this).attr("checked") == true || $(this).attr("checked") == "checked")) {
+            $(".msgtext1").show();
+			$(".msgtext2").hide();
+        }else{
+            $(".msgtext1").hide();
+			$(".msgtext2").show();
+        } 
+	 }); 
+ });
+</script>-->

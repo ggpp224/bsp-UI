@@ -1,0 +1,21 @@
+<h2>新增部门</h2>
+<form  method="post" action="#" class="bigFrom">
+  <dl class="list">
+    <dt>部门名称：</dt>
+    <dd>
+      <input type="text" class="default_txt" value="" name=""/>
+    </dd>
+  </dl>
+  <dl class="list">
+    <dt>部门编码：</dt>
+    <dd>
+      <input type="text" class="default_txt" value="" name=""/>
+    </dd>
+  </dl>
+  <div class="clear"></div>
+  <div class="overlay_btn">
+    <input name="提交" type="submit" class="btn btn_submit" value=" 确定 "/>
+    <input type="button" class="btn btn_reset nyroModalClose" value=" 取消 "/>
+    <br />
+  </div>
+</form>

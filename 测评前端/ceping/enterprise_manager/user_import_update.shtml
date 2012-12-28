@@ -1,0 +1,168 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta content="企业培训、企业内训、企业学习、企业大学、渠道大学、e-Learning、学习平台、学习系统、人才管理、岗位胜任力模型、Skillsoft、职业发展、培训管理、继任规划" name="keywords" />
+<meta content="企业商学院是集在线学习、能力测评、学习计划和培训管理为一体的企业学习整体解决方案。帮助企业提升内训、渠道培训、分支机构培训的整体水平，最大程度发掘培训价值，实现培训效益提升，全面促进企业人才培养。" name="description" />
+<title>CBS - 用户管理 - 批量导入用户</title>
+<!--系统样式-->
+<link href="../css/default.css" rel="stylesheet" type="text/css" />
+<!--皮肤样式  Blue-->
+<link href="../css/enterprise_blue.css" rel="stylesheet" type="text/css" />
+<link href="../css/nyroModal.css" rel="stylesheet" type="text/css" />
+<!--[if IE]>
+<link type="text/css" rel="stylesheet" href="../css/ie.css" />
+<![endif]-->
+<!-- jQuery with plugins -->
+<script type="text/javascript" src="../js/libs/jquery-1.4.3.min.js"></script>
+<!-- jQuery tree -->
+<script type="text/javascript" src="../js/libs/jquery.cookie.js"></script>
+<script type="text/javascript" src="../js/libs/jquery.jstree.js"></script>
+<script language="javascript" type="text/javascript" src="../js/libs/nyroModal1.6.2.min.js"></script>
+<script type="text/javascript">
+ $(document).ready(function() {
+       // load html data from file
+	$("#load_html_data").jstree({
+		"html_data" : {
+			"ajax" : {
+				"url" : "data/data_resources.shtml",
+				"data" : function (n) {
+					return { id : n.attr ? n.attr("id") : 0 };
+				}
+			}
+		},
+		"plugins" : [ "themes", "html_data" ,"checkbox","contextmenu","cookies","ui","crrm","dnd"]
+
+	});
+
+	/*单选切换内容*/
+	$(".msgtext2").hide();
+	$(":radio").click(function(){
+	if($(this).attr("id") == "radio1" && ($(this).attr("checked") == true || $(this).attr("checked") == "checked")) {
+            $(".msgtext1").show();
+			$(".msgtext2").hide();
+        }else{
+            $(".msgtext1").hide();
+			$(".msgtext2").show();
+        }
+	 });
+
+
+	//添加根目录
+	 $('.tree_add').nyroModal({
+			width: 380
+	});
+
+	 		//添加目录
+	 $('.tree_add_child').nyroModal({
+			width: 380
+	});
+
+
+	//编辑目录
+	 $('.tree_edit').nyroModal({
+		width: 380
+	});
+
+	//删除目录
+	$(".tree_dell").nyroModal({
+		width:380
+	});
+
+		//批量导入
+	$(".tree_imp").nyroModal({
+		width:380
+	});
+ });
+</script>
+</head>
+<body>
+<!-- Start:  Html  //-->
+<div id="content">
+  <!-- Start:  header //-->
+  <!--#include virtual="../Library/header_enterprise.shtml" -->
+  <!--// End: header-->
+  <!-- Start: container //-->
+  <div id ="container">
+    <div class="box admin_box">
+      <!-- 面包屑 --><div class="bread_crumbs">
+				  <a href="user.shtml">用户管理</a>&nbsp;&#8250;&nbsp;<a href="user.shtml">按部门</a>&nbsp;&#8250;&nbsp;<a href="" class="current">批量导入用户</a> </div>
+      <!-- 面包屑 End -->
+      <!--  基本信息 -->
+      <!-- =========================Start:sidebar//================================-->
+      <div class="sidebar boxborder">
+        <ul class="tree_menu more_menu">
+          <li><a href="overlay_root_add.shtml" title="增加根部门" class="tree_add">增加根部门</a></li>
+          <li><a href="overlay_child_add.shtml" class="tree_add_child click_icon" title="增加子部门">增加子部门</a></li>
+          <li><a href="#" class="tree_up" title="上移">上移</a></li>
+          <li><a href="#" class="tree_down" title="下移">下移</a></li>
+          <li><a href="#" class="tree_left" title="左移">左移</a></li>
+          <li><a href="#" class="tree_right" title="右移">右移</a></li>
+          <li><a href="overlay_delsector.shtml" class="tree_dell click_icon" title="删除">删除</a></li>
+          <li><a href="overlay_dep_edit.shtml" class="tree_edit click_icon" title="编辑">编辑</a></li>
+          <li><a href="overlay_dep_import.shtml" class="tree_imp click_icon" title="导入组织树">导入组织树</a></li>
+        </ul>
+        <!--树状菜单//-->
+        <div id="load_html_data"></div>
+      </div>
+      <!--//End:sidebar-->
+      <!-- =========================Start: content_r//================================-->
+      <div class="content_r">
+        <h1 class="panel_title ">批量导入/修改</h1>
+        <form id="flight" method="post" action="#" class="bigFrom">
+          <table width="100%" border="0" class="default_table form_table">
+            <tr>
+              <td colspan="2"><div  class="msg_box box-info"> 按照管理员指定用户名批量导入/修改用户信息。</div></td>
+            </tr>
+            <tr>
+              <td width="120" align="right"><b>操作类型</b>：</td>
+              <td><label>
+                   <input name="radio" type="radio" id="radio1" value="1" checked="checked" />
+                  批量导入用户 </label>
+                <label>
+                   <input type="radio" name="radio" id="radio2" value="0" />
+                  批量修改用户</label></td>
+            </tr>
+            <tr class="msgtext1">
+              <td height="70">&nbsp;</td>
+              <td valign="top">
+			    <div class="p_cont">
+					<p>批量导入用户用于向平台批量新增人员数据，请您先下载导入模板，录入完成后导入平台。 </p>
+					<span class="righturl"><a href="#">导出用户数据 &raquo;</a> <a href="#">导出部门数据 &raquo;</a></span>
+					<p><a href="#">下载模板 &raquo;</a></p>
+				</div>
+              </td>
+            </tr>
+            <tr class="msgtext2">
+              <td height="70">&nbsp;</td>
+              <td valign="top">
+			  <div class="p_cont">
+			    <p>批量修改用于对平台已有用户数据进行批量更新操作。需先导出平台用户数据，在Excel文件中修改后将修改后文档上传，点击"导入"，完成批量修改用户操作。</p>
+                <p><a href="#" class="right30">导出用户数据 &raquo;</a>  <a href="#">导出部门数据 &raquo;</a></p>
+				</div></td>
+            </tr>
+            <tr>
+              <td align="right"><b>上载文档</b>：</td>
+              <td><input type="text" class="default_txt" value="" name=""/>
+                <span class="sel_label">
+                <input type="submit" class="btn btn_default" value="浏览"/>
+                <input type="submit" class="btn btn_default" value="上传"/>
+                </span></td>
+            </tr>
+            <tr>
+              <td colspan="2" align="right">&nbsp;<br /></td>
+            </tr>
+            <tr>
+              <td colspan="2" align="center" class="but_box edit_box"><input type="button" class="btn btn_submit" value=" 导入 "/>&nbsp;<input name="按钮" type="button" class="btn btn_default"onclick="location.href='user.shtml';"  value=" 返回 "/></td>
+            </tr>
+          </table>
+        </form>
+      </div>
+      <div class="clear"></div>
+    </div>
+  </div>
+  <!--// End: container -->
+  <!--#include virtual="../Library/footer.shtml" --></div>
+<!--// End: Html -->
+</body>
+</html>

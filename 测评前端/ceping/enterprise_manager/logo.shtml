@@ -1,0 +1,82 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta content="企业培训、企业内训、企业学习、企业大学、渠道大学、e-Learning、学习平台、学习系统、人才管理、岗位胜任力模型、Skillsoft、职业发展、培训管理、继任规划" name="keywords" />
+<meta content="企业商学院是集在线学习、能力测评、学习计划和培训管理为一体的企业学习整体解决方案。帮助企业提升内训、渠道培训、分支机构培训的整体水平，最大程度发掘培训价值，实现培训效益提升，全面促进企业人才培养。" name="description" />
+<title>CBS - 定制LOGO</title>
+<!--系统样式-->
+<link href="../css/default.css" rel="stylesheet" type="text/css" />
+<!--皮肤样式  Blue-->
+<link href="../css/enterprise_blue.css" rel="stylesheet" type="text/css" />
+<!--[if IE]>
+<link type="text/css" rel="stylesheet" href="../css/ie.css" />
+<![endif]-->
+<!-- jQuery with plugins -->
+<script type="text/javascript" src="../js/libs/jquery-1.4.3.min.js"></script>
+</head>
+<body>
+<!-- Start:  Html  //-->
+<div id="content">
+  <!-- Start:  header //-->
+  <!--#include virtual="../Library/header_enterprise.shtml" -->
+  <!--// End: header-->
+  <!-- Start: container //-->
+  <div id="container">
+    <div class="box admin_box">
+      <!-- 面包屑 --><div class="bread_crumbs">
+				  <a href="resources.shtml">系统管理</a>&nbsp;&#8250;&nbsp;<b>定制LOGO</b> </div>
+      <!-- 面包屑 End -->
+      <!-- 主内容 -->
+      <form  method="post" action="#" class="bigFrom padding28">
+      <!-- 选项卡 -->
+      <div class="feature_tabs">
+
+          <ul class="ulfeature_tabs">
+          <li class="current"><a href="logo.shtml" class="current">定制LOGO</a></li>
+          <li><a href="logo_page.shtml">定制宣传页面</a></li>
+          </ul>
+
+      </div>
+      <!-- 选项卡 End -->
+       <table width="100%" class="default_table form_table">
+  <tr>
+    <td height="60" colspan="2">&nbsp;
+   	<div class="message_box"><div class="tip_complete"><div class="ico_tip_complete"></div>保存完毕。</div></div>
+    &nbsp;</td>
+  </tr>
+  <tr>
+    <th>上传公司LOGO：</th>
+    <td><input name="textfield" type="file" id="textfield" class="default_txt" size="50" />
+      <span class="sel_label">
+      <input type="submit" class="btn btn_default" value="预览"/>
+      </span></td>
+  </tr>
+  <tr>
+    <td height="50">&nbsp;</td>
+    <td valign="top"><span class="msg">注意：公司LOGO尺寸必须是254×40像素</span></td>
+  </tr>
+  <tr>
+    <th valign="top">预览：</th>
+    <td valign="top" ><div class="preview_logo"><img src="../images/enterprise/company_logo.gif" alt="" width="170" height="50" /></div></td>
+  </tr>
+  <tr>
+    <td height="70">&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+</table>
+
+
+        <div class="btn_box edit_box">
+          <input type="submit" class="btn btn_submit" onclick="location.href='';" value="保存" />
+          <input type="submit" class="btn" onclick="location.href='';" disabled="disabled" value="保存" />
+        </div>
+      </form>
+      <!-- 主内容 End -->
+    </div>
+    <!--//End admin_box-->
+  </div>
+  <!--// End: container -->  <!--#include virtual="../Library/footer.shtml" --></div>
+<!--// End: Html -->
+</body>
+</html>

@@ -1,0 +1,60 @@
+/* ie hack
+-----------------------------------------------*/
+* html div, ul {
+	zoom: 1;
+}
+#header {
+	overflow:hidden;
+}
+/*导航*/
+.subnav li {
+	white-space:nowrap;
+}
+/*按钮*/
+.btn                  {  *overflow:visible; *padding:1px 9px 0 9px;}
+.listtab_btn .btn     { *padding:1px 9px 0 9px }
+.save_box .btn, .edit_box .btn{ *padding:3px 14px;}
+.searchbox .btn,
+.features_search .btn { *padding:1px 6px 0 6px; }
+.defautcheckbox { +margin-top:-4px;}
+
+/*多选按钮*/
+.selbtn button .btn   { *padding-right:20px;}
+.selbtn span          { *right:0; }
+
+#container .bigFrom ul.panel_list dl dt { overflow:visible; }
+#container .bigFrom ul.panel_list dl dd { overflow:visible; }
+
+/*多选按钮*/
+ .selbtn span { *right:5px; }
+.exportbtn ul li ul {_width:111px; *overflow:hidden; }
+.exportbtn ul li { *display:inline; *zoom:1; }
+
+
+/* 通用翻页 */
+.pagination li				{ *zoom:1; *vertical-align:middle; }
+.pagination a,
+.pagination a:visited		{ *zoom:1; *vertical-align:middle; }
+.pagination li.currentpage	{ *padding:0 5px; }
+.pagination li.disablepage	{ *padding:0 2px; }
+.pagination li.nextpage     { *padding:0 2px; }
+
+/*弹出层*/
+.modal div.tree{ _width:47%;}
+
+/*自适应宽度 ie*/
+.exportbtn ul li ul li, .exportbtn ul li ul li:hover {*vertical-align: middle; overflow:hidden; *border:1px solid #fff;} /*解决 空隙BUG*/
+.step .step_1 .finish dd.number { _margin-left:5px; }
+.step .step_2 .current dd.number {_margin-left:12px;}
+.step .step_3 .current dd.number {_margin-left:12px;}
+.upload_panel img.imgbox { _height:68px; }
+
+/*tree ie6*/
+.tree_menu    {  _overflow:hidden;}
+.exportbtn ul li,
+.tree_menu a  { _border-color:tomato;  _filter:chroma(color=tomato);}
+.step dd.text { _font-weight:normal; padding-top:4px\9;/* IE6,7,8 */}
+.content_r    { _width:708px;}
+/*footer*/
+#footer .box  { _width:938px;}
+

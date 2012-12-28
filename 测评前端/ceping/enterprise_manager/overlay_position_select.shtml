@@ -1,0 +1,33 @@
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<form  method="post" action="#" >
+<div class="overbody">
+  <div class="features_search">
+	    <input type="text" class="default_txt" size="32"  onfocus="if (value==defaultValue)value=''" onblur="if(!value)value=defaultValue" value="请输入岗位，关键字"/>
+	   <input type="submit" class="btn btn_reset" value="查询"/>
+  </div>
+  <div class="y-scroll borderall bg_ffffee" >
+    <div id="load_html_data1" ></div>
+  </div>
+    </div>
+  <div class="overlay_btn">
+    <input type="button" class="btn btn_submit" value=" 确定 "/>
+    <input type="button" class="btn btn_reset overlayClose" value=" 取消 "/>
+  </div>
+
+</form>
+<script type = "text/javascript">
+ $(document).ready(function() {	
+$("#load_html_data1").jstree({ 
+		"html_data" : {
+			"ajax" : {
+				"url" : "data/data_resources.shtml",
+				"data" : function (n) { 
+					return { id : n.attr ? n.attr("id") : 0 }; 
+				}
+			}
+		},
+		"plugins" : [ "themes", "html_data","cookies","ui","crrm"] 
+		
+	});
+ });
+</script>

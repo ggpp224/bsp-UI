@@ -1,0 +1,33 @@
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<script type="text/javascript">
+    $(document).ready(function() {	
+	//编辑版块名称
+	$('#overlay_editplate_success').click(function(e) {
+			e.preventDefault();
+			$.fn.nyroModalManual({
+			    width:400,
+				url: 'overlay_editplate_success.shtml',
+				title:'编辑自定义版块名称'
+			});
+			return false;
+		});
+ });
+</script>
+ 	<form id="sampleform" method="post" action="#" class="bigFrom">
+	<div class="overlay_interaction">
+        <span class="icon_bigimportant"></span>
+        <div class="overlay_box">
+        <p>原版块名：自定义版块名称</p>
+        <p><strong>新版块名：</strong><input class="default_txt" onfocus="if (value==defaultValue)value=''" onblur="if(!value)value=defaultValue" value="请输入版块新的名称..."  /></p>
+        </div>
+        <div class="clearer"></div>
+   </div>
+   <div class="overlay_btn">
+    <input type="button" class="btn btn_submit" name="overlay_editplate_success" id="overlay_editplate_success" value=" 确定 "/> 
+    <input type="button" class="btn btn_reset overlayClose" value=" 取消 "/>
+	</div> 
+    </form>
+
+
+
+    

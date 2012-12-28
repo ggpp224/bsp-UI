@@ -1,0 +1,41 @@
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<h2>查看岗位人员</h2>
+ 	<form  method="post" action="#" class="bigFrom">
+    <table width="100%" class="default_table form_table">
+      <tr>
+        <td><label class="seltextbox">已选岗位：<b class="wrongfont">XX</b>&nbsp;&nbsp;&nbsp;关联人员：<b class="wrongfont">XX</b></label></td>
+      </tr>
+    <td>
+      <div class="minibox">
+       <dl class="overlay_viewlist">
+        <dt>行政中心（10）</dt>
+        <dd><span>李四</span><span>斯琴格日勒</span><span>李四</span><span>乌日更达赖</span><span>李四</span><span>王五</span><span>李四</span><span>王五</span><span>李四</span><span>王五</span></dd>
+       <dt>研发中心（10）</dt>
+        <dd><span>李四</span><span>斯琴格日勒</span><span>李四</span><span>乌日更达赖</span><span>李四</span><span>王五</span><span>李四</span><span>王五</span><span>李四</span><span>王五</span></dd>
+       </dl>
+      </div>
+    </td>
+    </tr>
+</table>
+    </form>
+<script type="text/javascript">
+    $(document).ready(function() {
+		
+		$("dl.overlay_viewlist dd").hide(); //默认隐藏
+		$("dl.overlay_viewlist dd:first").show();//首个子集默认显示
+		$("dl.overlay_viewlist dt:first").addClass("opendd");
+		
+		var ddonclick = $("dl.overlay_viewlist").find("dt");
+		$(ddonclick).click(function () {
+		$(this).next("dd").animate({opacity: 'toggle'}, 'fast');
+		$(this).toggleClass("opendd");
+		});		$(ddonclick).toggle(function (){
+		 $(this).next("dd").slideDown('fast');	
+		},
+		function(){ 
+		 $(this).next("dd").slideUp('fast');
+		});
+		
+	 });
+</script>
+   

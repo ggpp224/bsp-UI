@@ -1,0 +1,196 @@
+<script type = "text/javascript">
+ $(document).ready(function() {			 
+	 	//批量导入用户
+		$('.import_all').nyroModal({
+			width:600,
+			height:240
+		});
+		
+		//批量修改用户
+		$('.modify_all').nyroModal({
+			width:600,
+			height:240
+		});
+
+ });
+</script>
+<div class="from_panel">
+    <form method="post" action="#" class="listtab_btn">
+            <div class="exportbtn">
+              	<ul>
+                <li><a href="#" class="expbtn">导出用户数据</a></li>
+              	</ul>
+            </div>
+            <input type="button" name="" class="btn btn_feature" onclick="location.href='user_add.shtml';" value="新增用户" />
+            <input type="button" name="" class="btn btn_del" value="删除" id="delcustomer"  title="系统提示"/>
+            <input type="button" name="" class="btn btn_other departments" value="调整部门" />
+			<input type="button" name="" class="btn btn_other reSetpassword" value="重置密码" />
+			<input type="button" name="" class="btn btn_other user_import" value="批量调整部门" />
+            
+			<div class="selbtn">
+                <button class="btn btn_other"><span class="menudown"></span>批量操作</button>
+                <ul class="newspecial_menu">
+                <li><a href="overlay_importuser.shtml" class="import_all" title="批量导入用户">批量导入用户</a></li>
+                <li><a href="overlay_importuser_modify.shtml" class="modify_all" title="批量修改用户">批量修改用户</a></li>
+                </ul>
+            </div>
+
+          </form>
+        </div>
+        
+        <!-- 表格笔记 -->
+        <div class="table_notes"><a href="#"><strong>研发中心</strong></a>（子部门数：<strong class="font_red">10</strong>，用户数：<strong class="font_red">56</strong> ） </div>
+        <!-- 表格笔记 End -->
+        <table width="100%" border="0" cellspacing="0" cellpadding="0" class="default_table listtab">
+          <thead class="gradual_bg">
+            <tr>
+              <th width="28" class="th_center"><input type="checkbox" name="num" value="" onclick="if(this.checked==true) { checkAll('num'); } else { clearAll('num'); }" /></th>
+              <th width="30">状态</th>
+              <th width="50" >姓名</th>
+              <th >登录ID</th>
+              <th >所属部门</th>
+              <th >所属岗位</th>
+              <th >所属分组</th>
+              <th width="60">操作</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td align="center"><input input type="checkbox" name="num" value="" /></td>
+              <td align="center"><span class="finish_ico" title="有效">有效</span></td>
+              <td><a href="user_info.shtml" >毛旭峰</a></td>
+              <td>Maoxufeng</td>
+              <td>研发中心</td>
+              <td>项目经理</td>
+              <td>新员工</td>
+              <td>
+			     <a href="user_edit.shtml" class="tabico_edit"  title="编辑">编辑</a>    
+				 <a href="#" class="tabico_start"  title="启用">启用</a>
+				 </td>
+            </tr>
+            <tr>
+              <td align="center"><input input type="checkbox" name="num" value="" /></td>
+              <td align="center"><span class="finish_ico" title="有效">有效</span></td>
+              <td><a href="user_info.shtml" >毛旭峰</a></td>
+              <td>Maoxufeng</td>
+              <td>研发中心</td>
+              <td>项目经理</td>
+              <td>新员工</td>
+              <td><a href="user_edit.shtml" class="tabico_edit"  title="编辑">编辑</a>    
+				 <a href="#" class="tabico_stop"  title="停用">停用</a></td>
+            </tr>
+            <tr>
+              <td align="center"><input input type="checkbox" name="num" value="" /></td>
+              <td align="center"><span class="finish_ico" title="有效">有效</span></td>
+              <td><a href="user_info.shtml" >毛旭峰</a></td>
+              <td>Maoxufeng</td>
+              <td>研发中心</td>
+              <td>项目经理</td>
+              <td>新员工</td>
+              <td><a href="user_edit.shtml" class="tabico_edit"  title="编辑">编辑</a>    
+				 <span class="tabico_start_n"  title="启用">启用</span></td>
+            </tr>
+            <tr>
+              <td align="center"><input input type="checkbox" name="num" value="" /></td>
+              <td align="center"><span class="finish_ico" title="有效">有效</span></td>
+              <td><a href="user_info.shtml" >毛旭峰</a></td>
+              <td>Maoxufeng</td>
+              <td>研发中心</td>
+              <td>项目经理</td>
+              <td>新员工</td>
+              <td><a href="user_edit.shtml" class="tabico_edit"  title="编辑">编辑</a>    
+				 <span class="tabico_stop_n"  title="停用">停用</span></td>
+            </tr>
+            <tr>
+              <td align="center"><input input type="checkbox" name="num" value="" /></td>
+              <td align="center"><span class="finish_ico" title="有效">有效</span></td>
+              <td><a href="user_info.shtml" >毛旭峰</a></td>
+              <td>Maoxufeng</td>
+              <td>研发中心</td>
+              <td>项目经理</td>
+              <td>新员工</td>
+              <td><a href="user_edit.shtml" class="tabico_edit"  title="编辑">编辑</a>    
+				 <a href="#" class="tabico_stop"  title="停用">停用</a></td>
+            </tr>
+            <tr>
+              <td align="center"><input input type="checkbox" name="num" value="" /></td>
+              <td align="center"><span class="finish_ico" title="有效">有效</span></td>
+              <td><a href="user_info.shtml" >毛旭峰</a></td>
+              <td>Maoxufeng</td>
+              <td>研发中心</td>
+              <td>项目经理</td>
+              <td>新员工</td>
+              <td><a href="user_edit.shtml" class="tabico_edit"  title="编辑">编辑</a>    
+				 <a href="#" class="tabico_stop"  title="停用">停用</a></td>
+            </tr>
+            <tr>
+              <td align="center"><input input type="checkbox" name="num" value="" /></td>
+              <td align="center"><span class="finish_ico" title="有效">有效</span></td>
+              <td><a href="user_info.shtml" >毛旭峰</a></td>
+              <td>Maoxufeng</td>
+              <td>研发中心</td>
+              <td>项目经理</td>
+              <td>新员工</td>
+              <td><a href="user_edit.shtml" class="tabico_edit"  title="编辑">编辑</a>    
+				 <a href="#" class="tabico_stop"  title="停用">停用</a></td>
+            </tr>
+            <tr>
+              <td align="center"><input input type="checkbox" name="num" value="" /></td>
+              <td align="center"><span class="finish_ico" title="有效">有效</span></td>
+              <td><a href="user_info.shtml" >毛旭峰</a></td>
+              <td>Maoxufeng</td>
+              <td>研发中心</td>
+              <td>项目经理</td>
+              <td>新员工</td>
+              <td><a href="user_edit.shtml" class="tabico_edit"  title="编辑">编辑</a>    
+				 <span class="tabico_start_n"  title="启用">启用</span></td>
+            </tr>
+            <tr>
+              <td align="center"><input input type="checkbox" name="num" value="" /></td>
+              <td align="center"><span class="finish_ico" title="有效">有效</span></td>
+              <td><a href="user_info.shtml" >毛旭峰</a></td>
+              <td>Maoxufeng</td>
+              <td>研发中心</td>
+              <td>项目经理</td>
+              <td>新员工</td>
+              <td><a href="user_edit.shtml" class="tabico_edit"  title="编辑">编辑</a>    
+				 <span class="tabico_stop_n"  title="停用">停用</span></td>
+            </tr>
+            <tr>
+              <td align="center"><input input type="checkbox" name="num" value="" /></td>
+              <td align="center"><span class="finish_ico" title="有效">有效</span></td>
+              <td><a href="user_info.shtml" >毛旭峰</a></td>
+              <td>Maoxufeng</td>
+              <td>研发中心</td>
+              <td>项目经理</td>
+              <td>新员工</td>
+              <td><a href="user_edit.shtml" class="tabico_edit"  title="编辑">编辑</a>    
+				 <a href="#" class="tabico_stop"  title="停用">停用</a></td>
+            </tr>
+          </tbody>
+        </table>
+        <!-- 翻页 -->
+        <div class="pagination">
+          <ul>
+            <li>每页显示<select>
+                                <option>10</option>
+                                <option>20</option>
+                                <option>30</option>
+                                <option>50</option>
+                            </select>
+              条&nbsp;&nbsp;1/25页 </li>
+            <li class="disablepage">上一页</li>
+            <li class="currentpage">1</li>
+            <li><a href="#">2</a></li>
+            <li><a href="#">3</a></li>
+            <li><a href="#">4</a></li>
+            <li><a href="#">5</a></li>
+            <li><a href="#">6</a></li>
+            <li><a href="#">7</a></li>
+            <li><a href="#">8</a></li>
+            <li><a href="#">9</a>...</li>
+            <li><a href="#">15</a></li>
+            <li><a href="#">16</a></li>
+            <li class="nextpage"><a href="#">下一页</a></li>
+          </ul>
+        </div>

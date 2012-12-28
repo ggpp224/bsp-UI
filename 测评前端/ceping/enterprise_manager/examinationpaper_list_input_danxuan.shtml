@@ -1,0 +1,117 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta content="企业培训、企业内训、企业学习、企业大学、渠道大学、e-Learning、学习平台、学习系统、人才管理、岗位胜任力模型、Skillsoft、职业发展、培训管理、继任规划" name="keywords" />
+<meta content="企业商学院是集在线学习、能力测评、学习计划和培训管理为一体的企业学习整体解决方案。帮助企业提升内训、渠道培训、分支机构培训的整体水平，最大程度发掘培训价值，实现培训效益提升，全面促进企业人才培养。" name="description" />
+<title>新增问卷 — CBS -需求管理-问卷调查</title>
+<link href="../css/default.css" rel="stylesheet" type="text/css" />
+<!--皮肤样式  Blue-->
+<link href="../css/enterprise_blue.css" rel="stylesheet" type="text/css" />
+<link href="../css/nyroModal.css" rel="stylesheet" type="text/css" />
+<!--[if IE]>
+<link type="text/css" rel="stylesheet" href="../css/ie.css" />
+<![endif]-->
+<!-- jQuery with plugins -->
+<script type="text/javascript" src="../js/libs/jquery-1.4.3.min.js"></script>
+<script language="javascript" type="text/javascript" src="../js/libs/nyroModal1.6.2.min.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() {
+	  $('.add_More').live('click', function(e) {
+		     e.preventDefault();
+			 $.fn.nyroModalManual({
+				 width:520,
+				 url:'overlay_question_addmore.shtml'
+			 });
+		   });
+
+
+
+	   });
+</script>
+</head>
+<body>
+<!-- Start:  Html  //-->
+<div id="content">
+  <!--Start:header //-->
+  <!--#include virtual="../Library/header_enterprise.shtml" -->
+
+    <div id ="container">
+	  <div class="box admin_box">
+	   <!-- 面包屑 -->
+	     <div class="bread_crumbs">
+
+			 <a href="examinationpaper.shtml">资源管理</a>&nbsp;&#8250;&nbsp;<a href="examinationpaper.shtml">试卷管理</a>&nbsp;&#8250;&nbsp;<a href="examinationpaper_list_add.shtml">新增试卷</a>&nbsp;&#8250;&nbsp;<b>录入试题</b>
+	     </div><!-- //End:面包屑 -->
+		  <div class="content_body">
+		 <!--Start:operation_nav//-->
+		 <h1 class="panel_title">录入试题 - 单项选择题</h1>
+		 		<form id="form1" name="form1" method="post" action="">
+
+				<table width="100%" border="0" class="default_table form_table top10 narrowth">
+                <tr>
+                    <th style="width:170px;"><span>*</span> 设置题目存储知识点：</th>
+                    <td><input type="text" class="default_txt" value="知识点名称1" size="30" disabled="disabled" />
+                    <input type="submit" class="btn btn_default" value="选择"/>
+                    </td>
+                </tr>
+
+                <tr>
+                    <th><span>*</span> 试题类型：</th>
+                    <td><select>
+                    <option>单项选择题</option>
+                    <option>多项选择题</option>
+                    <option>判断题</option>
+                    <option>填空题</option>
+                    <option>匹配题</option>
+                    <option>排序题</option>
+                    <option>简答题</option>
+                    <option>论述题</option>
+                    </select></td>
+                </tr>
+
+                <tr>
+                    <th><span>*</span> 试卷编号：</th>
+                    <td><input type="text" class="default_txt" value="SHITIBIANHAO" size="30"/></td>
+                </tr>
+
+                <tr>
+                    <th>难度：</th>
+                    <td><input type="text" class="default_txt" value="" size="8"/>&nbsp;
+                    <i class="font_red">* 难度值在0至1之间，数值越大，题目难度越大。</i>
+                    </td>
+                </tr>
+
+                <tr>
+                    <th valign="top"><span>*</span> 题干：</th>
+                    <td><input type="submit" class="btn btn_default" value="高级内容编辑器"/>
+                    <textarea name="textarea2" rows="4" class="default_textarea w630"></textarea>
+                    </td>
+                </tr>
+
+                <tr>
+                    <th valign="top"><span>*</span> 选项：</th>
+                    <td><input type="submit" class="btn btn_default" value="批量增加选项"/></td>
+                </tr>
+
+                <tr><td colspan="2" ><hr /></td></tr>
+
+                </table>
+
+
+
+
+
+             <div class="but_box edit_box top10">
+			        <input type="button" class="btn btn_default" onclick="location.href='examinationpaper_list_view.shtml';" value=" 预览 "/>
+					<input type="button" class="btn btn_submit" onclick="location.href='examinationpaper_list_add.shtml';" value=" 保存 "/>
+					<input name="重置" type="reset" class="btn btn_reset" onclick="location.href='examinationpaper_list_add.shtml';" value="取消"/>
+			</div>
+		 		</form>
+		</div><!--//end:调查问券创建区-->
+       </div><!--//end:box-->
+	  </div><!--//end:container-->
+	  <!--#include virtual="../Library/footer.shtml" -->
+   </div><!--//end:content-->
+</body>
+</html>

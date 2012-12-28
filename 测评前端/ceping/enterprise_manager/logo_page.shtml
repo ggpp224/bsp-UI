@@ -1,0 +1,98 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="pragram" content="no-cache">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta content="企业培训、企业内训、企业学习、企业大学、渠道大学、e-Learning、学习平台、学习系统、人才管理、岗位胜任力模型、Skillsoft、职业发展、培训管理、继任规划" name="keywords" />
+<meta content="企业商学院是集在线学习、能力测评、学习计划和培训管理为一体的企业学习整体解决方案。帮助企业提升内训、渠道培训、分支机构培训的整体水平，最大程度发掘培训价值，实现培训效益提升，全面促进企业人才培养。" name="description" />
+<title>CBS - 定制宣传页面</title>
+<!--系统样式-->
+<link href="../css/default.css" rel="stylesheet" type="text/css" />
+<!--皮肤样式  Blue-->
+<link href="../css/enterprise_blue.css" rel="stylesheet" type="text/css" />
+<!--[if IE]>
+<link type="text/css" rel="stylesheet" href="../css/ie.css" />
+<![endif]-->
+<!-- jQuery with plugins -->
+<script type="text/javascript" src="../js/libs/jquery-1.4.3.min.js"></script>
+<script type="text/javascript">
+	$(document).ready(function() {
+	});
+</script>
+</head>
+<body>
+<!-- Start:  Html  //-->
+<div id="content">
+  <!-- Start:  header //-->
+  <!--#include virtual="../Library/header_enterprise.shtml" -->
+  <!--// End: header-->
+  <!-- Start: container //-->
+  <div id="container">
+    <div class="box admin_box">
+      <!-- 面包屑 --><div class="bread_crumbs">
+				  <a href="resources.shtml">系统管理</a>&nbsp;&#8250;&nbsp;<b>定制宣传页面 </b> </div>
+      <!-- 面包屑 End -->
+      <!-- 主内容 -->
+      <form  method="post" action="#" class="bigFrom padding28">
+
+       <!-- 选项卡 -->
+      <div class="feature_tabs">
+
+          <ul class="ulfeature_tabs">
+          <li><a href="logo.shtml">定制LOGO</a></li>
+          <li class="current"><a href="logo_page.shtml" class="current">定制宣传页面</a></li>
+          </ul>
+
+      </div>
+      <!-- 选项卡 End -->
+
+       <table width="100%" class="default_table form_table">
+  <tr>
+    <td height="60" colspan="2">&nbsp;
+   	<div class="message_box"><div class="tip_wrong"><div class="ico_tip_wrong"></div>您的链接文字名称忘了填写。</div></div>
+    &nbsp;</td>
+  </tr>
+  <tr>
+    <th><span>*</span>&nbsp;链接文字名称：</th>
+    <td><input type="text" class="default_txt" value="" size="30"/> <font class="intoText">请输入6个以内汉字或12个以内英文字符</font></td>
+  </tr>
+  <tr>
+    <th><span>*</span>&nbsp;上传文件：</th>
+    <td><input name="textfield" type="file" id="textfield" class="default_txt" size="50" />
+      <span class="sel_label">
+      <input type="submit" class="btn btn_default" value="预览"/>
+      </span></td>
+  </tr>
+  <tr>
+    <td height="30px">&nbsp;</td>
+    <td valign="top"><font class="intoText">所上传的页面将以文字链接的形式，出现在个人用户端登陆后页面右上角的个人信息模块。</font></td>
+  </tr>
+  <tr>
+    <th>&nbsp;</th>
+    <td valign="top" >
+    <p class="wrong">特别说明：</p>
+	<p class="wrong">1. 请上传zip格式的压缩文件；</p>
+	<p class="wrong">2. 文件大小控制在300KB以内；</p>
+	<p class="wrong">3. 图片使用相对路径，压缩包内不要包含目录。</p>
+    </td>
+  </tr>
+  <tr>
+    <td height="70">&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+</table>
+
+
+        <div class="btn_box edit_box">
+          <input type="submit" class="btn btn_submit" onclick="location.href='';" value="保存" />
+          <input type="submit" class="btn " onclick="location.href='';" disabled="disabled" value="保存" />
+        </div>
+      </form>
+      <!-- 主内容 End -->
+    </div>
+    <!--//End admin_box-->
+  </div>
+  <!--// End: container -->  <!--#include virtual="../Library/footer.shtml" --></div>
+<!--// End: Html -->
+</body>
+</html>

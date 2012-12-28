@@ -1,0 +1,314 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<TITLE>CBS 首页</TITLE>
+<META content="text/html; charset=UTF-8" http-equiv=Content-Type>
+<META name=keywords content=企业培训、企业内训、企业学习、企业大学、渠道大学、e-Learning、学习平台、学习系统、人才管理、岗位胜任力模型、Skillsoft、职业发展、培训管理、继任规划>
+<META name=description content=企业商学院是集在线学习、能力测评、学习计划和培训管理为一体的企业学习整体解决方案。帮助企业提升内训、渠道培训、分支机构培训的整体水平，最大程度发掘培训价值，实现培训效益提升，全面促进企业人才培养。>
+<!--系统样式-->
+<LINK rel=stylesheet type=text/css href="../css/default.css">
+<!--皮肤样式  Blue-->
+<LINK rel=stylesheet type=text/css href="../css/enterprise_blue.css">
+<LINK rel=stylesheet type=text/css href="../css/ie.css">
+<SCRIPT type=text/javascript src="../js/libs/jquery-1.4.3.min.js"></SCRIPT>
+<SCRIPT type=text/javascript src="../js/libs/jquery.cookie.js"></SCRIPT>
+<SCRIPT type=text/javascript src="../js/libs/jquery.jstree.js"></SCRIPT>
+<SCRIPT type=text/javascript>
+ $(document).ready(function(){
+		  var loadPanel = $("#container");
+		  loadPanel.load("/page/enterprise/index/index.jsp");
+
+		 //$(".sf-navbar li:first").addClass("current");
+
+		 $(".sf-navbar li").click(function() {
+		   var htmlUrl  = $(this).children("a").attr("href");
+		   $(this).addClass("current").siblings("li").removeClass("current");
+           loadPanel.load(htmlUrl);
+		   return false;
+		 });
+	 });
+</SCRIPT>
+<script type = "text/javascript">
+ $(document).ready(function() {
+	cbs.overlay(); //弹出层
+	cbs.selbtnmenu(); //多选按钮
+	cbs.showSearchPanel(); //搜索区
+	$("#load_html_data").jstree({
+		"html_data" : {
+			"ajax" : {
+				"url" : "data/data_resources.shtml",
+				"data" : function (n) {
+					return { id : n.attr ? n.attr("id") : 0 };
+				}
+			}
+		},
+		"plugins" : [ "themes", "html_data" ,"checkbox","contextmenu","cookies","ui","crrm","dnd"]
+
+	});
+ });
+</script>
+</HEAD><BODY>
+<!-- Start:  Html  //-->
+<DIV id=content>
+  <!-- Start:  header //-->
+  <!--#include virtual="../Library/header_enterprise.shtml" -->
+  <!--// End: header-->
+  <!-- Start: container //-->
+  <DIV id=container><!-- jQuery tree -->
+    <DIV class="box admin_box"><!-- 面包屑 -->
+      <DIV class=bread_crumbs><A class=home href="http://10.10.6.95/login/index.shtml">首页</A>&nbsp;›&nbsp; <A href="http://10.10.6.95/login/user.shtml">用户管理</A>&nbsp;›&nbsp;<B>按部门</B> </DIV>
+      <!-- 面包屑 End -->
+      <DIV class="sidebar boxborder"><!-- #BeginLibraryItem "/Library/treenav.lbi" --><!-- ================tree_menu==========-->
+        <UL class=tree_menu>
+          <LI><A class="tree_add_child click_icon" title=增加目录 href="http://10.10.6.95/login/overlay_child_add.shtml" rel=#overlay jQuery1301555589778="21">增加目录</A></LI>
+          <LI><A class=tree_up title=上移 href="http://10.10.6.95/login/userLogin.action#">上移</A></LI>
+          <LI><A class=tree_down title=下移 href="http://10.10.6.95/login/userLogin.action#">下移</A></LI>
+          <LI><A class=tree_left title=左移 href="http://10.10.6.95/login/userLogin.action#">左移</A></LI>
+          <LI><A class=tree_right title=右移 href="http://10.10.6.95/login/userLogin.action#">右移</A></LI>
+          <LI><A class="tree_edit click_icon" title=编辑 href="http://10.10.6.95/login/overlay_dep_edit.shtml" rel=#overlay jQuery1301555589778="24">编辑</A></LI>
+          <LI><A class="tree_dell click_icon" title=删除 href="http://10.10.6.95/login/overlay_delsector.shtml" rel=#overlay jQuery1301555589778="26">删除</A></LI>
+          <LI><A class="tree_imp click_icon" title=导入目录树 href="http://10.10.6.95/login/overlay_dep_import.shtml" rel=#overlay jQuery1301555589778="28">导入目录树</A></LI>
+        </UL>
+        <DIV id=load_html_data></DIV>
+        <!-- #EndLibraryItem --></DIV>
+      <!--//End:sidebar -->
+      <DIV class=content_r><!--====================== 功能索索==================================// --><A class=showsearch href="http://10.10.6.95/login/userLogin.action#">展开搜索区</A>
+        <DIV class=searchbox>
+          <TABLE border=0 cellSpacing=0 cellPadding=0 width="100%">
+            <TBODY>
+              <TR>
+                <TH class=longText>用户姓名：</TH>
+                <TD><INPUT class=default_txt size=11></TD>
+                <TH>登录ID：</TH>
+                <TD><INPUT class=default_txt size=11></TD>
+                <TH>活动状态：</TH>
+                <TD><SELECT class=mini_sel name=select>
+                    <OPTION selected>全部</OPTION>
+                    <OPTION>有效</OPTION>
+                    <OPTION>无效</OPTION>
+                  </SELECT></TD>
+                <TH>&nbsp;</TH>
+                <TD class=closebtn><A href="http://10.10.6.95/login/userLogin.action#">收起</A></TD>
+              </TR>
+              <TR>
+                <TH class=longText>所属部门：</TH>
+                <TD><A href="http://10.10.6.95/login/overlay_dept_select.shtml" rel=#overlaybig jQuery1301555589778="30">
+                  <INPUT class="default_txt overlay_in" size=11>
+                  </A></TD>
+                <TH>所属分组：</TH>
+                <TD><A href="http://10.10.6.95/login/overlay_groups_select.shtml" rel=#overlaybig jQuery1301555589778="33">
+                  <INPUT class="default_txt overlay_in" size=11>
+                  </A></TD>
+                <TH>所属岗位：</TH>
+                <TD><A href="http://10.10.6.95/login/overlay_position_select.shtml" rel=#overlaybig jQuery1301555589778="35">
+                  <INPUT class="default_txt overlay_in" size=11>
+                  </A></TD>
+                <TD><INPUT class="btn btn_default" value=" 查询 " type=button name=input2></TD>
+              </TR>
+            </TBODY>
+          </TABLE>
+        </DIV>
+        <!--//END:功能搜索-->
+        <DIV class=from_panel>
+          <FORM class=listtab_btn method=post action=#>
+            <DIV class=exportbtn>
+              <UL>
+                <LI><A class=expbtn href="http://10.10.6.95/login/userLogin.action#">导出详细数据</A></LI>
+                <LI><A class=expbtn href="http://10.10.6.95/login/userLogin.action#">导出概要数据</A></LI>
+              </UL>
+            </DIV>
+            <INPUT class="btn btn_feature" onclick="location.href='user_add.shtml';" value=新增用户 type=button name="">
+            <A title=系统提示 href="http://10.10.6.95/login/overlay_delsector.shtml" rel=#overlay jQuery1301555589778="37">
+            <INPUT class="btn btn_del overlay" value=删除 type=button name="">
+            </A><A href="http://10.10.6.95/login/overlay_department_adjust.shtml" rel=#overlaybig jQuery1301555589778="39">
+            <INPUT class="btn btn_other overlay" value=调整部门 type=button name="" rel="#departments">
+            </A><A href="http://10.10.6.95/login/overlay_password.shtml" rel=#overlay jQuery1301555589778="41">
+            <INPUT class="btn btn_other overlay" value=重置密码 type=button name="" rel="#password">
+            <INPUT class="btn btn_other" onclick="location.href='user_setting2.shtml'" value=批量调整部门 type=button name=input>
+            </A>
+            <DIV class=selbtn sizcache="1" sizset="0" jQuery1301555589778="44">
+              <BUTTON class="btn btn_other" jQuery1301555589778="43"><SPAN class=menudown></SPAN>批量导入</BUTTON>
+              <UL style="DISPLAY: none" class=newspecial_menu jQuery1301555589778="45">
+                <LI><A href="http://10.10.6.95/login/user_import_update.shtml">批量导入/修改</A></LI>
+                <LI><A href="http://10.10.6.95/login/user_import_account.shtml">批量生成账号</A></LI>
+              </UL>
+            </DIV>
+          </FORM>
+        </DIV>
+        <!-- 条件筛选 End --><!-- 表格笔记 -->
+        <DIV class=table_notes><A href="http://10.10.6.95/login/userLogin.action#"><STRONG>研发中心</STRONG></A> （子部门数：<STRONG>4</STRONG>&nbsp;&nbsp;用户数：<STRONG>56</STRONG> ） </DIV>
+        <!-- 表格笔记 End -->
+        <TABLE class="default_table listtab" border=0 cellSpacing=0 cellPadding=0 width="100%">
+          <THEAD class=gradual_bg>
+            <TR>
+              <TH class=th_center width=28><INPUT type=checkbox></TH>
+              <TH width=30>状态</TH>
+              <TH width=50>姓名</TH>
+              <TH>登录ID</TH>
+              <TH>所属部门</TH>
+              <TH>所属岗位</TH>
+              <TH>所属分组</TH>
+              <TH width=90><SPAN class=data>入职日期</SPAN> <A class=arrow_sort_drop title=降序 href="http://10.10.6.95/login/userLogin.action#">降序</A> </TH>
+              <TH width=50>操作</TH>
+            </TR>
+          </THEAD>
+          <TBODY>
+            <TR>
+              <TD align=middle><INPUT type=checkbox></TD>
+              <TD align=middle><A href="http://10.10.6.95/login/userLogin.action#"><SPAN class=finish_ico title=当前状态：活动，点击图标进行状态切换！>活动</SPAN></A></TD>
+              <TD><A href="http://10.10.6.95/login/user_info.shtml">毛旭峰</A></TD>
+              <TD>Maoxufeng</TD>
+              <TD>研发中心</TD>
+              <TD>项目经理</TD>
+              <TD>新员工</TD>
+              <TD><SMALL>2010-11-16</SMALL></TD>
+              <TD><A class=view_report title=查看学习报告 href="http://10.10.6.95/login/userLogin.action#">查看学习报告</A></TD>
+            </TR>
+            <TR>
+              <TD align=middle><INPUT type=checkbox></TD>
+              <TD align=middle><A href="http://10.10.6.95/login/userLogin.action#"><SPAN class=finish_ico title=当前状态：活动，点击图标进行状态切换！>活动</SPAN></A></TD>
+              <TD><A href="http://10.10.6.95/login/user_info.shtml">毛旭峰</A></TD>
+              <TD>Maoxufeng</TD>
+              <TD>研发中心</TD>
+              <TD>项目经理</TD>
+              <TD>新员工</TD>
+              <TD><SMALL>2010-11-16</SMALL></TD>
+              <TD><A class=view_report title=查看学习报告 href="http://10.10.6.95/login/userLogin.action#">查看学习报告</A></TD>
+            </TR>
+            <TR>
+              <TD align=middle><INPUT type=checkbox></TD>
+              <TD align=middle><A href="http://10.10.6.95/login/userLogin.action#"><SPAN class=finish_ico title=当前状态：活动，点击图标进行状态切换！>活动</SPAN></A></TD>
+              <TD><A href="http://10.10.6.95/login/user_info.shtml">毛旭峰</A></TD>
+              <TD>Maoxufeng</TD>
+              <TD>研发中心</TD>
+              <TD>项目经理</TD>
+              <TD>新员工</TD>
+              <TD><SMALL>2010-11-16</SMALL></TD>
+              <TD><A class=view_report title=查看学习报告 href="http://10.10.6.95/login/userLogin.action#">查看学习报告</A></TD>
+            </TR>
+            <TR>
+              <TD align=middle><INPUT type=checkbox></TD>
+              <TD align=middle><A href="http://10.10.6.95/login/userLogin.action#"><SPAN class=finish_ico title=当前状态：活动，点击图标进行状态切换！>活动</SPAN></A></TD>
+              <TD><A href="http://10.10.6.95/login/user_info.shtml">毛旭峰</A></TD>
+              <TD>Maoxufeng</TD>
+              <TD>研发中心</TD>
+              <TD>项目经理</TD>
+              <TD>新员工</TD>
+              <TD><SMALL>2010-11-16</SMALL></TD>
+              <TD><A class=view_report title=查看学习报告 href="http://10.10.6.95/login/userLogin.action#">查看学习报告</A></TD>
+            </TR>
+            <TR>
+              <TD align=middle><INPUT type=checkbox></TD>
+              <TD align=middle><A href="http://10.10.6.95/login/userLogin.action#"><SPAN class=finish_ico title=当前状态：活动，点击图标进行状态切换！>活动</SPAN></A></TD>
+              <TD><A href="http://10.10.6.95/login/user_info.shtml">毛旭峰</A></TD>
+              <TD>Maoxufeng</TD>
+              <TD>研发中心</TD>
+              <TD>项目经理</TD>
+              <TD>新员工</TD>
+              <TD><SMALL>2010-11-16</SMALL></TD>
+              <TD><A class=view_report title=查看学习报告 href="http://10.10.6.95/login/userLogin.action#">查看学习报告</A></TD>
+            </TR>
+            <TR>
+              <TD align=middle><INPUT type=checkbox></TD>
+              <TD align=middle><A href="http://10.10.6.95/login/userLogin.action#"><SPAN class=finish_ico title=当前状态：活动，点击图标进行状态切换！>活动</SPAN></A></TD>
+              <TD><A href="http://10.10.6.95/login/user_info.shtml">毛旭峰</A></TD>
+              <TD>Maoxufeng</TD>
+              <TD>研发中心</TD>
+              <TD>项目经理</TD>
+              <TD>新员工</TD>
+              <TD><SMALL>2010-11-16</SMALL></TD>
+              <TD><A class=view_report title=查看学习报告 href="http://10.10.6.95/login/userLogin.action#">查看学习报告</A></TD>
+            </TR>
+            <TR>
+              <TD align=middle><INPUT type=checkbox></TD>
+              <TD align=middle><SPAN class=finish_ico title=当前状态：活动，点击图标进行状态切换！>活动</SPAN></TD>
+              <TD><A href="http://10.10.6.95/login/user_info.shtml">毛旭峰</A></TD>
+              <TD>Maoxufeng</TD>
+              <TD>研发中心</TD>
+              <TD>项目经理</TD>
+              <TD>新员工</TD>
+              <TD><SMALL>2010-11-16</SMALL></TD>
+              <TD><A class=view_report title=查看学习报告 href="http://10.10.6.95/login/userLogin.action#">查看学习报告</A></TD>
+            </TR>
+            <TR>
+              <TD align=middle><INPUT type=checkbox></TD>
+              <TD align=middle><SPAN class=notbeen_ico title=当前状态：非活动，点击图标进行状态切换！>非活动</SPAN></TD>
+              <TD><A href="http://10.10.6.95/login/user_info.shtml">毛旭峰</A></TD>
+              <TD>Maoxufeng</TD>
+              <TD>研发中心</TD>
+              <TD>项目经理</TD>
+              <TD>新员工</TD>
+              <TD><SMALL>2010-11-16</SMALL></TD>
+              <TD><A class=view_report title=查看学习报告 href="http://10.10.6.95/login/userLogin.action#">查看学习报告</A></TD>
+            </TR>
+            <TR>
+              <TD align=middle><INPUT type=checkbox></TD>
+              <TD align=middle><SPAN class=finish_ico title=当前状态：活动，点击图标进行状态切换！>活动</SPAN></TD>
+              <TD><A href="http://10.10.6.95/login/user_info.shtml">毛旭峰</A></TD>
+              <TD>Maoxufeng</TD>
+              <TD>研发中心</TD>
+              <TD>项目经理</TD>
+              <TD>新员工</TD>
+              <TD><SMALL>2010-11-16</SMALL></TD>
+              <TD><A class=view_report title=查看学习报告 href="http://10.10.6.95/login/userLogin.action#">查看学习报告</A></TD>
+            </TR>
+            <TR>
+              <TD align=middle><INPUT type=checkbox></TD>
+              <TD align=middle><SPAN class=finish_ico title=当前状态：活动，点击图标进行状态切换！>活动</SPAN></TD>
+              <TD><A href="http://10.10.6.95/login/user_info.shtml">毛旭峰</A></TD>
+              <TD>Maoxufeng</TD>
+              <TD>研发中心</TD>
+              <TD>项目经理</TD>
+              <TD>新员工</TD>
+              <TD><SMALL>2010-11-16</SMALL></TD>
+              <TD><A class=view_report title=查看学习报告 href="http://10.10.6.95/login/userLogin.action#">查看学习报告</A></TD>
+            </TR>
+          </TBODY>
+        </TABLE>
+        <!-- 翻页 -->
+        <DIV class=pagination>
+          <UL>
+            <LI>每页显示
+              <SELECT>
+                <OPTION selected>10</OPTION>
+                <OPTION>20</OPTION>
+                <OPTION>30</OPTION>
+                <OPTION>50</OPTION>
+              </SELECT>
+              条&nbsp;&nbsp;1/25页 </LI>
+            <LI class=disablepage>上一页</LI>
+            <LI class=currentpage>1</LI>
+            <LI><A href="http://10.10.6.95/login/userLogin.action#">2</A></LI>
+            <LI><A href="http://10.10.6.95/login/userLogin.action#">3</A></LI>
+            <LI><A href="http://10.10.6.95/login/userLogin.action#">4</A></LI>
+            <LI><A href="http://10.10.6.95/login/userLogin.action#">5</A></LI>
+            <LI><A href="http://10.10.6.95/login/userLogin.action#">6</A></LI>
+            <LI><A href="http://10.10.6.95/login/userLogin.action#">7</A></LI>
+            <LI><A href="http://10.10.6.95/login/userLogin.action#">8</A></LI>
+            <LI><A href="http://10.10.6.95/login/userLogin.action#">9</A>...</LI>
+            <LI><A href="http://10.10.6.95/login/userLogin.action#">15</A></LI>
+            <LI><A href="http://10.10.6.95/login/userLogin.action#">16</A></LI>
+            <LI class=nextpage><A href="http://10.10.6.95/login/userLogin.action#">下一页</A></LI>
+          </UL>
+        </DIV>
+        <!-- 翻页 --></DIV>
+      <DIV class=clear></DIV>
+      <!-- 主内容 End --></DIV>
+    <!--小窗口-->
+    <DIV id=overlay class=modal><A class=close title=关闭 jQuery1301555589778="23">关闭</A>
+      <DIV class="default-overlay overlaybox"></DIV>
+    </DIV>
+    <!--大窗口-->
+    <DIV id=overlaybig class=modal><A class=close title=关闭 jQuery1301555589778="32">关闭</A>
+      <DIV class="default-overlay overlaydefault"></DIV>
+    </DIV>
+    <!-- 弹窗Jquery --></DIV>
+  <!--// End: container --><!-- #BeginLibraryItem "/Library/footer.lbi" --><!--Start: footer //-->
+  <DIV id=footer class=top10>
+    <DIV class=box>2000-2010 © 安博教育版权所有 <A href="#">ICP 10021784</A> </DIV>
+  </DIV>
+  <!--// End: footer--><!-- #EndLibraryItem --></DIV>
+<!--// End: Html -->
+<SCRIPT src="../js/libs/overlay.js"></SCRIPT>
+<SCRIPT src="../js/libs/cbs_userjs.js"></SCRIPT>
+</BODY>
+</html>

@@ -1,0 +1,122 @@
+ <div class="padding5">
+<div class="exportbtn">
+          <ul><li><a href="#" class="expbtn">导出</a></li></ul>             
+        </div> 
+		<form id="search_user">
+		  课件名称：<span class="padding5">
+		  <input name="textfield" type="text" class="default_txt" id="textfield" size="10" />
+		  </span><span class="padding5">
+		  必修/选修
+		  ：
+		  <select name="select2" id="select">
+		    <option>全部</option>
+		    <option>必修</option>
+		    <option>选修</option>
+	      </select>
+<input type="button" name="input2" value=" 查询 " class="btn btn_default"/>
+          </span>
+</form>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+		  <tr>
+		    <td><div class="fl">当前分组：<span class="rightfont">XXXXXX</span>        必修课件数：<span class="lightfont">XX</span> 选修课件数：<span class="lightfont">XX</span></div></td>
+		    <td width="300" align="right">最新数据更新时间：<span class="lightfont">2011-02-02 00:00</span></td>
+	      </tr>
+</table>
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class="default_table listtab">
+  <thead class="gradual_bg">
+    <tr>
+      <th>课件名称</th>
+      <th>必修/选修</th>
+      <th>培训实施名称</th>
+      <th>有效期限</th>
+      </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>在线课件名称</td>
+      <td>必修</td>
+      <td>培训实施名称</td>
+      <td>2011/01/01-2011/03/03</td>
+      </tr>
+    <tr>
+      <td>在线课件名称</td>
+      <td>选修</td>
+      <td>培训实施名称</td>
+      <td>2011/01/01-2011/03/03</td>
+      </tr>
+    <tr>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      </tr>
+    <tr>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      </tr>
+    <tr>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      </tr>
+    <tr>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      </tr>
+    <tr>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      </tr>
+    <tr>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      </tr>
+    <tr>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      </tr>
+    <tr>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      </tr>
+  </tbody>
+</table>
+<div class="pagination">
+  <ul>
+    <li>每页显示
+      <select name="select">
+        <option>10</option>
+        <option>20</option>
+        <option>30</option>
+        <option>50</option>
+      </select>
+      条&nbsp;&nbsp;1/25页 </li>
+    <li class="disablepage">上一页</li>
+    <li class="currentpage">1</li>
+    <li><a href="#">2</a></li>
+    <li><a href="#">3</a></li>
+    <li><a href="#">4</a></li>
+    <li><a href="#">5</a></li>
+    <li><a href="#">6</a></li>
+    <li><a href="#">7</a></li>
+    <li><a href="#">8</a></li>
+    <li><a href="#">9</a>...</li>
+    <li><a href="#">15</a></li>
+    <li><a href="#">16</a></li>
+    <li class="nextpage"><a href="#">下一页</a></li>
+  </ul>
+</div>
+</div>

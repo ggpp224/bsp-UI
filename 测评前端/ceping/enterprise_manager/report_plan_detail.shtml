@@ -1,0 +1,229 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta content="企业培训、企业内训、企业学习、企业大学、渠道大学、e-Learning、学习平台、学习系统、人才管理、岗位胜任力模型、Skillsoft、职业发展、培训管理、继任规划" name="keywords" />
+<meta content="企业商学院是集在线学习、能力测评、学习计划和培训管理为一体的企业学习整体解决方案。帮助企业提升内训、渠道培训、分支机构培训的整体水平，最大程度发掘培训价值，实现培训效益提升，全面促进企业人才培养。" name="description" />
+<title>CBS - 统计报表 - 培训计划报表</title>
+<!--系统样式-->
+<link href="../css/default.css" rel="stylesheet" type="text/css" />
+<!--皮肤样式  Blue-->
+<link href="../css/enterprise_blue.css" rel="stylesheet" type="text/css" />
+<link href="../css/enterprise_report.css" rel="stylesheet" type="text/css" />
+<link href="../css/nyroModal.css" rel="stylesheet" type="text/css" />
+<!--[if IE]>
+<link type="text/css" rel="stylesheet" href="../css/ie.css" />
+<![endif]-->
+<!-- jQuery with plugins -->
+<script type="text/javascript" src="../js/libs/jquery-1.4.3.min.js"></script>
+<script language="javascript" type="text/javascript" src="../js/libs/nyroModal1.6.2.min.js"></script>
+<script src="../js/libs/cbs_userjs.js"></script>
+<script type="text/javascript">
+    $(document).ready(function() {
+	cbs.tablehover();//表单换行颜色 hover
+	//弹窗
+	$(".popwin").nyroModal({
+		width:800
+	});
+});
+</script>
+</head>
+<body>
+<!-- Start:  Html  //-->
+<div id="content">
+  <!--Start:header //-->
+  <!--#include virtual="../Library/header_enterprise.shtml" -->
+  <!-- Start: container //-->
+  <div id="container">
+    <div class="box admin_box">
+      <!-- 面包屑 -->
+      <div class="bread_crumbs">  <a href="user.shtml">统计报表</a>&nbsp;&#8250;&nbsp;<b>培训计划报表</b> &#8250;&nbsp;<b>培训计划详情统计</b></div>
+      <!-- 面包屑 End -->
+      <!-- 主内容 -->
+      <div class="content_body">
+        <!-- 搜索 -->
+        <div class="features_search">
+          <p>&nbsp;</p>
+          <h1 class="report_title">XXXXXXXXX培训计划 执行数据统计</h1>
+          <div>
+           <p align="center">最新数据更新时间：<span class="lightfont">2011-02-02 00:00</span> </span></p>
+            <table width="100%" border="0">
+              <tr>
+                <th width="140" align="left"><strong>计划起止日期：</strong></th>
+                <td class="msg_box"><span class="lightfont">2011/01/01-2011/03/0</span></td>
+              </tr>
+              <tr>
+                <th align="left"><strong>实际起止日期：</strong></th>
+                <td class="msg_box"><span class="lightfont">2011/01/01-2011/03/0 </span></td>
+              </tr>
+              <!--
+              <tr>
+                <th align="left"><p><strong>培训对象：</strong></p>
+                <p><a href="report_plan_showuser.shtml" title="培训对象" class="popwin">按人预览&gt;&gt;</a></p></th>
+                <td class="gray_box">
+                <strong>部门：</strong>一级节点&gt;二级节点&gt;末级节点，一级节点&gt;二级节点&gt;末级节点，一级节点&gt;二级节点&gt;末级节点，一级节点&gt;二级节点&gt;末级节点，<br />
+                  <strong>岗位：</strong>一级节点&gt;二级节点&gt;末级节点，一级节点&gt;二级节点&gt;末级节点，一级节点&gt;二级节点&gt;末级节点，一级节点&gt;二级节点&gt;末级节点，<br />
+                  <strong>分组：</strong>分组名称1，分组名称2，分组名称3，分组名称4<br />
+                <strong>个人：</strong>学员姓名1，学员姓名2，学员姓名3，学员姓名4
+
+                </td>
+              </tr>
+              -->
+              <tr>
+                <th align="left"><strong>计划执行率：</strong></th>
+                <td height="80"><div class="progress"><div style="width:34px;"></div></div>
+                34%
+                <div class="box-info">说明：“执行率”是指进入实际培训实施环节的资源占该培训计划所有资源的百分比。</div>
+                </td>
+              </tr>
+              <tr>
+                <th align="left"><strong>已实施资源/全部资源：</strong></th>
+                <td><strong class="lightfont">5 </strong>/ 10</td>
+              </tr>
+            </table>
+
+          </div>
+        </div>
+        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td><span class="listtab_btn">
+              <input type="button" name="input" class="btn btn_add"  value="返回" onclick="javascript:history.back(-1)"/>
+            </span></td>
+            <td><div class="exportbtn">
+            <ul>
+              <li><a href="#" class="expbtn">导出</a></li>
+            </ul>
+          </div></td>
+          </tr>
+        </table>
+
+        <div class="boxborder">
+                <table width="100%" border="0" cellspacing="0" cellpadding="0" class="default_table listtab">
+                  <thead class="gradual_bg">
+                    <tr>
+                      <th>资源名称</th>
+                      <th>资源类型</th>
+                      <th>实施状态</th>
+                      <th>对应培训实施名称</th>
+                      <th>实施类别</th>
+                      <th>实际开始时间</th>
+                      <th>实际截止时间</th>
+                      <th>参与人数</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>名称XXXXX</td>
+                      <td>在线课件</td>
+                      <td>已实施</td>
+                      <td>培训实施名称</td>
+                      <td>在线课件</td>
+                      <td>2011/01/01 00:00</td>
+                      <td>2011/01/01 00:00</td>
+                      <td><a href="report_plan_showuser2.shtml" title="《在线课件名称XXXX》学习用户列表" class="popwin">35</a></td>
+                    </tr>
+                    <tr>
+                      <td>名称XXXXX</td>
+                      <td>在线测试</td>
+                      <td>已实施</td>
+                      <td>培训实施名称</td>
+                      <td>在线测试</td>
+                      <td>2011/01/01 00:00</td>
+                      <td>2011/01/01 00:00</td>
+                      <td><a href="report_plan_showuser3.shtml" title="《试卷名称XXXX》完成测试用户列表" class="popwin">6</a></td>
+                    </tr>
+                    <tr>
+                      <td>名称XXXXX</td>
+                      <td>同步课程</td>
+                      <td>已实施</td>
+                      <td>培训实施名称</td>
+                      <td>在线同步课程</td>
+                      <td>2011/01/01 00:00</td>
+                      <td>2011/01/01 00:00</td>
+                      <td><a href="report_plan_showuser4.shtml" title="《同步课程名称XXXX》在线同步课程参与用户列表" class="popwin">12</a></td>
+                    </tr>
+                    <tr>
+                      <td>名称XXXXX</td>
+                      <td>同步课程</td>
+                      <td>已实施</td>
+                      <td>培训实施名称</td>
+                      <td>面授课程</td>
+                      <td>2011/01/01 00:00</td>
+                      <td>2011/01/01 00:00</td>
+                      <td><a href="report_plan_showuser5.shtml" title="《同步课程名称》面授课程参与用户列表" class="popwin">26</a></td>
+                    </tr>
+                    <tr>
+                      <td align="center">&nbsp;</td>
+                      <td align="center">&nbsp;</td>
+                      <td>&nbsp;</td>
+                      <td>&nbsp;</td>
+                      <td>&nbsp;</td>
+                      <td>&nbsp;</td>
+                      <td>&nbsp;</td>
+                      <td>&nbsp;</td>
+                    </tr>
+                    <tr>
+                      <td align="center">&nbsp;</td>
+                      <td align="center">&nbsp;</td>
+                      <td>&nbsp;</td>
+                      <td>&nbsp;</td>
+                      <td>&nbsp;</td>
+                      <td>&nbsp;</td>
+                      <td>&nbsp;</td>
+                      <td>&nbsp;</td>
+                    </tr>
+                    <tr>
+                      <td align="center">&nbsp;</td>
+                      <td align="center">&nbsp;</td>
+                      <td>&nbsp;</td>
+                      <td>&nbsp;</td>
+                      <td>&nbsp;</td>
+                      <td>&nbsp;</td>
+                      <td>&nbsp;</td>
+                      <td>&nbsp;</td>
+                    </tr>
+                    <tr>
+                      <td align="center">&nbsp;</td>
+                      <td align="center">&nbsp;</td>
+                      <td>&nbsp;</td>
+                      <td>&nbsp;</td>
+                      <td>&nbsp;</td>
+                      <td>&nbsp;</td>
+                      <td>&nbsp;</td>
+                      <td>&nbsp;</td>
+                    </tr>
+                    <tr>
+                      <td align="center">&nbsp;</td>
+                      <td align="center">&nbsp;</td>
+                      <td>&nbsp;</td>
+                      <td>&nbsp;</td>
+                      <td>&nbsp;</td>
+                      <td>&nbsp;</td>
+                      <td>&nbsp;</td>
+                      <td>&nbsp;</td>
+                    </tr>
+                    <tr>
+                      <td align="center">&nbsp;</td>
+                      <td align="center">&nbsp;</td>
+                      <td>&nbsp;</td>
+                      <td>&nbsp;</td>
+                      <td>&nbsp;</td>
+                      <td>&nbsp;</td>
+                      <td>&nbsp;</td>
+                      <td>&nbsp;</td>
+                    </tr>
+                  </tbody>
+                </table>
+
+        </div>
+      </div>
+      <div class="clear"></div>
+      <!-- 主内容 End -->
+    </div>
+  </div>
+  <!--// End: container -->
+  <!--#include virtual="../Library/footer.shtml" -->
+</div>
+<!--// End: Html -->
+</body>
+</html>

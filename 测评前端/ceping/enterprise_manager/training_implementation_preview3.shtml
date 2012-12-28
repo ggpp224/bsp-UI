@@ -1,0 +1,84 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta content="企业培训、企业内训、企业学习、企业大学、渠道大学、e-Learning、学习平台、学习系统、人才管理、岗位胜任力模型、Skillsoft、职业发展、培训管理、继任规划" name="keywords" />
+<meta content="企业商学院是集在线学习、能力测评、学习计划和培训管理为一体的企业学习整体解决方案。帮助企业提升内训、渠道培训、分支机构培训的整体水平，最大程度发掘培训价值，实现培训效益提升，全面促进企业人才培养。" name="description" />
+<title>CBS - 培训实施</title>
+<!--系统样式-->
+<link href="../css/default.css" rel="stylesheet" type="text/css" />
+<!--皮肤样式  Blue-->
+<link href="../css/enterprise_blue.css" rel="stylesheet" type="text/css" />
+<link href="../css/nyroModal.css" rel="stylesheet" type="text/css" />
+<!--[if IE]>
+<link type="text/css" rel="stylesheet" href="../css/ie.css" />
+<![endif]-->
+<!-- jQuery with plugins -->
+<script type="text/javascript" src="../js/libs/jquery-1.4.3.min.js"></script>
+</head>
+<body>
+<!-- Start:  Html  //-->
+<div id="content">
+    <!-- Start:  header //-->
+<!--#include virtual="../Library/header_enterprise.shtml" -->
+  <!--// End: header-->
+
+  <!-- Start: container //-->
+  <div id ="container">
+    <div class="box admin_box">
+      <!-- 面包屑 --><div class="bread_crumbs">
+				  <a href="training-implementation.shtml">培训实施</a>&nbsp;&#8250;&nbsp;<b>实施类别-分配在线课件</b> </div>
+      <!-- 面包屑 End -->
+      <!--  基本信息 -->
+      <h1 class="panel_title margin28">实施类别-分配在线课件</h1>
+      <form id="flight" method="post" action="training_implementation_edit.shtml" class="bigFrom padding28">
+        <table width="100%"  class="default_table form_table">
+          <tr>
+            <th colspan="2">&nbsp;</th>
+          </tr>
+          <tr>
+            <th>实施名称：</th>
+            <td >XXXXXXXX</td>
+          </tr>
+          <tr>
+          	<th>关联计划：</th>
+          	<td>XXXXXXXX</td>
+          	</tr>
+          <tr>
+          	<th valign="top"><label>目标：</label></th>
+          	<td>XXXXXXXX</td>
+          	</tr>
+          <tr>
+            <th valign="top">描述：</th>
+            <td>XXXXXXXX</td>
+          </tr>
+          <tr>
+            <th valign="top">配课方式：</th>
+            <td>excel批量配课-部门批量配课/岗位批量配课/分组批量配课/个人批量配课</td>
+          </tr>
+          <tr>
+            <th valign="top">&nbsp;</th>
+            <td><a href="#">导出配课数据</a></td>
+          </tr>
+          <tr>
+          	<th valign="top"><label>起止日期：</label></th>
+          	<td>XXXX/XX/XX - XXXX/XX/XX</td>
+          	</tr>
+            <tr>
+            <th colspan="2">&nbsp;</th>
+          </tr>
+        </table>
+
+        <div class="but_box edit_box top10">
+          <input type="submit" class="btn btn_submit" value=" 编辑 "/>
+         <input name="重置" type="reset" class="btn btn_reset" value="返回" onclick="location.href='training-implementation.shtml';" />
+        </div>
+      </form>
+    </div>
+  </div>
+  <!--// End: container -->  <!--#include virtual="../Library/footer.shtml" --></div>
+
+<!-- 声明 引用-->
+<script src="../js/libs/cbs_userjs.js"></script>
+</body>
+</html>
