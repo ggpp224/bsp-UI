@@ -1,0 +1,35 @@
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<script type="text/javascript">
+$(document).ready(function() {
+		$("#no_tx").val(mark);
+		var str = $("#no_tx").val();
+		$("#no_tx").bind("blur",function(){
+			if(str.length>200){
+				$(".overlay_delete_box").after('<span class="price"><img src="images/exclamation.png" style="color:red;line-height:20px;" />不能超出200个字符</span>');
+			}
+			return false;
+		});
+		$("#no_tx").bind("focus",function(){
+				$(".overlay_delete_box").remove('<span class="price"><img src="images/exclamation.png" style="color:red;line-height:20px;" />不能超出200个字符</span>');
+			return false;
+		});
+});
+</script>
+ 	<form id="sampleform" method="post" action="#">
+
+    <div class="overlay_delete_box">
+
+    <h5 class="green">
+    	 审核意见：<textarea id="no_tx" rows="5" cols="30"></textarea>
+    </h5>
+    </div>
+
+
+    <div class="overlay_btn">
+
+    <input type="button" id="no_save" class="btn btn_gray overlayClose" value="关闭"/>
+	</div>
+    </form>
+
+
+

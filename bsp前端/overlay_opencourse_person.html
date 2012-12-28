@@ -1,0 +1,51 @@
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<script type="text/javascript">
+    $(document).ready(function() {
+    	queryUrl_planchoose = G_ROOT+'score/monitor/'+termid+'/'+course_code;
+    	$.getJSON(queryUrl_planchoose,function(data){
+    		var htm='';
+    		for(var i=0,len=data.length;i<len;i++){
+    			var rec = data[i];
+    			htm += '<tr><td>'+G_data['school'][rec.SCHOOL_CODE]+'</td><td>'+rec.XKXXQR+'</td><td>'+rec.RPPLANNUM+'</td><td>'+rec.PLANNUM_P+'</td><td>'+rec.PLANNUM_B+'</td></tr>';
+    		}
+    		$('#person_tbody').html(htm);
+    	});
+    	
+			summary.tablehover();//Hover
+	});
+</script>
+
+ 	<form id="sampleform" method="post" action="#" style="height:360px;overflow:auto;">
+              <table class="tablebox">
+              <thead class="table_header">
+                    <tr>
+                    	<th>开课学校</th>
+	                    <th>选课配额</th>
+	                    <th>开课计划确认情况</th>
+	                    <th>上报选课人数</th>
+	                    <th>个人选课人数</th>
+	                    <th>批量选课人数</th>
+                    </tr>
+              </thead>
+
+              <tbody id="person_tbody" class="openable_tbody">
+              
+              </tbody>
+              </table>
+
+              
+
+
+
+
+
+
+    <div class="overlay_btn">
+   
+    <input type="button" class="btn btn_gray overlayClose" value="关闭"/>
+	</div>
+    </form>
+
+
+

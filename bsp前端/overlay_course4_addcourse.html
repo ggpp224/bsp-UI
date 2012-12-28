@@ -1,0 +1,115 @@
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<script type="text/javascript">
+	$(document).ready(function() {
+						summary.tablehover();//Hover
+						var renderList = function(data) {
+							var htm = "";
+							for ( var i = 0, len = data.length; i < len; i++) {
+								var v = data[i];
+								htm += '<tr>'
+										+ '<td class="first tc"><input type="radio" ids="'+v.COURSECODESTANDARD+'" cn="'+v.COURSENAMESTANDARD+'" name="checkall" /></td>'
+										+ '<td>' + v.COURSENAMESTANDARD
+										+ '</td>' + '<td>' + G_data['chooseType'][v.CHOOSETYPE]
+										+ '</td>' + '<td>' + v.MINMAXNUM
+										+ '</td>' + '<td>'
+										+ v.JIHUAXUANKERENSHU + '</td>'
+										+ '<td>' + v.YIXUANRENSHU + '</td>'
+										+ '</tr>';
+
+							}
+							htm = throwNull(htm);
+							$('#win_tbody').html(htm);
+						};
+
+						function setList(){
+							var code = $('#win_courseCode').val(), name = $('#win_courseName').val();
+							var url = G_ROOT+"volunteerdistribution/queryvolunteerDistribution/"+ termId+ "/"+ (code == '' ? 'null': code)+ "/"+ (name == '' ? 'null': encodeURI(name))+ "/1/1000";
+							$.getJSON(url, function(rs) {
+								renderList(rs.list);
+							});
+						}
+						setList();
+						$('#win_query').click(function(e) {
+											setList();
+										});
+
+						$('#win_choose').click(
+										function(e) {
+											var tb = document.getElementById('win_tbody'), cs = tb.getElementsByTagName('input');
+											var cc = '', cn = "";
+											for ( var i = 0, len = cs.length; i < len; i++) {
+												var c = cs[i];
+												if (c.checked) {
+													cc = c.getAttribute("ids");
+													cn = c.getAttribute("cn");
+
+													cc = cc == 'null' ? '' : cc;
+													cn = cn == 'null' ? '' : cn;
+													break;
+												}
+											}
+
+											$('#stdCName').val(cn);
+											$('#stdCCode').val(cc);
+
+											$('#box1').empty();
+											$('#box2').empty();
+
+											$.getJSON(G_ROOT+'studentchoosecourse/findzychoosecourse/'+ termId+ "/" + cc,
+															function(rs) {
+																if (rs.list) {
+																	courseList(rs.list);
+																	$('#wish_tbody').html('');
+																}
+
+															});
+
+										});
+
+					});
+</script>
+<form id="sampleform" method="post" action="#">
+
+
+	<p>
+		<label class="labeltitle">课程代码：</label><input type="text" class="half"
+			name="win_courseCode" id="win_courseCode" value="" />
+	</p>
+	<p>
+		<label class="labeltitle">课程名称：</label><input type="text" class="half"
+			name="win_courseName" id="win_courseName" value="" />
+	</p>
+
+	<div class="btn_opera">
+		<input type="button" id="win_query" class="btn btn_gray" value="查询" />
+		<input type="reset" class="btn btn_gray" value="重置" />
+	</div>
+</form>
+
+<div class="table-container">
+	<table class="tablebox">
+		<thead class="table_header">
+			<tr>
+				<th class="first tc" width="4%">&nbsp;</th>
+				<th>批次名称</th>
+				<th>选课形式</th>
+				<th>总人数上限/下限</th>
+				<th>计划选课人数</th>
+				<th>已选课人数</th>
+			</tr>
+		</thead>
+
+		<tbody id="win_tbody" class="openable_tbody">
+		</tbody>
+	</table>
+</div>
+<div class="overlay_btn">
+	<input type="button" id="win_choose" class="btn btn_green overlayClose"
+		value="选择" /> <input type="button" class="btn btn_gray overlayClose"
+		value="关闭" />
+</div>
+
+
+
+

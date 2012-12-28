@@ -1,0 +1,151 @@
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<script type="text/javascript">
+var queryUrls = '';
+//var perpage = 5;
+var backRec={};
+function getLists(page){
+	page = (page && page>0)?page=page:page=Math.abs(page);
+	var url=queryUrls;
+	$.getJSON(encodeURI(url),function(data){
+		//var pageTotal=data.rCount;
+		backRec=data;
+		$('#win_course').html(win.obj.code);
+		$('#win_numMax').html(win.obj.minMax.split('/')[1]);
+		$('#win_planTotal').html(win.obj.planNum);
+
+		data = data.list;
+
+		if(data){
+			var html='';
+			$.each(data,function(k,v){
+
+				html+='<tr>';
+				html+='<td class="dt" code="'+v.SCHOOL_CODE+'">'+G_data['school'][v.SCHOOL_CODE]+'</td>';
+				html+='<td class="dt">'+v.PLANNUM+'</td>';
+				html+='<td class="dt">'+ v.PLANNUM_P+'</td>';
+				html+='<td><input class="dt" type="text" value="'+v.BATCH_QUOTA+'" /></td>';
+				html+='</tr>';
+			});
+			$('#win_js_openable_tbody').html(html);
+		/* 	$('#win_pageShow').html(gPage(pageTotal,page,'getLists')); */
+		}
+		/* $('#win_js_openable_tbody tr').hover(
+			function(){$(this).find('td').css({'color':'red','cursor':'pointer'})},
+			function(){$(this).find('td').css('color','')}
+		) */
+		summary.tablehover();
+	});
+}
+
+
+
+
+    $(document).ready(function() {
+		 summary.tablehover();//Hover
+		//查询
+		queryUrls = G_ROOT+'planocschoolbatch/lst/'+win.obj.cscode+'/'+win.obj.termid;
+		getLists(1);
+
+		$('#win_save').click(function(e){
+			var flag = true,err='';
+			var trs = $('#win_js_openable_tbody').find('tr');
+			var dts = [];
+			var amount =0;
+			trs.each(function(){
+				var tds = $(this).find('.dt');
+				
+				var c=$(tds[0]).attr('code'),
+					pnum=tds[1].innerHTML,
+					
+					num=$(this).find('input').val();
+				
+				var o = {SCHOOL_CODE:c,PLANNUM:pnum,BATCH_QUOTA:num};
+				if(num.trim().length==0){
+					flag = false;
+					alert(tds[0].innerHTML+"批量选课配额不能为空");
+					return;
+				}else if(!/^\d+$/.test(num)){
+					flag = false;
+					alert(tds[0].innerHTML+"批量选课配额必须是整数");
+					return;
+				}
+				else if(parseInt(pnum)<parseInt(num)){
+					flag = false;
+					alert(tds[0].innerHTML+"配额不能大于计划选课人数");
+					return;
+				}
+				amount+=parseInt(num);
+				dts.push(o);
+			});
+			if(amount>parseInt($('#win_numMax').html())){
+				flag = false;
+				alert("总配额不能大于总人数上限");
+				return;
+			}
+			if(!flag){return;}
+			var rec = {
+					courseCodeStandard:backRec.courseCodeStandard,
+					termId:backRec.termId,
+					list:dts
+			}
+
+			$.ajax({
+				type: 'POST',
+				data:Ab.encode(rec),
+				dataType: 'json',
+				url: G_ROOT+'planocschoolbatch/update?termId='+rec.termId,
+				contentType:'application/json;charset=UTF-8',
+				success: function(rs) {
+						  if(rs.returnCode=='000000'){
+							  $('#win_close').click();
+							  setTimeout(function(){
+								  mAlert('分配成功');
+							  },400);
+							  getList(1);
+						  }else{
+							  mAlert('分配失败');
+						  }
+	                    }
+			});
+
+
+		});
+	});
+
+
+</script>
+
+
+	 	<form id="standardform" method="post" action="#">
+
+			  <p><label class="labeltitle">课程名称：</label><label  id="win_course" class="half" >ddd</label></p>
+              <p><label class="labeltitle">总人数上限：</label><label  id="win_numMax" class="half" >fff</label></p>
+              <p><label class="labeltitle">选课配额总数：</label><label  id="win_planTotal" class="half" >ddd</label></p>
+
+    </form>
+<div class="table-container">
+<table id="win_table" class="tablebox">
+	<thead class="table_header">
+		<tr>
+			<th>学校</th>
+			<th>选课配额总数</th>
+			<th>个人选课人数</th>
+			<th>批量选课配额</th>
+		</tr>
+	</thead>
+
+	<tbody id="win_js_openable_tbody" class="openable_tbody">
+	</tbody>
+</table>
+</div>
+<div id="win_pageShow"></div>
+    <div class="overlay_btn">
+    <input type="button" id="win_save" class="btn btn_green" value="保存"/>
+    <input type="button" id="win_close" class="btn btn_gray overlayClose" value="关闭"/>
+	</div>
+
+
+
+
+

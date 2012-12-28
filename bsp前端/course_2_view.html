@@ -1,0 +1,144 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta content="教师网联" name="keywords" />
+<meta content="教师网联" name="description" />
+<title>互选计划 - 教师网联</title>
+<link href="css/reset.css" rel="stylesheet" type="text/css" />
+<link href="css/style.css" rel="stylesheet" type="text/css" />
+<link href="css/nyroModal.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="js/bases.js"></script>
+
+
+
+
+
+
+
+<!--[if lt IE 9]>
+<script type="text/javascript" src="js/html5.js"></script>
+<![endif]-->
+<!--[if IE 6]>
+<script type="text/javascript" src="js/DD_belatedPNG_0.0.8a-min.js" ></script>
+<script type="text/javascript">DD_belatedPNG.fix('.toplogo img');   </script>
+<![endif]-->
+
+<script type="text/javascript">document.write('\<script id="jsdata" type="text/javascript" src="js/data.js?t='+new Date().valueOf()+'"\>\<\/script\>');</script>
+
+<script type="text/javascript" src="js/controler/course_2_view.js"></script>
+<script type="text/javascript">
+    $(document).ready(function() {
+			//summary.tabs();//Tabs
+			summary.tablehover();//Hover
+
+
+
+			//删除
+			$('.overlay_delete').click(function(e) {
+				e.preventDefault();
+				$.fn.nyroModalManual({
+					width:400,
+					title:"系统提示",
+					content: pop_del()
+				});
+			return false;
+			});
+
+
+	});
+
+
+</script>
+
+</head>
+<body>
+
+<!-- Header -->
+<div class="page_head">
+<div class="wrapper"><!-- #BeginLibraryItem "/Library/logoinformation.lbi" --><div class="toplogo"><img src="images/logo.png" alt="全国教师教育网络联盟" /></div>
+            <div class="topnav"><b><a href="style.html">Admin</a></b>，欢迎你登陆 <span>|</span> <a href="#">退出</a></div><!-- #EndLibraryItem -->
+
+
+
+
+
+</div>
+</div>
+<!-- Header End -->
+
+
+<!-- Page title -->
+<div class="pagetitle"><span><h1>批量选课</h1><h2>&nbsp;→&nbsp;批量选课明细查看修改</h2></span></div>
+<!-- Page title End -->
+
+
+
+<!-- Page -->
+<div class="page_content">
+
+
+
+         		<fieldset><legend class="big">批量选课明细查看修改</legend></fieldset>
+         		<form class="search" id="query_form">
+				<div class="clearfix">
+        			<div class="column width4 first">
+                         <p><label class="labeltitle">学生ID：</label><input type="text" name="studentid" value="" /></p>
+                        <p><label class="labeltitle">课程代码：</label><input type="text" name="coursecode" value="" /></p>
+                    </div>
+                    <div class="column width4">
+                        <p><label class="labeltitle">学生姓名：</label><input type="text" name="studentname" value="" /></p>
+                        <p><label class="labeltitle">课程名称：</label><input type="text" name="coursename" value="" /></p>
+                    </div>
+                 </div>
+
+                 <div class="btn_opera">
+                    <input type="button" id="form_query" class="btn btn_gray" value="查询"/>
+                    <input type="reset" class="btn btn_gray" value="重置"/>
+                 </div>
+				 </form>
+
+				<div class="box_header">
+                    <input type="submit" class="btn btn_blue " onclick="location.href='course_2_view_add.html'" value="新增"/>
+                    <input type="submit" class="btn btn_red overlay_delete" value="删除"/>
+                </div>
+                <div class="box_content">
+                <table class="tablebox">
+                      <thead class="table_header">
+                            <tr>
+                            <th class="first tc" width="4%"><input type="checkbox" id="checkboxall" onclick="checkAll(this,'chkc')" /> </th>
+                            <th>学生ID</th>
+                            <th>学生姓名</th>
+                            <th>课程代码</th>
+                            <th>课程名称</th>
+                            <th>批次名称</th>
+                            <th>授课学校</th>
+                            <th>层次</th>
+                            <th>课程学分</th>
+
+                            </tr>
+                      </thead>
+
+                      <tbody class="openable_tbody" id="js_openable_tbody"></tbody>
+
+                 </table>
+                 </div>
+
+				 <div id="pageShow"></div>
+
+                	<div class="btn_opera">
+                    <input type="button" class="btn btn_gray" onclick="location.href='course_2.html'" value="返回"/>
+                    </div>
+
+
+
+</div>
+
+<div class="page_footer">
+<p>主管单位：教育部 　主办单位：全国教师教育网络联盟</p>
+<p>全国教师教育网络联盟秘书处 电话：010－58802946 电子信箱：msz@jswl.cn</p>
+<p>全国教师教育网络联盟 版权所有 京ICP备05069600号 </p>
+</div>
+
+</body>
+</html>

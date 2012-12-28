@@ -1,0 +1,33 @@
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<script type="text/javascript">
+$(document).ready(function() {
+			//关闭
+
+			$("#no_save").click(function(e){
+				var ids=[];
+				$('#js_course_tbody').find('input:checked').each(function(){
+					if($(this).attr('status')!=4) ids.push(this.value);
+				});
+				var  tx = $('#no_tx').val();
+				var params = {
+					approver:user['uname'],
+					idList:ids,
+					status:4,
+					approveCommend:tx
+				};
+				audit(params);
+					//getList(1);
+			});
+
+});
+</script>
+ 	<form id="sampleform" method="post" action="#">
+    <div class="overlay_delete_box">
+    <h5 class="green">审核意见：<textarea id="no_tx" rows="5" cols="30"></textarea></h5>
+    </div>
+    <div class="overlay_btn"><input type="button" id="no_save" class="btn btn_gray" value="确定"/></div>
+    </form>
+
+
+

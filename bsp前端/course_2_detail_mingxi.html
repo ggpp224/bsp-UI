@@ -1,0 +1,175 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta content="教师网联" name="keywords" />
+<meta content="教师网联" name="description" />
+<title>批量选课 - 教师网联</title>
+<link href="css/reset.css" rel="stylesheet" type="text/css" />
+<link href="css/style.css" rel="stylesheet" type="text/css" />
+<link href="css/nyroModal.css" rel="stylesheet" type="text/css" />
+
+<script type="text/javascript" src="js/bases.js"></script>
+
+
+<script type="text/javascript">document.write('\<script id="jsdata" type="text/javascript" src="js/data.js?t='+new Date().valueOf()+'"\>\<\/script\>');</script>
+
+
+
+<!--[if lt IE 9]>
+<script type="text/javascript" src="js/html5.js"></script>
+<![endif]-->
+<!--[if IE 6]>
+<script type="text/javascript" src="js/DD_belatedPNG_0.0.8a-min.js" ></script>
+<script type="text/javascript">DD_belatedPNG.fix('.toplogo img');   </script>
+<![endif]-->
+
+
+
+<script type="text/javascript" src="js/controler/course_2_detail_mingxi.js"></script>
+<script type="text/javascript">
+    $(document).ready(function() {
+			//summary.tabs();//Tabs
+			summary.tablehover();//Hover
+
+			//删除
+			$('.overlay_delete').click(function(e) {
+				e.preventDefault();
+				$.fn.nyroModalManual({
+					width:400,
+					title:"系统提示",
+					url: 'overlay_delete.html'
+				});
+			return false;
+			});
+
+			//提交
+			$('.overlay_submit').click(function(e) {
+				e.preventDefault();
+				$.fn.nyroModalManual({
+					width:400,
+					title:"系统提示",
+					url: 'overlay_submit.html'
+				});
+			return false;
+			});
+
+
+	});
+
+	//展开合闭
+	function slideSwitch(obja,objb){
+	$("."+obja).slideToggle("fast");
+	$("."+objb).slideToggle("fast");
+	}
+
+</script>
+
+</head>
+<body>
+
+<!-- Header -->
+<div class="page_head">
+<div class="wrapper"><!-- #BeginLibraryItem "/Library/logoinformation.lbi" --><div class="toplogo"><img src="images/logo.png" alt="全国教师教育网络联盟" /></div>
+            <div class="topnav"><b><a href="style.html">Admin</a></b>，欢迎你登陆 <span>|</span> <a href="#">退出</a></div><!-- #EndLibraryItem -->
+
+
+
+
+
+</div>
+</div>
+<!-- Header End -->
+
+
+<!-- Page title -->
+<div class="pagetitle"><span><h1>批量选课明细查看</h1></span></div>
+<!-- Page title End -->
+
+
+
+<!-- Page -->
+<div class="page_content">
+	<!-- LEFT -->
+	<div class="page_left">
+	<div id="navMenu" class="arrowlistmenu"></div>
+	</div>
+	<!-- LEFT -->
+
+	<!-- RIGHT -->
+	<div class="page_right">
+<style type="text/css">
+#course_2_form dl dt{width:70px}
+#course_2_form dl dd{width:120px}
+</style>
+
+  				<div id="course_2_form" class="search">
+  				<form method="post" action="" id="batch_form">
+						<dl class="search_dl">
+						<dt>学生ID：</dt>
+							<dd><input type="text" value="" name="stuId"/></dd>
+						<dt style="margin-left:20px;">学生姓名：</dt>
+							<dd><input type="text"  value="" name="stuName"/></dd>
+						</dl>
+                		<dl class="search_dl">
+                        <dt>课程代码：</dt>
+                        <dd><input type="text" value="" name="courseCode"/></dd>
+                        <dt style="margin-left:20px;">课程名称：</dt>
+                        <dd><input type="text" value="" name="courseName"/></dd>
+
+                        </dl>
+                        <div class="search_btn"><input type="button" class="btn btn_gray" value="查询" id="form_query" />&nbsp;
+                        <input type="reset" class="btn btn_gray" value="重置" />
+                        </div>
+                        <div class="slide_box">
+                        <a href="javascript:void(0)" onclick='slideSwitch("search","search_close")'>合闭搜索</a>
+                        </div>
+				</form>
+                </div>
+
+                <div class="search_close" style="display:none;">
+                <a href="javascript:void(0)" onclick='slideSwitch("search","search_close")'>展开搜索</a>
+                </div>
+
+                <div class="box_header">
+
+                    </span>
+                </div>
+
+                <div class="box_content">
+                <table class="tablebox">
+                      <thead class="table_header">
+                            <tr>
+                            <th class="first tc" width="4%"></th>
+                            <th>学生ID</th>
+                            <th>学生姓名</th>
+                            <th>课程代码</th>
+                            <th>课程名称</th>
+                            <th>批次名称</th>
+                            <th>任课教师</th>
+                            <th>授课学校</th>
+                            <th>层次</th>
+                            <th>学分</th>
+                            <th>费用</th>
+                            </tr>
+                      </thead>
+                      <tbody id="js_course_tbody" class="openable_tbody">
+                       </tbody>
+                 </table>
+                 </div><!-- #BeginLibraryItem "/Library/pagination.lbi" -->
+                        <div id="pageShow"></div>
+				<!-- #EndLibraryItem -->
+				</div>
+	</div>
+<!-- RIGHT End -->
+<div style="clear:both;"></div>
+
+<div class="page_footer">
+<p>主管单位：教育部 　主办单位：全国教师教育网络联盟</p>
+<p>全国教师教育网络联盟秘书处 电话：010－58802946 电子信箱：msz@jswl.cn</p>
+<p>全国教师教育网络联盟 版权所有 京ICP备05069600号 </p>
+</div>
+
+<script type="text/javascript" src="js/menu.js"></script>
+</body>
+</html>

@@ -1,0 +1,191 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta content="教师网联" name="keywords" />
+<meta content="教师网联" name="description" />
+<title>互选批次组管理 - 教师网联</title>
+<link href="css/reset.css" rel="stylesheet" type="text/css" />
+<link href="css/style.css" rel="stylesheet" type="text/css" />
+<link href="css/nyroModal.css" rel="stylesheet" type="text/css" />
+
+
+
+<!--[if lt IE 9]>
+<script type="text/javascript" src="js/html5.js"></script>
+<![endif]-->
+<!--[if IE 6]>
+<script type="text/javascript" src="js/DD_belatedPNG_0.0.8a-min.js" ></script>
+<script type="text/javascript">DD_belatedPNG.fix('.toplogo img, .btn_black, .btn_blue, .btn_red, .btn_ora, .btn_green, .btn_gray, .btn,');   </script>
+<![endif]-->
+
+
+
+<script type="text/javascript" src="js/bases.js"></script>
+
+<script type="text/javascript" src="js/controler/index_1.js"></script>
+<script type="text/javascript">
+	//展开合闭
+	function slideSwitch(obja,objb){
+	$("."+obja).slideToggle("fast");
+	$("."+objb).slideToggle("fast");
+	}
+
+</script>
+</head>
+<body>
+
+<!-- Header -->
+<div class="page_head">
+<div class="wrapper"><!-- #BeginLibraryItem "/Library/logoinformation.lbi" --><div class="toplogo"><img src="images/logo.png" alt="全国教师教育网络联盟" /></div>
+            <div class="topnav"><b><a href="style.html">Admin</a></b>，欢迎你登陆 <span>|</span> <a href="#">退出</a></div>
+           <!--  <div class="link_other"><a href="#">门户</a></div> --><!-- #EndLibraryItem -->
+            </div>
+</div>
+<!-- Header End -->
+
+
+<!-- Page title -->
+<div class="pagetitle"><span><h1>互选计划管理</h1><h2>&nbsp;→&nbsp;互选批次组管理</h2></span></div>
+<!-- Page title End -->
+
+
+
+<!-- Page -->
+<div class="page_content">
+
+
+
+		<!-- LEFT -->
+         <div class="page_left"><!-- #BeginLibraryItem "/Library/navigation.lbi" -->
+
+
+<div id="navMenu" class="arrowlistmenu"></div>
+<!-- #EndLibraryItem --></div>
+         <!-- LEFT -->
+  		<!-- RIGHT -->
+        <div class="page_right">
+
+  				<form id="query_form" class="search">
+
+                		<dl class="search_dl">
+                        <dt>所属年份：</dt>
+                        <dd><select id="year" name="year"><option value="null">全部</option></select></dd>
+                        <dt>状态：</dt>
+                        <dd><select id="statu" name="statu">
+                        		<option value="null">全部</option>
+                        		<option value="1">已启用</option>
+                        		<option value="2">已停用</option>
+                        	</select>
+                        </dd>
+						<dt>互选批次组名称：</dt>
+                        <dd><input type="text" id="termName" name="termName" value="" /></dd>
+                        </dl>
+
+                        <div class="search_btn"><input type="button" id="queryBtn" class="btn btn_gray" value="查询" />&nbsp;
+                        <input type="reset" id="resetBtn" class="btn btn_gray" value="重置" />
+                        </div>
+                        <div class="slide_box">
+                        <a href="javascript:void(0)" onclick='slideSwitch("search","search_close")'>合闭搜索</a>
+                        </div>
+
+                </form>
+
+                <div class="search_close" style="display:none;">
+                <a href="javascript:void(0)" onclick='slideSwitch("search","search_close")'>展开搜索</a>
+                </div>
+
+                <div class="box_header paixu_1">
+                	<span><input type="button" disabled="disabled" class="btn btn_disable" onclick="location='../dicexcel/termset/toexcel/1'" value="导出数据"/></span>
+                    <input type="button" class="btn btn_blue" onclick="location.href='index_1_add.html'" value="新增"/>
+                    <input type="button" id="delBtn" class="btn btn_red overlay_delete" value="删除"/>
+                    <input type="button" id="beginSortBtn" class="btn btn_green" onclick='slideSwitch("paixu_1","paixu_2")' value="点击开始排序"/>
+                </div>
+
+
+
+                <!-- 点击排序后 -->
+                <div class="box_header paixu_2" style="display:none;">
+                	<i class="color_red">先选择年份：</i>
+                    <select id="sortYear">
+
+                    </select>
+                	<input type="submit" id="saveSortBtn" class="btn btn_red" onclick='slideSwitch("paixu_1","paixu_2")' value="保存排序"/>
+                </div>
+                <!-- 点击排序后 End -->
+
+                <div class="paixu_1">
+                <div class="box_content">
+                <table class="tablebox">
+                      <thead class="table_header">
+                            <tr>
+                            <th class="first tc" width="4%"><input type="checkbox"
+								id="checkboxall" /></th>
+                            <th>互选批次组名称</th>
+                            <th>所属年份</th>
+                            <th>序号</th>
+                            <th>批次开始时间</th>
+                            <th>批次结束时间</th>
+                            <th>创建时间</th>
+                            <th>状态</th>
+                            <th>操作</th>
+                            </tr>
+                      </thead>
+
+                      <tbody id="js_openable_tbody" class="openable_tbody">
+                      </tbody>
+
+
+                      </table>
+                </div>
+                <div id="pageShow"></div>
+               </div>
+
+
+
+
+                <!-- 点击排序后 -->
+                <div class="paixu_2" style="display:none; margin-bottom:10px;">
+                <div class="box_content">
+                <table class="dragtalbe-serial">
+                	<thead class="table_header">
+                            <tr>
+                            <th class="first tc">序号</th>
+                            </tr>
+                      </thead>
+                      <tbody id="tbody_serial" class="openable_tbody">
+
+                      </tbody>
+
+                </table>
+                <table id="dragtable" class="dragtalbe-content">
+                      <thead class="table_header">
+                            <tr>
+                            <th>批次</th>
+                            </tr>
+                      </thead>
+
+                      <tbody id="tbody_content" class="openable_tbody">
+                      </tbody>
+
+                 </table>
+                </div>
+
+                <!-- 点击排序后 End -->
+                </div>
+
+
+            </div>
+            <div class="clearfix"></div>
+            <!-- RIGHT End -->
+</div>
+
+<div class="page_footer">
+<p>主管单位：教育部 　主办单位：全国教师教育网络联盟</p>
+<p>全国教师教育网络联盟秘书处 电话：010－58802946 电子信箱：msz@jswl.cn</p>
+<p>全国教师教育网络联盟 版权所有 京ICP备05069600号 </p>
+</div>
+
+<script type="text/javascript" src="js/menu.js"></script>
+</body>
+</html>

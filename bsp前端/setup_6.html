@@ -1,0 +1,213 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta content="教师网联" name="keywords" />
+<meta content="教师网联" name="description" />
+<title>系统维护 - 教师网联</title>
+<link href="css/reset.css" rel="stylesheet" type="text/css" />
+<link href="css/style.css" rel="stylesheet" type="text/css" />
+<link href="css/nyroModal.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="js/bases.js"></script>
+<script type="text/javascript" src="js/tablednd-0.4.js"></script>
+
+<!--[if lt IE 9]>
+<script type="text/javascript" src="js/html5.js"></script>
+<![endif]-->
+<!--[if IE 6]>
+<script type="text/javascript" src="js/DD_belatedPNG_0.0.8a-min.js" ></script>
+<script type="text/javascript">DD_belatedPNG.fix('.toplogo img, .btn_black, .btn_blue, .btn_red, .btn_ora, .btn_green, .btn_gray, .btn,');   </script>
+<![endif]-->
+
+<script type="text/javascript" src="js/cookies.js"></script>
+
+
+<script type="text/javascript">document.write('\<script id="jsdata" type="text/javascript" src="js/data.js?t='+new Date().valueOf()+'"\>\<\/script\>');</script>
+
+
+
+<script type="text/javascript" src="js/controler/setup_6.js"></script>
+<script type="text/javascript">
+    $(document).ready(function() {
+			//summary.tabs();//Tabs
+			//summary.navigation();//navigation
+			summary.tablehover();//Hover
+
+			//删除
+			$('.overlay_setup_6_add').click(function(e) {
+				e.preventDefault();
+				$.fn.nyroModalManual({
+					width:500,
+					title:"新增",
+					url: 'overlay_setup_6_add.html'
+				});
+			return false;
+			});
+
+			//删除
+			$('.overlay_delete').click(function(e) {
+				e.preventDefault();
+				$.fn.nyroModalManual({
+					width:400,
+					title:"系统提示",
+					url: 'overlay_delete.html'
+				});
+			return false;
+			});
+
+	});
+
+	//展开合闭
+	function slideSwitch(obja,objb){
+	$("."+obja).slideToggle("fast");
+	$("."+objb).slideToggle("fast");
+	}
+
+</script>
+
+
+</head>
+<body>
+
+<!-- Header -->
+<div class="page_head">
+<div class="wrapper"><!-- #BeginLibraryItem "/Library/logoinformation.lbi" --><div class="toplogo"><img src="images/logo.png" alt="全国教师教育网络联盟" /></div>
+            <div class="topnav"><b><a href="style.html">Admin</a></b>，欢迎你登陆 <span>|</span> <a href="#">退出</a></div>
+            <div class="link_other"><a href="#">门户</a></div><!-- #EndLibraryItem --></div>
+</div>
+<!-- Header End -->
+
+
+<!-- Page title -->
+<div class="pagetitle"><span><h1>系统维护</h1><h2>&nbsp;→&nbsp;批次信息管理</h2></span></div>
+<!-- Page title End -->
+
+
+
+<!-- Page -->
+<div class="page_content">
+
+	<!-- LEFT -->
+         <div class="page_left">
+		 <div id="navMenu" class="arrowlistmenu"></div>
+         </div>
+         <!-- LEFT -->
+
+         <!-- RIGHT -->
+
+
+        <div class="page_right">
+         		<form name="form_setup_6" id="form_setup_6">
+  				<div class="search">
+                		<dl class="search_dl">
+                        <dt>所属学科：</dt>
+                        <dd><select name="form_subject" id="form_subject"></select></dd>
+                        <dt>状态：</dt>
+                        <dd>
+                        	<select id="form_status" name="form_status">
+                        	    <option value="null">全部</option>
+                        		<option value="1">已启用</option>
+                        		<option value="2">已停用</option>
+                        	</select>
+                        </dd>
+                        </dl>
+
+                		<dl class="search_dl">
+                        <dt>批次代码：</dt>
+                        <dd><input type="text" value="" name="form_stdCourseCode" id="form_stdCourseCode" /></dd>
+                        <dt>批次名称：</dt>
+                        <dd><input type="text" value="" name="form_stdCourseName" id="form_stdCourseName" /></dd>
+                        </dl>
+
+		                <div class="search_btn">
+		                	<input type="button" class="btn btn_gray" value="查询" id="form_query" />&nbsp;
+		                	<input type="reset" class="btn btn_gray" value="重置" />
+		                </div>
+
+              </div>
+               </form>
+                <div class="search_close" style="display:none;">
+                <a href="javascript:void(0)" onclick='slideSwitch("search","search_close")'>展开搜索</a>
+                </div>
+
+                <div class="box_header paixu_1">
+					<em id="do_area">
+                    <input type="button" class="btn btn_blue overlay_setup_6_add" id="overlay_setup_6_add"  value="新增"/>
+                    <input type="button" class="btn btn_red overlay_delete" id="overlay_setup_6_delete" value="删除"/>
+                    <input type="button" class="btn btn_green" id="Btn_doRank" value="点击开始排序"/>
+					</em>
+					<span><input class="btn btn_disable" disabled="disabled" type="button" onclick="location='../dicexcel/coursestandard/toexcel/1/'" value="导出数据"></span>
+                </div>
+
+
+
+                <!-- 点击排序后 -->
+                <div class="box_header paixu_2" style="display:none; text-align:center;">
+                	<i class="color_red">请鼠标拖动下列条目进行排序</i>
+                	<i class="color_red" style="display:none">先选择学科：</i>
+                    <select id="form_subject_2" style="display:none">
+                    <option>计算机科学与技术</option>
+                    </select>
+                	<input type="button" class="btn btn_red" id="Btn_doRankSave" value="保存排序"/>
+                </div>
+                <!-- 点击排序后 End -->
+
+                <div class="paixu_1">
+                <div class="box_content">
+                <table class="tablebox">
+                      <thead class="table_header">
+                            <tr>
+                            <th id="chooseAll" class="first tc hs" width="4%"><input type="checkbox" name="checkall" onclick="checkAll(this,'chk_stdCourse')" /></th>
+                            <th>批次代码</th>
+                            <th>批次名称</th>
+                            <th style="display:none">所属学科</th>
+                            <th>创建时间</th>
+                            <th style="display:none">状态</th>
+                            <th style="display:none" id="th_do" class="hs">操作</th>
+                            </tr>
+                      </thead>
+                      <tbody class="openable_tbody" id="js_course_tbody"></tbody>
+                      </table>
+                </div><!-- #BeginLibraryItem "/Library/pagination.lbi" -->
+                	<div id="pageShow"></div>
+				</div><!-- #EndLibraryItem -->
+
+				                <!-- 点击排序后 -->
+                <div class="paixu_2" style="display:none; margin-bottom:10px;">
+	                <div class="box_content">
+		                <table id="dragtable" class="tablebox">
+		                      <thead class="table_header">
+		                            <tr>
+		                            <th class="first tc" width="4%">&nbsp;</th>
+		                            <th>批次代码</th>
+		                            <th>批次名称</th>
+		                            </tr>
+		                      </thead>
+		                      <tbody class="openable_tbody">
+
+		                      </tbody>
+
+		                 </table>
+	                 </div>
+                 </div>
+
+                <!-- 点击排序后 End -->
+
+				</div>
+
+
+			</div>
+            <div class="clearfix"></div>
+            <!-- RIGHT End -->
+
+</div>
+
+<div class="page_footer">
+<p>主管单位：教育部 　主办单位：全国教师教育网络联盟</p>
+<p>全国教师教育网络联盟秘书处 电话：010－58802946 电子信箱：msz@jswl.cn</p>
+<p>全国教师教育网络联盟 版权所有 京ICP备05069600号 </p>
+</div>
+
+<script type="text/javascript" src="js/menu.js"></script>
+</body>
+</html>

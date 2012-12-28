@@ -1,0 +1,271 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta content="教师网联" name="keywords" />
+<meta content="教师网联" name="description" />
+<title>学生选课情况监控 - 教师网联</title>
+<link href="css/reset.css" rel="stylesheet" type="text/css" />
+<link href="css/style.css" rel="stylesheet" type="text/css" />
+<link href="css/nyroModal.css" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+<!--[if lt IE 9]>
+<script type="text/javascript" src="js/html5.js"></script>
+<![endif]-->
+<!--[if IE 6]>
+<script type="text/javascript" src="js/DD_belatedPNG_0.0.8a-min.js" ></script>
+<script type="text/javascript">DD_belatedPNG.fix('.toplogo img');   </script>
+<![endif]-->
+<script type="text/javascript" src="js/bases.js"></script>
+<script type="text/javascript">document.write('\<script id="jsdata" type="text/javascript" src="js/data.js?t='+new Date().valueOf()+'"\>\<\/script\>');</script>
+
+
+
+<script type="text/javascript" src="js/controler/course_5_3.js"></script>
+<script type="text/javascript">
+    $(document).ready(function() {
+			//summary.tabs();//Tabs
+			summary.tablehover();//Hover
+
+			//课程代码
+			$(".course_code").focus(function(e) {
+					e.preventDefault();
+					$.fn.nyroModalManual({
+						width:900,
+						title:'批次代码',
+						url: 'overlay_course4_addcourse.html'
+					});
+				return false;
+			});
+	});
+
+
+</script>
+
+</head>
+<body>
+
+<!-- Header -->
+<div class="page_head">
+<div class="wrapper"><!-- #BeginLibraryItem "/Library/logoinformation.lbi" --><div class="toplogo"><img src="images/logo.png" alt="全国教师教育网络联盟" /></div>
+            <div class="topnav"><b><a href="style.html">Admin</a></b>，欢迎你登陆 <span>|</span> <a href="#">退出</a></div><!-- #EndLibraryItem -->
+
+
+
+
+</div>
+</div>
+<!-- Header End -->
+
+
+<!-- Page title -->
+<div class="pagetitle"><span><h1>选课管理</h1><h2>&nbsp;→&nbsp;选课情况监控&nbsp;→&nbsp;学生选课情况监控</h2></span></div>
+<!-- Page title End -->
+
+
+
+<!-- Page -->
+<div class="page_content">
+
+
+			<!-- LEFT -->
+         <div class="page_left">
+		 <div id="navMenu" class="arrowlistmenu"></div>
+         </div>
+         <!-- LEFT -->
+
+         <!-- RIGHT -->
+         <div class="page_right">
+		 <div id="tablist">
+				<ul id="explore_nav">
+						<li id="ex_tab1"><a rel="tab01" href="course_5_2.html" >课程选课情况监控</a></li>
+						<li id="ex_tab2"><a rel="tab02" href="course_5_3.html" class="current">学生选课情况监控</a></li>
+				</ul>
+		</div>
+
+         		<div class="clearfix">
+        			<div class="column width3 first">
+                        <p><label class="">互选批次组：</label><select id="form_term">
+                        
+						</select></p>
+                    </div>
+                </div>
+
+
+                <fieldset><legend class="big">互选批次组总计</legend></fieldset>
+                <div class="box_header"><input type="button" class="btn btn_gray" id="refresh" value="刷新"/> </div>
+                <div class="box_content">
+                <table class="tablebox">
+                      <thead class="table_header">
+                            <tr>
+                            <th class="first">座位总数</th>
+                            <th>已选座位数</th>
+                            <th>剩余座位数</th>
+                            <th>学员总数</th>
+                            <th>已选课人数</th>
+                            <th>未选课人数</th>
+                            </tr>
+                      </thead>
+
+                      <tbody class="openable_tbody_tremcount" id="openable_tbody_tremcount">
+
+                      </tbody>
+
+                 </table>
+                 </div>
+
+
+				<form id="term_form" name="term_form">
+                 <fieldset><legend class="big">按学校统计</legend></fieldset>
+                 <div class="clearfix">
+        			<div class="column width3 first">
+                        <p><label class="labeltitle">学校代码：</label><input id="schoolCode" type="text" class="half" value="" /></p>
+                    </div>
+                    <div class="column width3">
+                        <p><label class="labeltitle">学校名称：</label><input id="schoolName" type="text" class="half" value="" /></p>
+                    </div>
+                </div>
+                <div class="btn_opera">
+                    <input type="button" class="btn btn_gray" onclick="" value="查询" id="form_query" />
+                </div>
+				</form>
+                <div class="box_header"></div>
+                <div class="box_content">
+                <table class="tablebox">
+                      <thead class="table_header">
+                            <tr>
+                           
+                            <th>学校代码</th>
+                            <th>学校名称</th>
+                            <th>学员总数</th>
+                            <th>已登录人数</th>
+                            <th>未登录人数</th>
+                            <th>计划总课次</th>
+                            <th>已选总课次</th>
+                            <th>批量选课状态</th>
+							<th>控制</th>
+                            </tr>
+                      </thead>
+					  
+                      <tbody class="openable_tbody" id="openable_tbody_schoolstatistics">
+
+                      </tbody>
+
+                 </table>
+                 </div>
+                 <!-- #BeginLibraryItem "/Library/pagination.lbi" -->
+                 <div id="pageShow_schoolstatistics"></div>
+                 <!-- #EndLibraryItem -->
+
+
+				<div id="haslogin">
+				<form id="haslogin_form" name="haslogin_form">
+	                <fieldset><legend class="big">已登录学生列表</legend></fieldset>
+	                 <div class="clearfix">
+	        			<div class="column width3 first">
+	                       <p><label class="labeltitle">学校：</label><select id="form_school"></select></p>
+	                        <p><label class="labeltitle">层次：</label><select id="form_educationlevel"></select></p>
+	                    </div>
+
+	                    <div class="column width3">
+	                        <p><label class="labeltitle">专业：</label><select id="form_major"></select></p>
+	                        <p><label class="labeltitle">年级：</label><select id="form_grade"></select></p>
+	                    </div>
+	                </div>
+
+	                <div class="btn_opera">
+	                    <input type="button" class="btn btn_gray" id="haslogin_btn" value="查询"/>
+	                    <input type="reset" class="btn btn_gray" value="重置"/>
+	                </div>
+				</form>
+                <div class="box_header" id="is_login_zk" ></div>
+                <div class="box_content">
+                <table class="tablebox">
+                      <thead class="table_header">
+                            <tr>
+                            <th class="first">学员ID</th>
+                            <th>学生姓名</th>
+                            <th>所属学校</th>
+                            <th>专业</th>
+                            <th>层次</th>
+                            <th>年级</th>
+                            </tr>
+                      </thead>
+
+                      <tbody class="openable_tbody" id="openable_tbody_logined">
+
+                      </tbody>
+
+                 </table>
+                 </div>
+                 <!-- #BeginLibraryItem "/Library/pagination.lbi" -->
+                 	<div id="pageShow_logined"></div>
+                 <!-- #EndLibraryItem -->
+			</div>
+
+			<div id="hasnotlogin">
+			<form id="dislogin" name="dislogin">
+                <fieldset><legend class="big">未登录学生列表</legend></fieldset>
+                 <div class="clearfix">
+        			<div class="column width3 first">
+                        <p><label class="labeltitle">学校：</label><select id="form_school_nolog"></select></p>
+                        <p><label class="labeltitle">层次：</label><select id="form_educationlevel_nolog"></select></p>
+                    </div>
+
+                    <div class="column width3">
+                        <p><label class="labeltitle">专业：</label><select id="form_major_nolog"></select></p>
+                        <p><label class="labeltitle">年级：</label><select id="form_grade_nolog"></select></p>
+                    </div>
+                </div>
+
+                <div class="btn_opera">
+                    <input type="button" class="btn btn_gray" value="查询" id="dislogin_btn"/>
+                    <input type="reset" class="btn btn_gray" value="重置"/>
+                </div>
+			</form>
+                <div class="box_header" id="not_login_zk"></div>
+                <div class="box_content">
+                <table class="tablebox">
+                      <thead class="table_header">
+                            <tr>
+                            <th class="first">学员ID</th>
+                            <th>学生姓名</th>
+                            <th>所属学校</th>
+                            <th>专业</th>
+                            <th>层次</th>
+                            <th>年级</th>
+                            </tr>
+                      </thead>
+
+                      <tbody class="openable_tbody" id="openable_tbody_dislogin">
+
+                      </tbody>
+
+                 </table>
+                 </div>
+                 <!-- #BeginLibraryItem "/Library/pagination.lbi" -->
+                 	<div id="pageShow_dislogin"></div>
+                 <!-- #EndLibraryItem -->
+                 </div>
+
+        </form>
+  		</div>
+        <!-- RIGHT End -->
+         <div class="clearfix"></div>
+
+</div>
+
+<div class="page_footer">
+<p>主管单位：教育部 　主办单位：全国教师教育网络联盟</p>
+<p>全国教师教育网络联盟秘书处 电话：010－58802946 电子信箱：msz@jswl.cn</p>
+<p>全国教师教育网络联盟 版权所有 京ICP备05069600号 </p>
+</div>
+
+<script type="text/javascript" src="js/menu.js"></script>
+</body>
+</html>

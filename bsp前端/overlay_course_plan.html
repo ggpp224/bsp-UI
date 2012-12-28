@@ -1,0 +1,149 @@
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<script type="text/javascript">
+	var queryUrl = '';
+	var cmb = new ComboxOperate();
+
+	function clickTable() {
+		$("#win_js_openable_tbody tr").unbind('click').bind('click',
+						function(e) {
+							var td0 = $(this).children()[0];
+							var td1 = $(this).children()[1];
+							document.getElementById('courseCode').value = td0.innerHTML;
+							document.getElementById('courseName').value = td1.innerHTML;
+							$.getJSON(G_ROOT+'courseattribute/queryCourseAttribute?code='+td0.innerHTML,function(rs){
+								var dt = rs.list[0];
+								if(dt){
+									var form = document.getElementById('sampleform');
+									var els = form.elements;
+								//	els.courseCode.value=dt.courseCode||'';
+									//els.courseName.value = dt.courseName||'';
+									els.maxNum.value = dt.maxNum||'';
+									els.schoolCode.value = dt.schoolCode||'';
+									els.preCourse.value = dt.preCourse||'';
+									els.score.value = dt.score||'';
+									els.examForm.value = dt.examForm||'';
+									els.minNum.value = dt.minNum||'';
+									els.postCourse.value = dt.postCourse||'';
+									els.resualttime.value = dt.resualttime||'';
+									els.opentime.value = dt.opentime||'';
+									els.classPeriod.value = dt.classPeriod||'';
+									
+									var ds = dt.scoreStructure||'';
+									els.scoreStructure.value = ds;
+									
+									//els.amount.value = accMul(price,score);
+									if(ds){
+										var data = ds.split(';');
+										var htm='';
+										$.each(data,function(idx,val){
+											var str = val.split(':');
+											htm+='<tr><td class="first tc"><i class="color_gray"></td>'+
+													'<td><input class="dt" type="text" size="20" value="'+str[0]+'" /></td>'+
+													'<td><input class="dt" type="text" size="6" value="'+str[1]+'" /><b></b></td>'+
+													'<td><a class="a_del" href="#a"><img src="images/delete.png" />删除</a></td>'+
+													'</tr>';
+
+										});
+										$("#tablelist").find('tbody').html(htm);
+									}
+								}
+								
+							})
+							$('#win_close').trigger('click');
+						})
+	}
+
+	function getList(page) {
+		page = (page && page > 0) ? page = page : page = Math.abs(page);
+		var url = queryUrl + page + '/' + G_perpage_pop;
+		$.getJSON(encodeURI(url), function(data) {
+			var pageTotal = data.rCount;
+			var data = data.list;
+
+			if (data) {
+				var html = '';
+				$.each(data, function(k, v) {
+
+					html += '<tr>';
+					html += '<td>' + v.COURSE_CODE + '</td>';
+					html += '<td>' + v.COURSE_NAME + '</td>';
+					html += '</tr>';
+				});
+				$('#win_js_openable_tbody').html(html);
+				$('#win_pageShow').html(gPage(pageTotal, page, 'getList',G_perpage_pop));
+				clickTable();
+			}
+			summary.tablehover();//Hover
+			$('#win_js_openable_tbody tr').hover(
+					function(){$(this).find('td').css({'color':'red','cursor':'pointer'})},
+					function(){$(this).find('td').css('color','')}
+				)
+		});
+	}
+
+	$(document).ready(
+			function() {
+				summary.tablehover();//Hover
+				//查询
+				$("#query_standard").click(
+						function(e) {
+							var params = Ab.urlDecode(Ab.serializeForm('standardform'));
+							queryUrl = G_ROOT + G_FormArr['planCourseList']
+									+ "/" + (params.win_coursecode == '' ? 'null': params.win_coursecode)
+									+ "/" + (params.win_coursename == '' ? 'null': params.win_coursename)
+									+ "/" + $('#schoolCode').val() + "/2/";
+							getList(1);
+
+						});
+
+				$("#win_close").click();
+			});
+			$("#query_standard").click();
+</script>
+
+<form id="standardform" method="post" action="#">
+
+	<p>
+		<label class="labeltitle">课程代码：</label><input type="text"
+			id="win_coursecode" class="half" name="win_coursecode" value="" />
+	</p>
+	<p>
+		<label class="labeltitle">课程名称：</label><input type="text"
+			id="win_coursename" class="half" name="win_coursename" value="" />
+	</p>
+	<div class="btn_opera">
+		<input type="button" id="query_standard" class="btn btn_gray"
+			value="查询" /> <input type="reset" class="btn btn_gray" value="重置" />
+	</div>
+</form>
+
+<div class="table-container">
+	<table id="win_table" class="tablebox">
+		<thead class="table_header">
+			<tr>
+				<th>课程代码</th>
+				<th>课程名称</th>
+			</tr>
+		</thead>
+
+		<tbody id="win_js_openable_tbody" class="openable_tbody">
+
+		</tbody>
+	</table>
+</div>
+<div id="win_pageShow"></div>
+
+
+
+
+
+
+<div class="overlay_btn">
+	<input type="button" id="win_close" class="btn btn_gray overlayClose"
+		value="关闭" />
+</div>
+
+
+
+

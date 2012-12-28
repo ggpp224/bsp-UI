@@ -1,0 +1,428 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta content="教师网联" name="keywords" />
+<meta content="教师网联" name="description" />
+<title>Style</title>
+<link href="css/reset.css" rel="stylesheet" type="text/css" />
+<link href="css/style.css" rel="stylesheet" type="text/css" />
+<link href="css/nyroModal.css" rel="stylesheet" type="text/css" />
+<!-- JSON Table css -->
+<link rel="stylesheet" type="text/css" href="css/easyui.css">
+<link rel="stylesheet" type="text/css" href="css/icon.css">
+<!-- JSON Table css End-->
+
+
+
+<script type="text/javascript" src="js/jquery.easyui.min.js"></script>
+
+
+
+<!--[if lt IE 9]>
+<script type="text/javascript" src="js/html5.js"></script>
+<![endif]-->
+<!--[if IE 6]>
+<script type="text/javascript" src="js/DD_belatedPNG_0.0.8a-min.js" ></script>
+<script type="text/javascript">DD_belatedPNG.fix('.toplogo img');   </script>
+<![endif]-->
+
+<script type="text/javascript">
+    $(document).ready(function() {
+			//summary.snsmenu(); //下拉
+			summary.tabs();//Tabs
+			summary.tablehover();//Hover
+			summary.datatable();//数据表格
+
+			//按钮
+			$('.overlay_btn').click(function(e) {
+				e.preventDefault();
+				$.fn.nyroModalManual({
+					width:500,
+					title:"按钮弹出",
+					url: '#.html'
+				});
+			return false;
+			});
+
+			//输入框
+			$(".overlay_input").focus(function(e) {
+					e.preventDefault();
+					$.fn.nyroModalManual({
+						width:500,
+						title:'输入框',
+						url: '#.html'
+					});
+				return false;
+			});
+
+			//文本连接
+			$('.overlay_text').nyroModal({
+			width: 500
+			});
+
+			//主导航
+			ddsmoothmenu.init({
+			mainmenuid: "smoothmenu",
+			orientation: 'h',
+			classname: 'ddsmoothmenu',
+			contentsource: "markup"
+			})
+
+	});
+
+	//展开合闭
+	function slideSwitch(obja,objb){
+	$("."+obja).slideToggle("fast");
+	$("."+objb).slideToggle("fast");
+	}
+
+
+</script>
+</head>
+<body>
+
+<!-- Header -->
+<div class="page_head">
+<div class="wrapper"><!-- #BeginLibraryItem "/Library/logoinformation.lbi" --><div class="toplogo"><img src="images/logo.png" alt="全国教师教育网络联盟" /></div>
+            <div class="topnav"><b><a href="style.html">Admin</a></b>，欢迎你登陆 <span>|</span> <a href="#">退出</a></div><!-- #EndLibraryItem -->
+
+
+
+
+</div>
+</div>
+<!-- Header End -->
+
+
+<!-- Page title -->
+<div class="pagetitle"><span><h1>课程列表</h1></span></div>
+<!-- Page title End -->
+
+
+
+<!-- Page -->
+<div class="page_content">
+
+
+
+
+				<fieldset>
+				<legend class="big">表格</legend>
+                <div class="box_header">
+                	<span><input type="reset" class="btn btn_green" value="批量导入"/></span>
+                    <input type="submit" class="btn btn_blue overlay_btn" value="新增"/>
+                    <input type="submit" class="btn btn_red" value="删除"/>
+                    <input type="submit" class="btn btn_gray" value="其他按钮"/>
+                    <i id="debugArea">输出结果</i>
+                </div>
+                <div class="box_content">
+                <table id="dragtable" class="tablebox">
+                      <thead class="table_header">
+                            <tr>
+                            <th class="first tc" width="4%"><input type="checkbox" id="checkboxall"/> </th>
+                            <th>课程代码</th>
+                            <th>课程名称</th>
+                            <th>授课学校</th>
+                            <th>适用专业</th>
+                            <th>层次</th>
+                            <th>互选批次组</th>
+                            <th>课程学分</th>
+                            <th>启停标识</th>
+                            <th>启停操作</th>
+                            </tr>
+                      </thead>
+
+                      <tbody class="openable_tbody">
+                            <tr id="1" >
+                            <td class="first tc"><input type="checkbox" name="checkall" /> </td>
+                            <td><a href="#">KCJH0001_1</a></td>
+                            <td>文学鉴赏</td>
+                            <td>北师大</td>
+                            <td>文学</td>
+                            <td>本科</td>
+                            <td>2012第一学期</td>
+                            <td>17</td>
+                            <td><i class="color_gray">已启用</i></td>
+                            <td><input type="submit" class="btn btn_gray" value="停用"/></td>
+                            </tr>
+
+                            <tr id="2">
+                            <td class="first tc"><input type="checkbox" name="checkall" /> </td>
+                            <td><a href="#">KCJH0001_2</a></td>
+                            <td>产品设计</td>
+                            <td>华南师大</td>
+                            <td>物理</td>
+                            <td>本科</td>
+                            <td>2012第一学期</td>
+                            <td>30</td>
+                            <td><i class="color_gray">已启用</i></td>
+                            <td><input type="submit" class="btn btn_gray" value="停用"/></td>
+                            </tr>
+
+                            <tr id="3">
+                            <td class="first tc"><input type="checkbox" name="checkall" /> </td>
+                            <td><a href="#">KCJH0001_3</a></td>
+                            <td>用户体验设计</td>
+                            <td>东北师大</td>
+                            <td>数学</td>
+                            <td>本科</td>
+                            <td>2012第一学期</td>
+                            <td>76</td>
+                            <td><i class="color_gray">已启用</i></td>
+                            <td><input type="submit" class="btn btn_gray" value="停用"/></td>
+                            </tr>
+
+                            <tr id="4">
+                            <td class="first tc"><input type="checkbox" name="checkall" /> </td>
+                            <td><a href="#">KCJH0001_4</a></td>
+                            <td>JAVA开发</td>
+                            <td>西南师大</td>
+                            <td>化学</td>
+                            <td>本科</td>
+                            <td>2012第一学期</td>
+                            <td>90</td>
+                            <td><i class="color_red">已停用</i></td>
+                            <td><input type="submit" class="btn btn_gray" value="启用"/></td>
+                            </tr>
+
+                            <tr id="5">
+                            <td class="first tc"><input type="checkbox" name="checkall" /> </td>
+                            <td><a href="#">KCJH0001_5</a></td>
+                            <td>CSS3实践</td>
+                            <td>清华师大</td>
+                            <td>体育</td>
+                            <td>本科</td>
+                            <td>2012第一学期</td>
+                            <td>42</td>
+                            <td><i class="color_red">已停用</i></td>
+                            <td><input type="submit" class="btn btn_gray" value="启用"/></td>
+                            </tr>
+
+                      </tbody>
+
+                 </table>
+                 </div>
+                 </fieldset>
+				 <!-- #BeginLibraryItem "/Library/pagination.lbi" --><div class="pagination">
+                          <a href="#" title="First Page">&laquo; 首页</a><a href="#">&laquo; 上一页</a>
+                          <a href="#" class="number current" title="1">1</a>
+                          <a href="#" class="number" title="2">2</a>
+                          <a href="#" class="number" title="3">3</a>
+                          <a href="#" class="number" title="4">4</a>
+                          <a href="#" title="Next Page">下一页 &raquo;</a><a href="#"> 尾页&raquo;</a>
+				</div><!-- #EndLibraryItem -->
+
+
+                <!-- Json Table -->
+                <fieldset>
+				<legend class="big">JSON 表格</legend>
+                <table id="test"></table>
+                </fieldset>
+                <!-- Json Table End -->
+
+
+
+
+                <!-- 操作提示 -->
+                <fieldset>
+				<legend class="big">操作反馈提示</legend>
+         		<div class="box">灰色 - 默认</div>
+                <div class="box box-info">蓝色 - 提示</div>
+                <div class="box box-warning">黄色 - 警告</div>
+                <div class="box box-error">红色 - 错误</div>
+                <div class="box box-error-msg">
+                    <ol>
+                        <li>text...</li>
+                        <li>text...</li>
+                    </ol>
+                </div>
+                <div class="box box-success">绿色 - 成功</div>
+                </fieldset>
+                <!-- 操作提示 End -->
+
+
+
+                <!-- 按钮 -->
+                <fieldset>
+				<legend class="big">按钮</legend>
+                <label>type="button"</label>
+                <p>
+                <input type="submit" class="btn btn_blue" value="class=btn btn_blue"/>
+                <input type="submit" class="btn btn_red" value="class=btn btn_red"/>
+                <input type="submit" class="btn btn_green" value="class=btn btn_green"/>
+                <input type="submit" class="btn btn_gray" value="class=btn btn_gray"/>
+                <input type="submit" class="btn" value="class=btn"/>
+                </p>
+                <label>Type=&#8249;A&#8250;</label>
+                <p>
+                <a href="#a" class="btn btn_blue overlay_text">class=btn btn_blue</a>
+                <a href="#a" class="btn btn_red">class=btn btn_red</a>
+                <a href="#a" class="btn btn_green">class=btn btn_green</a>
+                <a href="#a" class="btn btn_gray">class=btn btn_gray</a>
+                <a href="#a" class="btn">class=btn</a>
+                </p>
+                <label>type=icon</label>
+                <p>
+                <a href="#" class="btn">Default</a>
+				<a href="#" class="btn"><span class="icon icon-ok">&nbsp;</span>Ok</a>
+				<a href="#" class="btn"><span class="icon icon-cancel">&nbsp;</span>Cancel</a>
+				<a href="#" class="btn"><span class="icon icon-add">&nbsp;</span>Add New</a>
+                </p>
+                </fieldset>
+                <!-- 按钮 End -->
+
+
+
+                <!-- 表单 -->
+                <fieldset>
+				<legend class="big">表单</legend>
+                <form id="sampleform" method="post" action="#">
+                	<p>
+					<label class="required" for="username">用户名:</label><label class="ok"></label><br/>
+					<input type="text" id="username" class="half title" value="" name="username"/>
+					<small>text...</small>
+					</p>
+
+					<p>
+					<label class="required" for="password">密码:</label><label class="error">密码未填</label><br/>
+					<input type="password" id="password" class="half title" value="" name="password"/>
+					</p>
+
+                    <p>
+					<label class="required" for="email">Email:</label><br/>
+					<input type="text" id="email" class="half" value="" name="email"/>
+					</p>
+
+                    <p>
+					<label class="required" for="address">地址:</label><br/>
+					<input type="text" id="address" class="half overlay_input" value="" name="email"/>
+					</p>
+
+                    <p>
+					<label class="required">身份:</label><br/>
+					<input type="radio" id="dateformat1" class="" value="dmy" name="dateformat"/>
+					<label class="choice" for="dateformat1">我是用户</label>
+					<input type="radio" id="dateformat2" class="" value="mdy" name="dateformat"/>
+					<label class="choice" for="dateformat2">我是管理员</label>
+					</p>
+
+                    <p>
+					<input type="checkbox" id="terms" class="" value="1" name="terms"/>
+					<label class="choice" for="terms">我同意各种服务条款</label>
+					</p>
+
+                    <p class="box"><input type="submit" class="btn btn_green" value="登录"/><input type="reset" class="btn" value="重置"/></p>
+                </form>
+                </fieldset>
+                <!-- 表单 End -->
+
+
+                <!-- Select -->
+                <fieldset>
+				<legend class="big">Select</legend>
+                <label for="select2">多选下拉</label><br/>
+                <select id="select2" class="half" multiple="multiple" size="6" name="select2">
+                    <optgroup label="Set 1">
+                        <option value="1" selected>Lorem</option>
+                        <option value="2">Ipsum</option>
+                    </optgroup>
+                    <optgroup label="Set 2">
+                        <option value="3">Dolor</option>
+                        <option value="4">Sit</option>
+                        <option value="5">Amet</option>
+                    </optgroup>
+                </select>
+                </fieldset>
+                 <!-- Select End -->
+
+
+
+                <!-- 文本域 -->
+                <fieldset>
+				<legend class="big">文本域</legend>
+                <label for="area1">标题:</label><br/>
+				<textarea id="area2" class="medium half" name="area2"></textarea>
+                </fieldset>
+                <!-- 文本域 End -->
+
+
+
+
+
+         		<!-- TAB -->
+                <fieldset>
+				<legend class="big">Tabs标签</legend>
+                <div id="tablist">
+                          <ul id="explore_nav">
+                                <li id="ex_tab1"><a rel="tab01" href="#" class="current">Tab 1</a></li>
+                                <li id="ex_tab2"><a rel="tab02" href="#">Tab 2</a></li>
+                                <li id="ex_tab3"><a rel="tab03" href="#">Tab 3</a></li>
+                          </ul>
+                          <div id="tablist_cont">
+                                  <div id="tab01">
+                                  <p>text 1...</p>
+                                  <p>text 1...</p>
+                                  <p>text 1...</p>
+                                  <p>text 1...</p>
+                                  <p>text 1...</p>
+                                  </div>
+                                  <div id="tab02">
+                                  <p>text 2...</p>
+                                  <p>text 2...</p>
+                                  <p>text 2...</p>
+                                  <p>text 2...</p>
+                                  </div>
+                                  <div id="tab03">
+                                  <p>text 3...</p>
+                                  <p>text 3...</p>
+                                  <p>text 3...</p>
+                                  </div>
+                          </div>
+                </div>
+                </fieldset>
+                <!-- TAB End -->
+
+
+                <!-- 搜索区域 -->
+                <fieldset>
+				<legend class="big">搜索区域</legend>
+  				<div class="search">
+                		<dl class="search_dl">
+                        <dt>课程代码：</dt>
+                        <dd><input type="text" value="KC0001" /></dd>
+                        <dt>课程名称：</dt>
+                        <dd><input type="text" value="" /></dd>
+                        <dt>启停状态：</dt>
+                        <dd><select><option>已启用</option><option>已停用</option></select></dd>
+                        <dt>专业：</dt>
+                        <dd><select><option>Default</option></select></dd>
+                        </dl>
+                        <dl class="search_dl">
+                        <dt>层次：</dt>
+                        <dd><select><option>Default</option></select></dd>
+                        <dt>学科：</dt>
+                        <dd><select><option>Default</option></select></dd>
+                        </dl>
+                        <div class="search_btn"><input type="button" class="btn btn_gray" value="查询" />&nbsp;
+                        <input type="button" class="btn btn_gray" value="重置" />
+                        </div>
+                        <div class="slide_box">
+                        <a href="javascript:void(0)" onclick='slideSwitch("search","search_close")'>合闭搜索</a>
+                        </div>
+                 </div>
+                <div class="search_close" style="display:none;"><a href="javascript:void(0)" onclick='slideSwitch("search","search_close")'>展开搜索</a></div>
+                </fieldset>
+                <!-- 搜索区域 End -->
+
+</div>
+
+<div class="page_footer">
+<p>主管单位：教育部 　主办单位：全国教师教育网络联盟</p>
+<p>全国教师教育网络联盟秘书处 电话：010－58802946 电子信箱：msz@jswl.cn</p>
+<p>全国教师教育网络联盟 版权所有 京ICP备05069600号 </p>
+</div>
+
+
+</body>
+</html>

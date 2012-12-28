@@ -1,0 +1,71 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Strict//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+<link href="css/reset.css" rel="stylesheet" type="text/css" />
+<link href="css/style.css" rel="stylesheet" type="text/css" />
+
+<script type="text/javascript" src="js/backbone/sdk/jquery-1.7.2.js"></script>
+<script type="text/javascript" src="js/backbone/sdk/underscore.js"></script>
+<script type="text/javascript" src="js/backbone/sdk/backbone.js"></script>
+<script type="text/javascript" src="js/backbone/sdk/base.js"></script>
+
+
+<script type="text/javascript" src="js/backbone/sdk/component/list.js"></script>
+</head>
+<body>
+<div id="list1" style="width:800px;"></div>
+
+<script type="text/javascript">
+$(function(){
+	
+var list = new List({
+ 		
+ 		//渲染到节点的id
+ 		renderTo:'list1',
+ 		
+ 		/**
+ 		 * 分页，如不分页可不写此项。
+ 		 * pageSize 每页显示记录数,可不写，默认为10
+ 		 * 
+ 		 * chedan 应付把分页参数作为url的扯蛋做法
+ 		 */
+ 		pager:new Pager({pageSize:5,chedan:true,totalCountMap:'rCount'}),
+ 		
+ 		/**
+ 		 * 数据集合，必填
+ 		 * url 必填
+ 		 * root 解析返回json的根
+ 		 */
+ 		store: new Store({url:'/course/courseattribute/list/null/null/null/null/null/null/null/1/5',root:'list'}),
+ 		
+ 		//列属性 必填
+ 		columns: [{
+ 			
+ 			//列头显示的文字
+            header: 'name',
+            
+            //列宽度 大于1为像素，小于1为百分比
+            width: 200,
+            
+            //对应返回记录的属性
+            dataIndex: 'COURSE_NAME'
+            
+        },{
+            header: 'id',
+            width: .35, 
+            dataIndex: 'ID'
+        },{
+            header: 'code',
+            dataIndex: 'COURSE_CODE'
+           
+        }]
+ 	});
+ 	var store = list.store;
+ 	store.load();
+	
+});
+</script>
+</body>
+</html>

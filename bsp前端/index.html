@@ -1,0 +1,209 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Strict//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta content="教师网联" name="keywords">
+<meta content="教师网联" name="description">
+<title>课程管理 - 教师网联</title>
+<link href="css/reset.css" rel="stylesheet" type="text/css">
+<link href="css/style.css" rel="stylesheet" type="text/css">
+<link href="css/nyroModal.css" rel="stylesheet" type="text/css">
+
+
+<script type="text/javascript" src="js/bases.js"></script>
+
+<!-- <script type="text/javascript" src="js/ya_suo/first.js"></script>
+<script type="text/javascript" src="js/Ambow.js"></script>
+<script type="text/javascript" src="js/controler/ComboxOperate.js"></script> -->
+<script type="text/javascript" src="js/controler/index.js"></script>
+<script type="text/javascript" src="js/ajaxfileupload.js"></script>
+
+
+
+
+
+<style type="text/css">
+.categoryitems{display: none}
+a.hiddenajaxlink{display: none}
+</style>
+
+<script type="text/javascript">document.write('\<script id="jsdata" type="text/javascript" src="js/data.js?t='+new Date().valueOf()+'"\>\<\/script\>');</script>
+
+<!--[if lt IE 9]>
+<script type="text/javascript" src="js/html5.js"></script>
+<![endif]-->
+<!--[if IE 6]>
+<script type="text/javascript" src="js/DD_belatedPNG_0.0.8a-min.js" ></script>
+<script type="text/javascript">DD_belatedPNG.fix('.toplogo img');   </script>
+<script type="text/javascript">DD_belatedPNG.fix('.btn_green img');   </script>
+<![endif]-->
+
+<script type="text/javascript">
+	$(document).ready(function() {
+		//summary.tabs();//Tabs
+		summary.tablehover();//Hover
+
+		/* 	//删除
+			$('.overlay_delete').click(function(e) {
+				e.preventDefault();
+				$.fn.nyroModalManual({
+					width : 400,
+					title : "系统提示",
+					url : 'overlay_delete.html'
+				});
+				return false;
+			}); */
+
+	});
+
+	//展开合闭
+	function slideSwitch(obja, objb) {
+		$("." + obja).slideToggle("fast");
+		$("." + objb).slideToggle("fast");
+	}
+</script>
+
+</head>
+<body>
+	<!-- Header -->
+	<div class="page_head">
+		<div class="wrapper">
+			<!-- #BeginLibraryItem "/Library/logoinformation.lbi" -->
+			<div class="toplogo">
+				<img src="images/logo.png" alt="全国教师教育网络联盟">
+			</div>
+			<div class="topnav">
+				<b><a href="style.html">Admin</a></b>，欢迎你登陆 <span>|</span> <a href="#">退出</a>
+				<div class="select_tab">
+					<select>
+					<option>免费师范生支持系统</option>
+					<option>免费师范生教育硕士支持系统</option>
+					<option>教师职后教育支持系统</option>
+					</select>
+				</div>
+			</div>
+			<!-- #EndLibraryItem -->
+
+
+
+
+		</div>
+	</div>
+	<!-- Header End -->
+
+
+	<!-- Page title -->
+	<div class="pagetitle"><span><h1>互选课程总库</h1><h2>&nbsp;→&nbsp;课程列表</h2></span></div>
+	<!-- Page title End -->
+
+<!-- Page -->
+<div class="page_content">
+	<!-- LEFT -->
+	<div class="page_left">
+	<div id="navMenu" class="arrowlistmenu"></div>
+	</div>
+	<!-- LEFT -->
+		<!-- RIGHT -->
+		<div class="page_right">
+			<div class="search">
+				<form method="get" id="course_form" action="">
+					<dl class="search_dl">
+						<dt>课程代码：</dt>
+						<dd>
+							<input name="coursecode" value="" type="text">
+						</dd>
+						<dt>课程名称：</dt>
+						<dd>
+							<input name="coursename" value="" type="text">
+						</dd>
+						<dt>启停状态：</dt>
+						<dd>
+							<select name="status" id="form_status"><option value="null">全部</option>
+								<option value="2">已启用</option>
+								<option value="3">已停用</option></select>
+						</dd>
+					</dl>
+					<dl class="search_dl">
+						<dt>学校：</dt>
+						<dd>
+							<select name="schoolcode" id="form_school"><option value="null">全部</option><option value="S0001">北京师范大学</option><option value="S0002">东北师范大学</option><option value="S0003">山西师范大学</option><option value="S0004">成都师范大学</option><option value="S0005">上海师范大学</option><option value="S0006">重庆师范大学</option></select>
+						</dd>
+						<dt class="hs">专业：</dt>
+						<dd class="hs">
+							<select name="majorcode" id="form_major"><option value="null">全部</option><option value="md0001">计算机科学与技术</option><option value="md0002">管理信息系统</option><option value="md0003">电子商务</option></select>
+						</dd>
+						<dt class="hs">层次：</dt>
+						<dd class="hs">
+							<select name="educationlevel" id="form_educationlevel"><option value="null">全部</option><option value="E0004">研究生</option><option value="E0001">专生本</option><option value="E0002">高起本</option><option value="E0003">高起专</option></select>
+						</dd>
+
+						<dt>学科：</dt>
+						<dd>
+							<select name="subjectcode" id="form_subject"><option value="null">全部</option><option value="J0001">文学</option><option value="J0002">语言学</option></select>
+						</dd>
+					</dl>
+					<div class="search_btn">
+						<input class="btn btn_gray" id="form_query" value="查询" type="button">&nbsp; <input id="resetBtn" class="btn btn_gray" value="重置" type="reset">
+					</div>
+					<div class="slide_box">
+						<a href="javascript:void(0)" onclick='slideSwitch("search","search_close")'>合闭搜索</a>
+					</div>
+				</form>
+			</div>
+
+
+			<div class="search_close" style="display: none;">
+				<a href="javascript:void(0)" onclick='slideSwitch("search","search_close")'>展开搜索</a>
+			</div>
+
+			<div style="display:none;" class="box_header">
+				<div  class="con">
+					<div  id="import_btn" class="btn btn_disable ie6 " style="position:relative;" type="button">导入数据
+						<div class="X" id="divComposeAttachBrowse" title="">
+							<form id="form_import">
+								<input type="file" id="file" class="l" size="1"  multiple="">
+							</form>
+						</div>
+					</div>
+					<div class="btn btn_green ie6" value="" style=""  onclick="location='../courseexcel/courseattribute/toexcel'" >导出模板</div>
+
+
+				</div>
+				<input id="addBtn" class="btn btn_disable" value="新增" type="button">
+				<input id="delBtn" class="btn btn_disable overlay_delete" value="删除" type="button">
+			</div>
+			<div class="box_content">
+				<table class="tablebox">
+					<thead class="table_header">
+						<tr>
+							<th class="first tc" width="4%"><input id="checkboxall" type="checkbox"></th>
+
+							<th  width="120">课程名称</th>
+							<th>教师</th>
+							<th>授课学校</th>
+							<!-- <th>适用专业</th>
+							<th>层次</th> -->
+							<th>创建时间</th>
+							<th>编辑课程</th>
+							<th>启停标识</th>
+							<th>启停操作</th>
+						</tr>
+					</thead>
+									<tbody id="js_openable_tbody" class="openable_tbody"></tbody>
+				</table>
+			</div>
+			<div id="pageShow"></div>
+		</div>
+		<div class="clearfix"></div>
+</div>
+
+
+
+<div class="page_footer">
+<p>主管单位：教育部 　主办单位：全国教师教育网络联盟</p>
+<p>全国教师教育网络联盟秘书处 电话：010－58802946 电子信箱：msz@jswl.cn</p>
+<p>全国教师教育网络联盟 版权所有 京ICP备05069600号 </p>
+</div>
+
+<script type="text/javascript" src="js/menu.js"></script>
+</body>
+</html>

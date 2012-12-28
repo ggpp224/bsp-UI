@@ -1,0 +1,51 @@
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<script type="text/javascript">
+	$(document).ready(
+			function() {
+				$.getJSON(G_ROOT+'courseattribute/findCourseCode/list/'+win_termId+'/'+win_courseCode,function(data){
+					var data = data.list;
+					if (data) {
+						var html = '';
+						$.each(data, function(k, v) {
+							html+='<tr>';
+							html+='<td><a href="course_open_data.html?c='+v.coursecode+'&t='+v.termid+'" target="_blank">'+v.coursename+'</a></td>';
+							html+='<td>'+v.teachers+'</td>';
+							html+='<td>'+G_data['school'][v.schoolcode]+'</td>';
+							html+='<td>'+v.maxminnum+'</td>';
+							html+='<td>'+v.KKXXQR+'</td>';
+							html+='</tr>';
+						});
+						$('#win_js_openable_tbody').html(html);
+					}
+				})
+
+			});
+</script>
+
+<div class="table-container">
+	<table id="win_table" class="tablebox">
+		<thead class="table_header">
+			<tr>
+				<th>课程名称</th>
+				<th>任课教师</th>
+				<th>授课学校</th>
+				<th>人数下限/上限</th>
+				<th>开课学校确认情况</th>
+
+			</tr>
+		</thead>
+
+		<tbody id="win_js_openable_tbody" class="openable_tbody">
+
+		</tbody>
+	</table>
+</div>
+<div class="overlay_btn">
+    <input type="button" class="btn btn_gray overlayClose" value="关闭"/>
+</div>
+
+
+
+
+

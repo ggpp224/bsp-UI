@@ -1,0 +1,104 @@
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<script type="text/javascript">
+var queryUrl = '';
+
+function clickTable(){
+	$("#win_js_openable_tbody tr").unbind('click').bind('click',function(e){
+
+		var td0 = $(this).children()[0];
+		var td1 = $(this).children()[1];
+		document.getElementById('courseCodeStandard').value=td0.innerHTML;
+		document.getElementById('courseNameStandard').value=td1.innerHTML;
+		document.getElementById('form_subject').value=td0.getAttribute('code');
+		$('#win_close').trigger('click');
+	})
+}
+
+
+var pageTotal=0;
+function getList(page){
+	page = (page && page>0)?page=page:page=Math.abs(page);
+	if($('#th'+page).length>0){
+		$('.cccc,.tbtb').hide();
+		$('#th'+page).show();
+		$('#tb'+page).show();
+		$('#win_pageShow').html(gPage(pageTotal,page,'getList',G_perpage_pop));
+	}else{
+		$('.cccc,.tbtb').hide();
+		var url=queryUrl+page+'/'+G_perpage_pop;
+		$.getJSON(encodeURI(url),function(data){
+			pageTotal=data.rCount;
+			var data = data.list;
+
+			if(data){
+				var html='<thead id="th'+page+'" class="table_header cccc"><tr><th>&nbsp;</th><th>批次代码</th><th>批次名称</th></tr></thead>';
+					html+='<tbody class="tbtb" id="tb'+page+'">'
+				$.each(data,function(k,v){
+
+					html+='<tr>';
+					html+='<td alt="'+v.NAME+'" code="'+v.CODE+'" rid="'+v.ID+'"><input type="checkbox" value="'+v.CODE+'" /></td>';
+					html+='<td code="'+v.CODE+'">'+v.CODE+'</td>';
+					html+='<td>'+v.NAME+'</td>';
+					html+='</tr>';
+				});
+				$('#win_table_add_3').append(html);
+				$('#win_pageShow').html(gPage(pageTotal,page,'getList',G_perpage_pop));
+				clickTable();
+			}
+			$('#win_js_openable_tbody tr').hover(
+				function(){$(this).find('td').css({'color':'red','cursor':'pointer'})},
+				function(){$(this).find('td').css('color','')}
+			)
+			summary.tablehover();
+		});
+	}
+}
+
+
+
+
+    $(document).ready(function() {
+			summary.tablehover();//Hover
+			//getList(1);
+			//查询
+			$("#query_standard").click(function(e){
+				var params = Ab.urlDecode(Ab.serializeForm('standardform'));
+				queryUrl = G_ROOT+G_FormArr['courseStandard']+"/"+(params.win_coursecode==''?'null':params.win_coursecode)+"/"+(params.win_coursename==''?'null':params.win_coursename)+"/null/";
+				getList(1);
+
+			});
+			$("#query_standard").click();
+
+			$("#win_close").click();
+
+
+
+
+	});
+
+
+</script>
+
+ 	<form id="standardform" method="post" action="#">
+
+			  <p><label class="labeltitle">课程代码：</label><input type="text" id="win_coursecode" class="half" name="win_coursecode" value=""  /></p>
+              <p><label class="labeltitle">课程名称：</label><input type="text" id="win_coursename" class="half" name="win_coursename" value=""  /></p>
+              <p style="display:none"><label class="labeltitle">学科：</label><select id="win_subjectcode" name="win_subjectcode" iclass="half"></select></p>
+              <div class="btn_opera">
+              <input type="button" id="query_standard" class="btn btn_gray" value="查询" />
+              <input type="reset" class="btn btn_gray" value="重置" />
+              </div>
+
+    </form>
+<div class="table-container"><table id="win_table_add_3" class="tablebox"></table></div>
+<div id="win_pageShow"></div>
+<div class="overlay_btn">
+<input type="button" onclick="index_3_add_save()" class="btn btn_red" value="保存"/>
+<input type="button" id="js_index_3_add_close" class="btn btn_gray overlayClose" value="关闭"/>
+</div>
+
+
+
+
+

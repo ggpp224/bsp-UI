@@ -1,0 +1,547 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta content="教师网联" name="keywords" />
+<meta content="教师网联" name="description" />
+<title>选课课程详情 - 教师网联</title>
+<link href="css/reset.css" rel="stylesheet" type="text/css" />
+<link href="css/style.css" rel="stylesheet" type="text/css" />
+<link href="css/nyroModal.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="js/bases.js"></script>
+
+<!--[if lt IE 9]>
+<script type="text/javascript" src="js/html5.js"></script>
+<![endif]-->
+<!--[if IE 6]>
+<script type="text/javascript" src="js/DD_belatedPNG_0.0.8a-min.js" ></script>
+<script type="text/javascript">DD_belatedPNG.fix('.toplogo img');   </script>
+<![endif]-->
+
+<script type="text/javascript">
+	$(document).ready(function() {
+		summary.tabs();//Tabs
+		summary.tablehover();//Hover
+
+
+		disableForm('tab01');
+		disableForm('tab02');
+		disableForm('tab03');
+
+
+		//课程代码
+		$(".course_code").focus(function(e) {
+			e.preventDefault();
+			$.fn.nyroModalManual({
+				width : 650,
+				title : '批次代码',
+				url : 'overlay_addcourse.html'
+			});
+			return false;
+		});
+
+
+
+	});
+</script>
+
+</head>
+<body>
+<!-- Header -->
+	<div class="page_head">
+		<div class="wrapper">
+			<!-- #BeginLibraryItem "/Library/logoinformation.lbi" -->
+			<div class="toplogo">
+				<img src="images/logo.png" alt="全国教师教育网络联盟" />
+			</div>
+			<div class="topnav">
+				<b><a href="style.html">Admin</a></b>，欢迎你登陆 <span>|</span> <a
+					href="#">退出</a>
+			</div>
+			<!-- #EndLibraryItem -->
+
+
+
+
+		</div>
+	</div>
+	<!-- Header End -->
+
+
+	<!-- Page title -->
+	<div class="pagetitle">
+		<span><h1>课程列表</h1></span>
+	</div>
+	<!-- Page title End -->
+
+
+
+	<!-- Page -->
+	<div class="page_content">
+
+<!-- LEFT -->
+         <div class="page_left">
+			<div id="navMenu" class="arrowlistmenu"></div>
+		</div>
+         <!-- LEFT -->
+  		<!-- RIGHT -->
+        <div class="page_right">
+
+		<fieldset>
+			<legend class="big">课程详情</legend>
+		</fieldset>
+
+		<div id="tablist">
+			<ul id="explore_nav">
+				<li id="ex_tab1"><a rel="tab01" href="#" class="current">课程基本信息</a></li>
+				<li id="ex_tab2"><a rel="tab02" href="#">任课教师信息</a></li>
+				<li id="ex_tab3"><a rel="tab03" href="#">开课计划信息</a></li>
+			</ul>
+			<div id="tablist_cont">
+				<form id="tab01" method="post" action="">
+					<div class="clearfix">
+						<p>
+							<label class="labeltitle">课程代码：</label><input type="text" id=""
+								name="serialCode" disabled="disabled" value="" />
+						</p>
+						<div class="column width5 first">
+
+							<p>
+								<label class="labeltitle"><span style="color:red">*</span>课程名称：</label>
+								<input type="text" id="courseName" class="half" name="courseName" value="" />
+								<span id='cNameInfo' class="hidden">不能为空</span>
+							</p>
+
+							<p>
+								<label class="labeltitle"><span style="color:red">*</span>批次名称：</label><input type="text"
+									 id="courseNameStandard" value=""  class="half  course_code" name="courseNameStandard"
+									 />
+								<span id='cCNtInfo' class="hidden">必须选择</span>
+							</p>
+							<p>
+								<label class="labeltitle">授课学校：</label><input type="text"
+									id="Cchool" class="half" name="Cchool" disabled="disabled"
+									value="" /> <input type="hidden"
+									name="schoolCode" id="schoolCode" value="" />
+							</p>
+							<p class="hs">
+								<label class="labeltitle">适用专业：</label><select name="majorCode"
+									id="form_major" iclass="half"></select>
+							</p>
+							<p>
+								<label class="labeltitle">课程类别：</label><select name="courseType"
+									iclass="half"><option value="1">学历教育</option>
+									<option value="2">非学历教育</option></select>
+							</p>
+							<p>
+								<label class="labeltitle">教学组织形式：</label> <select
+									name="tchOgzForm" iclass="half">
+									<option value="1">个别教学制</option>
+									<option value="2">班级授课制</option>
+									<option value="3">分组教学制</option>
+									<option value="4">开放教学制</option>
+								</select>
+							</p>
+
+						</div>
+						<div class="column width5">
+							<p>
+								<label class="labeltitle">课程英文名：</label><input type="text" id="courseEname"
+									class="half" name="courseEname" value="" />
+								<span id='enameInfo' class="hidden"></span>
+							</p>
+							<p>
+								<label class="labeltitle">批次代码：</label><input type="text"
+									id="courseCodeStandard" class="half" disabled="disabled"
+									name="courseCodeStandard" value="自动带入，不允许编辑"  />
+									<span id='cCStInfo' class="hidden">必须选择</span>
+							</p>
+							<p>
+								<label class="labeltitle">所属学科：</label><select
+									name="subjectCode" id="form_subject" iclass="half"></select>
+							</p>
+
+
+							<p class="hs">
+								<label class="labeltitle">适用层次：</label><select
+									name="educationLevelCode" id="form_educationlevel"
+									iclass="half"></select>
+							</p>
+							<p class="hs">
+								<label class="labeltitle">适用年级：</label><select name="gradeCode"
+									id="form_grade" iclass="half"></select>
+							</p>
+						</div>
+					</div>
+					<p>
+						<label class="labeltitle"><span style="color:red">*</span>课程简介：</label>
+						<textarea id="area2" class="small" cols="96"
+							name="courseIntroduction"></textarea>
+						<span id='area2Info' class="hidden">不能为空</span>
+					</p>
+					<p>
+						<label class="labeltitle">基本要求：</label>
+						<textarea class="small" cols="96" id="basicRequirement" name="basicRequirement"></textarea>
+						<span id='basicInfo' class="hidden"></span>
+					</p>
+					<p>
+						<label class="labeltitle">教材及参考资料：</label>
+						<textarea class="small" cols="96" id="textbook"  name="textbook"></textarea>
+						<span id='textbookInfo' class="hidden"></span>
+					</p>
+					<p>
+						<label class="labeltitle"><span style="color:red">*</span>考核内容：</label>
+						<textarea class="small" cols="96" id="examContent" name="examContent"></textarea>
+						<span id='ecInfo' class="hidden">不能为空</span>
+					</p>
+					<p>
+						<label class="labeltitle">资源建设情况：</label>
+						<textarea id="resourceConstruction" class="small" cols="96"
+							name="resourceConstruction"></textarea>
+						<span id='resourceInfo' class="hidden"></span>
+					</p>
+					<p>
+						<label class="labeltitle">演示版链接：</label>
+						<textarea id="demoLink" class="small" cols="96" name="demoLink"></textarea>
+						<span id='linkInfo' class="hidden"></span>
+					</p>
+
+
+					<div class="btn_opera">
+						 <input id="cBackBtn" type="button" class="backBtn btn btn_gray"
+						value="返回" />
+					</div>
+
+				</form>
+
+
+
+				<form id="tab02" method="post" action="">
+					<fieldset>
+						<legend>已新增的老师</legend>
+					</fieldset>
+					<div class="box_header">
+
+					</div>
+					<div class="box_content">
+						<table class="tablebox">
+							<thead class="table_header">
+								<tr>
+									<th>教师名称</th>
+									<th>教师单位</th>
+									<th>教师职称</th>
+									<th>电话</th>
+									<th>E-MAIL</th>
+									<th>操作</th>
+								</tr>
+							</thead>
+
+							<tbody id="teacher_tbody" class="openable_tbody">
+
+							</tbody>
+						</table>
+					</div>
+
+					<fieldset>
+						<legend>新增老师</legend>
+					</fieldset>
+					<div class="clearfix">
+						<div class="column width5 first">
+							<p>
+								<label class="labeltitle"><span style="color:red">*</span>教师名称：</label><input type="text"
+									class="half" id="teacherName" name="teacherName" value="" />
+								<span id='teacherNameInfo' class="hidden">不能为空</span>
+							</p>
+							<p>
+								<label class="labeltitle"><span style="color:red">*</span>教师职称：</label><input type="text"
+									class="half" id="teacherTitle" name="teacherTitle" value="" />
+								<span id='teacherTitleInfo' class="hidden">不能为空</span>
+							</p>
+							<p>
+								<label class="labeltitle">电话：</label><input type="text"
+									class="half" id="teacherPhone" name="teacherPhone" value="" />
+									<span id='phoneInfo' class="hidden">不能为空</span>
+							</p>
+						</div>
+						<div class="column width5">
+							<p>
+								<label class="labeltitle"><span style="color:red">*</span>教师单位：</label><input type="text"
+									class="half" id="teacherUnit" name="teacherUnit" value="" />
+								<span id='teacherUnitInfo' class="hidden">不能为空</span>
+							</p>
+							<p>
+								<label class="labeltitle"><span style="color:red">*</span>Email：</label><input type="text"
+									class="half" id="teacherEmail" name="teacherEmail" value="" />
+								<span id='teacherEmailInfo' class="hidden">不能为空</span>
+							</p>
+							<input type="hidden" id="teacherCourseCode" name="courseCode"
+								value="" />
+						</div>
+
+					</div>
+
+					<p>
+						<label class="labeltitle"><span style="color:red">*</span>教师简介：</label>
+						<textarea class="small" cols="96" id="teacherIntroduction" name="teacherIntroduction"></textarea>
+						<span id='teacherIntroductionInfo' class="hidden">不能为空</span>
+					</p>
+
+					<div class="btn_opera">
+
+						<input id="teacherBackBtn"  rec="" type="button" class="backBtn btn btn_blue" value="返回" />
+					</div>
+				</form>
+
+				 <form id="tab03" method="post" action="#">
+
+        			<fieldset><legend class="big">开课计划信息</legend></fieldset>
+<style type="text/css">
+select.half{width:auto}
+</style>
+                    <div class="clearfix">
+        			<div class="column width3 first">
+        				<input type="hidden" id="schoolCode" name="schoolCode" value="" />
+                    	<p><label class="labeltitle">课程名称：</label><input type="text" id="courseNameStandard" class="half course_plan" name="courseName" value="点击右侧按钮添加"  /></p>
+                        <p><label class="labeltitle">互选批次组：</label><select id="form_term" name="termId" class="half"></select></p>
+                        <!--<p><label class="labeltitle">选课开始时间：</label><input type="text" id="d122" class="half overlay_time dateinput" onFocus="WdatePicker({isShowWeek:true,onpicked:function(){}})"  /></p>-->
+                        <p><label class="labeltitle">人数上限：</label><input type="text" id="" class="half" name="maxNum" value="1000"  /></p>
+                        <p><label class="labeltitle">先修课程：</label><input type="text" class="half" name="preCourse" value=""  /></p>
+                        <p><label class="labeltitle">学分数：</label><input type="text" class="half" id="score" name="score" value=""  /></p>
+                        <p><label class="labeltitle">费用总额：</label><input type="text" id="amount" name="amount" class="half"  disabled="disabled" value=""  /></p>
+                        <p><label class="labeltitle">成绩构成方式：</label>
+                        	<select name="examForm" class="half">
+                        		<option value="1">闭卷</option>
+                        		<option value="2">开卷</option>
+                        		<option value="3">论文</option>
+                        		<option value="4">作品</option>
+                        		<option value="5">其他</option>
+                        	</select>
+                        </p>
+                    </div>
+
+                    <div class="column width3">
+                        <p><label class="labeltitle">课程代码：</label><input type="text"  class="half " id="courseCodeStandard" name="courseCode" disabled="disabled" value=""  /></p>
+                        <p><label class="labeltitle">&nbsp;</label><label type="text" id="d122" class="half overlay_time dateinput">&nbsp;  </label></p>
+                        <p><label class="labeltitle">人数下限：</label><input type="text"  class="half" name="minNum" value="0"  /></p>
+                        <p><label class="labeltitle">后续课程：</label><input type="text" class="half" name="postCourse" value=""  /></p>
+                        <p><label class="labeltitle">学分单价：</label><input type="text" class="half" id="price" name="price" value=""  /></p>
+
+                    </div>
+                    </div>
+
+                    <p><label class="labeltitle">考核内容：</label><textarea id="area2" class="small" cols="77" name="scoreStructure"></textarea></p>
+
+                    <div class="btn_opera">
+                    <input type="button" class="btn backBtn btn_gray" value="返回"/>
+                    </div>
+
+
+
+
+        </form>
+
+			</div>
+		</div>
+
+	</div>
+	<!-- Page End -->
+	<!-- #BeginLibraryItem "/Library/footer.lbi" -->
+	<div class="clearfix"></div>
+        </div>
+
+<div class="page_footer">
+<p>主管单位：教育部 　主办单位：全国教师教育网络联盟</p>
+<p>全国教师教育网络联盟秘书处 电话：010－58802946 电子信箱：msz@jswl.cn</p>
+<p>全国教师教育网络联盟 版权所有 京ICP备05069600号 </p>
+</div>
+
+
+
+	<!-- script begin -->
+
+		<script type="text/javascript">document.write('\<script id="jsdata" type="text/javascript" src="js/data.js?t='+new Date().valueOf()+'"\>\<\/script\>');</script>
+
+		<script type="text/javascript">
+		$(document).ready(function(){
+			$('#teacherEditBtn').hide();
+			//授课学校init
+		 	var courseCode = getQuery("c");
+		 	var schoolCode = getQuery("s");
+		 	var courseId = getQuery("i");
+		 	var courseName = getQuery("n");
+		 	document.getElementById("schoolCode").value=schoolCode;
+		 	$('#idHidden').val(courseId);
+		 	var cmb = new ComboxOperate();
+		 	//专业
+		 	cmb.major({all:true});
+
+			// 学科
+			cmb.subject({all:true});
+
+			// 层次和年级
+			cmb.levelAndGrade({all:true});
+
+			var courseCode = '';
+			var pn=getQuery('pn')||1;
+			function teacherList(){
+				$.getJSON(G_ROOT+G_FormArr['teacherList']+'/'+courseCode,function(data){
+						var data = data.list;
+						var htm  = '';
+						for(var i=0,len=data.length;i<len;i++){
+							var v =data[i];
+							htm += '<tr>' +
+									'<td>'+v.TEACHER_NAME+'</td>' +
+									'<td>'+v.TEACHER_UNIT+'</td>' +
+									'<td>'+v.TEACHER_TITLE+'</td>' +
+									'<td>'+v.TEACHER_PHONE+'</td>' +
+									'<td>'+v.TEACHER_EMAIL+'</td>' +
+									'<td><a class="edit" rec='+Ab.encode(v)+' href="javascript:void(0)">查看</a></td>' +
+								  '</tr>';
+						}
+						htm = throwNull(htm);
+						$('#teacher_tbody').html(htm);
+
+						$('.edit').unbind('click').bind('click',function(){
+							var str = this.getAttribute('rec');
+							var obj = Ab.decode(str);
+							var form = document.getElementById('tab02');
+							var els = form.elements;
+
+							els.teacherEmail.value=obj.TEACHER_EMAIL;
+							els.teacherIntroduction.value=obj.TEACHER_INTRODUCTION;
+							els.teacherName.value=obj.TEACHER_NAME;
+							els.teacherPhone.value=obj.TEACHER_PHONE;
+							els.teacherUnit.value=obj.TEACHER_UNIT;
+							els.teacherTitle.value=obj.TEACHER_TITLE;
+							$('#teacherEditBtn').attr('rec',obj.ID);
+							$('#teacherEditBtn').show();
+						});
+
+					});
+			}
+			$('.backBtn').click(function(){
+				location.href="index.html?pn="+pn;
+			});
+			$('#teacherEditBtn').click(function(){
+				if(!validateTeacher()){
+					return;
+				}
+				var form_2 = document.forms['tab02'];
+				var params = Ab.urlDecode(Ab.serializeForm(form_2));
+				params.courseCode = courseCode;
+				params.id = $('#teacherEditBtn').attr('rec');
+				params.updater = user['uid'];
+				var str = Ab.encode(params);
+				$.ajax({
+					type: "POST",
+					data: str,
+					dataType:"json",
+					url:G_ROOT+'course/courseteacher/update',
+					contentType:'application/json;charset=UTF-8',
+					success: function(rs){
+						if(rs.returnCode=='000000'){
+							teacherList();
+							var els = form_2.elements;
+							for(var i=0,len=els.length;i<len;i++){
+								var el = els[i];
+								if(el.type == 'text'||el.type == 'textarea'){
+									el.value="";
+								}
+							}
+							msgBox.show('修改成功。');
+							teacherList();
+							$('#teacherEditBtn').hide();
+						}else{
+							msgBox.show('修改失败。');
+						}
+
+					}
+				});
+			});
+
+
+			$.getJSON(G_ROOT+G_FormArr['courseData']+"/"+courseId,function(data){
+				var dt = data.entity;
+				if(dt){
+					var form = document.getElementById('tab01');
+					var els = form.elements;
+					courseCode=els.serialCode.value=dt.courseCode;
+					els.courseName.value = dt.courseName;
+					els.courseEname.value = dt.courseEname||'';
+					els.Cchool.value = G_data['school'][dt.schoolCode];
+					els.majorCode.value = dt.majorCode;
+					els.educationLevelCode.value = dt.educationLevelCode;
+					els.courseType.value = dt.courseType;
+					els.gradeCode.value = dt.gradeCode;
+					els.courseCodeStandard.value = dt.courseCodeStandard;
+					els.courseNameStandard.value = decodeURI(dt.courseNameStandard);
+					els.basicRequirement.value = dt.basicRequirement||'';
+					els.textbook.value = dt.textbook||'';
+					els.examContent.value = dt.examContent||'';
+					els.resourceConstruction.value = dt.resourceConstruction||'';
+
+					els.demoLink.value = dt.demoLink||'';
+					els.courseIntroduction.value = dt.courseIntroduction||'';
+					els.subjectCode.value = dt.subjectCode||'';
+					els.tchOgzForm.value = dt.tchOgzForm||'';
+
+				}
+
+				teacherList();
+			});
+
+
+			// 互选批次组
+			cmb.term();
+
+			var price = $("#price"),score=$("#score"),amount=$("#amount");
+			var accMul = function(arg1,arg2)
+			{
+				var m=0,s1=arg1.toString(),s2=arg2.toString();
+				try{m+=s1.split(".")[1].length}catch(e){};
+				try{m+=s2.split(".")[1].length}catch(e){};
+				return Number(s1.replace(".",""))*Number(s2.replace(".",""))/Math.pow(10,m) ;
+			}
+
+			 $('.backBtn').click(function(){
+				 history.go(-1)
+			});
+
+			$.getJSON(G_ROOT+G_FormArr['plancourseData']+"/"+getQuery("oi"),function(data){
+				var dt = data.list[0];
+				if(dt){
+					var price=dt.price,score=dt.score;
+					var form = document.getElementById('tab03');
+					var els = form.elements;
+					for(var i=0,len=els.length;i<len;i++){
+						el = els[i];
+						if(el.type=='text'){
+							el.value='';
+						}
+					}
+					els.courseCode.value=dt.courseCode;
+					els.courseName.value = dt.courseName;
+					els.maxNum.value = dt.maxNum;
+					els.preCourse.value = dt.preCourse||'';
+					els.score.value = score;
+					els.examForm.value = dt.examForm;
+					els.minNum.value = dt.minNum;
+					els.postCourse.value = dt.postCourse||'';
+					els.price.value = price;
+					els.termId.value = dt.termId;
+					els.scoreStructure.value = dt.scoreStructure||'';
+
+
+					els.amount.value = accMul(price,score);
+
+				}
+			});
+
+		});
+
+
+		</script>
+	<!-- script end -->
+	<script type="text/javascript" src="js/menu.js"></script>
+</body>
+</html>

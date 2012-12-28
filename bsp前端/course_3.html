@@ -1,0 +1,219 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta content="教师网联" name="keywords" />
+<meta content="教师网联" name="description" />
+<title>查看选课结果 - 教师网联</title>
+<link href="css/reset.css" rel="stylesheet" type="text/css" />
+<link href="css/style.css" rel="stylesheet" type="text/css" />
+<link href="css/nyroModal.css" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+<!--[if lt IE 9]>
+<script type="text/javascript" src="js/html5.js"></script>
+<![endif]-->
+<!--[if IE 6]>
+<script type="text/javascript" src="js/DD_belatedPNG_0.0.8a-min.js" ></script>
+<script type="text/javascript">DD_belatedPNG.fix('.toplogo img');   </script>
+<![endif]-->
+
+<script type="text/javascript">
+    $(document).ready(function() {
+			//summary.tabs();//Tabs
+			summary.tablehover();//Hover
+
+
+	});
+
+	//展开合闭
+	function slideSwitch(obja,objb){
+	$("."+obja).slideToggle("fast");
+	$("."+objb).slideToggle("fast");
+	}
+
+</script>
+
+</head>
+<body>
+
+<!-- Header -->
+<div class="page_head">
+<div class="wrapper"><!-- #BeginLibraryItem "/Library/logoinformation.lbi" --><div class="toplogo"><img src="images/logo.png" alt="全国教师教育网络联盟" /></div>
+            <div class="topnav"><b><a href="style.html">Admin</a></b>，欢迎你登陆 <span>|</span> <a href="#">退出</a></div><!-- #EndLibraryItem -->
+
+
+
+</div>
+</div>
+<!-- Header End -->
+
+
+<!-- Page title -->
+<div class="pagetitle"><span><h1>查看选课结果</h1></span></div>
+<!-- Page title End -->
+
+
+
+<!-- Page -->
+<div class="page_content">
+
+
+  				<div class="search">
+                		<dl class="search_dl">
+                        <dt>互选批次组：</dt>
+                        <dd><select><option>-Default-</option></select></dd>
+                        <dt>学校：</dt>
+                        <dd><select><option>-Default-</option></select></dd>
+                        </dl>
+
+                        <dl class="search_dl">
+                        <dt>课程代码：</dt>
+                        <dd><input type="text" value="KC0001" /></dd>
+                        <dt>课程名称：</dt>
+                        <dd><input type="text" value="KC0001" /></dd>
+                        <dt>批次名称：</dt>
+                        <dd><input type="text" value="KC0001" /></dd>
+                        </dl>
+
+                        <dl class="search_dl">
+                        <dt>课程性质：</dt>
+                        <dd><select><option>必修</option><option>选修</option></select></dd>
+                        <dt>选课方式：</dt>
+                        <dd><select>
+                        <option>批量选课</option>
+                        <option>抢座选课</option>
+                        <option>抽签选课</option>
+                        </select>
+                        </dd>
+                        </dl>
+
+                        <div class="search_btn"><input type="button" class="btn btn_gray" value="查询" />&nbsp;
+                        <input type="button" class="btn btn_gray" value="重置" />
+                        </div>
+                        <div class="slide_box">
+                        <a href="javascript:void(0)" onclick='slideSwitch("search","search_close")'>合闭搜索</a>
+                        </div>
+
+                </div>
+
+                <div class="search_close" style="display:none;">
+                <a href="javascript:void(0)" onclick='slideSwitch("search","search_close")'>展开搜索</a>
+                </div>
+
+                <div class="box_content">
+                <table class="tablebox">
+                      <thead class="table_header">
+                            <tr>
+                            <th class="first tc" width="4%">课程代码</th>
+                            <th>课程名称</th>
+                            <th>标准名称</th>
+                            <th>授课学校</th>
+                            <th>适用专业</th>
+                            <th>层次</th>
+                            <th>互选批次组</th>
+                            <th>课程学分</th>
+                            <th>课程性质</th>
+                            <th>选课方式</th>
+                            <th>选课结果</th>
+                            </tr>
+                      </thead>
+
+                      <tbody class="openable_tbody">
+                            <tr>
+                            <td class="first tc">KCJH0001</td>
+                            <td>文学鉴赏</td>
+                            <td>文学鉴赏</td>
+                            <td>北师大</td>
+                            <td>文学</td>
+                            <td>本科</td>
+                            <td>2012第一学期</td>
+                            <td>2</td>
+                            <td>必修</td>
+                            <td>批量选课</td>
+                            <td><i class="color_red">未成功</i></td>
+                            </tr>
+
+                            <tr>
+                            <td class="first tc">KCJH0001</td>
+                            <td>文学鉴赏</td>
+                            <td>文学鉴赏</td>
+                            <td>北师大</td>
+                            <td>文学</td>
+                            <td>本科</td>
+                            <td>2012第一学期</td>
+                            <td>2</td>
+                            <td>必修</td>
+                            <td>批量选课</td>
+                            <td><i class="color_red">未成功</i></td>
+                            </tr>
+
+                            <tr>
+                            <td class="first tc">KCJH0001</td>
+                            <td>文学鉴赏</td>
+                            <td>文学鉴赏</td>
+                            <td>北师大</td>
+                            <td>文学</td>
+                            <td>本科</td>
+                            <td>2012第一学期</td>
+                            <td>2</td>
+                            <td>必修</td>
+                            <td>批量选课</td>
+                            <td><i class="color_gray">成功</i></td>
+                            </tr>
+
+                            <tr>
+                            <td class="first tc">KCJH0001</td>
+                            <td>文学鉴赏</td>
+                            <td>文学鉴赏</td>
+                            <td>北师大</td>
+                            <td>文学</td>
+                            <td>本科</td>
+                            <td>2012第一学期</td>
+                            <td>2</td>
+                            <td>必修</td>
+                            <td>批量选课</td>
+                            <td><i class="color_gray">成功</i></td>
+                            </tr>
+
+                            <tr>
+                            <td class="first tc">KCJH0001</td>
+                            <td>文学鉴赏</td>
+                            <td>文学鉴赏</td>
+                            <td>北师大</td>
+                            <td>文学</td>
+                            <td>本科</td>
+                            <td>2012第一学期</td>
+                            <td>2</td>
+                            <td>必修</td>
+                            <td>批量选课</td>
+                            <td><i class="color_gray">成功</i></td>
+                            </tr>
+
+
+
+
+                      </tbody>
+
+                 </table>
+                 </div><!-- #BeginLibraryItem "/Library/pagination.lbi" --><div class="pagination">
+                          <a href="#" title="First Page">&laquo; 首页</a><a href="#">&laquo; 上一页</a>
+                          <a href="#" class="number current" title="1">1</a>
+                          <a href="#" class="number" title="2">2</a>
+                          <a href="#" class="number" title="3">3</a>
+                          <a href="#" class="number" title="4">4</a>
+                          <a href="#" title="Next Page">下一页 &raquo;</a><a href="#"> 尾页&raquo;</a>
+				</div><!-- #EndLibraryItem --></div>
+
+<div class="page_footer">
+<p>主管单位：教育部 　主办单位：全国教师教育网络联盟</p>
+<p>全国教师教育网络联盟秘书处 电话：010－58802946 电子信箱：msz@jswl.cn</p>
+<p>全国教师教育网络联盟 版权所有 京ICP备05069600号 </p>
+</div>
+
+</body>
+</html>

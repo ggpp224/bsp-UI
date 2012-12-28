@@ -1,0 +1,211 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta content="教师网联" name="keywords" />
+<meta content="教师网联" name="description" />
+<title>计划审核 - 教师网联</title>
+<link href="css/reset.css" rel="stylesheet" type="text/css" />
+<link href="css/style.css" rel="stylesheet" type="text/css" />
+<link href="css/reset.css" rel="stylesheet" type="text/css" />
+<link href="css/style.css" rel="stylesheet" type="text/css" />
+<link href="css/nyroModal.css" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+<!--[if lt IE 9]>
+<script type="text/javascript" src="js/html5.js"></script>
+<![endif]-->
+<!--[if IE 6]>
+<script type="text/javascript" src="js/DD_belatedPNG_0.0.8a-min.js" ></script>
+<script type="text/javascript">DD_belatedPNG.fix('.toplogo img');   </script>
+<![endif]-->
+
+<script type="text/javascript">
+    $(document).ready(function() {
+			//summary.tabs();//Tabs
+			summary.tablehover();//Hover
+
+
+			//审核未通过
+			$('.overlay_audit_no').click(function(e) {
+				e.preventDefault();
+				$.fn.nyroModalManual({
+					width:400,
+					title:"审核未通过",
+					url: 'overlay_audit_edit.html'
+				});
+			return false;
+			});
+
+
+
+
+	});
+
+	//展开合闭
+	function slideSwitch(obja,objb){
+	$("."+obja).slideToggle("fast");
+	$("."+objb).slideToggle("fast");
+	}
+
+</script>
+
+</head>
+<body>
+
+<!-- Header -->
+<div class="page_head">
+<div class="wrapper"><!-- #BeginLibraryItem "/Library/logoinformation.lbi" --><div class="toplogo"><img src="images/logo.png" alt="全国教师教育网络联盟" /></div>
+            <div class="topnav"><b><a href="style.html">Admin</a></b>，欢迎你登陆 <span>|</span> <a href="#">退出</a></div><!-- #EndLibraryItem -->
+
+
+
+</div>
+</div>
+<!-- Header End -->
+
+
+<!-- Page title -->
+<div class="pagetitle"><span><h1>计划审核</h1><h1>&nbsp;→&nbsp;选课计划审核</h1><h2>&nbsp;→&nbsp;选课计划明细</h2></span></div>
+<!-- Page title End -->
+
+
+
+<!-- Page -->
+<div class="page_content">
+
+         <!-- LEFT -->
+         <div class="page_left">
+		 <div id="navMenu" class="arrowlistmenu"></div>
+         </div>
+         <!-- LEFT -->
+
+         <!-- RIGHT -->
+         <div  id="search_form" class="page_right">
+
+  				<form id="search_form" class="search">
+                		<dl class="search_dl">
+							<dt>学生ID：</dt>
+							<dd>
+								<input type="text" name="stuId" value=""/>
+							</dd>
+							<dt>学生名称：</dt>
+							<dd>
+								<input type="text" name="stuName" value=""/>
+							</dd>
+						</dl>
+						<dl class="search_dl">
+							<dt>批次代码：</dt>
+							<dd>
+								<input type="text" name="courseCode" value=""/>
+							</dd>
+							<dt>批次名称：</dt>
+							<dd>
+								<input type="text" name="courseName" value=""/>
+							</dd>
+
+
+						</dl>
+
+                        <div class="search_btn"><input type="button" id="form_query" class="btn btn_gray" value="查询" />&nbsp;
+                        <input type="reset" class="btn btn_gray" value="重置" />
+                        </div>
+                        <div class="slide_box">
+                        <a href="javascript:void(0)" onclick='slideSwitch("search","search_close")'>合闭搜索</a>
+                        </div>
+
+                </form>
+
+                <div class="search_close" style="display:none;">
+                <a href="javascript:void(0)" onclick='slideSwitch("search","search_close")'>展开搜索</a>
+                </div>
+                <div class="box_content">
+                <table class="tablebox">
+                      <thead class="table_header">
+                            <tr>
+                            <th>学生ID</th>
+                            <th>学生姓名</th>
+                            <th>专业</th>
+                            <th>层次</th>
+                            <th>年级</th>
+                      </thead>
+
+                      <tbody class="openable_tbody" id="js_openable_tbody">
+                      </tbody>
+
+                 </table>
+                 </div>
+                 <div id="pageShow"></div>
+
+				 <div class="clearfix"></div>
+				 <div class="btn_opera"><input class="btn btn_gray" type="button" value="关闭" onclick="javascript:self.close()" />
+				</div>
+		</div>
+		<!-- RIGHT End -->
+
+
+
+</div>
+<div class="clearfix"></div>
+
+<div class="page_footer">
+<p>主管单位：教育部 　主办单位：全国教师教育网络联盟</p>
+<p>全国教师教育网络联盟秘书处 电话：010－58802946 电子信箱：msz@jswl.cn</p>
+<p>全国教师教育网络联盟 版权所有 京ICP备05069600号 </p>
+</div>
+
+<script type="text/javascript" src="js/bases.js"></script>
+
+<script type="text/javascript">document.write('\<script id="jsdata" type="text/javascript" src="js/data.js?t='+new Date().valueOf()+'"\>\<\/script\>');</script>
+
+<script type="text/javascript">
+var queryUrl = '';
+
+function getList(page){
+	page = (page && page>0)?page=page:page=Math.abs(page);
+	var url=queryUrl+page+'/'+G_perpage;
+	$.getJSON(encodeURI(url),function(data){
+		var pageTotal=data.rCount;
+		var data = data.list;
+		if(data){
+			var html='';
+			$.each(data,function(k,v){
+				html+='<tr>';
+				html+='<td>'+v.STUDENT_ID+'</td>';
+				html+='<td>'+v.NAME+'</td>';
+				html+='<td>'+v.COURSE_CODE_STANDARD+'</td>';
+				html+='<td>'+v.COURSE_NAME+'</td>';
+				html+='<td>'+G_data['courseNature'][v.COURSE_NATURE]+'</td>';
+				html+='</tr>';
+			});
+			$('#js_openable_tbody').html(html);
+			$('#pageShow').html(gPage(pageTotal,page,'getList'));
+		}
+	});
+}
+
+
+$(document).ready(function(){
+	var id=getQuery('i');
+	queryUrl = G_ROOT+G_FormArr['planchoosecoursedetails']+'/'+id+"/null/null/null/null/";
+	getList(1);
+	//查询
+	$("#form_query").click(function(e){
+		var params = Ab.urlDecode(Ab.serializeForm('search_form'));
+		var sid=params.stuId==''?"null":params.stuId,
+		sname=params.stuName==''?"null":params.stuName,
+		cid=params.courseCode==''?"null":params.courseCode,
+		cname=params.courseName==''?"null":params.courseName;
+		queryUrl = G_ROOT+G_FormArr['planchoosecoursedetails']+'/'+id+"/"+sid+"/"+sname+"/"+cid+"/"+cname+"/";
+		getList(1);
+	});
+
+});
+</script>
+<script type="text/javascript" src="js/menu.js"></script>
+</body>
+</html>

@@ -1,0 +1,279 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta content="教师网联" name="keywords" />
+<meta content="教师网联" name="description" />
+<title>互选计划 - 教师网联</title>
+<link href="css/reset.css" rel="stylesheet" type="text/css" />
+<link href="css/style.css" rel="stylesheet" type="text/css" />
+<link href="css/nyroModal.css" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+<!--[if lt IE 9]>
+<script type="text/javascript" src="js/html5.js"></script>
+<![endif]-->
+<!--[if IE 6]>
+<script type="text/javascript" src="js/DD_belatedPNG_0.0.8a-min.js" ></script>
+<script type="text/javascript">DD_belatedPNG.fix('.toplogo img');   </script>
+<![endif]-->
+
+<script type="text/javascript">
+    $(document).ready(function() {
+			//summary.tabs();//Tabs
+			summary.tablehover();//Hover
+
+			//删除
+			$('.overlay_delete').click(function(e) {
+				e.preventDefault();
+				$.fn.nyroModalManual({
+					width:400,
+					title:"系统提示",
+					url: 'overlay_delete.html'
+				});
+			return false;
+			});
+
+	});
+
+	//展开合闭
+	function slideSwitch(obja,objb){
+	$("."+obja).slideToggle("fast");
+	$("."+objb).slideToggle("fast");
+	}
+
+</script>
+
+</head>
+<body>
+
+<!-- Header -->
+<div class="page_head">
+<div class="wrapper"><!-- #BeginLibraryItem "/Library/logoinformation.lbi" --><div class="toplogo"><img src="images/logo.png" alt="全国教师教育网络联盟" /></div>
+            <div class="topnav"><b><a href="style.html">Admin</a></b>，欢迎你登陆 <span>|</span> <a href="#">退出</a></div><!-- #EndLibraryItem -->
+
+
+
+</div>
+</div>
+<!-- Header End -->
+
+
+<!-- Page title -->
+<div class="pagetitle"><span><h1>课程管理</h1><h2>&nbsp;→&nbsp;互选计划</h2><h2>&nbsp;→&nbsp;学生导入</h2></span></div>
+<!-- Page title End -->
+
+
+
+<!-- Page -->
+<div class="page_content">
+
+         <!-- LEFT -->
+         <div class="page_left">
+		 <div id="navMenu" class="arrowlistmenu"></div>
+         </div>
+         <!-- LEFT -->
+
+         <!-- RIGHT -->
+         <div class="page_right">
+
+  				<div class="search">
+                		<dl class="search_dl">
+                        <dt>互选批次组：</dt>
+                        <dd><select><option>Default</option></select></dd>
+                        <dt>学校：</dt>
+                        <dd><select><option>Default</option></select></dd>
+                        <dt>专业：</dt>
+                        <dd><select><option>Default</option></select></dd>
+                        </dl>
+                        <dl class="search_dl">
+
+                        <dt>层次：</dt>
+                        <dd><select><option>Default</option></select></dd>
+                        <dt>年级：</dt>
+                        <dd><select><option>Default</option></select></dd>
+                        </dl>
+                        <div class="search_btn"><input type="button" class="btn btn_gray" value="查询" />&nbsp;
+                        <input type="button" class="btn btn_gray" value="重置" />
+                        </div>
+                        <div class="slide_box">
+                        <a href="javascript:void(0)" onclick='slideSwitch("search","search_close")'>合闭搜索</a>
+                        </div>
+
+                </div>
+
+                <div class="search_close" style="display:none;">
+                <a href="javascript:void(0)" onclick='slideSwitch("search","search_close")'>展开搜索</a>
+                </div>
+
+                <div class="box_header">
+                	<span><input type="reset" class="btn btn_green" value="批量导入"/></span>
+                    <input type="submit" class="btn btn_blue" onclick="location.href='student_import_add.html'" value="新增"/>
+                    <input type="submit" class="btn btn_red overlay_delete" value="删除"/>
+                </div>
+                <div class="box_content">
+                <table class="tablebox">
+                      <thead class="table_header">
+                            <tr>
+                            <th class="first tc" width="4%"><input type="checkbox" id="checkboxall"/> </th>
+                            <th>学生ID</th>
+                            <th>学生姓名</th>
+                            <th>学校</th>
+                            <th>专业</th>
+                            <th>层次</th>
+                            <th>年级</th>
+                            <th>互选批次组</th>
+                            <th>创建时间</th>
+                            </tr>
+                      </thead>
+
+                      <tbody class="openable_tbody">
+                            <tr>
+                            <td class="first tc"><input type="checkbox" name="checkall" /> </td>
+                            <td><a href="#">KCJH0001</a></td>
+                            <td>钱多多</td>
+                            <td>北师大</td>
+                            <td>生物</td>
+                            <td>本科</td>
+                            <td>2012届</td>
+                            <td>2012第一学期</td>
+                            <td>2012-1-4</td>
+                            </tr>
+
+                            <tr>
+                            <td class="first tc"><input type="checkbox" name="checkall" /> </td>
+                            <td><a href="#">KCJH0001</a></td>
+                            <td>王小虎</td>
+                            <td>北师大</td>
+                            <td>生物</td>
+                            <td>本科</td>
+                            <td>2012届</td>
+                            <td>2012第一学期</td>
+                            <td>2012-1-4</td>
+                            </tr>
+
+                            <tr>
+                            <td class="first tc"><input type="checkbox" name="checkall" /> </td>
+                            <td><a href="#">KCJH0001</a></td>
+                            <td>王小虎</td>
+                            <td>北师大</td>
+                            <td>生物</td>
+                            <td>本科</td>
+                            <td>2012届</td>
+                            <td>2012第一学期</td>
+                            <td>2012-1-4</td>
+                            </tr>
+
+                            <tr>
+                            <td class="first tc"><input type="checkbox" name="checkall" /> </td>
+                            <td><a href="#">KCJH0001</a></td>
+                            <td>王小虎</td>
+                            <td>北师大</td>
+                            <td>生物</td>
+                            <td>本科</td>
+                            <td>2012届</td>
+                            <td>2012第一学期</td>
+                            <td>2012-1-4</td>
+                            </tr>
+
+                            <tr>
+                            <td class="first tc"><input type="checkbox" name="checkall" /> </td>
+                            <td><a href="#">KCJH0001</a></td>
+                            <td>王小虎</td>
+                            <td>北师大</td>
+                            <td>生物</td>
+                            <td>本科</td>
+                            <td>2012届</td>
+                            <td>2012第一学期</td>
+                            <td>2012-1-4</td>
+                            </tr>
+
+                            <tr>
+                            <td class="first tc"><input type="checkbox" name="checkall" /> </td>
+                            <td><a href="#">KCJH0001</a></td>
+                            <td>王小虎</td>
+                            <td>北师大</td>
+                            <td>生物</td>
+                            <td>本科</td>
+                            <td>2012届</td>
+                            <td>2012第一学期</td>
+                            <td>2012-1-4</td>
+                            </tr>
+
+                            <tr>
+                            <td class="first tc"><input type="checkbox" name="checkall" /> </td>
+                            <td><a href="#">KCJH0001</a></td>
+                            <td>王小虎</td>
+                            <td>北师大</td>
+                            <td>生物</td>
+                            <td>本科</td>
+                            <td>2012届</td>
+                            <td>2012第一学期</td>
+                            <td>2012-1-4</td>
+                            </tr>
+
+                            <tr>
+                            <td class="first tc"><input type="checkbox" name="checkall" /> </td>
+                            <td><a href="#">KCJH0001</a></td>
+                            <td>王小虎</td>
+                            <td>北师大</td>
+                            <td>生物</td>
+                            <td>本科</td>
+                            <td>2012届</td>
+                            <td>2012第一学期</td>
+                            <td>2012-1-4</td>
+                            </tr>
+
+                            <tr>
+                            <td class="first tc"><input type="checkbox" name="checkall" /> </td>
+                            <td><a href="#">KCJH0001</a></td>
+                            <td>王小虎</td>
+                            <td>北师大</td>
+                            <td>生物</td>
+                            <td>本科</td>
+                            <td>2012届</td>
+                            <td>2012第一学期</td>
+                            <td>2012-1-4</td>
+                            </tr>
+
+                            <tr>
+                            <td class="first tc"><input type="checkbox" name="checkall" /> </td>
+                            <td><a href="#">KCJH0001</a></td>
+                            <td>王小虎</td>
+                            <td>北师大</td>
+                            <td>生物</td>
+                            <td>本科</td>
+                            <td>2012届</td>
+                            <td>2012第一学期</td>
+                            <td>2012-1-4</td>
+                            </tr>
+
+                      </tbody>
+
+                 </table>
+                 </div><!-- #BeginLibraryItem "/Library/pagination.lbi" --><div class="pagination">
+                          <a href="#" title="First Page">&laquo; 首页</a><a href="#">&laquo; 上一页</a>
+                          <a href="#" class="number current" title="1">1</a>
+                          <a href="#" class="number" title="2">2</a>
+                          <a href="#" class="number" title="3">3</a>
+                          <a href="#" class="number" title="4">4</a>
+                          <a href="#" title="Next Page">下一页 &raquo;</a><a href="#"> 尾页&raquo;</a>
+				</div><!-- #EndLibraryItem --></div>
+         <!-- RIGHT End -->
+         <div class="clearfix"></div>
+
+</div>
+
+<div class="page_footer">
+<p>主管单位：教育部 　主办单位：全国教师教育网络联盟</p>
+<p>全国教师教育网络联盟秘书处 电话：010－58802946 电子信箱：msz@jswl.cn</p>
+<p>全国教师教育网络联盟 版权所有 京ICP备05069600号 </p>
+</div>
+
+<script type="text/javascript" src="js/menu.js"></script>
+</body>
+</html>

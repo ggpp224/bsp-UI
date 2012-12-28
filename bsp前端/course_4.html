@@ -1,0 +1,528 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta content="教师网联" name="keywords" />
+<meta content="教师网联" name="description" />
+<title>志愿选课处理 - 教师网联</title>
+<link href="css/reset.css" rel="stylesheet" type="text/css" />
+<link href="css/style.css" rel="stylesheet" type="text/css" />
+<link href="css/nyroModal.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="js/bases.js"></script>
+
+<!--[if lt IE 9]>
+<script type="text/javascript" src="js/html5.js"></script>
+<![endif]-->
+<!--[if IE 6]>
+<script type="text/javascript" src="js/DD_belatedPNG_0.0.8a-min.js" ></script>
+<script type="text/javascript">DD_belatedPNG.fix('.toplogo img');   </script>
+<![endif]-->
+
+<script type="text/javascript">
+    $(document).ready(function() {
+			//summary.tabs();//Tabs
+			summary.tablehover();//Hover
+
+			//课程代码
+			 $(".course_code").focus(function(e) {
+					e.preventDefault();
+					$.fn.nyroModalManual({
+						width:900,
+						title:'批次代码',
+						url: 'overlay_course4_addcourse.html'
+					});
+				return false;
+			});
+
+
+
+	});
+	//展开合闭
+	function slideSwitch(obja,objb){
+	$("."+obja).slideToggle("fast");
+	$("."+objb).slideToggle("fast");
+	}
+
+
+</script>
+
+
+<!-- 表格拖拽 javascript -->
+<script type="text/javascript">
+
+	/* VARIABLES YOU COULD MODIFY */
+	var boxSizeArray = [1,1];	// Array indicating how many items there is rooom for in the right column ULs
+
+	var arrow_offsetX = -5;	// Offset X - position of small arrow
+	var arrow_offsetY = 0;	// Offset Y - position of small arrow
+
+	var arrow_offsetX_firefox = -6;	// Firefox - offset X small arrow
+	var arrow_offsetY_firefox = -13; // Firefox - offset Y small arrow
+
+	var verticalSpaceBetweenListItems = 3;	// Pixels space between one <li> and next
+											// Same value or higher as margin bottom in CSS for #dhtmlgoodies_dragDropContainer ul li,#dragContent li
+
+
+	var indicateDestionationByUseOfArrow = false;	// Display arrow to indicate where object will be dropped(false = use rectangle)
+
+	var cloneSourceItems = false;	// Items picked from main container will be cloned(i.e. "copy" instead of "cut").
+	var cloneAllowDuplicates = true;	// Allow multiple instances of an item inside a small box(example: drag Student 1 to team A twice
+
+	/* END VARIABLES YOU COULD MODIFY */
+
+	var dragDropTopContainer = false;
+	var dragTimer = -1;
+	var dragContentObj = false;
+	var contentToBeDragged = false;	// Reference to dragged <li>
+	var contentToBeDragged_src = false;	// Reference to parent of <li> before drag started
+	var contentToBeDragged_next = false; 	// Reference to next sibling of <li> to be dragged
+	var destinationObj = false;	// Reference to <UL> or <LI> where element is dropped.
+	var dragDropIndicator = false;	// Reference to small arrow indicating where items will be dropped
+	var ulPositionArray = new Array();
+	var mouseoverObj = false;	// Reference to highlighted DIV
+
+	var MSIE = navigator.userAgent.indexOf('MSIE')>=0?true:false;
+	var navigatorVersion = navigator.appVersion.replace(/.*?MSIE (\d\.\d).*/g,'$1')/1;
+
+
+	var indicateDestinationBox = false;
+	function getTopPos(inputObj)
+	{
+	  var returnValue = inputObj.offsetTop;
+	  while((inputObj = inputObj.offsetParent) != null){
+	  	if(inputObj.tagName!='HTML')returnValue += inputObj.offsetTop;
+	  }
+	  return returnValue;
+	}
+
+	function getLeftPos(inputObj)
+	{
+	  var returnValue = inputObj.offsetLeft;
+	  while((inputObj = inputObj.offsetParent) != null){
+	  	if(inputObj.tagName!='HTML')returnValue += inputObj.offsetLeft;
+	  }
+	  return returnValue;
+	}
+
+	function cancelEvent()
+	{
+		return false;
+	}
+	function initDrag(e)	// Mouse button is pressed down on a LI
+	{
+		//鼠标按下时处理
+		/* var li = $(this);
+		var i = li.find('i.flag');
+		if(i.length>0){
+			if(i.html() != '可开课'){
+				return;
+			}
+		} */
+
+		if(document.all)e = event;
+		var st = Math.max(document.body.scrollTop,document.documentElement.scrollTop);
+		var sl = Math.max(document.body.scrollLeft,document.documentElement.scrollLeft);
+
+		dragTimer = 0;
+		dragContentObj.style.left = e.clientX + sl + 'px';
+		dragContentObj.style.top = e.clientY + st + 'px';
+		contentToBeDragged = this;
+		contentToBeDragged_src = this.parentNode;
+		contentToBeDragged_next = false;
+		if(this.nextSibling){
+			contentToBeDragged_next = this.nextSibling;
+			if(!this.tagName && contentToBeDragged_next.nextSibling)contentToBeDragged_next = contentToBeDragged_next.nextSibling;
+		}
+		timerDrag();
+		return false;
+	}
+
+	function timerDrag()
+	{
+		if(dragTimer>=0 && dragTimer<10){
+			dragTimer++;
+			setTimeout('timerDrag()',10);
+			return;
+		}
+		if(dragTimer==10){
+
+			if(cloneSourceItems && contentToBeDragged.parentNode.id=='allItems'){
+				newItem = contentToBeDragged.cloneNode(true);
+				newItem.onmousedown = contentToBeDragged.onmousedown;
+				contentToBeDragged = newItem;
+			}
+			dragContentObj.style.display='block';
+			dragContentObj.appendChild(contentToBeDragged);
+		}
+	}
+
+	function moveDragContent(e)
+	{
+		if(dragTimer<10){
+			if(contentToBeDragged){
+				if(contentToBeDragged_next){
+					contentToBeDragged_src.insertBefore(contentToBeDragged,contentToBeDragged_next);
+				}else{
+					contentToBeDragged_src.appendChild(contentToBeDragged);
+				}
+			}
+			return;
+		}
+		if(document.all)e = event;
+		var st = Math.max(document.body.scrollTop,document.documentElement.scrollTop);
+		var sl = Math.max(document.body.scrollLeft,document.documentElement.scrollLeft);
+
+
+		dragContentObj.style.left = e.clientX + sl + 'px';
+		dragContentObj.style.top = e.clientY + st + 'px';
+
+		if(mouseoverObj)mouseoverObj.className='';
+		destinationObj = false;
+		dragDropIndicator.style.display='none';
+		if(indicateDestinationBox)indicateDestinationBox.style.display='none';
+		var x = e.clientX + sl;
+		var y = e.clientY + st;
+		var width = dragContentObj.offsetWidth;
+		var height = dragContentObj.offsetHeight;
+
+		var tmpOffsetX = arrow_offsetX;
+		var tmpOffsetY = arrow_offsetY;
+		if(!document.all){
+			tmpOffsetX = arrow_offsetX_firefox;
+			tmpOffsetY = arrow_offsetY_firefox;
+		}
+
+		for(var no=0;no<ulPositionArray.length;no++){
+			var ul_leftPos = ulPositionArray[no]['left'];
+			var ul_topPos = ulPositionArray[no]['top'];
+			var ul_height = ulPositionArray[no]['height'];
+			var ul_width = ulPositionArray[no]['width'];
+
+			if((x+width) > ul_leftPos && x<(ul_leftPos + ul_width) && (y+height)> ul_topPos && y<(ul_topPos + ul_height)){
+				var noExisting = ulPositionArray[no]['obj'].getElementsByTagName('LI').length;
+				if(indicateDestinationBox && indicateDestinationBox.parentNode==ulPositionArray[no]['obj'])noExisting--;
+				if(noExisting<boxSizeArray[no-1] || no==0){
+					dragDropIndicator.style.left = ul_leftPos + tmpOffsetX + 'px';
+					var subLi = ulPositionArray[no]['obj'].getElementsByTagName('LI');
+
+					var clonedItemAllreadyAdded = false;
+					if(cloneSourceItems && !cloneAllowDuplicates){
+						for(var liIndex=0;liIndex<subLi.length;liIndex++){
+							if(contentToBeDragged.id == subLi[liIndex].id)clonedItemAllreadyAdded = true;
+						}
+						if(clonedItemAllreadyAdded)continue;
+					}
+
+					for(var liIndex=0;liIndex<subLi.length;liIndex++){
+						var tmpTop = getTopPos(subLi[liIndex]);
+						if(!indicateDestionationByUseOfArrow){
+							if(y<tmpTop){
+								destinationObj = subLi[liIndex];
+								indicateDestinationBox.style.display='block';
+								subLi[liIndex].parentNode.insertBefore(indicateDestinationBox,subLi[liIndex]);
+								break;
+							}
+						}else{
+							if(y<tmpTop){
+								destinationObj = subLi[liIndex];
+								dragDropIndicator.style.top = tmpTop + tmpOffsetY - Math.round(dragDropIndicator.clientHeight/2) + 'px';
+								dragDropIndicator.style.display='block';
+								break;
+							}
+						}
+					}
+
+					if(!indicateDestionationByUseOfArrow){
+						if(indicateDestinationBox.style.display=='none'){
+							indicateDestinationBox.style.display='block';
+							ulPositionArray[no]['obj'].appendChild(indicateDestinationBox);
+						}
+
+					}else{
+						if(subLi.length>0 && dragDropIndicator.style.display=='none'){
+							dragDropIndicator.style.top = getTopPos(subLi[subLi.length-1]) + subLi[subLi.length-1].offsetHeight + tmpOffsetY + 'px';
+							dragDropIndicator.style.display='block';
+						}
+						if(subLi.length==0){
+							dragDropIndicator.style.top = ul_topPos + arrow_offsetY + 'px'
+							dragDropIndicator.style.display='block';
+						}
+					}
+
+					if(!destinationObj)destinationObj = ulPositionArray[no]['obj'];
+					mouseoverObj = ulPositionArray[no]['obj'].parentNode;
+					mouseoverObj.className='mouseover';
+					return;
+				}
+			}
+		}
+	}
+
+	/* End dragging
+	Put <LI> into a destination or back to where it came from.
+	*/
+	function dragDropEnd(e)
+	{
+		if(dragTimer==-1)return;
+		if(dragTimer<10){
+			dragTimer = -1;
+			return;
+		}
+		dragTimer = -1;
+		if(document.all)e = event;
+
+		if(cloneSourceItems && (!destinationObj || (destinationObj && (destinationObj.id=='allItems' || destinationObj.parentNode.id=='allItems')))){
+			contentToBeDragged.parentNode.removeChild(contentToBeDragged);
+		}else{
+
+			if(destinationObj){
+				if(destinationObj.tagName=='UL'){
+					destinationObj.appendChild(contentToBeDragged);
+				}else{
+					destinationObj.parentNode.insertBefore(contentToBeDragged,destinationObj);
+				}
+				mouseoverObj.className='';
+				destinationObj = false;
+				dragDropIndicator.style.display='none';
+				if(indicateDestinationBox){
+					indicateDestinationBox.style.display='none';
+					document.body.appendChild(indicateDestinationBox);
+				}
+				contentToBeDragged = false;
+				return;
+			}
+			if(contentToBeDragged_next){
+				contentToBeDragged_src.insertBefore(contentToBeDragged,contentToBeDragged_next);
+			}else{
+				contentToBeDragged_src.appendChild(contentToBeDragged);
+			}
+		}
+		contentToBeDragged = false;
+		dragDropIndicator.style.display='none';
+		if(indicateDestinationBox){
+			indicateDestinationBox.style.display='none';
+			document.body.appendChild(indicateDestinationBox);
+
+		}
+		mouseoverObj = false;
+
+	}
+
+	/*
+	Preparing data to be saved
+	*/
+	function saveDragDropNodes()
+	{
+		var saveString = "";
+		var uls = dragDropTopContainer.getElementsByTagName('UL');
+		for(var no=0;no<uls.length;no++){	// LOoping through all <ul>
+			var lis = uls[no].getElementsByTagName('LI');
+			for(var no2=0;no2<lis.length;no2++){
+				if(saveString.length>0)saveString = saveString + ";";
+				saveString = saveString + uls[no].id + '|' + lis[no2].id;
+			}
+		}
+
+		document.getElementById('saveContent').innerHTML = '<h1>Ready to save these nodes:</h1> ' + saveString.replace(/;/g,';<br>') + '<p>Format: ID of ul |(pipe) ID of li;(semicolon)</p><p>You can put these values into a hidden form fields, post it to the server and explode the submitted value there</p>';
+
+	}
+
+	function initDragDropScript()
+	{
+		dragContentObj = document.getElementById('dragContent');
+		dragDropIndicator = document.getElementById('dragDropIndicator');
+		dragDropTopContainer = document.getElementById('dhtmlgoodies_dragDropContainer');
+		document.documentElement.onselectstart = cancelEvent;;
+		var listItems = dragDropTopContainer.getElementsByTagName('LI');	// Get array containing all <LI>
+		var itemHeight = false;
+		for(var no=0;no<listItems.length;no++){
+			listItems[no].onmousedown = initDrag;
+			listItems[no].onselectstart = cancelEvent;
+			if(!itemHeight)itemHeight = listItems[no].offsetHeight;
+			if(MSIE && navigatorVersion/1<6){
+				listItems[no].style.cursor='hand';
+			}
+		}
+
+		var mainContainer = document.getElementById('dhtmlgoodies_mainContainer');
+		var uls = mainContainer.getElementsByTagName('UL');
+		itemHeight = itemHeight + verticalSpaceBetweenListItems;
+		for(var no=0;no<uls.length;no++){
+			uls[no].style.height = itemHeight * boxSizeArray[no]  + 'px';
+		}
+
+		var leftContainer = document.getElementById('dhtmlgoodies_listOfItems');
+		var itemBox = leftContainer.getElementsByTagName('UL')[0];
+
+		document.documentElement.onmousemove = moveDragContent;	// Mouse move event - moving draggable div
+		document.documentElement.onmouseup = dragDropEnd;	// Mouse move event - moving draggable div
+
+		var ulArray = dragDropTopContainer.getElementsByTagName('UL');
+		for(var no=0;no<ulArray.length;no++){
+			ulPositionArray[no] = new Array();
+			ulPositionArray[no]['left'] = getLeftPos(ulArray[no]);
+			ulPositionArray[no]['top'] = getTopPos(ulArray[no]);
+			ulPositionArray[no]['width'] = ulArray[no].offsetWidth;
+			ulPositionArray[no]['height'] = ulArray[no].clientHeight;
+			ulPositionArray[no]['obj'] = ulArray[no];
+		}
+
+		if(!indicateDestionationByUseOfArrow){
+			indicateDestinationBox = document.createElement('LI');
+			indicateDestinationBox.id = 'indicateDestination';
+			indicateDestinationBox.style.display='none';
+			document.body.appendChild(indicateDestinationBox);
+
+
+		}
+	}
+
+	window.onload = initDragDropScript;
+</script>
+<!-- 表格拖拽 javascript 结束End -->
+
+</head>
+<body>
+
+<!-- Header -->
+<div class="page_head">
+<div class="wrapper"><!-- #BeginLibraryItem "/Library/logoinformation.lbi" --><div class="toplogo"><img src="images/logo.png" alt="全国教师教育网络联盟" /></div>
+            <div class="topnav"><b><a href="style.html">Admin</a></b>，欢迎你登陆 <span>|</span> <a href="#">退出</a></div><!-- #EndLibraryItem -->
+
+
+
+
+</div>
+</div>
+<!-- Header End -->
+
+
+<!-- Page title -->
+<div class="pagetitle"><span><h1>选课管理</h1><h2>&nbsp;→&nbsp;志愿选课处理</h2></span></div>
+<!-- Page title End -->
+
+
+ <!-- page_content -->
+<div class="page_content">
+	<!-- LEFT -->
+	 <div class="page_left">
+	 <div id="navMenu" class="arrowlistmenu"></div>
+	 </div>
+	 <!-- LEFT -->
+
+	 <!-- RIGHT -->
+	 <div class="page_right">
+
+
+				<form id="sampleform" method="post" action="#">
+
+                <div class="clearfix">
+					<div class="box f_center">当前志愿分布库中的互选批次组为：<select name="termid" id="form_term"></select></div>
+
+					<div class="column width5 first">
+						<p><label class="labeltitle">批次代码：</label><input type="text" id="stdCCode" class="half overlay_input course_code"  name="" value=""  /></p>
+						<p><label class="labeltitle">批次名称：</label><input type="text" id="stdCName" class="half" name="" disabled="disabled" value=""  /></p>
+                	</div>
+                	</div>
+
+
+                <fieldset><legend id="COURSENAMESTANDARD" class="big"></legend></fieldset>
+                <div class="box_header"><i class="color_blue">拖动下面的课程到表格下方的区域内：</i></div>
+                <div class="box_content">
+                <table class="tablebox" id="listtablebox">
+                      <thead class="table_header">
+                            <tr>
+                            <th class="first tc" width="112">课程代码</th>
+                            <th width="112">课程名称</th>
+                            <th width="112">授课学校</th>
+                            <th width="112">教师姓名</th>
+                            <th width="112">人数下限/上限</th>
+                            <th width="112">选课人数</th>
+                            <th>开课情况</th>
+                            </tr>
+                      </thead>
+                 </table>
+                 </div>
+
+
+
+                <div id="dhtmlgoodies_dragDropContainer">
+					<style type="text/css">
+						#dhtmlgoodies_listOfItems dd{width:130px}
+						#dhtmlgoodies_listOfItems dd.end{width:58px}
+					</style>
+                    <div id="dhtmlgoodies_listOfItems">
+                        <div>
+                        <ul id="allItems" ></ul>
+                        </div>
+                    </div>
+
+                    <div id="dhtmlgoodies_mainContainer">
+                        <div><p>课程A：</p><ul id="box1"></ul></div>
+                        <div style="float:right;"><p>课程B：</p><ul id="box2"></ul></div>
+                    </div>
+
+                </div>
+
+                <!--
+                <div id="footer">
+                    <form action="#" method="post"><input type="button" onclick="saveDragDropNodes()" value="Save"></form>
+                </div>-->
+                <ul id="dragContent"></ul>
+                <div id="dragDropIndicator"></div>
+                <div id="saveContent"></div>
+
+
+				<div class="btn_opera paixu_1">
+				<input type="button" id="fenbu_expand" class="btn btn_green" onclick='slideSwitch("paixu_1","paixu_2")' value="点击查询分布"/>
+				</div>
+
+				<div class="btn_opera paixu_2" style="display:none;">
+				<input type="button" id="distributeBtn" class="btn btn_black" value="继续查询分布"/>
+				</div>
+
+				<div class="paixu_2" style="display:none;">
+                <fieldset><legend class="big">选择课程A成功的学生中，对课程B的学生志愿分布情况如下：</legend></fieldset>
+
+                <div class="box_header"></div>
+                <div class="box_content">
+                <table class="tablebox">
+                      <thead class="table_header">
+                            <tr>
+                            <th class="first">志愿</th>
+                            <th class="first">人数</th>
+                            <th width="8%">&nbsp;</th>
+                            </tr>
+                      </thead>
+
+                      <tbody id="wish_tbody" class="openable_tbody">
+                      </tbody>
+
+                 </table>
+                 </div><br />
+				 </div>
+
+
+
+
+
+        </form>
+
+</div>
+</div>
+<div class="clearfix"></div>
+
+
+<div class="page_footer">
+<p>主管单位：教育部 　主办单位：全国教师教育网络联盟</p>
+<p>全国教师教育网络联盟秘书处 电话：010－58802946 电子信箱：msz@jswl.cn</p>
+<p>全国教师教育网络联盟 版权所有 京ICP备05069600号 </p>
+</div>
+
+<script type="text/javascript">document.write('\<script id="jsdata" type="text/javascript" src="js/data.js?t='+new Date().valueOf()+'"\>\<\/script\>');</script>
+
+<script type="text/javascript" src="js/controler/course_4.js"></script>
+<script type="text/javascript" src="js/menu.js"></script>
+</body>
+</html>
+

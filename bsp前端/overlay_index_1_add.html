@@ -1,0 +1,113 @@
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<script type="text/javascript">
+var queryUrl = '';
+function getList(page){
+	page = (page && page>0)?page=page:page=Math.abs(page);
+	var url=G_ROOT+queryUrl+page+'/'+G_perpage_pop;
+	$.getJSON(encodeURI(url),function(data){
+		var pageTotal=data.rCount;
+		var data = data.list;
+
+		if(data){
+			var html='';
+			$.each(data,function(k,v){
+				html+='<tr>';
+				html+='<td class="first tc"><input class="data" ids="'+v.NUM+'" value="'+v.code+'" type="checkbox" name="checkall" /></td>';
+				html+='<td class="data" >'+v.code+'</td>';
+				html+='<td class="data" >'+v.name+'</td>';
+				html+='</tr>';
+			});
+			$('#win_js_openable_tbody').html(html);
+			$('#win_pageShow').html(gPage(pageTotal,page,'getList',G_perpage_pop));
+		}
+	});
+}
+
+
+    $(document).ready(function() {
+			summary.tablehover();//Hover
+
+			function setUrl(){
+				var params = Ab.urlDecode(Ab.serializeForm('win_form'));
+				queryUrl = "school/query/"+(params.win_scode==''?'null':params.win_scode)+"/"+(params.win_sName==''?'null':params.win_sName)+"/null/1/";
+			}
+			//查询
+			$("#win_query").click(function(e){
+				setUrl();
+				getList(1);
+
+			});
+
+			//确定
+			$("#win_save").click(function(e){
+
+				var trs = $('#win_js_openable_tbody').find('tr');
+				var len = trs.length,flag=false;
+				var htm ='';
+				for(var i=0;i<len;i++){
+					var tr = trs[i];
+					var dts = $(tr).find('.data');
+					var num=dts[0].getAttribute('ids'),code=dts[1].innerHTML,name=dts[2].innerHTML;
+					if(dts[0].checked && $('#chked_'+code).length==0){
+						flag=true;
+						htm += '<tr id="chked_'+code+'">';
+						htm += '<td class="first tc"><input class="cbx" type="checkbox" name="checkall" /></td>';
+						htm += '<td class="data">'+code+'</td>';
+						htm += '<td class="data date">'+name+'</td>';
+						/* htm += '<td ><i class="color_red">*</i> <input type="text" class="half date data d_odd overlay_time dateinput" onFocus="WdatePicker({dateFmt:\'yyyy-MM-dd HH:mm:ss\',isShowWeek:true,onpicked:function(){}})"  /></td>';
+						htm += '<td><i class="color_red">*</i> <input type="text"  class="half data date d_even overlay_time dateinput" onFocus="WdatePicker({dateFmt:\'yyyy-MM-dd HH:mm:ss\',isShowWeek:true,onpicked:function(){}})"  /></td>'; */
+						htm += '</tr>';
+					}
+
+				}
+
+				if(!flag){
+					alert("请选择学校");
+					return;
+				}
+
+				$('#termInfo_tbody').append(htm);
+				$('#win_closeBtn').click();
+
+			});
+			setUrl();
+			getList(1);
+	});
+
+
+</script>
+
+ 	<form id="win_form" method="post" action="#">
+
+			  <p><label class="labeltitle">学校代码：</label><input type="text" id="win_scode" class="half" name="win_scode" value=""  /></p>
+              <p><label class="labeltitle">学校名称：</label><input type="text" id="win_sName" class="half" name="win_sName" value=""  /></p>
+              <div class="btn_opera">
+              <input type="button" class="btn btn_gray" id="win_query" value="查询"/>
+              <input type="reset" class="btn btn_gray" value="重置"/>
+              </div>
+
+
+<div class="table-container">
+              <table class="tablebox">
+              <thead class="table_header">
+                    <tr>
+                    <th class="first tc" width="4%">&nbsp;</th>
+                    <th>学校代码</th>
+                    <th>学校名称</th>
+                    </tr>
+              </thead>
+
+              <tbody id="win_js_openable_tbody" class="openable_tbody">
+              </tbody>
+              </table>
+</div>
+              <div id="win_pageShow"></div>
+    <div class="overlay_btn">
+    <input type="button" class="btn btn_green" id="win_save" value="确定"/>
+    <input type="button" id="win_closeBtn" class="btn btn_gray overlayClose" value="关闭"/>
+	</div>
+    </form>
+
+
+

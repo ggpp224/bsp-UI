@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<script type="text/javascript" src="js/ajaxfileupload.js"></script>
+</head>
+<body>
+<input type="file" id="file" name="file" />
+  <input type="button" value="保存"   id="btn" />
+
+<script type="text/javascript">
+	$('#btn').click(function(){
+		$.ajaxFileUpload({
+			url:'',
+			secureuri : false,
+	        fileElementId : 'file',
+	        dataType : 'json',
+	        success : function(data, status)
+	        {
+	          alert('suc');
+	        },
+	        error : function(data, status, e)
+	        {
+	                alert("失败");
+	        }
+		});
+	});
+
+</script>
+</body>
+</html>

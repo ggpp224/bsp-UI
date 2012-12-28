@@ -1,0 +1,185 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta content="教师网联" name="keywords" />
+<meta content="教师网联" name="description" />
+<title>批次选课设置 - 教师网联</title>
+<link href="css/reset.css" rel="stylesheet" type="text/css" />
+<link href="css/style.css" rel="stylesheet" type="text/css" />
+<link href="css/nyroModal.css" rel="stylesheet" type="text/css" />
+
+<!--//日期控件-->
+<script language="javascript" type="text/javascript" src="js/WdatePicker.js"></script>
+<!--[if lt IE 9]>
+<script type="text/javascript" src="js/html5.js"></script>
+<![endif]-->
+<!--[if IE 6]>
+<script type="text/javascript" src="js/DD_belatedPNG_0.0.8a-min.js" ></script>
+<script type="text/javascript">DD_belatedPNG.fix('.toplogo img');   </script>
+<![endif]-->
+
+<script type="text/javascript">document.write('\<script id="jsdata" type="text/javascript" src="js/data.js?t='+new Date().valueOf()+'"\>\<\/script\>');</script>
+<script type="text/javascript" src="js/bases.js"></script>
+<script type="text/javascript" src="js/controler/index_2_4.js"></script>
+<script type="text/javascript">
+    $(document).ready(function() {
+			//summary.tabs();//Tabs
+			summary.tablehover();//Hover
+
+
+			//批量修改选课形式
+			$('.overlay_batch_edit').click(function(e) {
+				var ids=[];
+				$('#openable_tbody_list').find('.chk').each(function(){
+					if(this.checked==true) ids.push(this.value);
+				})
+				if(ids.length>0){
+					e.preventDefault();
+					$.fn.nyroModalManual({
+						width:500,
+						title:"批量修改选课形式",
+						content: pop_batch()
+					});
+				}else alert('请选择课程');
+				return false;
+			});
+
+			//实时选课
+			$('.overlay_grabcourse').click(function(e) {
+				e.preventDefault();
+				$.fn.nyroModalManual({
+					width:400,
+					title:"实时选课",
+					url: 'overlay_grabcourse.html'
+				});
+			return false;
+			});
+
+			//志愿选课
+			$('.overlay_submit').click(function(e) {
+				e.preventDefault();
+				$.fn.nyroModalManual({
+					width:400,
+					title:"系统提示",
+					url: 'overlay_submit.html'
+				});
+			return false;
+			});
+
+	});
+
+	//展开合闭
+	function slideSwitch(obja,objb){
+	$("."+obja).slideToggle("fast");
+	$("."+objb).slideToggle("fast");
+	}
+
+</script>
+
+</head>
+<body>
+
+<!-- Header -->
+<div class="page_head">
+<div class="wrapper"><!-- #BeginLibraryItem "/Library/logoinformation.lbi" --><div class="toplogo"><img src="images/logo.png" alt="全国教师教育网络联盟" /></div>
+            <div class="topnav"><b><a href="style.html">Admin</a></b>，欢迎你登陆 <span>|</span> <a href="#">退出</a></div><!-- #EndLibraryItem -->
+
+
+
+</div>
+</div>
+<!-- Header End -->
+
+
+<!-- Page title -->
+<div class="pagetitle"><span><h1>选课管理</h1><h2>&nbsp;→&nbsp;选课方式设置</h2></span></div>
+<!-- Page title End -->
+
+
+
+<!-- Page -->
+<div class="page_content">
+
+         <!-- LEFT -->
+         <div class="page_left">
+		 <div id="navMenu" class="arrowlistmenu"></div>
+         </div>
+         <!-- LEFT -->
+
+         <!-- RIGHT -->
+ <style type="text/css">
+dl.search_dl dd#dd_termid{width:600px}
+dl.search_dl dd#dd_termid select{width:auto}
+</style>
+         <div class="page_right">
+				<form method="post" action="" name="term_form" id="term_form">
+					<div class="search">
+						<dl class="search_dl">
+						<dt>互选批次组：</dt><dd id="dd_termid"><select id="form_term" name="form_term"></select></dd>
+						</dl>
+                		<dl class="search_dl">
+                        <dt>批次代码：</dt><dd><input id="form_coursecode" name="form_coursecode" type="text" value="" /></dd>
+						</dl>
+						<dl class="search_dl">
+                        <dt>批次名称：</dt><dd><input id="form_coursename" name="form_coursename" type="text" value="" /></dd>
+                        </dl>
+
+                        <div class="search_btn"><input type="button" id="form_query" class="btn btn_gray" value="查询" />&nbsp;
+                       	 <input type="reset" class="btn btn_gray" value="重置" />
+                        </div>
+                        <div class="slide_box">
+                        <a href="javascript:void(0)" onclick='slideSwitch("search","search_close")'>合闭搜索</a>
+                        </div>
+					</div>
+				</form>
+
+                <div class="search_close" style="display:none;">
+                <a href="javascript:void(0)" onclick='slideSwitch("search","search_close")'>展开搜索</a>
+                </div>
+
+                <div class="box_header">
+                    <input type="button" id="overlay_batch_edit" class="btn btn_green overlay_batch_edit" value="批量修改选课形式"/>
+                </div>
+                <div class="box_content">
+                <table class="tablebox">
+                       <thead class="table_header">
+                            <tr>
+                            <th class="first tc" width="4%" rowspan="2">&nbsp;</th>
+                            <th rowspan="2">互选批次组</th>
+                            <th rowspan="2">批次名称</th>
+                            <th rowspan="2">总座位数下限<br />/上限</th>
+                            <th rowspan="2">选课配额总数</th>
+                            <th colspan="2" style="text-align:center">批量选课</th>
+                            <th colspan="2" style="text-align:center">个人选课</th>
+                            </tr>
+
+                            <tr>
+                            <th>配额</th>
+                            <th>调整</th>
+                            <th>人数</th>
+                            <th>方式</th>
+                            </tr>
+
+                      </thead>
+                      <tbody class="openable_tbody" id="openable_tbody_list">
+                      </tbody>
+                 </table>
+                 </div>
+				 <div id="pageShow"></div>
+
+				 </div>
+         <!-- RIGHT End -->
+         <div class="clearfix"></div>
+
+</div>
+
+<div class="page_footer">
+<p>主管单位：教育部 　主办单位：全国教师教育网络联盟</p>
+<p>全国教师教育网络联盟秘书处 电话：010－58802946 电子信箱：msz@jswl.cn</p>
+<p>全国教师教育网络联盟 版权所有 京ICP备05069600号 </p>
+</div>
+
+<script type="text/javascript" src="js/menu.js"></script>
+</body>
+</html>

@@ -1,0 +1,358 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta content="教师网联" name="keywords" />
+<meta content="教师网联" name="description" />
+<title>新增课程 - 教师网联</title>
+<link href="css/reset.css" rel="stylesheet" type="text/css" />
+<link href="css/style.css" rel="stylesheet" type="text/css" />
+<link href="css/nyroModal.css" rel="stylesheet" type="text/css" />
+
+<script type="text/javascript" src="js/bases.js"></script>
+
+
+<!--[if lt IE 9]>
+<script type="text/javascript" src="js/html5.js"></script>
+<![endif]-->
+<!--[if IE 6]>
+<script type="text/javascript" src="js/DD_belatedPNG_0.0.8a-min.js" ></script>
+<script type="text/javascript">DD_belatedPNG.fix('.toplogo img');   </script>
+<![endif]-->
+
+<script type="text/javascript">
+	$(document).ready(function() {
+		summary.tabs();//Tabs
+		summary.tablehover();//Hover
+
+		//课程代码
+		$(".course_code").focus(function(e) {
+			e.preventDefault();
+			$.fn.nyroModalManual({
+				width : 650,
+				title : '批次代码',
+				url : 'overlay_addcourse.html'
+			});
+			this.blur();
+			return false;
+		});
+
+
+	});
+</script>
+
+</head>
+<body>
+
+	<!-- Header -->
+	<div class="page_head">
+		<div class="wrapper">
+			<!-- #BeginLibraryItem "/Library/logoinformation.lbi" -->
+			<div class="toplogo">
+				<img src="images/logo.png" alt="全国教师教育网络联盟" />
+			</div>
+			<div class="topnav">
+				<b><a href="style.html">Admin</a></b>，欢迎你登陆 <span>|</span> <a
+					href="#">退出</a>
+			</div>
+			<!-- #EndLibraryItem -->
+
+
+
+
+		</div>
+	</div>
+	<!-- Header End -->
+
+
+	<!-- Page title -->
+	<div class="pagetitle">
+		<span><h1>互选课程总库</h1><h2>&nbsp;→&nbsp;课程列表</h2><h2>&nbsp;→&nbsp;新增课程</h2></span>
+	</div>
+	<!-- Page title End -->
+
+
+
+	<!-- Page -->
+	<div class="page_content">
+
+
+<!-- LEFT -->
+         <div class="page_left">
+			<div id="navMenu" class="arrowlistmenu"></div>
+		</div>
+         <!-- LEFT -->
+  		<!-- RIGHT -->
+        <div class="page_right">
+		<fieldset>
+			<legend class="big">新增课程</legend>
+		</fieldset>
+
+		<div id="tablist">
+			<ul id="explore_nav">
+				<li id="ex_tab1"><a rel="tab01" href="#" class="current">课程基本信息</a></li>
+				<li id="ex_tab2"><a rel="tab02" href="#">任课教师信息</a></li>
+			</ul>
+			<div id="tablist_cont">
+				<form id="tab01" method="post" action="">
+					<div class="clearfix">
+						<p>
+							<label class="labeltitle">课程代码：</label><input type="text" id=""
+								name="" disabled="disabled" value="新增时系统自动生成" />
+						</p>
+						<div class="column width5 first">
+
+							<p>
+								<label class="labeltitle"><span style="color:red">*</span>课程名称：</label>
+								<input type="text" id="courseName" class="half" name="courseName" value="" />
+								<span id='cNameInfo' class="hidden">不能为空</span>
+							</p>
+							<p>
+								<label class="labeltitle"><span style="color:red">*</span>课程来源：</label>
+								<input type="text" id="lmsCode" class="half" name="lmsCode" value="" />
+								<span id='lmsCodeInfo' class="hidden">不能为空</span>
+							</p>
+							<p>
+								<label class="labeltitle"><span style="color:red">*</span>批次名称：</label><input type="text"
+									 id="courseNameStandard" value="点击添加"  class="half overlay_input course_code" name="courseNameStandard"
+									 />
+								<span id='cCNtInfo' class="hidden">必须选择</span>
+							</p>
+							<p>
+								<label class="labeltitle">授课学校：</label><input type="text"
+									id="school" class="half" name="" disabled="disabled"
+									value="" /> <input type="hidden"
+									name="schoolCode" id="schoolCode" value="" />
+							</p>
+							<p class="hs">
+								<label class="labeltitle"><span style="color:red">*</span>适用专业：</label><select name="majorCode"
+									id="form_major" iclass="half"></select>
+							</p>
+							<p>
+								<label class="labeltitle"><span style="color:red">*</span>课程类别：</label><select id="courseType" name="courseType"
+									class="half"><option value="null">请选择</option><option value="1">学历教育</option>
+									<option value="2">非学历教育</option></select>
+							</p>
+							<p>
+								<label class="labeltitle">开课学期：</label><select id="courseXueqi" 
+									class="half"><option value="null">请选择</option><option value="1">春季</option>
+									<option value="2">秋季</option></select>
+							</p>
+
+
+						</div>
+						<div class="column width5">
+							<p>
+								<label class="labeltitle">课程英文名：</label><input type="text" id="courseEname"
+									class="half" name="courseEname" value="" />
+								<span id='enameInfo' class="hidden"></span>
+							</p>
+							<p>
+								<label class="labeltitle"><span style="color:red">*</span>原课程代码：</label><input type="text" id="lmsOriCourseCode"
+									class="half" name="lmsOriCourseCode" value="" />
+								<span id='lmsOriCourseCodeInfo' class="hidden"></span>
+							</p>
+							<p>
+								<label class="labeltitle">批次代码：</label><input type="text"
+									id="courseCodeStandard" class="half" disabled="disabled"
+									name="courseCodeStandard" value="自动带入，不允许编辑"  />
+									<span id='cCStInfo' class="hidden">必须选择</span>
+							</p>
+							<p>
+								<label class="labeltitle"><span style="color:red">*</span>所属学科：</label><select
+									name="subjectCode" id="form_subject" class="half"></select>
+							</p>
+
+							<p>
+								<label class="labeltitle"><span style="color:red">*</span>教学组织形式：</label> <select
+									name="tchOgzForm" id="tchOgzForm" class="half">
+									<option value="null">请选择</option>
+									<option value="1">个别教学制</option>
+									<option value="2">班级授课制</option>
+									<option value="3">分组教学制</option>
+									<option value="4">开放教学制</option>
+								</select>
+							</p>
+							<p class="hs">
+								<label class="labeltitle"><span style="color:red">*</span>适用层次：</label><select
+									name="educationLevelCode" id="form_educationlevel"
+									class="half"></select>
+							</p>
+							<p class="hs">
+								<label class="labeltitle"><span style="color:red">*</span>适用年级：</label><select name="gradeCode"
+									id="form_grade" class="half"></select>
+							</p>
+						</div>
+					</div>
+					<p>
+						<label class="labeltitle">所属专业：</label>
+						<input type="button" class="btn btn_blue" id="addMajorBtn" value="添加专业"/>
+						<input type="button" class="btn btn_red" id="removeMajorBtn" value="移除选中专业"/>
+					</p>
+					<div>
+						<label class="labeltitle">&nbsp;</label>
+                          <table class="tablebox tablebox_inner" style="width: 75%;">
+	                          <thead class="table_header">
+	                                <tr>
+	                                <th class="first tc" width="4%" ><input type="checkbox" id="checkboxall_m"></input></th>
+	                                <th>专业代码</th>
+	                                <th>专业名称</th>
+	                                </tr>
+	                          </thead>
+
+	                          <tbody id="majorInfo_tbody" class="openable_tbody">
+
+	                          </tbody>
+                		  </table>
+                		  <span id='majorsInfo' class="hidden">至少添加一项专</span>
+					</div>
+					<p>
+						<label class="labeltitle"><span style="color:red">*</span>课程简介：</label>
+						<textarea id="area2" class="small" cols="96"
+							name="courseIntroduction"></textarea>
+						<span id='area2Info' class="hidden">不能为空</span>
+					</p>
+					<p>
+						<label class="labeltitle">基本要求：</label>
+						<textarea class="small" cols="96" id="basicRequirement" name="basicRequirement"></textarea>
+						<span id='basicInfo' class="hidden"></span>
+					</p>
+					<p>
+						<label class="labeltitle">教材及参考资料：</label>
+						<textarea class="small" cols="96" id="textbook"  name="textbook"></textarea>
+						<span id='textbookInfo' class="hidden"></span>
+					</p>
+					<p>
+						<label class="labeltitle"><span style="color:red">*</span>考核内容：</label>
+						<textarea class="small" cols="96" id="examContent" name="examContent"></textarea>
+						<span id='ecInfo' class="hidden">不能为空</span>
+					</p>
+					<p>
+						<label class="labeltitle">资源建设情况：</label>
+						<textarea id="resourceConstruction" class="small" cols="96"
+							name="resourceConstruction"></textarea>
+						<span id='resourceInfo' class="hidden"></span>
+					</p>
+					<p>
+						<label class="labeltitle">演示版链接：</label>
+						<textarea id="demoLink" class="small" cols="96" name="demoLink"></textarea>
+						<span id='linkInfo' class="hidden"></span>
+					</p>
+
+
+					<div class="btn_opera">
+						<input type="button" id="course_save" class="btn btn_blue"
+							value="下一步" /> <input id="cBackBtn" type="button" class="btn btn_gray"
+							onclick="location.href='index.html'" value="返回" />
+					</div>
+
+				</form>
+
+
+
+				<form id="tab02" method="post" action="">
+					<fieldset>
+						<legend>已新增的老师</legend>
+					</fieldset>
+					<div class="box_header">
+					<input type="button" id="form_show" class="btn btn_blue " value="新增"/>
+						<input id="teacher_del" type="button"
+							class="btn btn_red overlay_delete" value="删除" />
+					</div>
+					<div class="box_content">
+						<table class="tablebox">
+							<thead class="table_header">
+								<tr>
+									<th class="first tc" width="4%"><input type="checkbox"
+										id="checkboxall" /></th>
+									<th>教师名称</th>
+									<th>教师单位</th>
+									<th>教师职称</th>
+									<th>电话</th>
+									<th>E-MAIL</th>
+								</tr>
+							</thead>
+
+							<tbody id="teacher_tbody" class="openable_tbody">
+							</tbody>
+						</table>
+					</div>
+				<div id="teacher_form">
+					<fieldset>
+						<legend>新增老师</legend>
+					</fieldset>
+					<div class="clearfix">
+						<div class="column width5 first">
+							<p>
+								<label class="labeltitle"><span style="color:red">*</span>教师名称：</label><input type="text"
+									class="half" id="teacherName" name="teacherName" value="" />
+								<span id='teacherNameInfo' class="hidden">不能为空</span>
+							</p>
+							<p>
+								<label class="labeltitle"><span style="color:red">*</span>教师职称：</label><input type="text"
+									class="half" id="teacherTitle" name="teacherTitle" value="" />
+								<span id='teacherTitleInfo' class="hidden">不能为空</span>
+							</p>
+							<p>
+								<label class="labeltitle">电话：</label><input type="text"
+									class="half" id="teacherPhone" name="teacherPhone" value="" />
+									<span id='phoneInfo' class="hidden">不能为空</span>
+							</p>
+						</div>
+						<div class="column width5">
+							<p>
+								<label class="labeltitle"><span style="color:red">*</span>教师单位：</label><input type="text"
+									class="half" id="teacherUnit" name="teacherUnit" value="" />
+								<span id='teacherUnitInfo' class="hidden">不能为空</span>
+							</p>
+							<p>
+								<label class="labeltitle"><span style="color:red">*</span>Email：</label><input type="text"
+									class="half" id="teacherEmail" name="teacherEmail" value="" />
+								<span id='teacherEmailInfo' class="hidden">不能为空</span>
+							</p>
+							<input type="hidden" id="teacherCourseCode" name="courseCode"
+								value="" />
+						</div>
+
+					</div>
+
+					<p>
+						<label class="labeltitle"><span style="color:red">*</span>教师简介：</label>
+						<textarea class="small" cols="96" id="teacherIntroduction" name="teacherIntroduction"></textarea>
+						<span id='teacherIntroductionInfo' class="hidden">不能为空</span>
+					</p>
+					</div>
+					<div class="btn_opera">
+						<input id="teacherAddBtn" type="button" class="btn btn_blue" value="保存 " />
+						<input id="teacherConAddBtn" type="button" class="btn btn_green" value="保存并继续添加" />
+						<input id="teacherBackBtn" type="button" class="btn btn_blue" value="课程录入完毕" />
+					</div>
+				</form>
+			</div>
+		</div>
+
+	</div>
+	<!-- Page End -->
+	<!-- #BeginLibraryItem "/Library/footer.lbi" -->
+	<!-- Footer -->
+	<div class="clearfix"></div>
+	</div>
+
+<div class="page_footer">
+<p>主管单位：教育部 　主办单位：全国教师教育网络联盟</p>
+<p>全国教师教育网络联盟秘书处 电话：010－58802946 电子信箱：msz@jswl.cn</p>
+<p>全国教师教育网络联盟 版权所有 京ICP备05069600号 </p>
+</div>
+
+
+
+	<!-- script begin -->
+
+
+	<script type="text/javascript">document.write('\<script id="jsdata" type="text/javascript" src="js/data.js?t='+new Date().valueOf()+'"\>\<\/script\>');</script>
+
+	<script type="text/javascript" src="js/controler/course_add.js"></script>
+	<script type="text/javascript" src="js/menu.js"></script>
+	<!-- script end -->
+</body>
+</html>

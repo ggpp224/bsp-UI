@@ -1,0 +1,54 @@
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<style>
+	#win_form div{
+		padding:18px;
+	}
+</style>
+<script type="text/javascript">
+$(document).ready(function() {
+	var str = winObj.str,winSt=winObj.statu;
+	$('#lbOn').html(str[0]);
+	$('#lbOff').html(str[1]);
+	var r1= document.getElementById("on"),r2=document.getElementById("off");
+	if(winSt==1){
+		r1.checked=true;
+	}else{
+		r2.checked=true;
+	}
+	
+			//保存
+			$("#no_save").click(function(e){
+				var val = 1;
+				if(r2.checked){
+					val=2;
+				}
+				
+				var row = parseInt(winObj.row);
+				var p1Trs = $('#params_tbody').find('tr');
+			
+				var tr=p1Trs[row-1];
+				var tds=$(tr).find('.data');
+				var td1 = $(tds[1]),td2 = $(tds[2]);
+				td1.html(str[val-1]);
+				td1.attr('code',val);
+				td2.attr('code',val+','+row);
+			});
+			
+			
+});
+</script>
+ 	<form id="win_form" method="post" action="#">
+    	<div class="overlay_delete_box">
+	    	<h5 class="green"><input type="radio" id="on" name="r"><label id="lbOn" for="on">开启</label>
+	    	<input type="radio" id="off" name="r"><label id="lbOff" for="off">关闭</label></h5>
+	    </div>    
+	              
+	    <div class="overlay_btn">
+	    	<input type="button" id="no_save" class="btn btn_gray overlayClose" value="确定"/>
+	    	<input type="button" id="no_se" class="btn btn_gray overlayClose" value="取消"/>
+		</div> 
+    </form>
+
+
+
+    

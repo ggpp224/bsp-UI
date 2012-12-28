@@ -1,0 +1,180 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta content="教师网联" name="keywords" />
+<meta content="教师网联" name="description" />
+<title>志愿选课 - 教师网联</title>
+<link href="css/reset.css" rel="stylesheet" type="text/css" />
+<link href="css/style.css" rel="stylesheet" type="text/css" />
+<link href="css/nyroModal.css" rel="stylesheet" type="text/css" />
+
+
+
+<script type="text/javascript" src="js/bases.js"></script>
+
+
+
+
+<!--[if lt IE 9]>
+<script type="text/javascript" src="js/html5.js"></script>
+<![endif]-->
+<!--[if IE 6]>
+<script type="text/javascript" src="js/DD_belatedPNG_0.0.8a-min.js" ></script>
+<script type="text/javascript">DD_belatedPNG.fix('.toplogo img');   </script>
+<![endif]-->
+
+<script type="text/javascript">document.write('\<script id="jsdata" type="text/javascript" src="js/data.js?t='+new Date().valueOf()+'"\>\<\/script\>');</script>
+<script type="text/javascript" src="js/summary_zhiyuan.js"></script>
+<script type="text/javascript" src="js/controler/course_zhiyuan.js"></script>
+
+<script type="text/javascript">
+    $(document).ready(function() {
+			summary.tabs();//Tabs
+			summary.tablehover();//Hover
+
+
+	});
+
+	//展开合闭
+	function slideSwitch(obja,objb){
+	$("."+obja).slideToggle("fast");
+	$("."+objb).slideToggle("fast");
+	}
+
+</script>
+<style>
+.tablebox_1{width:100px;float:left;border-left: 0 none;}
+.tablebox_2{width:755px;;;float:left;border-left: 0 none;}
+</style>
+</head>
+<body>
+
+<!-- Header -->
+<div class="page_head">
+<div class="wrapper"><!-- #BeginLibraryItem "/Library/logoinformation.lbi" --><div class="toplogo"><img src="images/logo.png" alt="全国教师教育网络联盟" /></div>
+            <div class="topnav"><b><a href="style.html">Admin</a></b>，欢迎你登陆 <span>|</span> <a href="#">退出</a></div><!-- #EndLibraryItem -->
+
+
+
+</div>
+</div>
+<!-- Header End -->
+
+
+<!-- Page title -->
+<div class="pagetitle"><span><h1>学生选课</h1><h2>&nbsp;→&nbsp;志愿选课</h2></span></div>
+<!-- Page title End -->
+
+
+
+<!-- Page -->
+<div class="page_content">
+	<!-- LEFT -->
+         <div class="page_left">
+		 <div id="navMenu" class="arrowlistmenu"></div>
+         </div>
+         <!-- LEFT -->
+
+         <!-- RIGHT -->
+         <div class="page_right">
+	  		<div id="details">
+	  				<fieldset>
+		  				<legend class="big">大学语文:<i>（必修课）</i></legend>
+		  			</fieldset>
+	                <dl class="search_dl_long"><dt>选课方式：</dt><dd>志愿选课</dd></dl>
+	                <dl class="search_dl_long"><dt>选课说明：</dt><dd>说明文字</dd></dl>
+	                <dl class="search_dl_long"><dt>选课时间：</dt><dd>2012年4月15日~2012年4月16日</dd></dl>
+	                <dl class="search_dl_long"><dt>结果通知时间：</dt><dd>2012年4月20日</dd></dl>
+
+			</div>
+
+
+			<dl class="search_dl_long"><dd id="peopleNum"></dd></dl>
+                <div class="box_header">
+                    
+                    <i id="debugArea">拖拽输出结果：</i>
+                </div>
+				<form name="zhiyuan_form" id="zhiyuan_form" method="post">
+                <div class="box_content">
+
+					<div class="tablebox_1" >
+						<table  class="tablebox">
+							  <thead class="table_header">
+									<tr>
+									<th class="first tc" >志愿顺序</th>
+									</tr>
+							  </thead>
+							  <tbody class="openable_tbody" id="js_course_tbody_1"></tbody>
+						 </table>
+					 </div>
+					 <div  class="tablebox_2" >
+						 <table id="dragtable" class="tablebox">
+								 <thead class="table_header">
+									   <tr>
+									   <th class="first tc" >课程名称</th>
+									   <th  >主讲教师</th>
+									   <th >授课学校</th>
+									   <th>课程学分</th>
+									   <th>人数下限/上限</th>
+									   </tr>
+								 </thead>
+								 <tbody class="openable_tbody" id="js_course_tbody_2"></tbody>
+						 </table>
+					 </div>
+
+
+				<div class="box_header" id="submDiv" style="display:none;clear:both">
+					<span id="paravalue" style="display:none"><input id="addBtn" class="btn btn_blue" type="button" value="提交"></span>
+					<!--  <input id="delBtn" class="btn btn_red overlay_delete" type="button" value="返回"> -->
+				</div>
+                </div>
+				 </form>
+
+				<!-- 本校列表（固定顺序） -->
+				<div class="box_header" style="margin-top:10px">
+                    	本校课程列表&nbsp;<i style="font-size:10px;">( 仅供参考，不可选择本校课程 )</i>
+                </div>
+				<div class="box_content">
+					<div class="tablebox_1" >
+						<table  class="tablebox">
+							  <thead class="table_header">
+									<tr><th class="first tc" >序号</th></tr>
+							  </thead>
+							  <tbody class="openable_tbody" id="js_course_tbody_1_myscourse"></tbody>
+						 </table>
+					 </div>
+					 <div  class="tablebox_2" >
+						 <table id="dragtable" class="tablebox">
+								 <thead class="table_header">
+									   <tr>
+									   <th class="first tc" >课程名称</th>
+									   <th  >主讲教师</th>
+									   <th >授课学校</th>
+									   <th>课程学分</th>
+									   <th>人数下限/上限</th>
+									   </tr>
+								 </thead>
+								 <tbody class="openable_tbody" id="js_course_tbody_2_myscourse"></tbody>
+						 </table>
+					 </div>
+					 <div class="clear"></div>
+                </div>
+				<!-- 本校列表（固定顺序）end -->
+				<div class="search_btn">
+					<input type="button" class="btn btn_gray" onclick="location.href='course.html'" value="返回选课列表"/>
+				</div>
+		</div>
+</div>
+
+<div class="clear"></div>
+
+<div class="page_footer">
+<p>主管单位：教育部 　主办单位：全国教师教育网络联盟</p>
+<p>全国教师教育网络联盟秘书处 电话：010－58802946 电子信箱：msz@jswl.cn</p>
+<p>全国教师教育网络联盟 版权所有 京ICP备05069600号 </p>
+</div>
+
+<script type="text/javascript" src="js/menu.js"></script>
+</body>
+</html>

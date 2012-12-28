@@ -1,0 +1,536 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta content="教师网联" name="keywords" />
+<meta content="教师网联" name="description" />
+<title>新增开课课程 - 教师网联</title>
+<link href="css/reset.css" rel="stylesheet" type="text/css" />
+<link href="css/style.css" rel="stylesheet" type="text/css" />
+<link href="css/nyroModal.css" rel="stylesheet" type="text/css" />
+
+<!--//日期控件-->
+<!--<script language="javascript" type="text/javascript" src="js/WdatePicker.js"></script>-->
+<!--[if lt IE 9]>
+<script type="text/javascript" src="js/html5.js"></script>
+<![endif]-->
+<!--[if IE 6]>
+<script type="text/javascript" src="js/DD_belatedPNG_0.0.8a-min.js" ></script>
+<script type="text/javascript">DD_belatedPNG.fix('.toplogo img');   </script>
+<![endif]-->
+
+
+<script type="text/javascript">document.write('\<script id="jsdata" type="text/javascript" src="js/data.js?t='+new Date().valueOf()+'"\>\<\/script\>');</script>
+<script type="text/javascript" src="js/bases.js"></script>
+<script language="javascript" type="text/javascript" src="js/WdatePicker.js"></script>
+
+<script type="text/javascript">
+    $(document).ready(function() {
+    	var pn=getQuery('pn')||1;
+			//summary.tabs();//Tabs
+			summary.tablehover();//Hover
+
+			//课程查询添加
+			$("#courseName").focus(function(e) {
+					e.preventDefault();
+					$.fn.nyroModalManual({
+						width:500,
+						height:400,
+						title:'课程查询添加',
+						url: 'overlay_course_plan.html'
+					});
+					this.blur();
+				return false;
+			});
+			
+			$("#courseNameStandards").focus(function(e) {
+				e.preventDefault();
+				$.fn.nyroModalManual({
+					width:500,
+					height:250,
+					title:'课程查询添加',
+					url: 'overlay_course_plan_term.html'
+				});
+				this.blur();
+			return false;
+		});
+
+
+			//授课学校init
+		 	var schoolCode = user['schoolCode'];
+		 	//document.getElementById("Cchool").value=decodeURI(getQuery("n"));
+		 	document.getElementById("schoolCode").value=schoolCode;
+			//controller
+			var cmb = new ComboxOperate();
+
+			// 互选批次组
+			cmb.term();
+			cmb.school({id:'schoolCode',all:true});
+			
+			var renderPeiE = function(){
+				$.getJSON(G_ROOT+'term/termset/school/'+$('#form_term').val()+'/'+$('#schoolCode').val(),function(data){
+					var list = data.schoolList;
+					var htm ='';
+					for(var i=0,len=list.length;i<len;i++){
+						var rec = list[i];
+						htm += '<tr><td>'+rec.schoolCode+'</td><td>'+rec.schoolName+'</td><td><input type="text" value="" size="6" class="dt"></td></tr>';
+					}
+					$('#school_tablelist_tbody').html(htm);
+					
+				});
+			}
+			renderPeiE();
+			
+			$('#form_term').change(function(){
+				renderPeiE();
+			});
+			$('#schoolCode').change(function(){
+				renderPeiE();
+			});
+			
+			
+			//average_btn
+			$('#average_btn').click(function(){
+				var trs = $('#school_tablelist_tbody').find('tr');
+				var len = trs.length;
+				var amount = $('#maxNum').val();
+				if(amount !=''){
+					var val = Math.floor(parseInt(amount)/len);
+					for(var i=0;i<len;i++){
+						var tr = $(trs[i]);
+						filed = tr.find('input.dt')[0];
+						filed.value=val;
+					}
+				}
+			});
+			
+			$('#clear_btn').click(function(){
+				var trs = $('#school_tablelist_tbody').find('tr');
+				var len = trs.length;
+				for(var i=0;i<len;i++){
+					var tr = $(trs[i]);
+					filed = tr.find('input.dt')[0];
+					filed.value="";
+				}
+			});
+			
+			var price = $("#price"),score=$("#score"),amount=$("#amount");
+			//price = parseInt(price);
+			function accMul(arg1,arg2)
+			{
+				var m=0,s1=arg1.toString(),s2=arg2.toString();
+				try{m+=s1.split(".")[1].length}catch(e){}
+				try{m+=s2.split(".")[1].length}catch(e){}
+				return Number(s1.replace(".",""))*Number(s2.replace(".",""))/Math.pow(10,m);
+			}
+			price.blur(function(){
+				if(price.val()&&score.val()){
+					amount.val(accMul(price.val(),score.val()));
+				}
+			});
+			score.blur(function(){
+
+				if(price.val()&&score.val()){
+					amount.val(accMul(price.val(),score.val()));
+				}
+			});
+
+			$('#course_save').live('click',function(){
+
+				if(!validate()){
+					return;
+				}
+				if(parseInt(document.getElementById('maxNum').value)<parseInt(document.getElementById('minNum').value)){
+					alert('人数上限不能小于下限');
+					return;
+				}
+
+				//area2
+				var dt='';
+				var trs = $('#tablelist_tbody').find('tr');
+				if(trs.length==0){
+					mAlert('成绩构成方式为必填项');
+					return;
+				}
+				var f = false;
+				trs.each(function(idx,val){
+					var tds = $(this).find('.dt');
+					var t0=tds[0].value,t1=tds[1].value;
+					if(!(t0&&t1)){
+						f=true;
+						return;
+					}
+					/* var o = {item:t0,scale:t1};
+					dt.push(o); */
+					dt += t0+":"+t1+";"
+				});
+				if(f){
+					mAlert("成绩构成方式内容不能为空");
+					return;
+				}
+				if(dt.length>0){
+					dt=dt.substring(0,dt.length-1);
+				}
+				$('#area2').val(dt);
+				
+				var schoolSCL =[];
+				//各校选课配额设置
+				var schooltrs = $('#school_tablelist_tbody').find('tr');
+				for(var i=0,len=schooltrs.length;i<len;i++){
+					var tr = $(schooltrs[i]);
+					var code = tr.find('td')[0].innerHTML;
+					var text = tr.find('input.dt')[0].value;
+					if(text==""){
+						mAlert('配额不能为空');
+						return;
+					}
+					schoolSCL.push({schoolCode:code,chooseQuota:text});
+					peiVal += parseInt(text);
+				}
+				
+				if(peiVal!=parseInt($('#maxNum').val())){
+					mAlert('配额总数必须等于人数上限');
+					return;
+				}
+				var params = Ab.urlDecode(Ab.serializeForm('sampleform'));
+				delete params.courseName;
+				delete params.amount;
+				params.creater = user['uid'];
+				//params.schoolSCL = schoolSCL;
+				var ps = {planOpenCourse:params,schoolSCL:schoolSCL}
+				var str = Ab.encode(ps);
+				$.ajax({
+					type: 'POST',
+					data:str,
+					dataType: 'json',
+					url: G_ROOT+G_FormArr['planCourseAdd']+'?termId='+params.termId,
+					contentType:'application/json;charset=UTF-8',
+					success: function(rs) {
+		                    	if(rs.returnCode=='000000'){
+		                    		location.href="index_2.html";
+		                    	}else if(rs.returnCode==100){
+									mAlert("该开课计划已存在，请不要重复添加。");
+								}else{
+									mAlert("添加失败");
+		                    	}
+		                    }
+
+
+				});
+
+			});
+
+
+			//验证课程添加
+			function validate(){
+				var checked = true;
+
+
+
+				//课程名称
+				var cs = $('#courseName');
+				var csVal = cs.val(),
+					jdom = $('#courseNameInfo');
+				if(csVal=='点击右侧按钮添加'){
+					jdom.html('不能为空');
+					jdom.removeClass('hidden').addClass('error');
+					checked=false;
+				}else if(csVal.length>100){
+					jdom.html('不能超过100字');
+					jdom.removeClass('hidden').addClass('error');
+					checked=false;
+				}else{
+					jdom.removeClass('error').addClass('hidden');
+				}
+				
+				//批次名称 
+				var cs = $('#courseNameStandards');
+				var csVal = cs.val(),
+					jdom = $('#courseNameStandardInfo');
+				if(csVal=='点击右侧按钮添加'){
+					jdom.html('不能为空');
+					jdom.removeClass('hidden').addClass('error');
+					checked=false;
+				}else if(csVal.length>100){
+					jdom.html('不能超过100字');
+					jdom.removeClass('hidden').addClass('error');
+					checked=false;
+				}else{
+					jdom.removeClass('error').addClass('hidden');
+				}
+
+				var emptyCheck = function(dom,jdom){
+					val = dom.val();
+					if(!val){
+						jdom.html('不能为空');
+						jdom.removeClass('hidden').addClass('error');
+						checked=false;
+					}
+					else if(val.length>100){
+						jdom.html('不能超过100字');
+						jdom.removeClass('hidden').addClass('error');
+						checked=false;
+					}else{
+						jdom.removeClass('error').addClass('hidden');
+					}
+				};
+
+				var longCheck = function(dom,jdom){
+					val = dom.val();
+					if(val.length>400){
+						jdom.html('不能超过400字');
+						jdom.removeClass('hidden').addClass('error');
+						checked=false;
+					}else{
+						jdom.removeClass('error').addClass('hidden');
+					}
+				};
+
+				var checkInt = function(dom,jdom,len){
+					var len=len||10;
+					val = dom.val();
+					if(!val){
+						jdom.html('不能为空');
+						jdom.removeClass('hidden').addClass('error');
+						checked=false;
+					}
+					else if(val.length>len){
+						jdom.html('不能超过'+len+'位');
+						jdom.removeClass('hidden').addClass('error');
+						checked=false;
+					}else{
+						if(!/^\d+$/.test(val)){
+							jdom.html('请输入整数');
+							jdom.removeClass('hidden').addClass('error');
+							checked=false;
+						}else{
+							jdom.removeClass('error').addClass('hidden');
+						}
+					}
+				};
+
+				var checkNum = function(dom,jdom,len){
+					var len=len||10;
+					val = dom.val();
+					if(!val){
+						jdom.html('不能为空');
+						jdom.removeClass('hidden').addClass('error');
+						checked=false;
+					}
+					else if(val.length>len){
+						jdom.html('不能超过'+len+'位');
+						jdom.removeClass('hidden').addClass('error');
+						checked=false;
+					}else{
+						if(!/^\d+(.\d+){0,1}$/.test(val)){
+							jdom.html('请输入数字');
+							jdom.removeClass('hidden').addClass('error');
+							checked=false;
+						}else{
+							jdom.removeClass('error').addClass('hidden');
+						}
+					}
+				}
+
+				//人数上限
+				checkInt($('#maxNum'),$('#maxNumInfo'),9);
+				//学分数
+				checkInt($('#score'),$('#scoreInfo'),1);
+				//下限
+				checkInt($('#minNum'),$('#minNumInfo'),9);
+				//单价
+				//checkNum($('#price'),$('#pricceInfo'));
+				//后续课程
+				longCheck($('#postCourse'),$('#postInfo'));
+				//先续课程
+				longCheck($('#preCourse'),$('#preInfo'));
+				//考核内容
+				//longCheck($('#area2'),$('#area2Info'));
+				emptyCheck($('#resualttime'),$('#resualttimeInfo'));
+				emptyCheck($('#opentime'),$('#opentimeInfo'));
+
+
+				var dd = maskForm('sampleform');
+				if(!dd){
+					checked = false;
+				}
+				return checked;
+			}
+
+			$('#add_table').click(function(){
+				$("#tablelist").append(
+						'<tr><td class="first tc"><i class="color_gray"></td>'+
+						'<td><input class="dt" type="text" size="20" value="" /></td>'+
+						'<td><input class="dt" type="text" size="6" value="" /><b></b></td>'+
+						'<td><a class="a_del" href="#a"><img src="images/delete.png" />删除</a></td>'+
+						'</tr>'
+				);
+			});
+
+			$('.a_del').live('click',function(e){
+				$(this).parents('tr').remove();
+			});
+
+	});
+
+
+</script>
+
+</head>
+<body>
+
+<!-- Header -->
+<div class="page_head">
+<div class="wrapper"><!-- #BeginLibraryItem "/Library/logoinformation.lbi" --><div class="toplogo"><img src="images/logo.png" alt="全国教师教育网络联盟" /></div>
+            <div class="topnav"><b><a href="style.html">Admin</a></b>，欢迎你登陆 <span>|</span> <a href="#">退出</a></div><!-- #EndLibraryItem -->
+
+
+
+
+</div>
+</div>
+<!-- Header End -->
+
+
+<!-- Page title -->
+<div class="pagetitle"><span><h1>互选计划管理</h1><h2>&nbsp;→&nbsp;开课计划</h2><h2>&nbsp;→&nbsp;新增开课课程</h2></span></div>
+<!-- Page title End -->
+
+
+
+<!-- Page -->
+<div class="page_content">
+
+		<!-- LEFT -->
+         <div class="page_left">
+		 <div id="navMenu" class="arrowlistmenu"></div>
+         </div>
+         <!-- LEFT -->
+
+
+        <!-- RIGHT -->
+         <div class="page_right">
+        <form id="sampleform" method="post" action="#">
+
+        			<fieldset><legend class="big">新增开课课程</legend></fieldset>
+
+                    <div class="clearfix"></div>
+						<style type="text/css">
+						select.half{width:auto}
+						</style>
+					 <p><label class="labeltitle">互选批次组：</label><select id="form_term" name="termId" class="half"></select></p>
+					 <p><label class="labeltitle">学校：</label><select class="half" id="schoolCode"  name="schoolCode" ></select><span id='schoolCodeInfo' class="hidden"></span></p>
+        			<div class="column width5 first">
+
+        				<!-- <input type="hidden" id="schoolCode" name="schoolCode" value="" /> -->
+
+                    	<p><label class="labeltitle"><span style="color:red">*</span>课程名称：</label><input type="text" id="courseName" class="half overlay_input course_plan" name="courseName" value="点击右侧按钮添加"  /><span id='courseNameInfo' class="hidden"></span></p>
+						<p><label class="labeltitle"><span style="color:red">*</span>批次名称：</label><input type="text" id="courseNameStandards" class="half overlay_input course_plan" name="courseNameStandard" value="点击右侧按钮添加"  /><span id='courseNameStandardInfo' class="hidden"></span></p>
+                        <!--<p><label class="labeltitle">选课开始时间：</label><input type="text" id="d122" class="half overlay_time dateinput" onFocus="WdatePicker({isShowWeek:true,onpicked:function(){}})"  /></p>-->
+                        <p><label class="labeltitle">人数上限：</label><input type="text" id="maxNum" class="half" name="maxNum" value="1000"  /><span id='maxNumInfo' class="hidden"></span></p>
+                        <p><label class="labeltitle">先修课程：</label><input type="text" class="half" id="preCourse"  name="preCourse" value=""  /><span id='preInfo' class="hidden"></span></p>
+                        <p><label class="labeltitle"><span style="color:red">*</span>学分数：</label><input type="text" class="half" id="score" name="score" value=""  /><span id='scoreInfo' class="hidden"></span></p>                       
+                       <!-- <p><label class="labeltitle">费用总额：</label><input type="text" id="amount" name="amount" class="half"  disabled="disabled" value=""  /></p> --> 
+                       <p><label class="labeltitle">学时数：</label><input type="text" id="classPeriod" name="classPeriod" class="half"  value=""  /></p>
+                         <p><label class="labeltitle"><span style="color:red">*</span>开课时间：</label><input type="text" id="opentime" name="opentime" class="half overlay_time dateinput" onFocus="WdatePicker({dateFmt:'yyyy-MM-dd HH:mm:ss',isShowWeek:true,onpicked:function(){}})"  /><span id='opentimeInfo' class="hidden"></span></p>
+                        <p><label class="labeltitle">考核形式：</label>
+                        	<select name="examForm" class="half">
+                        		<option value="1">闭卷</option>
+                        		<option value="2">开卷</option>
+                        		<option value="3">论文</option>
+                        		<option value="4">作品</option>
+                        		<option value="5">其他</option>
+                        	</select>
+                        </p>
+                    </div>
+
+                    <div class="column width5">
+
+                        <p><label class="labeltitle">课程代码：</label><input type="text"  class="half " id="courseCode" name="courseCode" disabled="disabled" value="自动带入，不允许编辑"  /></p>
+                        <p><label class="labeltitle">批次代码：</label><input type="text"  class="half " id="courseCodeStandards" name="courseCodeStandard" disabled="disabled" value="自动带入，不允许编辑"  /></p>
+                        <p><label class="labeltitle">人数下限：</label><input type="text"  class="half"  id="minNum" name="minNum" value="0"  /><span id='minNumInfo' class="hidden"></span></p>
+                        <p><label class="labeltitle">后续课程：</label><input type="text" class="half" id="postCourse"  name="postCourse" value=""  /><span id='postInfo' class="hidden"></span></p>
+                        
+                       <!-- <p><label class="labeltitle"><span style="color:red">*</span>学分单价：</label><input type="text" class="half" id="price" name="price" value=""  /><span id='pricceInfo' class="hidden"></span></p> --> 
+						 <p><label class="labeltitle">&nbsp;</label><label type="text" id="d122" class="half  ">&nbsp;  </label></p>
+						 <p><label class="labeltitle"><span style="color:red">*</span>学习结果发布时间：</label><input type="text" id="resualttime" name="resualttime" class="half overlay_time dateinput" onFocus="WdatePicker({dateFmt:'yyyy-MM-dd HH:mm:ss',isShowWeek:true,onpicked:function(){}})"  /><span id='resualttimeInfo' class="hidden"></span></p>
+                    </div>
+                    </div>
+
+                    <p style="display:none;"><label class="labeltitle">成绩构成方式：</label><textarea id="area2" class="small" cols="77" name="scoreStructure"></textarea><span id='area2Info' class="hidden"></span></p>
+
+					<div class="clearfix"></div>
+                    <p><label class="labeltitle"><span style="color:red">*</span>成绩构成方式：</label>
+                    		<div style="width:50%;float:left;">
+                                    <div class="box_header">
+                                    	<a href="#a" id="add_table" class="btn"><i class="icon icon-add">&nbsp;</i>添加</a>
+                                    </div>
+                                    <div class="box_content">
+                                    <table class="tablebox" id="tablelist" >
+                                      <thead class="table_header">
+                                            <tr>
+                                            <th class="first tc" width="6%">&nbsp;</th>
+                                            <th width="40%">构成项</th>
+                                            <th>所占分数</th>
+                                            <th width="20%">&nbsp;</th>
+                                            </tr>
+                                      </thead>
+                                      <tbody id="tablelist_tbody" class="openable_tbody">
+                                      </tbody>
+
+                                 </table>
+                                 </div>
+                         </div>
+                    </p>
+
+					<div class="clearfix"></div>
+                    <p><label class="labeltitle"><span style="color:red">*</span>各校选课配额设置：</label>
+                    		<div style="width:50%;float:left;">
+                    			<div class="box_header">
+                                    	<a href="#a" id="average_btn" class="btn"><i >&nbsp;</i>平均分配</a>
+                                    	<a href="#a" id="clear_btn" class="btn"><i>&nbsp;</i>清空</a>
+                                </div>
+                                 <div class="box_content">
+                                   <table class="tablebox" id="tablelist" >
+                                      <thead class="table_header">
+                                            <tr>
+                                            <th >学校代码</th>
+                                            <th>学校名称</th>
+                                            <th>选课配额</th>
+                                            </tr>
+                                      </thead>
+                                      <tbody id="school_tablelist_tbody" class="openable_tbody">
+                                      </tbody>
+
+                                 </table>
+                               </div>
+                         </div>
+                    </p>
+                 	</div>
+                 	<div class="clearfix"></div>
+                    <div class="btn_opera">
+                    <input type="button" id="course_save" class="btn btn_blue" value="保存"/>
+                    <input type="button" class="btn btn_gray" onclick="location.href='index_2.html'" value="返回"/>
+                    </div>
+
+
+
+
+        </form>
+     </div><!-- RIGHT End -->
+
+         
+         <div class="clearfix"></div>
+
+</div>
+<div class="clearfix"></div>
+
+<div class="page_footer">
+<p>主管单位：教育部 　主办单位：全国教师教育网络联盟</p>
+<p>全国教师教育网络联盟秘书处 电话：010－58802946 电子信箱：msz@jswl.cn</p>
+<p>全国教师教育网络联盟 版权所有 京ICP备05069600号 </p>
+</div>
+
+<script type="text/javascript" src="js/menu.js"></script>
+</body>
+</html>

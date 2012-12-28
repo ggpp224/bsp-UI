@@ -1,0 +1,264 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta content="教师网联" name="keywords" />
+<meta content="教师网联" name="description" />
+<title>互选批次组管理 - 教师网联</title>
+<link href="css/reset.css" rel="stylesheet" type="text/css" />
+<link href="css/style.css" rel="stylesheet" type="text/css" />
+<link href="css/nyroModal.css" rel="stylesheet" type="text/css" />
+
+
+
+<!--//日期控件-->
+<script language="javascript" type="text/javascript" src="js/WdatePicker.js"></script>
+<!--[if lt IE 9]>
+<script type="text/javascript" src="js/html5.js"></script>
+<![endif]-->
+<!--[if IE 6]>
+<script type="text/javascript" src="js/DD_belatedPNG_0.0.8a-min.js" ></script>
+<script type="text/javascript">DD_belatedPNG.fix('.toplogo img, .btn_black, .btn_blue, .btn_red, .btn_ora, .btn_green, .btn_gray, .btn,');   </script>
+<![endif]-->
+
+
+
+<script type="text/javascript" src="js/bases.js"></script>
+<script type="text/javascript">document.write('\<script id="jsdata" type="text/javascript" src="js/data.js?t='+new Date().valueOf()+'"\>\<\/script\>');</script>
+<script type="text/javascript" src="js/controler/index_1_data.js"></script>
+<script type="text/javascript">
+    $(document).ready(function() {
+			summary.tabs();//Tabs
+			summary.tablehover();//Hover
+
+			//disableForm('tab02');
+			//课程代码
+			$(".overlay_index_1_add").click(function(e) {
+					e.preventDefault();
+					$.fn.nyroModalManual({
+						width:650,
+						title:'学校查询添加',
+						url: 'overlay_index_1_add.html'
+					});
+				return false;
+			});
+			
+			
+
+			//删除
+			$('.overlay_delete').click(function(e) {
+				e.preventDefault();
+				$.fn.nyroModalManual({
+					width:400,
+					title:"系统提示",
+					url: 'overlay_delete.html'
+				});
+			return false;
+			});
+
+	});
+
+
+</script>
+
+</head>
+<body>
+
+<!-- Header -->
+<div class="page_head">
+<div class="wrapper"><!-- #BeginLibraryItem "/Library/logoinformation.lbi" --><div class="toplogo"><img src="images/logo.png" alt="全国教师教育网络联盟" /></div>
+            <div class="topnav"><b><a href="style.html">Admin</a></b>，欢迎你登陆 <span>|</span> <a href="#">退出</a></div>
+            <div class="link_other"><a href="#">门户</a></div><!-- #EndLibraryItem --></div>
+</div>
+<!-- Header End -->
+
+
+<!-- Page title -->
+<div class="pagetitle"><span><h1>互选计划管理</h1><h2>&nbsp;→&nbsp;互选批次组管理</h2><h2>&nbsp;→&nbsp;详情</h2><h2>&nbsp;→&nbsp;互选批次组基本信息</h2></span></div>
+<!-- Page title End -->
+
+
+
+<!-- Page -->
+<div class="page_content">
+
+		<!-- LEFT -->
+         <div class="page_left"><!-- #BeginLibraryItem "/Library/navigation.lbi" -->
+<div id="navMenu" class="arrowlistmenu"></div>
+<!-- #EndLibraryItem --></div>
+         <!-- LEFT -->
+  		<!-- RIGHT -->
+        <div class="page_right">
+
+        			<fieldset><legend class="big">详情</legend></fieldset>
+
+        			<div id="tablist">
+                          <ul id="explore_nav">
+                                <li id="ex_tab1"><a rel="tab01" href="#" class="current">互选批次组基本信息</a></li>
+                                <li id="ex_tab2"><a rel="tab02" href="#">互选批次组参数信息</a></li>
+                                <li id="ex_tab3"><a rel="tab03" href="#">相关批次信息</a></li>
+                          </ul>
+
+                          <div id="tablist_cont">
+                                  <div id="tab01">
+                                        <form id="term_info">
+                                    	  <div class="clearfix">
+		                                  <div class="column width3 first">
+                                          	<p><label class="labeltitle"><i class="color_red">* 批次名称：</i></label><input type="text" id="termName" class="half" name="termName" value="2012年第一学期"  /></p>
+                                            <p style="display:none;"><label class="labeltitle">序号：</label><input type="text" id="serialNum" class="half" name="orderNum" disabled="disabled" value="默认自增1，不允许编辑"  /></p>
+
+                                            <p><label class="labeltitle">批次开始时间：</label><input type="text" id="termStarttime" name="termStarttime" class="half"   /></p>
+                                            <p>
+                                            <label class="labeltitle">批次结束时间：</label><input type="text" id="termEndtime" name="termEndtime" class="half" />
+                                            </p>
+
+										</div>
+                                        </div>
+
+                                        <p style="display:none;"><label class="labeltitle"><i class="color_red">* 相关学生类型：</i></label>
+                                            <input type="checkbox" id="dateformat1" class="" value="1" name="ralationStudent"/>
+											<label class="choice" for="dateformat1">免费师范生</label>
+											<input type="checkbox" id="dateformat2" class="" value="2" name="ralationStudent"/>
+											<label class="choice" for="dateformat2">免费师范生硕士</label>
+                                            <input type="checkbox" id="dateformat3" class="" value="3" name="ralationStudent"/>
+											<label class="choice" for="dateformat3">教师职后教育</label>
+                                        </p>
+
+                                        <p><label class="labeltitle">批次描述：</label><textarea id="termDescribe" class="medium" cols="96" name="termDescribe">2012年第一学期的选课</textarea></p>
+                                       <p><label class="labeltitle"><i class="color_red">* 相关学校：</i></label><div class="clearfix"></div></p>
+
+                                        <div class="box_header">
+
+                                        </div>
+                                          <div class="box_content">
+
+                                          <table class="tablebox">
+                                          <thead class="table_header">
+                                                <tr>
+                                                <th class="first tc" width="4%">&nbsp;</th>
+                                                <th>学校代码</th>
+                                                <th>学校名称</th>
+                                                <!-- <th>批量选课开始时间</th>
+                                                <th>批量选课结束时间</th> -->
+                                                </tr>
+                                          </thead>
+
+                                          <tbody id="termInfo_tbody" class="openable_tbody">
+
+                                          </tbody>
+                                		  </table>
+
+                                          </div>
+
+
+                                        <div class="btn_opera">
+
+                                        <input type="button" onclick="javascript:self.close()" class="btn backBtn btn_gray" id="term_back" value="关闭"/>
+                                        </div>
+                                      </form>
+                                  </div>
+
+
+
+                                  <div id="tab02">
+                                  		<br />
+
+                                          <div class="box_header"><i class="color_red">选课参数区</i></div>
+                                          <div class="box_content">
+                                          <table class="tablebox">
+                                          <thead class="table_header">
+                                                <tr>
+                                                <th class="first">参数名称</th>
+                                                <th>当前参数值</th>
+                                                <th>操作</th>
+                                                </tr>
+                                          </thead>
+
+                                          <tbody id="params_tbody" class="openable_tbody">
+                                          </tbody>
+                                		  </table>
+                                          </div>
+
+                                          <br />
+
+                                          <div class="box_header"><i class="color_red">选课控制区</i></div>
+                                          <div class="box_content">
+                                          <table class="tablebox">
+                                          <thead class="table_header">
+                                                <tr>
+                                                <th class="first">阶段列表</th>
+                                                <th>当前状态</th>
+                                                <th>计划开始时间</th>
+                                                <th>计划结束时间</th>
+                                                </tr>
+                                          </thead>
+
+                                          <tbody id="controler_tbody" class="openable_tbody">
+                                          </tbody>
+                                		  </table>
+                                          </div>
+
+
+
+                                         <div class="btn_opera">
+                                        <input type="button" class="btn backBtn btn_gray"  onclick="javascript:self.close()" value="关闭"/>
+                                        </div>
+                          		 </form>
+
+
+                           </div>
+                           
+                           <div id="tab03">
+
+                                  		<br />
+										<form id="term_info_3">
+                                          <div class="box_header">
+                                          <input type="button" class="btn btn_blue overlay_index_3_add" value="添加批次"/>
+                                          </div>
+                                          <div class="box_content">
+                                          <table class="tablebox">
+                                          <thead class="table_header">
+                                                <tr>
+                                                <th class="first" rowspan="2">批次名称</th>
+                                                <th colspan="3" style="text-align:center;">选课学生范围</th>
+                                                </tr>
+                                                <tr>
+                                          		<th class="first">专业</th>
+                                          		<th>年级</th>
+                                          		<th>层次</th>
+                                          		</tr>
+
+                                          </thead>
+
+                                          <tbody id="js_ched_list" class="openable_tbody"></tbody>
+                                		  </table>
+                                          </div>
+										   <div class="btn_opera">
+											<input type="button" class="btn btn_red" onclick="javascript:self.close()" value="关闭"/>
+											</div>
+										</form>
+
+								 </div>
+                           
+                	</div>
+
+
+
+
+
+        </div>
+        <div class="clearfix"></div>
+            <!-- RIGHT End -->
+
+</div>
+<div style="clear:both;"></div>
+
+<div class="page_footer">
+<p>主管单位：教育部 　主办单位：全国教师教育网络联盟</p>
+<p>全国教师教育网络联盟秘书处 电话：010－58802946 电子信箱：msz@jswl.cn</p>
+<p>全国教师教育网络联盟 版权所有 京ICP备05069600号 </p>
+</div>
+
+<script type="text/javascript" src="js/menu.js"></script>
+</body>
+</html>

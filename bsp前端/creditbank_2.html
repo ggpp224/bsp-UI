@@ -1,0 +1,176 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta content="教师网联" name="keywords" />
+<meta content="教师网联" name="description" />
+<title>管理员查询 - 教师网联</title>
+<link href="css/reset.css" rel="stylesheet" type="text/css" />
+<link href="css/style.css" rel="stylesheet" type="text/css" />
+<link href="css/nyroModal.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="js/bases.js"></script>
+<script type="text/javascript" src="js/controler/ComboxOperate.js"></script>
+<!--[if lt IE 9]>
+<script type="text/javascript" src="js/html5.js"></script>
+<![endif]-->
+<!--[if IE 6]>
+<script type="text/javascript" src="js/DD_belatedPNG_0.0.8a-min.js" ></script>
+<script type="text/javascript">DD_belatedPNG.fix('.toplogo img');   </script>
+<![endif]-->
+
+<script type="text/javascript">
+    $(document).ready(function() {
+			//summary.tabs();//Tabs
+			summary.tablehover();//Hover
+	});
+
+	//展开合闭
+	function slideSwitch(obja,objb){
+	$("."+obja).slideToggle("fast");
+	$("."+objb).slideToggle("fast");
+	}
+
+</script>
+
+</head>
+<body>
+
+<!-- Header -->
+<div class="page_head">
+<div class="wrapper"><!-- #BeginLibraryItem "/Library/logoinformation.lbi" --><div class="toplogo"><img src="images/logo.png" alt="全国教师教育网络联盟" /></div>
+            <div class="topnav"><b><a href="style.html">Admin</a></b>，欢迎你登陆 <span>|</span> <a href="#">退出</a></div><!-- #EndLibraryItem -->
+
+
+
+</div>
+</div>
+<!-- Header End -->
+
+
+<!-- Page title -->
+<div class="pagetitle"><span><h1>学分银行</h1><h2>&nbsp;→&nbsp;管理员查询</h2></span></div>
+<!-- Page title End -->
+
+
+
+<!-- Page -->
+<div class="page_content">
+
+         <!-- LEFT -->
+         <div class="page_left">
+		 <div id="navMenu" class="arrowlistmenu"></div>
+         </div>
+         <!-- LEFT -->
+
+         <!-- RIGHT -->
+         <div class="page_right">
+<style type="text/css">
+dl.search_dl dd#dd_termid{width:600px}
+dl.search_dl dd#dd_termid select{width:auto}
+</style>
+  				<div class="search">
+  				<form method="post" id="studentsearch_form" action="">
+                		<dl class="search_dl">
+                        <dt>互选批次组：</dt>
+                        <dd id="dd_termid"><select name="termId" id="form_term"></select></dd>
+                        </dl>
+
+                        <fieldset><legend>学生信息</legend></fieldset>
+                        <dl class="search_dl">
+                        <dt>学生ID：</dt>
+                        <dd><input id="studentId" name="studentId" type="text" value="" /></dd>
+                        <dt>学生姓名：</dt>
+                        <dd><input id="studentName" name="studentName" type="text" value="" /></dd>
+                        <dt>学员学校：</dt>
+                        <dd><select name="studentSchoolCode" id="form_school"></select></dd>
+                        </dl>
+                        <dl class="search_dl">
+                        <dt>层次：</dt>
+                        <dd><select name="levelCode" id="form_educationlevel"></select></dd>
+                        <dt>年级：</dt>
+                        <dd><select name="gradeCode" id="form_grade"></select></dd>
+                        <dt>专业：</dt>
+                        <dd><select name="majorCode" id="form_major"></select></dd>
+                        </dl>
+
+                        <fieldset><legend>课程信息</legend></fieldset>
+                        <dl class="search_dl">
+                        <dt>课程代码：</dt>
+                        <dd><input type="text" name="courseCode" value="" /></dd>
+                        <dt>课程名称：</dt>
+                        <dd><input type="text" name="courseName" value="" /></dd>
+                        <dt>批次名称：</dt>
+                        <dd><input id="courseStdName" name="courseNameStandard" value="" /></dd>
+                        </dl>
+                        <dl class="search_dl">
+                        <dt>授课学校：</dt>
+                        <dd><select name="schoolCode" id="course_school"></select></dd>
+                        <dt class="hs">层次：</dt>
+                        <dd class="hs"><select name="educationLevelCode" id="course_level"></select></dd>
+                        <dt>学科：</dt>
+                        <dd><select name="subjectCode" id="form_subject"></select></dd>
+                        </dl>
+
+                        <div class="search_btn"><input id="form_query" type="button" class="btn btn_gray" value="查询" />&nbsp;
+                        <input type="reset" id='resetBtn' class="btn btn_gray" value="重置" />
+                        </div>
+                        <div class="slide_box">
+                        <a href="javascript:void(0)" onclick='slideSwitch("search","search_close")'>合闭搜索</a>
+                        </div>
+                  </form>
+                </div>
+
+                <div class="search_close" style="display:none;">
+                <a href="javascript:void(0)" onclick='slideSwitch("search","search_close")'>展开搜索</a>
+                </div>
+
+                <div class="box_header">
+                    <!--<input type="submit" class="btn btn_blue" value="审核通过"/>
+                    <input type="submit" class="btn btn_red" value="审核未通过"/>
+                    <input type="submit" class="btn btn_green" value="取消审核"/>-->
+                </div>
+                <div class="box_content">
+                <table class="tablebox">
+                      <thead class="table_header">
+                            <tr>
+                            <th>课程代码</th>
+                            <th>课程名称</th>
+                            <th>标准名称</th>
+                            <th>授课学校</th>
+                            <th>层次</th>
+                            <th>学科</th>
+                            <th>互选批次组</th>
+                            <th>课程性质</th>
+                            <th>获得学分</th>
+                            </tr>
+                      </thead>
+
+                      <tbody id="js_openable_tbody" class="openable_tbody">
+
+                      </tbody>
+
+                 </table>
+                 </div>
+                 <div id="pageShow"></div>
+                 </div>
+         <!-- RIGHT End -->
+         <div class="clearfix"></div>
+
+</div>
+
+<div class="page_footer">
+<p>主管单位：教育部 　主办单位：全国教师教育网络联盟</p>
+<p>全国教师教育网络联盟秘书处 电话：010－58802946 电子信箱：msz@jswl.cn</p>
+<p>全国教师教育网络联盟 版权所有 京ICP备05069600号 </p>
+</div>
+
+
+
+
+<script type="text/javascript">document.write('\<script id="jsdata" type="text/javascript" src="js/data.js?t='+new Date().valueOf()+'"\>\<\/script\>');</script>
+
+<script type="text/javascript" src="js/controler/creditbank_2.js"></script>
+
+<script type="text/javascript" src="js/menu.js"></script>
+</body>
+</html>

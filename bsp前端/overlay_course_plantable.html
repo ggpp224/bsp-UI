@@ -1,0 +1,59 @@
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<script type="text/javascript">
+	/*$(document).ready(
+			function() {
+				$.getJSON(G_ROOT+'courseattribute/findCourseCode/list/'+win_termId+'/'+win_courseCode,function(data){
+					var data = data.list;
+					if (data) {
+						var html = '';
+						$.each(data, function(k, v) {
+							html+='<tr>';
+							html+='<td>'+'0'+'</td>';
+							html+='<td>'+'0'+'</td>';
+							html+='<td>'+'0'+'</td>';
+							html+='<td>'+'0'+'</td>';
+							html+='</tr>';
+						});
+						$('#win_js_plantable_tbody').html(html);
+					}
+				})
+
+			});*/
+$(function(){
+	html='';
+	html+='<tr>';
+	html+='<td>'+'0'+'</td>';
+	html+='<td>'+'0'+'</td>';
+	html+='<td>'+'0'+'</td>';
+	html+='<td>'+'0'+'</td>';
+	html+='<td>'+'0'+'</td>';
+	html+='</tr>';
+	$('#win_js_plantable_tbody').html(html);
+	});
+</script>
+<div class="table-container">
+	<table id="win_table" class="tablebox">
+		<thead class="table_header">
+			<tr>
+				<th>计划选课人数</th>
+				<th>上报选课人数</th>
+				<th>个人选课人数</th>
+				<th>人数下限/上限</th>
+				<th>批量选课人数</th>
+			</tr>
+		</thead>
+
+		<tbody id="win_js_plantable_tbody" class="openable_tbody">
+
+		</tbody>
+	</table>
+</div>
+<div class="overlay_btn">
+    <input type="button" class="btn btn_gray overlayClose" value="关闭"/>
+</div>
+
+
+
+
+

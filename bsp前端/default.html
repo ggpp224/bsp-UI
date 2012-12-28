@@ -1,0 +1,86 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>基础支撑系统</title>
+<link href="css/reset.css" rel="stylesheet" type="text/css" />
+<link href="css/style.css" rel="stylesheet" type="text/css" />
+<style type="text/css">
+<!--
+body,ul,ol,li,p,h1,h2,h3,h4,h5,h6,form,fieldset,table,td,img,div{margin:0;padding:0;border:0; font-family:tahoma, arial, sans-serif; font-size:12px;}
+a { text-decoration:none;}
+a:hover { text-decoration:underline}
+
+.topline 			{ height:26px; background:url(images/top_header_bg.png) repeat-x;}
+.topline_box		{ width:1000px; margin:0 auto; color:#ccc; line-height:23px; text-align:right;}
+.topline_box i		{ padding-left:10px; font-style:normal;}
+.topline_box span	{ color:#999; }
+.topline_box a		{ color:#c00; padding-left:10px; text-decoration:none;}
+.topline_box a:hover{ text-decoration:underline;}
+.topline_box a img 	{ vertical-align:middle;}
+
+.logo_banner {margin:0 auto;width:1002px;position: relative;}
+
+.user_info {position:absolute;right: 5px;top: 0px;font-size: 12px;color:#999999;line-height:25px;}
+.user_info a { color:#FF0000;}
+.contnet {margin:0 auto;width:1000px;border:1px solid #ccc;height:429px;background:url(images/contnet_bg.gif) repeat-x;position: relative;margin-bottom: 8px;border-radius:4px;}
+.contnet h3 {font-family:"微软雅黑";line-height: 40px;padding-left: 20px;font-size: 16px;position: absolute;left: 24px;top: 26px;color: #999;}
+.contnet ul {display:block;height: 300px; padding-left: 45px; }
+.contnet li {float:left;display:block;width:303px;margin-top: 90px;text-align: center;}
+.footer {background:#f8f8f8;padding:10px 0;text-indent:20px;color:#999;border:1px solid #ddd;border-radius:4px;width: 1000px;margin: 0 auto;font-family:tahoma, arial, sans-serif;font-size: 14px;}
+.footer p{ text-align:center;}
+-->
+</style></head>
+
+<body>
+<div class="page_head">
+<div class="wrapper"><!-- #BeginLibraryItem "/Library/logoinformation.lbi" --><div class="toplogo"><img src="images/logo.png" alt="全国教师教育网络联盟" /></div>
+            <div class="topnav"><b><a href="style.html"></a></b> <span>|</span> <a href="#"></a></div>
+            <div class="link_other"><a href="#"></a></div><!-- #EndLibraryItem --></div>
+</div>
+<div class="contnet"><h3>请选择您想进入的业务模块</h3>
+<ul>
+<li><a class="go" rel="1"  href="#"><img class="mimg" src="images/ico_no_01.png" alt="" title="点击进入免费师范生系统" /></a></li>
+<li><a class="go" rel="2" href="#"><img class="mimg"  src="images/ico_no_02.png" alt="" title="点击进入免费师范生教育硕士系统" /></a></li>
+<li><a class="go" rel="3" href="#"><img class="mimg"  src="images/ico_no_03.png" alt="" title="点击进入教师职后教育系统"/></a></li>
+</ul>
+</div>
+
+<div class="footer">
+<p>主管单位：教育部 　主办单位：全国教师教育网络联盟</p>
+<p>全国教师教育网络联盟秘书处 电话：010－58802946 电子信箱：msz@jswl.cn</p>
+<p>全国教师教育网络联盟 版权所有 京ICP备05069600号 </p>
+</div>
+<script type="text/javascript" src="js/bases.js"></script>
+<script type="text/javascript">
+AmBow_CK.setcookie('st','');
+ $(function(){
+	 var type = user['studentType'].split(','),
+		imgs = $('.mimg');
+	for(var i=0,len=type.length;i<len;i++){
+		var idx = parseInt(type[i]);
+		var img = imgs[idx-1];
+		img.src="images/ico_0"+idx+".png";
+	}
+	 $('.go').click(function(e){
+		 var rel = $(this).attr('rel');
+		 AmBow_CK.setcookie('st',rel);
+		 var link = "index.html";
+		 if(user['uRole']==3){
+			 link="course.html";
+		 }
+		 if(type.indexOf(rel.toString()) != -1){
+			 location.href=link;
+		 }
+
+	 });
+
+	 var a = document.getElementById('logback');
+	 //a.href=G_ROOT+"sns/space.jsp?do=home";
+	 a.href='http://wlpt.ambow.net:7005/sns/space.jsp?do=home';
+	 a.innerHTML = "返回个人空间";
+
+ })
+</script>
+</body>
+</html>

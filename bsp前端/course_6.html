@@ -1,0 +1,142 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta content="教师网联" name="keywords" />
+<meta content="教师网联" name="description" />
+<title>选课结果审核 - 教师网联</title>
+<link href="css/reset.css" rel="stylesheet" type="text/css" />
+<link href="css/style.css" rel="stylesheet" type="text/css" />
+<link href="css/nyroModal.css" rel="stylesheet" type="text/css" />
+
+<script type="text/javascript" src="js/bases.js"></script>
+
+<!--[if lt IE 9]>
+<script type="text/javascript" src="js/html5.js"></script>
+<![endif]-->
+<!--[if IE 6]>
+<script type="text/javascript" src="js/DD_belatedPNG_0.0.8a-min.js" ></script>
+<script type="text/javascript">DD_belatedPNG.fix('.toplogo img');   </script>
+<![endif]-->
+
+<script type="text/javascript">
+	$(document).ready(function() {
+		//summary.tabs();//Tabs
+		summary.tablehover();//Hover
+
+
+	});
+
+	//展开合闭
+	function slideSwitch(obja, objb) {
+		$("." + obja).slideToggle("fast");
+		$("." + objb).slideToggle("fast");
+	}
+</script>
+
+</head>
+<body>
+
+	<!-- Header -->
+<div class="page_head">
+<div class="wrapper"><!-- #BeginLibraryItem "/Library/logoinformation.lbi" --><div class="toplogo"><img src="images/logo.png" alt="全国教师教育网络联盟" /></div>
+            <div class="topnav"><b><a href="style.html">Admin</a></b>，欢迎你登陆 <span>|</span> <a href="#">退出</a></div>
+            <div class="link_other"><a href="#">门户</a></div><!-- #EndLibraryItem --></div>
+</div>
+<!-- Header End -->
+
+
+<!-- Page title --><!-- Page title -->
+<div class="pagetitle"><span><h1>选课管理</h1><h2>&nbsp;→&nbsp;选课结果审核</h2><h2>&nbsp;→&nbsp;志愿选课审核</h2></span></div>
+<!-- Page title End -->
+
+
+
+	<div class="page_content">
+	<!-- LEFT -->
+		<div class="page_left">
+			<div id="navMenu" class="arrowlistmenu"></div>
+		</div>
+		<!-- LEFT -->
+		<!-- RIGHT -->
+		<div class="page_right">
+			<div id="tablist">
+				<ul id="explore_nav">
+					<li id="ex_tab1"><a rel="tab01" href="course_plsh.html">批量选课审核</a></li>
+					<li id="ex_tab2"><a rel="tab02" href="course_6.html"
+						class="current">志愿选课审核</a></li>
+				</ul>
+				<div id="tablist_cont">
+					<div id="tab01">
+
+
+						<div class="clearfix">
+							<!--
+							<div class="column width5 first">
+								<div class="box f_center"><h5><b>操作</b></h5></div>
+                                <p>&nbsp;</p>
+                                <p>&nbsp;</p>
+                                 <p><label class="labeltitle">确认互选批次组：</label><select name="termid" id="form_term"></select></p>
+                                <p><label class="labeltitle">&nbsp;</label><input  id="autoBtn" type="button"  disabled="disabled"  class="btn btn_black" value="开始志愿选课自动审核"/> </p>
+
+							</div>
+							<div class="column width5">
+								<div class="box f_center"><h5><b>系统状态</b></h5></div>
+                                <p>&nbsp;</p>
+                                <p>&nbsp;</p>
+                                <p><label class="labeltitle">志愿选课当前处理批次：</label><i class="color_red"><b  id="termSpan"></b></i></p>
+                                <p><label class="labeltitle">志愿选课当前处理进程：</label><i class="color_red"><b id="statuSpan"></b></i></p>
+                                <p><label class="labeltitle">&nbsp;</label><input  id="viewBtn" type="button" disabled="disabled"  class="btn btn_blue"  value="查看志愿分布情况"/> </p>
+                                <p><label class="labeltitle">&nbsp;</label><input  id="overBtn"  type="button" disabled="disabled"  class="btn btn_gray" value="手工调整处理完毕"/> </p>
+                                <p><label class="labeltitle">&nbsp;</label><input  id="resultBtn"  type="button" disabled="disabled"  class="btn btn_gray" value="生成志愿选课结果"/> </p>
+
+							</div> -->
+
+
+
+							<div class="box f_center"><h5><b id="statuSpan"></b></h5></div>
+
+                                <div style="border:1px solid #ccc; padding:10px; width:500; margin:10px auto 0; text-align:center; background:#f6f6f6">
+                                 <p>互选批次组：<select  name="termid" id="form_term"></select></p>
+                                <p><input  id="autoBtn" type="button"  disabled="disabled"  class="btn btn_black" value="开始志愿选课自动审核"/> </p>
+                                </div>
+
+                                <div style="text-align:center; width:98%; padding:0; margin:10px 0 0 0"><img src="images/arrow.png" /></div>
+
+                                <div style="padding:10px; width:98%;text-align:center;">
+                                <p><input id="viewBtn" type="button" disabled="disabled"  class="btn btn_blue"  value="查看志愿选课分布情况"/> </p>
+                                 <div style="text-align:center; width:98%;text-align:center; padding:0; margin:10px 0 0 0;"><img src="images/arrow.png" /></div>
+                                <p><input id="overBtn"  type="button" disabled="disabled"  class="btn btn_gray" value="手工调整处理完毕"/> </p>
+
+                                 <div style="text-align:center; width:98%; padding:0; margin:10px 0 0 0"><img src="images/arrow.png" /></div>
+
+                                <p><input id="resultBtn"  type="button" disabled="disabled" class="btn btn_gray" value="生成志愿选课结果"/> </p>
+
+                                </div>
+						</div>
+
+
+
+					</div>
+				</div>
+			</div>
+	</div>
+	<div style="clear:both;"></div>
+<!-- Footer -->
+<div class="clearfix"></div>
+</div>
+
+<div class="page_footer">
+<p>主管单位：教育部 　主办单位：全国教师教育网络联盟</p>
+<p>全国教师教育网络联盟秘书处 电话：010－58802946 电子信箱：msz@jswl.cn</p>
+<p>全国教师教育网络联盟 版权所有 京ICP备05069600号 </p>
+</div>
+
+<!-- Footer End -->
+
+	<script type="text/javascript">document.write('\<script id="jsdata" type="text/javascript" src="js/data.js?t='+new Date().valueOf()+'"\>\<\/script\>');</script>
+
+	<script type="text/javascript" src="js/controler/course_6.js"></script>
+	<script type="text/javascript" src="js/menu.js"></script>
+</body>
+</html>

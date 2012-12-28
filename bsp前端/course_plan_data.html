@@ -1,0 +1,192 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta content="教师网联" name="keywords" />
+<meta content="教师网联" name="description" />
+<title>新增开课课程 - 教师网联</title>
+<link href="css/reset.css" rel="stylesheet" type="text/css" />
+<link href="css/style.css" rel="stylesheet" type="text/css" />
+<link href="css/nyroModal.css" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+<!--//日期控件-->
+<!--<script language="javascript" type="text/javascript" src="js/WdatePicker.js"></script>-->
+<!--[if lt IE 9]>
+<script type="text/javascript" src="js/html5.js"></script>
+<![endif]-->
+<!--[if IE 6]>
+<script type="text/javascript" src="js/DD_belatedPNG_0.0.8a-min.js" ></script>
+<script type="text/javascript">DD_belatedPNG.fix('.toplogo img');   </script>
+<![endif]-->
+
+
+<script type="text/javascript">document.write('\<script id="jsdata" type="text/javascript" src="js/data.js?t='+new Date().valueOf()+'"\>\<\/script\>');</script>
+<script type="text/javascript" src="js/bases.js"></script>
+
+<script type="text/javascript">
+
+    $(document).ready(function() {
+    	var pn=getQuery('pn')||1;
+			//summary.tabs();//Tabs
+			summary.tablehover();//Hover
+
+       	disableForm('sampleform');
+
+			//授课学校init
+		 	var schoolCode = getQuery("c");
+		 	//document.getElementById("Cchool").value=decodeURI(getQuery("n"));
+		 	document.getElementById("schoolCode").value=schoolCode;
+			//controller
+			var cmb = new ComboxOperate();
+
+			// 互选批次组
+			cmb.term();
+
+			var price = $("#price"),score=$("#score"),amount=$("#amount");
+			var accMul = function(arg1,arg2)
+			{
+				var m=0,s1=arg1.toString(),s2=arg2.toString();
+				try{m+=s1.split(".")[1].length}catch(e){};
+				try{m+=s2.split(".")[1].length}catch(e){};
+				return Number(s1.replace(".",""))*Number(s2.replace(".",""))/Math.pow(10,m) ;
+			}
+
+			$('.backBtn').click(function(){
+				location.href="index_2.html?pn="+pn;
+			});
+
+			$.getJSON(G_ROOT+G_FormArr['plancourseData']+"/"+getQuery("i"),function(data){
+				var dt = data.list[0];
+				if(dt){
+					var price=dt.price,score=dt.score;
+					var form = document.getElementById('sampleform');
+					var els = form.elements;
+					for(var i=0,len=els.length;i<len;i++){
+						el = els[i];
+						if(el.type=='text'){
+							el.value='';
+						}
+					}
+					els.courseCode.value=dt.courseCode;
+					els.courseName.value = dt.courseName;
+					els.maxNum.value = dt.maxNum;
+					els.preCourse.value = dt.preCourse||'';
+					els.score.value = score;
+					els.examForm.value = dt.examForm;
+					els.minNum.value = dt.minNum;
+					els.postCourse.value = dt.postCourse||'';
+					els.price.value = price;
+					els.termId.value = dt.termId;
+					els.scoreStructure.value = dt.scoreStructure||'';
+
+
+					els.amount.value = accMul(price,score);
+
+				}
+			});
+
+	});
+
+
+</script>
+
+</head>
+<body>
+
+<!-- Header -->
+<div class="page_head">
+<div class="wrapper"><!-- #BeginLibraryItem "/Library/logoinformation.lbi" --><div class="toplogo"><img src="images/logo.png" alt="全国教师教育网络联盟" /></div>
+            <div class="topnav"><b><a href="style.html">Admin</a></b>，欢迎你登陆 <span>|</span> <a href="#">退出</a></div><!-- #EndLibraryItem -->
+
+
+
+
+</div>
+</div>
+<!-- Header End -->
+
+
+<!-- Page title -->
+<div class="pagetitle"><span><h1>互选计划管理</h1><h2>&nbsp;→&nbsp;开课计划</h2><h2>&nbsp;→&nbsp;开课计划信息</h2></span></div>
+<!-- Page title End -->
+
+
+
+<!-- Page -->
+<div class="page_content">
+
+		<!-- LEFT -->
+         <div class="page_left">
+		 <div id="navMenu" class="arrowlistmenu"></div>
+         </div>
+         <!-- LEFT -->
+
+
+        <!-- RIGHT -->
+         <div class="page_right">
+        <form id="sampleform" method="post" action="#">
+
+        			<fieldset><legend class="big">开课计划信息</legend></fieldset>
+
+                    <div class="clearfix">
+        			<div class="column width3 first">
+        				<input type="hidden" id="schoolCode" name="schoolCode" value="" />
+                    	<p><label class="labeltitle">课程名称：</label><input type="text" id="courseNameStandard" class="half course_plan" name="courseName" value="点击右侧按钮添加"  /></p>
+                        <p><label class="labeltitle">互选批次组：</label><select id="form_term" name="termId" class="half"></select></p>
+                        <!--<p><label class="labeltitle">选课开始时间：</label><input type="text" id="d122" class="half overlay_time dateinput" onFocus="WdatePicker({isShowWeek:true,onpicked:function(){}})"  /></p>-->
+                        <p><label class="labeltitle">人数上限：</label><input type="text" id="" class="half" name="maxNum" value="1000"  /></p>
+                        <p><label class="labeltitle">先修课程：</label><input type="text" class="half" name="preCourse" value=""  /></p>
+                        <p><label class="labeltitle">学分数：</label><input type="text" class="half" id="score" name="score" value=""  /></p>
+                        <p><label class="labeltitle">费用总额：</label><input type="text" id="amount" name="amount" class="half"  disabled="disabled" value=""  /></p>
+                        <p><label class="labeltitle">成绩构成方式：</label>
+                        	<select name="examForm" class="half">
+                        		<option value="1">闭卷</option>
+                        		<option value="2">开卷</option>
+                        		<option value="3">论文</option>
+                        		<option value="4">作品</option>
+                        		<option value="5">其他</option>
+                        	</select>
+                        </p>
+                    </div>
+
+                    <div class="column width3">
+                        <p><label class="labeltitle">课程代码：</label><input type="text"  class="half " id="courseCodeStandard" name="courseCode" disabled="disabled" value=""  /></p>
+                        <p><label class="labeltitle">&nbsp;</label><label type="text" id="d122" class="half overlay_time dateinput">&nbsp;  </label></p>
+                        <p><label class="labeltitle">人数下限：</label><input type="text"  class="half" name="minNum" value="0"  /></p>
+                        <p><label class="labeltitle">后续课程：</label><input type="text" class="half" name="postCourse" value=""  /></p>
+                        <p><label class="labeltitle">学分单价：</label><input type="text" class="half" id="price" name="price" value=""  /></p>
+
+                    </div>
+                    </div>
+
+                    <p><label class="labeltitle">考核内容：</label><textarea id="area2" class="small" cols="77" name="scoreStructure"></textarea></p>
+
+                    <div class="btn_opera">
+                    <input type="button"  onclick="javascript:self.close()" class="btn backBtn btn_gray" value="关闭"/>
+                    </div>
+
+
+
+
+        </form>
+        </div>
+         <!-- RIGHT End -->
+         <div class="clearfix"></div>
+
+</div>
+<div class="clearfix"></div>
+
+<div class="page_footer">
+<p>主管单位：教育部 　主办单位：全国教师教育网络联盟</p>
+<p>全国教师教育网络联盟秘书处 电话：010－58802946 电子信箱：msz@jswl.cn</p>
+<p>全国教师教育网络联盟 版权所有 京ICP备05069600号 </p>
+</div>
+
+<script type="text/javascript" src="js/menu.js"></script>
+</body>
+</html>

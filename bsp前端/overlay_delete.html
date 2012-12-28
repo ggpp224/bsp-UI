@@ -1,0 +1,67 @@
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<script type="text/javascript">
+	$(document).ready(function(){
+		$('#win_sure').click(function(e){
+			var ids=[];
+			if(typeof getCodes != 'undefined'){
+				ids = getCodes('js_openable_tbody');
+				var codes = ids[1];
+				ids = ids[0];
+			}else{
+				ids = getIds('js_openable_tbody');
+			}
+			
+			
+			var userid = user['uid'];
+			 var params = {
+				idList:ids,
+				userId:userid
+			};
+			 if(typeof getCodes != 'undefined'){
+				 params.codeList=codes;
+			 }
+			var str = Ab.encode(params);
+			var tid = $('#form_term').val();
+			var urlStr ='';
+			if(tid){urlStr += '?termId='+tid;}
+			$.ajax({
+				type: 'POST',
+				data:str,
+				dataType: 'json',
+				url: delUrl+urlStr,
+				contentType:'application/json;charset=UTF-8',
+				success:function(rs){
+					if(rs.returnCode=='000000'){
+						var rs = rs;
+						getList(1);
+						setTimeout(function(){mAlert("删除成功。")},300);
+					}else if(rs.returnCode=='600004'){
+						setTimeout(function(){mAlert(rs.entity);},300);
+					}else{
+						setTimeout(function(){mAlert("删除失败");},300);
+					}
+
+				}
+
+			});
+		});
+	});
+
+</script>
+ 	<form id="sampleform" method="post" action="#">
+
+    <div class="overlay_delete_box">
+
+    <h5 class="red"><img src="images/delete_ico.gif" />删除后将无法恢复，确定要删除吗？</h5>
+    </div>
+
+
+
+    <div class="overlay_btn">
+    <input type="button" id="win_sure" class="btn btn_green overlayClose" value="确定"/>
+    <input type="button" id="win_cancle" class="btn btn_gray overlayClose" value="取消"/>
+	</div>
+    </form>
+
+
+

@@ -1,0 +1,143 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta content="教师网联" name="keywords">
+<meta content="教师网联" name="description">
+<title>必修课抢座 - 教师网联</title>
+<link href="css/reset.css" rel="stylesheet" type="text/css" />
+<link href="css/style.css" rel="stylesheet" type="text/css" />
+<link href="css/nyroModal.css" rel="stylesheet" type="text/css" />
+
+<script type="text/javascript" src="js/bases.js"></script>
+<!--[if lt IE 9]>
+<script type="text/javascript" src="js/html5.js"></script>
+<![endif]-->
+<!--[if IE 6]>
+<script type="text/javascript" src="js/DD_belatedPNG_0.0.8a-min.js" ></script>
+<script type="text/javascript">DD_belatedPNG.fix('.toplogo img, .btn_black, .btn_blue, .btn_red, .btn_ora, .btn_green, .btn_gray, .btn,');   </script>
+<![endif]-->
+<script type="text/javascript">document.write('\<script id="jsdata" type="text/javascript" src="js/data.js?t='+new Date().valueOf()+'"\>\<\/script\>');</script>
+<script type="text/javascript" src="js/controler/course_bixiu.js"></script>
+
+
+<script type="text/javascript">
+
+//function istr(tr){
+
+//alert("aaa");
+///}
+function changetype(){
+
+	$('.overlayClose').click();
+}
+    $(document).ready(function() {
+			//summary.tabs();//Tabs
+			summary.tablehover();//Hover
+
+
+
+			//退座
+			$('.overlay_cancel_grab').click(function(e) {
+				e.preventDefault();
+				$.fn.nyroModalManual({
+					width:400,
+					title:"退座",
+					url: 'overlay_cancel_grab.html'
+				});
+			return false;
+			});
+
+
+	});
+
+	//展开合闭
+	function slideSwitch(obja,objb){
+	$("."+obja).slideToggle("fast");
+	$("."+objb).slideToggle("fast");
+	}
+
+</script>
+
+</head>
+<body>
+
+<!-- Header -->
+<div class="page_head">
+<div class="wrapper"><!-- #BeginLibraryItem "/Library/logoinformation.lbi" --><div class="toplogo"><img src="images/logo.png" alt="全国教师教育网络联盟"></div>
+            <div class="topnav"><b><a href="style.html">Admin</a></b>，欢迎你登陆 <span>|</span> <a href="#">退出</a></div><!-- #EndLibraryItem -->
+
+
+
+</div>
+</div>
+<!-- Header End -->
+
+
+<!-- Page title -->
+<div class="pagetitle"><span><h1>学生选课</h1><h2>&nbsp;→&nbsp;<i id="cCouse">必选选课</i></h2></span></div>
+<!-- Page title End -->
+
+
+
+<!-- Page -->
+<div class="page_content">
+	<!-- LEFT -->
+	<div class="page_left">
+	<div id="navMenu" class="arrowlistmenu"></div>
+	</div>
+	<!-- LEFT -->
+
+	<!-- RIGHT -->
+	<div class="page_right">
+			<div id="details"></div>
+
+			<dl class="search_dl_long"><dt>当前选课状态：</dt>
+	            <dd>
+		            <div id="choose_status"></div>
+	                <div id="form_status"></div>
+                </dd>
+			</dl>
+                 <dl class="search_dl_long"><dd id="peopleNum">本批次总座位数<i class="color_red">200</i>个，必修学生<i class="color_red">12</i>人，选修学生<i class="color_red">13</i>人</dd></dl>
+                <div class="box_header">
+                    	可选选课列表
+                </div>
+
+                <div class="box_content">
+                <table class="tablebox">
+                      <thead class="table_header">
+                            <tr>
+                            <th class="first tc">序号</th>
+                            <th>课程名称</th>
+                            <th>主讲教师</th>
+                            <th>授课学校</th>
+                            <th>课程学分</th>
+                            <th>人数下限/上限</th>
+                            <th>已选总人数</th>
+                            <th>本校名额</th>
+                            <th>本校剩余座位</th>
+                            <th>操作</th>
+                            </tr>
+                      </thead>
+
+                      <tbody class="openable_tbody" id="js_course_tbody"></tbody>
+
+                 </table>
+                 </div><!-- #BeginLibraryItem "/Library/pagination.lbi" --><!-- #EndLibraryItem -->
+
+				<div class="search_btn">
+					<input type="button" class="btn btn_gray" onclick="location.href='course.html'" value="返回选课列表"/>
+				</div>
+		</div>
+</div>
+
+<div class="clear"></div>
+
+<div class="page_footer">
+<p>主管单位：教育部 　主办单位：全国教师教育网络联盟</p>
+<p>全国教师教育网络联盟秘书处 电话：010－58802946 电子信箱：msz@jswl.cn</p>
+<p>全国教师教育网络联盟 版权所有 京ICP备05069600号 </p>
+</div>
+
+<script type="text/javascript" src="js/menu.js"></script>
+</body>
+</html>

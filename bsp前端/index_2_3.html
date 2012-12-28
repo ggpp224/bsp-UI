@@ -1,0 +1,247 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta content="教师网联" name="keywords" />
+<meta content="教师网联" name="description" />
+<title>选课计划 - 教师网联</title>
+<link href="css/reset.css" rel="stylesheet" type="text/css" />
+<link href="css/style.css" rel="stylesheet" type="text/css" />
+<link href="css/nyroModal.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="js/bases.js"></script>
+
+<!--[if lt IE 9]>
+<script type="text/javascript" src="js/html5.js"></script>
+<![endif]-->
+<!--[if IE 6]>
+<script type="text/javascript" src="js/DD_belatedPNG_0.0.8a-min.js" ></script>
+<script type="text/javascript">DD_belatedPNG.fix('.toplogo img');   </script>
+<![endif]-->
+
+<script type="text/javascript">document.write('\<script id="jsdata" type="text/javascript" src="js/data.js?t='+new Date().valueOf()+'"\>\<\/script\>');</script>
+
+<script type="text/javascript" src="js/controler/index_2_3.js"></script>
+<script type="text/javascript">
+	$(document).ready(function() {
+		//summary.tabs();//Tabs
+		summary.tablehover();//Hover
+
+		//删除
+		$('.overlay_delete').click(function(e) {
+			var ids=[];
+			$('#js_openable_tbody').find('.chkc').each(function(){
+				if(this.checked==true) ids.push(this.value);
+			})
+			if(ids.length>0){
+				e.preventDefault();
+				$.fn.nyroModalManual({
+					width : 400,
+					title : "系统提示",
+					content : pop_del()
+				});
+				$('#index_2_3_subm_del').click(function(){
+					var ids=[];
+					$('#js_openable_tbody').find('.chkc').each(function(){
+						if(this.checked==true) ids.push(this.value);
+					})
+					var str = Ab.encode(ids);
+					$.ajax({
+						type: "POST",
+						data: str,
+						dataType:"json",
+						url:G_ROOT+'course/planchoosecourse/deletebatch?termId='+$('#form_term').val(),
+						contentType:'application/json;charset=UTF-8',
+						success: function(rs){
+							if(rs.returnCode=='000000'){
+								mAlert("删除成功",0);
+								$('#js_openable_tbody').find('.chkc').each(function(){
+									if(this.checked==true) $(this).parent().parent().remove();
+								})
+
+							}else{
+								mAlert("操作失败");
+							}
+						}
+					});
+				})
+
+			}else mAlert("请先选择");
+		});
+
+		//提交
+		$('.overlay_submit').click(function(e) {
+			e.preventDefault();
+			$.fn.nyroModalManual({
+				width : 400,
+				title : "系统提示",
+				url : 'overlay_submit.html'
+			});
+			return false;
+		});
+
+	});
+
+	//展开合闭
+	function slideSwitch(obja, objb) {
+		$("." + obja).slideToggle("fast");
+		$("." + objb).slideToggle("fast");
+	}
+</script>
+
+</head>
+<body>
+
+	<!-- Header -->
+	<div class="page_head">
+		<div class="wrapper">
+			<!-- #BeginLibraryItem "/Library/logoinformation.lbi" -->
+			<div class="toplogo">
+				<img src="images/logo.png" alt="全国教师教育网络联盟" />
+			</div>
+			<div class="topnav">
+				<b><a href="style.html">Admin</a></b>，欢迎你登陆 <span>|</span> <a
+					href="#">退出</a>
+			</div>
+			<!-- #EndLibraryItem -->
+
+
+
+
+		</div>
+	</div>
+	<!-- Header End -->
+
+
+	<!-- Page title -->
+	<div class="pagetitle">
+		<span><h1>互选计划管理</h1><h2>&nbsp;→&nbsp;选课计划</h2></span>
+	</div>
+	<!-- Page title End -->
+
+
+
+	<!-- Page -->
+	<div class="page_content">
+
+		<!-- LEFT -->
+		<div class="page_left">
+		 <div id="navMenu" class="arrowlistmenu"></div>
+		</div>
+		<!-- LEFT -->
+<style type="text/css">
+#index_2_3 dl dt{width:90px}
+#index_2_3 dl dd{width:180px}
+</style>
+		<!-- RIGHT -->
+		<div id="index_2_3" class="page_right">
+<style type="text/css">
+
+
+</style>
+			<form class="search" id="query_form">
+				<dl class="search_dl">
+					<dt>互选批次组：</dt>
+					<dd id="dd_termid"><select name="termid" id="form_term"></select></dd>
+				</dl>
+				<dl class="search_dl">
+					<dt>状态：</dt>
+					<dd>
+						<select name="status" id="form_status">
+                        		<option value="null">全部</option>
+                        		<option value="1">待审核</option>
+                        		<option value="3">审核通过</option>
+                        		<option value="4">审核未通过</option>
+                       	</select>
+					</dd>
+					<dt>学校：</dt>
+					<dd><select name="schoolcode" id="form_school"></select></dd>
+
+
+					<dt>专业：</dt>
+					<dd><select name="majorcode" id="form_major"></select></dd>
+				</dl>
+				<dl class="search_dl">
+					<dt>层次：</dt>
+					<dd><select name="levelcode" id="form_educationlevel"></select></dd>
+					<dt>年级：</dt>
+					<dd><select name="gradecode" id="form_grade"></select></dd>
+
+					<dt>课程性质：</dt>
+					<dd><select name="form_courseNature" id="form_courseNature"></select></dd>
+				</dl>
+				<dl class="search_dl">
+					<dt >批次代码：</dt>
+					<dd><input type="text" name="standerCourseCode" id="standerCourseCode" /></dd>
+					<dt >批次名称：</dt>
+					<dd><input type="text" name="standerCourseName" id="standerCourseName" /></dd>
+				</dl>
+				<div class="search_btn">
+					<input type="button" id="form_query" class="btn btn_gray" value="查询" />&nbsp;
+					<input type="reset" id="resetBtn" class="btn btn_gray" value="重置" />
+				</div>
+				<div class="slide_box">
+					<a href="javascript:void(0)"
+						onclick='slideSwitch("search","search_close")'>合闭搜索</a>
+				</div>
+
+			</form>
+
+			<div class="search_close" style="display: none;">
+				<a href="javascript:void(0)"
+					onclick='slideSwitch("search","search_close")'>展开搜索</a>
+			</div>
+
+			<div class="box_header">
+				<span style="display:none;"><input class="btn btn_green" value="导入选课计划" type="button" /> <input class="btn btn_green" value="导出模板" id="Btn_export" type="button" /></span>
+				<input type="submit" class="btn btn_blue" id="addBtn" onclick="location.href='sel_courseplan_add.html'" value="新增" /> <input type="submit" id="delBtn" class="btn btn_red overlay_delete" value="删除" />
+			</div>
+			<div class="box_content">
+				<table class="tablebox" align="center">
+					<thead class="table_header">
+						<tr >
+							<!-- <th class="first tc" width="4%"><input onclick="checkAll(this,'chkc')" type="checkbox" id="checkboxall" /></th> -->
+							<th rowspan='2'>&nbsp;</th>
+							<!-- <th rowspan='2'>互选批次组</th> -->
+							<th rowspan='2'>选课学校</th>
+							<!-- <th rowspan='2'>计划序号</th> -->
+							<th colspan='7' style="text-align:center;">选课计划</th>
+							<th colspan='3' style="text-align:center;">计划审核</th>
+						</tr>
+						<tr>
+							<th>批次</th>
+							<th>专业</th>
+							<th>层次</th>
+							<th>年级</th>
+							<th>包含学生数</th>
+							<th>创建时间</th>
+							<th>操作</th>
+							<th>审核状态</th>
+							<th>审核时间</th>
+							<th>审核人</th>
+
+
+
+						</tr>
+					</thead>
+
+					<tbody class="openable_tbody" id="js_openable_tbody">
+
+					</tbody>
+				</table>
+			</div>
+			<div id="pageShow"></div>
+		</div>
+		<!-- RIGHT End -->
+		<div class="clearfix"></div>
+
+	</div>
+
+<div class="page_footer">
+<p>主管单位：教育部 　主办单位：全国教师教育网络联盟</p>
+<p>全国教师教育网络联盟秘书处 电话：010－58802946 电子信箱：msz@jswl.cn</p>
+<p>全国教师教育网络联盟 版权所有 京ICP备05069600号 </p>
+</div>
+
+<script type="text/javascript" src="js/menu.js"></script>
+</body>
+</html>

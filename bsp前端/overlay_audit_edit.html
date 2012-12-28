@@ -1,0 +1,54 @@
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<script type="text/javascript">
+$(document).ready(function() {
+			//关闭
+			$("#no_save").click(function(e){
+				var ids = getIds('js_openable_tbody');
+				var tx = $('#no_tx').val();
+				var params = {
+					approver:user['uname'],
+					idList:ids,
+					status:4,
+					approveCommend:tx
+				};
+				
+				var dgSuc = function(rs){
+					if(rs.returnCode=='000000'){
+						mAlert("操作成功");
+						getList(1);
+					}
+					
+				},
+				dgErr = function(rs){
+					var a = rs;
+					//alert("操作失败");
+				}
+				if(valiInput($('#no_tx'),{max:250})){
+					audit(params,dgSuc,dgErr); 
+				}
+			});
+			
+			
+});
+</script>
+ 	<form id="sampleform" method="post" action="#">
+    
+    <div class="overlay_delete_box_1">
+    
+    <h5 class="green">
+    	 审核意见：<textarea id="no_tx" rows="5" cols="30"></textarea>
+    </h5>
+    </div>
+              
+              
+              
+    <div class="overlay_btn">
+           
+    <input type="button" id="no_save" class="btn btn_gray" value="确定"/>
+    <!-- <input type="button" id="no_hide" class="btn btn_gray overlayClose hidden" value="确定"/> -->
+	</div> 
+    </form>
+
+
+
+    

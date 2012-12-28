@@ -1,0 +1,34 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Strict//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>TEST</title>
+</head>
+<body>
+
+<script type="text/javascript">
+
+//get请求 json格式
+var url1='http://localhost:8080/course/courseattribute/list/null/null/2/null/null/null/null/1/5?_dc=1336957539990';
+$.getJSON(url1,function(data){
+	alert('GET:返回json串');
+});
+
+
+
+//POST请求 json格式
+var params = '{"courseName":"aaa","courseNameStandard":"大学语文","Cchool":"北京师范大学","schoolCode":"S0001","majorCode":"md0001","courseType":"1","tchOgzForm":"1","courseEname":"dddd","courseCodeStandard":"C12000001","subjectCode":"J0001","educationLevelCode":"E0004","gradeCode":"G0001","courseIntroduction":"ff","basicRequirement":"ggg","textbook":"er","examContent":"hg","resourceConstruction":"fg","demoLink":"g","create":"studt12000006"}';
+$.ajax({
+	type: 'POST',
+	data:params,
+	dataType: 'json',
+	url: '/course/courseattribute/create',
+	contentType:'application/json;charset=UTF-8',
+	success: function(rs) {
+			  alert('POST:返回json');
+            }
+});
+</script>
+</body>
+</html>
