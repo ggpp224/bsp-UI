@@ -1,0 +1,293 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta content="教师网联" name="keywords" />
+<meta content="教师网联" name="description" />
+<title>志愿选课查询调整 - 教师网联</title>
+<link href="css/reset.css" rel="stylesheet" type="text/css" />
+<link href="css/skin_0.css" rel="stylesheet" type="text/css" id="skinCss" />
+<link href="css/nyroModal.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="js/jquery-1.7.1.min.js"></script>
+<script type="text/javascript" src="js/tablednd.js"></script>
+<script type="text/javascript" src="js/nyroModal1.6.2.min.js"></script>
+<!--[if lt IE 9]>
+<script type="text/javascript" src="js/html5.js"></script>
+<![endif]-->
+<!--[if IE 6]>
+<script type="text/javascript" src="js/DD_belatedPNG_0.0.8a-min.js" ></script>
+<script type="text/javascript">DD_belatedPNG.fix('.toplogo img, .btn_black, .btn_blue, .btn_red, .btn_ora, .btn_green, .btn_gray, .btn,');   </script>
+<![endif]-->
+<script type="text/javascript" src="js/summary.js"></script>
+<script type="text/javascript" src="js/cookies.js"></script>
+<script type="text/javascript" src="js/navigation.js"></script>
+<script type="text/javascript" src="js/navigation_page.js"></script>
+<script type="text/javascript">
+    $(document).ready(function() {
+			//summary.tabs();//Tabs
+			//summary.navigation();//navigation
+			summary.tablehover();//Hover
+			summary.change_skin();//Hover
+			
+			//课程代码
+			$(".course_code").focus(function(e) {
+					e.preventDefault();
+					$.fn.nyroModalManual({
+						width:900,
+						title:'网联课程代码',
+						url: 'overlay_course4_addcourse.html'
+					});
+				return false;
+			});
+			
+	});
+	
+	//展开合闭
+	function slideSwitch(obja,objb){
+	$("."+obja).slideToggle("fast");
+	$("."+objb).slideToggle("fast");
+	}
+	
+		
+</script>
+
+</head>
+<body>
+<div class="topline">
+	<div class="topline_box"><span>欢迎您：<b>北师大管理员</b></span><i>|</i><a href="#">返回个人空间</a><i>|</i><a href="#"><img src="images/ico_help.gif" />&nbsp;帮助中心</a><i>|</i><a href="#">退出</a></div>
+</div>
+
+<!-- Header -->
+<div class="page_head">
+<div class="wrapper"><!-- #BeginLibraryItem "/Library/logoinformation.lbi" -->
+<!-- <div class="toplogo"><img src="../images/logo.png" alt="全国教师教育网络联盟" /></div> -->
+<div class="topnav">
+<div class="select_tab">
+<select>
+<option>免费师范生支持系统</option>
+<option>免费师范生教育硕士支持系统</option>
+<option>教师职后教育支持系统</option>
+</select>
+</div>
+<div id="skin">
+  <ul>
+    <li id="skin_0" class="selected" title=""></li>
+    <li id="skin_1"  title=""></li>
+    <li id="skin_2" title=""></li>
+  </ul>
+</div>
+</div>
+<!-- <div class="link_other"><a href="#">门户</a></div> --><!-- #EndLibraryItem --></div>
+</div>
+<!-- Header End -->
+
+
+<!-- Page title -->
+<div class="pagetitle"><span><h1>选课管理</h1><h2>&nbsp;→&nbsp;志愿选课处理</h2><h2>&nbsp;→&nbsp;查看志愿选课分布情况</h2><h2>&nbsp;→&nbsp;管理员调整</h2></span></div>
+<!-- Page title End -->
+    
+             
+
+<!-- Page -->
+<div class="page_content">
+
+		<!-- LEFT -->
+         <div class="page_left"><!-- #BeginLibraryItem "/Library/navigation.lbi" -->
+
+
+<div class="arrowlistmenu">
+
+<h3 class="menuheader expandable">互选课程总库</h3>
+<ul class="categoryitems">
+<li><a href="index.html">学科教学（语文）</a></li>
+<li><a href="index.html">学科教学（数学）</a></li>
+<li><a href="index.html">学科教学（物理）</a></li>
+<li><a href="index.html">学科教学（地理）</a></li>
+<li><a href="index.html">学科教学（化学）</a></li>
+<li><a href="index.html">学科教学（英语）</a></li>
+</ul>
+
+<h3 class="menuheader expandable">互选计划管理</h3>
+<ul class="categoryitems">
+<li><a href="index_1.html"><em>01</em>互选批次管理</a></li>
+<li><a href="index_2.html"><em>02</em>开课计划</a></li>
+<li><a href="index_2_3.html"><em>03</em>选课计划</a></li>
+<li><a href="index_3.html"><em>04</em>开课计划审核</a></li>
+<li><a href="index_4.html"><em>04</em>选课计划审核</a></li>
+</ul>
+
+<h3 class="menuheader expandable">选课管理</h3>
+<ul class="categoryitems">
+<li><a href="index_2_4.html"><em>01</em>选课方式设置</a></li>
+<li><a href="course_5.html"><em>02</em>选课控制面板</a></li>
+<li><a href="course_2.html"><em>03</em>批量选课</a></li>
+<li><a href="course_4.html"><em>04</em>志愿选课处理</a></li>
+<li><a href="course_5_2.html"><em>05</em>选课情况监控</a></li>
+<li><a href="course_6.html"><em>06</em>选课结果审核</a></li>
+</ul>
+
+<h3 class="menuheader expandable">学习档案</h3>
+<ul class="categoryitems">
+<li><a href="learnfile_2.html"><em>01</em>管理员查询</a></li>
+</ul>
+
+<h3 class="menuheader expandable">学分银行</h3>
+<ul class="categoryitems">
+<li><a href="bank.html"><em>01</em>管理员查询</a></li>
+</ul>
+
+
+
+<h3 class="menuheader expandable">系统维护</h3>
+<ul class="categoryitems">
+<li><a href="setup_1.html"><em>01</em>学校信息管理</a></li>
+<li><a href="setup_2.html"><em>02</em>专业信息管理</a></li>
+<li><a href="setup_3.html"><em>03</em>层次信息管理</a></li>
+<li><a href="setup_4.html"><em>04</em>年级信息管理</a></li>
+<li><a href="setup_5.html"><em>05</em>学科信息管理</a></li>
+<li><a href="setup_6.html"><em>06</em>网联课程管理</a></li>
+</ul>
+
+</div>
+<!-- #EndLibraryItem --></div>
+         <!-- LEFT -->
+  		<!-- RIGHT -->
+        <div class="page_right">
+		
+        <form id="sampleform" method="post" action="#">
+        
+
+                
+                
+                <fieldset><legend class="big">大学语文</legend></fieldset>	  
+                
+                <div class="box_header"></div>
+                
+                <div class="box_content">
+                <table class="tablebox">
+                      <thead class="table_header">
+                            <tr>
+                            <th class="first">课程名称</th>
+                            <th>授课学校</th>
+                            <th>教师姓名</th>
+                            <th>人数下限/上限</th>
+                            <th>选课人数</th>
+                            <th>开课情况</th>
+                            </tr>
+                      </thead>
+                      
+                      <tbody class="openable_tbody">
+                            <tr>
+                            <td class="first">文学鉴赏</td>
+                            <td>北师大</td>
+                            <td>张大千</td>
+                            <td>10/100</td>
+                            <td>30</td>
+                            <td><i class="color_green">可开课</i></td>
+                            </tr>
+                            
+                            <tr>
+                            <td class="first">文学鉴赏</td>
+                            <td>东北师大</td>
+                            <td>王小容</td>
+                            <td>10/100</td>
+                            <td>3</td>
+                            <td><i class="color_red">无法开课</i></td>
+                            </tr>
+                            
+                            
+                      </tbody>
+                  
+                 </table>
+                 </div>
+				 
+                 
+                 <div class="clearfix">
+                  <div class="column width5 first">									
+                    <p><label class="labeltitle">课程A：</label><input type="text" id="" class="half" name="" value="文学鉴赏"  /></p>
+                    <p><label class="labeltitle">课程B：</label><input type="text" id="" class="half"  name="" value="文学鉴赏"  /></p>
+                    <p><label class="labeltitle">志愿选课：</label><select>
+                        <option>第二志愿选课</option>
+                        </select>
+                    </p>
+                    <p><label class="labeltitle">学员选择方式：</label>
+					<input type="radio" id="dateformat1" class="" value="dmy" checked="checked" name="dateformat" />
+					<label class="choice" for="dateformat1" onclick='slideSwitch("paixu_1","paixu_2")'>自动抽签</label>
+					<input type="radio" id="dateformat2" class="" value="mdy" name="dateformat" />
+					<label class="choice" for="dateformat2" onclick='slideSwitch("paixu_1","paixu_2")'>由列表选择</label>
+					</p>
+                    <p class="paixu_1"><label class="labeltitle">人数：</label><input type="text" id="" class="half" name="" value="20"  />（1~40）</p>
+                	</div>
+                	</div>
+                
+
+                
+                <div class="box_content paixu_2" style="display:none;">
+                <table class="tablebox">
+                      <thead class="table_header">
+                            <tr>
+                            <th class="first tc" width="1%">&nbsp; </th>
+                            <th>学员ID</th>
+                            <th>学员姓名</th>
+                            </tr>
+                      </thead>
+                      
+                      <tbody class="openable_tbody">
+                            <tr>
+                            <td class="first tc"><input type="checkbox" id="checkboxall"/> </td>
+                            <td>XS0001</td>
+                            <td>王晓东</td>
+                            </tr>
+                            
+                            <tr>
+                            <td class="first tc"><input type="checkbox" id="checkboxall"/> </td>
+                            <td>XS0001</td>
+                            <td>王晓东</td>
+                            </tr>
+                            
+                            <tr>
+                            <td class="first tc"><input type="checkbox" id="checkboxall"/> </td>
+                            <td>XS0001</td>
+                            <td>王晓东</td>
+                            </tr>
+                            
+                            <tr>
+                            <td class="first tc"><input type="checkbox" id="checkboxall"/> </td>
+                            <td>XS0001</td>
+                            <td>王晓东</td>
+                            </tr>
+                            
+                            <tr>
+                            <td class="first tc"><input type="checkbox" id="checkboxall"/> </td>
+                            <td>XS0001</td>
+                            <td>王晓东</td>
+                            </tr>
+                             
+                      </tbody>
+                  
+                 </table>
+                 </div>
+                 
+                 <div class="btn_opera">
+                <input type="button" class="btn btn_green" onclick="location.href='course_4.html'" value="保存调整"/> 
+                <input type="button" class="btn btn_gray" onclick="location.href='course_4.html'" value="返回"/> 
+                </div>
+                                          
+                
+                
+                
+                
+        </form>
+        </div>
+            <div class="clearfix"></div>
+            <!-- RIGHT End -->
+  				
+</div>
+<!-- Page End --><!-- #BeginLibraryItem "/Library/footer.lbi" --><!-- Footer -->
+<footer class="page_footer">
+<p>主管单位：教育部 　主办单位：全国教师教育网络联盟</p>
+<p>全国教师教育网络联盟秘书处 电话：010－58802946 电子信箱：msz@jswl.cn</p>
+<p>全国教师教育网络联盟 版权所有 京ICP备05069600号 </p>
+</footer>
+<!-- Footer End --><!-- #EndLibraryItem --></body>
+</html>

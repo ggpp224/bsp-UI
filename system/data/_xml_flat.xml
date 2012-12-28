@@ -1,0 +1,22 @@
+<root>
+	<item parent_id="0" id="node_1">
+		<content>
+			<name><![CDATA[Node 1]]></name>
+		</content>
+	</item>
+	<item parent_id="0" id="node_2">
+		<content>
+			<name><![CDATA[Node 2]]></name>
+		</content>
+	</item>
+	<item parent_id="node_1" id="subnode_1">
+		<content>
+			<name><![CDATA[Sub Node 1]]></name>
+		</content>
+	</item>
+	<item parent_id="node_1" id="subnode_2">
+		<content>
+			<name><![CDATA[Sub Node 2]]></name>
+		</content>
+	</item>	
+</root>

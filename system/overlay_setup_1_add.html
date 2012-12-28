@@ -1,0 +1,87 @@
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<script type="text/javascript" src="js/summary.js"></script>
+<script type="text/javascript">
+    $(document).ready(function() {
+			summary.tablehover();//Hover
+	});
+	
+			
+</script>
+<div class="overlay">
+ 	<form id="sampleform" method="post" action="#">
+    
+			  <p><label class="labeltitle">专业代码：</label><input type="text" id="" class="half" name="" value=""  /></p>
+              <p><label class="labeltitle">专业名称：</label><input type="text" id="" class="half" name="" value=""  /></p>
+              <p><label class="labeltitle">所属学科：</label><select><option value="null">全部</option><option value="01">哲学</option><option value="02">经济学</option><option value="03">法学</option><option value="04">教育学</option><option value="05">文学</option><option value="06">历史学</option><option value="07">理学</option><option value="08">工学</option><option value="09">农学</option><option value="10">医学</option><option value="11">管理学</option></select></p>
+              <div class="btn_opera">
+              <input type="button" class="btn btn_gray" value="查询"/>
+              </div>
+              
+              
+
+              <table class="tablebox">
+              <thead class="table_header">
+                    <tr>
+                    <th class="first tc" width="4%"><input type="checkbox" onclick="checkAll(this,'majorChk_1')" id="checkboxall_pop" /></th>
+                    <th>专业代码</th>
+                    <th>专业名称</th>
+                    <th>所属学科</th>
+                    </tr>
+              </thead>
+              
+              <tbody class="openable_tbody">
+              <tr>
+              <td class="first tc"><input type="checkbox" name="checkall" /></td>
+              <td>081201</td>
+              <td>计算机系统结构</td>
+              <td>工学</td>
+              </tr>
+              
+              <tr>
+              <td class="first tc"><input type="checkbox" name="checkall" /></td>
+              <td>081202</td>
+              <td>计算机软件与理论</td>
+              <td>工学</td>
+              </tr>
+              
+              <tr>
+              <td class="first tc"><input type="checkbox" name="checkall" /></td>
+              <td>081203		</td>
+              <td>计算机应用技术</td>
+              <td>工学</td>
+              </tr>
+              
+              <tr>
+              <td class="first tc"><input type="checkbox" name="checkall" /></td>
+              <td>081001</td>
+              <td>通信与信息系统</td>
+              <td>工学</td>
+              </tr>
+              
+              <tr>
+              <td class="first tc"><input type="checkbox" name="checkall" /></td>
+              <td>081002		</td>
+              <td>信号与信息处理</td>
+              <td>工学</td>
+              </tr>
+              
+              
+              </tbody>
+              </table><!-- #BeginLibraryItem "/Library/pagination.lbi" --><div class="pagination">
+						共<b>5</b>页&nbsp;
+						每页显示<select><option>10条</option></select>
+                          <a href="#" title="First Page">&laquo; 首页</a><a href="#">&laquo; 上一页</a>
+                          <a href="#" class="number current" title="1">1</a>
+                          <a href="#" class="number" title="2">2</a>
+                          <a href="#" class="number" title="3">3</a>
+                          <a href="#" title="Next Page">下一页 &raquo;</a><a href="#"> 尾页&raquo;</a>
+                          <input type="text" size="2" value="" /><input type="button" value="GO"/>
+				</div><!-- #EndLibraryItem --><div class="overlay_btn">
+    <input type="button" class="btn btn_green overlayClose" value="确定添加"/>
+    <input type="button" class="btn btn_gray overlayClose" value="关闭"/>
+	</div> 
+    </form>
+</div>
+
+
+    

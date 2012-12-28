@@ -1,0 +1,10 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"><div class="pagination">
+						共<b>5</b>页&nbsp;
+						每页显示<select><option>10条</option></select>
+                          <a href="#" title="First Page">&laquo; 首页</a><a href="#">&laquo; 上一页</a>
+                          <a href="#" class="number current" title="1">1</a>
+                          <a href="#" class="number" title="2">2</a>
+                          <a href="#" class="number" title="3">3</a>
+                          <a href="#" title="Next Page">下一页 &raquo;</a><a href="#"> 尾页&raquo;</a>
+                          <input type="text" size="2" value="" /><input type="button" value="GO"/>
+				</div>

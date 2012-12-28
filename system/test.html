@@ -1,0 +1,86 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta content="教师网联" name="keywords" />
+<meta content="教师网联" name="description" />
+<title>课程管理 - 教师网联</title>
+<link href="css/reset.css" rel="stylesheet" type="text/css" />
+<link href="css/skin_0.css" rel="stylesheet" type="text/css" id="skinCss" />
+<link href="css/nyroModal.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="js/jquery-1.7.1.min.js"></script>
+<script type="text/javascript" src="js/tablednd.js"></script>
+<script type="text/javascript" src="js/nyroModal1.6.2.min.js"></script>
+<!--[if lt IE 9]>
+<script type="text/javascript" src="js/html5.js"></script>
+<![endif]-->
+<!--[if IE 6]>
+<script type="text/javascript" src="js/DD_belatedPNG_0.0.8a-min.js" ></script>
+<script type="text/javascript">DD_belatedPNG.fix('.toplogo img, .btn_black, .btn_blue, .btn_red, .btn_ora, .btn_green, .btn_gray, .btn,');   </script>
+<![endif]-->
+<script type="text/javascript" src="js/summary.js"></script>
+<script type="text/javascript" src="js/cookies.js"></script>
+<script type="text/javascript" src="js/navigation.js"></script>
+<script type="text/javascript" src="js/navigation_page.js"></script>
+<script type="text/javascript">
+    $(document).ready(function() {
+			//summary.tabs();//Tabs
+			//summary.navigation();//navigation
+			summary.tablehover();//Hover
+			
+			//删除
+			$('.overlay_delete').click(function(e) {
+				e.preventDefault();
+				$.fn.nyroModalManual({
+					width:400,
+					title:"系统提示",
+					url: 'overlay_delete.html'
+				});
+			return false;
+			});
+			
+			
+			
+	});
+	
+			
+</script>
+<style type="text/css">
+
+</style>
+<script type="text/javascript" src="js/navigation.js"></script>
+<script type="text/javascript" src="js/navigation_page.js"></script>
+
+</head>
+<body>
+<div class="topline">
+	<div class="topline_box"><span>欢迎您：<b>北师大管理员</b></span><i>|</i><a href="#">返回个人空间</a><i>|</i><a href="#"><img src="images/ico_help.gif" />&nbsp;帮助中心</a><i>|</i><a href="#">退出</a></div>
+</div>
+<div style="float: left" id="my_menu" class="sdmenu"> 
+  <div> 
+	<span>PHP/MySQL</span> 
+	<a href="http://www.codebit.cn/pub/html/php_mysql/tip/">PHP/MySQL小技巧</a> 
+	<a href="http://www.codebit.cn/pub/html/php_mysql/tutorial/">PHP/MySQL教程</a> 
+	<a href="http://www.codebit.cn/pub/html/php_mysql/problem/">PHP/MySQL常见问题</a> 
+  </div> 
+  <div> 
+	<span>(X)HTML/CSS</span> 
+	<a href="http://www.codebit.cn/pub/html/xhtml_css/tip/">(X)HTML/CSS小技巧</a> 
+	<a href="http://www.codebit.cn/pub/html/xhtml_css/tutorial/">(X)HTML/CSS教程</a> 
+  </div> 
+  <div class="collapsed"> 
+	<span>Javascript</span> 
+	<a href="http://www.codebit.cn/pub/html/javascript/tip/">Javascript小技巧</a> 
+	<a href="http://www.codebit.cn/pub/html/javascript/tutorial/">Javascript教程</a> 
+  </div> 
+  <div> 
+	<span>当前菜单高亮</span> 
+	<a href="/wp-content/uploads/examples/sdmenu/?foo=bar">高亮测试一</a> 
+	<a href="/wp-content/uploads/examples/sdmenu/demo.php">高亮测试二</a> 
+	<a href="/wp-content/uploads/examples/sdmenu/demo.php?query">高亮测试三</a> 
+  </div> 
+</div> 
+ 
+
+</body>
+</html>

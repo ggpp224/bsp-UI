@@ -1,0 +1,403 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta content="教师网联" name="keywords" />
+<meta content="教师网联" name="description" />
+<title>互选计划 - 教师网联</title>
+<link href="css/reset.css" rel="stylesheet" type="text/css" />
+<link href="css/skin_0.css" rel="stylesheet" type="text/css" id="skinCss" />
+<link href="css/nyroModal.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="js/jquery-1.7.1.min.js"></script>
+<script type="text/javascript" src="js/tablednd.js"></script>
+<script type="text/javascript" src="js/nyroModal1.6.2.min.js"></script>
+<!--[if lt IE 9]>
+<script type="text/javascript" src="js/html5.js"></script>
+<![endif]-->
+<!--[if IE 6]>
+<script type="text/javascript" src="js/DD_belatedPNG_0.0.8a-min.js" ></script>
+<script type="text/javascript">DD_belatedPNG.fix('.toplogo img, .btn_black, .btn_blue, .btn_red, .btn_ora, .btn_green, .btn_gray, .btn,');   </script>
+<![endif]-->
+<script type="text/javascript" src="js/summary.js"></script>
+<script type="text/javascript" src="js/cookies.js"></script>
+<script type="text/javascript" src="js/navigation.js"></script>
+<script type="text/javascript" src="js/navigation_page.js"></script>
+<script type="text/javascript">
+    $(document).ready(function() {
+			//summary.tabs();//Tabs
+			//summary.navigation();//navigation
+			summary.tablehover();//Hover
+			summary.change_skin();//Hover
+			
+			//学生搜索结果
+			$('.overlay_student_search').click(function(e) {
+				e.preventDefault();
+				$.fn.nyroModalManual({
+					width:600,
+					title:"添加学生",
+					url: 'overlay_student_search.html'
+				});
+			return false;
+			});
+			
+			//课程搜索结果
+			$('.overlay_course_search').click(function(e) {
+				e.preventDefault();
+				$.fn.nyroModalManual({
+					width:800,
+					title:"添加课程",
+					url: 'overlay_course_search.html'
+				});
+			return false;
+			});
+			
+			//删除
+			$('.overlay_delete').click(function(e) {
+				e.preventDefault();
+				$.fn.nyroModalManual({
+					width:400,
+					title:"系统提示",
+					url: 'overlay_delete.html'
+				});
+			return false;
+			});
+			
+	});
+	
+</script>
+
+</head>
+<body>
+<div class="topline">
+	<div class="topline_box"><span>欢迎您：<b>北师大管理员</b></span><i>|</i><a href="#">返回个人空间</a><i>|</i><a href="#"><img src="images/ico_help.gif" />&nbsp;帮助中心</a><i>|</i><a href="#">退出</a></div>
+</div>
+
+<!-- Header -->
+<div class="page_head">
+<div class="wrapper"><!-- #BeginLibraryItem "/Library/logoinformation.lbi" -->
+<!-- <div class="toplogo"><img src="../images/logo.png" alt="全国教师教育网络联盟" /></div> -->
+<div class="topnav">
+<div class="select_tab">
+<select>
+<option>免费师范生支持系统</option>
+<option>免费师范生教育硕士支持系统</option>
+<option>教师职后教育支持系统</option>
+</select>
+</div>
+<div id="skin">
+  <ul>
+    <li id="skin_0" class="selected" title=""></li>
+    <li id="skin_1"  title=""></li>
+    <li id="skin_2" title=""></li>
+  </ul>
+</div>
+</div>
+<!-- <div class="link_other"><a href="#">门户</a></div> --><!-- #EndLibraryItem --></div>
+</div>
+<!-- Header End -->
+
+
+<!-- Page title -->
+<div class="pagetitle"><span><h1>互选计划</h1><h2>&nbsp;→&nbsp;选课计划</h2><h2>&nbsp;→&nbsp;新增</h2></span></div>
+<!-- Page title End -->
+    
+             
+
+<!-- Page -->
+<div class="page_content">
+				
+         <!-- LEFT -->
+         <div class="page_left"><!-- #BeginLibraryItem "/Library/navigation.lbi" -->
+
+
+<div class="arrowlistmenu">
+
+<h3 class="menuheader expandable">互选课程总库</h3>
+<ul class="categoryitems">
+<li><a href="index.html">学科教学（语文）</a></li>
+<li><a href="index.html">学科教学（数学）</a></li>
+<li><a href="index.html">学科教学（物理）</a></li>
+<li><a href="index.html">学科教学（地理）</a></li>
+<li><a href="index.html">学科教学（化学）</a></li>
+<li><a href="index.html">学科教学（英语）</a></li>
+</ul>
+
+<h3 class="menuheader expandable">互选计划管理</h3>
+<ul class="categoryitems">
+<li><a href="index_1.html"><em>01</em>互选批次管理</a></li>
+<li><a href="index_2.html"><em>02</em>开课计划</a></li>
+<li><a href="index_2_3.html"><em>03</em>选课计划</a></li>
+<li><a href="index_3.html"><em>04</em>开课计划审核</a></li>
+<li><a href="index_4.html"><em>04</em>选课计划审核</a></li>
+</ul>
+
+<h3 class="menuheader expandable">选课管理</h3>
+<ul class="categoryitems">
+<li><a href="index_2_4.html"><em>01</em>选课方式设置</a></li>
+<li><a href="course_5.html"><em>02</em>选课控制面板</a></li>
+<li><a href="course_2.html"><em>03</em>批量选课</a></li>
+<li><a href="course_4.html"><em>04</em>志愿选课处理</a></li>
+<li><a href="course_5_2.html"><em>05</em>选课情况监控</a></li>
+<li><a href="course_6.html"><em>06</em>选课结果审核</a></li>
+</ul>
+
+<h3 class="menuheader expandable">学习档案</h3>
+<ul class="categoryitems">
+<li><a href="learnfile_2.html"><em>01</em>管理员查询</a></li>
+</ul>
+
+<h3 class="menuheader expandable">学分银行</h3>
+<ul class="categoryitems">
+<li><a href="bank.html"><em>01</em>管理员查询</a></li>
+</ul>
+
+
+
+<h3 class="menuheader expandable">系统维护</h3>
+<ul class="categoryitems">
+<li><a href="setup_1.html"><em>01</em>学校信息管理</a></li>
+<li><a href="setup_2.html"><em>02</em>专业信息管理</a></li>
+<li><a href="setup_3.html"><em>03</em>层次信息管理</a></li>
+<li><a href="setup_4.html"><em>04</em>年级信息管理</a></li>
+<li><a href="setup_5.html"><em>05</em>学科信息管理</a></li>
+<li><a href="setup_6.html"><em>06</em>网联课程管理</a></li>
+</ul>
+
+</div>
+<!-- #EndLibraryItem --></div>
+         <!-- LEFT -->
+         
+         <!-- RIGHT -->
+         <div class="page_right">
+                
+                <div class="box">
+                <label>学期：</label><select><option>2011年第一学期</option></select>
+                </div>
+                
+         		<div class="clearfix">
+        			<div class="column width5 first">
+                    	<fieldset><legend class="big">学生</legend></fieldset>	
+                         <p><label class="labeltitle">学校：</label><select><option>北师大</option></select></p>
+                        <p><label class="labeltitle">专业：</label><select><option>Default</option></select></p>
+                        <p><label class="labeltitle">层次：</label><select><option>Default</option></select></p>
+                        <p><label class="labeltitle">年级：</label><select><option>Default</option></select></p>
+                        <p><label class="labeltitle">&nbsp;</label><input type="button" class="btn btn_blue overlay_student_search" value="查询并添加"/>&nbsp;<input type="button" class="btn btn_gray" value="重置"/> </p>	
+                        
+                    </div>
+                    <div class="column width5">	
+                    	<fieldset><legend class="big">课程</legend></fieldset>	
+                        <p><label class="labeltitle">课程代码：</label><input type="text" value="KC0001" /></p>
+                        <p><label class="labeltitle">课程名称：</label><input type="text" value="生物" /></p>
+                        <p><label class="labeltitle">网联课程名称：</label><input type="text" value="生物" /></p>
+                        <p><label class="labeltitle">是否多志愿选课：</label><select><option>是</option></select></p>
+                        <p><label class="labeltitle">&nbsp;</label><input type="button" class="btn btn_blue overlay_course_search" value="查询并添加"/>&nbsp;<input type="button" class="btn btn_gray" value="重置"/> </p>	
+                        
+                    </div>
+                 </div>
+                 
+                <!-- clearfix -->
+				<div class="clearfix">
+                
+                <!-- 学生 -->
+                <div class="column width5 first">
+                <div class="box_header">
+                    <input type="submit" class="btn btn_red overlay_delete" value="删除"/>
+                </div>
+                <div class="box_content">
+                <table class="tablebox">
+                      <thead class="table_header">
+                            <tr>
+                            <th class="first tc" width="4%"><input type="checkbox" id="checkboxall"/></th>
+                            <th>学生ID</th>
+                            <th>学生姓名</th>
+                            </tr>
+                      </thead>
+                      
+                      <tbody class="openable_tbody">
+                            <tr>
+                            <td class="first tc"><input type="checkbox" name="checkall" /></td>
+                            <td>XS0001</td>
+                            <td>李小东</td>
+                            </tr>
+                            <tr>
+                            <td class="first tc"><input type="checkbox" name="checkall" /></td>
+                            <td>XS0001</td>
+                            <td>李小南</td>
+                            </tr>
+                            <tr>
+                            <td class="first tc"><input type="checkbox" name="checkall" /></td>
+                            <td>XS0001</td>
+                            <td>李小西</td>
+                            </tr>
+                            <tr>
+                            <td class="first tc"><input type="checkbox" name="checkall" /></td>
+                            <td>XS0001</td>
+                            <td>李小北</td>
+                            </tr>
+                            <tr>
+                            <td class="first tc"><input type="checkbox" name="checkall" /></td>
+                            <td>XS0001</td>
+                            <td>李小中</td>
+                            </tr>
+                            <tr>
+                            <td class="first tc"><input type="checkbox" name="checkall" /></td>
+                            <td>XS0001</td>
+                            <td>李小东</td>
+                            </tr>
+                            <tr>
+                            <td class="first tc"><input type="checkbox" name="checkall" /></td>
+                            <td>XS0001</td>
+                            <td>李小南</td>
+                            </tr>
+                            <tr>
+                            <td class="first tc"><input type="checkbox" name="checkall" /></td>
+                            <td>XS0001</td>
+                            <td>李小西</td>
+                            </tr>
+                            <tr>
+                            <td class="first tc"><input type="checkbox" name="checkall" /></td>
+                            <td>XS0001</td>
+                            <td>李小北</td>
+                            </tr>
+                            <tr>
+                            <td class="first tc"><input type="checkbox" name="checkall" /></td>
+                            <td>XS0001</td>
+                            <td>李小中</td>
+                            </tr>
+                       </tbody>
+                  </table>
+                 </div><!-- #BeginLibraryItem "/Library/pagination.lbi" --><div class="pagination">
+						共<b>5</b>页&nbsp;
+						每页显示<select><option>10条</option></select>
+                          <a href="#" title="First Page">&laquo; 首页</a><a href="#">&laquo; 上一页</a>
+                          <a href="#" class="number current" title="1">1</a>
+                          <a href="#" class="number" title="2">2</a>
+                          <a href="#" class="number" title="3">3</a>
+                          <a href="#" title="Next Page">下一页 &raquo;</a><a href="#"> 尾页&raquo;</a>
+                          <input type="text" size="2" value="" /><input type="button" value="GO"/>
+				</div><!-- #EndLibraryItem --></div>
+                <!-- 学生 End -->
+                
+                
+                <!-- 课程 -->
+                <div class="column width5">
+                <div class="box_header">
+                    <input type="submit" class="btn btn_red overlay_delete" value="删除"/>
+                </div>
+                <div class="box_content">
+                <table class="tablebox">
+                      <thead class="table_header">
+                            <tr>
+                            <th class="first tc" width="1%"><input type="checkbox" id="checkboxall"/></th>
+                            <th>课程代码</th>
+                            <th>课程名称</th>
+                            <th>课程名称</th>
+                            </tr>
+                      </thead>
+                      
+                      <tbody class="openable_tbody">
+                            <tr>
+                            <td class="first tc"><input type="checkbox" name="checkall" /></td>
+                            <td>XS0001</td>
+                            <td>生物科学概论</td>
+                            <td>必修课</td>
+                            </tr>
+                            <tr>
+                            <td class="first tc"><input type="checkbox" name="checkall" /></td>
+                            <td>XS0001</td>
+                            <td>生物科学概论</td>
+                            <td>选修课</td>
+                            </tr>
+                            <tr>
+                            <td class="first tc"><input type="checkbox" name="checkall" /></td>
+                            <td>XS0001</td>
+                            <td>生物科学概论</td>
+                            <td>选修课</td>
+                            </tr>
+                            <tr>
+                            <td class="first tc"><input type="checkbox" name="checkall" /></td>
+                            <td>XS0001</td>
+                            <td>生物科学概论</td>
+                            <td>选修课</td>
+                            </tr>
+                            <tr>
+                            <td class="first tc"><input type="checkbox" name="checkall" /></td>
+                            <td>XS0001</td>
+                            <td>生物科学概论</td>
+                            <td>选修课</td>
+                            </tr>
+                            <tr>
+                            <td class="first tc"><input type="checkbox" name="checkall" /></td>
+                            <td>XS0001</td>
+                            <td>生物科学概论</td>
+                            <td>必修课</td>
+                            </tr>
+                            <tr>
+                            <td class="first tc"><input type="checkbox" name="checkall" /></td>
+                            <td>XS0001</td>
+                            <td>生物科学概论</td>
+                            <td>选修课</td>
+                            </tr>
+                            <tr>
+                            <td class="first tc"><input type="checkbox" name="checkall" /></td>
+                            <td>XS0001</td>
+                            <td>生物科学概论</td>
+                            <td>选修课</td>
+                            </tr>
+                            <tr>
+                            <td class="first tc"><input type="checkbox" name="checkall" /></td>
+                            <td>XS0001</td>
+                            <td>生物科学概论</td>
+                            <td>选修课</td>
+                            </tr>
+                            <tr>
+                            <td class="first tc"><input type="checkbox" name="checkall" /></td>
+                            <td>XS0001</td>
+                            <td>生物科学概论</td>
+                            <td>选修课</td>
+                            </tr>
+                       </tbody>
+                  </table>
+                 </div><!-- #BeginLibraryItem "/Library/pagination.lbi" --><div class="pagination">
+						共<b>5</b>页&nbsp;
+						每页显示<select><option>10条</option></select>
+                          <a href="#" title="First Page">&laquo; 首页</a><a href="#">&laquo; 上一页</a>
+                          <a href="#" class="number current" title="1">1</a>
+                          <a href="#" class="number" title="2">2</a>
+                          <a href="#" class="number" title="3">3</a>
+                          <a href="#" title="Next Page">下一页 &raquo;</a><a href="#"> 尾页&raquo;</a>
+                          <input type="text" size="2" value="" /><input type="button" value="GO"/>
+				</div><!-- #EndLibraryItem --></div>
+                <!-- 课程 End -->
+                
+                
+                </div>
+                <!-- clearfix End -->
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                <div class="btn_opera">
+                <input type="button" class="btn btn_green" onclick="location.href='index_2_3.html'" value="保存"/> 
+                <input type="button" class="btn btn_gray" onclick="location.href='index_2_3.html'" value="返回"/> 
+                </div>
+                    
+                </div>
+         <!-- RIGHT End -->
+         <div class="clearfix"></div>
+        
+</div>
+<!-- Page End --><!-- #BeginLibraryItem "/Library/footer.lbi" --><!-- Footer -->
+<footer class="page_footer">
+<p>主管单位：教育部 　主办单位：全国教师教育网络联盟</p>
+<p>全国教师教育网络联盟秘书处 电话：010－58802946 电子信箱：msz@jswl.cn</p>
+<p>全国教师教育网络联盟 版权所有 京ICP备05069600号 </p>
+</footer>
+<!-- Footer End --><!-- #EndLibraryItem --></body>
+</html>

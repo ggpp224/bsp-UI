@@ -1,0 +1,280 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta content="教师网联" name="keywords" />
+<meta content="教师网联" name="description" />
+<title>批量选课 - 教师网联</title>
+<link href="css/reset.css" rel="stylesheet" type="text/css" />
+<link href="css/skin_0.css" rel="stylesheet" type="text/css" id="skinCss" />
+<link href="css/nyroModal.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="js/jquery-1.7.1.min.js"></script>
+<script type="text/javascript" src="js/tablednd.js"></script>
+<script type="text/javascript" src="js/nyroModal1.6.2.min.js"></script>
+<!--[if lt IE 9]>
+<script type="text/javascript" src="js/html5.js"></script>
+<![endif]-->
+<!--[if IE 6]>
+<script type="text/javascript" src="js/DD_belatedPNG_0.0.8a-min.js" ></script>
+<script type="text/javascript">DD_belatedPNG.fix('.toplogo img, .btn_black, .btn_blue, .btn_red, .btn_ora, .btn_green, .btn_gray, .btn,');   </script>
+<![endif]-->
+<script type="text/javascript" src="js/summary.js"></script>
+<script type="text/javascript" src="js/cookies.js"></script>
+<script type="text/javascript" src="js/navigation.js"></script>
+<script type="text/javascript" src="js/navigation_page.js"></script>
+<script type="text/javascript">
+    $(document).ready(function() {
+			//summary.tabs();//Tabs
+			//summary.navigation();//navigation
+			summary.tablehover();//Hover
+			
+			
+			//分配
+			$('.overlay_fenpei').click(function(e) {
+				e.preventDefault();
+				$.fn.nyroModalManual({
+					width:900,
+					title:"分配",
+					url: 'overlay_add_fenpei.html'
+				});
+			return false;
+			});
+			
+	});
+	
+	//展开合闭
+	function slideSwitch(obja,objb){
+	$("."+obja).slideToggle("fast");
+	$("."+objb).slideToggle("fast");
+	}
+			
+</script>
+
+</head>
+<body>
+<div class="topline">
+	<div class="topline_box"><span>欢迎您：<b>北师大管理员</b></span><i>|</i><a href="#">返回个人空间</a><i>|</i><a href="#"><img src="images/ico_help.gif" />&nbsp;帮助中心</a><i>|</i><a href="#">退出</a></div>
+</div>
+
+<!-- Header -->
+<div class="page_head">
+<div class="wrapper"><!-- #BeginLibraryItem "/Library/logoinformation.lbi" -->
+<!-- <div class="toplogo"><img src="../images/logo.png" alt="全国教师教育网络联盟" /></div> -->
+<div class="topnav">
+<div class="select_tab">
+<select>
+<option>免费师范生支持系统</option>
+<option>免费师范生教育硕士支持系统</option>
+<option>教师职后教育支持系统</option>
+</select>
+</div>
+<div id="skin">
+  <ul>
+    <li id="skin_0" class="selected" title=""></li>
+    <li id="skin_1"  title=""></li>
+    <li id="skin_2" title=""></li>
+  </ul>
+</div>
+</div>
+<!-- <div class="link_other"><a href="#">门户</a></div> --><!-- #EndLibraryItem --></div>
+</div>
+<!-- Header End -->
+
+
+<!-- Page title -->
+<div class="pagetitle"><span><h1>选课管理</h1><h2>&nbsp;→&nbsp;批量选课</h2><h2>&nbsp;→&nbsp;新增</h2></span></div>
+<!-- Page title End -->
+    
+             
+
+<!-- Page -->
+<div class="page_content">
+
+				<!-- LEFT -->
+         <div class="page_left"><!-- #BeginLibraryItem "/Library/navigation.lbi" -->
+
+
+<div class="arrowlistmenu">
+
+<h3 class="menuheader expandable">互选课程总库</h3>
+<ul class="categoryitems">
+<li><a href="index.html">学科教学（语文）</a></li>
+<li><a href="index.html">学科教学（数学）</a></li>
+<li><a href="index.html">学科教学（物理）</a></li>
+<li><a href="index.html">学科教学（地理）</a></li>
+<li><a href="index.html">学科教学（化学）</a></li>
+<li><a href="index.html">学科教学（英语）</a></li>
+</ul>
+
+<h3 class="menuheader expandable">互选计划管理</h3>
+<ul class="categoryitems">
+<li><a href="index_1.html"><em>01</em>互选批次管理</a></li>
+<li><a href="index_2.html"><em>02</em>开课计划</a></li>
+<li><a href="index_2_3.html"><em>03</em>选课计划</a></li>
+<li><a href="index_3.html"><em>04</em>开课计划审核</a></li>
+<li><a href="index_4.html"><em>04</em>选课计划审核</a></li>
+</ul>
+
+<h3 class="menuheader expandable">选课管理</h3>
+<ul class="categoryitems">
+<li><a href="index_2_4.html"><em>01</em>选课方式设置</a></li>
+<li><a href="course_5.html"><em>02</em>选课控制面板</a></li>
+<li><a href="course_2.html"><em>03</em>批量选课</a></li>
+<li><a href="course_4.html"><em>04</em>志愿选课处理</a></li>
+<li><a href="course_5_2.html"><em>05</em>选课情况监控</a></li>
+<li><a href="course_6.html"><em>06</em>选课结果审核</a></li>
+</ul>
+
+<h3 class="menuheader expandable">学习档案</h3>
+<ul class="categoryitems">
+<li><a href="learnfile_2.html"><em>01</em>管理员查询</a></li>
+</ul>
+
+<h3 class="menuheader expandable">学分银行</h3>
+<ul class="categoryitems">
+<li><a href="bank.html"><em>01</em>管理员查询</a></li>
+</ul>
+
+
+
+<h3 class="menuheader expandable">系统维护</h3>
+<ul class="categoryitems">
+<li><a href="setup_1.html"><em>01</em>学校信息管理</a></li>
+<li><a href="setup_2.html"><em>02</em>专业信息管理</a></li>
+<li><a href="setup_3.html"><em>03</em>层次信息管理</a></li>
+<li><a href="setup_4.html"><em>04</em>年级信息管理</a></li>
+<li><a href="setup_5.html"><em>05</em>学科信息管理</a></li>
+<li><a href="setup_6.html"><em>06</em>网联课程管理</a></li>
+</ul>
+
+</div>
+<!-- #EndLibraryItem --></div>
+         <!-- LEFT -->
+  		<!-- RIGHT -->
+         <div class="page_right">
+                
+                <div class="box">
+                <label><i class="color_red">互选批次：</i></label><select><option>2012年第一批次</option></select>&nbsp;&nbsp;
+                <label><i class="color_red">学校：</i></label><select><option>北师大</option></select>
+                </div>
+                
+         		
+                <fieldset><legend>选择网联课程</legend></fieldset>	
+                <div class="box_content">
+                <table class="tablebox">
+                      <thead class="table_header">
+                            <tr>
+                            <th class="first">网联课程名称</th>
+                            <th>总人数下限/上限</th>
+                            <th>本校计划选课人数</th>
+                            <th>批量选课配额</th>
+                            <th>操作</th>
+                            </tr>
+                      </thead>
+                      
+                      <tbody class="openable_tbody">
+                            <tr>
+                            <td class="first">教育心理学</td>
+                            <td>30/240</td>
+                            <td>50</td>
+                            <td>0</td>
+                            <td><i class="color_gray">不可批量选课</i></td>
+                            </tr>
+                            
+                            <tr>
+                            <td class="first">生物</td>
+                            <td>15/150</td>
+                            <td>120</td>
+                            <td>120</td>
+                            <td><input type="button" class="btn btn_gray" value="批量选课" disabled="disabled" /></td>
+                            </tr>
+                            
+                            <tr>
+                            <td class="first">教育技术</td>
+                            <td>25/200</td>
+                            <td>100</td>
+                            <td>80</td>
+                            <td><input type="button" class="btn btn_gray" value="批量选课"/></td>
+                            </tr>
+                            
+                            
+                       </tbody>
+                  </table>
+                 </div>
+                
+                
+                <!-- 课程 -->
+                <fieldset><legend>高等数学</legend></fieldset>	
+                <div class="box_header">
+                    最多可为80个学生做批量选课，点击已分配人数旁边的分配按钮进行分配
+                </div>
+                <div class="box_content">
+                <table class="tablebox">
+                      <thead class="table_header">
+                            <tr>
+                            <th class="first">课程名称</th>
+                            <th>任课教师</th>
+                            <th>授课学校</th>
+                            <th>人数下限/上限</th>
+                            <th>剩余座位数</th>
+                            <th>已分配人数</th>
+                            <th>操作</th>
+                            </tr>
+                      </thead>
+                      
+                      <tbody class="openable_tbody">
+                            <tr>
+                            <td class="first"><a href="#">生物科学概论</a></td>
+                            <td>李，张</td>
+                            <td>北师大</td>
+                            <td>20/150</td>
+                            <td>20</td>
+                            <td>7</td>
+                            <td><input type="button" class="btn btn_gray overlay_fenpei" value="分配"/></td>
+                            </tr>
+                            
+                            <tr>
+                            <td class="first"><a href="#">生物遗传学</a></td>
+                            <td>李，张</td>
+                            <td>北师大</td>
+                            <td>50/300</td>
+                            <td>150</td>
+                            <td>0</td>
+                            <td><input type="button" class="btn btn_gray overlay_fenpei" value="分配"/></td>
+                            </tr>
+                            
+                            <tr>
+                            <td class="first"><a href="#">生物遗传学</a></td>
+                            <td>李，张</td>
+                            <td>北师大</td>
+                            <td>50/300</td>
+                            <td>150</td>
+                            <td>0</td>
+                            <td><input type="button" class="btn btn_gray overlay_fenpei" value="分配"/></td>
+                            </tr>
+                            
+                       </tbody>
+                  </table>
+                 </div>
+                <!-- 课程 End -->
+                
+                
+                
+                <div class="btn_opera">
+                <input type="button" class="btn btn_red" onclick="location.href='course_2.html'" value="保存"/> 
+                <input type="button" class="btn btn_gray" onclick="location.href='course_2.html'" value="返回"/> 
+                </div>
+                    
+                </div>
+         <!-- RIGHT End -->
+         <div class="clearfix"></div>
+                
+</div>
+<!-- Page End --><!-- #BeginLibraryItem "/Library/footer.lbi" --><!-- Footer -->
+<footer class="page_footer">
+<p>主管单位：教育部 　主办单位：全国教师教育网络联盟</p>
+<p>全国教师教育网络联盟秘书处 电话：010－58802946 电子信箱：msz@jswl.cn</p>
+<p>全国教师教育网络联盟 版权所有 京ICP备05069600号 </p>
+</footer>
+<!-- Footer End --><!-- #EndLibraryItem --></body>
+</html>

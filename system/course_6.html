@@ -1,0 +1,274 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta content="教师网联" name="keywords" />
+<meta content="教师网联" name="description" />
+<title>选课管理 - 教师网联</title>
+<link href="css/reset.css" rel="stylesheet" type="text/css" />
+<link href="css/skin_0.css" rel="stylesheet" type="text/css" id="skinCss" />
+<link href="css/nyroModal.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="js/jquery-1.7.1.min.js"></script>
+<script type="text/javascript" src="js/tablednd.js"></script>
+<script type="text/javascript" src="js/nyroModal1.6.2.min.js"></script>
+<!--[if lt IE 9]>
+<script type="text/javascript" src="js/html5.js"></script>
+<![endif]-->
+<!--[if IE 6]>
+<script type="text/javascript" src="js/DD_belatedPNG_0.0.8a-min.js" ></script>
+<script type="text/javascript">DD_belatedPNG.fix('.toplogo img, .btn_black, .btn_blue, .btn_red, .btn_ora, .btn_green, .btn_gray, .btn,');   </script>
+<![endif]-->
+<script type="text/javascript" src="js/summary.js"></script>
+<script type="text/javascript" src="js/cookies.js"></script>
+<script type="text/javascript" src="js/navigation.js"></script>
+<script type="text/javascript" src="js/navigation_page.js"></script>
+<script type="text/javascript">
+    $(document).ready(function() {
+			//summary.tabs();//Tabs
+			//summary.navigation();//navigation
+			summary.tablehover();//Hover
+			summary.change_skin();//Hover
+			
+			//审核通过
+			$('.overlay_course_6_shenhe').click(function(e) {
+				e.preventDefault();
+				$.fn.nyroModalManual({
+					width:400,
+					title:"审核通过",
+					url: 'overlay_course_6_shenhe.html'
+				});
+			return false;
+			});
+			
+			//审核不通过
+			$('.overlay_audit_no').click(function(e) {
+				e.preventDefault();
+				$.fn.nyroModalManual({
+					width:400,
+					title:"审核不通过",
+					url: 'overlay_audit.html'
+				});
+			return false;
+			});
+			
+			//查看审核意见
+			$('.overlay_course_6_view').nyroModal({
+			width: 400
+			});
+			
+			//查看
+			$('.overlay_course_6_view2').nyroModal({
+			width: 900
+			});
+			
+	});
+	
+	//展开合闭
+	function slideSwitch(obja,objb){
+	$("."+obja).slideToggle("fast");
+	$("."+objb).slideToggle("fast");
+	}
+			
+</script>
+
+</head>
+<body>
+<div class="topline">
+	<div class="topline_box"><span>欢迎您：<b>北师大管理员</b></span><i>|</i><a href="#">返回个人空间</a><i>|</i><a href="#"><img src="images/ico_help.gif" />&nbsp;帮助中心</a><i>|</i><a href="#">退出</a></div>
+</div>
+
+<!-- Header -->
+<div class="page_head">
+<div class="wrapper"><!-- #BeginLibraryItem "/Library/logoinformation.lbi" -->
+<!-- <div class="toplogo"><img src="../images/logo.png" alt="全国教师教育网络联盟" /></div> -->
+<div class="topnav">
+<div class="select_tab">
+<select>
+<option>免费师范生支持系统</option>
+<option>免费师范生教育硕士支持系统</option>
+<option>教师职后教育支持系统</option>
+</select>
+</div>
+<div id="skin">
+  <ul>
+    <li id="skin_0" class="selected" title=""></li>
+    <li id="skin_1"  title=""></li>
+    <li id="skin_2" title=""></li>
+  </ul>
+</div>
+</div>
+<!-- <div class="link_other"><a href="#">门户</a></div> --><!-- #EndLibraryItem --></div>
+</div>
+<!-- Header End -->
+
+
+<!-- Page title --><!-- Page title -->
+<div class="pagetitle"><span><h1>选课管理</h1><h2>&nbsp;→&nbsp;选课结果审核</h2><h2>&nbsp;→&nbsp;批量选课审核</h2></span></div>
+<!-- Page title End -->
+    
+             
+
+<!-- Page -->
+<div class="page_content">
+				
+         <!-- LEFT -->
+         <div class="page_left"><!-- #BeginLibraryItem "/Library/navigation.lbi" -->
+
+
+<div class="arrowlistmenu">
+
+<h3 class="menuheader expandable">互选课程总库</h3>
+<ul class="categoryitems">
+<li><a href="index.html">学科教学（语文）</a></li>
+<li><a href="index.html">学科教学（数学）</a></li>
+<li><a href="index.html">学科教学（物理）</a></li>
+<li><a href="index.html">学科教学（地理）</a></li>
+<li><a href="index.html">学科教学（化学）</a></li>
+<li><a href="index.html">学科教学（英语）</a></li>
+</ul>
+
+<h3 class="menuheader expandable">互选计划管理</h3>
+<ul class="categoryitems">
+<li><a href="index_1.html"><em>01</em>互选批次管理</a></li>
+<li><a href="index_2.html"><em>02</em>开课计划</a></li>
+<li><a href="index_2_3.html"><em>03</em>选课计划</a></li>
+<li><a href="index_3.html"><em>04</em>开课计划审核</a></li>
+<li><a href="index_4.html"><em>04</em>选课计划审核</a></li>
+</ul>
+
+<h3 class="menuheader expandable">选课管理</h3>
+<ul class="categoryitems">
+<li><a href="index_2_4.html"><em>01</em>选课方式设置</a></li>
+<li><a href="course_5.html"><em>02</em>选课控制面板</a></li>
+<li><a href="course_2.html"><em>03</em>批量选课</a></li>
+<li><a href="course_4.html"><em>04</em>志愿选课处理</a></li>
+<li><a href="course_5_2.html"><em>05</em>选课情况监控</a></li>
+<li><a href="course_6.html"><em>06</em>选课结果审核</a></li>
+</ul>
+
+<h3 class="menuheader expandable">学习档案</h3>
+<ul class="categoryitems">
+<li><a href="learnfile_2.html"><em>01</em>管理员查询</a></li>
+</ul>
+
+<h3 class="menuheader expandable">学分银行</h3>
+<ul class="categoryitems">
+<li><a href="bank.html"><em>01</em>管理员查询</a></li>
+</ul>
+
+
+
+<h3 class="menuheader expandable">系统维护</h3>
+<ul class="categoryitems">
+<li><a href="setup_1.html"><em>01</em>学校信息管理</a></li>
+<li><a href="setup_2.html"><em>02</em>专业信息管理</a></li>
+<li><a href="setup_3.html"><em>03</em>层次信息管理</a></li>
+<li><a href="setup_4.html"><em>04</em>年级信息管理</a></li>
+<li><a href="setup_5.html"><em>05</em>学科信息管理</a></li>
+<li><a href="setup_6.html"><em>06</em>网联课程管理</a></li>
+</ul>
+
+</div>
+<!-- #EndLibraryItem --></div>
+         <!-- LEFT -->
+         
+         <!-- RIGHT -->
+         <div class="page_right">
+         
+         <div id="tablist">
+          <ul id="explore_nav">
+                <li id="ex_tab1"><a rel="tab01" href="course_6.html" class="current">批量选课审核</a></li>
+                <li id="ex_tab2"><a rel="tab02" href="course_6_2.html">志愿选课审核</a></li>
+          </ul> 
+          <div id="tablist_cont">
+                <div id="tab01">
+                		<div class="search">
+                        
+                		<dl class="search_dl">
+                        <dt>互选批次：</dt>
+                        <dd><select id="form_term" name="termid">
+
+										<option value="8a8a8c1337e44b8e0137e46247fe001f">2012年第一学期</option><option value="8a8a8c1337e44b8e0137e4641c7f0031">2012年第二学期</option><option value="8a8a8cca37e4af740137e51152de0003">test</option></select></dd>
+                        <dt>状态：</dt>
+                        <dd><select id="form_status" name="statuscode"><option>全部</option><option value="2">已提交</option><option value="3">已审核</option><option value="4">审核不通过</option>
+										</select></dd>
+                                        <dt>学校：</dt>
+                        <dd><select name="schoolcode" id="form_school"><option value="null">全部</option><option value="10001">北京大学</option><option value="10027">北京师范大学</option><option value="10200">东北师范大学</option><option value="10269">华东师范大学</option><option value="10394">福建师范大学</option><option value="10511">华中师范大学</option><option value="10574">华南师范大学</option><option value="10635">西南大学</option><option value="10718">陕西师范大学</option></select></dd>
+                        </dl>
+                        
+                        <dl class="search_dl">
+                        
+                        <!--
+                        <dt>专业：</dt>
+                        <dd><select name="majorcode" id="form_major"><option value="null">全部</option><option value="081001">通信与信息系统</option><option value="081002">信号与信息处理</option><option value="081101">控制理论与控制工程</option><option value="081102">检测技术与自动化装置</option><option value="081104">模式识别与智能系统</option><option value="081105">导航、制导与控制</option><option value="081201">计算机系统结构</option><option value="081202">计算机软件与理论</option><option value="081203">计算机应用技术</option><option value="081301">建筑历史与理论</option></select></dd>
+                       -->
+                        </dl>
+                        
+                        
+                        <!--
+                        <dl class="search_dl">
+                         <dt>层次：</dt>
+                        <dd><select name="educationlevel" id="form_educationlevel"><option value="null">全部</option><option value="1">博士</option><option value="2">硕士</option><option value="3">本科</option><option value="4">专科</option><option value="9">其他</option></select></dd>
+                        <dt>年级：</dt>
+                        <dd><select name="gradecode" id="form_grade"><option value="null">全部</option><option value="1">一年级</option><option value="2">二年级</option><option value="3">三年级</option><option value="4">三年级及以上</option><option value="5">四年级 </option><option value="6">四年级及以上 </option><option value="7">五年级 </option><option value="8">五年级及以上</option><option value="9">六年级 </option><option value="10">六年级及以上</option></select></dd>
+                        
+                        </dl>
+                        -->
+                        
+                        <div class="search_btn"><input type="button" class="btn btn_gray" value="查询" />&nbsp;
+                        <input type="button" class="btn btn_gray" value="重置" />
+                        </div>
+                        <div class="slide_box">
+                        <a href="javascript:void(0)" onclick='slideSwitch("search","search_close")'>合闭搜索</a>
+                        </div>
+                        
+                        </div>
+                        
+                        <div class="search_close" style="display:none;">
+                        <a href="javascript:void(0)" onclick='slideSwitch("search","search_close")'>展开搜索</a>
+                        </div>
+        
+                        <div class="box_header">
+                            <input type="button" class="btn btn_blue overlay_course_6_shenhe" value="审核通过"/> 
+                            <input type="button" class="btn btn_red overlay_audit_no" value="审核未通过"/>
+                        </div>
+                        <div class="box_content">
+                        <table class="tablebox">
+                              <thead class="table_header">
+                                    <tr>
+                                    <th class="first tc" width="4%"><input type="checkbox" name="checkall" /> </th>
+                                    <th>学校</th>
+                                    <!--
+                                    <th>专业</th>
+                                    <th>层次</th>
+                                    <th>年级</th>
+                                    <th>学生类型</th>
+                                    -->
+                                    <th>互选批次</th>
+                                    <th>创建时间</th>
+                                    <th>状态</th>
+                                    <th>审核时间</th>
+                                    <th>审核人</th>
+                                    <th>操作</th>
+                                    </tr>
+                              </thead>
+                              
+                             
+                          
+                         </table>
+                         </div></div>
+                </div>
+                </div>
+         </div>
+         <!-- RIGHT End -->
+         <div class="clearfix"></div>
+        
+</div>
+<!-- Page End --><!-- #BeginLibraryItem "/Library/footer.lbi" --><!-- Footer -->
+<footer class="page_footer">
+<p>主管单位：教育部 　主办单位：全国教师教育网络联盟</p>
+<p>全国教师教育网络联盟秘书处 电话：010－58802946 电子信箱：msz@jswl.cn</p>
+<p>全国教师教育网络联盟 版权所有 京ICP备05069600号 </p>
+</footer>
+<!-- Footer End --><!-- #EndLibraryItem --></body>
+</html>

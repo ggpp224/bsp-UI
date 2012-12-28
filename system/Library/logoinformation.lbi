@@ -1,0 +1,19 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<!-- <div class="toplogo"><img src="../images/logo.png" alt="全国教师教育网络联盟" /></div> -->
+<div class="topnav">
+<div class="select_tab">
+<select>
+<option>免费师范生支持系统</option>
+<option>免费师范生教育硕士支持系统</option>
+<option>教师职后教育支持系统</option>
+</select>
+</div>
+<div id="skin">
+  <ul>
+    <li id="skin_0" class="selected" title=""></li>
+    <li id="skin_1"  title=""></li>
+    <li id="skin_2" title=""></li>
+  </ul>
+</div>
+</div>
+<!-- <div class="link_other"><a href="#">门户</a></div> -->

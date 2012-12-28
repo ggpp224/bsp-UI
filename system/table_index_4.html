@@ -1,0 +1,105 @@
+<script type="text/javascript" charset="utf-8">
+$(document).ready(function(){
+	summary.tablehover();//Hover
+	
+  //tree 刷新
+  $('#primary a').click(function() {
+  $('#tree_table').load('table_index_3.html');
+     return false;});
+  //tree 刷新
+  $('#primary_1 a').click(function() {
+  $('#tree_table').load('table_index_4.html');
+     return false;});
+	 
+  //search 刷新
+  $('#search').click(function() {
+  $('#tablelist').load('table_index_2.html');
+     return false;});
+	 
+  //search 刷新
+  $('#reset').click(function() {
+  $('#tablelist').load('table_index_1.html');
+     return false; });
+
+ });
+</script>
+<fieldset>
+				<legend class="big">表格一</legend>
+                <div class="box_header">
+                    <input type="button" class="btn btn_black overlay_button" value="按钮1"/>
+                    <input type="button" class="btn" id="search" value="查询"/>
+                    <input type="button" class="btn" id="reset" value="重置"/>
+                    <i id="debugArea">输出结果</i>
+                </div>
+                
+                <div id="tablelist" class="box_content" style="float:left;">
+                <table id="dragtable" class="tablebox">
+                      <thead class="table_header">
+                            <tr>
+                            <th class="first tc" width="4%"><input type="checkbox" id="checkboxall"/> </th>
+                            <th>课程代码</th>
+                            <th>课程名称</th>
+                            <th>授课学校</th>
+                            <th>适用专业</th>
+                            <th>层次</th>
+                            <th>开课学期</th>
+                            <th>课程学分</th>
+                            <th>启停标识</th>
+                            <th>启停操作</th>
+                            </tr>
+                      </thead>
+                      
+                      <tbody class="openable_tbody">
+                            <tr id="1" >
+                            <td class="first tc"><input type="checkbox" name="checkall" /> </td>
+                            <td><a href="#">KCJH0001_1</a></td>
+                            <td>文学鉴赏</td>
+                            <td>北师大</td>
+                            <td>文学</td>
+                            <td>本科</td>
+                            <td>2012第一学期</td>
+                            <td>17</td>
+                            <td><i class="color_gray">已启用</i></td>
+                            <td><input type="submit" class="btn btn_gray" value="停用"/></td>
+                            </tr>
+                            
+                            <tr id="2">
+                            <td class="first tc"><input type="checkbox" name="checkall" /> </td>
+                            <td><a href="#">KCJH0001_2</a></td>
+                            <td>产品设计</td>
+                            <td>华南师大</td>
+                            <td>物理</td>
+                            <td>本科</td>
+                            <td>2012第一学期</td>
+                            <td>30</td>
+                            <td><i class="color_gray">已启用</i></td>
+                            <td><input type="submit" class="btn btn_gray" value="停用"/></td>
+                            </tr>
+                            
+                            <tr id="3">
+                            <td class="first tc"><input type="checkbox" name="checkall" /> </td>
+                            <td><a href="#">KCJH0001_3</a></td>
+                            <td>用户体验设计</td>
+                            <td>东北师大</td>
+                            <td>数学</td>
+                            <td>本科</td>
+                            <td>2012第一学期</td>
+                            <td>76</td>
+                            <td><i class="color_gray">已启用</i></td>
+                            <td><input type="submit" class="btn btn_gray" value="停用"/></td>
+                            </tr>
+                            
+                            
+                      </tbody>
+                </table>
+                </div><!-- #BeginLibraryItem "/Library/pagination.lbi" --><div class="pagination">
+						共<b>5</b>页&nbsp;
+						每页显示<select><option>10条</option></select>
+                          <a href="#" title="First Page">&laquo; 首页</a><a href="#">&laquo; 上一页</a>
+                          <a href="#" class="number current" title="1">1</a>
+                          <a href="#" class="number" title="2">2</a>
+                          <a href="#" class="number" title="3">3</a>
+                          <a href="#" title="Next Page">下一页 &raquo;</a><a href="#"> 尾页&raquo;</a>
+                          <input type="text" size="2" value="" /><input type="button" value="GO"/>
+				</div><!-- #EndLibraryItem --></fieldset>
+                </div>

@@ -1,0 +1,270 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta content="教师网联" name="keywords" />
+<meta content="教师网联" name="description" />
+<title>新增开课计划 - 教师网联</title>
+<link href="css/reset.css" rel="stylesheet" type="text/css" />
+<link href="css/skin_0.css" rel="stylesheet" type="text/css" id="skinCss" />
+<link href="css/nyroModal.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="js/jquery-1.7.1.min.js"></script>
+<script type="text/javascript" src="js/tablednd.js"></script>
+<script type="text/javascript" src="js/nyroModal1.6.2.min.js"></script>
+<!--//日期控件-->
+<script language="javascript" type="text/javascript" src="js/WdatePicker.js"></script>
+<!--[if lt IE 9]>
+<script type="text/javascript" src="js/html5.js"></script>
+<![endif]-->
+<!--[if IE 6]>
+<script type="text/javascript" src="js/DD_belatedPNG_0.0.8a-min.js" ></script>
+<script type="text/javascript">DD_belatedPNG.fix('.toplogo img, .btn_black, .btn_blue, .btn_red, .btn_ora, .btn_green, .btn_gray, .btn,');   </script>
+<![endif]-->
+<script type="text/javascript" src="js/summary.js"></script>
+<script type="text/javascript" src="js/cookies.js"></script>
+<script type="text/javascript" src="js/navigation.js"></script>
+<script type="text/javascript" src="js/navigation_page.js"></script>
+<script type="text/javascript">
+    $(document).ready(function() {
+			//summary.tabs();//Tabs
+			//summary.navigation();//navigation
+			summary.tablehover();//Hover
+			summary.change_skin();//Hover
+			
+			//课程查询添加
+			$(".course_plan").focus(function(e) {
+					e.preventDefault();
+					$.fn.nyroModalManual({
+						width:650,
+						title:'课程查询添加',
+						url: 'overlay_course_plan.html'
+					});
+				return false;
+			});
+			
+			//先修/后续课程查询添加
+			$(".course_plan_continue").focus(function(e) {
+					e.preventDefault();
+					$.fn.nyroModalManual({
+						width:800,
+						title:'先修/后续课程查询添加',
+						url: 'overlay_course_plan_continue.html'
+					});
+				return false;
+			});
+			
+			//增加行 
+			$("#add_table").click(function(){  
+				var $table=$("#tablelist tr");  
+				var len=$table.length;  
+				$("#tablelist").append("<tr id="+(len+1)+"><td class=\'first tc\'><i class=\'color_gray\'>"+len+"</i></td><td>"+"<input type=\'text\' size=\'20\' value='' />"+"</td><td>"+"<input type=\'text\' size=\'6\' value='' />"+"</td><td><a href=\'javascript:deltr("+(len+1)+")\'><img src=\'images/delete.png\' />删除</a></td></tr>");             
+				//清空输入框  
+				//$("#tzgjz").val(''); 
+			})
+			
+	});
+	
+	
+	//删除行  
+	function deltr(index){  
+	$table=$("#tablelist tr");  
+	$("tr[id=\'"+index+"\']").remove();   
+	} 
+	
+	
+</script>
+
+
+
+</head>
+<body>
+<div class="topline">
+	<div class="topline_box"><span>欢迎您：<b>北师大管理员</b></span><i>|</i><a href="#">返回个人空间</a><i>|</i><a href="#"><img src="images/ico_help.gif" />&nbsp;帮助中心</a><i>|</i><a href="#">退出</a></div>
+</div>
+
+<!-- Header -->
+<div class="page_head">
+<div class="wrapper"><!-- #BeginLibraryItem "/Library/logoinformation.lbi" -->
+<!-- <div class="toplogo"><img src="../images/logo.png" alt="全国教师教育网络联盟" /></div> -->
+<div class="topnav">
+<div class="select_tab">
+<select>
+<option>免费师范生支持系统</option>
+<option>免费师范生教育硕士支持系统</option>
+<option>教师职后教育支持系统</option>
+</select>
+</div>
+<div id="skin">
+  <ul>
+    <li id="skin_0" class="selected" title=""></li>
+    <li id="skin_1"  title=""></li>
+    <li id="skin_2" title=""></li>
+  </ul>
+</div>
+</div>
+<!-- <div class="link_other"><a href="#">门户</a></div> --><!-- #EndLibraryItem --></div>
+</div>
+<!-- Header End -->
+
+
+<!-- Page title -->
+<div class="pagetitle"><span><h1>互选计划管理</h1><h2>&nbsp;→&nbsp;开课计划</h2><h2>&nbsp;→&nbsp;新增</h2></span></div>
+<!-- Page title End -->
+    
+             
+
+<!-- Page -->
+<div class="page_content">
+
+		<!-- LEFT -->
+         <div class="page_left"><!-- #BeginLibraryItem "/Library/navigation.lbi" -->
+
+
+<div class="arrowlistmenu">
+
+<h3 class="menuheader expandable">互选课程总库</h3>
+<ul class="categoryitems">
+<li><a href="index.html">学科教学（语文）</a></li>
+<li><a href="index.html">学科教学（数学）</a></li>
+<li><a href="index.html">学科教学（物理）</a></li>
+<li><a href="index.html">学科教学（地理）</a></li>
+<li><a href="index.html">学科教学（化学）</a></li>
+<li><a href="index.html">学科教学（英语）</a></li>
+</ul>
+
+<h3 class="menuheader expandable">互选计划管理</h3>
+<ul class="categoryitems">
+<li><a href="index_1.html"><em>01</em>互选批次管理</a></li>
+<li><a href="index_2.html"><em>02</em>开课计划</a></li>
+<li><a href="index_2_3.html"><em>03</em>选课计划</a></li>
+<li><a href="index_3.html"><em>04</em>开课计划审核</a></li>
+<li><a href="index_4.html"><em>04</em>选课计划审核</a></li>
+</ul>
+
+<h3 class="menuheader expandable">选课管理</h3>
+<ul class="categoryitems">
+<li><a href="index_2_4.html"><em>01</em>选课方式设置</a></li>
+<li><a href="course_5.html"><em>02</em>选课控制面板</a></li>
+<li><a href="course_2.html"><em>03</em>批量选课</a></li>
+<li><a href="course_4.html"><em>04</em>志愿选课处理</a></li>
+<li><a href="course_5_2.html"><em>05</em>选课情况监控</a></li>
+<li><a href="course_6.html"><em>06</em>选课结果审核</a></li>
+</ul>
+
+<h3 class="menuheader expandable">学习档案</h3>
+<ul class="categoryitems">
+<li><a href="learnfile_2.html"><em>01</em>管理员查询</a></li>
+</ul>
+
+<h3 class="menuheader expandable">学分银行</h3>
+<ul class="categoryitems">
+<li><a href="bank.html"><em>01</em>管理员查询</a></li>
+</ul>
+
+
+
+<h3 class="menuheader expandable">系统维护</h3>
+<ul class="categoryitems">
+<li><a href="setup_1.html"><em>01</em>学校信息管理</a></li>
+<li><a href="setup_2.html"><em>02</em>专业信息管理</a></li>
+<li><a href="setup_3.html"><em>03</em>层次信息管理</a></li>
+<li><a href="setup_4.html"><em>04</em>年级信息管理</a></li>
+<li><a href="setup_5.html"><em>05</em>学科信息管理</a></li>
+<li><a href="setup_6.html"><em>06</em>网联课程管理</a></li>
+</ul>
+
+</div>
+<!-- #EndLibraryItem --></div>
+         <!-- LEFT -->
+		
+        
+        <!-- RIGHT -->
+         <div class="page_right">
+        <form id="sampleform" method="post" action="#">
+        
+        			<fieldset><legend class="big">新增开课课程</legend></fieldset>
+        			
+                    <div class="clearfix">
+        			<div class="column width3 first">	
+                    	 <p><label class="labeltitle"><i class="color_red">*</i> 互选批次：</label><select iclass="half"><option>2012年第一学期</option></select></p>
+                         
+                    	<p><label class="labeltitle"><i class="color_red">*</i> 课程名称：</label><input type="text" id="" class="half overlay_input course_plan" name="" value="点击右侧按钮添加"  /></p>		
+                    	
+                        <!--<p><label class="labeltitle">选课开始时间：</label><input type="text" id="d122" class="half overlay_time dateinput" onFocus="WdatePicker({isShowWeek:true,onpicked:function(){}})"  /></p>-->
+                       
+                        <p><label class="labeltitle"><i class="color_red">*</i> 人数上限：</label><input type="text" id="" class="half" name="" value="100（默认1000）"  /></p>
+                        
+                        <p><label class="labeltitle">先修课程：</label><input type="text" id="" class="half" name="" value="计算机基础"  /></p>
+                        <p><label class="labeltitle"><i class="color_red">*</i> 学分数：</label><input type="text" id="" class="half" name="" value="3"  /></p>
+                        <p><label class="labeltitle">费用总额：</label><input type="text" id="" class="half" name="" disabled="disabled" value="450(自动计算)"  /></p>
+                        <p><label class="labeltitle"><i class="color_red">*</i> 开课时间：</label><input type="text" id="d122" class="half overlay_time dateinput" onFocus="WdatePicker({isShowWeek:true,onpicked:function(){}})"  /></p>
+                        
+                        <p><label class="labeltitle"><i class="color_red">*</i> 考核形式：</label><select iclass="half"><option>闭卷</option></select></p>
+                    </div>
+                    
+                    <div class="column width3">		
+                    		<p>&nbsp;</p>						
+                        <p><label class="labeltitle">课程代码：</label><input type="text" id="" class="half " name="" disabled="disabled" value="自动带入，不允许编辑"  /></p>
+                        
+                        <!--<p><label class="labeltitle">选课结束时间：</label><input type="text" id="d122" class="half overlay_time dateinput" onFocus="WdatePicker({isShowWeek:true,onpicked:function(){}})"  /></p>-->
+                        <p><label class="labeltitle"><i class="color_red">*</i> 人数下限：</label><input type="text" id="" class="half" name="" value="10（默认为0）"  /></p>
+                        
+                        <p><label class="labeltitle">后续课程：</label><input type="text" id="" class="half" name="" value="计算机高级应用"  /></p>
+                        <p><label class="labeltitle"><i class="color_red">*</i> 学分单价：</label><input type="text" id="" class="half" name="" value="150"  /></p>
+                        <p>&nbsp;</p>
+                        <p><label class="labeltitle"><i class="color_red">*</i> 学习结果发布时间：</label><input type="text" id="d123" class="half overlay_time dateinput" onFocus="WdatePicker({isShowWeek:true,onpicked:function(){}})"  /></p>
+                        
+                        
+                    </div>
+                    </div>
+                    
+                    <div class="clearfix">
+                    <p><label class="labeltitle"><i class="color_red">*</i> 成绩构成方式：</label>
+                    		<div style="width:50%;float:left;">
+                                    <div class="box_header">
+                                    	<a href="#a" id="add_table" class="btn"><i class="icon icon-add">&nbsp;</i>添加</a>
+                                    </div>
+                                    <div class="box_content">
+                                    <table class="tablebox" id="tablelist" >
+                                      <thead class="table_header">
+                                            <tr>
+                                            <th class="first tc" width="6%">&nbsp;</th>
+                                            <th width="40%">构成项</th>
+                                            <th>分数</th>
+                                            <th width="20%">&nbsp;</th>
+                                            </tr>
+                                      </thead>
+                                      <tbody class="openable_tbody">
+                                      </tbody>
+                                  
+                                 </table>
+                                 </div>
+                         </div>
+                    </p>
+                 	</div>
+                    
+                 
+                    
+                    <div class="btn_opera">
+                    <input type="button" class="btn btn_red" onclick="location.href='index_2.html'" value="保存"/> 
+                    <input type="button" class="btn btn_gray" onclick="location.href='index_2.html'" value="返回"/> 
+                    </div>
+                
+                
+                
+                
+        </form>
+        </div>
+         <!-- RIGHT End -->
+         <div class="clearfix"></div>
+  				
+</div>
+<div class="clearfix"></div>
+<!-- Page End --><!-- #BeginLibraryItem "/Library/footer.lbi" --><!-- Footer -->
+<footer class="page_footer">
+<p>主管单位：教育部 　主办单位：全国教师教育网络联盟</p>
+<p>全国教师教育网络联盟秘书处 电话：010－58802946 电子信箱：msz@jswl.cn</p>
+<p>全国教师教育网络联盟 版权所有 京ICP备05069600号 </p>
+</footer>
+<!-- Footer End --><!-- #EndLibraryItem --></body>
+</html>

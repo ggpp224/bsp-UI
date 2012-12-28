@@ -1,0 +1,217 @@
+@charset "UTF-8";
+/* CSS Document */
+
+
+/* ---------- 字体导入，看情况使用 ---------- */
+@font-face {
+    font-family: 'SegoeUISymbolNormal';
+    src: url('../font/seguisym-webfont.eot'); /* ie9 */
+    src: url('../font/seguisym-webfont.eot?#iefix') format('embedded-opentype'), /* ie6-ie8 */
+          url('../font/seguisym-webfont.woff') format('woff'), /* 通用浏览器 */
+          url('../font/seguisym-webfont.ttf') format('truetype'), /* Safari, Android, iOS */
+          url('../font/seguisym-webfont.svg#SegoeUISymbolNormal') format('svg'); /* iOS */
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+
+
+
+
+/*-------------  Default  -------------*/
+body{ color:#333; margin:0 auto;}
+h1,h2,h3,h4,h5,h6{ font-family:"Microsoft YaHei", "黑体";}
+
+
+
+
+
+
+
+
+
+
+/*-------------  Header  -------------*/
+.header{ width:100%; height:57px; background:#212121; }
+
+
+
+
+
+
+
+
+/*-------------  Banner  -------------*/
+.banner{ height:87px; padding-left:44px; border-top:1px solid #c87c02; border-bottom:1px solid #8e3b11;  background:#ad5700 url(../images/banner_bg.png) repeat-x;}
+
+
+
+
+
+
+
+
+/*-------------  Content  -------------*/
+.content{ padding:30px 50px; min-width:800px; background:url(../images/content_topbg.png) center top repeat-x;}
+.login_box{ width:418px; height:291px; padding:20px 75px 0; margin:0 auto; color:#666; background:url(../images/login_bg.png) no-repeat;}
+.login_box h1{ font-size:18px; color:#333; border-bottom:1px solid #dddddd;}
+.login_box form{ padding:10px 0;}
+.login_box label{ display:block; line-height:20px; }
+.login_box input{ vertical-align:middle;}
+.login_box .user_input{ font-size:18px;}
+.login_box p{ line-height:20px;}
+.login_box .submit{ padding:10px 0; margin-top:10px; border-top:1px solid #ddd; text-align:center;}
+.login_box .btn{ padding:6px 25px; font-size:14px;}
+.login_info{ width:600px; margin:0 auto; text-align:center; color:#930; padding:10px 0;}
+/* 登陆成功 */
+.login_succ{ border:1px solid #f3df83; background:#fff6c7; padding:20px 0 20px 120px;}
+.login_succ h1{ font-size:30px; font-weight:normal; color:#4a8725; margin-bottom:10px; position:relative;}
+.login_succ h1 .h1_ico{ position:absolute; left:-54px; top:4px; width:40px; height:41px; background:url(../images/login_succ_ico.png) no-repeat;}
+.login_succ p{ color:#930; margin:0;}
+
+
+
+
+
+
+
+
+/* -------------- 操作反馈提示 BOX -------------*/ 
+/* 默认灰 */
+.box { padding:8px; margin:4px 0;  color:#555; border-top:1px solid #ccc; border-bottom:1px solid #ccc; background:#eee;}
+/* 蓝 */
+.box-info { padding-left: 32px; border-top:1px solid #B8E2FB; border-bottom:1px solid #B8E2FB; background:#E8F6FF url("../images/information.png") no-repeat 8px 50%;}
+/* 绿 */
+.box-success{ padding-left: 32px; border-top:1px solid #BBDF8D; border-bottom:1px solid #BBDF8D; background:#EAF7D9 url("../images/accept.png") no-repeat 8px 50%;}
+/* 黄 */
+.box-warning{ padding-left: 32px; border:1px solid #F2DD8C; background:#FFF5CC url("../images/error.png") no-repeat 8px 8px;}
+/* 红 */
+.box-error{ padding-left: 32px; border-top:1px solid #F8ACAC; border-bottom:1px solid #F8ACAC; background:#FFD1D1 url("../images/exclamation.png") no-repeat 8px 50%;}
+/* 红 - 原因 */
+.box-error-msg{ margin-top:-8px; background:#FFF1F1; border-top:0 none; border-bottom:1px solid #FDDCDC; color:#664B4B; padding:12px;}
+.box-error-msg ol { margin-top: 0; margin-bottom: 0;}
+.box a:hover { background: transparent !important;}
+
+
+
+
+
+
+
+/*-------------  Footer  -------------*/
+.footer{ border-top:1px solid #ddd; padding:4px 20px; color:#999; min-width:800px; text-align:center;}
+.footer p{ color:#888;}
+.footer span{ float:right; margin-right:10px;}
+
+
+
+
+
+
+
+
+
+
+
+ /* -------------- BUTTON 按钮------------ */
+ /*  全局 */
+.btn {
+	display:inline-block;
+	padding:5px 12px;
+	*padding:4px 2px 3px;
+	color:#777;
+	text-decoration:none;
+	font-weight:bold;
+	font-size:12px;
+	font-family:Tahoma, Arial, sans-serif;
+	-moz-border-radius:2px;
+	-webkit-border-radius:2px;
+	border-radius:2px;
+	text-shadow: 0 1px 1px rgba(255,255,255,0.9);
+	position:relative;
+	cursor:pointer;
+	border:1px solid #ccc;
+	background:#fff url("../images/btn-overlay.png") repeat-x;
+	-moz-box-shadow:0px 1px 2px #999; -webkit-box-shadow:0px 1px 2px #999; box-shadow:0px 1px 2px #999;
+}
+.btn:hover, 
+.btn:focus, 
+.btn:active {
+	color:#333;
+	outline:medium none;
+	border:1px solid #999;
+	opacity:0.9;
+	-khtml-opacity: .9;
+	-moz-opacity: 0.9;
+	-moz-box-shadow:0px 2px 3px #999; -webkit-box-shadow:0px 2px 3px #999; box-shadow:0px 2px 3px #999;
+}
+.btn:active{ bottom:-1px; right:-1px;}
+ /*  灰 */
+.btn_gray 			{ color:#333; border:1px solid #a2a2a2; background-color: #fff; text-shadow: 0 1px 1px rgba(0,0,0,0.25); }
+.btn_gray:hover, 
+.btn_gray:focus, 
+.btn_gray:active 	{ color:#111; border:1px solid #666; background:#fff; -moz-box-shadow:0px 0px 4px #999; -webkit-box-shadow:0px 0px 4px #999; box-shadow:0px 0px 4px #999;}
+ /*  红 */
+.btn_red 				{ color:#fff; border:1px solid #AE2B2B; background-color: #D22A2A ; text-shadow: 0 1px 1px rgba(0,0,0,0.25);}
+.btn_red:hover, 
+.btn_red:focus, 
+.btn_red:active 	{ color:#fff; border:1px solid #711b1b; background:#e04b41; -moz-box-shadow:0px 0px 4px #999; -webkit-box-shadow:0px 0px 4px #999; box-shadow:0px 0px 4px #999;}
+
+
+
+
+
+
+/* -------------- 表单 Form, Input, Select, Textarea, Checkbox, Radio -------------*/ 
+form 					{ padding:0;}
+input:focus,
+textarea:focus,
+select:focus 			{ outline-width:0; }
+
+input[type="text"],
+input[type="password"],
+input[type="select"],
+input[type="search"],
+input[type="file"],
+textarea,
+select   					{ border-color:#c4c4c4; border-style:solid; border-width:1px; padding:3px; color:#666; -moz-border-radius:2px; -webkit-border-radius:2px; border-radius:2px;}
+input[type="submit"],
+input[type="reset"],
+input[type="button"] { margin-bottom:0;}
+
+textarea 				{ line-height:18px; overflow:auto; }
+textarea.small 		{ height:5.5em;}
+textarea.medium 	{ height:10em;}
+textarea.large 		{ height:20em;}
+
+input.half,
+select.half,
+textarea.half 		{ width:50%;}
+input.full,
+select.full,
+textarea.full 			{ width:97%;}
+input.title 				{ font-size:16px;}
+
+input:hover,
+input:focus,
+textarea:hover,
+textarea:focus 		{
+	-moz-box-shadow:0 1px 1px rgba(196,196,196,0.5);
+	-webkit-box-shadow:0 1px 1px rgba(196,196,196,0.5);
+	box-shadow:0 1px 1px rgba(196,196,196,0.5);
+	-webkit-focus-ring-color:none;
+	border-color:#cbc896; 
+	background-color:#fffde0;
+	color:#000;
+}
+input.noedit{ background:#ccc;}
+.radio,
+.check{ padding: 0; margin:0; vertical-align:middle; border:0;}
+
+
+
+
+
+
+

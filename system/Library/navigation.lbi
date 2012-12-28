@@ -1,0 +1,57 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+
+<div class="arrowlistmenu">
+
+<h3 class="menuheader expandable">互选课程总库</h3>
+<ul class="categoryitems">
+<li><a href="../index.html">学科教学（语文）</a></li>
+<li><a href="../index.html">学科教学（数学）</a></li>
+<li><a href="../index.html">学科教学（物理）</a></li>
+<li><a href="../index.html">学科教学（地理）</a></li>
+<li><a href="../index.html">学科教学（化学）</a></li>
+<li><a href="../index.html">学科教学（英语）</a></li>
+</ul>
+
+<h3 class="menuheader expandable">互选计划管理</h3>
+<ul class="categoryitems">
+<li><a href="../index_1.html"><em>01</em>互选批次管理</a></li>
+<li><a href="../index_2.html"><em>02</em>开课计划</a></li>
+<li><a href="../index_2_3.html"><em>03</em>选课计划</a></li>
+<li><a href="../index_3.html"><em>04</em>开课计划审核</a></li>
+<li><a href="../index_4.html"><em>04</em>选课计划审核</a></li>
+</ul>
+
+<h3 class="menuheader expandable">选课管理</h3>
+<ul class="categoryitems">
+<li><a href="../index_2_4.html"><em>01</em>选课方式设置</a></li>
+<li><a href="../course_5.html"><em>02</em>选课控制面板</a></li>
+<li><a href="../course_2.html"><em>03</em>批量选课</a></li>
+<li><a href="../course_4.html"><em>04</em>志愿选课处理</a></li>
+<li><a href="../course_5_2.html"><em>05</em>选课情况监控</a></li>
+<li><a href="../course_6.html"><em>06</em>选课结果审核</a></li>
+</ul>
+
+<h3 class="menuheader expandable">学习档案</h3>
+<ul class="categoryitems">
+<li><a href="../learnfile_2.html"><em>01</em>管理员查询</a></li>
+</ul>
+
+<h3 class="menuheader expandable">学分银行</h3>
+<ul class="categoryitems">
+<li><a href="../bank.html"><em>01</em>管理员查询</a></li>
+</ul>
+
+
+
+<h3 class="menuheader expandable">系统维护</h3>
+<ul class="categoryitems">
+<li><a href="../setup_1.html"><em>01</em>学校信息管理</a></li>
+<li><a href="../setup_2.html"><em>02</em>专业信息管理</a></li>
+<li><a href="../setup_3.html"><em>03</em>层次信息管理</a></li>
+<li><a href="../setup_4.html"><em>04</em>年级信息管理</a></li>
+<li><a href="../setup_5.html"><em>05</em>学科信息管理</a></li>
+<li><a href="../setup_6.html"><em>06</em>网联课程管理</a></li>
+</ul>
+
+</div>

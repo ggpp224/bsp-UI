@@ -1,0 +1,371 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta content="教师网联" name="keywords" />
+<meta content="教师网联" name="description" />
+<title>选课监控 - 教师网联</title>
+<link href="css/reset.css" rel="stylesheet" type="text/css" />
+<link href="css/skin_0.css" rel="stylesheet" type="text/css" id="skinCss" />
+<link href="css/nyroModal.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="js/jquery-1.7.1.min.js"></script>
+<script type="text/javascript" src="js/tablednd.js"></script>
+<script type="text/javascript" src="js/nyroModal1.6.2.min.js"></script>
+<!--[if lt IE 9]>
+<script type="text/javascript" src="js/html5.js"></script>
+<![endif]-->
+<!--[if IE 6]>
+<script type="text/javascript" src="js/DD_belatedPNG_0.0.8a-min.js" ></script>
+<script type="text/javascript">DD_belatedPNG.fix('.toplogo img, .btn_black, .btn_blue, .btn_red, .btn_ora, .btn_green, .btn_gray, .btn,');   </script>
+<![endif]-->
+<script type="text/javascript" src="js/summary.js"></script>
+<script type="text/javascript">
+    $(document).ready(function() {
+			//summary.tabs();//Tabs
+			summary.tablehover();//Hover
+			summary.change_skin();//Hover
+			
+			//课程代码
+			$(".course_code").focus(function(e) {
+					e.preventDefault();
+					$.fn.nyroModalManual({
+						width:900,
+						title:'网联课程代码',
+						url: 'overlay_course4_addcourse.html'
+					});
+				return false;
+			});
+			
+	});
+	
+		
+</script>
+
+</head>
+<body>
+<div class="topline">
+	<div class="topline_box"><span>欢迎您：<b>北师大管理员</b></span><i>|</i><a href="#">返回个人空间</a><i>|</i><a href="#"><img src="images/ico_help.gif" />&nbsp;帮助中心</a><i>|</i><a href="#">退出</a></div>
+</div>
+
+<!-- Header -->
+<div class="page_head">
+<div class="wrapper"><!-- #BeginLibraryItem "/Library/logoinformation.lbi" -->
+<!-- <div class="toplogo"><img src="../images/logo.png" alt="全国教师教育网络联盟" /></div> -->
+<div class="topnav">
+<div class="select_tab">
+<select>
+<option>免费师范生支持系统</option>
+<option>免费师范生教育硕士支持系统</option>
+<option>教师职后教育支持系统</option>
+</select>
+</div>
+<div id="skin">
+  <ul>
+    <li id="skin_0" class="selected" title=""></li>
+    <li id="skin_1"  title=""></li>
+    <li id="skin_2" title=""></li>
+  </ul>
+</div>
+</div>
+<!-- <div class="link_other"><a href="#">门户</a></div> --><!-- #EndLibraryItem --></div>
+</div>
+<!-- Header End -->
+
+
+<!-- Page title -->
+<div class="pagetitle"><span><h1>选课监控</h1><h2>&nbsp;→&nbsp;学生选课情况监控</h2></span></div>
+<!-- Page title End -->
+    
+             
+
+<!-- Page -->
+<div class="page_content">
+
+
+			<!-- LEFT -->
+         <div class="page_left">
+         		<div class="sidebar">
+          		<h3 class="title">互选计划</h3>
+                <ul>
+                <li><a href="course_5.html">系统控制面板</a></li>
+                <li><a href="course_5_2.html">课程选课情况监控</a></li>
+                <li><a href="course_5_3.html" class="current">学生选课情况监控</a></li>
+                </ul>
+                </div>
+         </div>
+         <!-- LEFT -->
+         
+         <!-- RIGHT -->
+         <div class="page_right">
+         
+         <form id="sampleform" method="post" action="#">
+         
+         		<div class="clearfix">
+        			<div class="column width3 first">									
+                        <p><label class="labeltitle">学期：</label><select iclass="half"><option>-Default-</option></select></p>
+                    </div>
+                </div>
+                
+                
+                <fieldset><legend class="big">学期总计</legend></fieldset>	  
+                <div class="box_header"><input type="button" class="btn btn_gray" value="刷新"/> </div>
+                <div class="box_content">
+                <table class="tablebox">
+                      <thead class="table_header">
+                            <tr>
+                            <th class="first">座位总数</th>
+                            <th>已选座位数</th>
+                            <th>剩余座位数</th>
+                            <th>学员总数</th>
+                            <th>已选课人数</th>
+                            <th>未选课人数</th>
+                            </tr>
+                      </thead>
+                      
+                      <tbody class="openable_tbody">
+                            <tr>
+                            <td class="first">5000</td>
+                            <td>2434</td>
+                            <td>2566</td>
+                            <td>2100</td>
+                            <td>948</td>
+                            <td>1152</td>
+                            </tr>
+                      </tbody>
+                  
+                 </table>
+                 </div>
+                 
+                 
+                 
+                 <fieldset><legend class="big">按学校统计</legend></fieldset>	  
+                 <div class="clearfix">
+        			<div class="column width3 first">									
+                        <p><label class="labeltitle">学校代码：</label><input type="text" class="half" value="" /></p>
+                    </div>
+                    <div class="column width3">
+                        <p><label class="labeltitle">学校名称：</label><input type="text" class="half" value="" /></p>
+                    </div>
+                </div>
+                <div class="btn_opera">
+                    <input type="button" class="btn btn_gray" onclick="location.href='index_2.html'" value="查询"/> 
+                </div>
+                    
+                <div class="box_header"></div>
+                <div class="box_content">
+                <table class="tablebox">
+                      <thead class="table_header">
+                            <tr>
+                            <th class="first" width="4%">&nbsp;</th>
+                            <th>学校代码</th>
+                            <th>学校名称</th>
+                            <th>学员总数</th>
+                            <th>已登录人数</th>
+                            <th>未登录人数</th>
+                            <th>计划总课次</th>
+                            <th>已选总课次</th>
+                            <th>控制</th>
+                            </tr>
+                      </thead>
+                      
+                      <tbody class="openable_tbody">
+                            <tr>
+                            <td class="first">&nbsp;</td>
+                            <td>KCJH0001</td>
+                            <td>北京师范大学</td>
+                            <td>900</td>
+                            <td>500</td>
+                            <td>400</td>
+                            <td>3000</td>
+                            <td>1200</td>
+                            <td><a href="#">开启选课</a></td>
+                            </tr>
+                            
+                            <tr>
+                            <td class="first">&nbsp;</td>
+                            <td>KCJH0001</td>
+                            <td>西南师范大学</td>
+                            <td>700</td>
+                            <td>500</td>
+                            <td>200</td>
+                            <td>&nbsp;</td>
+                            <td>&nbsp;</td>
+                            <td><a href="#">暂停选课</a></td>
+                            </tr>
+                            
+                            <tr>
+                            <td class="first">&nbsp;</td>
+                            <td>KCJH0001</td>
+                            <td>西南师范大学</td>
+                            <td>500</td>
+                            <td><i class="color_red">0</i></td>
+                            <td>500</td>
+                            <td>&nbsp;</td>
+                            <td>&nbsp;</td>
+                            <td><a href="#">暂停选课</a></td>
+                            </tr>
+                           
+                      </tbody>
+                  
+                 </table>
+                 </div><!-- #BeginLibraryItem "/Library/pagination.lbi" --><div class="pagination">
+						共<b>5</b>页&nbsp;
+						每页显示<select><option>10条</option></select>
+                          <a href="#" title="First Page">&laquo; 首页</a><a href="#">&laquo; 上一页</a>
+                          <a href="#" class="number current" title="1">1</a>
+                          <a href="#" class="number" title="2">2</a>
+                          <a href="#" class="number" title="3">3</a>
+                          <a href="#" title="Next Page">下一页 &raquo;</a><a href="#"> 尾页&raquo;</a>
+                          <input type="text" size="2" value="" /><input type="button" value="GO"/>
+				</div><!-- #EndLibraryItem --><fieldset><legend class="big">已登录学生列表</legend></fieldset>	  
+                 <div class="clearfix">
+        			<div class="column width3 first">									
+                        <p><label class="labeltitle">学校：</label><select><option>-Default-</option></select></p>
+                        <p><label class="labeltitle">层次：</label><select><option>-Default-</option></select></p>
+                    </div>
+                    
+                    <div class="column width3">									
+                        <p><label class="labeltitle">专业：</label><select><option>-Default-</option></select></p>
+                        <p><label class="labeltitle">年级：</label><select><option>-Default-</option></select></p>
+                    </div>
+                    </div>
+                
+                <div class="btn_opera">
+                    <input type="button" class="btn btn_gray" value="查询"/> 
+                    <input type="button" class="btn btn_gray" value="重置"/> 
+                </div>
+                    
+                <div class="box_header">当前展开：北京师范大学</div>
+                <div class="box_content">
+                <table class="tablebox">
+                      <thead class="table_header">
+                            <tr>
+                            <th class="first">学员ID</th>
+                            <th>学生姓名</th>
+                            <th>所属学校</th>
+                            <th>专业</th>
+                            <th>层次</th>
+                            <th>年级</th>
+                            </tr>
+                      </thead>
+                      
+                      <tbody class="openable_tbody">
+                            <tr>
+                            <td class="first">KCJH0001</td>
+                            <td>李语文</td>
+                            <td>北师大</td>
+                            <td>电子商务</td>
+                            <td>高起本</td>
+                            <td>2012年春季生</td>
+                            </tr>
+                            <tr>
+                            <td class="first">KCJH0001</td>
+                            <td>李语文</td>
+                            <td>北师大</td>
+                            <td>电子商务</td>
+                            <td>高起本</td>
+                            <td>2012年春季生</td>
+                            </tr>
+                            <tr>
+                            <td class="first">KCJH0001</td>
+                            <td>李语文</td>
+                            <td>北师大</td>
+                            <td>电子商务</td>
+                            <td>高起本</td>
+                            <td>2012年春季生</td>
+                            </tr>
+                      </tbody>
+                  
+                 </table>
+                 </div><!-- #BeginLibraryItem "/Library/pagination.lbi" --><div class="pagination">
+						共<b>5</b>页&nbsp;
+						每页显示<select><option>10条</option></select>
+                          <a href="#" title="First Page">&laquo; 首页</a><a href="#">&laquo; 上一页</a>
+                          <a href="#" class="number current" title="1">1</a>
+                          <a href="#" class="number" title="2">2</a>
+                          <a href="#" class="number" title="3">3</a>
+                          <a href="#" title="Next Page">下一页 &raquo;</a><a href="#"> 尾页&raquo;</a>
+                          <input type="text" size="2" value="" /><input type="button" value="GO"/>
+				</div><!-- #EndLibraryItem --><fieldset><legend class="big">未登录学生列表</legend></fieldset>	  
+                 <div class="clearfix">
+        			<div class="column width3 first">									
+                        <p><label class="labeltitle">学校：</label><select><option>-Default-</option></select></p>
+                        <p><label class="labeltitle">层次：</label><select><option>-Default-</option></select></p>
+                    </div>
+                    
+                    <div class="column width3">									
+                        <p><label class="labeltitle">专业：</label><select><option>-Default-</option></select></p>
+                        <p><label class="labeltitle">年级：</label><select><option>-Default-</option></select></p>
+                    </div>
+                    </div>
+                
+                <div class="btn_opera">
+                    <input type="button" class="btn btn_gray" value="查询"/> 
+                    <input type="button" class="btn btn_gray" value="重置"/> 
+                </div>
+                    
+                <div class="box_header">当前展开：北京师范大学</div>
+                <div class="box_content">
+                <table class="tablebox">
+                      <thead class="table_header">
+                            <tr>
+                            <th class="first">学员ID</th>
+                            <th>学生姓名</th>
+                            <th>所属学校</th>
+                            <th>专业</th>
+                            <th>层次</th>
+                            <th>年级</th>
+                            </tr>
+                      </thead>
+                      
+                      <tbody class="openable_tbody">
+                            <tr>
+                            <td class="first">KCJH0001</td>
+                            <td>李语文</td>
+                            <td>北师大</td>
+                            <td>电子商务</td>
+                            <td>高起本</td>
+                            <td>2012年春季生</td>
+                            </tr>
+                            <tr>
+                            <td class="first">KCJH0001</td>
+                            <td>李语文</td>
+                            <td>北师大</td>
+                            <td>电子商务</td>
+                            <td>高起本</td>
+                            <td>2012年春季生</td>
+                            </tr>
+                            <tr>
+                            <td class="first">KCJH0001</td>
+                            <td>李语文</td>
+                            <td>北师大</td>
+                            <td>电子商务</td>
+                            <td>高起本</td>
+                            <td>2012年春季生</td>
+                            </tr>
+                      </tbody>
+                  
+                 </table>
+                 </div><!-- #BeginLibraryItem "/Library/pagination.lbi" --><div class="pagination">
+						共<b>5</b>页&nbsp;
+						每页显示<select><option>10条</option></select>
+                          <a href="#" title="First Page">&laquo; 首页</a><a href="#">&laquo; 上一页</a>
+                          <a href="#" class="number current" title="1">1</a>
+                          <a href="#" class="number" title="2">2</a>
+                          <a href="#" class="number" title="3">3</a>
+                          <a href="#" title="Next Page">下一页 &raquo;</a><a href="#"> 尾页&raquo;</a>
+                          <input type="text" size="2" value="" /><input type="button" value="GO"/>
+				</div><!-- #EndLibraryItem --></form>
+  		</div>
+        <!-- RIGHT End -->
+         <div class="clearfix"></div>
+        		
+</div>
+<!-- Page End --><!-- #BeginLibraryItem "/Library/footer.lbi" --><!-- Footer -->
+<footer class="page_footer">
+<p>主管单位：教育部 　主办单位：全国教师教育网络联盟</p>
+<p>全国教师教育网络联盟秘书处 电话：010－58802946 电子信箱：msz@jswl.cn</p>
+<p>全国教师教育网络联盟 版权所有 京ICP备05069600号 </p>
+</footer>
+<!-- Footer End --><!-- #EndLibraryItem --></body>
+</html>
